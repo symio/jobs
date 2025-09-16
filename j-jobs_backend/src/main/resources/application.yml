@@ -1,0 +1,22 @@
+server.port: 8080
+#Connection to DB
+spring:
+  profiles.active: secrets
+  messages:
+    encoding: UTF-8
+  web:
+    locale: en
+  datasource:
+    url: jdbc:postgresql://localhost:5432/jobs?currentSchema=public
+#Options to DB
+  jpa:
+    properties:
+      hibernate:
+        open-in-view: true
+        enable_lazy_load_no_trans: true
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+        format-sql: true
+    show-sql: true
+    hibernate:
+#      ddl-auto: create
+      ddl-auto: update

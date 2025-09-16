@@ -1,0 +1,89 @@
+## docker env
+/conteneurisation/.env
+
+## Divers
+/j-jobs_backend/HELP.md
+/j-jobs_backend/.gradle
+/j-jobs_backend/build/
+!/j-jobs_backend/gradle/wrapper/gradle-wrapper.jar
+!**/src/main/**/build/
+!**/src/test/**/build/
+
+### STS ###
+/j-jobs_backend/.apt_generated
+/j-jobs_backend/.classpath
+/j-jobs_backend/.factorypath
+/j-jobs_backend/.project
+/j-jobs_backend/.settings
+/j-jobs_backend/.springBeans
+/j-jobs_backend/.sts4-cache
+/j-jobs_backend/bin/
+!**/src/main/**/bin/
+!**/src/test/**/bin/
+
+### IntelliJ IDEA ###
+/j-jobs_backend/.idea
+/j-jobs_backend/*.iws
+/j-jobs_backend/*.iml
+/j-jobs_backend/*.ipr
+/j-jobs_backend/out/
+!**/src/main/**/out/
+!**/src/test/**/out/
+
+### NetBeans ###
+/j-jobs_backend/nbproject/private/
+/j-jobs_backend/nbbuild/
+/j-jobs_backend/dist/
+/j-jobs_backend/nbdist/
+/j-jobs_backend/.nb-gradle/
+
+### VS Code ###
+/j-jobs_backend/.vscode/
+
+## Sprint secrets
+/j-jobs_backend/src/main/resources/application-secrets.yml
+
+## Front
+# See https://docs.github.com/get-started/getting-started-with-git/ignoring-files for more about ignoring files.
+
+# Compiled output
+/j-jobs_frontend/dist
+/j-jobs_frontend/tmp
+/j-jobs_frontend/out-tsc
+/j-jobs_frontend/bazel-out
+
+# Node
+/j-jobs_frontend/node_modules
+/j-jobs_frontend/npm-debug.log
+/j-jobs_frontend/yarn-error.log
+
+# IDEs and editors
+/j-jobs_frontend/.idea/
+/j-jobs_frontend/.project
+/j-jobs_frontend/.classpath
+/j-jobs_frontend/.c9/
+/j-jobs_frontend/*.launch
+/j-jobs_frontend/.settings/
+/j-jobs_frontend/*.sublime-workspace
+
+# Visual Studio Code
+/j-jobs_frontend/.vscode/*
+!/j-jobs_frontend/.vscode/settings.json
+!/j-jobs_frontend/.vscode/tasks.json
+!/j-jobs_frontend/.vscode/launch.json
+!/j-jobs_frontend/.vscode/extensions.json
+/j-jobs_frontend/.history/*
+
+# Miscellaneous
+/j-jobs_frontend/.angular/cache
+/j-jobs_frontend/.sass-cache/
+/j-jobs_frontend/connect.lock
+/j-jobs_frontend/coverage
+/j-jobs_frontend/libpeerconnection.log
+/j-jobs_frontend/testem.log
+/j-jobs_frontend/typings
+
+# System files
+/j-jobs_frontend/.DS_Store
+/j-jobs_frontend/Thumbs.db
+/j-jobs_frontend/nbproject/private/
