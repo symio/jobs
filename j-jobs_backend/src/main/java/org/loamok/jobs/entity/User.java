@@ -15,6 +15,7 @@ import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
 import jakarta.persistence.Transient;
 import jakarta.persistence.UniqueConstraint;
+import java.time.Instant;
 import java.util.Arrays;
 import java.util.Collection;
 import java.util.List;
@@ -25,6 +26,8 @@ import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
 import lombok.ToString;
 import lombok.experimental.SuperBuilder;
+import org.hibernate.annotations.CreationTimestamp;
+import org.hibernate.annotations.UpdateTimestamp;
 import org.loamok.jobs.security.jwt.JwtService;
 import org.loamok.jobs.util.SpringContextUtil;
 import org.springframework.beans.BeansException;
@@ -64,6 +67,10 @@ public class User implements UserDetails {
     private String email;
     @Column(name = "gdpr_optin", nullable = true)
     private Boolean gdprOptin;
+    @CreationTimestamp
+    private Instant createdAt;
+    @UpdateTimestamp
+    private Instant updatedAt;
     // -- relations
     @ManyToOne(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
     @JoinColumn(name = "id_role", nullable = false)
@@ -83,6 +90,7 @@ public class User implements UserDetails {
     @Column(name = "email_verification_key", nullable = true, columnDefinition = "TEXT")
     private String emailVerificationKey;
     @JsonIgnore
+    @Transient
     private String authority;
     @JsonIgnore
     @Transient
