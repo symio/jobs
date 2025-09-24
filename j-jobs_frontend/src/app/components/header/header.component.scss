@@ -1,0 +1,55 @@
+/*
+    Created on : 18 sept. 2025, 14:43:55
+    Author     : Huby Franck
+*/
+@use "app/theme/variables";
+@use "app/theme/texts";
+
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
+    background: variables.$white;
+    border-bottom: 1px solid variables.$gray-light;
+}
+
+.menu-button {
+    background: none;
+    border: none;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    cursor: pointer;
+    padding: 8px;
+
+    .burger-line {
+        width: 25px;
+        height: 3px;
+        background: variables.$blue6;
+        border-radius: 2px;
+        transition: all 0.3s ease;
+    }
+
+    &:hover .burger-line {
+        opacity: 0.7;
+    }
+}
+
+@media (min-width: variables.$medium) {
+    .header-container {
+        padding: 20px 40px;
+    }
+}
+
+@media (min-width: variables.$large) {
+    .header-container {
+        max-width: variables.$extralarge;
+        margin: 0 auto;
+        padding: 20px 0;
+    }
+
+    .menu-button {
+        display: none;
+    }
+}

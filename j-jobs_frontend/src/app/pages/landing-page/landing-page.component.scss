@@ -1,0 +1,115 @@
+/*
+    Created on : 18 sept. 2025, 16:21:41
+    Author     : Huby Franck
+*/
+@use "app/theme/variables";
+@use "app/theme/buttons";
+@use "app/theme/titles";
+@use "app/theme/texts";
+
+.landing-container {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+.main-title-section {
+    text-align: center;
+}
+
+.main-content-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    align-items: center;
+}
+
+.content-section {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    align-items: center;
+    
+    h2,
+    .cta-section {
+        text-align: center;
+        align-self: center; // ✅ garde les boutons et le h2 centrés même en desktop
+    }
+}
+
+.cta-section {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    width: 100%;
+    align-items: center;
+}
+
+.illustration-section {
+    display: none;
+    justify-content: center;
+    align-items: center;
+    padding: 20px 0;
+    
+    img {
+        width: 100%;
+        height: auto;
+        max-width: 300px;
+    }
+}
+
+// Tablette
+@media (min-width: variables.$medium) {
+    .landing-container {
+        padding: 40px;
+        gap: 60px;
+    }
+    
+    .cta-section {
+        flex-direction: row;
+        justify-content: center;
+        gap: 20px;
+    }
+}
+
+// Desktop
+@media (min-width: variables.$large) {
+    .main-content-wrapper {
+        flex-direction: row;
+        align-items: flex-start;
+        gap: 60px;
+        max-width: variables.$extralarge;
+        margin: 0 auto;
+    }
+
+    .content-section {
+        flex: 1;
+        align-items: flex-start;
+        text-align: left;
+        gap: 40px; 
+        
+        h2,
+        .cta-section {
+            align-self: center;
+            text-align: center;
+        }
+    }
+
+    cta-section {
+        align-self: center;        // le conteneur de boutons est centré
+        justify-content: center;   // les boutons sont centrés horizontalement
+    }
+
+    .illustration-section {
+        display: flex;
+        flex: 1;
+        
+        img {
+            width: 100%;
+            height: auto;
+            max-width: 500px;
+        }
+    }
+}

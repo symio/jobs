@@ -1,0 +1,27 @@
+/*
+    Created on : 18 sept. 2025, 14:43:55
+    Author     : Huby Franck
+*/
+
+/* Colors */
+$blue6: #073763;
+$white: #FFF;
+$gray-light: #e0e0e0;
+
+/* Breakpoints */
+$medium: 768px; // Bootstrap md
+$large: 992px; // Bootstrap lg
+$extralarge: 1200px; // Bootstrap xl
+
+/* Fonts */
+$fontfamillies: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+
+:root {
+    --blue6: #{$blue6};
+    --white: #{$white};
+    --gray-light: #{$gray-light};
+    --medium: #{$medium};
+    --large: #{$large};
+    --extralarge: #{$extralarge};
+    --fontfamillies: #{$fontfamillies};
+}
