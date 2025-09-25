@@ -272,8 +272,15 @@ export class OAuth2Service {
         const now = Math.floor(Date.now() / 1000);
         const isOriginalExpired = decoded.originallyExpires < now;
         const isExpired = decoded.exp < now;
+        const fourHoursAgo = now - (4 * 3600);
+        const hasSessionLost = decoded.originallyExpires <= fourHoursAgo
 
-        if (isOriginalExpired) {
+        if (hasSessionLost || (isExpired && isOriginalExpired)) {
+            this.logout().subscribe();
+            return of(true);
+        }
+
+        if (isOriginalExpired && !hasSessionLost) {
             // ✅ mutualisation : refreshToken passe par authenticate()
             return this.refreshToken().pipe(
                 map(() => false),
@@ -282,6 +289,6 @@ export class OAuth2Service {
         }
 
         // access_token toujours valable → juste vérifier exp
-        return of(isExpired);
+        return of(isExpired && !hasSessionLost);
     }
 }

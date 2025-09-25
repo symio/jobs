@@ -104,7 +104,7 @@ public class OAuth2Service {
             Date originalExpiration = jwtService.extractExpiration(clientSecret);
             long currentTimeMillis = System.currentTimeMillis();
             long remainingTimeMillis = originalExpiration.getTime() - currentTimeMillis;
-            expirationHours = Math.max(2, (int) (remainingTimeMillis / (1000 * 60 * 60))); // Minimum 2 heure
+            expirationHours = Math.max(2, (int) (remainingTimeMillis / (1000 * 60 * 60))); // Minimum 2 heures
         } else {
             expirationHours = 24; // Valeur par défaut
         }
@@ -117,16 +117,15 @@ public class OAuth2Service {
             claims.put("scope", "rememberme");
             claimsRemember.putAll(claims);
             claimsRemember.remove("client-signature");
-            final String storedRememberToken = jwtService.generateClientCredentialsToken(claims, email, 24 * 365);
-            rememberMeToken = jwtService.generateClientCredentialsToken(claimsRemember, email, 24 * 365);
+            final String storedRememberToken = jwtService.generateClientCredentialsToken(claims, email, expirationHours * 365);
+            rememberMeToken = jwtService.generateClientCredentialsToken(claimsRemember, email, expirationHours * 365);
             user.setRememberMeToken(storedRememberToken);
         }
 
         uR.save(user);
 
-        return Optional.of(new OAuth2TokenResponse(authToken, rememberMeToken, "Bearer", 24 * 60 * 60, jwtService.extractExpiration(storedToken).getTime(), scope));
+        return Optional.of(new OAuth2TokenResponse(authToken, rememberMeToken, "Bearer", expirationHours * 60 * 60, jwtService.extractExpiration(storedToken).getTime(), scope));
     }
-
     private Map<String, Object> genClaimsForToken(String email, String scope, String clientSignature, String tokenType, User user) {
         Map<String, Object> claims = new HashMap<>();
         claims.put("client_id", email);
