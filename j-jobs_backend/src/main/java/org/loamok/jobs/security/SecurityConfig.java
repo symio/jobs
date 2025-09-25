@@ -41,7 +41,8 @@ public class SecurityConfig {
                 // APIs ouvertes au public sans authentification
                 .requestMatchers(HttpMethod.POST, "/profil/register").permitAll()
                 .requestMatchers(HttpMethod.POST, "/authorize/token").permitAll()
-                .requestMatchers(HttpMethod.POST, "/authorize/remembered").permitAll()
+                .requestMatchers(HttpMethod.POST, "/authorize/refresh").permitAll()
+//                .requestMatchers(HttpMethod.POST, "/authorize/remembered").permitAll()
                 // SpringDoc OpenAPI / Swagger UI endpoints - Documentation API accessible publiquement
                 .requestMatchers("/v3/api-docs/**").permitAll() // Spécification OpenAPI 3.0 en JSON/YAML
                 .requestMatchers("/swagger-ui/**").permitAll() // Interface utilisateur Swagger (HTML, CSS, JS)

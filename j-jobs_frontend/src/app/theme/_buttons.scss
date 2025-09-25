@@ -1,0 +1,42 @@
+/*
+    Created on : 18 sept. 2025, 16:20:24
+    Author     : Huby Franck
+*/
+@use "variables";
+
+.cta-button {
+    width: 100%;
+    max-width: 300px;
+    padding: 16px 32px;
+    border: 2px solid variables.$blue6;
+    background: variables.$white;
+    font-size: 16px;
+    font-weight: 500;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+
+    &.primary {
+        background: variables.$blue6;
+        color: variables.$white;
+
+        &:disabled {
+            opacity: 0.3;
+            cursor: not-allowed;
+            transform: none;
+        }
+        
+        &:hover:not([disabled]) {
+            background: variables.$white;
+            color: variables.$blue6;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(7, 55, 99, 0.3);
+        }
+    }
+}
+
+@media (min-width: variables.$medium) {
+    .cta-button {
+        flex: 0 0 200px;
+    }
+}

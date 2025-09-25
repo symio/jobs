@@ -122,11 +122,84 @@ public class AuthenticationController {
         response.put("remember_me_token", tokenResponse.getRememberMeToken());
         response.put("token_type", tokenResponse.getTokenType());
         response.put("expires_in", tokenResponse.getExpiresIn());
+        response.put("originally_expires", tokenResponse.getOriginallyExpires());
+        
         if (tokenResponse.getScope() != null) {
             response.put("scope", tokenResponse.getScope());
         }
 
         return ResponseEntity.ok(response);
+    }
+    
+    @Operation(
+            summary = "Rafraîchir un token d'accès via un access_token non expiré",
+            description = "Permet de générer un nouveau `auth stored_token` OAuth2 à partir d'un `auth_access_token` précédemment émis.",
+            requestBody = @io.swagger.v3.oas.annotations.parameters.RequestBody(
+                description = "Objet JSON contenant le remember_me_token",
+                required = true,
+                content = @Content(
+                    mediaType = MediaType.APPLICATION_JSON_VALUE,
+                    schema = @Schema(implementation = RememberedTokenRequest.class)
+                )
+            )
+        )
+        @ApiResponses(value = {
+            @ApiResponse(
+                responseCode = "200",
+                description = "Token généré avec succès",
+                content = @Content(
+                    mediaType = MediaType.APPLICATION_JSON_VALUE,
+                    schema = @Schema(implementation = TokenResponse.class)
+                )
+            ),
+            @ApiResponse(
+            responseCode = "400",
+            description = "Paramètres manquants ou invalides",
+            content = @Content(
+                mediaType = MediaType.APPLICATION_JSON_VALUE,
+                schema = @Schema(
+                    type = "object",
+                    example = "{ \"error\": \"invalid_request\", \"error_description\": \"client_id and client_secret are required\" }"
+                )
+            )
+        ),
+        @ApiResponse(
+            responseCode = "401",
+            description = "Token invalide",
+            content = @Content(
+                mediaType = MediaType.APPLICATION_JSON_VALUE,
+                schema = @Schema(
+                    type = "object",
+                    example = "{ \"error\": \"invalid_client\", \"error_description\": \"Invalid client credentials or unauthorized scopes or disabled client\" }"
+                )
+            )
+        )
+    })
+    @PostMapping(value = "/refresh",
+        consumes = MediaType.APPLICATION_JSON_VALUE,
+        produces = MediaType.APPLICATION_JSON_VALUE)
+    public ResponseEntity<Map<String, Object>> oauth2Refresh(
+        @Parameter(description = "Objet contenant le auth_token valide", required = true)
+        @Valid @RequestBody RememberedTokenRequest rememberedTokenRequest,
+        HttpServletRequest request
+    ) {
+        try {
+            Claims claims = jwtService.extractAllClaims(rememberedTokenRequest.getRememberMeToken());
+
+            TokenRequest tokenRequest = new TokenRequest();
+            tokenRequest.setGrant_type(claims.get("token_type", String.class));
+            tokenRequest.setClient_id(claims.get("client_id", String.class));
+            tokenRequest.setClient_secret(rememberedTokenRequest.getRememberMeToken());
+            tokenRequest.setScope("access refresh");
+
+            return oauth2Token(tokenRequest, request);
+
+        } catch (Exception e) {
+            return ResponseEntity.badRequest().body(Map.of(
+                "error", "invalid_request",
+                "error_description", "remember_me_token manquant ou invalide - " + e.getMessage()
+            ));
+        }
     }
     
     @Operation(

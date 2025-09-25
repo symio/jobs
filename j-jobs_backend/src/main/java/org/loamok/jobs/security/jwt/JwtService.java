@@ -24,7 +24,20 @@ public class JwtService {
         return Keys.hmacShaKeyFor(keyBytes);
     }
 
-    // Extraire « claims » du jeton
+    public Claims extractAllClaimsForced(String token) {
+        try {
+            return Jwts.parser()
+                    .verifyWith((SecretKey) getSignInKey())
+                    .build()
+                    .parseSignedClaims(token)
+                    .getPayload();
+        } catch (ExpiredJwtException expired) {
+            return expired.getClaims();
+        } catch (Exception e) {
+            throw new RuntimeException("Error parsing JWT token: " + e.getMessage(), e);
+        }
+    }
+
     public Claims extractAllClaims(String token) {
         return Jwts.parser()
                 .verifyWith((SecretKey) getSignInKey()).build()
@@ -55,7 +68,7 @@ public class JwtService {
 
         builder.subject(email)
                 .issuedAt(new Date(System.currentTimeMillis()))
-                .expiration(new Date(System.currentTimeMillis() + (( 1000L * 60 * 60 ) * hours))); // date et heure actuel + hours heures
+                .expiration(new Date(System.currentTimeMillis() + ((1000L * 60 * 60) * hours))); // date et heure actuel + hours heures
 
         if (claims != null && !claims.isEmpty()) {
             builder.claims(claims);

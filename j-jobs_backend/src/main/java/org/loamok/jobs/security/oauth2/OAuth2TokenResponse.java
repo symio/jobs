@@ -25,5 +25,8 @@ public class OAuth2TokenResponse {
     @JsonProperty("expires_in")
     private Integer expiresIn;
     
+    @JsonProperty("originally_expires")
+    private Long originallyExpires;
+    
     private String scope;
 }

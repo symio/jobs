@@ -1,0 +1,63 @@
+/*
+    Created on : 18 sept. 2025, 16:21:41
+    Author     : Huby Franck
+*/
+@use "app/theme/variables";
+@use "app/theme/buttons";
+@use "app/theme/titles";
+@use "app/theme/texts";
+@use "app/theme/links";
+@use "app/theme/form-controls";
+
+.login-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    background: variables.$white;
+    font-family: variables.$fontfamillies;
+}
+
+.main-title-section {
+    margin-bottom: 40px;
+    text-align: center;
+}
+
+.login-form {
+    width: 100%;
+    max-width: 400px;
+    padding: 40px 30px;
+    background: variables.$white;
+}
+
+.content-section {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+// Section CTA spécifique au login
+.cta-section {
+    margin: 24px 0 20px 0;
+    
+    .cta-button {
+        max-width: none;
+    }
+}
+
+@media (min-width: variables.$medium) {
+    .login-container {
+        padding: 40px;
+    }
+
+    .login-form {
+        max-width: 450px;
+        padding: 50px 40px;
+        border: 1px solid #e0e0e0;
+    }
+
+    .main-title-section {
+        margin-bottom: 50px;
+    }
+}
