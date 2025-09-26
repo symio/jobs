@@ -1,27 +1,112 @@
 /*
+    _variables.scss
     Created on : 18 sept. 2025, 14:43:55
     Author     : Huby Franck
 */
 
-/* Colors */
+/* Colors - Palette principale */
+$blue5: #2563eb;
+$blue5-hover-bg: rgba($blue5, 0.1);
 $blue6: #073763;
+$blue6-hover-bg: rgba($blue6, 0.1);
 $white: #FFF;
+$black: #000;
 $gray-light: #e0e0e0;
+$gray-600: #6c757d;
+$gray-700: #495057;
+$gray-100: #f8f9fa;
+
+/* Couleurs d'état */
+$delete: #990000;
+$red: #dc3545;
+$yellow: #ffc107;
+$update: #e69138;
+$green: #28a745;
+$validate: #38761d;
+
+$yellow-bg: #fff3cd;
+$red-bg: #f8d7da;
+$red-hover-bg: rgba($red, 0.1);
+$green-bg: #d4edda;
+
+$yellow-text: #856404;
+$red-text: #721c24;
+$green-text: #155724;
+
+/* Overlays et ombres */
+$overlay-bg: rgba($black, 0.5);
+$shadow-light: rgba($black, 0.15);
+$shadow-medium: rgba($blue6, 0.3);
+$blue6-shadow: rgba($blue6, 0.1);
+
+/* Couleurs de formulaires */
+$form-border: #e0e0e0;
+$form-bg: #f8f9fa;
+$form-error-border: #dc3545;
+$form-error-bg: #fff5f5;
+$form-success-border: #28a745;
+$form-success-bg: #f8fff8;
+
+/* Couleurs d'alertes */
+$alert-error-bg: #f8d7da;
+$alert-error-text: #721c24;
+$alert-error-border: #f5c6cb;
+$alert-success-bg: #d4edda;
+$alert-success-text: #155724;
+$alert-success-border: #c3e6cb;
+$alert-warning-bg: #fff3cd;
+$alert-warning-text: #856404;
+$alert-warning-border: #ffeaa7;
+$alert-info-bg: #cce7ff;
+$alert-info-text: #004085;
+$alert-info-border: #99d1ff;
 
 /* Breakpoints */
 $medium: 768px; // Bootstrap md
 $large: 992px; // Bootstrap lg
 $extralarge: 1200px; // Bootstrap xl
+$largeContainerWidth: 1300px;
 
 /* Fonts */
 $fontfamillies: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
 
 :root {
+    --blue5: #{$blue5};
+    --blue5-hover-bg: #{$blue5-hover-bg};
     --blue6: #{$blue6};
+    --blue6-hover-bg: #{$blue6-hover-bg};
     --white: #{$white};
+    --black: #{$black};
     --gray-light: #{$gray-light};
+    --gray-600: #{$gray-600};
+    --gray-700: #{$gray-700};
+    --gray-100: #{$gray-100};
+    --green: #{$green};
+    --validate: #{$validate};
+    --green-bg: #{$green-bg};
+    --green-text: #{$green-text};
+    --delete: #{$delete};
+    --red: #{$red};
+    --red-bg: #{$red-bg};
+    --red-hover-bg: #{$red-hover-bg};
+    --red-text: #{$red-text};
+    --update: #{$update};
+    --yellow: #{$yellow};
+    --yellow-bg: #{$yellow-bg};
+    --yellow-text: #{$yellow-text};
+    --overlay-bg: #{$overlay-bg};
+    --shadow-light: #{$shadow-light};
+    --shadow-medium: #{$shadow-medium};
+    --blue6-shadow: #{$blue6-shadow};    
+    --form-border: #{$form-border};
+    --form-bg: #{$form-bg};
+    --form-error-border: #{$form-error-border};
+    --form-error-bg: #{$form-error-bg};
+    --form-success-border: #{$form-success-border};
+    --form-success-bg: #{$form-success-bg};
     --medium: #{$medium};
     --large: #{$large};
     --extralarge: #{$extralarge};
+    --largeContainerWidth: #{$largeContainerWidth};
     --fontfamillies: #{$fontfamillies};
 }

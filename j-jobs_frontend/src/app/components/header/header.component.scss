@@ -1,9 +1,11 @@
 /*
-    Created on : 18 sept. 2025, 14:43:55
+    header.component.scss
+    Created on : 18 sept. 2025, 16:21:41
     Author     : Huby Franck
 */
 @use "app/theme/variables";
-@use "app/theme/texts";
+@use "app/theme/components";
+@use "app/theme/icons";
 
 .header-container {
     display: flex;
@@ -12,44 +14,17 @@
     padding: 15px 20px;
     background: variables.$white;
     border-bottom: 1px solid variables.$gray-light;
-}
+    position: relative;
 
-.menu-button {
-    background: none;
-    border: none;
-    display: flex;
-    flex-direction: column;
-    gap: 4px;
-    cursor: pointer;
-    padding: 8px;
-
-    .burger-line {
-        width: 25px;
-        height: 3px;
-        background: variables.$blue6;
-        border-radius: 2px;
-        transition: all 0.3s ease;
-    }
-
-    &:hover .burger-line {
-        opacity: 0.7;
-    }
-}
-
-@media (min-width: variables.$medium) {
-    .header-container {
+    @media (min-width: variables.$medium) {
         padding: 20px 40px;
     }
-}
 
-@media (min-width: variables.$large) {
-    .header-container {
-        max-width: variables.$extralarge;
-        margin: 0 auto;
-        padding: 20px 0;
-    }
-
-    .menu-button {
-        display: none;
+    @media (min-width: variables.$large) {
+        @extend %large-container-rules-large;
+        padding-top: 20px;
+        padding-bottom: 20px;
+        padding-left: 0;
+        padding-right: 0;
     }
 }

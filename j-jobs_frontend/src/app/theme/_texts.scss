@@ -1,13 +1,120 @@
 /*
+    _texts.scss
     Created on : 18 sept. 2025, 16:35:15
     Author     : Huby Franck
 */
 @use "variables";
 
-p, ul li {
+// =============================================================================
+// PLACEHOLDERS DE TYPOGRAPHIE (SILENCIEUX)
+// =============================================================================
+
+%text-body {
     font-size: 14px;
-    line-height: 1.6;
+    line-height: 1.25;
     color: variables.$blue6;
+
+    @media (min-width: variables.$medium) {
+        font-size: 16px;
+        line-height: 1.5;
+    }
+
+    @media (min-width: variables.$large) {
+        font-size: 18px;
+        line-height: 1.75;
+    }
+}
+
+%text-button {
+    font-size: 14px;
+    font-weight: bold;
+    text-align: center;
+    
+    @media (min-width: variables.$medium) {
+        font-size: 16px;
+    }
+    
+    @media (min-width: variables.$large) {
+        font-size: 18px;
+    }
+}
+
+%text-form-label {
+    font-size: 14px;
+    font-weight: 500;
+    color: variables.$blue6;
+
+    @media (min-width: variables.$medium) {
+        font-size: 15px;
+    }
+}
+
+%text-form-input {
+    font-size: 16px;
+}
+
+%text-form-placeholder {
+    color: variables.$gray-600;
+    font-size: 14px;
+}
+
+%text-error-message {
+    font-size: 12px;
+    color: variables.$red;
+    line-height: 1.4;
+}
+
+%text-link-base {
+    color: variables.$blue6;
+    transition: all 0.2s ease;
+}
+
+%text-link-nav {
+    @extend %text-link-base;
+    font-weight: 400;
+    opacity: 0.8;
+}
+
+%text-link-menu {
+    @extend %text-link-base;
+    font-weight: 400;
+}
+
+%text-link-form {
+    @extend %text-link-base;
+    font-weight: 500;
+}
+
+// =============================================================================
+// STYLES DE BASE
+// =============================================================================
+.links-section {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    padding-top: 20px;
+    border-top: 1px solid variables.$gray-light;
+    
+    p {
+        margin: 0;
+        font-size: 14px;
+        color: variables.$blue6;
+    }
+    @media (min-width: variables.$medium) {
+        p {
+            font-size: 16px;
+        }
+    }
+    @media (min-width: variables.$large) {
+        p {
+            font-size: 18px;
+        }
+    }
+}
+
+p, ul li {
+    @extend %text-body;
     margin: 0;
 }
 
@@ -15,10 +122,37 @@ p.justified {
     text-align: justify;
 }
 
+ul {
+    list-style: disc; 
+    padding-left: 1rem;
+    
+    @media (min-width: variables.$medium) {
+        padding-left: 1.5rem;
+    }
+    
+    @media (min-width: variables.$large) {
+        padding-left: 2rem;
+    }
+    
+    li {
+        margin-bottom: 0.25rem; 
+        font-size:14px;
+        
+        @media (min-width: variables.$medium) {
+            margin-bottom: 0.5rem; 
+            font-size:16px;
+        }
+
+        @media (min-width: variables.$large) {
+            font-size:18px;
+        }
+    }
+}
+
 // Textes spécifiques aux formulaires
 .form-text {
-    font-size: 12px;
-    color: #6c757d;
+    font-size: 14px;
+    color: variables.$gray-600;
     margin-top: 4px;
     line-height: 1.4;
 
@@ -27,7 +161,7 @@ p.justified {
     }
 
     &.required-text {
-        color: #dc3545;
+        color: variables.$red;
         font-weight: 500;
 
         &::before {
@@ -47,7 +181,7 @@ p.justified {
     &.required {
         &::after {
             content: " *";
-            color: #dc3545;
+            color: variables.$red;
         }
     }
 
@@ -57,8 +191,7 @@ p.justified {
         &::after {
             content: " (optionnel)";
             font-weight: 300;
-            color: #6c757d;
-            font-size: 12px;
+            color: variables.$gray-600;
         }
     }
 }
@@ -76,7 +209,7 @@ p.justified {
         content: "";
         width: 12px;
         height: 12px;
-        border: 2px solid #e0e0e0;
+        border: 2px solid variables.$gray-light;
         border-top-color: variables.$blue6;
         border-radius: 50%;
         animation: spin 1s linear infinite;
@@ -91,76 +224,59 @@ p.justified {
 
 .info-text {
     font-size: 13px;
-    color: #495057;
-    background: #f8f9fa;
+    color: variables.$gray-700;
+    background: variables.$gray-100;
     padding: 8px 12px;
     border-left: 3px solid variables.$blue6;
     border-radius: 0 4px 4px 0;
     margin: 12px 0;
 
     &.warning {
-        background: #fff3cd;
-        border-left-color: #ffc107;
-        color: #856404;
+        background: variables.$yellow-bg;
+        border-left-color: variables.$yellow;
+        color: variables.$yellow-text;
     }
 
     &.error {
-        background: #f8d7da;
-        border-left-color: #dc3545;
-        color: #721c24;
+        background: variables.$red-bg;
+        border-left-color: variables.$red;
+        color: variables.$red-text;
     }
 
     &.success {
-        background: #d4edda;
-        border-left-color: #28a745;
-        color: #155724;
-    }
-}
-
-// Logo styles (déjà existants)
-.logo {
-    font-weight: 700;
-    color: variables.$blue6;
-    letter-spacing: 1px;
-
-    .logo-j {
-        font-size: 36px;
-    }
-
-    .logo-rest {
-        font-size: 24px;
+        background: variables.$green-bg;
+        border-left-color: variables.$green;
+        color: variables.$green-text;
     }
 }
 
 // Textes de copyright et footer
 .copyright-text {
-    font-size: 12px;
-    color: #6c757d;
+    font-size: 14px;
+    color: variables.$gray-600;
     text-align: center;
     margin: 0;
 }
 
 // Responsive
 @media (min-width: variables.$medium) {
-    .content-text p {
+    p, ul li {
         font-size: 16px;
-    }
-
-    .logo {
-        .logo-j {
-            font-size: 42px;
-        }
-
-        .logo-rest {
-            font-size: 28px;
-        }
+        line-height: 1.5; 
     }
 
     .form-text {
-        font-size: 13px;
+        font-size: 16px;
     }
 
     .form-label {
-        font-size: 15px;
+        font-size: 16px;
+    }
+}
+
+@media (min-width: variables.$large) {
+    p, ul li {
+        font-size: 18px;
+        line-height: 1.75; 
     }
 }
