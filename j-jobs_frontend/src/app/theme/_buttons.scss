@@ -1,0 +1,97 @@
+/*
+    _buttons.scss
+    Created on : 18 sept. 2025, 16:20:24
+    Author     : Huby Franck
+*/
+@use "variables";
+@use "texts";
+
+.cta-button {
+    @extend %text-button;
+    width: 100%;
+    max-width: 300px;
+    padding: 0.5rem 0.75rem;
+    border: 1px solid variables.$blue6;
+    border-radius: 4px;
+    background: variables.$white;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    height: 30px;
+    
+    @media (min-width: variables.$medium) {
+        height: 40px;
+        border-width: 2px;
+    }
+    
+    @media (min-width: variables.$medium) {
+        height: 50px;
+        border-width: 3px;
+    }
+
+    &.primary {
+        background: variables.$blue6;
+        color: variables.$white;
+
+        &:disabled {
+            opacity: 0.3;
+            cursor: not-allowed;
+            transform: none;
+        }
+        
+        &:hover:not([disabled]) {
+            background: variables.$white;
+            color: variables.$blue6;
+        }
+    }
+    
+    &.validate {
+        background: variables.$validate;
+        border-color: variables.$validate;
+        color: variables.$white;
+
+        &:disabled {
+            opacity: 0.3;
+            cursor: not-allowed;
+            transform: none;
+        }
+        
+        &:hover:not([disabled]) {
+            background: variables.$white;
+            color: variables.$validate;
+        }
+    }
+    
+    &.update {
+        background: variables.$update;
+        border-color: variables.$update;
+        color: variables.$blue6;
+
+        &:disabled {
+            opacity: 0.3;
+            cursor: not-allowed;
+            transform: none;
+        }
+        
+        &:hover:not([disabled]) {
+            background: variables.$white;
+            color: variables.$blue6;
+        }
+    }
+    
+    &.delete {
+        background: variables.$delete;
+        border-color: variables.$delete;
+        color: variables.$white;
+
+        &:disabled {
+            opacity: 0.3;
+            cursor: not-allowed;
+            transform: none;
+        }
+        
+        &:hover:not([disabled]) {
+            background: variables.$white;
+            color: variables.$delete;
+        }
+    }
+}
