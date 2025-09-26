@@ -1,0 +1,91 @@
+<!-- src/app/pages/login/login.component.html -->
+<main class="login-container">
+    <section class="main-title-section">
+        <h1 class="main-title">Connexion</h1>
+    </section>
+    
+    <div class="login-form">
+        <section class="content-section">
+            <!-- Messages d'erreur -->
+            <div *ngIf="error" class="alert alert-error">
+                {{ error }}
+            </div>
+
+            <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+                <!-- Email -->
+                <div class="form-group" [class.is-invalid]="clientId?.invalid && clientId?.touched">
+                    <label for="clientId" class="form-label required">E-Mail</label>
+                    <input
+                        type="email"
+                        id="clientId"
+                        formControlName="clientId"
+                        [class.error]="clientId?.invalid && clientId?.touched"
+                        placeholder="Entrez votre e-mail"
+                        autocomplete="username"
+                    >
+                    <div *ngIf="clientId?.invalid && clientId?.touched" class="error-message">
+                        <div *ngIf="clientId?.errors?.['required']">
+                            L'adresse e-mail est requise
+                        </div>
+                        <div *ngIf="clientId?.errors?.['email']">
+                            Veuillez entrer une adresse e-mail valide
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Mot de passe -->
+                <div class="form-group" [class.is-invalid]="clientSecret?.invalid && clientSecret?.touched">
+                    <label for="clientSecret" class="form-label required">Mot de passe</label>
+                    <input
+                        type="password"
+                        id="clientSecret"
+                        formControlName="clientSecret"
+                        [class.error]="clientSecret?.invalid && clientSecret?.touched"
+                        placeholder="Entrez votre mot de passe"
+                        autocomplete="current-password"
+                    >
+                    <div *ngIf="clientSecret?.invalid && clientSecret?.touched" class="error-message">
+                        <div *ngIf="clientSecret?.errors?.['required']">
+                            Le mot de passe est requis
+                        </div>
+                    </div>
+                </div>
+
+                <!-- @todo Remember Me -->
+<!--                <div class="form-group remember-me-group">
+                    <input 
+                        type="checkbox" 
+                        id="rememberMe" 
+                        name="rememberMe"
+                        [checked]="rememberMe" 
+                        (change)="onRememberMeChange($event)"
+                    >
+                    <label for="rememberMe">Rester Connecté</label>
+                </div>-->
+
+                <!-- Bouton de soumission -->
+                <div class="cta-section">
+                    <button
+                        type="submit"
+                        class="cta-button primary"
+                        [disabled]="loginForm.invalid || loading"
+                    >
+                        <span *ngIf="loading" class="loading-text">Connexion en cours...</span>
+                        <span *ngIf="!loading">Envoyer</span>
+                    </button>
+                </div>
+
+                <!-- Liens -->
+                <div class="links-section">
+                    <p>
+                        Pas encore membre ? 
+                        <a routerLink="/register" class="primary-link">Inscription</a>
+                    </p>
+                    <p>
+                        <a routerLink="/passwordlost" class="secondary-link">Mot de passe oublié</a>
+                    </p>
+                </div>
+            </form>
+        </section>
+    </div>
+</main>

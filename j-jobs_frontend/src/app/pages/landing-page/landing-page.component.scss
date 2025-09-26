@@ -1,0 +1,97 @@
+/*
+    landing-page.component.scss
+    Created on : 18 sept. 2025, 16:21:41
+    Author     : Huby Franck
+*/
+@use "app/theme/variables";
+@use "app/theme/texts";
+@use "app/theme/titles";
+@use "app/theme/links";
+@use "app/theme/components";
+@use "app/theme/buttons";
+@use "app/theme/form-controls";
+@use "app/theme/icons";
+
+.landing-container {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    font-family: variables.$fontfamillies;
+}
+
+.main-content-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    align-items: center;
+}
+
+.content-section {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    align-items: center;
+    
+    h2,
+    .cta-section {
+        text-align: center;
+        align-self: center;
+    }
+}
+
+.illustration-section {
+    display: none;
+    justify-content: center;
+    align-items: center;
+    padding: 20px 0;
+    
+    img {
+        width: 100%;
+        height: auto;
+        max-width: 300px;
+    }
+}
+
+// Tablette
+@media (min-width: variables.$medium) {
+    .landing-container {
+        padding: 40px;
+        gap: 60px;
+    }
+}
+
+// Desktop
+@media (min-width: variables.$large) {
+    .main-content-wrapper {
+        flex-direction: row;
+        align-items: flex-start;
+        gap: 60px;
+        max-width: variables.$largeContainerWidth;
+        margin: 0 auto;
+    }
+
+    .content-section {
+        flex: 1;
+        align-items: flex-start;
+        text-align: left;
+        gap: 40px; 
+        
+        h2,
+        .cta-section {
+            align-self: center;
+            text-align: center;
+        }
+    }
+
+    .illustration-section {
+        display: flex;
+        flex: 1;
+        
+        img {
+            width: 100%;
+            height: auto;
+            max-width: 500px;
+        }
+    }
+}

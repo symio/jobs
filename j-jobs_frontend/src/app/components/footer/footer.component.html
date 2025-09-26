@@ -1,0 +1,11 @@
+<footer class="footer-container">
+    <nav class="footer-nav" [class.visible]="showNavMenu">
+        <h3 class="nav-title">{{ menuData.title }}</h3>
+        <a href="{{ item.link }}" class="nav-link" *ngFor="let item of menuData.items">
+            {{ item.label }}
+        </a>
+    </nav>
+    <div class="copyright">
+        <p>Copyright@2025</p>
+    </div>
+</footer>

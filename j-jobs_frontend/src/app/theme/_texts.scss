@@ -1,0 +1,282 @@
+/*
+    _texts.scss
+    Created on : 18 sept. 2025, 16:35:15
+    Author     : Huby Franck
+*/
+@use "variables";
+
+// =============================================================================
+// PLACEHOLDERS DE TYPOGRAPHIE (SILENCIEUX)
+// =============================================================================
+
+%text-body {
+    font-size: 14px;
+    line-height: 1.25;
+    color: variables.$blue6;
+
+    @media (min-width: variables.$medium) {
+        font-size: 16px;
+        line-height: 1.5;
+    }
+
+    @media (min-width: variables.$large) {
+        font-size: 18px;
+        line-height: 1.75;
+    }
+}
+
+%text-button {
+    font-size: 14px;
+    font-weight: bold;
+    text-align: center;
+    
+    @media (min-width: variables.$medium) {
+        font-size: 16px;
+    }
+    
+    @media (min-width: variables.$large) {
+        font-size: 18px;
+    }
+}
+
+%text-form-label {
+    font-size: 14px;
+    font-weight: 500;
+    color: variables.$blue6;
+
+    @media (min-width: variables.$medium) {
+        font-size: 15px;
+    }
+}
+
+%text-form-input {
+    font-size: 16px;
+}
+
+%text-form-placeholder {
+    color: variables.$gray-600;
+    font-size: 14px;
+}
+
+%text-error-message {
+    font-size: 12px;
+    color: variables.$red;
+    line-height: 1.4;
+}
+
+%text-link-base {
+    color: variables.$blue6;
+    transition: all 0.2s ease;
+}
+
+%text-link-nav {
+    @extend %text-link-base;
+    font-weight: 400;
+    opacity: 0.8;
+}
+
+%text-link-menu {
+    @extend %text-link-base;
+    font-weight: 400;
+}
+
+%text-link-form {
+    @extend %text-link-base;
+    font-weight: 500;
+}
+
+// =============================================================================
+// STYLES DE BASE
+// =============================================================================
+.links-section {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    padding-top: 20px;
+    border-top: 1px solid variables.$gray-light;
+    
+    p {
+        margin: 0;
+        font-size: 14px;
+        color: variables.$blue6;
+    }
+    @media (min-width: variables.$medium) {
+        p {
+            font-size: 16px;
+        }
+    }
+    @media (min-width: variables.$large) {
+        p {
+            font-size: 18px;
+        }
+    }
+}
+
+p, ul li {
+    @extend %text-body;
+    margin: 0;
+}
+
+p.justified {
+    text-align: justify;
+}
+
+ul {
+    list-style: disc; 
+    padding-left: 1rem;
+    
+    @media (min-width: variables.$medium) {
+        padding-left: 1.5rem;
+    }
+    
+    @media (min-width: variables.$large) {
+        padding-left: 2rem;
+    }
+    
+    li {
+        margin-bottom: 0.25rem; 
+        font-size:14px;
+        
+        @media (min-width: variables.$medium) {
+            margin-bottom: 0.5rem; 
+            font-size:16px;
+        }
+
+        @media (min-width: variables.$large) {
+            font-size:18px;
+        }
+    }
+}
+
+// Textes spécifiques aux formulaires
+.form-text {
+    font-size: 14px;
+    color: variables.$gray-600;
+    margin-top: 4px;
+    line-height: 1.4;
+
+    &.help-text {
+        font-style: italic;
+    }
+
+    &.required-text {
+        color: variables.$red;
+        font-weight: 500;
+
+        &::before {
+            content: "* ";
+        }
+    }
+}
+
+// Labels de formulaire
+.form-label {
+    font-size: 14px;
+    font-weight: 500;
+    color: variables.$blue6;
+    margin-bottom: 4px;
+    display: block;
+
+    &.required {
+        &::after {
+            content: " *";
+            color: variables.$red;
+        }
+    }
+
+    &.optional {
+        font-weight: 400;
+        
+        &::after {
+            content: " (optionnel)";
+            font-weight: 300;
+            color: variables.$gray-600;
+        }
+    }
+}
+
+// Textes d'état de chargement
+.loading-text {
+    font-size: 14px;
+    color: variables.$blue6;
+    font-style: italic;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+
+    &::before {
+        content: "";
+        width: 12px;
+        height: 12px;
+        border: 2px solid variables.$gray-light;
+        border-top-color: variables.$blue6;
+        border-radius: 50%;
+        animation: spin 1s linear infinite;
+    }
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.info-text {
+    font-size: 13px;
+    color: variables.$gray-700;
+    background: variables.$gray-100;
+    padding: 8px 12px;
+    border-left: 3px solid variables.$blue6;
+    border-radius: 0 4px 4px 0;
+    margin: 12px 0;
+
+    &.warning {
+        background: variables.$yellow-bg;
+        border-left-color: variables.$yellow;
+        color: variables.$yellow-text;
+    }
+
+    &.error {
+        background: variables.$red-bg;
+        border-left-color: variables.$red;
+        color: variables.$red-text;
+    }
+
+    &.success {
+        background: variables.$green-bg;
+        border-left-color: variables.$green;
+        color: variables.$green-text;
+    }
+}
+
+// Textes de copyright et footer
+.copyright-text {
+    font-size: 14px;
+    color: variables.$gray-600;
+    text-align: center;
+    margin: 0;
+}
+
+// Responsive
+@media (min-width: variables.$medium) {
+    p, ul li {
+        font-size: 16px;
+        line-height: 1.5; 
+    }
+
+    .form-text {
+        font-size: 16px;
+    }
+
+    .form-label {
+        font-size: 16px;
+    }
+}
+
+@media (min-width: variables.$large) {
+    p, ul li {
+        font-size: 18px;
+        line-height: 1.75; 
+    }
+}

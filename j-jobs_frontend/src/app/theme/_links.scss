@@ -1,0 +1,107 @@
+/*
+    _links.scss
+    Created on : 19 sept. 2025, 09:07:15
+    Author     : symio
+*/
+@use "variables";
+@use "texts";
+
+a {
+    font-size: 14px; 
+    color: variables.$blue5;
+    text-decoration: underline;
+}
+
+.nav-link {
+    @extend %text-link-nav;
+    padding: 3px 0;
+
+    &:hover {
+        opacity: 1;
+        text-decoration: underline;
+    }
+}
+
+.menu-link {
+    @extend %text-link-menu;
+    padding: 10px 0;
+    text-align: center;
+
+    &:hover {
+        background-color: variables.$blue5-hover-bg;
+    }
+}
+
+.form-link {
+    @extend %text-link-form;
+
+    &:hover {
+        text-decoration: underline;
+        opacity: 0.8;
+    }
+
+    &:focus {
+        outline: 2px solid variables.$blue5;
+        outline-offset: 2px;
+    }
+}
+
+.links-section {
+    a {
+        @extend .form-link;
+    }
+
+    .primary-link {
+        font-weight: 600;
+    }
+}
+
+.cta-links {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    align-items: center;
+    margin-top: 20px;
+
+    a {
+        @extend .form-link;
+        
+        &.btn-link {
+            padding: 12px 24px;
+            border: 2px solid variables.$blue6;
+            border-radius: 6px;
+            background: transparent;
+            transition: all 0.3s ease;
+
+            &:hover {
+                background: variables.$blue6;
+                color: variables.$white;
+                text-decoration: none;
+            }
+        }
+    }
+}
+
+@media (min-width: variables.$medium) {
+    a {
+        font-size: 16px; 
+    }
+    
+    .cta-links {
+        flex-direction: row;
+        gap: 20px;
+    }
+}
+
+@media (min-width: variables.$large) {
+    a {
+        font-size: 18px;
+    }
+    .nav-link {
+        font-weight: 400;
+    }
+
+    .links-section {
+        gap: 16px;
+    }
+}

@@ -1,0 +1,68 @@
+/*
+    Created on : 18 sept. 2025, 16:25:56
+    Author     : Huby Franck
+*/
+@use "variables";
+
+.main-title {
+    font-size: 24px;
+    font-weight: bold;
+    color: variables.$blue6;
+    margin: 0 0 16px 0;
+    line-height: 1.2;
+}
+
+.sub-title {
+    font-size: 20px;
+    font-weight: 400;
+    color: variables.$blue6;
+    margin: 0;
+    line-height: 1.3;
+}
+
+.nav-title {
+    color: variables.$blue6;
+    font-size: 16px;
+    font-weight: 700;
+    margin: 0 0 15px 0;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.menu-title {
+    color: variables.$blue6;
+    font-size: 20px;
+    font-weight: 700;
+    margin: 0 0 20px 0;
+    text-align: center;
+    padding-bottom: 15px;
+    border-bottom: 2px solid variables.$blue6;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+@media (min-width: variables.$medium) {
+    .main-title {
+        font-size: 30px;
+    }
+
+    .sub-title {
+        font-size: 24px;
+        font-weight: 600;
+    }
+    
+    .nav-title {
+        margin-bottom: 15px;
+        font-size: 16px;
+    }
+}
+
+@media (min-width: variables.$large) {
+    .main-title {
+        font-size: 36px;
+    }
+    
+    .sub-title {
+        font-size: 30px;
+    }
+}
