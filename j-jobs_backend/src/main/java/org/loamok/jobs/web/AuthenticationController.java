@@ -7,12 +7,9 @@ import io.swagger.v3.oas.annotations.media.Content;
 import io.swagger.v3.oas.annotations.media.Schema;
 import io.swagger.v3.oas.annotations.responses.ApiResponse;
 import io.swagger.v3.oas.annotations.responses.ApiResponses;
+import io.swagger.v3.oas.annotations.security.SecurityRequirement;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.validation.Valid;
-import java.nio.charset.StandardCharsets;
-import java.security.MessageDigest;
-import java.security.NoSuchAlgorithmException;
-import java.util.Base64;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Optional;
@@ -226,10 +223,6 @@ public class AuthenticationController {
         @ApiResponse(
                 responseCode = "400",
                 description = "Paramètres manquants ou invalides"
-        ),
-        @ApiResponse(
-                responseCode = "401",
-                description = "Client ID ou secret invalide"
         )
     })
     @PostMapping(value = "/remembered",
@@ -250,4 +243,67 @@ public class AuthenticationController {
         
         return oauth2Token(tokenRequest, request);
     }
+    
+    @Operation(
+        summary = "Déconnexion - Nettoie les tokens stockés",
+        description = "Supprime tous les tokens d'authentification stockés côté serveur (authToken et rememberMeToken) pour déconnecter l'utilisateur. Cette opération est irréversible.",
+        security = { @SecurityRequirement(name = "Bearer Authentication") }, 
+        requestBody = @io.swagger.v3.oas.annotations.parameters.RequestBody(
+                description = "Objet JSON contenant un token d'authentification (access_token ou remember_me_token)",
+                required = true,
+                content = @Content(
+                        mediaType = MediaType.APPLICATION_JSON_VALUE,
+                        schema = @Schema(implementation = RememberedTokenRequest.class)
+                )
+        )
+)
+@ApiResponses(value = {
+    @ApiResponse(
+            responseCode = "200",
+            description = "Déconnexion effectuée avec succès. Tous les tokens ont été supprimés.",
+            content = @Content()
+    ),
+    @ApiResponse(
+            responseCode = "400",
+            description = "Token manquant ou invalide",
+            content = @Content(
+                    mediaType = MediaType.APPLICATION_JSON_VALUE,
+                    schema = @Schema(
+                            type = "object",
+                            example = "{ \"error\": \"invalid_request\", \"error_description\": \"Token manquant ou invalide\" }"
+                    )
+            )
+    )
+})
+@PostMapping(value = "/cleanup",
+        consumes = MediaType.APPLICATION_JSON_VALUE,
+        produces = MediaType.APPLICATION_JSON_VALUE)
+public ResponseEntity<Void> oauth2Cleanup(
+        @Parameter(description = "Objet contenant le token d'authentification", required = true)
+        @Valid @RequestBody RememberedTokenRequest rememberedTokenRequest,
+        HttpServletRequest request
+) {
+    try {
+        Claims claims = jwtService.extractAllClaimsForced(rememberedTokenRequest.getRememberMeToken());
+        
+        TokenRequest tokenRequest = new TokenRequest();
+        tokenRequest.setGrant_type(claims.get("token_type", String.class));
+        tokenRequest.setClient_id(claims.get("client_id", String.class));
+        tokenRequest.setClient_secret(rememberedTokenRequest.getRememberMeToken());
+        tokenRequest.setScope("cleanup");
+        
+        String clientSignature = csb.buildClientSignature(request);
+        oauth2Service.generateClientCredentialsToken(
+                tokenRequest.getClient_id(), 
+                tokenRequest.getClient_secret(), 
+                tokenRequest.getScope(), 
+                clientSignature
+        );
+        
+        return ResponseEntity.ok().build();
+        
+    } catch (Exception e) {
+        return ResponseEntity.badRequest().build();
+    }
+}
 }

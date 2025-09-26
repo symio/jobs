@@ -5,8 +5,8 @@
 @use "variables";
 
 .main-title {
-    font-size: 32px;
-    font-weight: 700;
+    font-size: 24px;
+    font-weight: bold;
     color: variables.$blue6;
     margin: 0 0 16px 0;
     line-height: 1.2;
@@ -43,15 +43,26 @@
 
 @media (min-width: variables.$medium) {
     .main-title {
-        font-size: 48px;
+        font-size: 30px;
     }
 
     .sub-title {
         font-size: 24px;
+        font-weight: 600;
     }
     
     .nav-title {
         margin-bottom: 15px;
         font-size: 16px;
+    }
+}
+
+@media (min-width: variables.$large) {
+    .main-title {
+        font-size: 36px;
+    }
+    
+    .sub-title {
+        font-size: 30px;
     }
 }

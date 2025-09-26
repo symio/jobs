@@ -1,17 +1,20 @@
 /*
+    _links.scss
     Created on : 19 sept. 2025, 09:07:15
     Author     : symio
 */
 @use "variables";
+@use "texts";
+
+a {
+    font-size: 14px; 
+    color: variables.$blue5;
+    text-decoration: underline;
+}
 
 .nav-link {
-    color: variables.$blue6;
-    text-decoration: none;
-    font-size: 14px;
-    font-weight: 400;
+    @extend %text-link-nav;
     padding: 3px 0;
-    transition: opacity 0.2s;
-    opacity: 0.8;
 
     &:hover {
         opacity: 1;
@@ -20,25 +23,17 @@
 }
 
 .menu-link {
-    color: variables.$blue6;
-    text-decoration: none;
-    font-size: 16px;
-    font-weight: 400;
+    @extend %text-link-menu;
     padding: 10px 0;
     text-align: center;
 
     &:hover {
-        background-color: rgba(7, 55, 99, 0.1);
+        background-color: variables.$blue5-hover-bg;
     }
 }
 
-// Liens de formulaire (inscription, mot de passe oublié, etc.)
 .form-link {
-    color: variables.$blue6;
-    text-decoration: none;
-    font-weight: 500;
-    font-size: 14px;
-    transition: all 0.2s ease;
+    @extend %text-link-form;
 
     &:hover {
         text-decoration: underline;
@@ -46,38 +41,18 @@
     }
 
     &:focus {
-        outline: 2px solid variables.$blue6;
+        outline: 2px solid variables.$blue5;
         outline-offset: 2px;
     }
 }
 
-// Section de liens (pour regrouper les liens de formulaire)
 .links-section {
-    text-align: center;
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
-    padding-top: 20px;
-    border-top: 1px solid #e0e0e0;
-
-    p {
-        margin: 0;
-        font-size: 14px;
-        color: variables.$blue6;
-    }
-
     a {
         @extend .form-link;
     }
 
     .primary-link {
         font-weight: 600;
-        font-size: 15px;
-    }
-
-    .secondary-link {
-        opacity: 0.8;
-        font-size: 13px;
     }
 }
 
@@ -108,6 +83,10 @@
 }
 
 @media (min-width: variables.$medium) {
+    a {
+        font-size: 16px; 
+    }
+    
     .cta-links {
         flex-direction: row;
         gap: 20px;
@@ -115,16 +94,14 @@
 }
 
 @media (min-width: variables.$large) {
+    a {
+        font-size: 18px;
+    }
     .nav-link {
-        font-size: 14px;
         font-weight: 400;
     }
 
     .links-section {
         gap: 16px;
-        
-        p {
-            font-size: 15px;
-        }
     }
 }

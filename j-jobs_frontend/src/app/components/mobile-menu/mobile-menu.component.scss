@@ -1,28 +1,13 @@
 /*
-    Created on : 19 sept. 2025, 06:53:39
-    Author     : symio
+    mobile-menu.component.scss
+    Created on : 18 sept. 2025, 16:21:41
+    Author     : Huby Franck
 */
 @use "app/theme/variables";
-@use "app/theme/titles";
-@use "app/theme/texts";
-@use "app/theme/links";
+@use "app/theme/components";
 
 .mobile-menu-overlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.5);
-    z-index: 1000;
-    opacity: 0;
-    visibility: hidden;
-    transition: all 0.3s ease;
-
-    &.active {
-        opacity: 1;
-        visibility: visible;
-    }
+    @extend %overlay;
 }
 
 .mobile-menu {
@@ -40,53 +25,6 @@
     .active & {
         transform: translateX(0);
     }
-}
-
-.menu-header {
-    padding: 15px 20px;
-    border-bottom: 1px solid variables.$gray-light;
-    display: flex;
-    justify-content: flex-end;
-}
-
-.close-button {
-    background: none;
-    border: none;
-    width: 32px;
-    height: 32px;
-    cursor: pointer;
-    position: relative;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 4px;
-    transition: background-color 0.2s;
-
-    &:hover {
-        background-color: rgba(7, 55, 99, 0.1);
-    }
-
-    &::before,
-    &::after {
-        content: '';
-        position: absolute;
-        width: 18px;
-        height: 2px;
-        background: variables.$blue6;
-        border-radius: 1px;
-    }
-
-    &::before {
-        transform: rotate(45deg);
-    }
-
-    &::after {
-        transform: rotate(-45deg);
-    }
-}
-
-.close-line {
-    display: none;
 }
 
 .menu-nav {

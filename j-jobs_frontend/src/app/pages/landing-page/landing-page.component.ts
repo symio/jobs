@@ -1,24 +1,50 @@
-import { Component } from '@angular/core';
-import { Router } from '@angular/router';
+import { CommonModule } from '@angular/common';
+import { Component, OnDestroy, OnInit } from '@angular/core';
+import { Router, RouterModule } from '@angular/router';
+import { OAuth2Service } from '@app/services/oauth2.service';
+import { Subscription } from 'rxjs';
 
 @Component({
     selector: 'app-landing-page',
-    imports: [],
+    imports: [CommonModule, RouterModule],
     templateUrl: './landing-page.component.html',
     styleUrl: './landing-page.component.scss',
     standalone: true
 })
-export class LandingPageComponent {
+export class LandingPageComponent implements OnInit, OnDestroy {
 
     isMenuOpen = false;
     showFooterNav = false;
+    isAuthenticated = false;
+    private authSubscription: Subscription | null = null;
 
-    constructor(private router: Router) {}
+    constructor(
+        private router: Router,
+        private oauth2Service: OAuth2Service
+    ) { }
+
+    ngOnInit(): void {
+        // S'abonner au statut d'authentification
+        this.authSubscription = this.oauth2Service.isAuthenticated$.subscribe(
+            (isAuth: boolean) => {
+                this.isAuthenticated = isAuth;
+                if (isAuth) {
+                    // redirect to dashboard later
+                }
+            }
+        );
+    }
+    
+    ngOnDestroy(): void {
+        if (this.authSubscription) {
+            this.authSubscription.unsubscribe();
+        }
+    }
 
     connectUser(): void {
         this.router.navigate(['/login']);
     }
-    
+
     registerUser(): void {
         this.router.navigate(['/register']);
     }

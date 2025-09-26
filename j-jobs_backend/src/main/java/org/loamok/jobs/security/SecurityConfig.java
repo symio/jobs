@@ -19,7 +19,6 @@ import org.springframework.security.web.authentication.UsernamePasswordAuthentic
 import org.springframework.web.cors.CorsConfiguration;
 import org.springframework.web.cors.CorsConfigurationSource;
 import org.springframework.web.cors.UrlBasedCorsConfigurationSource;
-import org.springframework.web.filter.CorsFilter;
 
 @Configuration
 @EnableWebSecurity
@@ -42,6 +41,9 @@ public class SecurityConfig {
                 .requestMatchers(HttpMethod.POST, "/profil/register").permitAll()
                 .requestMatchers(HttpMethod.POST, "/authorize/token").permitAll()
                 .requestMatchers(HttpMethod.POST, "/authorize/refresh").permitAll()
+                // Sauf pour le cleanup qui sert de déconnexion
+//                .requestMatchers(HttpMethod.POST, "/authorize/cleanup").permitAll()
+                .requestMatchers(HttpMethod.POST, "/authorize/cleanup").hasAnyRole("USER", "ADMIN")
 //                .requestMatchers(HttpMethod.POST, "/authorize/remembered").permitAll()
                 // SpringDoc OpenAPI / Swagger UI endpoints - Documentation API accessible publiquement
                 .requestMatchers("/v3/api-docs/**").permitAll() // Spécification OpenAPI 3.0 en JSON/YAML

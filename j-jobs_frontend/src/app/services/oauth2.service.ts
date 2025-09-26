@@ -79,20 +79,20 @@ export class OAuth2Service {
      * Déconnexion
      */
     logout(): Observable<void> {
-        return new Observable<void>((observer) => {
-            try {
-                this.removeStoredToken();
-                this.removeStoredUserInfo();
-                this.tokenSubject.next(null);
-                this.userInfoSubject.next(null);
-                this.isAuthenticatedSubject.next(false);
-
-                observer.next();
-                observer.complete();
-            } catch (error) {
-                observer.error(error);
-            }
+        const headers = new HttpHeaders({
+            'Content-Type': 'application/json',
+            'Authorization': `Bearer ${this.getStoredToken()}`
         });
+
+        const body = {
+            remember_me_token: this.getStoredToken()
+        };
+        
+        return this.http.post<void>(`${environment.apiUrl}/authorize/cleanup`, body, { headers })
+            .pipe(
+                tap(response => this.handleLogoutSuccess()),
+                catchError(err => this.handleAuthError(err))
+            );
     }
 
     /**
@@ -203,6 +203,14 @@ export class OAuth2Service {
             );
     }
 
+    private handleLogoutSuccess(): void {
+        this.removeStoredToken();
+        this.removeStoredUserInfo();
+        this.tokenSubject.next(null);
+        this.userInfoSubject.next(null);
+        this.isAuthenticatedSubject.next(false);
+    }
+    
     private handleAuthSuccess(response: OAuth2TokenResponse): void {
         this.storeToken(response.access_token);
         this.extractAndStoreUserInfo(response.access_token);
@@ -210,6 +218,10 @@ export class OAuth2Service {
         this.isAuthenticatedSubject.next(true);
     }
 
+    private handleLogoutError(err: any): Observable<never> {
+        return throwError(() => err);
+    }
+    
     private handleAuthError(err: any): Observable<never> {
         console.error('[OAuth2Service] Erreur d’authentification :', err);
         this.logout();
