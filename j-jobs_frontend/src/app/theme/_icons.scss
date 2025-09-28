@@ -1,0 +1,28 @@
+/*
+    _icons.scss
+    Created on : 25 sept. 2025, 16:15:48
+    Author     : symio
+*/
+
+.arrow-icon {
+    width: 16px;
+    height: 16px;
+    flex-shrink: 0;
+    transition: transform 0.2s ease;
+
+    &.rotated {
+        transform: rotate(180deg);
+    }
+}
+
+.user-icon {
+    width: 20px;
+    height: 20px;
+    flex-shrink: 0;
+}
+
+.user-badge .user-dropdown .dropdown-item svg {
+    width: 16px;
+    height: 16px;
+    flex-shrink: 0;
+}

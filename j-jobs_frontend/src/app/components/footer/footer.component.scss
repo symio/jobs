@@ -1,0 +1,60 @@
+/*
+    footer.component.scss
+    Created on : 18 sept. 2025, 14:43:55
+    Author     : Huby Franck
+*/
+@use "app/theme/variables";
+@use "app/theme/texts";
+@use "app/theme/titles";
+@use "app/theme/links";
+@use "app/theme/components";
+@use "app/theme/buttons";
+@use "app/theme/form-controls";
+@use "app/theme/icons";
+
+.footer-container {
+    background: variables.$white;
+    border-top: 1px solid variables.$gray-light;
+}
+
+.footer-nav {
+    display: none;
+    padding: 20px;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    background: variables.$gray-light;
+
+    &.visible {
+        display: flex;
+    }
+}
+
+.copyright {
+    padding: 15px 20px;
+    text-align: center;
+}
+
+@media (min-width: variables.$medium) {
+    .footer-nav {
+        &.visible {
+            display: flex !important;
+        }
+    }
+}
+
+@media (min-width: variables.$large) {
+    .footer-nav {
+        display: flex !important;
+        max-width: variables.$largeContainerWidth;
+        margin: 0 auto;
+        align-items: flex-start;
+        background: transparent;
+        padding: 30px 0 10px 0;
+    }
+
+    .copyright {
+        max-width: variables.$largeContainerWidth;
+        margin: 0 auto;
+    }
+}
