@@ -9,7 +9,6 @@ import org.loamok.jobs.repository.RoleRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.rest.core.annotation.HandleBeforeCreate;
 import org.springframework.data.rest.core.annotation.RepositoryEventHandler;
-import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Component;
 
 /**
@@ -22,31 +21,21 @@ public class UserEventHandler {
 
     @Autowired
     private UserManager userManager;
-    
-    @Autowired
-    private RoleRepository rRepository;
 
     @HandleBeforeCreate
     public void handleUtilisateurCreate(User user) {
+        User cleanUser = userManager.registerUser(user, false);
+        // Copier les champs autorisés sur l'objet original
+        user.setName(cleanUser.getName());
+        user.setFirstname(cleanUser.getFirstname());
+        user.setEmail(cleanUser.getEmail());
+        user.setPassword(cleanUser.getPassword());
+        user.setRole(cleanUser.getRole());
+        user.setEnabled(cleanUser.getEnabled());
+        user.setGdproptin(cleanUser.isGdproptin());
         
-        if(user.getRole() == null || user.getRole().getRole() == null || user.getRole().getRole().isBlank()) {
-            user.setRole(rRepository.findByRole("ROLE_USER"));
-        }
-        
-        StringBuilder failedValidation = new StringBuilder();
-        if (!userManager.doCheckUserRegistering(user, failedValidation)) {
-            switch (failedValidation.toString()) {
-                case "email" -> throw new EmailAlreadyExistsException(user.getEmail());
-                case "password" -> throw new InvalidPasswordException();
-                default -> throw new MissingFieldsException(failedValidation.toString());
-            }
-        }
-        
-        if (user.getPassword() != null && !user.getPassword().startsWith("{bcrypt}")) {
-            BCryptPasswordEncoder encoder = new BCryptPasswordEncoder();
-            user.setPassword("{bcrypt}" + encoder.encode(user.getPassword()));
-        }
-        
-        user.setEnabled(Boolean.TRUE);
+        user.setAuthToken(null);
+        user.setRememberMeToken(null);
+        user.setEmailVerificationKey(null);
     }
 }

@@ -7,8 +7,8 @@ import org.loamok.jobs.entity.User;
  * @author Huby Franck
  */
 public interface userService {
-    User registerUser(User u);
-    User registerUser(User u, Boolean isAdmin);
+    User registerUser(User u, boolean toSave);
+    User registerUser(User u, Boolean isAdmin, boolean toSave);
     Boolean doCheckUserRegistering(User u, StringBuilder failedValidation);
     Boolean checkEmailUnique(String email);
     Boolean checkPasswordCorrect(String password);

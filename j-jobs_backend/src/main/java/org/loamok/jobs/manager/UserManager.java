@@ -32,14 +32,13 @@ public class UserManager implements userService {
     private RoleRepository rR;
 
     @Override
-    public User registerUser(User u) {
-        System.out.println("org.loamok.jobs.manager.UserManager.registerUser()");
-        return registerUser(u, Boolean.FALSE);
+    public User registerUser(User u, boolean toSave) {
+        return registerUser(u, Boolean.FALSE, toSave);
     }
     
     @Override
     @Transactional
-    public User registerUser(User u, Boolean isAdmin) {
+    public User registerUser(User u, Boolean isAdmin, boolean toSave) {
         System.out.println("org.loamok.jobs.manager.UserManager.registerUser()(étendu)");
         Role roleUser = null;
         
@@ -57,7 +56,7 @@ public class UserManager implements userService {
                 .name(u.getName())
                 .firstname(u.getFirstname())
                 .role(roleUser)
-                .gdproptin(true)
+                .gdproptin(u.isGdproptin())
                 .enabled(true)
                 .build();
         
@@ -72,12 +71,16 @@ public class UserManager implements userService {
         
         user.setPassword("{bcrypt}" + passwordEncoder.encode(u.getPassword()));
         
-        try {
-            uR.saveAndFlush(user);
-            return user;
-        } catch (RuntimeException e) {
-            throw new RuntimeException("Error registering user : " + e.getMessage(), e);
+        if(toSave) {
+            try {
+                uR.saveAndFlush(user);
+                return user;
+            } catch (RuntimeException e) {
+                throw new RuntimeException("Error registering user : " + e.getMessage(), e);
+            }
         }
+        
+        return user;
     }
 
     @Override
