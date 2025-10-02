@@ -2,7 +2,9 @@
     <div class="logo">
         <span class="logo-j">J</span><span class="logo-rest">obs</span>
     </div>
-    
+    <h1 class="page-title" *ngIf="isAuthenticated && pageTitle">
+        {{ pageTitle }}
+    </h1>
     <!-- Badge utilisateur (visible seulement si connecté) -->
     <div class="user-badge cta-button" *ngIf="isAuthenticated && userInfo" (click)="toggleUserMenu()">
         <div class="user-info">

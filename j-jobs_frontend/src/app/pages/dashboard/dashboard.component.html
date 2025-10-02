@@ -1,0 +1,85 @@
+<!-- src/app/pages/dashboard/dashboard.component.html -->
+<main class="dashboard-container">
+    <!-- Titre uniquement mobile / tablettes -->
+    <section id="title" class="main-title-section">
+        <h1 class="main-title">Tableau de bord</h1>
+    </section>
+    
+    <!-- Sidebar gauche (navigation / actions) -->
+    <aside class="left-content-wrapper">
+        <nav class="sidebar-nav">
+            <ul>
+                <li *ngFor="let item of menuData.items">
+                    <a href="{{ item.link }}" class="nav-link" >
+                        <span [innerHTML]="getIcon(item.icon)"></span>&nbsp;{{ item.label }}
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </aside>
+
+    <!-- Zone statistiques (les 4 cartes en haut) -->
+    <section id="stats" class="stats-content-wrapper">
+        <div class="stats-grid">
+            <!-- Card 1 : Demandes en cours -->
+            <div class="stat-card stat-card-yellow">
+                <div class="stat-value">{{ enCoursCount }}</div>
+                <div class="stat-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M19,4H17.9A5.009,5.009,0,0,0,13,0H11A5.009,5.009,0,0,0,6.1,4H5A5.006,5.006,0,0,0,0,9v3H24V9A5.006,5.006,0,0,0,19,4ZM8.184,4A3,3,0,0,1,11,2h2a3,3,0,0,1,2.816,2Z"/>
+                        <path d="M13,15a1,1,0,0,1-2,0V14H0v5a5.006,5.006,0,0,0,5,5H19a5.006,5.006,0,0,0,5-5V14H13Z"/>
+                    </svg>
+                </div>
+                <div class="stat-label">Demande{{ enCoursCount > 1 ? 's' : '' }} en cours</div>
+            </div>
+
+            <!-- Card 2 : Demandes en attente -->
+            <div class="stat-card stat-card-green">
+                <div class="stat-value">{{ enAttenteCount }}</div>
+                <div class="stat-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" data-name="Layer 1" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M12,24C5.383,24,0,18.617,0,12S5.383,0,12,0s12,5.383,12,12-5.383,12-12,12Zm5-13h-4V5h-2V13h6v-2Z"/>
+                    </svg>
+                </div>
+                <div class="stat-label">Demande{{ enAttenteCount > 1 ? 's' : '' }} en attente</div>
+            </div>
+
+            <!-- Card 3 : Entretiens programmés -->
+            <div class="stat-card stat-card-blue">
+                <div class="stat-value">{{ entretienCount }}</div>
+                <div class="stat-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M0,19a5.006,5.006,0,0,0,5,5H19a5.006,5.006,0,0,0,5-5V10H0Zm17-4.5A1.5,1.5,0,1,1,15.5,16,1.5,1.5,0,0,1,17,14.5Zm-5,0A1.5,1.5,0,1,1,10.5,16,1.5,1.5,0,0,1,12,14.5Zm-5,0A1.5,1.5,0,1,1,5.5,16,1.5,1.5,0,0,1,7,14.5Z"/>
+                        <path d="M19,2H18V1a1,1,0,0,0-2,0V2H8V1A1,1,0,0,0,6,1V2H5A5.006,5.006,0,0,0,0,7V8H24V7A5.006,5.006,0,0,0,19,2Z"/>
+                    </svg>
+                </div>
+                <div class="stat-label">Entretien{{ entretienCount > 1 ? 's' : '' }} programmé{{ entretienCount > 1 ? 's' : '' }}</div>
+            </div>
+
+            <!-- Card 4 : Refus -->
+            <div class="stat-card stat-card-red">
+                <div class="stat-value">{{ refuseCount }}</div>
+                <div class="stat-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" data-name="Layer 1" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M17,4V2a2,2,0,0,0-2-2H9A2,2,0,0,0,7,2V4H2V6H4V21a3,3,0,0,0,3,3H17a3,3,0,0,0,3-3V6h2V4ZM11,17H9V11h2Zm4,0H13V11h2ZM15,4H9V2h6Z"/>
+                    </svg>
+                </div>
+                <div class="stat-label">Refus</div>
+            </div>
+        </div>
+    </section>
+    <!-- Zone recherche -->
+    <section id="search" class="search-content-wrapper">
+        <form class="search-form">
+            <input type="text" placeholder="Recherche" />
+            <button type="submit">Rechercher</button>
+        </form>
+    </section>
+
+    <!-- Zone principale (liste d'emplois ou placeholder) -->
+    <section id="main" class="main-content-wrapper">
+        <div class="jobs-list">
+            <p>Aucun emploi à afficher...</p>
+        </div>
+    </section>
+</main>

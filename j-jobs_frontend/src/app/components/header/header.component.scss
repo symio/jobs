@@ -28,3 +28,19 @@
         padding-right: 0;
     }
 }
+
+.page-title {
+    display: none;
+    
+    @media (min-width: variables.$large) {
+        display: block;
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        font-size: 24px;
+        font-weight: bold;
+        color: variables.$blue6;
+        margin: 0;
+        white-space: nowrap;
+    }
+}

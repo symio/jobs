@@ -6,12 +6,8 @@ import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import java.io.IOException;
-import java.nio.charset.StandardCharsets;
-import java.security.MessageDigest;
-import java.security.NoSuchAlgorithmException;
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.Base64;
 import java.util.Collection;
 import java.util.List;
 import java.util.stream.Collectors;
@@ -24,7 +20,6 @@ import org.springframework.security.authentication.UsernamePasswordAuthenticatio
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.context.SecurityContextHolder;
-import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.web.authentication.WebAuthenticationDetailsSource;
 import org.springframework.stereotype.Component;
@@ -88,12 +83,10 @@ public class JwtAuthenticationFilter extends OncePerRequestFilter {
                     jwtService.isClientCredentialsTokenValid(user.getAuthToken(), clientId) &&
                     (authTokenSignature != null && authTokenSignature.equals(clientSignature))
                 ) {
-                    // Convertir les scopes OAuth2 en authorities Spring Security
                     Collection<GrantedAuthority> authorities = Arrays.stream(scopes.split(" "))
                         .map(scope -> new SimpleGrantedAuthority("SCOPE_" + scope))
                         .collect(Collectors.toList());
 
-                    // Créer l'authentication avec le clientId comme principal
                     UsernamePasswordAuthenticationToken authToken = 
                         new UsernamePasswordAuthenticationToken(clientId, null, authorities);
                     authToken.setDetails(new WebAuthenticationDetailsSource().buildDetails(request));
@@ -102,7 +95,6 @@ public class JwtAuthenticationFilter extends OncePerRequestFilter {
                 }
             }    
         } catch (Exception e) {
-            // Log l'erreur mais continue le filtrage
             logger.error("Erreur lors de l'authentification JWT", e);
         }
         
@@ -117,11 +109,11 @@ public class JwtAuthenticationFilter extends OncePerRequestFilter {
         
         List<SimpleGrantedAuthority> authorities = new ArrayList<>();
         
-        // Ajouter le scope "access" si présent
         if ("access".equals(scope))
             authorities.add(new SimpleGrantedAuthority("SCOPE_access"));
+        if ("admin".equals(scope))
+            authorities.add(new SimpleGrantedAuthority("SCOPE_admin"));
         
-        // Ajouter le rôle de l'utilisateur
         if (authority != null)
             authorities.add(new SimpleGrantedAuthority(authority));
         

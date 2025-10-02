@@ -1,0 +1,205 @@
+/*
+    _stats.scss
+    Created on : 2 oct. 2025, 14:23:18
+    Author     : symio
+*/
+@use "app/theme/variables";
+@use "app/theme/texts";
+@use "app/theme/titles";
+@use "app/theme/links";
+@use "app/theme/icons";
+
+.stats-content-wrapper {
+    width: 100%;
+    padding: 10px;
+
+    @media (min-width: variables.$medium) {
+        padding: 30px 20px;
+    }
+
+    @media (min-width: variables.$large) {
+        padding: 40px 20px;
+    }
+}
+
+.stats-grid {
+    display: grid;
+    width: 100%;
+    grid-template-columns: 1fr;
+    gap: 20px;
+
+    @media (min-width: variables.$medium) {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 25px;
+    }
+
+    @media (min-width: variables.$large) {
+        grid-template-columns: repeat(4, 1fr);
+        gap: 30px;
+    }
+}
+
+.stat-card {
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    justify-items: center;
+    aspect-ratio: 1 / 0.75;
+    width: 85%;
+    height: auto;
+    padding: 12px;
+    padding-top: 30px;
+    border: 2px solid transparent;
+    border-radius: 12px;
+    background: variables.$white;
+
+    .stat-value {
+        grid-column: 1;
+        grid-row: 1;
+        margin-left: 35px;
+        justify-self: start;
+        font-size: 25px;
+        font-weight: 700;
+    }
+
+    .stat-icon {
+        grid-column: 2;
+        grid-row: 1;
+        justify-self: end;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 70px;
+        height: 70px;
+        border-radius: 8px;
+        margin-right: 10px;
+
+        svg {
+            width: 24px;
+            height: 24px;
+        }
+    }
+
+    .stat-label {
+        grid-column: 1 / span 2;
+        grid-row: 3;
+        justify-self: stretch;
+        align-self: end;
+        text-align: center;
+        font-weight: bold;
+        font-size: 20px;
+        color: variables.$blue6;
+        padding-bottom: 5px;
+    }
+
+    /* Couleurs */
+    &.stat-card-yellow {
+        border-color: variables.$update;
+        .stat-value {
+            color: variables.$update;
+        }
+        .stat-icon {
+            background: rgba(variables.$update, 0.15);
+            border: 2px solid variables.$update;
+            svg {
+                color: variables.$update;
+            }
+        }
+    }
+
+    &.stat-card-green {
+        border-color: variables.$validate;
+        .stat-value {
+            color: variables.$validate;
+        }
+        .stat-icon {
+            background: rgba(variables.$validate, 0.15);
+            border: 2px solid variables.$validate;
+            svg {
+                color: variables.$validate;
+            }
+        }
+    }
+
+    &.stat-card-blue {
+        border-color: variables.$blue5;
+        .stat-value {
+            color: variables.$blue5;
+        }
+        .stat-icon {
+            background: rgba(variables.$blue5, 0.15);
+            border: 2px solid variables.$blue5;
+            svg {
+                color: variables.$blue5;
+            }
+        }
+    }
+
+    &.stat-card-red {
+        border-color: variables.$delete;
+        .stat-value {
+            color: variables.$delete;
+        }
+        .stat-icon {
+            background: rgba(variables.$delete, 0.15);
+            border: 2px solid variables.$delete;
+            svg {
+                color: variables.$delete;
+            }
+        }
+        .stat-label {
+            color: variables.$delete;
+        }
+    }
+}
+
+/* Tablet */
+@media (min-width: variables.$medium) {
+    .stat-card {
+        aspect-ratio: 1 / 1;
+        padding: 12px;
+        
+        .stat-value {
+            font-size: 42px;
+        }
+        
+        .stat-icon {
+            width:  100px;
+            height: 100px;
+            svg {
+                width:  36px;
+                height: 36px;
+            }
+        }
+        
+        .stat-label {
+            font-size: 24px;
+            padding-bottom: 17px;
+        }
+    }
+}
+
+/* Desktop */
+@media (min-width: variables.$large) {
+    .stat-card {
+        padding: 20px;
+        
+        .stat-value {
+            font-size: 28px;
+        }
+        
+        .stat-icon {
+            width: 80px;
+            height: 80px;
+            svg {
+                width: 32px;
+                height: 32px;
+            }
+        }
+        
+        .stat-label {
+            font-size: 16px;
+        }
+    }
+}
