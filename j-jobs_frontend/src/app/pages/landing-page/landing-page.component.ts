@@ -1,3 +1,4 @@
+// src/app/pages/landing-page/landing-page.component.ts
 import { CommonModule } from '@angular/common';
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Router, RouterModule } from '@angular/router';
@@ -18,7 +19,7 @@ export class LandingPageComponent implements OnInit, OnDestroy {
     isAuthenticated = false;
     private authSubscription: Subscription | null = null;
 
-    constructor(
+    constructor (
         private router: Router,
         private oauth2Service: OAuth2Service
     ) { }
@@ -29,7 +30,7 @@ export class LandingPageComponent implements OnInit, OnDestroy {
             (isAuth: boolean) => {
                 this.isAuthenticated = isAuth;
                 if (isAuth) {
-                    // redirect to dashboard later
+                   this.router.navigate(["/dashboard"]);
                 }
             }
         );

@@ -1,9 +1,10 @@
-// core/services/oauth2.service.ts
+// src/app/services/oauth2.service.ts
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { BehaviorSubject, Observable, of, throwError } from 'rxjs';
 import { map, catchError, tap } from 'rxjs/operators';
 import { ApiurlService } from '@app/environments/apiurl.service';
+import { Router } from '@angular/router';
 
 export interface OAuth2TokenResponse {
     access_token: string;
@@ -38,12 +39,13 @@ export class OAuth2Service {
     public token$ = this.tokenSubject.asObservable();
     public userInfo$ = this.userInfoSubject.asObservable();
     public isAuthenticated$ = this.isAuthenticatedSubject.asObservable();
-    
+
     private readonly apiBaseUrl: string;
 
     constructor(
         private http: HttpClient,
-        private apiurlService: ApiurlService
+        private apiurlService: ApiurlService,
+        private router: Router
     ) {
         this.apiBaseUrl = this.apiurlService.getApiBaseUrl();
     }
@@ -85,21 +87,19 @@ export class OAuth2Service {
      * Déconnexion
      */
     logout(): Observable<void> {
-        const headers = this.buildRequestHeaders(true);
-
         const body = {
             remember_me_token: this.getStoredToken()
         };
-        
-        return this.http.post<void>(`${this.apiBaseUrl}/authorize/cleanup`, body, { headers })
+
+        return this.http.post<void>(`${this.apiBaseUrl}/authorize/cleanup`, body)
             .pipe(
                 tap(response => this.handleLogoutSuccess()),
                 catchError(err => this.handleAuthError(err))
             );
     }
-    
-    buildRequestHeaders(isAuthenticated: boolean) : HttpHeaders {
-        if(isAuthenticated === true) {
+
+    buildRequestHeaders(isAuthenticated: boolean): HttpHeaders {
+        if (isAuthenticated === true) {
             return new HttpHeaders({
                 'Content-Type': 'application/json',
                 'Authorization': `Bearer ${this.getStoredToken()}`
@@ -109,9 +109,9 @@ export class OAuth2Service {
                 'Content-Type': 'application/json',
             });
         }
-        
+
     }
-    
+
     /**
      * Vérifier si l'utilisateur est connecté
      */
@@ -172,7 +172,6 @@ export class OAuth2Service {
         return this.tokenSubject.value;
     }
 
-    // Méthodes privées pour la gestion du stockage
     private checkInitialAuth(): boolean {
         const decoded = this.decodeTokenExpirations();
         if (!decoded) return false;
@@ -180,10 +179,8 @@ export class OAuth2Service {
         const now = Math.floor(Date.now() / 1000);
         const isExpired = decoded.exp < now;
 
-        // Si exp dépassé → on est forcément déconnecté
         if (isExpired) return false;
 
-        // Si only originally_expires dépassé → on est encore connecté mais on devra refresh dès que possible
         return true;
     }
 
@@ -226,8 +223,9 @@ export class OAuth2Service {
         this.tokenSubject.next(null);
         this.userInfoSubject.next(null);
         this.isAuthenticatedSubject.next(false);
+        this.router.navigate(['/']);
     }
-    
+
     private handleAuthSuccess(response: OAuth2TokenResponse): void {
         this.storeToken(response.access_token);
         this.extractAndStoreUserInfo(response.access_token);
@@ -238,10 +236,16 @@ export class OAuth2Service {
     private handleLogoutError(err: any): Observable<never> {
         return throwError(() => err);
     }
-    
+
     private handleAuthError(err: any): Observable<never> {
-        console.error('[OAuth2Service] Erreur d’authentification :', err);
-        this.logout();
+        console.error('[OAuth2Service] Erreur d’authentification critique, déconnexion forcée:', err);
+        this.removeStoredToken();
+        this.removeStoredUserInfo();
+        this.tokenSubject.next(null);
+        this.userInfoSubject.next(null);
+        this.isAuthenticatedSubject.next(false);
+        
+        this.router.navigate(['/']); 
         return throwError(() => err);
     }
 

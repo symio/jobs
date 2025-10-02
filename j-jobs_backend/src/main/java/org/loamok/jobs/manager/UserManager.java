@@ -40,15 +40,14 @@ public class UserManager implements userService {
     @Transactional
     public User registerUser(User u, Boolean isAdmin, boolean toSave) {
         System.out.println("org.loamok.jobs.manager.UserManager.registerUser()(étendu)");
-        Role roleUser = null;
+        Role roleUser = rR.findByRole("ROLE_USER");
         
-        if(!isAdmin) {
-            roleUser = rR.findByRole("ROLE_USER");
-        } else {
+        if(isAdmin) {
             if(u.getRole() == null || u.getRole().getRole() == null || u.getRole().getRole().isBlank())
                 throw new RuntimeException("user must have a Role but user.role is null.");
             roleUser = rR.findByRole(u.getRole().getRole());
         }
+        System.out.println("roleUser : " + roleUser);
         
         User user = User.builder()
                 .password(u.getPassword())
