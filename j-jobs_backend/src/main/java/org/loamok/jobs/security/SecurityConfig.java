@@ -58,12 +58,11 @@ public class SecurityConfig {
                 .requestMatchers(HttpMethod.DELETE, "/roles/**").hasRole("ADMIN")
                 // Profils - Consultation des profils (Admin seulement pour la gestion globale)
                 .requestMatchers(HttpMethod.GET, "/profile").hasRole("ADMIN")
-                // Utilisateurs - Gestion des comptes users
+                // Utilisateurs - Gestion des entités en général
                 .requestMatchers(HttpMethod.POST, "/users").permitAll()
-                .requestMatchers(HttpMethod.GET, "/users", "/users/**").hasAnyRole("USER", "ADMIN")
-//                .requestMatchers(HttpMethod.POST, "/users").hasAnyRole("USER", "ADMIN")
-                .requestMatchers(HttpMethod.PUT, "/users/**").hasAnyRole("USER", "ADMIN")
-                .requestMatchers(HttpMethod.DELETE, "/users/**").hasRole("ADMIN")
+                .requestMatchers(HttpMethod.GET, "/**").hasAnyRole("USER", "ADMIN")
+                .requestMatchers(HttpMethod.PUT, "/**").hasAnyRole("USER", "ADMIN")
+                .requestMatchers(HttpMethod.DELETE, "/**").hasRole("ADMIN")
                 // Tout le reste nécessite authentification + scope
                 .anyRequest().access(this::hasAccessScopeAndAuthenticated)
             )

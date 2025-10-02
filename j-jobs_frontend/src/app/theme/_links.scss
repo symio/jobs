@@ -22,7 +22,8 @@ a {
     }
 }
 
-.menu-link {
+.menu-link,
+.user-nav-link {
     @extend %text-link-menu;
     padding: 10px 0;
     text-align: center;

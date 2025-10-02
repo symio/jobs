@@ -1,6 +1,7 @@
+// src/app/components/header/header.component.ts
 import { CommonModule } from '@angular/common';
-import { Component, EventEmitter, HostListener, OnDestroy, OnInit, Output } from '@angular/core';
-import { RouterModule } from '@angular/router';
+import { Component, EventEmitter, HostListener, Input, OnDestroy, OnInit, Output } from '@angular/core';
+import { Router, RouterModule } from '@angular/router';
 import { OAuth2Service, UserInfo } from '@app/services/oauth2.service';
 import { Subscription } from 'rxjs';
 
@@ -13,6 +14,7 @@ import { Subscription } from 'rxjs';
 })
 export class HeaderComponent implements OnInit, OnDestroy {
     @Output() menuToggled = new EventEmitter<void>();
+    @Input() pageTitle: string = '';
 
     isAuthenticated = false;
     userInfo: UserInfo | null = null;
@@ -20,7 +22,10 @@ export class HeaderComponent implements OnInit, OnDestroy {
     private authSubscription: Subscription | null = null;
     private userInfoSubscription: Subscription | null = null;
     
-    constructor(private oauth2Service: OAuth2Service) {}
+    constructor (
+        private router: Router,
+        private oauth2Service: OAuth2Service
+    ) {}
 
     ngOnInit(): void {
         // S'abonner au statut d'authentification
@@ -81,7 +86,7 @@ export class HeaderComponent implements OnInit, OnDestroy {
         this.isUserMenuOpen = false;
         this.oauth2Service.logout().subscribe({
             next: () => {
-                // La redirection sera gérée par le guard ou dans le composant parent
+                this.router.navigate(["/"]);
             },
             error: (error) => {
                 console.error('Erreur lors de la déconnexion:', error);

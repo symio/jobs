@@ -1,6 +1,9 @@
 <main>
     <header class="main-header">
-        <app-header (menuToggled)="onMenuToggled()"></app-header>
+        <app-header 
+            (menuToggled)="onMenuToggled()" 
+            [pageTitle]="pageTitle">
+        </app-header>
     </header>
     <div class="content">
         <router-outlet></router-outlet>
@@ -11,6 +14,7 @@
     <!-- Menu mobile global -->
     <app-mobile-menu 
         [isMenuOpen]="isMenuOpen" 
-        (menuClosed)="onMenuClosed()">
+        (menuClosed)="onMenuClosed()"
+        [isAuthenticated]="isAuthenticated">
     </app-mobile-menu>
 </main>

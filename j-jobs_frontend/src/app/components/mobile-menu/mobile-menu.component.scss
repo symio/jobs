@@ -5,6 +5,7 @@
 */
 @use "app/theme/variables";
 @use "app/theme/components";
+/*@use "app/theme/links";*/
 
 .mobile-menu-overlay {
     @extend %overlay;
@@ -24,6 +25,41 @@
 
     .active & {
         transform: translateX(0);
+    }
+
+    .user-nav-section {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+        width: 100%;
+        padding-left: 20px;
+        padding-top: 10px;
+
+        .user-nav-link {
+            width: 100%;
+            text-align: center;
+        }
+
+        ::ng-deep a {
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+
+            span svg {
+                color: #073763;
+                height: 20px;
+                width: 20px;
+                flex-shrink: 0;
+            }
+        }
+    }
+
+    .nav-separator {
+        width: 80%;
+        border: none;
+        border-top: 1px solid variables.$gray-600;
+        margin: 10px 0;
     }
 }
 
