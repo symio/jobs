@@ -6,6 +6,7 @@ import java.util.List;
 import java.util.Optional;
 import org.loamok.jobs.entity.Job;
 import org.loamok.jobs.entity.User;
+import org.loamok.jobs.enums.OfferStatusEnum;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 
@@ -62,6 +63,29 @@ public class JobRepositoryImpl extends IdentifiedRepository implements JobReposi
         return em.createQuery(query).getResultStream().findFirst();
     }
 
+    
+    @Override
+    public long countFilteredForCurrentUserByOfferStatus(OfferStatusEnum offerStatus) {
+        User user = getCurrentUser();
+        boolean adminAccess = isAdminWithScopeAdmin();
+        
+        var cb = em.getCriteriaBuilder();
+        var query = cb.createQuery(Long.class);
+        var root = query.from(Job.class);
+        query.select(cb.count(root));
+        
+        Predicate securityPredicate = SecuritySpecifications
+                .<Job>belongsToUserOrAdmin(user, adminAccess)
+                .toPredicate(root, query, cb);
+        
+        Predicate statusPredicate = cb.equal(root.get("offerStatus"), offerStatus);
+        Predicate finalPredicate = cb.and(securityPredicate, statusPredicate);
+
+        query.where(finalPredicate);
+
+        return em.createQuery(query).getSingleResult();
+    }
+    
     private long countJobs(User user, boolean adminAccess) {
         var cb = em.getCriteriaBuilder();
         var query = cb.createQuery(Long.class);

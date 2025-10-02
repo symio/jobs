@@ -36,4 +36,5 @@ public interface JobRepository extends JpaRepository<Job, Integer>,
     default Optional<Job> findById(Integer id) {
         return findByIdFilteredForCurrentUser(id);
     }
+    
 }
