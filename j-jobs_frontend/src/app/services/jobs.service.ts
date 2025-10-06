@@ -3,7 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { ApiurlService } from '@app/environments/apiurl.service';
 import { OAuth2Service } from './oauth2.service';
-import { Observable } from 'rxjs';
+import { Observable, BehaviorSubject, tap } from 'rxjs';
 
 export interface HalLink {
     href: string;
@@ -55,6 +55,30 @@ export interface SearchJobsRequest {
     workMode: string | null;
 }
 
+export interface CreateJobRequest {
+    position: string;
+    compagny: string;
+    city: string;
+    contract?: string;
+    workTime?: string;
+    workMode?: string;
+    offerStatus?: string;
+    from_official_dom?: boolean;
+    description?: string;
+}
+
+export interface UpdateJobRequest {
+    position?: string;
+    compagny?: string;
+    city?: string;
+    contract?: string;
+    workTime?: string;
+    workMode?: string;
+    offerStatus?: string;
+    from_official_dom?: boolean;
+    description?: string;
+}
+
 export interface GetJobsResponse {
     _embedded: {
         jobs: Job[];
@@ -68,6 +92,12 @@ export interface GetJobsResponse {
 })
 export class JobsService {
     private readonly apiUrl: string;
+    private jobsUpdatedSubject = new BehaviorSubject<boolean>(false);
+    jobsUpdated$ = this.jobsUpdatedSubject.asObservable();
+    
+    notifyJobsUpdated() {
+        this.jobsUpdatedSubject.next(true);
+    }
 
     constructor(
         private http: HttpClient,
@@ -77,6 +107,19 @@ export class JobsService {
         this.apiUrl = `${this.apiurlService.getApiBaseUrl()}/jobs`;
     }
 
+    createJob(job: CreateJobRequest): Observable<Job> {
+        const headers = this.oAuth2Service.buildRequestHeadersHal(true);
+        
+        return this.http.post<Job>(this.apiUrl, job, { headers });
+    }
+    
+    updateJob(link: string, job: UpdateJobRequest): Observable<Job> {
+        const headers = this.oAuth2Service.buildRequestHeadersHal(true);
+        const fullUrl = `${this.apiurlService.getApiBaseUrl()}${link}`;
+        
+        return this.http.patch<Job>(fullUrl, job, { headers });
+    }
+    
     searchJobs(search: SearchJobsRequest, page: number = 0, size: number = 3): Observable<GetJobsResponse> {
         const headers = this.oAuth2Service.buildRequestHeadersHal(true);
         const url = `${this.apiUrl}/search?page=${page}&size=${size}`;
@@ -91,11 +134,17 @@ export class JobsService {
         return this.http.get<GetJobsResponse>(url, { headers: headers });
     }
 
-    getJobByHalLink(href: string): Observable<Job> {
-        const url = new URL(href);
+    getJobByHalLink(urlPart: string): Observable<Job> {
         const headers = this.oAuth2Service.buildRequestHeadersHal(true);
-        const fullUrl = `${this.apiurlService.getApiBaseUrl()}${url.pathname}`;
+        const fullUrl = `${this.apiurlService.getApiBaseUrl()}${urlPart}`;
+        
+        return this.http.get<Job>(fullUrl, { headers });
+    }
 
-        return this.http.get<Job>(fullUrl, { headers: headers });
+    deleteJob(link: string): Observable<void> {
+        const headers = this.oAuth2Service.buildRequestHeaders(true);
+        const fullUrl = `${this.apiurlService.getApiBaseUrl()}${link}`;
+
+        return this.http.delete<void>(fullUrl, { headers }).pipe(tap(() => this.notifyJobsUpdated()));
     }
 }

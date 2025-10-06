@@ -239,9 +239,9 @@
                     </div>
                     
                     <!-- Ligne 3 : 3 colonnes -->
-                    <button class="cta-button validate">Consulter</button>
-                    <button class="cta-button update">Modifier</button>
-                    <button class="cta-button delete">supprimer</button>
+                    <button class="cta-button validate" (click)="onViewJob(job)">Consulter</button>
+                    <button class="cta-button update" (click)="onUpdateJob(job)">Modifier</button>
+                    <button class="cta-button delete" (click)="onDeleteJob(job)">Supprimer</button>
                     
                 </div>
             </div>
