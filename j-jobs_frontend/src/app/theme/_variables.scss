@@ -62,10 +62,15 @@ $alert-info-text: #004085;
 $alert-info-border: #99d1ff;
 
 /* Breakpoints */
+$small: 576px; // Bootstrap sm
 $medium: 768px; // Bootstrap md
 $large: 992px; // Bootstrap lg
 $extralarge: 1200px; // Bootstrap xl
-$largeContainerWidth: 1300px;
+$extraextralarge: 1400px; // Bootstrap xxl
+$mediumContainerWidth: 736px;
+$largeContainerWidth: 955px;
+$extralargeContainerWidth: 1162px;
+$extraextralargeContainerWidth: 1360px;
 
 /* Fonts */
 $fontfamillies: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
@@ -104,9 +109,11 @@ $fontfamillies: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-seri
     --form-error-bg: #{$form-error-bg};
     --form-success-border: #{$form-success-border};
     --form-success-bg: #{$form-success-bg};
+    --small: #{$small};
     --medium: #{$medium};
     --large: #{$large};
     --extralarge: #{$extralarge};
+    --mediumContainerWidth: #{$mediumContainerWidth};
     --largeContainerWidth: #{$largeContainerWidth};
     --fontfamillies: #{$fontfamillies};
 }

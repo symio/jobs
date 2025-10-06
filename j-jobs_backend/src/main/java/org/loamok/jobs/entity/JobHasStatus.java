@@ -17,6 +17,7 @@ import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
 import org.hibernate.annotations.CreationTimestamp;
 import org.loamok.jobs.enums.JobStatusEnum;
+import org.loamok.jobs.enums.OfferStatusEnum;
 
 /**
  *
@@ -36,6 +37,8 @@ public class JobHasStatus {
     private Integer id;
     @Column(name = "job_status", nullable = false, length = 50)
     private JobStatusEnum jobStatus;
+    @Column(name = "offer_status", nullable = false, length = 50)
+    private OfferStatusEnum offerStatus;
     @CreationTimestamp
     private Instant appliedAt;
     // relations

@@ -106,10 +106,10 @@
                     </div>
                 </div>
                 <!-- gdproptin --> 
-                <div class="checkbox-group gdproptin-group" [class.is-invalid]="gdproptin?.invalid && gdproptin?.touched">
-                    <label>
-                        <input type="checkbox" formControlName="gdproptin">
-                        Je reconnais avoir pris connaissance et accepter les conditions d'utilisation et les règles de confidentialité
+                <div class="form-group checkbox-group gdproptin-group" [class.is-invalid]="gdproptin?.invalid && gdproptin?.touched">
+                    <input type="checkbox" formControlName="gdproptin" id="gdproptin">
+                    <label for="gdproptin" class="form-label required">
+                        &nbsp;Je reconnais avoir pris connaissance et accepter les conditions d'utilisation et les règles de confidentialité
                     </label>
 
                     <div *ngIf="gdproptin?.invalid && gdproptin?.touched" class="error-message">

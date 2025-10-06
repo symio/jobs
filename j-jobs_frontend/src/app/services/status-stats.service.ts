@@ -56,7 +56,7 @@ export class StatusStatsService {
     }
 
     private fetchCountForStatus(status: keyof Stats): Observable<number> {
-        const url = `${this.apiBaseUrl}/jobs/countByStatus?status=${status}`;
+        const url = `${this.apiBaseUrl}/jobs/countbystatus?status=${status}`;
         const headers = this.oAuth2Service.buildRequestHeaders(true);
 
         return this.http.get<number>(url, { headers: headers });

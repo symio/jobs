@@ -98,6 +98,21 @@ export class OAuth2Service {
             );
     }
 
+    buildRequestHeadersHal(isAuthenticated: boolean): HttpHeaders {
+        if (isAuthenticated === true) {
+            return new HttpHeaders({
+                'Content-Type': 'application/json',
+                'accept': 'application/hal+json',
+                'Authorization': `Bearer ${this.getStoredToken()}`
+            });
+        } else {
+            return new HttpHeaders({
+                'accept': 'application/hal+json',
+                'Content-Type': 'application/json',
+            });
+        }
+    }
+    
     buildRequestHeaders(isAuthenticated: boolean): HttpHeaders {
         if (isAuthenticated === true) {
             return new HttpHeaders({
@@ -109,7 +124,6 @@ export class OAuth2Service {
                 'Content-Type': 'application/json',
             });
         }
-
     }
 
     /**
