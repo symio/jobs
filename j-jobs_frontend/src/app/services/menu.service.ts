@@ -40,7 +40,7 @@ export class MenuService {
         return {
             items: [
                 { label: 'Statistiques', link: '#', icon: 'statistiques' },
-                { label: 'Ajouter un emploi', link: '#', icon: 'ajoutemploi' },
+                { label: 'Ajouter un emploi', link: '/dashboard/job-form', icon: 'ajoutemploi' },
                 { label: 'Tableau de bord', link: '/dashboard', icon: 'dashboard' }
             ]
         }

@@ -116,6 +116,7 @@ export class OAuth2Service {
     buildRequestHeaders(isAuthenticated: boolean): HttpHeaders {
         if (isAuthenticated === true) {
             return new HttpHeaders({
+                'accept': 'application/json',
                 'Content-Type': 'application/json',
                 'Authorization': `Bearer ${this.getStoredToken()}`
             });
