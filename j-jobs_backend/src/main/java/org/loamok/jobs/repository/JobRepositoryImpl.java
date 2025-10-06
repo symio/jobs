@@ -9,6 +9,7 @@ import org.loamok.jobs.entity.User;
 import org.loamok.jobs.enums.OfferStatusEnum;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
+import org.springframework.data.jpa.domain.Specification;
 
 /**
  *
@@ -18,6 +19,38 @@ public class JobRepositoryImpl extends IdentifiedRepository implements JobReposi
 
     public JobRepositoryImpl(UserRepository userRepository) {
         super(userRepository);
+    }
+
+    
+    private long count(Specification<Job> spec) {
+        var cb = em.getCriteriaBuilder();
+        var query = cb.createQuery(Long.class);
+        var root = query.from(Job.class);
+        query.select(cb.count(root));
+
+        // Applique la Specification pour filtrer le compte
+        query.where(spec.toPredicate(root, query, cb));
+
+        return em.createQuery(query).getSingleResult();
+    }
+    
+    @Override
+    public Page<Job> findBySearch(Specification<Job> spec, Pageable pageable) {
+        var cb = em.getCriteriaBuilder();
+        var query = cb.createQuery(Job.class);
+        var root = query.from(Job.class);
+
+        query.where(spec.toPredicate(root, query, cb));
+
+        query.orderBy(
+            pageable.getSort().stream()
+                .map(order -> order.isAscending() ? cb.asc(root.get(order.getProperty())) : cb.desc(root.get(order.getProperty())))
+                .toList()
+        );
+
+        TypedQuery<Job> typedQuery = em.createQuery(query);
+
+        return paginateQuery(typedQuery, pageable, () -> count(spec));
     }
 
     @Override
@@ -62,7 +95,6 @@ public class JobRepositoryImpl extends IdentifiedRepository implements JobReposi
 
         return em.createQuery(query).getResultStream().findFirst();
     }
-
     
     @Override
     public long countFilteredForCurrentUserByOfferStatus(OfferStatusEnum offerStatus) {

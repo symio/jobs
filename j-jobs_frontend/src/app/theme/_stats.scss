@@ -14,10 +14,16 @@
     padding: 10px;
 
     @media (min-width: variables.$medium) {
+        width: 95%;
         padding: 30px 20px;
     }
 
     @media (min-width: variables.$large) {
+        width: 100%;
+        padding: 20px 0;
+    }
+    
+    @media (min-width: variables.$extralarge) {
         padding: 40px 20px;
     }
 }
@@ -27,6 +33,7 @@
     width: 100%;
     grid-template-columns: 1fr;
     gap: 20px;
+    justify-items: center; 
 
     @media (min-width: variables.$medium) {
         grid-template-columns: repeat(2, 1fr);
@@ -34,39 +41,89 @@
     }
 
     @media (min-width: variables.$large) {
-        grid-template-columns: repeat(4, 1fr);
-        gap: 30px;
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        gap: 5px;
+        justify-items: stretch;
     }
 }
 
 .stat-card {
     display: grid;
-    grid-template-rows: auto 1fr auto;
+    grid-template-rows: 1fr auto;
     grid-template-columns: 1fr 1fr;
     align-items: center;
     justify-items: center;
-    aspect-ratio: 1 / 0.75;
+    aspect-ratio: 1 / 0.5;
     width: 85%;
     height: auto;
-    padding: 12px;
-    padding-top: 30px;
+    padding: 10px;
     border: 2px solid transparent;
     border-radius: 12px;
     background: variables.$white;
-
+    
+    @media (min-width: variables.$small) {
+        width: 90%;
+    }
+    
+    @media (min-width: variables.$medium) {
+        aspect-ratio: 1 / 0.8;
+        padding: 12px;
+        padding-top: 15px;
+    }
+    
+    @media (min-width: variables.$large) {
+        width: 85%;
+        max-width: 85%;
+        aspect-ratio: 1 / 1;
+        padding: 6px 4px;
+        padding-top: 8px;
+    }
+        
+    @media (min-width: variables.$extralarge) {
+        aspect-ratio: 1 / 0.8;
+    }
+    
+    
     .stat-value {
         grid-column: 1;
         grid-row: 1;
-        margin-left: 35px;
+        margin-left: 60px;
         justify-self: start;
-        font-size: 25px;
+        align-self: center; 
+        font-size: 48px;
         font-weight: 700;
+        
+        @media (min-width: variables.$small) {
+            margin-left: 110px;
+            font-size: 72px;
+        }
+        
+        @media (min-width: variables.$medium) {
+            margin-left: 55px;
+            font-size: 42px;
+        }
+        
+        @media (min-width: variables.$large) {
+            font-size: 38px;
+            margin-left: 20px;
+        }
+        
+        @media (min-width: variables.$extralarge) {
+            margin-left: 35px;
+        }
+    
+        @media (min-width: variables.$extraextralarge) {
+            font-size: 52px;
+            margin-left: 50px;
+        }
+        
     }
 
     .stat-icon {
         grid-column: 2;
         grid-row: 1;
         justify-self: end;
+        align-self: center; 
         display: flex;
         align-items: center;
         justify-content: center;
@@ -74,34 +131,88 @@
         height: 70px;
         border-radius: 8px;
         margin-right: 10px;
-
+        border: 2px solid transparent; 
+        
         svg {
-            width: 24px;
-            height: 24px;
+            width: 32px;
+            height: 32px;
+        }
+        
+        @media (min-width: variables.$small) {
+            width: 125px;
+            height: 125px;
+            margin-right: 50px;
+        }
+        
+        @media (min-width: variables.$medium) {
+            width:  100px;
+            height: 100px;
+            
+            svg {
+                width:  36px;
+                height: 36px;
+            }
+        }
+        
+        @media (min-width: variables.$large) {
+            width: 55px;
+            height: 55px;
+            margin-right: 6px;
+            
+            svg {
+                width: 22px;
+                height: 22px;
+            }
+        }
+        
+        @media (min-width: variables.$extralarge) {
+            margin-right: 25px;
+        }
+        
+        @media (min-width: variables.$extraextralarge) {
+            width: 60px;
+            height: 60px;
         }
     }
 
     .stat-label {
         grid-column: 1 / span 2;
-        grid-row: 3;
+        grid-row: 2;
         justify-self: stretch;
         align-self: end;
         text-align: center;
         font-weight: bold;
         font-size: 20px;
         color: variables.$blue6;
-        padding-bottom: 5px;
+        padding-bottom: 30px;
+        
+        @media (min-width: variables.$small) {
+            font-size: 34px;
+        }
+        
+        @media (min-width: variables.$medium) {
+            font-size: 24px;
+            padding-bottom: 17px;
+        }
+        
+        @media (min-width: variables.$large) {
+            font-size: 18px;
+            padding-bottom: 8px;
+        }
     }
 
     /* Couleurs */
     &.stat-card-yellow {
         border-color: variables.$update;
+        
         .stat-value {
             color: variables.$update;
         }
+        
         .stat-icon {
             background: rgba(variables.$update, 0.15);
-            border: 2px solid variables.$update;
+            border-color: variables.$update; 
+        
             svg {
                 color: variables.$update;
             }
@@ -110,12 +221,15 @@
 
     &.stat-card-green {
         border-color: variables.$validate;
+        
         .stat-value {
             color: variables.$validate;
         }
+        
         .stat-icon {
             background: rgba(variables.$validate, 0.15);
-            border: 2px solid variables.$validate;
+            border-color: variables.$validate;
+        
             svg {
                 color: variables.$validate;
             }
@@ -124,12 +238,15 @@
 
     &.stat-card-blue {
         border-color: variables.$blue5;
+        
         .stat-value {
             color: variables.$blue5;
         }
+        
         .stat-icon {
             background: rgba(variables.$blue5, 0.15);
-            border: 2px solid variables.$blue5;
+            border-color: variables.$blue5;
+            
             svg {
                 color: variables.$blue5;
             }
@@ -138,68 +255,27 @@
 
     &.stat-card-red {
         border-color: variables.$delete;
+        
+        @media (min-width: variables.$large) {
+            padding-top: 0;
+            padding-bottom: 12px;
+        }
+        
         .stat-value {
             color: variables.$delete;
         }
+        
         .stat-icon {
             background: rgba(variables.$delete, 0.15);
-            border: 2px solid variables.$delete;
+            border-color: variables.$delete;
+        
             svg {
                 color: variables.$delete;
             }
         }
+        
         .stat-label {
             color: variables.$delete;
-        }
-    }
-}
-
-/* Tablet */
-@media (min-width: variables.$medium) {
-    .stat-card {
-        aspect-ratio: 1 / 1;
-        padding: 12px;
-        
-        .stat-value {
-            font-size: 42px;
-        }
-        
-        .stat-icon {
-            width:  100px;
-            height: 100px;
-            svg {
-                width:  36px;
-                height: 36px;
-            }
-        }
-        
-        .stat-label {
-            font-size: 24px;
-            padding-bottom: 17px;
-        }
-    }
-}
-
-/* Desktop */
-@media (min-width: variables.$large) {
-    .stat-card {
-        padding: 20px;
-        
-        .stat-value {
-            font-size: 28px;
-        }
-        
-        .stat-icon {
-            width: 80px;
-            height: 80px;
-            svg {
-                width: 32px;
-                height: 32px;
-            }
-        }
-        
-        .stat-label {
-            font-size: 16px;
         }
     }
 }

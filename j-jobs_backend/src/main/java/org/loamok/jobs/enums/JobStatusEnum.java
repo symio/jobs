@@ -6,6 +6,7 @@ import lombok.ToString;
 /**
  *
  * ### TYPE_EVENEMENT 
+ * #### Histo évènement
  * - `CANDIDATURE_ENVOYEE` : Candidature envoyée 
  * - `RELANCE` : Relance effectuée 
  * - `REFUS` : Refus reçu 

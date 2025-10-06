@@ -100,6 +100,9 @@ public class Job {
     private User user;
 
     // encore une couche sur les enums
+    public void setOfferStatus(OfferStatusEnum status) {
+        this.offerStatus = status;
+    }
     @JsonProperty("offerStatus") 
     public void setOfferStatus(String status) {
         if (status != null) {
