@@ -3,12 +3,13 @@ import { CommonModule } from '@angular/common';
 import { ChangeDetectorRef, Component, Input, OnDestroy, OnInit } from '@angular/core';
 import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
 import { ContractEnum, JobStatusEnum, LabelsService, OfferStatusEnum, WorkModeEnum, WorkTimeEnum } from '@app/services/labels.service';
-import { MenuDataNoTitle, MenuService } from '@app/services/menu.service';
+import { forkJoin, Subscription, tap } from 'rxjs';
+import { ReactiveFormsModule, FormBuilder, FormGroup } from '@angular/forms';
+import { Router } from '@angular/router';
 import { PageTitleService } from '@app/services/page-title.service';
-import { forkJoin, Subscription } from 'rxjs';
+import { MenuDataNoTitle, MenuService } from '@app/services/menu.service';
 import { StatusStatsService, Stats } from '@app/services/status-stats.service';
 import { JobsService, Job, GetJobsResponse, PageInfo, SearchJobsRequest } from '@app/services/jobs.service';
-import { ReactiveFormsModule, FormBuilder, FormGroup } from '@angular/forms';
 
 @Component({
     standalone: true,
@@ -58,7 +59,8 @@ export class DashboardComponent implements OnInit, OnDestroy {
         private pageTitleService: PageTitleService,
         private statusStatsService: StatusStatsService,
         private jobsService: JobsService,
-        private cdRef: ChangeDetectorRef
+        private cdRef: ChangeDetectorRef,
+        private router: Router
     ) { }
 
     getIcon(name: string): SafeHtml {
@@ -84,33 +86,41 @@ export class DashboardComponent implements OnInit, OnDestroy {
         }, 0);
 
         this.menuData = this.menuService.getSideMenuData();
+        this.subscription = new Subscription();
+        this.subscription.add(
+            this.jobsService.jobsUpdated$.subscribe(() => {
+                this.fetchJobs();
+            })
+        );
 
-        this.subscription = forkJoin([
-            this.labelsService.fetchLabels(),
-            this.statusStatsService.fetchStats()
-        ]).subscribe({
-            next: ([labelsResponse, statsResponse]) => {
-                this.workTimeEnum = this.labelsService.getWorkTimeEnum();
-                this.offerStatusEnum = this.labelsService.getOfferStatusEnum();
-                this.jobStatusEnum = this.labelsService.getJobStatusEnum();
-                this.contractEnum = this.labelsService.getContractEnum();
-                this.workModeEnum = this.labelsService.getWorkModeEnum();
+        this.subscription.add(
+            forkJoin([
+                this.labelsService.fetchLabels(),
+                this.statusStatsService.fetchStats()
+            ]).subscribe({
+                next: ([labelsResponse, statsResponse]) => {
+                    this.workTimeEnum = this.labelsService.getWorkTimeEnum();
+                    this.offerStatusEnum = this.labelsService.getOfferStatusEnum();
+                    this.jobStatusEnum = this.labelsService.getJobStatusEnum();
+                    this.contractEnum = this.labelsService.getContractEnum();
+                    this.workModeEnum = this.labelsService.getWorkModeEnum();
 
-                this.stats = statsResponse;
-                this.enCoursCount = this.stats.EN_COURS;
-                this.enAttenteCount = this.stats.EN_ATTENTE;
-                this.entretienCount = this.stats.ENTRETIEN;
-                this.refuseCount = this.stats.REFUSE;
+                    this.stats = statsResponse;
+                    this.enCoursCount = this.stats.EN_COURS;
+                    this.enAttenteCount = this.stats.EN_ATTENTE;
+                    this.entretienCount = this.stats.ENTRETIEN;
+                    this.refuseCount = this.stats.REFUSE;
 
-                setTimeout(() => {
-                    this.fetchJobs();
-                }, 1000);
-            },
-            error: (err) => {
-                this.stats = this.statusStatsService.getStats();
-                this.offerStatusEnum = this.labelsService.getOfferStatusEnum();
-            }
-        });
+                    setTimeout(() => {
+                        this.fetchJobs();
+                    }, 1000);
+                },
+                error: (err) => {
+                    this.stats = this.statusStatsService.getStats();
+                    this.offerStatusEnum = this.labelsService.getOfferStatusEnum();
+                }
+            })
+        );
     }
 
     ngOnDestroy(): void {
@@ -164,6 +174,7 @@ export class DashboardComponent implements OnInit, OnDestroy {
     private handleJobsResponse(response: GetJobsResponse): void {
         if (response._embedded?.jobs?.length > 0) {
             this.jobs = response._embedded.jobs;
+            console.log("jobs : ", this.jobs);
             this.pageInfos = response.page;
         } else {
             this.error = 'Aucune offre trouvée';
@@ -200,6 +211,50 @@ export class DashboardComponent implements OnInit, OnDestroy {
         this.isSearchMode = false;
         this.currentPage = 0;
         this.fetchJobs();
+    }
+
+    onViewJob(job: any): void {
+        let href = job?._links?.self?.href || job?._links?.job?.href;
+        if (!href) return;
+
+        const link = href.replace(/^(https?:)?\/\/[^/]+/, '');
+
+        this.router.navigate(['/dashboard/details'], { queryParams: { link } });
+    }
+
+    onUpdateJob(job: any): void {
+        let href = job?._links?.self?.href || job?._links?.job?.href;
+        if (!href) return;
+
+        const link = href.replace(/^(https?:)?\/\/[^/]+/, '');
+
+        this.router.navigate(['/dashboard/job-form'], { queryParams: { link } });
+    }
+
+    onDeleteJob(job: any): void {
+        let href = job?._links?.self?.href || job?._links?.job?.href;
+
+        if (!href) {
+            console.error("Impossible de trouver le lien de suppression pour l'offre.");
+            alert("Erreur: Lien de suppression non trouvé.");
+            return;
+        }
+
+        const confirmation = confirm(`Êtes-vous sûr de vouloir supprimer l'offre : "${job.position}" (${job.compagny}) ? Cette action est irréversible.`);
+
+        if (confirmation) {
+            const linkToDelete = href.replace(/^(https?:)?\/\/[^/]+/, '');
+
+            this.jobsService.deleteJob(linkToDelete).subscribe({
+                next: () => {
+                    alert(`L'offre "${job.position}" a été supprimée avec succès.`);
+                },
+                error: (err) => {
+                    console.error("Erreur lors de la suppression de l'offre:", err);
+                    alert("Erreur lors de la suppression de l'offre. Veuillez réessayer.");
+                }
+            });
+        }
     }
 
     toggleSearch(): void {

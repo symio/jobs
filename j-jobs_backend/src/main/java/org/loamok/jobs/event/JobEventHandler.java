@@ -8,6 +8,7 @@ import org.loamok.jobs.manager.JobManager;
 import org.loamok.jobs.repository.JobRepository;
 import org.loamok.jobs.repository.UserRepository;
 import org.springframework.data.rest.core.annotation.HandleBeforeCreate;
+import org.springframework.data.rest.core.annotation.HandleBeforeDelete;
 import org.springframework.data.rest.core.annotation.HandleBeforeSave;
 import org.springframework.data.rest.core.annotation.RepositoryEventHandler;
 import org.springframework.stereotype.Component;
@@ -18,11 +19,12 @@ import org.springframework.stereotype.Component;
  */
 @Component
 @RepositoryEventHandler(Job.class)
-public class JobEventHandler {
+public class JobEventHandler extends IdentifiedHandler {
 
     private final JobManager jobManager;
 
-    public JobEventHandler(JobManager jobManager) {
+    public JobEventHandler(UserRepository userRepository, JobManager jobManager) {
+        super(userRepository);
         this.jobManager = jobManager;
     }
     
@@ -34,5 +36,20 @@ public class JobEventHandler {
     @HandleBeforeSave
     public void handleBeforeSave(Job job) {
         jobManager.updateJob(job);
+    }
+    
+    @HandleBeforeDelete
+    public void handleBeforeDelete(Job job) {
+        User currentUser = getCurrentUser();
+        boolean adminAccess = isAdminWithScopeAdmin();
+        
+        if (currentUser == null) {
+            throw new SecurityException("Utilisateur introuvable");
+        }
+
+        if (!adminAccess && !job.getUser().equals(currentUser)) {
+            throw new SecurityException("Utilisateur introuvable");
+        }
+        
     }
 }

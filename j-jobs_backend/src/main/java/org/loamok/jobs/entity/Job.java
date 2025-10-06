@@ -94,7 +94,7 @@ public class Job {
     /**
      * Relation avec User *
      */
-    @ManyToOne(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    @ManyToOne(cascade = CascadeType.DETACH, fetch = FetchType.LAZY)
     @JoinColumn(name = "id_user", nullable = false)
     @JsonProperty(access = JsonProperty.Access.READ_ONLY)
     private User user;
