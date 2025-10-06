@@ -4,6 +4,7 @@ import org.loamok.jobs.entity.Job;
 import org.loamok.jobs.entity.JobHasStatus;
 import org.loamok.jobs.entity.User;
 import org.loamok.jobs.enums.JobStatusEnum;
+import org.loamok.jobs.manager.JobManager;
 import org.loamok.jobs.repository.JobRepository;
 import org.loamok.jobs.repository.UserRepository;
 import org.springframework.data.rest.core.annotation.HandleBeforeCreate;
@@ -17,58 +18,21 @@ import org.springframework.stereotype.Component;
  */
 @Component
 @RepositoryEventHandler(Job.class)
-public class JobEventHandler extends IdentifiedHandler {
+public class JobEventHandler {
 
-    private final JobRepository jobRepository;
+    private final JobManager jobManager;
 
-    public JobEventHandler(UserRepository userRepository, JobRepository jobRepository) {
-        super(userRepository);
-        this.jobRepository = jobRepository;
+    public JobEventHandler(JobManager jobManager) {
+        this.jobManager = jobManager;
     }
     
     @HandleBeforeCreate
     public void handleBeforeCreate(Job job) {
-        User currentUser = getCurrentUser();
-        boolean adminAccess = isAdminWithScopeAdmin();
-        
-        if (currentUser == null) {
-            throw new SecurityException("Utilisateur introuvable");
-        }
-
-        if (!adminAccess) {
-            job.setUser(currentUser);
-        } else {
-            if (job.getUser() == null) {
-                job.setUser(currentUser);
-            }
-        }
-        
-        job.getJobHasStatuses().add(
-            JobHasStatus.builder()
-                .jobStatus(JobStatusEnum.AUTRE)
-                .job(job)
-                .build()
-        );
+        jobManager.registerJob(job);
     }
     
     @HandleBeforeSave
     public void handleBeforeSave(Job job) {
-        User currentUser = getCurrentUser();
-        boolean adminAccess = isAdminWithScopeAdmin();
-        
-        if (currentUser == null) {
-            throw new SecurityException("Utilisateur introuvable");
-        }
-
-        Job existingJob = jobRepository.findByIdFilteredForCurrentUser(job.getId())
-            .orElseThrow(() -> new SecurityException("Job introuvable ou accès refusé"));
-        
-        if (!adminAccess) {
-            job.setUser(existingJob.getUser());
-        } else {
-            if (job.getUser() == null) {
-                job.setUser(existingJob.getUser());
-            }
-        }
+        jobManager.updateJob(job);
     }
 }

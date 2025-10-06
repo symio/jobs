@@ -4,6 +4,7 @@ import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.Parameter;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import lombok.RequiredArgsConstructor;
+import org.loamok.jobs.enums.LogicalStatusEnum;
 import org.loamok.jobs.enums.OfferStatusEnum;
 import org.loamok.jobs.repository.JobRepository;
 import org.springframework.http.ResponseEntity;
@@ -17,22 +18,24 @@ import org.springframework.web.bind.annotation.RestController;
  * @author Huby Franck
  */
 @RestController
-@RequestMapping("/jobs") // Utiliser le même chemin de base que le repository
+@RequestMapping("/jobs")
 @RequiredArgsConstructor
-@Tag(name = "Jobs", description = "Opérations sécurisées sur les offres d'emploi") // Groupe principal dans Swagger
+@Tag(name = "Jobs", description = "Opérations sécurisées sur les offres d'emploi")
 public class JobCountController {
 
     private final JobRepository jobRepository;
     
-    // Le chemin complet sera /jobs/countByStatus
-    @GetMapping("/countByStatus") 
+    @GetMapping("/countbystatus") 
     @Operation(summary = "Compte le nombre d'offres par statut pour l'utilisateur courant (ou Admin)")
     public ResponseEntity<Long> countByStatus(
             @Parameter(description = "Statut de l'offre (ex: EN_COURS, REFUSE)")
-            @RequestParam("status") OfferStatusEnum offerStatus) {
+            @RequestParam("status") LogicalStatusEnum logicalStatus) {
         
-        long count = jobRepository.countFilteredForCurrentUserByOfferStatus(offerStatus);
+        long totalCount = 0;
+        for (OfferStatusEnum offerStatus : logicalStatus.getOfferStatuses()) {
+            totalCount += jobRepository.countFilteredForCurrentUserByOfferStatus(offerStatus);
+        }
         
-        return ResponseEntity.ok(count);
+        return ResponseEntity.ok(totalCount);
     }
 }
