@@ -19,7 +19,7 @@ import org.springframework.stereotype.Component;
  */
 @Component
 @RepositoryEventHandler(Job.class)
-public class JobEventHandler {
+public class JobEventHandler extends IdentifiedHandler {
 
     private final JobManager jobManager;
 
