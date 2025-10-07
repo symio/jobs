@@ -79,3 +79,5 @@ yarn install
 > - Windows (depuis le dossier j-jobs_backend) : `` gradlew.bat bootRun ``
 ```
 - Lancez le Frontend (depuis le dossier j-jobs_frontend) (voir la section Angular ci dessus) : `` yarn serve `` 
+
+Ouvrez votre navigateur sur l'url : http://localhost:4200
