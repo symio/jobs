@@ -1,0 +1,3 @@
+"id_role","is_admin","role"
+1,False,"ROLE_USER"
+2,True,"ROLE_ADMIN"
