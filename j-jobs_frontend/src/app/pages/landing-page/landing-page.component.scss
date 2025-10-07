@@ -13,85 +13,85 @@
 @use "app/theme/icons";
 
 .landing-container {
-    padding: 20px;
-    display: flex;
-    flex-direction: column;
-    gap: 40px;
-    font-family: variables.$fontfamillies;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  font-family: variables.$fontfamillies;
 }
 
 .main-content-wrapper {
-    display: flex;
-    flex-direction: column;
-    gap: 40px;
-    align-items: center;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  align-items: center;
 }
 
 .content-section {
-    display: flex;
-    flex-direction: column;
-    gap: 30px;
-    align-items: center;
-    
-    h2,
-    .cta-section {
-        text-align: center;
-        align-self: center;
-    }
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  align-items: center;
+
+  h2,
+  .cta-section {
+    text-align: center;
+    align-self: center;
+  }
 }
 
 .illustration-section {
-    display: none;
-    justify-content: center;
-    align-items: center;
-    padding: 20px 0;
-    
-    img {
-        width: 100%;
-        height: auto;
-        max-width: 300px;
-    }
+  display: none;
+  justify-content: center;
+  align-items: center;
+  padding: 20px 0;
+
+  img {
+    width: 100%;
+    height: auto;
+    max-width: 300px;
+  }
 }
 
 // Tablette
 @media (min-width: variables.$medium) {
-    .landing-container {
-        padding: 40px;
-        gap: 60px;
-    }
+  .landing-container {
+    padding: 40px;
+    gap: 60px;
+  }
 }
 
 // Desktop
 @media (min-width: variables.$large) {
-    .main-content-wrapper {
-        flex-direction: row;
-        align-items: flex-start;
-        gap: 60px;
-        max-width: variables.$largeContainerWidth;
-        margin: 0 auto;
-    }
+  .main-content-wrapper {
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 60px;
+    max-width: variables.$largeContainerWidth;
+    margin: 0 auto;
+  }
 
-    .content-section {
-        flex: 1;
-        align-items: flex-start;
-        text-align: left;
-        gap: 40px; 
-        
-        h2,
-        .cta-section {
-            align-self: center;
-            text-align: center;
-        }
-    }
+  .content-section {
+    flex: 1;
+    align-items: flex-start;
+    text-align: left;
+    gap: 40px;
 
-    .illustration-section {
-        display: flex;
-        flex: 1;
-        
-        img {
-            width: 100%;
-            height: auto;
-            max-width: 500px;
-        }
+    h2,
+    .cta-section {
+      align-self: center;
+      text-align: center;
     }
+  }
+
+  .illustration-section {
+    display: flex;
+    flex: 1;
+
+    img {
+      width: 100%;
+      height: auto;
+      max-width: 500px;
+    }
+  }
 }

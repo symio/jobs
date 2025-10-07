@@ -4,12 +4,12 @@ import { CanActivate, Router, ActivatedRouteSnapshot } from '@angular/router';
 import { OAuth2Service } from '@services/oauth2.service';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class PermissionGuard implements CanActivate {
   constructor(
     private oauth2Service: OAuth2Service,
-    private router: Router
+    private router: Router,
   ) {}
 
   canActivate(route: ActivatedRouteSnapshot): boolean {
@@ -27,7 +27,9 @@ export class PermissionGuard implements CanActivate {
     }
 
     // Vérif si l’utilisateur a au moins un rôle requis
-    const hasRole = requiredRoles.some(role => this.oauth2Service.hasRole(role));
+    const hasRole = requiredRoles.some((role) =>
+      this.oauth2Service.hasRole(role),
+    );
 
     if (!hasRole) {
       this.router.navigate(['/unauthorized']);

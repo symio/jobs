@@ -13,315 +13,315 @@
 // LOGOS
 // =============================================================================
 .logo {
-    font-weight: 700;
-    color: variables.$blue6;
-    letter-spacing: 1px;
+  font-weight: 700;
+  color: variables.$blue6;
+  letter-spacing: 1px;
 
+  .logo-j {
+    font-size: 36px;
+  }
+
+  .logo-rest {
+    font-size: 24px;
+  }
+
+  @media (min-width: variables.$medium) {
     .logo-j {
-        font-size: 36px;
+      font-size: 42px;
     }
 
     .logo-rest {
-        font-size: 24px;
+      font-size: 28px;
     }
-
-    @media (min-width: variables.$medium) {
-        .logo-j {
-            font-size: 42px;
-        }
-
-        .logo-rest {
-            font-size: 28px;
-        }
-    }
+  }
 }
 
 // =============================================================================
 // BADGES UTILISATEUR
 // =============================================================================
 .user-badge {
-    display: block;
-    position: relative;
-    cursor: pointer;
+  display: block;
+  position: relative;
+  cursor: pointer;
 
-    .user-info {
-        display: flex;
-        align-items: center;
-        gap: 8px;
-        padding: 8px 12px;
-        border-radius: 6px;
-        transition: all 0.2s ease;
-        color: variables.$blue6;
+  .user-info {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 12px;
+    border-radius: 6px;
+    transition: all 0.2s ease;
+    color: variables.$blue6;
+
+    &:hover {
+      background: variables.$blue6-hover-bg;
+    }
+  }
+
+  .username {
+    display: none;
+    font-size: 14px;
+    font-weight: bold;
+    color: variables.$blue6;
+
+    @media (min-width: variables.$medium) {
+      font-size: 16px;
+      display: block;
+    }
+
+    @media (min-width: variables.$large) {
+      font-size: 18px;
+    }
+  }
+
+  .user-dropdown {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    background: variables.$white;
+    border: 1px solid variables.$gray-light;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px variables.$shadow-light;
+    min-width: 180px;
+    z-index: 1000;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-10px);
+    transition: all 0.2s ease;
+
+    &.open {
+      opacity: 1;
+      visibility: visible;
+      transform: translateY(0);
+    }
+
+    .dropdown-item {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 12px 16px;
+      border: none;
+      background: none;
+      width: 100%;
+      cursor: pointer;
+      transition: background-color 0.2s ease;
+      color: variables.$blue6;
+      text-decoration: none;
+      font-size: 14px;
+      font-weight: 400;
+      text-align: left;
+
+      @media (min-width: variables.$medium) {
+        font-size: 16px;
+      }
+
+      @media (min-width: variables.$large) {
+        font-size: 18px;
+      }
+
+      &:hover {
+        background: variables.$blue6-hover-bg;
+      }
+
+      &:first-child {
+        border-top-left-radius: 8px;
+        border-top-right-radius: 8px;
+      }
+
+      &:last-child {
+        border-bottom-left-radius: 8px;
+        border-bottom-right-radius: 8px;
+      }
+
+      &.logout-btn {
+        border-top: 1px solid variables.$gray-light;
+        color: variables.$red;
 
         &:hover {
-            background: variables.$blue6-hover-bg;
+          background: variables.$red-hover-bg;
         }
+      }
     }
-
-    .username {
-        display: none;
-        font-size: 14px;
-        font-weight: bold;
-        color: variables.$blue6;
-
-        @media (min-width: variables.$medium) {
-            font-size: 16px;
-            display: block;
-        }
-
-        @media (min-width: variables.$large) {
-            font-size: 18px;
-        }
-    }
-
-    .user-dropdown {
-        position: absolute;
-        top: 100%;
-        right: 0;
-        background: variables.$white;
-        border: 1px solid variables.$gray-light;
-        border-radius: 8px;
-        box-shadow: 0 4px 12px variables.$shadow-light;
-        min-width: 180px;
-        z-index: 1000;
-        opacity: 0;
-        visibility: hidden;
-        transform: translateY(-10px);
-        transition: all 0.2s ease;
-
-        &.open {
-            opacity: 1;
-            visibility: visible;
-            transform: translateY(0);
-        }
-
-        .dropdown-item {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            padding: 12px 16px;
-            border: none;
-            background: none;
-            width: 100%;
-            cursor: pointer;
-            transition: background-color 0.2s ease;
-            color: variables.$blue6;
-            text-decoration: none;
-            font-size: 14px;
-            font-weight: 400;
-            text-align: left;
-            
-             @media (min-width: variables.$medium) {
-                font-size: 16px;
-            }
-
-            @media (min-width: variables.$large) {
-                font-size: 18px;
-            }
-            
-            &:hover {
-                background: variables.$blue6-hover-bg;
-            }
-
-            &:first-child {
-                border-top-left-radius: 8px;
-                border-top-right-radius: 8px;
-            }
-
-            &:last-child {
-                border-bottom-left-radius: 8px;
-                border-bottom-right-radius: 8px;
-            }
-
-            &.logout-btn {
-                border-top: 1px solid variables.$gray-light;
-                color: variables.$red;
-
-                &:hover {
-                    background: variables.$red-hover-bg;
-                }
-            }
-        }
-    }
+  }
 }
 
 // =============================================================================
 // BOUTONS MENU (BURGER)
 // =============================================================================
 .menu-button {
-    background: none;
-    border: none;
-    display: flex;
-    flex-direction: column;
-    gap: 4px;
-    cursor: pointer;
-    padding: 8px;
+  background: none;
+  border: none;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  cursor: pointer;
+  padding: 8px;
 
-    .burger-line {
-        width: 25px;
-        height: 3px;
-        background: variables.$blue6;
-        border-radius: 2px;
-        transition: all 0.3s ease;
-    }
+  .burger-line {
+    width: 25px;
+    height: 3px;
+    background: variables.$blue6;
+    border-radius: 2px;
+    transition: all 0.3s ease;
+  }
 
-    &:hover .burger-line {
-        opacity: 0.7;
-    }
+  &:hover .burger-line {
+    opacity: 0.7;
+  }
 
-    @media (min-width: variables.$large) {
-        display: none;
-    }
+  @media (min-width: variables.$large) {
+    display: none;
+  }
 }
 
 // =============================================================================
 // BOUTONS DE FERMETURE (X)
 // =============================================================================
 .close-button {
-    background: none;
-    border: none;
-    width: 32px;
-    height: 32px;
-    cursor: pointer;
-    position: relative;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 4px;
-    transition: background-color 0.2s;
+  background: none;
+  border: none;
+  width: 32px;
+  height: 32px;
+  cursor: pointer;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 4px;
+  transition: background-color 0.2s;
 
-    &:hover {
-        background-color: variables.$blue6-shadow;
-    }
+  &:hover {
+    background-color: variables.$blue6-shadow;
+  }
 
-    &::before,
-    &::after {
-        content: '';
-        position: absolute;
-        width: 18px;
-        height: 2px;
-        background: variables.$blue6;
-        border-radius: 1px;
-    }
+  &::before,
+  &::after {
+    content: "";
+    position: absolute;
+    width: 18px;
+    height: 2px;
+    background: variables.$blue6;
+    border-radius: 1px;
+  }
 
-    &::before {
-        transform: rotate(45deg);
-    }
+  &::before {
+    transform: rotate(45deg);
+  }
 
-    &::after {
-        transform: rotate(-45deg);
-    }
+  &::after {
+    transform: rotate(-45deg);
+  }
 }
 
 // =============================================================================
 // OVERLAYS ET MODALES
 // =============================================================================
 %overlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: variables.$overlay-bg;
-    z-index: 1000;
-    opacity: 0;
-    visibility: hidden;
-    transition: all 0.3s ease;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: variables.$overlay-bg;
+  z-index: 1000;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease;
 
-    &.active {
-        opacity: 1;
-        visibility: visible;
-    }
+  &.active {
+    opacity: 1;
+    visibility: visible;
+  }
 }
 
 .overlay {
-    @extend %overlay;
+  @extend %overlay;
 }
 
 // =============================================================================
 // SECTIONS DE CONTENU PRINCIPALES
 // =============================================================================
 .main-title-section {
-    text-align: center;
-    margin-bottom: 40px;
+  text-align: center;
+  margin-bottom: 40px;
 
-    @media (min-width: variables.$medium) {
-        margin-bottom: 50px;
-    }
+  @media (min-width: variables.$medium) {
+    margin-bottom: 50px;
+  }
 }
 
 .content-section {
-    display: flex;
-    flex-direction: column;
-    gap: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
 }
 
 .cta-section {
-    display: flex;
-    flex-direction: column;
-    gap: 16px;
-    width: 100%;
-    align-items: center;
-    margin: 24px 0 20px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  width: 100%;
+  align-items: center;
+  margin: 24px 0 20px 0;
 
-    @media (min-width: variables.$medium) {
-        flex-direction: row;
-        justify-content: center;
-        gap: 20px;
-    }
+  @media (min-width: variables.$medium) {
+    flex-direction: row;
+    justify-content: center;
+    gap: 20px;
+  }
 
-    .cta-button {
-        max-width: none;
-    }
+  .cta-button {
+    max-width: none;
+  }
 }
 
 // =============================================================================
 // NAVIGATION RESPONSIVE
 // =============================================================================
 .nav-menu {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-    padding: 40px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 40px 20px;
 }
 
 .menu-header {
-    padding: 15px 20px;
-    border-bottom: 1px solid variables.$gray-light;
-    display: flex;
-    justify-content: flex-end;
+  padding: 15px 20px;
+  border-bottom: 1px solid variables.$gray-light;
+  display: flex;
+  justify-content: flex-end;
 }
 
 // =============================================================================
 // CONTAINERS RESPONSIFS
 // =============================================================================
 %large-container-rules {
+  max-width: variables.$largeContainerWidth;
+  margin-left: auto;
+  margin-right: auto;
+}
+@media (min-width: variables.$large) {
+  %large-container-rules-large {
     max-width: variables.$largeContainerWidth;
     margin-left: auto;
     margin-right: auto;
-}
-@media (min-width: variables.$large) {
-    %large-container-rules-large {
-        max-width: variables.$largeContainerWidth;
-        margin-left: auto;
-        margin-right: auto;
-    }
+  }
 }
 
 .container {
-    padding: 20px;
+  padding: 20px;
 
-    @media (min-width: variables.$medium) {
-        padding: 40px;
-    }
+  @media (min-width: variables.$medium) {
+    padding: 40px;
+  }
 }
 
 .large-container {
-    @extend .container;
+  @extend .container;
 
-    @media (min-width: variables.$large) {
-        @extend %large-container-rules-large;
-        padding-left: 0;
-        padding-right: 0;
-    }
+  @media (min-width: variables.$large) {
+    @extend %large-container-rules-large;
+    padding-left: 0;
+    padding-right: 0;
+  }
 }

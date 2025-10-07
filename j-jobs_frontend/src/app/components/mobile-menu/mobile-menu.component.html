@@ -1,19 +1,35 @@
-<div class="mobile-menu-overlay" [class.active]="isMenuOpen" (click)="closeMenu()">
-    <div class="mobile-menu" (click)="$event.stopPropagation()">
-        <div class="menu-header">
-            <button class="close-button" (click)="closeMenu()" aria-label="Fermer"></button>
-        </div>
-        <div class="user-nav-section" *ngIf="isAuthenticated">
-            <a href="{{ item.link }}" class="nav-link user-nav-link" *ngFor="let item of sideMenuData.items">
-                <span [innerHTML]="getIcon(item.icon)"></span>&nbsp;{{ item.label }}
-            </a>
-            <hr class="nav-separator">
-        </div>
-        <nav class="menu-nav">
-            <h3 class="menu-title">{{ menuData.title }}</h3>
-            <a href="{{ item.link }}" class="menu-link" *ngFor="let item of menuData.items">
-                {{ item.label }}
-            </a>
-        </nav>
+<div
+  class="mobile-menu-overlay"
+  [class.active]="isMenuOpen"
+  (click)="closeMenu()"
+>
+  <div class="mobile-menu" (click)="$event.stopPropagation()">
+    <div class="menu-header">
+      <button
+        class="close-button"
+        (click)="closeMenu()"
+        aria-label="Fermer"
+      ></button>
     </div>
+    <div class="user-nav-section" *ngIf="isAuthenticated">
+      <a
+        href="{{ item.link }}"
+        class="nav-link user-nav-link"
+        *ngFor="let item of sideMenuData.items"
+      >
+        <span [innerHTML]="getIcon(item.icon)"></span>&nbsp;{{ item.label }}
+      </a>
+      <hr class="nav-separator" />
+    </div>
+    <nav class="menu-nav">
+      <h3 class="menu-title">{{ menuData.title }}</h3>
+      <a
+        href="{{ item.link }}"
+        class="menu-link"
+        *ngFor="let item of menuData.items"
+      >
+        {{ item.label }}
+      </a>
+    </nav>
+  </div>
 </div>

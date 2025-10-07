@@ -1,121 +1,208 @@
 <main class="dashboard-container">
-    <!-- Titre uniquement mobile / tablettes -->
-    <section id="title" class="main-title-section">
-        <h1 class="main-title">Détails de l'offre</h1>
-    </section>
+  <!-- Titre uniquement mobile / tablettes -->
+  <section id="title" class="main-title-section">
+    <h1 class="main-title">Détails de l'offre</h1>
+  </section>
 
-    <!-- Sidebar gauche (navigation / actions) -->
-    <aside class="left-content-wrapper">
-        <nav class="sidebar-nav">
-            <ul>
-                <li *ngFor="let item of menuData.items">
-                    <a href="{{ item.link }}" class="nav-link" >
-                        <span [innerHTML]="getIcon(item.icon)"></span>&nbsp;{{ item.label }}
-                    </a>
-                </li>
-            </ul>
-        </nav>
-    </aside>
-    <section id="main" class="main-content-wrapper">
-        <div *ngIf="isLoading" class="loading">
-            Chargement en cours...
+  <!-- Sidebar gauche (navigation / actions) -->
+  <aside class="left-content-wrapper">
+    <nav class="sidebar-nav">
+      <ul>
+        <li *ngFor="let item of menuData.items">
+          <a href="{{ item.link }}" class="nav-link">
+            <span [innerHTML]="getIcon(item.icon)"></span>&nbsp;{{ item.label }}
+          </a>
+        </li>
+      </ul>
+    </nav>
+  </aside>
+  <section id="main" class="main-content-wrapper">
+    <div *ngIf="isLoading" class="loading">Chargement en cours...</div>
+    <div *ngIf="error" class="error">
+      {{ error }}
+    </div>
+    <div class="job-card" *ngIf="!isLoading && !error && job">
+      <!-- En-tête (inchangé) -->
+      <div class="row0">
+        <div class="col0">
+          <div class="job-incity-initial" style="text-transform: uppercase">
+            {{ job.compagny.substring(0, 1) }}
+          </div>
         </div>
-        <div *ngIf="error" class="error">
-            {{ error }}
+        <div class="col1">
+          <h3>{{ job.position }}</h3>
+          <p>
+            <strong>{{ job.compagny }}</strong>
+          </p>
         </div>
-        <div class="job-card" *ngIf="!isLoading && !error && job">
-            <!-- En-tête (inchangé) -->
-            <div class="row0">
-                <div class="col0">
-                    <div class="job-incity-initial" style="text-transform: uppercase">
-                        {{ job.compagny.substring(0, 1) }}
-                    </div>
-                </div>
-                <div class="col1">
-                    <h3>{{ job.position }}</h3>
-                    <p><strong>{{ job.compagny }}</strong></p>
-                </div>
-            </div>
+      </div>
 
-            <hr class="row1" />
+      <hr class="row1" />
 
-            <div class="job-info">
-                <p>
-                    <strong>Entreprise : </strong>
-                    <svg class="job-card-icon work-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
-                    <path d="M19,4H17.9A5.009,5.009,0,0,0,13,0H11A5.009,5.009,0,0,0,6.1,4H5A5.006,5.006,0,0,0,0,9v3H24V9A5.006,5.006,0,0,0,19,4ZM8.184,4A3,3,0,0,1,11,2h2a3,3,0,0,1,2.816,2Z"></path>
-                    <path d="M13,15a1,1,0,0,1-2,0V14H0v5a5.006,5.006,0,0,0,5,5H19a5.006,5.006,0,0,0,5-5V14H13Z"></path>
-                    </svg>&nbsp;{{ job.compagny }}</p>
-                <p>
-                    <strong>Ville : </strong>
-                    <svg class="job-card-icon location-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
-                    <path d="M12,0A10.011,10.011,0,0,0,2,10c0,5.282,8.4,12.533,9.354,13.343l.646.546.646-.546C13.6,22.533,22,15.282,22,10A10.011,10.011,0,0,0,12,0Zm0,15a5,5,0,1,1,5-5A5.006,5.006,0,0,1,12,15Z"></path>
-                    <circle cx="12" cy="10" r="3"></circle>
-                    </svg>&nbsp;{{ job.city }}
-                </p>
-                <p>
-                    <strong>Contrat : </strong>
-                    <svg class="job-card-icon work-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
-                    <path d="M19,4H17.9A5.009,5.009,0,0,0,13,0H11A5.009,5.009,0,0,0,6.1,4H5A5.006,5.006,0,0,0,0,9v3H24V9A5.006,5.006,0,0,0,19,4ZM8.184,4A3,3,0,0,1,11,2h2a3,3,0,0,1,2.816,2Z"></path>
-                    <path d="M13,15a1,1,0,0,1-2,0V14H0v5a5.006,5.006,0,0,0,5,5H19a5.006,5.006,0,0,0,5-5V14H13Z"></path>
-                    </svg>&nbsp;{{ getContractLabel(job.contract) }}
-                </p>
-                <p>
-                    <strong>Temps de travail : </strong>
-                    <svg class="job-card-icon work-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
-                    <path d="M19,4H17.9A5.009,5.009,0,0,0,13,0H11A5.009,5.009,0,0,0,6.1,4H5A5.006,5.006,0,0,0,0,9v3H24V9A5.006,5.006,0,0,0,19,4ZM8.184,4A3,3,0,0,1,11,2h2a3,3,0,0,1,2.816,2Z"></path>
-                    <path d="M13,15a1,1,0,0,1-2,0V14H0v5a5.006,5.006,0,0,0,5,5H19a5.006,5.006,0,0,0,5-5V14H13Z"></path>
-                    </svg>&nbsp;{{ getWorkTimeLabel(job.workTime) }}
-                </p>
-                <p>
-                    <strong>Mode de travail : </strong>
-                    <svg class="job-card-icon work-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
-                    <path d="M19,4H17.9A5.009,5.009,0,0,0,13,0H11A5.009,5.009,0,0,0,6.1,4H5A5.006,5.006,0,0,0,0,9v3H24V9A5.006,5.006,0,0,0,19,4ZM8.184,4A3,3,0,0,1,11,2h2a3,3,0,0,1,2.816,2Z"></path>
-                    <path d="M13,15a1,1,0,0,1-2,0V14H0v5a5.006,5.006,0,0,0,5,5H19a5.006,5.006,0,0,0,5-5V14H13Z"></path>
-                    </svg>&nbsp;{{ getWorkModeLabel(job.workMode) }}
-                </p>
-                <p class="status-with-icon" [ngClass]="getOfferStatusClass(job.offerStatus)">
-                    <strong>Statut de l'offre : </strong>
-                    <span class="status-icon" [innerHTML]="getOfferStatusIcon(job.offerStatus)"></span>
-                    {{ getOfferStatusLabel(job.offerStatus) }}
-                </p>
-            </div>
+      <div class="job-info">
+        <p>
+          <strong>Entreprise : </strong>
+          <svg
+            class="job-card-icon work-icon"
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 24 24"
+            fill="currentColor"
+          >
+            <path
+              d="M19,4H17.9A5.009,5.009,0,0,0,13,0H11A5.009,5.009,0,0,0,6.1,4H5A5.006,5.006,0,0,0,0,9v3H24V9A5.006,5.006,0,0,0,19,4ZM8.184,4A3,3,0,0,1,11,2h2a3,3,0,0,1,2.816,2Z"
+            ></path>
+            <path
+              d="M13,15a1,1,0,0,1-2,0V14H0v5a5.006,5.006,0,0,0,5,5H19a5.006,5.006,0,0,0,5-5V14H13Z"
+            ></path></svg
+          >&nbsp;{{ job.compagny }}
+        </p>
+        <p>
+          <strong>Ville : </strong>
+          <svg
+            class="job-card-icon location-icon"
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 24 24"
+            fill="currentColor"
+          >
+            <path
+              d="M12,0A10.011,10.011,0,0,0,2,10c0,5.282,8.4,12.533,9.354,13.343l.646.546.646-.546C13.6,22.533,22,15.282,22,10A10.011,10.011,0,0,0,12,0Zm0,15a5,5,0,1,1,5-5A5.006,5.006,0,0,1,12,15Z"
+            ></path>
+            <circle cx="12" cy="10" r="3"></circle></svg
+          >&nbsp;{{ job.city }}
+        </p>
+        <p>
+          <strong>Contrat : </strong>
+          <svg
+            class="job-card-icon work-icon"
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 24 24"
+            fill="currentColor"
+          >
+            <path
+              d="M19,4H17.9A5.009,5.009,0,0,0,13,0H11A5.009,5.009,0,0,0,6.1,4H5A5.006,5.006,0,0,0,0,9v3H24V9A5.006,5.006,0,0,0,19,4ZM8.184,4A3,3,0,0,1,11,2h2a3,3,0,0,1,2.816,2Z"
+            ></path>
+            <path
+              d="M13,15a1,1,0,0,1-2,0V14H0v5a5.006,5.006,0,0,0,5,5H19a5.006,5.006,0,0,0,5-5V14H13Z"
+            ></path></svg
+          >&nbsp;{{ getContractLabel(job.contract) }}
+        </p>
+        <p>
+          <strong>Temps de travail : </strong>
+          <svg
+            class="job-card-icon work-icon"
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 24 24"
+            fill="currentColor"
+          >
+            <path
+              d="M19,4H17.9A5.009,5.009,0,0,0,13,0H11A5.009,5.009,0,0,0,6.1,4H5A5.006,5.006,0,0,0,0,9v3H24V9A5.006,5.006,0,0,0,19,4ZM8.184,4A3,3,0,0,1,11,2h2a3,3,0,0,1,2.816,2Z"
+            ></path>
+            <path
+              d="M13,15a1,1,0,0,1-2,0V14H0v5a5.006,5.006,0,0,0,5,5H19a5.006,5.006,0,0,0,5-5V14H13Z"
+            ></path></svg
+          >&nbsp;{{ getWorkTimeLabel(job.workTime) }}
+        </p>
+        <p>
+          <strong>Mode de travail : </strong>
+          <svg
+            class="job-card-icon work-icon"
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 24 24"
+            fill="currentColor"
+          >
+            <path
+              d="M19,4H17.9A5.009,5.009,0,0,0,13,0H11A5.009,5.009,0,0,0,6.1,4H5A5.006,5.006,0,0,0,0,9v3H24V9A5.006,5.006,0,0,0,19,4ZM8.184,4A3,3,0,0,1,11,2h2a3,3,0,0,1,2.816,2Z"
+            ></path>
+            <path
+              d="M13,15a1,1,0,0,1-2,0V14H0v5a5.006,5.006,0,0,0,5,5H19a5.006,5.006,0,0,0,5-5V14H13Z"
+            ></path></svg
+          >&nbsp;{{ getWorkModeLabel(job.workMode) }}
+        </p>
+        <p
+          class="status-with-icon"
+          [ngClass]="getOfferStatusClass(job.offerStatus)"
+        >
+          <strong>Statut de l'offre : </strong>
+          <span
+            class="status-icon"
+            [innerHTML]="getOfferStatusIcon(job.offerStatus)"
+          ></span>
+          {{ getOfferStatusLabel(job.offerStatus) }}
+        </p>
+      </div>
 
-            <div class="job-description">
-                <h4>Description</h4>
-                <p>{{ job.description }}</p>
-            </div>
+      <div class="job-description">
+        <h4>Description</h4>
+        <p>{{ job.description }}</p>
+      </div>
 
-            <div class="job-statuses" *ngIf="job.job_has_statuses.length > 0">
-                <h4>Historique des statuts</h4>
-                <ul>
-                    <li *ngFor="let status of job.job_has_statuses" class="status-with-icon" [ngClass]="getOfferStatusClass(job.offerStatus)">
-                        <strong>{{ getJobStatusLabel(status.job_status) }}</strong> - 
-                        <span class="status-icon" [innerHTML]="getOfferStatusIcon(status.offer_status)"></span>
-                        {{ getOfferStatusLabel(status.offer_status) }}
-                        <span class="date">({{ status.applied_at | date: 'dd/MM/yyyy HH:mm' }})</span>
-                    </li>
-                </ul>
-            </div>
+      <div class="job-statuses" *ngIf="job.job_has_statuses.length > 0">
+        <h4>Historique des statuts</h4>
+        <ul>
+          <li
+            *ngFor="let status of job.job_has_statuses"
+            class="status-with-icon"
+            [ngClass]="getOfferStatusClass(job.offerStatus)"
+          >
+            <strong>{{ getJobStatusLabel(status.job_status) }}</strong> -
+            <span
+              class="status-icon"
+              [innerHTML]="getOfferStatusIcon(status.offer_status)"
+            ></span>
+            {{ getOfferStatusLabel(status.offer_status) }}
+            <span class="date"
+              >({{ status.applied_at | date: 'dd/MM/yyyy HH:mm' }})</span
+            >
+          </li>
+        </ul>
+      </div>
 
-            <div class="job-meta">
-                <p>
-                    <svg class="job-card-icon calendar-icon small-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
-                    <path d="M24,10V24H0V10Zm0-2V5a3,3,0,0,0-3-3H18V0H16V2H8V0H6V2H3A3,3,0,0,0,0,5V8Zm-6,6H16v2h2Zm-5,0H11v2h2ZM8,14H6v2H8Zm10,4H16v2h2Zm-5,0H11v2h2ZM8,18H6v2H8Z"></path>
-                    </svg>&nbsp;
-                    <small>Créé le : {{ job.created_at | date: 'dd/MM/yyyy HH:mm' }}</small>
-                </p>
-                <p>
-                    <svg class="job-card-icon calendar-icon small-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
-                    <path d="M24,10V24H0V10Zm0-2V5a3,3,0,0,0-3-3H18V0H16V2H8V0H6V2H3A3,3,0,0,0,0,5V8Zm-6,6H16v2h2Zm-5,0H11v2h2ZM8,14H6v2H8Zm10,4H16v2h2Zm-5,0H11v2h2ZM8,18H6v2H8Z"></path>
-                    </svg>&nbsp;
-                    <small>Mis à jour le : {{ job.updated_at | date: 'dd/MM/yyyy HH:mm' }}</small>
-                </p>
-                <p><small>Source officielle : {{ job.from_official_dom ? 'Oui' : 'Non' }}</small></p>
-            </div>
-            <button class="cta-button validate">Changer le status</button>
-            <button class="cta-button update" (click)="onUpdateJob(job)">Modifier</button>
-            <button class="cta-button delete" (click)="onDeleteJob(job)">Supprimer</button>
-        </div>
-    </section>
+      <div class="job-meta">
+        <p>
+          <svg
+            class="job-card-icon calendar-icon small-icon"
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 24 24"
+            fill="currentColor"
+          >
+            <path
+              d="M24,10V24H0V10Zm0-2V5a3,3,0,0,0-3-3H18V0H16V2H8V0H6V2H3A3,3,0,0,0,0,5V8Zm-6,6H16v2h2Zm-5,0H11v2h2ZM8,14H6v2H8Zm10,4H16v2h2Zm-5,0H11v2h2ZM8,18H6v2H8Z"
+            ></path></svg
+          >&nbsp;
+          <small
+            >Créé le : {{ job.created_at | date: 'dd/MM/yyyy HH:mm' }}</small
+          >
+        </p>
+        <p>
+          <svg
+            class="job-card-icon calendar-icon small-icon"
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 24 24"
+            fill="currentColor"
+          >
+            <path
+              d="M24,10V24H0V10Zm0-2V5a3,3,0,0,0-3-3H18V0H16V2H8V0H6V2H3A3,3,0,0,0,0,5V8Zm-6,6H16v2h2Zm-5,0H11v2h2ZM8,14H6v2H8Zm10,4H16v2h2Zm-5,0H11v2h2ZM8,18H6v2H8Z"
+            ></path></svg
+          >&nbsp;
+          <small
+            >Mis à jour le :
+            {{ job.updated_at | date: 'dd/MM/yyyy HH:mm' }}</small
+          >
+        </p>
+        <p>
+          <small
+            >Source officielle :
+            {{ job.from_official_dom ? 'Oui' : 'Non' }}</small
+          >
+        </p>
+      </div>
+      <button class="cta-button validate">Changer le status</button>
+      <button class="cta-button update" (click)="onUpdateJob(job)">
+        Modifier
+      </button>
+      <button class="cta-button delete" (click)="onDeleteJob(job)">
+        Supprimer
+      </button>
+    </div>
+  </section>
 </main>

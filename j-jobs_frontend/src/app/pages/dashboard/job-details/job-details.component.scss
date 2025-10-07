@@ -14,509 +14,511 @@
 @use "app/theme/stats";
 
 .main-title-section {
-    grid-area: title;
-    @media (min-width: variables.$large) {
-        display: none;
-    }
+  grid-area: title;
+  @media (min-width: variables.$large) {
+    display: none;
+  }
 }
 
 .left-content-wrapper {
-    grid-area: sidebar;
-    background: #f5f7fa;
-    padding: 1rem;
-    display: none;
+  grid-area: sidebar;
+  background: #f5f7fa;
+  padding: 1rem;
+  display: none;
 
-    @media (min-width: variables.$large) {
-        display: flex;
+  @media (min-width: variables.$large) {
+    display: flex;
+  }
+
+  .sidebar-nav {
+    ul {
+      list-style-type: none;
+      padding: 0;
     }
 
-    .sidebar-nav {
-        ul {
-            list-style-type: none;
-            padding: 0;
-        }
+    ::ng-deep li a {
+      display: flex;
+      align-items: center;
+      text-decoration: none;
 
-        ::ng-deep li a {
-            display: flex;
-            align-items: center;
-            text-decoration: none;
-
-            span svg {
-                color: variables.$blue6;
-                height: 20px;
-                width: 20px;
-                flex-shrink: 0;
-            }
-        }
+      span svg {
+        color: variables.$blue6;
+        height: 20px;
+        width: 20px;
+        flex-shrink: 0;
+      }
     }
+  }
 }
 
 .dashboard-container {
-    display: grid;
-    grid-template-areas:
-        "title"
-        "stats"
-        "search"
-        "main";
-    gap: 1rem;
+  display: grid;
+  grid-template-areas:
+    "title"
+    "stats"
+    "search"
+    "main";
+  gap: 1rem;
+  padding: 1rem;
+  padding-left: 5px;
+  max-width: variables.$mediumContainerWidth;
+  margin: 0 auto;
+
+  @media (min-width: variables.$small) {
+    padding-left: 0;
     padding: 1rem;
+  }
+
+  @media (min-width: variables.$large) {
+    max-width: variables.$largeContainerWidth;
     padding-left: 5px;
-    max-width: variables.$mediumContainerWidth;
     margin: 0 auto;
+    grid-template-columns: 235px 715px;
+    grid-template-areas:
+      "sidebar stats"
+      "sidebar search"
+      "sidebar main";
+  }
 
-    @media (min-width: variables.$small) {
-        padding-left: 0;
-        padding: 1rem;
-    }
+  @media (min-width: variables.$extralarge) {
+    max-width: variables.$extralargeContainerWidth;
+    grid-template-columns: 250px 1fr;
+  }
 
-    @media (min-width: variables.$large) {
-        max-width: variables.$largeContainerWidth;
-        padding-left: 5px;
-        margin: 0 auto;
-        grid-template-columns: 235px 715px;
-        grid-template-areas:
-            "sidebar stats"
-            "sidebar search"
-            "sidebar main";
-    }
-
-    @media (min-width: variables.$extralarge) {
-        max-width: variables.$extralargeContainerWidth;
-        grid-template-columns: 250px 1fr;
-    }
-
-    @media (min-width: variables.$extraextralarge) {
-        max-width: variables.$extraextralargeContainerWidth;
-    }
+  @media (min-width: variables.$extraextralarge) {
+    max-width: variables.$extraextralargeContainerWidth;
+  }
 }
 
 .is-search-closed {
-    display: none !important;
+  display: none !important;
 }
 
 .search-content-wrapper {
-    grid-area: search;
+  grid-area: search;
 
-    .search-form {
-        display: grid;
-        grid-template-columns: 1fr;
-        gap: 1rem;
+  .search-form {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1rem;
+
+    @media (min-width: variables.$medium) {
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1rem;
+    }
+
+    .search-textual {
+      grid-column: 1 / -1;
+
+      label {
+        grid-column: 1 / -1;
+      }
+
+      display: grid;
+      grid-template-columns: 1fr auto;
+      align-items: end;
+      gap: 8px;
+
+      input {
+        grid-column: 1;
+      }
+
+      .search-toggle-btn {
+        grid-column: 2;
+        background: none;
+        border: none;
+        padding: 0;
+        cursor: pointer;
+        align-self: center;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        margin-bottom: 8px;
 
         @media (min-width: variables.$medium) {
-            grid-template-columns: repeat(3, 1fr);
-            gap: 1rem;
+          margin-bottom: 10px;
         }
 
-        .search-textual {
-            grid-column: 1 / -1;
-
-            label {
-                grid-column: 1 / -1;
-            }
-
-            display: grid;
-            grid-template-columns: 1fr auto;
-            align-items: end;
-            gap: 8px;
-
-            input {
-                grid-column: 1;
-            }
-
-            .search-toggle-btn {
-                grid-column: 2;
-                background: none;
-                border: none;
-                padding: 0;
-                cursor: pointer;
-                align-self: center;
-                display: flex;
-                align-items: center;
-                justify-content: center;
-
-                margin-bottom: 8px;
-
-                @media (min-width: variables.$medium) {
-                    margin-bottom: 10px;
-                }
-
-                @media (min-width: variables.$large) {
-                    margin-bottom: 12px;
-                }
-
-                &:focus-visible {
-                    outline: 2px solid variables.$blue6;
-                    outline-offset: 2px;
-                    border-radius: 4px;
-                }
-
-                .arrow-icon {
-                    color: variables.$blue6;
-                    width: 32px;
-                    height: 32px;
-                    display: block;
-                }
-            }
+        @media (min-width: variables.$large) {
+          margin-bottom: 12px;
         }
 
-        .search-row2 {
-            grid-column: 1 / -1;
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 0.5rem;
-
-            @media (min-width: variables.$medium) {
-                grid-template-columns: repeat(3, 1fr);
-                gap: 1rem;
-            }
-
-            label {
-                @media (min-width: variables.$medium) {
-                    grid-column: span 1;
-                }
-            }
-
-            select {
-                @media (min-width: variables.$medium) {
-                    grid-column: span 1;
-                }
-            }
+        &:focus-visible {
+          outline: 2px solid variables.$blue6;
+          outline-offset: 2px;
+          border-radius: 4px;
         }
 
-        .search-row3 {
-            grid-column: 1 / -1;
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 0.5rem;
-
-            @media (min-width: variables.$medium) {
-                grid-template-columns: repeat(3, 1fr);
-                gap: 1rem;
-            }
-
-            label {
-                @media (min-width: variables.$medium) {
-                    grid-column: span 1;
-                }
-            }
-
-            select, input[type="date"] {
-                @media (min-width: variables.$medium) {
-                    grid-column: span 1;
-                }
-            }
+        .arrow-icon {
+          color: variables.$blue6;
+          width: 32px;
+          height: 32px;
+          display: block;
         }
-
-        #sort-group {
-            @media (min-width: variables.$medium) {
-                grid-column: span 1;
-            }
-        }
-
-        #officialdom-group {
-            @media (min-width: variables.$medium) {
-                grid-column: span 2;
-                display: flex;
-                align-items: flex-end;
-                text-align: right;
-            }
-        }
-
-        .search-row4 {
-            grid-column: 1 / -1;
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 0.5rem;
-
-            @media (min-width: variables.$medium) {
-                grid-template-columns: repeat(2, 1fr);
-                gap: 1rem;
-            }
-
-            button {
-                width: 100%;
-                max-width: none;
-            }
-        }
-
-        .form-group {
-            margin-bottom: 0;
-        }
-
-        input, select {
-            width: 100%;
-        }
+      }
     }
+
+    .search-row2 {
+      grid-column: 1 / -1;
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 0.5rem;
+
+      @media (min-width: variables.$medium) {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 1rem;
+      }
+
+      label {
+        @media (min-width: variables.$medium) {
+          grid-column: span 1;
+        }
+      }
+
+      select {
+        @media (min-width: variables.$medium) {
+          grid-column: span 1;
+        }
+      }
+    }
+
+    .search-row3 {
+      grid-column: 1 / -1;
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 0.5rem;
+
+      @media (min-width: variables.$medium) {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 1rem;
+      }
+
+      label {
+        @media (min-width: variables.$medium) {
+          grid-column: span 1;
+        }
+      }
+
+      select,
+      input[type="date"] {
+        @media (min-width: variables.$medium) {
+          grid-column: span 1;
+        }
+      }
+    }
+
+    #sort-group {
+      @media (min-width: variables.$medium) {
+        grid-column: span 1;
+      }
+    }
+
+    #officialdom-group {
+      @media (min-width: variables.$medium) {
+        grid-column: span 2;
+        display: flex;
+        align-items: flex-end;
+        text-align: right;
+      }
+    }
+
+    .search-row4 {
+      grid-column: 1 / -1;
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 0.5rem;
+
+      @media (min-width: variables.$medium) {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1rem;
+      }
+
+      button {
+        width: 100%;
+        max-width: none;
+      }
+    }
+
+    .form-group {
+      margin-bottom: 0;
+    }
+
+    input,
+    select {
+      width: 100%;
+    }
+  }
 }
 
 .main-content-wrapper {
-    grid-area: main;
-    background: variables.$white;
-    padding: 1rem;
-    border-radius: 8px;
-    box-shadow: 0 2px 4px variables.$shadow-light;
+  grid-area: main;
+  background: variables.$white;
+  padding: 1rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px variables.$shadow-light;
 
-    .loading, 
-    .error, 
-    .no-jobs {
-        text-align: center;
-        padding: 2rem;
-        color: variables.$gray-600;
-    }
+  .loading,
+  .error,
+  .no-jobs {
+    text-align: center;
+    padding: 2rem;
+    color: variables.$gray-600;
+  }
 
-    .error {
-        color: variables.$red;
-    }
+  .error {
+    color: variables.$red;
+  }
 
-    .jobs-list {
-        text-align: center;
-        color: variables.$gray-600;
-        font-style: italic;
-    }
+  .jobs-list {
+    text-align: center;
+    color: variables.$gray-600;
+    font-style: italic;
+  }
 
-    .pager {
-        display: grid;
-        grid-auto-flow: column;
-        grid-auto-columns: minmax(56px, 1fr);
-        gap: 8px;
-        width: 100%;
-        align-items: center;
-        padding: 8px 0;
-        box-sizing: border-box;
-        overflow-x: auto;
-        -webkit-overflow-scrolling: touch;
-    }
+  .pager {
+    display: grid;
+    grid-auto-flow: column;
+    grid-auto-columns: minmax(56px, 1fr);
+    gap: 8px;
+    width: 100%;
+    align-items: center;
+    padding: 8px 0;
+    box-sizing: border-box;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
 
-    .pager button {
-        width: 100%;
-        padding: 8px 12px;
-        cursor: pointer;
-        white-space: nowrap;
-        box-sizing: border-box;
-    }
+  .pager button {
+    width: 100%;
+    padding: 8px 12px;
+    cursor: pointer;
+    white-space: nowrap;
+    box-sizing: border-box;
+  }
 
-    .pager .ellipsis {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        width: 100%;
-        padding: 8px 12px;
-        box-sizing: border-box;
-    }
-
+  .pager .ellipsis {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    padding: 8px 12px;
+    box-sizing: border-box;
+  }
 }
 
 .job-card {
-    background: variables.$white;
-    padding: 1.5rem;
+  background: variables.$white;
+  padding: 1.5rem;
+  margin-bottom: 1rem;
+
+  .row0 {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
     margin-bottom: 1rem;
 
-    .row0 {
+    .col0 {
+      flex-shrink: 0;
+
+      .job-incity-initial {
+        width: 50px;
+        height: 50px;
+        background: variables.$blue6;
+        color: variables.$white;
         display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.5rem;
+        font-weight: bold;
+        border-radius: 8px;
+      }
+    }
+
+    .col1 {
+      flex: 1;
+
+      h3 {
+        margin: 0 0 0.25rem 0;
+        font-size: 1.25rem;
+        color: variables.$gray-700;
+      }
+
+      p {
+        margin: 0;
+        color: variables.$gray-600;
+        font-size: 0.95rem;
+      }
+    }
+  }
+
+  .row1 {
+    border: none;
+    border-top: 1px solid variables.$gray-light;
+    margin: 1rem 0;
+  }
+
+  .row2 {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 0.75rem;
+    margin-bottom: 1rem;
+
+    @media (min-width: variables.$small) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    @media (min-width: variables.$medium) {
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+    .cta-button,
+    p {
+      margin: 0;
+      padding-top: 15px;
+      width: 100%;
+
+      &:not(.cta-button) {
+        display: flex;
+        font-size: 0.9rem;
         align-items: flex-start;
-        gap: 1rem;
-        margin-bottom: 1rem;
+        color: variables.$gray-600;
+      }
 
-        .col0 {
-            flex-shrink: 0;
-
-            .job-incity-initial {
-                width: 50px;
-                height: 50px;
-                background: variables.$blue6;
-                color: variables.$white;
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                font-size: 1.5rem;
-                font-weight: bold;
-                border-radius: 8px;
-            }
-        }
-
-        .col1 {
-            flex: 1;
-
-            h3 {
-                margin: 0 0 0.25rem 0;
-                font-size: 1.25rem;
-                color: variables.$gray-700;
-            }
-
-            p {
-                margin: 0;
-                color: variables.$gray-600;
-                font-size: 0.95rem;
-            }
-        }
+      strong {
+        color: variables.$gray-700;
+      }
     }
 
-    .row1 {
-        border: none;
-        border-top: 1px solid variables.$gray-light;
-        margin: 1rem 0;
+    div.job-meta {
+      padding-top: 15px;
+
+      p {
+        padding: 0 !important;
+      }
+    }
+  }
+
+  .row3 {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 0.75rem;
+    align-items: start;
+
+    @media (min-width: variables.$small) {
+      grid-template-columns: 1fr 1fr;
     }
 
-    .row2 {
-        display: grid;
-        grid-template-columns: 1fr;
-        gap: 0.75rem;
-        margin-bottom: 1rem;
-
-        @media (min-width: variables.$small) {
-            grid-template-columns: repeat(2, 1fr);
-        }
-
-        @media (min-width: variables.$medium) {
-            grid-template-columns: repeat(3, 1fr);
-        }
-
-        .cta-button,
-        p {
-            margin: 0;
-            padding-top: 15px;
-            width: 100%;
-            
-            &:not(.cta-button) {
-                display: flex;
-                font-size: 0.9rem;
-                align-items: flex-start;
-                color: variables.$gray-600;
-            }
-
-            strong {
-                color: variables.$gray-700;
-            }
-        }
-
-        div.job-meta {
-            padding-top: 15px;
-
-            p {
-                padding: 0 !important;
-            }
-        }
+    @media (min-width: variables.$medium) {
+      grid-template-columns: auto auto 1fr;
     }
 
-    .row3 {
-        display: grid;
-        grid-template-columns: 1fr;
-        gap: 0.75rem;
-        align-items: start;
+    p {
+      margin: 0;
+      display: flex;
+      align-items: flex-start;
+      font-size: 0.9rem;
+      color: variables.$gray-600;
 
-        @media (min-width: variables.$small) {
-            grid-template-columns: 1fr 1fr;
-        }
+      strong {
+        color: variables.$gray-700;
+      }
 
-        @media (min-width: variables.$medium) {
-            grid-template-columns: auto auto 1fr;
-        }
-
-        p {
-            margin: 0;
-            display: flex;
-            align-items: flex-start;
-            font-size: 0.9rem;
-            color: variables.$gray-600;
-
-            strong {
-                color: variables.$gray-700;
-            }
-
-            small {
-                font-size: 0.85rem;
-                color: variables.$gray-600;
-            }
-        }
-
-        .col0, .col1 {
-            display: flex;
-            align-items: flex-start;
-        }
-
-        .job-meta {
-            display: flex;
-            flex-direction: column;
-            gap: 0.25rem;
-            justify-self: start;
-            text-align: left;
-
-            @media (min-width: variables.$medium) {
-                justify-self: start;
-                text-align: left;
-            }
-
-            p {
-                margin: 0;
-                justify-content: flex-start;
-            }
-        }
+      small {
+        font-size: 0.85rem;
+        color: variables.$gray-600;
+      }
     }
+
+    .col0,
+    .col1 {
+      display: flex;
+      align-items: flex-start;
+    }
+
+    .job-meta {
+      display: flex;
+      flex-direction: column;
+      gap: 0.25rem;
+      justify-self: start;
+      text-align: left;
+
+      @media (min-width: variables.$medium) {
+        justify-self: start;
+        text-align: left;
+      }
+
+      p {
+        margin: 0;
+        justify-content: flex-start;
+      }
+    }
+  }
 }
 
 .job-card-icon {
-    height: 20px;
-    width: 20px;
-    color: variables.$blue6;
-    flex-shrink: 0;
+  height: 20px;
+  width: 20px;
+  color: variables.$blue6;
+  flex-shrink: 0;
 }
 
 .small-icon {
-    height: 16px !important;
-    width: 16px !important;
+  height: 16px !important;
+  width: 16px !important;
 }
 
 .status-with-icon {
-    display: flex;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+
+  .status-icon {
+    display: inline-flex;
     align-items: center;
-    gap: 0.5rem;
+    justify-content: center;
+    width: 24px;
+    height: 24px;
+    flex-shrink: 0;
 
-    .status-icon {
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
-        width: 24px;
-        height: 24px;
-        flex-shrink: 0;
-
-        svg {
-            width: 20px;
-            height: 20px;
-            display: block;
-        }
+    svg {
+      width: 20px;
+      height: 20px;
+      display: block;
     }
+  }
 }
 
 .status-yellow {
-    .status-icon {
-        color: variables.$yellow;
-    }
+  .status-icon {
+    color: variables.$yellow;
+  }
 }
 
 .status-green {
-    .status-icon {
-        color: variables.$green;
-    }
+  .status-icon {
+    color: variables.$green;
+  }
 }
 
 .status-blue {
-    .status-icon {
-        color: variables.$blue5;
-    }
+  .status-icon {
+    color: variables.$blue5;
+  }
 }
 
 .status-red {
-    .status-icon {
-        color: variables.$red;
-    }
+  .status-icon {
+    color: variables.$red;
+  }
 }
 
 .status-success {
-    .status-icon {
-        color: variables.$validate;
-    }
+  .status-icon {
+    color: variables.$validate;
+  }
 }
 
 .cta-button {
-    margin-right: 15px;
+  margin-right: 15px;
 }

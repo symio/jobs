@@ -4,7 +4,7 @@ import { Routes } from '@angular/router';
 export const routes: Routes = [
   {
     path: '',
-    loadChildren: () => import('./pages/pages.routes').then(r => r.routes)
+    loadChildren: () => import('./pages/pages.routes').then((r) => r.routes),
   },
   // Route pour les utilisateurs connectés (à ajouter plus tard)
   // {
@@ -14,6 +14,6 @@ export const routes: Routes = [
   // },
   {
     path: '**',
-    redirectTo: '' // redirige vers la landing page si route inconnue
-  }
+    redirectTo: '', // redirige vers la landing page si route inconnue
+  },
 ];

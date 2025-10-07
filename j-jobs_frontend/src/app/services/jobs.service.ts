@@ -6,145 +6,151 @@ import { OAuth2Service } from './oauth2.service';
 import { Observable, BehaviorSubject, tap } from 'rxjs';
 
 export interface HalLink {
-    href: string;
+  href: string;
 }
 
 export interface HalLinks {
-    [key: string]: HalLink;
+  [key: string]: HalLink;
 }
 
 export interface JobHasStatus {
-    job_status: string;
-    offer_status: string;
-    applied_at: string;
-    _links?: HalLinks;
+  job_status: string;
+  offer_status: string;
+  applied_at: string;
+  _links?: HalLinks;
 }
 
 export interface Job {
-    position: string;
-    description: string;
-    compagny: string;
-    city: string;
-    from_official_dom: boolean;
-    created_at: string;
-    updated_at: string;
-    job_has_statuses: JobHasStatus[];
-    contract: string;
-    workTime: string;
-    workMode: string;
-    offerStatus: string;
-    _links?: HalLinks;
+  position: string;
+  description: string;
+  compagny: string;
+  city: string;
+  from_official_dom: boolean;
+  created_at: string;
+  updated_at: string;
+  job_has_statuses: JobHasStatus[];
+  contract: string;
+  workTime: string;
+  workMode: string;
+  offerStatus: string;
+  _links?: HalLinks;
 }
 
 export interface PageInfo {
-    size: number;
-    total_elements: number;
-    total_pages: number;
-    number: number;
+  size: number;
+  total_elements: number;
+  total_pages: number;
+  number: number;
 }
 
 export interface SearchJobsRequest {
-    contract: string | null;
-    eventBefore: string | null;
-    eventAfter: string | null;
-    officialdom: boolean;
-    offerStatus: string | null;
-    sort: string;
-    textual: string | null;
-    workTime: string | null;
-    workMode: string | null;
+  contract: string | null;
+  eventBefore: string | null;
+  eventAfter: string | null;
+  officialdom: boolean;
+  offerStatus: string | null;
+  sort: string;
+  textual: string | null;
+  workTime: string | null;
+  workMode: string | null;
 }
 
 export interface CreateJobRequest {
-    position: string;
-    compagny: string;
-    city: string;
-    contract?: string;
-    workTime?: string;
-    workMode?: string;
-    offerStatus?: string;
-    from_official_dom?: boolean;
-    description?: string;
+  position: string;
+  compagny: string;
+  city: string;
+  contract?: string;
+  workTime?: string;
+  workMode?: string;
+  offerStatus?: string;
+  from_official_dom?: boolean;
+  description?: string;
 }
 
 export interface UpdateJobRequest {
-    position?: string;
-    compagny?: string;
-    city?: string;
-    contract?: string;
-    workTime?: string;
-    workMode?: string;
-    offerStatus?: string;
-    from_official_dom?: boolean;
-    description?: string;
+  position?: string;
+  compagny?: string;
+  city?: string;
+  contract?: string;
+  workTime?: string;
+  workMode?: string;
+  offerStatus?: string;
+  from_official_dom?: boolean;
+  description?: string;
 }
 
 export interface GetJobsResponse {
-    _embedded: {
-        jobs: Job[];
-    };
-    _links?: HalLinks;
-    page: PageInfo;
+  _embedded: {
+    jobs: Job[];
+  };
+  _links?: HalLinks;
+  page: PageInfo;
 }
 
 @Injectable({
-    providedIn: 'root'
+  providedIn: 'root',
 })
 export class JobsService {
-    private readonly apiUrl: string;
-    private jobsUpdatedSubject = new BehaviorSubject<boolean>(false);
-    jobsUpdated$ = this.jobsUpdatedSubject.asObservable();
-    
-    notifyJobsUpdated() {
-        this.jobsUpdatedSubject.next(true);
-    }
+  private readonly apiUrl: string;
+  private jobsUpdatedSubject = new BehaviorSubject<boolean>(false);
+  jobsUpdated$ = this.jobsUpdatedSubject.asObservable();
 
-    constructor(
-        private http: HttpClient,
-        private apiurlService: ApiurlService,
-        private oAuth2Service: OAuth2Service
-    ) {
-        this.apiUrl = `${this.apiurlService.getApiBaseUrl()}/jobs`;
-    }
+  notifyJobsUpdated() {
+    this.jobsUpdatedSubject.next(true);
+  }
 
-    createJob(job: CreateJobRequest): Observable<Job> {
-        const headers = this.oAuth2Service.buildRequestHeadersHal(true);
-        
-        return this.http.post<Job>(this.apiUrl, job, { headers });
-    }
-    
-    updateJob(link: string, job: UpdateJobRequest): Observable<Job> {
-        const headers = this.oAuth2Service.buildRequestHeadersHal(true);
-        const fullUrl = `${this.apiurlService.getApiBaseUrl()}${link}`;
-        
-        return this.http.patch<Job>(fullUrl, job, { headers });
-    }
-    
-    searchJobs(search: SearchJobsRequest, page: number = 0, size: number = 3): Observable<GetJobsResponse> {
-        const headers = this.oAuth2Service.buildRequestHeadersHal(true);
-        const url = `${this.apiUrl}/search?page=${page}&size=${size}`;
+  constructor(
+    private http: HttpClient,
+    private apiurlService: ApiurlService,
+    private oAuth2Service: OAuth2Service,
+  ) {
+    this.apiUrl = `${this.apiurlService.getApiBaseUrl()}/jobs`;
+  }
 
-        return this.http.post<GetJobsResponse>(url, search, { headers: headers });
-    }
-    
-    getJobs(page: number = 0, size: number = 3): Observable<GetJobsResponse> {
-        const headers = this.oAuth2Service.buildRequestHeadersHal(true);
-        const url = `${this.apiUrl}?page=${page}&size=${size}`;
+  createJob(job: CreateJobRequest): Observable<Job> {
+    const headers = this.oAuth2Service.buildRequestHeadersHal(true);
 
-        return this.http.get<GetJobsResponse>(url, { headers: headers });
-    }
+    return this.http.post<Job>(this.apiUrl, job, { headers });
+  }
 
-    getJobByHalLink(urlPart: string): Observable<Job> {
-        const headers = this.oAuth2Service.buildRequestHeadersHal(true);
-        const fullUrl = `${this.apiurlService.getApiBaseUrl()}${urlPart}`;
-        
-        return this.http.get<Job>(fullUrl, { headers });
-    }
+  updateJob(link: string, job: UpdateJobRequest): Observable<Job> {
+    const headers = this.oAuth2Service.buildRequestHeadersHal(true);
+    const fullUrl = `${this.apiurlService.getApiBaseUrl()}${link}`;
 
-    deleteJob(link: string): Observable<void> {
-        const headers = this.oAuth2Service.buildRequestHeaders(true);
-        const fullUrl = `${this.apiurlService.getApiBaseUrl()}${link}`;
+    return this.http.patch<Job>(fullUrl, job, { headers });
+  }
 
-        return this.http.delete<void>(fullUrl, { headers }).pipe(tap(() => this.notifyJobsUpdated()));
-    }
+  searchJobs(
+    search: SearchJobsRequest,
+    page: number = 0,
+    size: number = 3,
+  ): Observable<GetJobsResponse> {
+    const headers = this.oAuth2Service.buildRequestHeadersHal(true);
+    const url = `${this.apiUrl}/search?page=${page}&size=${size}`;
+
+    return this.http.post<GetJobsResponse>(url, search, { headers: headers });
+  }
+
+  getJobs(page: number = 0, size: number = 3): Observable<GetJobsResponse> {
+    const headers = this.oAuth2Service.buildRequestHeadersHal(true);
+    const url = `${this.apiUrl}?page=${page}&size=${size}`;
+
+    return this.http.get<GetJobsResponse>(url, { headers: headers });
+  }
+
+  getJobByHalLink(urlPart: string): Observable<Job> {
+    const headers = this.oAuth2Service.buildRequestHeadersHal(true);
+    const fullUrl = `${this.apiurlService.getApiBaseUrl()}${urlPart}`;
+
+    return this.http.get<Job>(fullUrl, { headers });
+  }
+
+  deleteJob(link: string): Observable<void> {
+    const headers = this.oAuth2Service.buildRequestHeaders(true);
+    const fullUrl = `${this.apiurlService.getApiBaseUrl()}${link}`;
+
+    return this.http
+      .delete<void>(fullUrl, { headers })
+      .pipe(tap(() => this.notifyJobsUpdated()));
+  }
 }
