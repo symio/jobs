@@ -1,3 +1,4 @@
+// j-jobs_frontend/src/app/environments/environment.prod.ts
 import { env } from './.env';
 
 export const environment = {
@@ -6,9 +7,9 @@ export const environment = {
   defaultLanguage: 'fr-FR',
   supportedLanguages: ['fr-FR'],
   apiUrl: {
-    httpPort: '8080',
-    httpsPort: '8043',
-    fallback: 'http://localhost:8080',
+    httpPort: '4200',
+    httpsPort: '4243',
+    fallback: 'http://${window.location.hostname}:4200/jobs',
     getPort(protocol: string): string {
       return protocol === 'https:' ? this.httpsPort : this.httpPort;
     },

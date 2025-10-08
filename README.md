@@ -64,20 +64,21 @@ Lancer la commande :
 yarn install
 ```
 
-## Installation (mode développement pour l'instant)
+## Installation 
 - Cloner ce dépôt
 - Configurez les fichiers d’environnement / de secrets
-> - copier le fichier -   j-jobs_backend/src/main/resources/application-secrets.sample.yml vers j-jobs_backend/src/main/resources/application-secrets.yml 
+> - copier le fichier : j-jobs_backend/src/main/resources/application-secrets.sample.yml vers j-jobs_backend/src/main/resources/application-secrets.yml
 >  - adaptez les variables username et  password
 >  - copiez le fichier -   conteneurisation/.env.sample vers conteneurisation/.env
 >  - adaptez les variables en accord avec j-jobs_backend/src/main/resources/application-secrets.yml
 - Lancez la pile docker : `` docker compose up --build -d --wait ``
-- Exécutez le test Unitaire : j-jobs_backend/src/test/java/org/loamok/jobs/entity/RoleTest.java
-- ou importez le fichier :  j-jobs_backend/src/main/resources/data-roles.csv via PGAdmin 4 servi par Docker (login et mot de passe sont définis dans le .env) : http://localhost:5433/browser/
-- Lancez le backend : 
-> - Linux : `` cd j-jobs_backend && /bin/sh  gradlew bootRun ``
-> - Windows (depuis le dossier j-jobs_backend) : `` gradlew.bat bootRun ``
-```
-- Lancez le Frontend (depuis le dossier j-jobs_frontend) (voir la section Angular ci dessus) : `` yarn serve `` 
+- Importez le fichier :  j-jobs_backend/src/main/resources/data-roles.csv via PGAdmin 4 servi par Docker (login et mot de passe sont définis dans le .env) : http://localhost:5433/browser/
+>  Vous devrez ajouter un "serveur" dans PGAdmin avec : 
+> - Hôte : db
+> - Port : 5432
+> - identifiant : le POSTGRES_USER mis dans le .env
+> - Mot de passe : le POSTGRES_PASSWORD mis dans le .env
+> connectez vous à la base de données jobs (ou le nom que vous aurez mis en POSTGRES_DB dans le .env) depuis l'explorateur d'objets
+> cliquez droit sur Schémas > public > Tables > roles et suivez les instruction de l'assistant "Import / Export de données"
 
 Ouvrez votre navigateur sur l'url : http://localhost:4200

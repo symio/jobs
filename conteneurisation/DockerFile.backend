@@ -1,0 +1,15 @@
+# DockerFile.backend
+# Étape 1 : Build du WAR avec Gradle et Java 21
+FROM gradle:8.10-jdk21 AS build
+WORKDIR /app
+COPY build.gradle settings.gradle ./
+COPY src ./src
+RUN gradle clean build -x test
+
+# Étape 2 : Exécution sur Tomcat 10
+FROM tomcat:10.1-jdk21
+LABEL maintainer="symio"
+WORKDIR /usr/local/tomcat/webapps/
+COPY --from=build /app/build/libs/*.war jobs.war
+EXPOSE 8080
+CMD ["catalina.sh", "run"]

@@ -1,10 +1,42 @@
 services:
+  backend:
+    build:
+      context: ../j-jobs_backend
+      dockerfile: ../conteneurisation/DockerFile.backend
+    container_name: j-jobs_backend
+    restart: unless-stopped
+    ports:
+      - "8080:8080"
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:postgresql://db:5432/${POSTGRES_DB}
+      SPRING_DATASOURCE_USERNAME: ${POSTGRES_USER}
+      SPRING_DATASOURCE_PASSWORD: ${POSTGRES_PASSWORD}
+      SPRING_JPA_HIBERNATE_DDL_AUTO: update
+      SPRING_PROFILES_ACTIVE: prod,secrets
+      CORS_ALLOWED_ORIGINS: "http://localhost,http://frontend,http://localhost:4200,http://192.168.1.252,http://192.168.1.252:4200"
+    depends_on:
+      db:
+        condition: service_healthy # <== MODIFIÉ: Attend que la DB soit prête
+    networks:
+      - projetjobs_network
+
+  frontend:
+    # ... inchangé, car correct
+    build:
+      context: ..
+      dockerfile: conteneurisation/DockerFile.frontend
+    container_name: j-jobs_frontend
+    restart: unless-stopped
+    ports:
+      - "4200:80"
+    depends_on:
+      - backend
+    networks:
+      - projetjobs_network
+
   db:
-    # see https://hub.docker.com/_/postgres for list of postgres image versions on docker hub
-    #image: postgres:latest # To download the latest image
-    #image: postgres:17.4-alpine # To download a specific version, here the version 17.4 of Postgresql under an alpine linux distribution
-    image: postgres:17.4 # To download a specific version, here the version 17.4 of Postgresql
-    container_name: database
+    image: postgres:17.4
+    container_name: j-jobs_db
     volumes:
       - postgresql_data:/var/lib/postgresql/data
     env_file:
@@ -14,14 +46,20 @@ services:
       POSTGRES_USER: ${POSTGRES_USER}
       POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
     ports:
-      - "5432:5432" # HOST_PORT:CONTAINER_PORT
+      - "5432:5432"
     networks:
       - projetjobs_network
     restart: unless-stopped
+    healthcheck: # <== NOUVEAU: Ajout du Healthcheck
+      test: ["CMD-SHELL", "pg_isready -U $$POSTGRES_USER -d $$POSTGRES_DB"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+
   pgadmin:
-    # see https://hub.docker.com/r/dpage/pgadmin4
-    image: dpage/pgadmin4:latest # To download the latest image
-    container_name: pgadmin
+    # ... inchangé, car correct
+    image: dpage/pgadmin4:latest
+    container_name: j-jobs_pgadmin
     volumes:
       - pgadmin_working_dir:/var/lib/pgadmin
       - pgadmin_config_dir:/pgadmin4
@@ -34,7 +72,7 @@ services:
     depends_on:
       - db
     ports:
-      - "5433:80" # HOST_PORT:CONTAINER_PORT
+      - "5433:80"
     networks:
       - projetjobs_network
     restart: unless-stopped
@@ -50,4 +88,3 @@ volumes:
 networks:
   projetjobs_network:
     driver: bridge
-    

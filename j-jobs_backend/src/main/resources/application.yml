@@ -1,5 +1,4 @@
 server.port: 8080
-#Connection to DB
 spring:
   profiles.active: secrets
   jackson:
@@ -9,8 +8,7 @@ spring:
   web:
     locale: en
   datasource:
-    url: jdbc:postgresql://localhost:5432/jobs?currentSchema=public
-#Options to DB
+    url: ${SPRING_DATASOURCE_URL:jdbc:postgresql://localhost:5432/jobs}?currentSchema=public
   jpa:
     properties:
       hibernate:
@@ -20,5 +18,4 @@ spring:
         format-sql: true
     show-sql: true
     hibernate:
-#      ddl-auto: create
-      ddl-auto: update
+      ddl-auto: ${SPRING_JPA_HIBERNATE_DDL_AUTO:update}

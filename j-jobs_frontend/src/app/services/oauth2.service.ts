@@ -1,4 +1,4 @@
-// src/app/services/oauth2.service.ts
+// j-jobs_frontend/src/app/services/oauth2.service.ts
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { BehaviorSubject, Observable, of, throwError } from 'rxjs';

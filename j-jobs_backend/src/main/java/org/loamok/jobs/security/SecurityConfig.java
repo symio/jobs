@@ -5,6 +5,7 @@ import java.util.function.Supplier;
 import org.apache.commons.logging.*;
 import org.loamok.jobs.security.jwt.JwtAuthenticationFilter;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.*;
 import org.springframework.http.HttpMethod;
 import org.springframework.security.authentication.*;
@@ -24,6 +25,9 @@ import org.springframework.web.cors.UrlBasedCorsConfigurationSource;
 @EnableWebSecurity
 public class SecurityConfig {
 
+    @Value("${CORS_ALLOWED_ORIGINS:http://localhost}")
+    private String allowedOriginsEnv;
+
     protected final Log logger = LogFactory.getLog(getClass());
 
     @Autowired
@@ -35,15 +39,16 @@ public class SecurityConfig {
     @Bean
     public SecurityFilterChain oauth2ApiFilterChain(HttpSecurity http) throws Exception {
         http
-                .securityMatcher("/**")
+                .securityMatcher("/jobs/**")
                 .authorizeHttpRequests(auth -> auth
                 // APIs ouvertes au public sans authentification
+                .requestMatchers(HttpMethod.OPTIONS, "/**").permitAll() 
                 .requestMatchers(HttpMethod.POST, "/profil/register").permitAll()
                 .requestMatchers(HttpMethod.POST, "/authorize/token").permitAll()
                 .requestMatchers(HttpMethod.POST, "/authorize/refresh").permitAll()
                 // Sauf pour le cleanup qui sert de déconnexion
                 .requestMatchers(HttpMethod.POST, "/authorize/cleanup").permitAll()
-//                .requestMatchers(HttpMethod.POST, "/authorize/remembered").permitAll()
+                //                .requestMatchers(HttpMethod.POST, "/authorize/remembered").permitAll()
                 // SpringDoc OpenAPI / Swagger UI endpoints - Documentation API accessible publiquement
                 .requestMatchers("/v3/api-docs/**").permitAll() // Spécification OpenAPI 3.0 en JSON/YAML
                 .requestMatchers("/swagger-ui/**").permitAll() // Interface utilisateur Swagger (HTML, CSS, JS)
@@ -66,11 +71,11 @@ public class SecurityConfig {
                 .requestMatchers(HttpMethod.DELETE, "/**").hasAnyRole("USER", "ADMIN")
                 // Tout le reste nécessite authentification + scope
                 .anyRequest().access(this::hasAccessScopeAndAuthenticated)
-            )
-            .addFilterBefore(jwtAuthenticationFilter, UsernamePasswordAuthenticationFilter.class)
-            .sessionManagement(session -> session.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
-            .csrf(csrf -> csrf.disable())
-            .cors(cors -> cors.configurationSource(corsConfigurationSource()));
+                )
+                .addFilterBefore(jwtAuthenticationFilter, UsernamePasswordAuthenticationFilter.class)
+                .sessionManagement(session -> session.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
+                .csrf(csrf -> csrf.disable())
+                .cors(cors -> cors.configurationSource(corsConfigurationSource()));
         return http.build();
     }
 
@@ -94,9 +99,23 @@ public class SecurityConfig {
     @Bean
     public CorsConfigurationSource corsConfigurationSource() {
         CorsConfiguration config = new CorsConfiguration();
-        config.setAllowedOrigins(List.of("http://localhost:4200", "http://192.168.1.252:4200"));
+
+        List<String> allowedOrigins = List.of(allowedOriginsEnv.split(","));
+        config.setAllowedOrigins(allowedOrigins);
+
         config.setAllowedMethods(List.of("GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS"));
-        config.setAllowedHeaders(List.of("*"));
+        config.setAllowedHeaders(List.of(
+                "Authorization",
+                "Content-Type",
+                "X-Requested-With",
+                "Accept",
+                "Origin",
+                "Cache-Control",
+                "Pragma",
+                "X-Forwarded-For",
+                "X-Forwarded-Proto",
+                "X-Real-IP"
+        ));
         config.setAllowCredentials(true);
 
         UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();

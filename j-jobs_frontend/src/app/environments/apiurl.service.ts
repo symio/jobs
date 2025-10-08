@@ -1,4 +1,4 @@
-// src/app.environments/apiurl.service.ts
+// j-jobs_frontend/src/app.environments/apiurl.service.ts
 import { Injectable } from '@angular/core';
 import { environment } from './environment';
 
@@ -14,6 +14,6 @@ export class ApiurlService {
     }
 
     const apiPort = environment.apiUrl.getPort(protocol);
-    return `${protocol}//${hostname}:${apiPort}`;
+    return `${protocol}//${hostname}:${apiPort}/api`;
   }
 }
