@@ -1,0 +1,272 @@
+<?xml version="1.0" encoding="UTF-8"?><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentStyleType="text/css" height="866px" preserveAspectRatio="none" style="width:1917px;height:866px;background:#FFFFFF;" version="1.1" viewBox="0 0 1917 866" width="1917px" zoomAndPan="magnify">
+    <defs/>
+    <g>
+        <!--cluster Dev / recette / int?gration-->
+        <g id="cluster_Dev / recette / intégration">
+            <path d="M8.5,6 L213.5,6 A3.75,3.75 0 0 1 216,8.5 L223,28.2969 L1403.5,28.2969 A2.5,2.5 0 0 1 1406,30.7969 L1406,856.5 A2.5,2.5 0 0 1 1403.5,859 L8.5,859 A2.5,2.5 0 0 1 6,856.5 L6,8.5 A2.5,2.5 0 0 1 8.5,6 " fill="none" style="stroke:#000000;stroke-width:1.5;"/>
+            <line style="stroke:#000000;stroke-width:1.5;" x1="6" x2="223" y1="28.2969" y2="28.2969"/>
+            <text fill="#000000" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacing" textLength="204" x="10" y="20.9951">Dev / recette / intégration</text>
+        </g>
+        <!--cluster docker-compose (projetjobs_network)-->
+        <g id="cluster_docker-compose (projetjobs_network)">
+            <path d="M164.5,321 L468.5,321 A3.75,3.75 0 0 1 471,323.5 L478,343.2969 L1379.5,343.2969 A2.5,2.5 0 0 1 1382,345.7969 L1382,832.5 A2.5,2.5 0 0 1 1379.5,835 L164.5,835 A2.5,2.5 0 0 1 162,832.5 L162,323.5 A2.5,2.5 0 0 1 164.5,321 " fill="none" style="stroke:#000000;stroke-width:1.5;"/>
+            <line style="stroke:#000000;stroke-width:1.5;" x1="162" x2="478" y1="343.2969" y2="343.2969"/>
+            <text fill="#000000" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacing" textLength="303" x="166" y="335.9951">docker-compose (projetjobs_network)</text>
+        </g>
+        <!--cluster front-end (j-jobs_frontend)-->
+        <g id="cluster_front-end (j-jobs_frontend)">
+            <path d="M246.5,364 L458.5,364 A3.75,3.75 0 0 1 461,366.5 L468,386.2969 L803.5,386.2969 A2.5,2.5 0 0 1 806,388.7969 L806,475.5 A2.5,2.5 0 0 1 803.5,478 L246.5,478 A2.5,2.5 0 0 1 244,475.5 L244,366.5 A2.5,2.5 0 0 1 246.5,364 " fill="none" style="stroke:#000000;stroke-width:1.5;"/>
+            <line style="stroke:#000000;stroke-width:1.5;" x1="244" x2="468" y1="386.2969" y2="386.2969"/>
+            <text fill="#000000" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacing" textLength="211" x="248" y="378.9951">front-end (j-jobs_frontend)</text>
+        </g>
+        <!--cluster back-end (j-jobs_backend)-->
+        <g id="cluster_back-end (j-jobs_backend)">
+            <path d="M188.5,542 L396.5,542 A3.75,3.75 0 0 1 399,544.5 L406,564.2969 L803.5,564.2969 A2.5,2.5 0 0 1 806,566.7969 L806,669.5 A2.5,2.5 0 0 1 803.5,672 L188.5,672 A2.5,2.5 0 0 1 186,669.5 L186,544.5 A2.5,2.5 0 0 1 188.5,542 " fill="none" style="stroke:#000000;stroke-width:1.5;"/>
+            <line style="stroke:#000000;stroke-width:1.5;" x1="186" x2="406" y1="564.2969" y2="564.2969"/>
+            <text fill="#000000" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacing" textLength="207" x="190" y="556.9951">back-end (j-jobs_backend)</text>
+        </g>
+        <!--cluster Base de donn?es (j-jobs_db)-->
+        <g id="cluster_Base de données (j-jobs_db)">
+            <path d="M1120.5,558.5 L1345.5,558.5 A3.75,3.75 0 0 1 1348,561 L1355,580.7969 L1355.5,580.7969 A2.5,2.5 0 0 1 1358,583.2969 L1358,808.5 A2.5,2.5 0 0 1 1355.5,811 L1120.5,811 A2.5,2.5 0 0 1 1118,808.5 L1118,561 A2.5,2.5 0 0 1 1120.5,558.5 " fill="none" style="stroke:#000000;stroke-width:1.5;"/>
+            <line style="stroke:#000000;stroke-width:1.5;" x1="1118" x2="1355" y1="580.7969" y2="580.7969"/>
+            <text fill="#000000" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacing" textLength="224" x="1122" y="573.4951">Base de données (j-jobs_db)</text>
+        </g>
+        <!--cluster Administration (j-jobs_pgadmin)-->
+        <g id="cluster_Administration (j-jobs_pgadmin)">
+            <path d="M832.5,372.5 L1081.5,372.5 A3.75,3.75 0 0 1 1084,375 L1091,394.7969 L1091.5,394.7969 A2.5,2.5 0 0 1 1094,397.2969 L1094,653 A2.5,2.5 0 0 1 1091.5,655.5 L832.5,655.5 A2.5,2.5 0 0 1 830,653 L830,375 A2.5,2.5 0 0 1 832.5,372.5 " fill="none" style="stroke:#000000;stroke-width:1.5;"/>
+            <line style="stroke:#000000;stroke-width:1.5;" x1="830" x2="1091" y1="394.7969" y2="394.7969"/>
+            <text fill="#000000" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacing" textLength="248" x="834" y="387.4951">Administration (j-jobs_pgadmin)</text>
+        </g>
+        <!--cluster Production-->
+        <g id="cluster_Production">
+            <path d="M1432.5,6 L1519.5,6 A3.75,3.75 0 0 1 1522,8.5 L1529,28.2969 L1907.5,28.2969 A2.5,2.5 0 0 1 1910,30.7969 L1910,130.5 A2.5,2.5 0 0 1 1907.5,133 L1432.5,133 A2.5,2.5 0 0 1 1430,130.5 L1430,8.5 A2.5,2.5 0 0 1 1432.5,6 " fill="none" style="stroke:#000000;stroke-width:1.5;"/>
+            <line style="stroke:#000000;stroke-width:1.5;" x1="1430" x2="1529" y1="28.2969" y2="28.2969"/>
+            <text fill="#000000" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacing" textLength="86" x="1434" y="20.9951">Production</text>
+        </g>
+        <!--entity dev_dev-->
+        <g id="elem_dev_dev">
+            <ellipse cx="943" cy="49.5" fill="#F1F1F1" rx="8" ry="8" style="stroke:#181818;stroke-width:0.5;"/>
+            <path d="M943,57.5 L943,84.5 M930,65.5 L956,65.5 M943,84.5 L930,99.5 M943,84.5 L956,99.5 " fill="none" style="stroke:#181818;stroke-width:0.5;"/>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="89" x="898.5" y="113.9951">Développeur</text>
+        </g>
+        <!--entity test_dev-->
+        <g id="elem_test_dev">
+            <ellipse cx="836" cy="49.5" fill="#F1F1F1" rx="8" ry="8" style="stroke:#181818;stroke-width:0.5;"/>
+            <path d="M836,57.5 L836,84.5 M823,65.5 L849,65.5 M836,84.5 L823,99.5 M836,84.5 L849,99.5 " fill="none" style="stroke:#181818;stroke-width:0.5;"/>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="54" x="809" y="113.9951">Testeur</text>
+        </g>
+        <!--entity cp_dev-->
+        <g id="elem_cp_dev">
+            <ellipse cx="725" cy="49.5" fill="#F1F1F1" rx="8" ry="8" style="stroke:#181818;stroke-width:0.5;"/>
+            <path d="M725,57.5 L725,84.5 M712,65.5 L738,65.5 M725,84.5 L712,99.5 M725,84.5 L738,99.5 " fill="none" style="stroke:#181818;stroke-width:0.5;"/>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="98" x="676" y="113.9951">Chef de projet</text>
+        </g>
+        <!--entity rl_dev-->
+        <g id="elem_rl_dev">
+            <path d="M735.9406,189.2665 C740.7389,181.9798 745.4232,180.4624 751.1685,188.3139 C754.5829,181.6406 760.6797,181.1883 764.8019,187.575 C768.5075,181.0389 774.8666,180.6025 778.7535,187.385 C783.7752,180.928 789.6399,182.1521 793.1467,189.0211 C797.464,181.9192 802.8847,182.4589 807.65,188.5277 C812.9557,181.0672 818.8186,180.2137 823.5555,189.0818 C827.3109,181.9743 833.7156,181.5538 838.022,188.5153 C841.8695,182.2856 848.8983,182.5048 852.4658,188.8372 C855.5674,181.5602 859.9176,181.4827 864.9226,186.9812 C870.263,179.4411 877.7705,180.8405 881.6121,188.6146 C885.6382,182.0218 892.0052,183.6468 894.7851,189.8932 C897.596,181.9625 902.6098,181.5742 907.8917,187.5673 C913.4799,181.8019 918.3371,181.2025 922.2116,189.3334 C926.8333,182.0389 933.9836,183.8212 937.4635,190.5731 C947.8246,195.4856 946.9279,205.9099 938.6355,211.8498 C949.4446,219.8178 948.9961,229.5489 937.3361,236.3239 C932.8991,243.129 928.376,242.6286 924.2931,235.9807 C920.3535,242.9033 914.5315,242.9051 909.6119,237.1122 C904.3195,245.0005 897.8321,243.8587 894.2548,235.4919 C890.6512,241.8124 886.1508,241.8394 881.4091,236.7762 C876.7171,244.2226 870.1654,242.6127 866.5479,235.6667 C862.9489,242.4129 856.7194,244.8798 851.4955,237.3839 C846.5669,244.7556 841.421,245.3522 836.2601,237.6183 C830.8709,245.0126 826.4681,244.4533 821.8491,236.8769 C818.2946,243.3223 811.2224,243.1235 807.6787,236.8648 C803.7639,242.4763 799.2481,241.9952 795.473,236.7084 C790.6682,245.7167 782.771,244.148 778.704,235.9878 C775.6457,241.847 771.1103,242.2981 766.6169,237.6366 C762.2771,244.5177 755.1942,244.2239 751.1583,237.2963 C745.9654,243.6167 741.2403,242.4369 736.8735,236.3455 C724.4498,232.5727 719.5662,224.0299 729.8696,213.3384 C719.2948,203.5604 722.8231,193.0692 735.9406,189.2665 " fill="#F1F1F1" style="stroke:#181818;stroke-width:0.5;"/>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="88" x="742.5" y="207.9951">Réseau local</text>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="187" x="742.5" y="224.292">(localhost / 192.168.1.252)</text>
+        </g>
+        <!--entity nginx_dev-->
+        <g id="elem_nginx_dev">
+            <rect fill="#F1F1F1" height="46.2969" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="113" x="466.5" y="407.5"/>
+            <rect fill="#F1F1F1" height="10" style="stroke:#181818;stroke-width:0.5;" width="15" x="559.5" y="412.5"/>
+            <rect fill="#F1F1F1" height="2" style="stroke:#181818;stroke-width:0.5;" width="4" x="557.5" y="414.5"/>
+            <rect fill="#F1F1F1" height="2" style="stroke:#181818;stroke-width:0.5;" width="4" x="557.5" y="418.5"/>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="73" x="481.5" y="440.4951">Nginx 1.27</text>
+        </g>
+        <!--entity aa_dev-->
+        <g id="elem_aa_dev">
+            <rect fill="#F1F1F1" height="62.5938" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="171" x="260.5" y="399"/>
+            <rect fill="#F1F1F1" height="10" style="stroke:#181818;stroke-width:0.5;" width="15" x="411.5" y="404"/>
+            <rect fill="#F1F1F1" height="2" style="stroke:#181818;stroke-width:0.5;" width="4" x="409.5" y="406"/>
+            <rect fill="#F1F1F1" height="2" style="stroke:#181818;stroke-width:0.5;" width="4" x="409.5" y="410"/>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="131" x="275.5" y="431.9951">Application Angular</text>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="96" x="275.5" y="448.292">(dist/browser)</text>
+        </g>
+        <!--entity h2_dev-->
+        <g id="elem_h2_dev">
+            <polygon fill="#F1F1F1" points="614.5,417.5,624.5,407.5,789.5,407.5,789.5,443.7969,779.5,453.7969,614.5,453.7969,614.5,417.5" style="stroke:#181818;stroke-width:0.5;"/>
+            <line style="stroke:#181818;stroke-width:0.5;" x1="779.5" x2="789.5" y1="417.5" y2="407.5"/>
+            <line style="stroke:#181818;stroke-width:0.5;" x1="614.5" x2="779.5" y1="417.5" y2="417.5"/>
+            <line style="stroke:#181818;stroke-width:0.5;" x1="779.5" x2="779.5" y1="417.5" y2="453.7969"/>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="135" x="629.5" y="440.4951">HTTP (:80 → :4200)</text>
+        </g>
+        <!--entity at_dev-->
+        <g id="elem_at_dev">
+            <rect fill="#F1F1F1" height="46.2969" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="183" x="369.5" y="593.5"/>
+            <rect fill="#F1F1F1" height="10" style="stroke:#181818;stroke-width:0.5;" width="15" x="532.5" y="598.5"/>
+            <rect fill="#F1F1F1" height="2" style="stroke:#181818;stroke-width:0.5;" width="4" x="530.5" y="600.5"/>
+            <rect fill="#F1F1F1" height="2" style="stroke:#181818;stroke-width:0.5;" width="4" x="530.5" y="604.5"/>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="143" x="384.5" y="626.4951">Apache Tomcat 10.1</text>
+        </g>
+        <!--entity jobs_dev-->
+        <g id="elem_jobs_dev">
+            <rect fill="#F1F1F1" height="78.8906" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="202" x="588" y="577"/>
+            <rect fill="#F1F1F1" height="10" style="stroke:#181818;stroke-width:0.5;" width="15" x="770" y="582"/>
+            <rect fill="#F1F1F1" height="2" style="stroke:#181818;stroke-width:0.5;" width="4" x="768" y="584"/>
+            <rect fill="#F1F1F1" height="2" style="stroke:#181818;stroke-width:0.5;" width="4" x="768" y="588"/>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="104" x="603" y="609.9951">J-jobs_backend</text>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="162" x="603" y="626.292">Application Java / Spring</text>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="67" x="603" y="642.5889">(jobs.war)</text>
+        </g>
+        <!--entity h1_dev-->
+        <g id="elem_h1_dev">
+            <polygon fill="#F1F1F1" points="202,603.5,212,593.5,334,593.5,334,629.7969,324,639.7969,202,639.7969,202,603.5" style="stroke:#181818;stroke-width:0.5;"/>
+            <line style="stroke:#181818;stroke-width:0.5;" x1="324" x2="334" y1="603.5" y2="593.5"/>
+            <line style="stroke:#181818;stroke-width:0.5;" x1="202" x2="324" y1="603.5" y2="603.5"/>
+            <line style="stroke:#181818;stroke-width:0.5;" x1="324" x2="324" y1="603.5" y2="639.7969"/>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="92" x="217" y="626.4951">HTTP (:8080)</text>
+        </g>
+        <!--entity db_dev-->
+        <g id="elem_db_dev">
+            <path d="M1134,760 C1134,750 1202,750 1202,750 C1202,750 1270,750 1270,760 L1270,785.2969 C1270,795.2969 1202,795.2969 1202,795.2969 C1202,795.2969 1134,795.2969 1134,785.2969 L1134,760 " fill="#F1F1F1" style="stroke:#181818;stroke-width:0.5;"/>
+            <path d="M1134,760 C1134,770 1202,770 1202,770 C1202,770 1270,770 1270,760 " fill="none" style="stroke:#181818;stroke-width:0.5;"/>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="116" x="1144" y="786.9951">PostgreSQL 17.4</text>
+        </g>
+        <!--entity db_port_dev-->
+        <g id="elem_db_port_dev">
+            <polygon fill="#F1F1F1" points="1139.5,603.5,1149.5,593.5,1252.5,593.5,1252.5,629.7969,1242.5,639.7969,1139.5,639.7969,1139.5,603.5" style="stroke:#181818;stroke-width:0.5;"/>
+            <line style="stroke:#181818;stroke-width:0.5;" x1="1242.5" x2="1252.5" y1="603.5" y2="593.5"/>
+            <line style="stroke:#181818;stroke-width:0.5;" x1="1139.5" x2="1242.5" y1="603.5" y2="603.5"/>
+            <line style="stroke:#181818;stroke-width:0.5;" x1="1242.5" x2="1242.5" y1="603.5" y2="639.7969"/>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="73" x="1154.5" y="626.4951">Port :5432</text>
+        </g>
+        <!--entity pgadmin_dev-->
+        <g id="elem_pgadmin_dev">
+            <rect fill="#F1F1F1" height="46.2969" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="114" x="924" y="593.5"/>
+            <rect fill="#F1F1F1" height="10" style="stroke:#181818;stroke-width:0.5;" width="15" x="1018" y="598.5"/>
+            <rect fill="#F1F1F1" height="2" style="stroke:#181818;stroke-width:0.5;" width="4" x="1016" y="600.5"/>
+            <rect fill="#F1F1F1" height="2" style="stroke:#181818;stroke-width:0.5;" width="4" x="1016" y="604.5"/>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="74" x="939" y="626.4951">pgAdmin 4</text>
+        </g>
+        <!--entity pgadmin_port_dev-->
+        <g id="elem_pgadmin_port_dev">
+            <polygon fill="#F1F1F1" points="870.5,417.5,880.5,407.5,1045.5,407.5,1045.5,443.7969,1035.5,453.7969,870.5,453.7969,870.5,417.5" style="stroke:#181818;stroke-width:0.5;"/>
+            <line style="stroke:#181818;stroke-width:0.5;" x1="1035.5" x2="1045.5" y1="417.5" y2="407.5"/>
+            <line style="stroke:#181818;stroke-width:0.5;" x1="870.5" x2="1035.5" y1="417.5" y2="417.5"/>
+            <line style="stroke:#181818;stroke-width:0.5;" x1="1035.5" x2="1035.5" y1="417.5" y2="453.7969"/>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="135" x="885.5" y="440.4951">HTTP (:80 → :5433)</text>
+        </g>
+        <!--entity dev_prod-->
+        <g id="elem_dev_prod">
+            <ellipse cx="1490" cy="49.5" fill="#F1F1F1" rx="8" ry="8" style="stroke:#181818;stroke-width:0.5;"/>
+            <path d="M1490,57.5 L1490,84.5 M1477,65.5 L1503,65.5 M1490,84.5 L1477,99.5 M1490,84.5 L1503,99.5 " fill="none" style="stroke:#181818;stroke-width:0.5;"/>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="89" x="1445.5" y="113.9951">Développeur</text>
+        </g>
+        <g id="elem_GMN42">
+            <path d="M1569.5,66.5 L1569.5,75 L1534.9,79 L1569.5,83 L1569.5,91.6328 A0,0 0 0 0 1569.5,91.6328 L1894.5,91.6328 A0,0 0 0 0 1894.5,91.6328 L1894.5,76.5 L1884.5,66.5 L1569.5,66.5 A0,0 0 0 0 1569.5,66.5 " fill="#FEFFDD" style="stroke:#181818;stroke-width:0.5;"/>
+            <path d="M1884.5,66.5 L1884.5,76.5 L1894.5,76.5 L1884.5,66.5 " fill="#FEFFDD" style="stroke:#181818;stroke-width:0.5;"/>
+            <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="304" x="1575.5" y="83.5669">"Masqué pour des raison évidentes de sécurité"</text>
+        </g>
+        <!--link nginx_dev to h2_dev-->
+        <g id="link_nginx_dev_h2_dev">
+            <path codeLine="12" d="M585.64,430.5 C597.11,430.5 596.58,430.5 608.05,430.5 " fill="none" id="nginx_dev-h2_dev" style="stroke:#181818;stroke-width:1.0;"/>
+            <polygon fill="#181818" points="579.64,430.5,588.64,434.5,584.64,430.5,588.64,426.5,579.64,430.5" style="stroke:#181818;stroke-width:1.0;"/>
+            <polygon fill="#181818" points="614.05,430.5,605.05,426.5,609.05,430.5,605.05,434.5,614.05,430.5" style="stroke:#181818;stroke-width:1.0;"/>
+        </g>
+        <!--link aa_dev to nginx_dev-->
+        <g id="link_aa_dev_nginx_dev">
+            <path codeLine="13" d="M437.73,430.5 C449.26,430.5 448.79,430.5 460.32,430.5 " fill="none" id="aa_dev-nginx_dev" style="stroke:#181818;stroke-width:1.0;"/>
+            <polygon fill="#181818" points="431.73,430.5,440.73,434.5,436.73,430.5,440.73,426.5,431.73,430.5" style="stroke:#181818;stroke-width:1.0;"/>
+            <polygon fill="#181818" points="466.32,430.5,457.32,426.5,461.32,430.5,457.32,434.5,466.32,430.5" style="stroke:#181818;stroke-width:1.0;"/>
+        </g>
+        <!--link h1_dev to at_dev-->
+        <g id="link_h1_dev_at_dev">
+            <path codeLine="19" d="M340.34,616.5 C352.05,616.5 351.76,616.5 363.47,616.5 " fill="none" id="h1_dev-at_dev" style="stroke:#181818;stroke-width:1.0;"/>
+            <polygon fill="#181818" points="334.34,616.5,343.34,620.5,339.34,616.5,343.34,612.5,334.34,616.5" style="stroke:#181818;stroke-width:1.0;"/>
+            <polygon fill="#181818" points="369.47,616.5,360.47,612.5,364.47,616.5,360.47,620.5,369.47,616.5" style="stroke:#181818;stroke-width:1.0;"/>
+        </g>
+        <!--link at_dev to jobs_dev-->
+        <g id="link_at_dev_jobs_dev">
+            <path codeLine="20" d="M558.73,616.5 C570.44,616.5 570.16,616.5 581.87,616.5 " fill="none" id="at_dev-jobs_dev" style="stroke:#181818;stroke-width:1.0;"/>
+            <polygon fill="#181818" points="552.73,616.5,561.73,620.5,557.73,616.5,561.73,612.5,552.73,616.5" style="stroke:#181818;stroke-width:1.0;"/>
+            <polygon fill="#181818" points="587.87,616.5,578.87,612.5,582.87,616.5,578.87,620.5,587.87,616.5" style="stroke:#181818;stroke-width:1.0;"/>
+        </g>
+        <!--link db_port_dev to db_dev-->
+        <g id="link_db_port_dev_db_dev">
+            <path codeLine="25" d="M1197.0941,645.5554 C1198.2441,675.0054 1199.7856,714.8146 1200.9256,743.9746 " fill="none" id="db_port_dev-db_dev" style="stroke:#181818;stroke-width:1.0;"/>
+            <polygon fill="#181818" points="1196.86,639.56,1193.2142,648.7092,1197.0551,644.5562,1201.2081,648.3971,1196.86,639.56" style="stroke:#181818;stroke-width:1.0;"/>
+            <polygon fill="#181818" points="1201.16,749.97,1204.8054,740.8206,1200.9647,744.9738,1196.8115,741.1331,1201.16,749.97" style="stroke:#181818;stroke-width:1.0;"/>
+        </g>
+        <!--link pgadmin_port_dev to pgadmin_dev-->
+        <g id="link_pgadmin_port_dev_pgadmin_dev">
+            <path codeLine="30" d="M961.5157,459.6435 C965.9457,495.0135 973.0454,551.8564 977.4754,587.2764 " fill="none" id="pgadmin_port_dev-pgadmin_dev" style="stroke:#181818;stroke-width:1.0;"/>
+            <polygon fill="#181818" points="960.77,453.69,957.9195,463.1173,961.3914,458.6512,965.8575,462.1231,960.77,453.69" style="stroke:#181818;stroke-width:1.0;"/>
+            <polygon fill="#181818" points="978.22,593.23,981.0721,583.8032,977.5995,588.2687,973.134,584.796,978.22,593.23" style="stroke:#181818;stroke-width:1.0;"/>
+        </g>
+        <!--link jobs_dev to db_dev-->
+        <g id="link_jobs_dev_db_dev">
+            <path codeLine="34" d="M773.177,658.596 C819.507,679.996 874.31,703.1 930,720 C998.07,740.66 1072.4029,753.7732 1128.0229,761.8932 " fill="none" id="jobs_dev-db_dev" style="stroke:#181818;stroke-width:1.0;"/>
+            <polygon fill="#181818" points="767.73,656.08,774.2232,663.4853,772.2692,658.1767,777.5778,656.2227,767.73,656.08" style="stroke:#181818;stroke-width:1.0;"/>
+            <polygon fill="#181818" points="1133.96,762.76,1125.6322,757.5018,1129.0124,762.0377,1124.4766,765.4179,1133.96,762.76" style="stroke:#181818;stroke-width:1.0;"/>
+            <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="31" x="981" y="701.0669">JDBC</text>
+            <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="131" x="931" y="716.1997">postgresql://db:5432</text>
+        </g>
+        <!--link nginx_dev to h1_dev-->
+        <g id="link_nginx_dev_h1_dev">
+            <path codeLine="35" d="M495.34,453.66 C481.77,464.07 464.94,476.29 449,486 C407.92,511.02 391.29,506.25 352,534 C327.44,551.35 307.2458,571.4493 291.1658,589.0593 " fill="none" id="nginx_dev-to-h1_dev" style="stroke:#181818;stroke-width:1.0;"/>
+            <polygon fill="#181818" points="287.12,593.49,296.1425,589.5411,290.4915,589.7977,290.2349,584.1467,287.12,593.49" style="stroke:#181818;stroke-width:1.0;"/>
+            <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="119" x="434" y="507.0669">proxy /api/ → /jobs/</text>
+            <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="46" x="470.5" y="522.1997">(CORS)</text>
+        </g>
+        <!--link pgadmin_dev to db_dev-->
+        <g id="link_pgadmin_dev_db_dev">
+            <path codeLine="36" d="M1011.8549,643.7164 C1037.7149,665.3164 1074.13,694.55 1112,720 C1127.69,730.55 1140.4123,738.1731 1156.1423,746.9631 " fill="none" id="pgadmin_dev-db_dev" style="stroke:#181818;stroke-width:1.0;"/>
+            <polygon fill="#181818" points="1007.25,639.87,1011.5932,648.7095,1011.0875,643.0753,1016.7217,642.5696,1007.25,639.87" style="stroke:#181818;stroke-width:1.0;"/>
+            <polygon fill="#181818" points="1161.38,749.89,1155.4747,742.0079,1157.0152,747.451,1151.5722,748.9915,1161.38,749.89" style="stroke:#181818;stroke-width:1.0;"/>
+            <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="76" x="1113" y="708.5669">manage DB</text>
+        </g>
+        <!--link rl_dev to h2_dev-->
+        <g id="link_rl_dev_h2_dev">
+            <path codeLine="39" d="M747.2437,246.3644 C734.7137,254.3144 728.3,260.93 720,273 C692.03,313.68 693.8417,368.8431 697.7617,401.3531 " fill="none" id="rl_dev-h2_dev" style="stroke:#181818;stroke-width:1.0;"/>
+            <polygon fill="#181818" points="752.31,243.15,742.5676,244.5941,748.0881,245.8287,746.8535,251.3492,752.31,243.15" style="stroke:#181818;stroke-width:1.0;"/>
+            <polygon fill="#181818" points="698.48,407.31,701.3738,397.8959,697.8814,402.346,693.4314,398.8536,698.48,407.31" style="stroke:#181818;stroke-width:1.0;"/>
+            <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="131" x="738.5" y="286.0669">http://localhost:4200</text>
+            <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="166" x="721" y="301.1997">http://192.168.1.252:4200</text>
+        </g>
+        <!--link rl_dev to h1_dev-->
+        <g id="link_rl_dev_h1_dev">
+            <path codeLine="40" d="M721.503,219.4341 C521.753,232.5841 118.27,264.77 76,313 C25.32,370.82 39.9,418.11 76,486 C103.75,538.19 157.4632,570.6895 202.8332,590.9895 " fill="none" id="rl_dev-h1_dev" style="stroke:#181818;stroke-width:1.0;"/>
+            <polygon fill="#181818" points="727.49,219.04,718.2467,215.6399,722.5008,219.3685,718.7722,223.6226,727.49,219.04" style="stroke:#181818;stroke-width:1.0;"/>
+            <polygon fill="#181818" points="208.31,593.44,201.7285,586.1131,203.746,591.3979,198.4612,593.4155,208.31,593.44" style="stroke:#181818;stroke-width:1.0;"/>
+            <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="131" x="94.5" y="427.5669">http://localhost:8080</text>
+            <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="166" x="77" y="442.6997">http://192.168.1.252:8080</text>
+        </g>
+        <!--link rl_dev to pgadmin_port_dev-->
+        <g id="link_rl_dev_pgadmin_port_dev">
+            <path codeLine="41" d="M875.2508,247.2744 C884.2108,256.2844 889.04,262.35 896,273 C924.63,316.78 941.9323,370.0694 950.7123,401.6394 " fill="none" id="rl_dev-pgadmin_port_dev" style="stroke:#181818;stroke-width:1.0;"/>
+            <polygon fill="#181818" points="871.02,243.02,874.5299,252.2222,874.5457,246.5654,880.2025,246.5811,871.02,243.02" style="stroke:#181818;stroke-width:1.0;"/>
+            <polygon fill="#181818" points="952.32,407.42,953.7623,397.6773,950.9803,402.6028,946.0548,399.8209,952.32,407.42" style="stroke:#181818;stroke-width:1.0;"/>
+            <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="131" x="932.5" y="286.0669">http://localhost:5433</text>
+            <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="166" x="915" y="301.1997">http://192.168.1.252:5433</text>
+        </g>
+        <!--link rl_dev to db_port_dev-->
+        <g id="link_rl_dev_db_port_dev">
+            <path codeLine="42" d="M950.6423,228.4919 C1009.4823,238.6619 1068.53,252.91 1090,273 C1184.53,361.46 1195.3552,526.2805 1196.1152,587.2205 " fill="none" id="rl_dev-db_port_dev" style="stroke:#181818;stroke-width:1.0;"/>
+            <polygon fill="#181818" points="944.73,227.47,952.9172,232.9444,949.6569,228.3216,954.2798,225.0613,944.73,227.47" style="stroke:#181818;stroke-width:1.0;"/>
+            <polygon fill="#181818" points="1196.19,593.22,1200.0775,584.1708,1196.1276,588.2204,1192.0781,584.2706,1196.19,593.22" style="stroke:#181818;stroke-width:1.0;"/>
+            <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="93" x="1204.5" y="427.5669">localhost:5432</text>
+            <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="128" x="1187" y="442.6997">192.168.1.252:5432</text>
+        </g>
+        <!--link dev_dev to rl_dev-->
+        <g id="link_dev_dev_rl_dev">
+            <path codeLine="44" d="M908.8155,121.6896 C892.5055,141.5796 880.2536,156.5297 864.8436,175.3297 " fill="none" id="dev_dev-rl_dev" style="stroke:#181818;stroke-width:1.0;"/>
+            <polygon fill="#181818" points="912.62,117.05,903.8202,121.473,909.4496,120.9163,910.0063,126.5457,912.62,117.05" style="stroke:#181818;stroke-width:1.0;"/>
+            <polygon fill="#181818" points="861.04,179.97,869.8389,175.5452,864.2097,176.1031,863.6518,170.4738,861.04,179.97" style="stroke:#181818;stroke-width:1.0;"/>
+        </g>
+        <!--link test_dev to rl_dev-->
+        <g id="link_test_dev_rl_dev">
+            <path codeLine="45" d="M836,123.05 C836,142.94 836,155.17 836,173.97 " fill="none" id="test_dev-rl_dev" style="stroke:#181818;stroke-width:1.0;"/>
+            <polygon fill="#181818" points="836,117.05,832,126.05,836,122.05,840,126.05,836,117.05" style="stroke:#181818;stroke-width:1.0;"/>
+            <polygon fill="#181818" points="836,179.97,840,170.97,836,174.97,832,170.97,836,179.97" style="stroke:#181818;stroke-width:1.0;"/>
+        </g>
+        <!--link cp_dev to rl_dev-->
+        <g id="link_cp_dev_rl_dev">
+            <path codeLine="46" d="M760.3977,121.6201 C777.3177,141.5101 790.1527,156.5996 806.1427,175.3996 " fill="none" id="cp_dev-rl_dev" style="stroke:#181818;stroke-width:1.0;"/>
+            <polygon fill="#181818" points="756.51,117.05,759.2948,126.497,759.7497,120.8584,765.3883,121.3134,756.51,117.05" style="stroke:#181818;stroke-width:1.0;"/>
+            <polygon fill="#181818" points="810.03,179.97,807.246,170.5228,806.7906,176.1613,801.1521,175.7059,810.03,179.97" style="stroke:#181818;stroke-width:1.0;"/>
+        </g>
+        <!--SRC=[ZLNDSjem4Bxp53i-mG6C2MbIfjCPaXmwcVxGX5l8P8GjZ1CZAR8CT3gvzW7w5Zm7Rz8dwKeoniOcYMS0i_ljfzrFknA9OxvQHEk8XGr1_2SIKd2kw19SaDIdIb5yYvZQRa99LCIP0xyRW0_n5PS8tMwMDEP2q5GwG188wF81FqNCc2PgvrRuVkY_dDCPne6G_94g0_E50HbKdbR0_ISgspvV29vGQ5hy8vyc3uog5PTFhLrsfRYPv4orAGkW-TWsS6D1Gmcl7yFDA5DmzpsCs1gyJk_iNcV4zDyyynhyK8Wuyer6C6HX6XCvOSqWIfGxbNoLKDaoH8HKM1Z7wk- -ZCSZQ0xEk_3lpryOz7lThesOzoeHrWIVsZ6TgVRd8zdbrZtmOFMNgbfJV2c9fGrlQ3N4w3c5CL-W0E1rEvujLRqcs7M9ViAA0bwJ9S76knKI6nDbrCZEYcGIchWtH3pVYUTLnVCoJMGKpeqerJojgO2fh5aZtGN1jiGi0ixOTaEJNC9WMb4l88fCDTuPyKI5ajx-_0hUMQTlfsXwfBuHbme6f_sJtds64sYfW0jsh27WAuOb793M530C5X73ZhMZdgSlGg8ThtM024qiz4rQMS3x6XsBEMcLmcfBEdJkwwfRpHRtOa-GtTuTIW43SAwlBYudJDWzI9xZWUi6KoEmqoZFq2usQn-CnGDe_GjS8YBNbEBgXLniryiVDxSj6rz8hcxv1M5Q-QiBnwRgnpmDmBdPRX9AKeYvJs8aDBzpJ1A7mllOwtWVpZjuD9tsMgPTP9mNRr_tIsKd1IurLqfWTJcLEM4cB3ENM8tBgUVpZlBfeJl2frtrV9LjhMFMBNA4MRlgcOipWAGbjjw4LMYo3JTVsIss9oielBl2Qftsuggui17p8Hj97gJ-U-zIxB70DYB7kzYSHi1dPPT-d6yaUKwt6n0ybUZ6fY1HWaECf560Cqer7oJRZP_A2EzpMwq-w3Lpu-K_]-->
+    </g>
+</svg>

@@ -1,0 +1,223 @@
+@startuml
+
+!define ENTITY_COLOR #E8F5E9
+!define ENUM_COLOR #FFF9C4
+!define KEY_COLOR #FFE082
+
+skinparam class {
+    BackgroundColor ENTITY_COLOR
+    BorderColor #2E7D32
+    ArrowColor #1976D2
+}
+
+skinparam enum {
+    BackgroundColor ENUM_COLOR
+    BorderColor #F57C00
+}
+
+class User {
+    {field} <<PK>> id_user : Integer
+    {field} name : String [NOT NULL]
+    {field} firstname : String [NOT NULL]
+    {field} <<unique>> email : String [NOT NULL]
+    {field} gdproptin : boolean [NULLABLE]
+    {field} createdAt : Instant
+    {field} updatedAt : Instant
+    {field} password : String [NOT NULL]
+    {field} authToken : String [NULLABLE]
+    {field} rememberMeToken : String [NULLABLE]
+    {field} emailVerificationKey : String [NULLABLE]
+    {field} enabled : Boolean [NULLABLE]
+    --
+    {method} + getAuthorities() : Collection<GrantedAuthority>
+    {method} + getAuthority() : String
+    {method} + getUsername() : String
+    {method} + isAccountNonExpired() : boolean
+    {method} + isAccountNonLocked() : boolean
+    {method} + isCredentialsNonExpired() : boolean
+    {method} + isEnabled() : boolean
+    {method} + getRoleId() : Integer
+}
+
+class Role {
+    {field} <<PK>> id_role : Integer
+    {field} <<unique>> role : String [NOT NULL]
+    {field} isAdmin : Boolean [NOT NULL, default=false]
+}
+
+class Job {
+    {field} <<PK>> id_job : Integer
+    {field} position : String [NOT NULL]
+    {field} description : String [NULLABLE]
+    {field} compagny : String [NOT NULL]
+    {field} city : String [NOT NULL]
+    {field} contract : ContractEnum [NOT NULL]
+    {field} work_time : WorkTimeEnum [NOT NULL]
+    {field} work_mode : WorkModeEnum [NOT NULL]
+    {field} createdAt : Instant [NOT NULL]
+    {field} updatedAt : Instant [NOT NULL]
+    {field} from_officialdom : Boolean [NULLABLE]
+    {field} offerStatus : OfferStatusEnum [NOT NULL]
+    --
+    {method} + setOfferStatus(OfferStatusEnum)
+    {method} + setOfferStatus(String)
+    {method} + setWorkMode(String)
+    {method} + setWorkTime(String)
+    {method} + setContract(String)
+}
+
+class JobHasStatus {
+    {field} <<PK>> id_jhs : Integer
+    {field} jobStatus : JobStatusEnum [NOT NULL]
+    {field} offerStatus : OfferStatusEnum [NOT NULL]
+    {field} appliedAt : Instant [NOT NULL]
+}
+
+enum OfferStatusEnum {
+    A_EN_COURS
+    B_EN_ATTENTE
+    B_RELANCE
+    C_REFUSE
+    D_ENTRETIEN
+    O_ACCEPT
+    O_REFUS
+    --
+    + getLabel() : String
+    + getName() : String
+    + toJobStatus() : JobStatusEnum
+}
+
+enum JobStatusEnum {
+    CANDIDATURE_ENVOYEE
+    RELANCE
+    REFUS
+    ENTRETIEN
+    AUTRE
+    --
+    + getLabel() : String
+    + getName() : String
+}
+
+enum ContractEnum {
+    CDD
+    CDI
+    FREELANCE
+    INTERIM
+    MISSION
+    --
+    + getLabel() : String
+    + getName() : String
+}
+
+enum WorkTimeEnum {
+    PLEIN_TEMPS
+    TEMPS_PARTIEL
+    --
+    + getLabel() : String
+    + getName() : String
+}
+
+enum WorkModeEnum {
+    DISTANCIEL
+    HYBRIDE
+    SUR_SITE
+    --
+    + getLabel() : String
+    + getName() : String
+}
+
+enum LogicalStatusEnum {
+    EN_COURS
+    EN_ATTENTE
+    ENTRETIEN
+    REFUSE
+    --
+    + getOfferStatuses() : List<OfferStatusEnum>
+}
+
+interface UserDetails {
+    {method} + getAuthorities() : Collection<GrantedAuthority>
+    {method} + getPassword() : String
+    {method} + getUsername() : String
+    {method} + isAccountNonExpired() : boolean
+    {method} + isAccountNonLocked() : boolean
+    {method} + isCredentialsNonExpired() : boolean
+    {method} + isEnabled() : boolean
+}
+
+interface LabelledEnum {
+    {method} + getName() : String
+    {method} + getLabel() : String
+}
+
+' Relations principales
+User ..|> UserDetails : implements
+User "*" --> "1" Role : role
+Job "*" --> "1" User : created by
+Job "1" --> "*" JobHasStatus : statuses
+
+' Relations avec les enums
+Job::contract .. ContractEnum : <<maps to>>
+Job::workTime .. WorkTimeEnum : <<maps to>>
+Job::workMode .. WorkModeEnum : <<maps to>>
+Job::offerStatus .. OfferStatusEnum : <<maps to>>
+
+JobHasStatus::jobStatus .. JobStatusEnum : <<maps to>>
+JobHasStatus::offerStatus .. OfferStatusEnum : <<maps to>>
+
+OfferStatusEnum --> JobStatusEnum : toJobStatus()
+LogicalStatusEnum --> OfferStatusEnum : contains
+
+' Implémentations d'interface
+OfferStatusEnum ..|> LabelledEnum
+JobStatusEnum ..|> LabelledEnum
+ContractEnum ..|> LabelledEnum
+WorkTimeEnum ..|> LabelledEnum
+WorkModeEnum ..|> LabelledEnum
+
+note right of User
+  Table: users
+  Indexes:
+  - email
+  - auth_token
+  - email_verification_key
+  - remember_me_token
+  
+  Inheritance: JOINED
+end note
+
+note right of Role
+  Table: ROLES
+  Unique constraint:
+  (ROLE, IS_ADMIN)
+end note
+
+note right of Job
+  Table: JOBS
+  Représente une offre d'emploi
+  Index: position
+end note
+
+note right of JobHasStatus
+  Table: JOBS_HAS_STATUS
+  Stocke l'historique des statuts
+  avec double enum (job + offer)
+end note
+
+note right of OfferStatusEnum
+  Statuts d'offre avec correspondance JobStatus:
+  - A_EN_COURS → CANDIDATURE_ENVOYEE
+  - B_EN_ATTENTE → CANDIDATURE_ENVOYEE
+  - B_RELANCE → RELANCE
+  - C_REFUSE → REFUS
+  - D_ENTRETIEN → ENTRETIEN
+  - O_ACCEPT → AUTRE
+  - O_REFUS → AUTRE
+end note
+
+note left of LogicalStatusEnum
+  Groupement logique des OfferStatusEnum
+  pour faciliter les requêtes filtrées
+end note
+
+@enduml

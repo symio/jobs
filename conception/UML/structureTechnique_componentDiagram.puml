@@ -1,0 +1,56 @@
+@startuml
+allowmixing
+package "Dev / recette / intégration" {
+    actor "Développeur" as dev_dev
+    actor "Testeur" as test_dev
+    actor "Chef de projet" as cp_dev
+
+    package "docker-compose (projetjobs_network)" {
+        package "front-end (j-jobs_frontend)" {
+            component [Nginx 1.27] as nginx_dev
+            component [Application Angular\n(dist/browser)] as aa_dev
+            node [HTTP (:80 → :4200)] as h2_dev
+            h2_dev <-left-> nginx_dev
+            nginx_dev <-left-> aa_dev
+        }
+        package "back-end (j-jobs_backend)" {
+            component [Apache Tomcat 10.1] as at_dev
+            component [J-jobs_backend\nApplication Java / Spring\n(jobs.war)] as jobs_dev
+            node [HTTP (:8080)] as h1_dev
+            h1_dev <-right-> at_dev
+            at_dev <-right-> jobs_dev
+        }
+        package "Base de données (j-jobs_db)" {
+            database "PostgreSQL 17.4" as db_dev
+            node [Port :5432] as db_port_dev
+            db_port_dev <-down-> db_dev
+        }
+        package "Administration (j-jobs_pgadmin)" {
+            component [pgAdmin 4] as pgadmin_dev
+            node [HTTP (:80 → :5433)] as pgadmin_port_dev
+            pgadmin_port_dev <-down-> pgadmin_dev
+        }
+    }
+
+    jobs_dev <-down-> db_dev : "JDBC\npostgresql://db:5432"
+    nginx_dev -down-> h1_dev : "proxy /api/ → /jobs/\n(CORS)"
+    pgadmin_dev <-down-> db_dev : "manage DB"
+
+    cloud "Réseau local\n(localhost / 192.168.1.252)" as rl_dev
+    rl_dev <-down-> h2_dev : "http://localhost:4200\nhttp://192.168.1.252:4200"
+    rl_dev <-down-> h1_dev : "http://localhost:8080\nhttp://192.168.1.252:8080"
+    rl_dev <-down-> pgadmin_port_dev : "http://localhost:5433\nhttp://192.168.1.252:5433"
+    rl_dev <-down-> db_port_dev : "localhost:5432\n192.168.1.252:5432"
+    
+    dev_dev <-down-> rl_dev
+    test_dev <-down-> rl_dev
+    cp_dev <-down-> rl_dev
+}
+
+package "Production" {
+    actor "Développeur" as dev_prod
+    note right of dev_prod
+        "Masqué pour des raison évidentes de sécurité"
+    end note
+}
+@enduml

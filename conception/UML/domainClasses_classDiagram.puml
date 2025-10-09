@@ -1,0 +1,149 @@
+@startuml
+!theme plain
+
+class Utilisateur {
+    -id: Long
+    -nom: String
+    -prenom: String
+    -email: String
+    -motDePasseHash: String
+    -dateCreation: DateTime
+    -dateModification: DateTime
+    -createurId: Long
+    -modificateurId: Long
+    +creerCompte()
+    +seConnecter()
+    +modifierProfil()
+    +supprimerCompte()
+    +gererComptes()
+    +modererContenu()
+    +consulterLogs()
+    +desactiverUtilisateur()
+}
+
+class OffreEmploi {
+    -id: Long
+    -intitule: String
+    -description: String
+    -entreprise: String
+    -lieu: String
+    -typeContrat: TypeContrat
+    -tempsTravail: TempsTravail
+    -modalite: Modalite
+    -estInstitutionnelle: Boolean
+    -statutCourant: StatutOffre
+    -dateCreation: DateTime
+    -dateModification: DateTime
+    -createurId: Long
+    -modificateurId: Long
+    +creerOffre()
+    +modifierOffre()
+    +obtenirStatutCourant()
+    +obtenirTimeline()
+}
+
+class EvenementOffre {
+    -id: Long
+    -type: TypeEvenement
+    -dateOccurrence: DateTime
+    -utilisateurId: Long
+    -commentaire: String
+    -dateCreation: DateTime
+    +enregistrerEvenement()
+    +determinerStatut(): StatutOffre
+}
+
+class Document {
+    -id: Long
+    -nom: String
+    -type: TypeDocument
+    -format: FormatDocument
+    -cheminFichier: String
+    -tailleFichier: Long
+    -dateCreation: DateTime
+    -dateModification: DateTime
+    -createurId: Long
+    -modificateurId: Long
+    +televerserDocument()
+    +telechargerDocument()
+    +supprimerDocument()
+}
+
+class LogTraçabilite {
+    -id: Long
+    -action: String
+    -entiteType: String
+    -entiteId: Long
+    -utilisateurId: Long
+    -dateAction: DateTime
+    -detailsAction: String
+    +enregistrerLog()
+    +consulterLogs()
+}
+
+enum TypeContrat {
+    CDD
+    CDI
+    FREELANCE
+    INTERIM
+    MISSION
+}
+
+enum TempsTravail {
+    PLEIN_TEMPS
+    TEMPS_PARTIEL
+}
+
+enum Modalite {
+    DISTANCIEL
+    HYBRIDE
+    SUR_SITE
+}
+
+enum StatutOffre {
+    EN_COURS
+    EN_ATTENTE
+    REFUSE
+    RELANCE
+    ENTRETIEN
+}
+
+enum TypeEvenement {
+    CANDIDATURE_ENVOYEE
+    RELANCE
+    REFUS
+    ENTRETIEN
+    AUTRE
+}
+
+enum TypeDocument {
+    CV
+    LETTRE_MOTIVATION
+    LETTRE_RECOMMANDATION
+}
+
+enum FormatDocument {
+    PDF
+    DOCX
+    ODT
+}
+
+' Relations
+
+Utilisateur ||--o{ OffreEmploi : possède
+Utilisateur ||--o{ Document : possède
+Utilisateur ||--o{ LogTraçabilite : génère
+
+OffreEmploi ||--o{ EvenementOffre : contient
+OffreEmploi }o--|| TypeContrat
+OffreEmploi }o--|| TempsTravail
+OffreEmploi }o--|| Modalite
+OffreEmploi }o--|| StatutOffre
+
+EvenementOffre }o--|| TypeEvenement
+EvenementOffre }o--|| Utilisateur : enregistré par
+
+Document }o--|| TypeDocument
+Document }o--|| FormatDocument
+
+@enduml

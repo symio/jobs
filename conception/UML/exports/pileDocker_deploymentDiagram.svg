@@ -1,0 +1,287 @@
+<?xml version="1.0" encoding="UTF-8"?><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentStyleType="text/css" height="1023px" preserveAspectRatio="none" style="width:2287px;height:1023px;background:#FFFFFF;" version="1.1" viewBox="0 0 2287 1023" width="2287px" zoomAndPan="magnify">
+    <defs/>
+    <g>
+        <text fill="#000000" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacing" textLength="311" x="981" y="22.9951">Architecture Docker - Application J-Jobs</text>
+        <!--cluster Docker Compose Environment-->
+        <g id="cluster_Docker Compose Environment">
+            <path d="M438.5,66.2969 L678.5,66.2969 A3.75,3.75 0 0 1 681,68.7969 L688,88.5938 L2277.5,88.5938 A2.5,2.5 0 0 1 2280,91.0938 L2280,891.2969 A2.5,2.5 0 0 1 2277.5,893.7969 L438.5,893.7969 A2.5,2.5 0 0 1 436,891.2969 L436,68.7969 A2.5,2.5 0 0 1 438.5,66.2969 " fill="none" style="stroke:#000000;stroke-width:1.5;"/>
+            <line style="stroke:#000000;stroke-width:1.5;" x1="436" x2="688" y1="88.5938" y2="88.5938"/>
+            <text fill="#000000" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacing" textLength="239" x="440" y="81.292">Docker Compose Environment</text>
+        </g>
+        <!--cluster network-->
+        <g id="cluster_network">
+            <path d="M462.5,193.2969 L694.5,193.2969 A3.75,3.75 0 0 1 697,195.7969 L704,215.5938 L1793.5,215.5938 A2.5,2.5 0 0 1 1796,218.0938 L1796,819.2969 A2.5,2.5 0 0 1 1793.5,821.7969 L462.5,821.7969 A2.5,2.5 0 0 1 460,819.2969 L460,195.7969 A2.5,2.5 0 0 1 462.5,193.2969 " fill="#FFF9C4" style="stroke:#000000;stroke-width:1.5;"/>
+            <line style="stroke:#000000;stroke-width:1.5;" x1="460" x2="704" y1="215.5938" y2="215.5938"/>
+            <text fill="#000000" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacing" textLength="231" x="464" y="208.292">Network: projetjobs_network</text>
+        </g>
+        <!--cluster frontend-->
+        <g id="cluster_frontend">
+            <rect fill="#E1F5FE" height="281" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:1.0;" width="409" x="1355" y="251.7969"/>
+            <text fill="#000000" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacing" textLength="154" x="1482.5" y="266.792">Frontend Container</text>
+        </g>
+        <!--cluster /usr/share/nginx/html-->
+        <g id="cluster_/usr/share/nginx/html">
+            <path d="M1389.5,396.7969 L1558.5,396.7969 A3.75,3.75 0 0 1 1561,399.2969 L1568,419.0938 L1568.5,419.0938 A2.5,2.5 0 0 1 1571,421.5938 L1571,498.2969 A2.5,2.5 0 0 1 1568.5,500.7969 L1389.5,500.7969 A2.5,2.5 0 0 1 1387,498.2969 L1387,399.2969 A2.5,2.5 0 0 1 1389.5,396.7969 " fill="none" style="stroke:#000000;stroke-width:1.5;"/>
+            <line style="stroke:#000000;stroke-width:1.5;" x1="1387" x2="1568" y1="419.0938" y2="419.0938"/>
+            <text fill="#000000" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacing" textLength="168" x="1391" y="411.792">/usr/share/nginx/html</text>
+        </g>
+        <!--cluster backend-->
+        <g id="cluster_backend">
+            <rect fill="#E1F5FE" height="264.5" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:1.0;" width="412" x="903" y="244.2969"/>
+            <text fill="#000000" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacing" textLength="149" x="1034.5" y="259.292">Backend Container</text>
+        </g>
+        <!--cluster database-->
+        <g id="cluster_database">
+            <rect fill="#C8E6C9" height="217" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:1.0;" width="438" x="665" y="572.7969"/>
+            <text fill="#000000" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacing" textLength="155" x="806.5" y="587.792">Database Container</text>
+        </g>
+        <!--cluster postgres-->
+        <g id="cluster_postgres">
+            <path d="M914,641.7969 C914,631.7969 988.5,631.7969 988.5,631.7969 C988.5,631.7969 1063,631.7969 1063,641.7969 L1063,739.7969 C1063,749.7969 988.5,749.7969 988.5,749.7969 C988.5,749.7969 914,749.7969 914,739.7969 L914,641.7969 " fill="none" style="stroke:#181818;stroke-width:1.0;"/>
+            <path d="M914,641.7969 C914,651.7969 988.5,651.7969 988.5,651.7969 C988.5,651.7969 1063,651.7969 1063,641.7969 " fill="none" style="stroke:#181818;stroke-width:1.0;"/>
+            <text fill="#000000" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacing" textLength="133" x="922" y="666.792">PostgreSQL 17.4</text>
+        </g>
+        <!--cluster admin-->
+        <g id="cluster_admin">
+            <rect fill="#FFE0B2" height="91" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:1.0;" width="387" x="484" y="403.2969"/>
+            <text fill="#000000" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacing" textLength="131" x="612" y="418.292">Admin Container</text>
+        </g>
+        <!--cluster build-->
+        <g id="cluster_build">
+            <path d="M8.5,43.2969 L97.5,43.2969 A3.75,3.75 0 0 1 100,45.7969 L107,65.5938 L409.5,65.5938 A2.5,2.5 0 0 1 412,68.0938 L412,370.2969 A2.5,2.5 0 0 1 409.5,372.7969 L8.5,372.7969 A2.5,2.5 0 0 1 6,370.2969 L6,45.7969 A2.5,2.5 0 0 1 8.5,43.2969 " fill="#F5F5F5" style="stroke:#000000;stroke-width:1.5;"/>
+            <line style="stroke:#000000;stroke-width:1.5;" x1="6" x2="107" y1="65.5938" y2="65.5938"/>
+            <text fill="#000000" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacing" textLength="88" x="10" y="58.292">Build Stage</text>
+        </g>
+        <!--cluster Frontend Build-->
+        <g id="cluster_Frontend Build">
+            <rect fill="none" height="262.5" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:1.0;" width="158" x="230" y="86.2969"/>
+            <text fill="#000000" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacing" textLength="115" x="251.5" y="101.292">Frontend Build</text>
+        </g>
+        <!--cluster Backend Build-->
+        <g id="cluster_Backend Build">
+            <rect fill="none" height="262.5" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:1.0;" width="176" x="30" y="86.2969"/>
+            <text fill="#000000" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacing" textLength="110" x="63" y="101.292">Backend Build</text>
+        </g>
+        <!--entity user-->
+        <g id="elem_user">
+            <ellipse cx="1756" cy="109.7969" fill="#F1F1F1" rx="8" ry="8" style="stroke:#181818;stroke-width:0.5;"/>
+            <path d="M1756,117.7969 L1756,144.7969 M1743,125.7969 L1769,125.7969 M1756,144.7969 L1743,159.7969 M1756,144.7969 L1769,159.7969 " fill="none" style="stroke:#181818;stroke-width:0.5;"/>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="68" x="1722" y="174.292">Utilisateur</text>
+        </g>
+        <!--entity adminUser-->
+        <g id="elem_adminUser">
+            <ellipse cx="911" cy="109.7969" fill="#F1F1F1" rx="8" ry="8" style="stroke:#181818;stroke-width:0.5;"/>
+            <path d="M911,117.7969 L911,144.7969 M898,125.7969 L924,125.7969 M911,144.7969 L898,159.7969 M911,144.7969 L924,159.7969 " fill="none" style="stroke:#181818;stroke-width:0.5;"/>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="100" x="861" y="174.292">Administrateur</text>
+        </g>
+        <g id="elem_GMN39">
+            <path d="M1812.5,415.2969 L1812.5,500.9609 L2067.5,500.9609 L2067.5,425.2969 L2057.5,415.2969 L1812.5,415.2969 " fill="#FEFFDD" style="stroke:#181818;stroke-width:0.5;"/>
+            <path d="M2057.5,415.2969 L2057.5,425.2969 L2067.5,425.2969 L2057.5,415.2969 " fill="#FEFFDD" style="stroke:#181818;stroke-width:1.0;"/>
+            <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="175" x="1818.5" y="432.3638">Variables d'environnement:</text>
+            <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="185" x="1818.5" y="447.4966">- SPRING_DATASOURCE_URL</text>
+            <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="233" x="1818.5" y="462.6294">- SPRING_DATASOURCE_USERNAME</text>
+            <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="234" x="1818.5" y="477.7622">- SPRING_DATASOURCE_PASSWORD</text>
+            <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="174" x="1818.5" y="492.895">- CORS_ALLOWED_ORIGINS</text>
+        </g>
+        <g id="elem_GMN42">
+            <path d="M541,837.7969 L541,878.0625 L805,878.0625 L805,847.7969 L795,837.7969 L541,837.7969 " fill="#FEFFDD" style="stroke:#181818;stroke-width:0.5;"/>
+            <path d="M795,837.7969 L795,847.7969 L805,847.7969 L795,837.7969 " fill="#FEFFDD" style="stroke:#181818;stroke-width:1.0;"/>
+            <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="163" x="547" y="854.8638">depends_on: healthcheck</text>
+            <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="243" x="547" y="869.9966">(backend attend que la DB soit ready)</text>
+        </g>
+        <g id="elem_GMN45">
+            <path d="M2102.5,445.7969 L2102.5,470.9297 L2263.5,470.9297 L2263.5,455.7969 L2253.5,445.7969 L2102.5,445.7969 " fill="#FEFFDD" style="stroke:#181818;stroke-width:0.5;"/>
+            <path d="M2253.5,445.7969 L2253.5,455.7969 L2263.5,455.7969 L2253.5,445.7969 " fill="#FEFFDD" style="stroke:#181818;stroke-width:1.0;"/>
+            <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="140" x="2108.5" y="462.8638">depends_on: backend</text>
+        </g>
+        <!--entity nginx-->
+        <g id="elem_nginx">
+            <rect fill="#F1F1F1" height="36.2969" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="139" x="1379.5" y="296.7969"/>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="119" x="1389.5" y="319.792">Nginx 1.27-alpine</text>
+        </g>
+        <g id="elem_GMN8">
+            <path d="M1553.5,294.7969 L1553.5,310.7969 L1518.74,314.7969 L1553.5,318.7969 L1553.5,335.0625 A0,0 0 0 0 1553.5,335.0625 L1720.5,335.0625 A0,0 0 0 0 1720.5,335.0625 L1720.5,304.7969 L1710.5,294.7969 L1553.5,294.7969 A0,0 0 0 0 1553.5,294.7969 " fill="#FEFFDD" style="stroke:#181818;stroke-width:0.5;"/>
+            <path d="M1710.5,294.7969 L1710.5,304.7969 L1720.5,304.7969 L1710.5,294.7969 " fill="#FEFFDD" style="stroke:#181818;stroke-width:0.5;"/>
+            <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="146" x="1559.5" y="311.8638">Port: 80 (exposé 4200)</text>
+            <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="117" x="1559.5" y="326.9966">nginx.conf custom</text>
+        </g>
+        <!--entity angular-->
+        <g id="elem_angular">
+            <rect fill="#F1F1F1" height="52.5938" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="116" x="1403" y="431.7969"/>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="83" x="1413" y="454.792">Angular App</text>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="96" x="1413" y="471.0889">(dist/browser)</text>
+        </g>
+        <!--entity tomcat-->
+        <g id="elem_tomcat">
+            <rect fill="#F1F1F1" height="36.2969" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="150" x="946" y="296.7969"/>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="130" x="956" y="319.792">Tomcat 10.1-jdk21</text>
+        </g>
+        <!--entity springwar-->
+        <g id="elem_springwar">
+            <rect fill="#F1F1F1" height="52.5938" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="137" x="949.5" y="431.7969"/>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="117" x="959.5" y="454.792">Spring Boot WAR</text>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="67" x="959.5" y="471.0889">(jobs.war)</text>
+        </g>
+        <g id="elem_GMN14">
+            <path d="M1131,287.2969 L1131,310.7969 L1096.09,314.7969 L1131,318.7969 L1131,342.6953 A0,0 0 0 0 1131,342.6953 L1291,342.6953 A0,0 0 0 0 1291,342.6953 L1291,297.2969 L1281,287.2969 L1131,287.2969 A0,0 0 0 0 1131,287.2969 " fill="#FEFFDD" style="stroke:#181818;stroke-width:0.5;"/>
+            <path d="M1281,287.2969 L1281,297.2969 L1291,297.2969 L1281,287.2969 " fill="#FEFFDD" style="stroke:#181818;stroke-width:0.5;"/>
+            <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="66" x="1137" y="304.3638">Port: 8080</text>
+            <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="139" x="1137" y="319.4966">Java 21 + Gradle 8.10</text>
+            <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="130" x="1137" y="334.6294">Profils: prod, secrets</text>
+        </g>
+        <g id="elem_GMN20">
+            <path d="M708.5,680.2969 L708.5,735.6953 L889.5,735.6953 L889.5,690.2969 L879.5,680.2969 L708.5,680.2969 " fill="#FEFFDD" style="stroke:#181818;stroke-width:0.5;"/>
+            <path d="M879.5,680.2969 L879.5,690.2969 L889.5,690.2969 L879.5,680.2969 " fill="#FEFFDD" style="stroke:#181818;stroke-width:1.0;"/>
+            <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="66" x="714.5" y="697.3638">Port: 5432</text>
+            <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="160" x="714.5" y="712.4966">Volume: postgresql_data</text>
+            <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="110" x="714.5" y="727.6294">Healthcheck actif</text>
+        </g>
+        <!--entity db-->
+        <g id="elem_db">
+            <rect fill="#F1F1F1" height="36.2969" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="74" x="962" y="689.7969"/>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="54" x="972" y="712.792">jobs DB</text>
+        </g>
+        <!--entity pgadmin-->
+        <g id="elem_pgadmin">
+            <rect fill="#F1F1F1" height="36.2969" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="94" x="500" y="440.2969"/>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="74" x="510" y="463.292">pgAdmin 4</text>
+        </g>
+        <g id="elem_GMN25">
+            <path d="M629.5,438.2969 L629.5,454.7969 L594.2,458.7969 L629.5,462.7969 L629.5,478.5625 A0,0 0 0 0 629.5,478.5625 L854.5,478.5625 A0,0 0 0 0 854.5,478.5625 L854.5,448.2969 L844.5,438.2969 L629.5,438.2969 A0,0 0 0 0 629.5,438.2969 " fill="#FEFFDD" style="stroke:#181818;stroke-width:0.5;"/>
+            <path d="M844.5,438.2969 L844.5,448.2969 L854.5,448.2969 L844.5,438.2969 " fill="#FEFFDD" style="stroke:#181818;stroke-width:0.5;"/>
+            <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="146" x="635.5" y="455.3638">Port: 80 (exposé 5433)</text>
+            <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="204" x="635.5" y="470.4966">Volumes: working_dir, config_dir</text>
+        </g>
+        <!--entity node-->
+        <g id="elem_node">
+            <rect fill="#F1F1F1" height="36.2969" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="125" x="246.5" y="121.2969"/>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="105" x="256.5" y="144.292">Node 22-alpine</text>
+        </g>
+        <!--entity yarnbuild-->
+        <g id="elem_yarnbuild">
+            <rect fill="#F1F1F1" height="36.2969" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="86" x="276" y="296.7969"/>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="66" x="286" y="319.792">yarn build</text>
+        </g>
+        <!--entity gradle-->
+        <g id="elem_gradle">
+            <rect fill="#F1F1F1" height="36.2969" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="143" x="46.5" y="121.2969"/>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="123" x="56.5" y="144.292">Gradle 8.10-jdk21</text>
+        </g>
+        <!--entity gradlebuild-->
+        <g id="elem_gradlebuild">
+            <rect fill="#F1F1F1" height="36.2969" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="100" x="79" y="296.7969"/>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="80" x="89" y="319.792">gradle build</text>
+        </g>
+        <!--link postgres to GMN20-->
+        <g id="link_postgres_GMN20">
+            <path d="M913.9131,707.7969 C913.8197,707.7969 913.7257,707.7969 913.6313,707.7969 C913.4424,707.7969 913.2515,707.7969 913.0587,707.7969 C906.89,707.7969 898.75,707.7969 889.65,707.7969 " fill="none" id="postgres-GMN20" style="stroke:#181818;stroke-width:1.0;stroke-dasharray:7.0,7.0;"/>
+        </g>
+        <!--link user to frontend-->
+        <g id="link_user_frontend">
+            <path d="M1756,177.3769 C1756,189.6769 1756,203.9175 1756,218.4756 C1756,225.7547 1756,233.1131 1756,240.348 C1756,243.9655 1756,247.5521 1756,251.0824 C1756,251.3031 1756,245.5235 1756,245.7437 " fill="none" id="user-to-frontend" style="stroke:#181818;stroke-width:1.0;"/>
+            <polygon fill="#181818" points="1756,251.7437,1760,242.7437,1756,246.7437,1752,242.7437,1756,251.7437" style="stroke:#181818;stroke-width:1.0;"/>
+            <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="131" x="1624" y="241.8738">http://localhost:4200</text>
+        </g>
+        <!--link adminUser to frontend-->
+        <g id="link_adminUser_frontend">
+            <path d="M936,177.5069 C936,245.1269 936,378.7969 936,378.7969 C936,378.7969 1141,378.7969 1346,378.7969 C1347.6016,378.7969 1343.2031,378.7969 1344.8046,378.7969 " fill="none" id="adminUser-to-frontend" style="stroke:#181818;stroke-width:1.0;"/>
+            <polygon fill="#181818" points="1350.8046,378.7969,1341.8046,374.7969,1345.8046,378.7969,1341.8046,382.7969,1350.8046,378.7969" style="stroke:#181818;stroke-width:1.0;"/>
+            <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="131" x="1244.9" y="391.8638">http://localhost:4200</text>
+        </g>
+        <!--link adminUser to backend-->
+        <g id="link_adminUser_backend">
+            <path d="M911,177.3769 C911,189.6769 911,203.9175 911,218.4756 C911,225.7547 911,233.1131 911,240.348 C911,241.2524 911,242.1548 911,243.055 C911,243.28 911,237.5049 911,237.7296 " fill="none" id="adminUser-to-backend" style="stroke:#181818;stroke-width:1.0;"/>
+            <polygon fill="#181818" points="911,243.7296,915,234.7296,911,238.7296,907,234.7296,911,243.7296" style="stroke:#181818;stroke-width:1.0;"/>
+            <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="161" x="749" y="241.8738">http://localhost:8080/jobs</text>
+        </g>
+        <!--link adminUser to pgadmin-->
+        <g id="link_adminUser_pgadmin">
+            <path d="M860.77,167.7969 C760.91,167.7969 547,167.7969 547,167.7969 C547,167.7969 547,370.5269 547,434.1269 " fill="none" id="adminUser-to-pgadmin" style="stroke:#181818;stroke-width:1.0;"/>
+            <polygon fill="#181818" points="547,440.1269,551,431.1269,547,435.1269,543,431.1269,547,440.1269" style="stroke:#181818;stroke-width:1.0;"/>
+            <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="131" x="435.72" y="163.8638">http://localhost:5433</text>
+        </g>
+        <!--link nginx to angular-->
+        <g id="link_nginx_angular">
+            <path d="M1480,332.9669 C1480,357.9369 1480,396.9969 1480,425.7469 " fill="none" id="nginx-to-angular" style="stroke:#181818;stroke-width:1.0;"/>
+            <polygon fill="#181818" points="1480,431.7469,1484,422.7469,1480,426.7469,1476,422.7469,1480,431.7469" style="stroke:#181818;stroke-width:1.0;"/>
+            <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="103" x="1376" y="378.4238">serve static files</text>
+        </g>
+        <!--link nginx to tomcat-->
+        <g id="link_nginx_tomcat">
+            <path d="M1391.25,332.9769 C1391.25,345.8369 1391.25,360.7969 1391.25,360.7969 C1391.25,360.7969 1091.25,360.7969 1091.25,360.7969 C1091.25,360.7969 1091.25,351.8369 1091.25,338.9769 " fill="none" id="nginx-to-tomcat" style="stroke:#181818;stroke-width:1.0;"/>
+            <polygon fill="#181818" points="1091.25,332.9769,1087.25,341.9769,1091.25,337.9769,1095.25,341.9769,1091.25,332.9769" style="stroke:#181818;stroke-width:1.0;"/>
+            <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="119" x="1121.25" y="373.8638">proxy /api/ → /jobs/</text>
+            <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="109" x="1126.25" y="388.9966">(CORS configuré)</text>
+        </g>
+        <!--link tomcat to springwar-->
+        <g id="link_tomcat_springwar">
+            <path d="M1040.83,332.9669 C1040.83,357.9369 1040.83,396.9969 1040.83,425.7469 " fill="none" id="tomcat-to-springwar" style="stroke:#181818;stroke-width:1.0;"/>
+            <polygon fill="#181818" points="1040.83,431.7469,1044.83,422.7469,1040.83,426.7469,1036.83,422.7469,1040.83,431.7469" style="stroke:#181818;stroke-width:1.0;"/>
+            <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="74" x="965.83" y="378.4238">deploy WAR</text>
+        </g>
+        <!--link springwar to postgres-->
+        <g id="link_springwar_postgres">
+            <path d="M955.75,484.9969 C955.75,517.1819 955.75,572.8819 955.75,620.5356 C955.75,623.514 955.75,626.4609 955.75,629.3687 C955.75,630.0957 955.75,624.8202 955.75,625.5421 " fill="none" id="springwar-to-postgres" style="stroke:#181818;stroke-width:1.0;"/>
+            <polygon fill="#181818" points="955.75,631.5421,959.75,622.5421,955.75,626.5421,951.75,622.5421,955.75,631.5421" style="stroke:#181818;stroke-width:1.0;"/>
+            <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="31" x="1021.75" y="592.4638">JDBC</text>
+            <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="161" x="956.75" y="607.5966">jdbc:postgresql://db:5432</text>
+        </g>
+        <!--link pgadmin to postgres-->
+        <g id="link_pgadmin_postgres">
+            <path d="M567.5,476.6069 C567.5,486.1269 567.5,495.7969 567.5,495.7969 C567.5,495.7969 925,495.7969 925,495.7969 C925,495.7969 925,545.5369 925,596.8306 C925,603.2423 925,609.6783 925,616.0445 C925,619.2276 925,622.3932 925,625.5296 C925,627.0978 925,628.6587 925,630.2108 C925,630.5988 925,624.9863 925,625.3732 " fill="none" id="pgadmin-to-postgres" style="stroke:#181818;stroke-width:1.0;"/>
+            <polygon fill="#181818" points="925,631.3732,929,622.3732,925,626.3732,921,622.3732,925,631.3732" style="stroke:#181818;stroke-width:1.0;"/>
+            <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="76" x="765.35" y="491.8638">manage DB</text>
+        </g>
+        <!--link springwar to GMN39-->
+        <g id="link_springwar_GMN39">
+            <path d="M1061.25,484.8369 C1061.25,488.3669 1061.25,490.7969 1061.25,490.7969 C1061.25,490.7969 1568.5,490.7969 1812.22,490.7969 " fill="none" id="springwar-GMN39" style="stroke:#181818;stroke-width:1.0;stroke-dasharray:7.0,7.0;"/>
+        </g>
+        <!--link database to GMN42-->
+        <g id="link_database_GMN42">
+            <path d="M673,790.1671 C673,790.5976 673,791.0278 673,791.4576 C673,794.8959 673,798.3097 673,801.6694 C673,815.1081 673,827.6819 673,837.5069 " fill="none" id="database-GMN42" style="stroke:#181818;stroke-width:1.0;stroke-dasharray:7.0,7.0;"/>
+        </g>
+        <!--link frontend to GMN45-->
+        <g id="link_frontend_GMN45">
+            <path d="M1764.6236,314.7969 C1768.6548,314.7969 1774.008,314.7969 1780.4889,314.7969 C1793.4508,314.7969 1810.9238,314.7969 1831.3545,314.7969 C1872.2159,314.7969 1924.9081,314.7969 1977.0037,314.7969 C2081.195,314.7969 2183,314.7969 2183,314.7969 C2183,314.7969 2183,410.4469 2183,445.5669 " fill="none" id="frontend-GMN45" style="stroke:#181818;stroke-width:1.0;stroke-dasharray:7.0,7.0;"/>
+        </g>
+        <!--link node to yarnbuild-->
+        <g id="link_node_yarnbuild">
+            <path d="M319,157.4169 C319,191.1369 319,257.1369 319,290.7769 " fill="none" id="node-to-yarnbuild" style="stroke:#181818;stroke-width:1.0;"/>
+            <polygon fill="#181818" points="319,296.7769,323,287.7769,319,291.7769,315,287.7769,319,296.7769" style="stroke:#181818;stroke-width:1.0;"/>
+            <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="103" x="215" y="223.1638">compile Angular</text>
+        </g>
+        <!--link yarnbuild to angular-->
+        <g id="link_yarnbuild_angular">
+            <path d="M319,332.8069 C319,357.2169 319,397.7969 319,397.7969 C319,397.7969 1441.5,397.7969 1441.5,397.7969 C1441.5,397.7969 1441.5,409.3769 1441.5,425.5869 " fill="none" id="yarnbuild-to-angular" style="stroke:#181818;stroke-width:1.0;stroke-dasharray:7.0,7.0;"/>
+            <polygon fill="#181818" points="1441.5,431.5869,1445.5,422.5869,1441.5,426.5869,1437.5,422.5869,1441.5,431.5869" style="stroke:#181818;stroke-width:1.0;"/>
+            <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="45" x="818.65" y="393.8638">produit</text>
+        </g>
+        <!--link gradle to gradlebuild-->
+        <g id="link_gradle_gradlebuild">
+            <path d="M129,157.4169 C129,191.1369 129,257.1369 129,290.7769 " fill="none" id="gradle-to-gradlebuild" style="stroke:#181818;stroke-width:1.0;"/>
+            <polygon fill="#181818" points="129,296.7769,133,287.7769,129,291.7769,125,287.7769,129,296.7769" style="stroke:#181818;stroke-width:1.0;"/>
+            <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="95" x="33" y="223.1638">compile Spring</text>
+        </g>
+        <!--link gradlebuild to springwar-->
+        <g id="link_gradlebuild_springwar">
+            <path d="M129,332.9169 C129,335.7669 129,337.7969 129,337.7969 C129,337.7969 995.17,337.7969 995.17,337.7969 C995.17,337.7969 995.17,390.0569 995.17,425.5569 " fill="none" id="gradlebuild-to-springwar" style="stroke:#181818;stroke-width:1.0;stroke-dasharray:7.0,7.0;"/>
+            <polygon fill="#181818" points="995.17,431.5569,999.17,422.5569,995.17,426.5569,991.17,422.5569,995.17,431.5569" style="stroke:#181818;stroke-width:1.0;"/>
+            <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="77" x="528.52" y="333.8638">produit WAR</text>
+        </g>
+        <rect fill="#DDDDDD" height="91.4844" id="_legend" rx="7.5" ry="7.5" style="stroke:#000000;stroke-width:1.0;" width="219" x="2042" y="911.7969"/>
+        <text fill="#000000" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacing" textLength="69" x="2047" y="929.792">Légende</text>
+        <ellipse cx="2052.5" cy="941.8906" fill="#000000" rx="2.5" ry="2.5" style="stroke:#000000;stroke-width:0.0;"/>
+        <text fill="#E1F5FE" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="39" x="2059" y="946.0889">■■■</text>
+        <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="154" x="2102" y="946.0889">Conteneurs applicatifs</text>
+        <ellipse cx="2052.5" cy="958.1875" fill="#000000" rx="2.5" ry="2.5" style="stroke:#000000;stroke-width:0.0;"/>
+        <text fill="#C8E6C9" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="39" x="2059" y="962.3857">■■■</text>
+        <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="123" x="2102" y="962.3857">Base de données</text>
+        <ellipse cx="2052.5" cy="974.4844" fill="#000000" rx="2.5" ry="2.5" style="stroke:#000000;stroke-width:0.0;"/>
+        <text fill="#FFE0B2" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="39" x="2059" y="978.6826">■■■</text>
+        <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="98" x="2102" y="978.6826">Administration</text>
+        <ellipse cx="2052.5" cy="990.7813" fill="#000000" rx="2.5" ry="2.5" style="stroke:#000000;stroke-width:0.0;"/>
+        <text fill="#FFF9C4" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="39" x="2059" y="994.9795">■■■</text>
+        <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="107" x="2102" y="994.9795">Réseau Docker</text>
+        <!--SRC=[fLVDKkD64BxhANgrXm1PMzZBPbdN5bN-9H1Y4nkMmsxADPR6zc1vHZiQ0QuKrpn03ZddodFm9liawHdzMB85HHM6Sg7k_hhLttJtD6yyEcMSGdlGlsYUzBl3SUiOtdPhlG-zhlKcKNPQHje-xFxI_fH9-zsBgy7mDwFgzNgVsWUM5IuO3uWaIt35CX2SSZLIAv-2fAuYVERJd8cFNjGge22acWlBKaoXPLEwSwRGF98OMRWBAg42pI3mcKiK4nnEAwTY4bfMGDm5cL6m4wks3XbIwF8R9WLVOd0R_h80F-Ohi-zJTIlaeW615DTKNQEtCOzbDf0Gah_Jj18VcH_zoT83kuUn5EKUnkUAO4xIE9ccueJDd1Vz-TgVCNu7jMhzOuNu0SB-DA6rj60u5Rw7oTbE54edd1D97MFapDNIjpUy6izDFejy8ZLdt_YEnqBbJAIu3QdSDJ58h2y0xmjFN2WyCZQRAn3JadVIdtCyjGOSxiCElKFQ7n_WeBw_lxjbPz1LL_0fk56enB9WeGdIqQpj5odZkeL7k4tr994-mVI5M6BbG6s_MgjSUujwpR2WZBHeEGeaupDe2Q7WgZb4zdHjL6z9mbnezBSRt1NPAl6Rf-jmVqjrIcu8r6lmCnnBuc4B75PhsrRdKaoP7vgYzTv1I5r9LVWQCZj4aGd1XYcowQNYfE4twCpKzha8rKpIqHzdKFjOFJ3W89Q5PNMfkSHPOfZq9YyklzJb4vH-E7XVtr9z4Nwqf8qC-zqVw_VUilkL4b_DtJbr5q1SnQQluRFfBHdV89CO6GwIxdwhlbcOmIo671XAWfanVew94eloLaHItky-mGgMa9vkMCXZZybte5kJcRzValpzUfuYOG87qwLYFWk9eb6SSeI39gytEU8GaciJayPbQcU-D0egdhZbbQFrx6o0FLSgQ3YEBrpYp_4u6thCs760rCthWUa8ASFffdLqyJu5Jiwb5AnFmbwdQQPX1amciGQYlniAeS8hpWLiT9f4Im2c1X0HJnSDm35mjmA71Co17t__0-OD7HnPxS5mb1ng91yVTdFH4tGQFXjdsfz70r-izDYB0MjbbcRQssXzsccrl_5hR-8srZs6YNiJdN4z5pCbfypBad1z8NTQUOOA9RyzSRyGoSW4-G7l9nhVz9pgkxwHcLHWT3uywH-FEysBvcXmEMntnvV3i-Vre-wmt_oz-wpHUNCqmfsdapFIR8-RPsU3gsvdF1YU79_qHzPM_wmpcmY5fw1JImTfvWnF047XMF06pDU3ATFlf4LAbAdnxn45do1x40gcSCKYtchtPR7JFYcDdOGfUhhFxLkjYFaUZ1G-nFUlUNwBTo_-94EkR44okFpAyhKlF0hrUc43Gj7QO4KaZ_qRfNuqJvkpg6H7s8wMkrvpYy3CIDTMyNCkQ2p8XqKoz6jcDPszbYvg_IfCBx9nSzlMMblLzjL2t-lRF6BAjgmaRkep5pNlDLvHR2klJjqM-Zbn73UqvTEPviJqbKbYR-_iyK7BwDvUB83Fhl25R2HRrD6FV_-BVpyxHd5ahZRASOZZ14_tyMcuWOwNXX9qIoyDI9g73VluG3TnyHLPWilT7xZzRw7qXbw26Zu-X9H4oNyG5YOQKs3z3m00]-->
+    </g>
+</svg>

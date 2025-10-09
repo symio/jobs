@@ -1,0 +1,116 @@
+@startuml Architecture Jobs
+!define CONTAINER_BG #E1F5FE
+!define DB_BG #C8E6C9
+!define NETWORK_BG #FFF9C4
+
+skinparam componentStyle rectangle
+skinparam linetype ortho
+
+title Architecture Docker - Application J-Jobs
+
+package "Docker Compose Environment" {
+    
+    package "Network: projetjobs_network" as network #FFF9C4 {
+        
+        component "Frontend Container" as frontend #E1F5FE {
+            [Nginx 1.27-alpine] as nginx
+            folder "/usr/share/nginx/html" {
+                [Angular App\n(dist/browser)] as angular
+            }
+            note right of nginx
+                Port: 80 (exposé 4200)
+                nginx.conf custom
+            end note
+        }
+        
+        component "Backend Container" as backend #E1F5FE {
+            [Tomcat 10.1-jdk21] as tomcat
+            [Spring Boot WAR\n(jobs.war)] as springwar
+            note right of tomcat
+                Port: 8080
+                Java 21 + Gradle 8.10
+                Profils: prod, secrets
+            end note
+        }
+        
+        component "Database Container" as database #C8E6C9 {
+            database "PostgreSQL 17.4" as postgres {
+                [jobs DB] as db
+            }
+            note right of postgres
+                Port: 5432
+                Volume: postgresql_data
+                Healthcheck actif
+            end note
+        }
+        
+        component "Admin Container" as admin #FFE0B2 {
+            [pgAdmin 4] as pgadmin
+            note right of pgadmin
+                Port: 80 (exposé 5433)
+                Volumes: working_dir, config_dir
+            end note
+        }
+    }
+    
+    actor "Utilisateur" as user
+    actor "Administrateur" as adminUser
+    
+    user -down-> frontend : "http://localhost:4200"
+    adminUser -down-> frontend : "http://localhost:4200"
+    adminUser -down-> backend : "http://localhost:8080/jobs"
+    adminUser -down-> pgadmin : "http://localhost:5433"
+    
+    nginx -down-> angular : "serve static files"
+    nginx -right-> tomcat : "proxy /api/ → /jobs/\n(CORS configuré)"
+    
+    tomcat -down-> springwar : "deploy WAR"
+    springwar -down-> postgres : "JDBC\njdbc:postgresql://db:5432"
+    
+    pgadmin -down-> postgres : "manage DB"
+    
+    note right of springwar
+        Variables d'environnement:
+        - SPRING_DATASOURCE_URL
+        - SPRING_DATASOURCE_USERNAME
+        - SPRING_DATASOURCE_PASSWORD
+        - CORS_ALLOWED_ORIGINS
+    end note
+    
+    note bottom of database
+        depends_on: healthcheck
+        (backend attend que la DB soit ready)
+    end note
+    
+    note bottom of frontend
+        depends_on: backend
+    end note
+}
+
+package "Build Stage" as build #F5F5F5 {
+    component "Frontend Build" {
+        [Node 22-alpine] as node
+        [yarn build] as yarnbuild
+    }
+    
+    component "Backend Build" {
+        [Gradle 8.10-jdk21] as gradle
+        [gradle build] as gradlebuild
+    }
+}
+
+node -down-> yarnbuild : "compile Angular"
+yarnbuild .down.> angular : "produit"
+
+gradle -down-> gradlebuild : "compile Spring"
+gradlebuild .down.> springwar : "produit WAR"
+
+legend right
+    **Légende**
+    * <color:#E1F5FE>■■■</color> Conteneurs applicatifs
+    * <color:#C8E6C9>■■■</color> Base de données
+    * <color:#FFE0B2>■■■</color> Administration
+    * <color:#FFF9C4>■■■</color> Réseau Docker
+endlegend
+
+@enduml

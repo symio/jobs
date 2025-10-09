@@ -1,0 +1,212 @@
+@startuml
+!theme plain
+
+skinparam sequenceMessageAlign center
+skinparam responseMessageBelowArrow true
+skinparam BoxPadding 10
+
+title Flux d'authentification OAuth2 Client Credentials - Jobs
+
+actor "Utilisateur" as User
+participant "LoginComponent\n(Angular)" as Login
+participant "OAuth2Service\n(Angular)" as OAuth2Svc
+participant "HttpClient\n(Angular)" as HttpClient
+participant "CORS Filter\n(Spring)" as CORS
+participant "AuthenticationController\n(Spring Boot)" as AuthCtrl
+participant "OAuth2Service\n(Spring)" as OAuth2Backend
+participant "JwtService\n(Spring)" as JwtSvc
+participant "UserRepository\n(JPA)" as UserRepo
+participant "PasswordEncoder\n(BCrypt)" as PwdEncoder
+database "PostgreSQL" as DB
+
+== Phase 1: Affichage du formulaire ==
+User -> Login: Accède à /login
+activate Login
+Login -> Login: ngOnInit()
+Login -> OAuth2Svc: isAuthenticated()
+activate OAuth2Svc
+OAuth2Svc -> OAuth2Svc: getStoredToken()
+OAuth2Svc -> OAuth2Svc: decodeTokenExpirations()
+OAuth2Svc --> Login: Observable<false>
+deactivate OAuth2Svc
+Login --> User: Affiche formulaire\n(email, password, rememberMe)
+deactivate Login
+
+== Phase 2: Soumission des credentials ==
+User -> Login: Remplit et soumet\n(email, password, rememberMe=true)
+activate Login
+Login -> Login: onSubmit()
+Login -> Login: Validation formulaire\n(Validators.required, Validators.email)
+
+alt Formulaire invalide
+    Login -> Login: markFormGroupTouched()
+    Login --> User: Affiche erreurs de validation
+else Formulaire valide
+    Login -> OAuth2Svc: login(credentials)
+    activate OAuth2Svc
+    
+    OAuth2Svc -> OAuth2Svc: Construit scope\nscope = "access rememberme"
+    OAuth2Svc -> OAuth2Svc: Construit body URLSearchParams\n{grant_type, client_id, client_secret, scope}
+    
+    OAuth2Svc -> HttpClient: POST /authorize/token\nContent-Type: application/x-www-form-urlencoded\nBody: grant_type=client_credentials&...
+    activate HttpClient
+
+    == Phase 3: Traitement Backend ==
+    HttpClient -> CORS: Requête HTTP POST
+    activate CORS
+    CORS -> CORS: Vérifie origin autorisé\n(CORS_ALLOWED_ORIGINS)
+    CORS -> AuthCtrl: oauth2Token(tokenRequest, request)
+    activate AuthCtrl
+    
+    AuthCtrl -> AuthCtrl: Validation grant_type\n== "client_credentials"
+    AuthCtrl -> AuthCtrl: Validation clientId != null\nValidation clientSecret != null
+    
+    AuthCtrl -> AuthCtrl: buildClientSignature(request)\n(User-Agent, IP, etc.)
+    
+    AuthCtrl -> OAuth2Backend: generateClientCredentialsToken(\nclientId, clientSecret, scope, clientSignature)
+    activate OAuth2Backend
+    
+    OAuth2Backend -> OAuth2Backend: parseScopeSet(scope)\n{"access", "rememberme"}
+    
+    OAuth2Backend -> UserRepo: findByEmail(email)
+    activate UserRepo
+    UserRepo -> DB: SELECT * FROM users WHERE email = ?
+    activate DB
+    DB --> UserRepo: User entity
+    deactivate DB
+    UserRepo --> OAuth2Backend: User
+    deactivate UserRepo
+    
+    alt Scope contient "cleanup"
+        OAuth2Backend -> OAuth2Backend: cleanupUserTokens(user)
+        OAuth2Backend -> UserRepo: save(user)
+        OAuth2Backend --> AuthCtrl: Optional.empty()
+    else Scope normal (access + rememberme)
+        
+        OAuth2Backend -> OAuth2Backend: isValidAuthentication(\nscopeSet, user, clientSecret, email, clientSignature)
+        
+        OAuth2Backend -> OAuth2Backend: isValidBasicAuth(user, clientSecret)
+        OAuth2Backend -> PwdEncoder: matches(clientSecret, user.password)
+        activate PwdEncoder
+        PwdEncoder --> OAuth2Backend: true/false
+        deactivate PwdEncoder
+        
+        OAuth2Backend -> OAuth2Backend: user.isAccountNonExpired()\nuser.isAccountNonLocked()\nuser.isEnabled()
+        
+        alt Authentification invalide
+            OAuth2Backend -> OAuth2Backend: cleanupUserTokens(user)
+            OAuth2Backend --> AuthCtrl: Optional.empty()
+            AuthCtrl --> CORS: 401 Unauthorized\n{"error": "invalid_client"}
+        else Authentification valide
+            
+            OAuth2Backend -> OAuth2Backend: generateTokens(\nscopeSet, user, email, clientSecret, clientSignature)
+            
+            OAuth2Backend -> OAuth2Backend: genClaimsForToken()\nClaims: {client_id, display_name, scope,\ntoken_type, authority, isAdmin, client-signature}
+            
+            note right of OAuth2Backend
+                **2 tokens générés:**
+                1. **storedToken** (2h) : stocké en BDD
+                2. **authToken** (24h) : envoyé au client
+            end note
+            
+            OAuth2Backend -> JwtSvc: generateClientCredentialsToken(\nclaims, email, 2 hours)
+            activate JwtSvc
+            JwtSvc -> JwtSvc: Jwts.builder()\n.subject(email)\n.issuedAt(now)\n.expiration(now + 2h)\n.claims(claims)\n.signWith(HMAC-SHA256)
+            JwtSvc --> OAuth2Backend: storedToken (JWT)
+            deactivate JwtSvc
+            
+            OAuth2Backend -> OAuth2Backend: user.setAuthToken(storedToken)
+            
+            OAuth2Backend -> OAuth2Backend: claimsAuth = claims - client-signature
+            OAuth2Backend -> OAuth2Backend: claimsAuth.put("originally_expires", storedToken.exp)
+            
+            OAuth2Backend -> JwtSvc: generateClientCredentialsToken(\nclaimsAuth, email, 24 hours)
+            activate JwtSvc
+            JwtSvc --> OAuth2Backend: authToken (JWT 24h)
+            deactivate JwtSvc
+            
+            note right of OAuth2Backend
+                **RememberMe Token (optionnel):**
+                Si scope contient "rememberme"
+                Génère un token de 365 jours
+            end note
+            
+            alt Scope contient "rememberme"
+                OAuth2Backend -> OAuth2Backend: claimsRemember = claims\nscope = "rememberme"\n(sans client-signature)
+                
+                OAuth2Backend -> JwtSvc: generateClientCredentialsToken(\nclaimsRemember, email, 365 days)
+                activate JwtSvc
+                JwtSvc --> OAuth2Backend: rememberMeToken (JWT 365 days)
+                deactivate JwtSvc
+                
+                OAuth2Backend -> JwtSvc: generateClientCredentialsToken(\nclaims (avec signature), email, 365 days)
+                activate JwtSvc
+                JwtSvc --> OAuth2Backend: storedRememberToken
+                deactivate JwtSvc
+                
+                OAuth2Backend -> OAuth2Backend: user.setRememberMeToken(\nstoredRememberToken)
+            end
+            
+            OAuth2Backend -> UserRepo: save(user)
+            activate UserRepo
+            UserRepo -> DB: UPDATE users SET\nauth_token = ?,\nremember_me_token = ?,\nupdated_at = NOW()\nWHERE id_user = ?
+            activate DB
+            DB --> UserRepo: Success
+            deactivate DB
+            UserRepo --> OAuth2Backend: User saved
+            deactivate UserRepo
+            
+            OAuth2Backend -> OAuth2Backend: new OAuth2TokenResponse(\nauthToken, rememberMeToken, "Bearer",\nexpires_in, originally_expires, scope)
+            
+            OAuth2Backend --> AuthCtrl: Optional<OAuth2TokenResponse>
+        end
+    end
+    deactivate OAuth2Backend
+    
+    alt Token généré avec succès
+        AuthCtrl -> AuthCtrl: Construit Map response:\n{access_token, remember_me_token,\ntoken_type, expires_in, originally_expires, scope}
+        
+        AuthCtrl --> CORS: 200 OK\nJSON Response
+        deactivate AuthCtrl
+        CORS --> HttpClient: Response
+        deactivate CORS
+        
+        == Phase 4: Traitement de la réponse ==
+        HttpClient --> OAuth2Svc: Observable<OAuth2TokenResponse>
+        deactivate HttpClient
+        
+        OAuth2Svc -> OAuth2Svc: handleAuthSuccess(response)
+        OAuth2Svc -> OAuth2Svc: storeToken(access_token)\nlocalStorage.setItem('oauth2_token', ...)
+        
+        OAuth2Svc -> OAuth2Svc: extractAndStoreUserInfo(access_token)
+        OAuth2Svc -> OAuth2Svc: Décode JWT payload\nJSON.parse(atob(token.split('.')[1]))
+        OAuth2Svc -> OAuth2Svc: Extrait UserInfo:\n{clientId, displayName, scope,\nauthority, isAdmin}
+        OAuth2Svc -> OAuth2Svc: storeUserInfo(userInfo)\nlocalStorage.setItem('user_info', ...)
+        
+        OAuth2Svc -> OAuth2Svc: tokenSubject.next(access_token)
+        OAuth2Svc -> OAuth2Svc: userInfoSubject.next(userInfo)
+        OAuth2Svc -> OAuth2Svc: isAuthenticatedSubject.next(true)
+        
+        OAuth2Svc --> Login: Observable<success>
+        deactivate OAuth2Svc
+        
+        Login -> Login: subscribe.next(response)
+        Login -> Login: router.navigate([returnUrl])
+        Login --> User: Redirection vers /dashboard
+        deactivate Login
+        
+    else Erreur d'authentification
+        AuthCtrl --> CORS: 401/400 Error
+        CORS --> HttpClient: Error Response
+        HttpClient --> OAuth2Svc: Observable<Error>
+        OAuth2Svc -> OAuth2Svc: handleAuthError(err)
+        OAuth2Svc -> OAuth2Svc: removeStoredToken()
+        OAuth2Svc -> OAuth2Svc: removeStoredUserInfo()
+        OAuth2Svc -> OAuth2Svc: Réinitialise tous les Subjects
+        OAuth2Svc --> Login: throwError
+        Login -> Login: subscribe.error()
+        Login --> User: Affiche message d'erreur\n"Identifiants invalides"
+    end
+end
+
+@enduml

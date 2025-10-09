@@ -1,0 +1,124 @@
+@startuml
+!theme plain
+skinparam actorStyle awesome
+
+left to right direction
+
+actor "Utilisateur Non Connecté" as Guest
+actor "Utilisateur" as User
+actor "Administrateur" as Admin
+
+rectangle "Application Loamok Jobs" {
+    
+    package "Authentification" {
+        usecase "S'inscrire" as UC1
+        usecase "Se connecter" as UC2
+        usecase "Se déconnecter" as UC3
+        usecase "Rafraîchir token" as UC4
+    }
+    
+    package "Gestion Offres d'Emploi" {
+        usecase "Créer une offre" as UC5
+        usecase "Consulter le tableau de bord" as UC6
+        usecase "Rechercher des offres" as UC7
+        usecase "Voir détails d'une offre" as UC8
+        usecase "Modifier une offre" as UC9
+        usecase "Supprimer une offre" as UC10
+        usecase "Marquer offre institutionnelle\n(France Travail)" as UC11
+    }
+    
+    package "Suivi des Candidatures" {
+        usecase "Changer le statut d'une offre" as UC12
+        usecase "Consulter historique des statuts" as UC13
+        usecase "Voir statistiques" as UC14
+        usecase "Filtrer par statut" as UC15
+    }
+    
+    package "Gestion des Labels" {
+        usecase "Récupérer les labels\n(contrats, modes, temps)" as UC16
+    }
+    
+    package "Administration" {
+        usecase "Gérer tous les utilisateurs" as UC17
+        usecase "Voir toutes les offres" as UC18
+        usecase "Modérer le contenu" as UC19
+    }
+
+    package "Gestion Documents" {
+        usecase "Téléverser document" as UC20
+        usecase "Télécharger document" as UC21
+        usecase "Supprimer document" as UC22
+        usecase "Consulter documents" as UC23
+    }
+}
+
+' Héritage entre acteurs
+User --|> Guest
+Admin --|> User
+
+' Relations Invité
+Guest --> UC1
+Guest --> UC2
+
+' Relations Utilisateur
+User --> UC3
+User --> UC4
+User --> UC5
+User --> UC6
+User --> UC7
+User --> UC8
+User --> UC9
+User --> UC10
+User --> UC11
+User --> UC12
+User --> UC13
+User --> UC14
+User --> UC15
+User --> UC16
+
+' Relations Administrateur (en plus de l'héritage)
+Admin --> UC17
+Admin --> UC18
+Admin --> UC19
+
+' Relations entre cas d'utilisation
+UC1 ..> UC2 : <<extend>>\naprès inscription
+UC6 ..> UC7 : <<include>>
+UC6 ..> UC14 : <<include>>
+UC8 ..> UC13 : <<include>>
+UC9 ..> UC8 : <<include>>
+UC12 ..> UC13 : <<update>>
+UC7 ..> UC15 : <<extend>>
+
+note right of UC4
+  Rafraîchissement automatique
+  du token OAuth2 toutes les 4h
+  ou via remember_me_token
+end note
+
+note right of UC14
+  Statistiques affichées :
+  - Demandes en cours
+  - Demandes en attente
+  - Entretiens programmés
+  - Refus
+end note
+
+note right of UC12
+  Statuts disponibles :
+  - EN_COURS (A_EN_COURS, O_ACCEPT)
+  - EN_ATTENTE (B_EN_ATTENTE, B_RELANCE)
+  - ENTRETIEN (D_ENTRETIEN)
+  - REFUSE (C_REFUSE, O_REFUS)
+end note
+
+note left of UC16
+  Labels pour :
+  - ContractEnum (CDI, CDD, etc.)
+  - WorkModeEnum (Hybride, Distanciel, etc.)
+  - WorkTimeEnum (Plein temps, Temps partiel)
+  - OfferStatusEnum
+  - JobStatusEnum
+end note
+
+@enduml
