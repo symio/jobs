@@ -1,0 +1,940 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Éléments HTML  et icones application Jobs</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background: #667eea ;
+            min-height: 100vh;
+            color: #333;
+        }
+
+        .container {
+            max-width: 1600px;
+            margin: 0 auto;
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 20px;
+            overflow: hidden;
+            backdrop-filter: blur(10px);
+        }
+
+        .header {
+            background:#2c3e50;
+            color: white;
+            padding: 30px;
+            text-align: center;
+        }
+
+        .header h1 {
+            margin: 0;
+            font-size: 2.5em;
+            font-weight: 300;
+            letter-spacing: 2px;
+        }
+
+        .table-container {
+            overflow-x: auto;
+            max-height: 70vh;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 14px;
+        }
+
+        th {
+            background: linear-gradient(135deg, #34495e, #2c3e50);
+            color: white;
+            padding: 15px 12px;
+            text-align: left;
+            font-weight: 600;
+            position: sticky;
+            top: 0;
+            user-select: none;
+            border-right: 1px solid rgba(255, 255, 255, 0.1);
+            
+        }
+        .large{
+        width :30%;
+        }
+
+	td:not(:first-child){
+	 width :15%;
+	}
+        td {
+            padding: 12px;
+            border: 1px solid #073763;
+        }
+
+        tr:nth-child(even) {
+            background-color: rgba(52, 152, 219, 0.05);
+        }
+
+       
+
+        .tag {
+            font-family: 'Courier New', monospace;
+            color: black;
+            padding: 4px 8px;
+            border-radius: 6px;
+            font-weight: bold;
+            font-size: 12px;
+        }
+
+        code {
+            font-family: 'Courier New', monospace;
+            background: #f3f4f6;
+            padding: 2px 4px;
+            border-radius: 3px;
+            font-size: 11px;
+            color: #1f2937;
+        }
+
+        .stats {
+            padding: 20px;
+            background: rgba(46, 204, 113, 0.1);
+            text-align: center;
+            font-size: 14px;
+            color: #2c3e50;
+        }
+
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 2em;
+            }
+            
+            table {
+                font-size: 12px;
+            }
+            
+            th, td {
+                padding: 8px 6px;
+            }
+            
+            code {
+                font-size: 10px;
+            }
+        }
+        
+        /*style application jobs*/
+        
+        .titreH1Desktop {
+        color: #073763;
+        font-size : 36px;
+        }
+        
+         .titreH1Tablet, .titreH2Desktop {
+        color: #073763;
+        font-size : 30px;
+        }
+        
+        .titreH1Mobile, .titreH2Tablet,.titreH3Desktop {
+        color: #073763;
+        font-size : 24px;
+        }
+        .titreH2Mobile,.titreH3Tablet, .titreH4Desktop {
+        color: #073763;
+        font-size : 20px;
+        }
+        .titreH3Mobile,.titreH4Tablet, .pDesktop,.aDesktop,.ulDesktop,.liDesktop, .inputDesktop, .textareaDesktop, .optionDesktop, .selectDesktop, .checkboxDesktop, .labelDesktop{
+        color: #073763;
+        font-size : 18px;
+        }
+        .titreH4Mobile,.pTablet ,.aTablet,.ulTablet,.liTablet, .inputTablet, .textareaTablet, .optionTablet, .selectTablet, .checkboxTablet,.labelTablet{
+        color: #073763;
+        font-size : 16px;
+        }
+        .pMobile, .aMobile,.ulMobile,.liMobile, .inputMobile, .textareaMobile, .optionMobile, .selectMobile, .checkboxMobile,.labelMobile{
+        color: #073763;
+        font-size : 14px;
+        }
+        .aMobile,.aTablet,.aDesktop {
+        text-decoration:underline;
+        }
+        .hrMobile {
+        border-top: 1px solid #073763;
+         margin: 1.5rem 0;
+        }
+        
+         .hrTablet {
+        border-top: 2px solid #073763;
+         margin: 1.5rem 0;
+        }
+        
+        .hrDesktop {
+        border-top: 3px solid #073763;
+         margin: 1.5rem 0;
+        }
+        .inputMobile {
+        width: auto;
+        padding: 0.5rem;
+        border: 1px solid #073763;
+        border-radius: 4px;
+        }
+        
+        .inputTablet {
+        width: auto;
+        padding: 0.5rem;
+        border: 2px solid #073763;
+        border-radius: 4px;
+        }
+        
+        .inputDesktop {
+        width: auto;
+        padding: 0.5rem;
+        border: 3px solid #073763;
+        border-radius: 4px;
+        }
+        
+        .textareaMobile, .textareaTablet, .textareaDesktop {
+        width: 90%;
+        padding: 0.5rem; 
+        border: 1px solid #073763;
+        border-radius: 4px; 
+        height: 100px;
+        }
+         .buttonPrimary {
+         background: #073763;
+         color: white; 
+         padding: 0.5rem 0.75rem;
+          border: none;
+           border-radius: 4px;
+            cursor: pointer;
+            font-weight:bold;
+        }
+         .buttonPrimary:hover{
+         background:  white;
+         color:#073763; 
+         padding: 0.5rem 0.75rem;
+          border: 1px solid #073763 ;
+           border-radius: 4px;
+            cursor: pointer;
+            font-weight:bold;
+        }
+        .buttonValidate {
+         background: #38761d;
+         color: white; 
+         padding: 0.5rem 0.75rem;
+          border: none;
+           border-radius: 4px;
+            cursor: pointer;
+            font-weight:bold;
+        }
+         .buttonValidate:hover{
+         background:  white;
+         color:#38761d; 
+         padding: 0.5rem 0.75rem;
+           border-radius: 4px;
+            cursor: pointer;
+            font-weight:bold;
+        }
+        .buttonDelete {
+         background: #990000;
+         color: white; 
+         padding: 0.5rem 0.75rem;
+          border: none;
+           border-radius: 4px;
+            cursor: pointer;
+            font-weight:bold;
+        }
+         .buttonDelete:hover{
+         background:  white;
+         color:#990000; 
+         padding: 0.5rem 0.75rem;
+           border-radius: 4px;
+            cursor: pointer;
+            font-weight:bold;
+        }
+        
+         .buttonUpdate {
+         background: #e69138;
+         color: #073763; 
+         padding: 0.5rem 0.75rem;
+          border: none;
+          border-radius: 4px;
+            cursor: pointer;
+            font-weight:bold;
+        }
+         .buttonUpdate:hover{
+         background:  white;
+         color:#073763; 
+         padding: 0.5rem 0.75rem;
+         border-radius: 4px;
+            cursor: pointer;
+             font-weight:bold;
+        }
+        .buttonPrimaryMobile:hover{
+         border:1px solid #073763;
+        }
+        .buttonPrimaryTablet:hover{
+         border: 2px solid #073763 ;
+        }
+        .buttonPrimaryDesktop:hover{
+         border: 3px  solid #073763;
+        }
+        .buttonUpdateMobile:hover{
+         border:1px solid #e69138;
+        }
+        .buttonUpdateTablet:hover{
+         border: 2px solid #e69138 ;
+        }
+        .buttonUpdateDesktop:hover{
+         border: 3px  solid #e69138;
+        }
+        
+        .buttonDeleteMobile:hover{
+          border: 1px  solid #990000;
+        }
+        .buttonDeleteTablet:hover {
+           border: 2px  solid #990000;
+         }
+         .buttonDeleteDesktop:hover {
+          border: 3px  solid #990000;
+         }
+         .buttonValidateMobile:hover{
+          border: 1px  solid #38761d;
+         }
+         .buttonValidateTablet:hover{
+          border: 2px  solid #38761d;
+         }
+         .buttonValidateDesktop:hover{
+          border: 3px  solid #38761d;
+         }
+        .buttonDeleteMobile,.buttonUpdateMobile, .buttonPrimaryMobile, .buttonValidateMobile{
+        
+        font-size:14px;
+        height:30px;
+       
+        }
+        
+        .buttonDeleteTablet,.buttonUpdateTablet,.buttonPrimaryTablet,.buttonValidateTablet{
+        
+        font-size:16px;
+        height:40px;
+       
+        }
+        
+         .buttonDeleteDesktop, .buttonUpdateDesktop,.buttonPrimaryDesktop,.buttonValidateDesktop{
+        
+        font-size:18px;
+        height:50px;
+       
+        }
+        
+        .iconeMobile{
+        height:20px;
+        width:20px;
+        }
+        
+        .iconeTablet{
+        height:24px;
+        width:24px;
+        }
+        .iconeDesktop{
+         height:30px;
+        width:30px;
+        }
+        .histo, .eyeClose, .eyeOpen, .ajoutEmploi,.utilisateur,.house,.programme, .burger,.tempsTravail,.dateCalendar,.lieu{  
+        color:#073763;
+        fill: currentColor;
+        }
+        .poubelle {
+            color:#990000;
+        fill: currentColor;
+        }
+        .clock {
+            color:#38761d;
+            fill: currentColor;
+        }
+
+        .valise{
+            color:#e69138;
+            fill: currentColor;
+        }
+        .carreRefus{
+            background-color:rgb(153, 0, 0,0.5);
+            opacity: 50%;
+            border-radius: 4px;
+        }
+        .carreRefusMobile{
+            border:1px solid rgb(153, 0, 0,1);
+        }
+        .carreRefusTablet{
+            border:2px solid rgb(153, 0, 0,1);
+        }
+        .carreRefusDesktop{
+            border:3px solid rgb(153, 0, 0,1);
+        }
+
+        .carreAttente{
+            background-color:rgb(56, 118, 29,0.5);
+            opacity: 50%;
+            border-radius: 4px;
+        }
+        .carreAttenteMobile{
+            border:1px solid rgb(56, 118, 29,1);
+        }
+        .carreAttenteTablet{
+            border:2px solid rgb(56, 118, 29,1);
+        }
+        .carreAttenteDesktop{
+            border:3px solid rgb(56, 118, 29,1);
+        }
+        .carreCours{
+            background-color :rgb(230, 145, 56,0.5);
+            opacity: 50%;
+            border-radius: 4px;
+        }
+
+        .carreCoursMobile{
+            border:1px solid rgb(230, 145, 56,1);
+        }
+
+        .carreCoursTablet{
+            border:2px solid rgb(230, 145, 56,1);
+        }
+
+        .carreCoursDesktop{
+            border:3px solid rgb(230, 145, 56,1);
+        }
+        .carreProgramme{
+            background-color:rgb(7, 55, 99,0.5);
+            opacity: 50%;
+            border-radius: 4px;
+        }
+
+        .carreProgrammeMobile{
+            border:1px solid rgb(7, 55, 99,1);
+        }
+        .carreProgrammeTablet{
+            border:2px solid rgb(7, 55, 99,1);
+        }
+        .carreProgrammeDesktop{
+            border:3px solid rgb(7, 55, 99,1);
+        }
+        .carreMobile{
+        height: 80px;
+        width: 80px;
+        
+        }
+        .carreTablet{
+            height: 100px;
+            width: 100px;
+        }
+        .carreDesktop{
+            height: 120px;
+            width: 120px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1> Éléments HTML et icones application Jobs </h1>
+        </div>
+
+        <div class="table-container">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Élément</th>
+                        <th colspan="2" class="large">Mobile (&lt; 768px)</th>
+                        <th colspan="2" class="large">Tablet (768px - 1024px)</th>
+                        <th colspan="2" class="large">Desktop (&gt; 1024px)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><span class="tag">&lt;h1&gt;</span></td>
+                        <td><code>font-size:24px; font-weight: bold;</code></td>
+                        <td class = "titreH1Mobile">Mon titre H1</td>
+                        <td><code>font-size:30px; font-weight: bold;</code></td>
+                        <td class="titreH1Tablet"> Mon titre H1 Tablet</td>
+                        <td><code>font-size: 36px; font-weight: bold;</code></td>
+                        <td class="titreH1Desktop">Mon titre H1 Desktop</td>
+                    </tr>
+                    <tr>
+                        <td><span class="tag">&lt;h2&gt;</span></td>
+                        <td><code>font-size: 20px; font-weight: 600;</code></td>
+                        <td class="titreH2Mobile">Mon titre H2 Mobile</td>
+                        <td><code>font-size:24px; font-weight: 600;</code></td>
+                        <td class="titreH2Tablet">Mon titre H2 tablet</td>
+                        <td><code>font-size: 30px; font-weight: 600;</code></td>
+                        <td class="titreH2Desktop">Mon titre H2 desktop</td>
+                    </tr>
+                    <tr>
+                        <td><span class="tag">&lt;h3&gt;</span></td>
+                        <td><code>font-size:18px; font-weight: 500;</code></td>
+                        <td class="titreH3Mobile">Mon titre H3 Mobile</td>
+                        <td><code>font-size:20px; font-weight: 500;</code></td>
+                        <td class="titreH3Tablet">Mon titre H3 Tablette</td>
+                        <td><code>font-size:24px; font-weight: 500;</code></td>
+                        <td class="titreH3Desktop">Mon titre H3 Desktop</td>
+                    </tr>
+                    <tr>
+                        <td><span class="tag">&lt;h4&gt;</span></td>
+                        <td><code>font-size:16px; font-weight: 500;</code></td>
+                        <td class="titreH4Mobile">Mon titre H4 Mobile</td>
+                        <td><code>font-size:18px; font-weight: 500;</code></td>
+                        <td class="titreH4Tablet">Mon titre H4 Tablette</td>
+                        <td><code>font-size: 20px; font-weight: 500;</code></td>
+                        <td class="titreH4Desktop">Mon titre h4 Desktop</td>
+                    </tr>
+                    
+                    <tr>
+                        <td><span class="tag">&lt;p&gt;</span></td>
+                        <td><code>font-size:14px; line-height: 1.25;</code></td>
+                         <td class="pMobile">pagraphe mobile</td>
+                        <td><code>font-size:16px; line-height: 1.5;</code></td>
+                         <td class="pTablet">paragraphe tablette</td>
+                        <td><code>font-size: 18px; line-height: 1.75;</code></td>
+                         <td class="pDesktop">paragraphe Desktop</td>
+                    </tr>
+                    <tr>
+                        <td><span class="tag">&lt;a&gt;</span></td>
+                        <td><code>font-size: 14px; color: #2563eb; text-decoration: underline;</code></td>
+                         <td class="aMobile">lien Mobile</td>
+                        <td><code>font-size: 16px; color: #2563eb; text-decoration: underline;</code></td>
+                         <td class="aTablet">lien Tablette</td>
+                        <td><code>font-size: 18px; color: #2563eb; text-decoration: underline;</code></td>
+                         <td class="aDesktop">lien Desktop</td>
+                    </tr>
+                    
+                    <tr>
+                        <td><span class="tag">&lt;ul&gt;</span></td>
+                        <td><code>list-style: disc; padding-left: 1rem;</code></td>
+                         <td class="ulMobile"><ul>ul Mobile</ul></td>
+                        <td><code>list-style: disc; padding-left: 1.5rem;</code></td>
+                         <td class="ulTablet"><ul>ul Tablette</ul></td>
+                        <td><code>list-style: disc; padding-left: 2rem;</code></td>
+                         <td class="ulDesktop"><ul>ul Desktop</ul></td>
+                    </tr>
+                    <tr>
+                        <td><span class="tag">&lt;li&gt;</span></td>
+                        <td><code>margin-bottom: 0.25rem; font-size:14px;</code></td>
+                        <td class="liMobile"><ul>ul Mobile<li>item1</li><li>item2</li></ul></td>
+                        <td><code>margin-bottom: 0.5rem; font-size: 16px;</code></td>
+                        <td class="liTablet"><ul>ul Tablette<li>item1</li><li>item2</li></ul></td>
+                        <td><code>margin-bottom: 0.5rem; font-size: 18px;</code></td>
+                        <td class="liDesktop"><ul>ul Desktop<li>item1</li><li>item2</li></ul></td>
+                    </tr>
+                    <tr>
+                        <td><span class="tag">&lt;hr&gt;</span></td>
+                        <td><code>border-top: 1px solid #ccc; margin: 0.5rem 0;</code></td>
+                        <td><hr class="hrMobile"></td>
+                        <td><code>border-top: 3px solid #ccc; margin: 1rem 0;</code></td>
+                        <td><hr class="hrTablet" ></td>
+                        <td><code>border-top: 5px solid #ccc; margin: 1.5rem 0;</code></td>
+                        <td><hr class="hrDesktop"></td>
+                    </tr>
+                    
+                    <tr>
+                        <td><span class="tag">&lt;input type text&gt;</span></td>
+                        <td><code>width: 100%; padding: 0.5rem; font-size:14px; border: 1px solid #073763; border-radius: 4px;</code></td>
+                        <td><input  class="inputMobile" placeholder="input type text Mobile"></td>
+                        <td><code>width: 100%; padding: 0.75rem; font-size:16px; border: 1px solid #073763; border-radius: 4px;</code></td>
+                        <td><input  class="inputTablet" placeholder="input type text Tablette"></td>
+                        <td><code>width: 100%; padding: 1rem; font-size:18px; border: 1px solid #073763; border-radius: 4px;</code></td>
+                        <td><input  class="inputDesktop" placeholder="input type text Desktop"></td>
+                    </tr>
+                    <tr>
+                        <td><span class="tag">&lt;textarea&gt;</span></td>
+                        <td><code>width: 100%; padding: 0.5rem; font-size:14px; border: 1px solid #073763; border-radius: 4px; height: 5rem;</code></td>
+                        <td class=""><textarea class ="textareaMobile"></textarea></td>
+                        <td><code>width: 100%; padding: 0.75rem; font-size: 16px; border: 1px solid #073763; border-radius: 4px; height: 6rem;</code></td>
+                        <td class=""><textarea class ="textareaTablet"></textarea></td>
+                        <td><code>width: 100%; padding: 1rem; font-size:18px; border: 1px solid #073763; border-radius: 4px; height: 8rem;</code></td>
+                        <td class=""><textarea class ="textareaDesktop"></textarea></td>
+                    </tr>
+                    <tr>
+                        <td><span class="tag">&lt;select&gt;</span></td>
+                        <td><code>width: 100%; padding: 0.5rem; font-size: 14px; border: 1px solid #073763; border-radius: 4px;</code></td>
+                        <td><select class="selectMobile"><option class="optionMobile">première option</option><option class="optionMobile">deuxième option</option><option class="optionMobile"></option></select></td>
+                        <td><code>width: 100%; padding: 0.75rem; font-size:16px; border: 1px solid #073763; border-radius: 4px;</code></td>
+                        <td><select class="selectTablet"><option class="optionTablet">première option</option><option class="optionTablet">deuxième option</option><option class="optionTablet"></option></select></td>
+                        <td><code>width: 100%; padding: 1rem; font-size: 18px; border: 1px solid #073763; border-radius: 4px;</code></td>
+                        <td><select class="selectDesktop"><option class="optionDesktop">première option</option><option class="optionDesktop">deuxième option</option><option class="optionDesktop"></option></select></td>
+                    </tr>
+                    <tr>
+                        <td><span class="tag">&lt;button Primary&gt;</span></td>
+                        <td><code>font-weight:bold;font-size: 14px;background: #073763;color: white; padding: 0.5rem 0.75rem;border: none;border-radius: 4px;cursor: pointer; height:30px;<br/> <u>hover:</u> background:  white;color:#073763; border: 1px solid #073763 ;
+                        </code></td>
+                        <td><button class="buttonPrimary buttonPrimaryMobile"> primaryMobile</button></td>
+                        <td><code>font-weight:bold;font-size:16px;background: #073763;color: white; padding: 0.5rem 0.75rem;border: none;border-radius: 4px;cursor: pointer; height:40px;<br/> <u>hover:</u> background:  white;color:#073763; border: 2px solid #073763 ;</code></td>
+                        <td ><button class="buttonPrimary buttonPrimaryTablet"> primaryTablet</button></td>
+                        <td><code>font-weight:bold;font-size:18px;background: #073763;color: white; padding: 0.5rem 0.75rem;border: none;border-radius: 4px;cursor: pointer; height:50px;<br/> <u>hover:</u> background:  white;color:#073763; border: 3px solid #073763 ;</code></code></td>
+                        <td><button class="buttonPrimary buttonPrimaryDesktop"> primaryDesktop</button></td>
+                    </tr>
+                    <tr>
+                        <td><span class="tag">&lt;button Validate&gt;</span></td>
+                        <td><code>font-weight:bold;font-size:14px; background: #38761d;color: white; padding:0.5rem 0.75rem; border: none; border-radius: 4px; cursor: pointer; height:30px;<br/> <u>hover:</u> background:  white;color:#38761d; border: 1px solid #38761d ; </code></td>
+                        <td ><button class="buttonValidate buttonValidateMobile">ValidateMobile</button></td>
+                        <td><code>font-weight:bold;font-size:16px; background: #990000; color: white;padding:0.5rem 1rem;border:none;border-radius:4px;cursor: pointer;height : 40px;<br/> <u>hover:</u> background:  white;color:#38761d;border: 2px solid #38761d ; </code></td>
+                        <td ><button class="buttonValidate buttonValidateTablet">ValidateTablet</button></td>
+                        <td><code>font-weight:bold;font-size:18px; background: #990000; color: white;padding:0.5rem 1rem;border:none;border-radius:4px;cursor: pointer;height : 50px;<br/> <u>hover:</u> background:  white;color:#38761d;border: 3px solid #38761d ;</code> </td>
+                        <td><button class="buttonValidate buttonValidateDesktop">ValidateDesktop</button></td>
+                    </tr>
+                    <tr>
+                        <td><span class="tag">&lt;button update&gt;</span></td>
+                        <td><code>font-weight:bold; font-size:14px; background: #e69138;color: #073763; padding:0.5rem 0.75rem; border: none; border-radius: 4px; cursor: pointer; height:30px;<br/> <u>hover:</u> background:  white;color:#073763; border: 1px solid #e69138;</code></td>
+                        <td><button class="buttonUpdate buttonUpdateMobile"> updateMobile</button></td>
+                        <td><code> font-weight:bold;font-size:16px; background: #e69138;color: #073763; padding:0.5rem 0.75rem; border: none; border-radius: 4px; cursor: pointer; height:40px;<br/> <u>hover:</u> background:  white;color:#073763; border: 2px solid #e69138;</code></td>
+                        <td><button class="buttonUpdate buttonUpdateTablet"> updateMobile</button></td>
+                        <td><code>font-weight:bold; font-size:18px; background: #e69138;color: #073763; padding:0.5rem 0.75rem; border: none; border-radius: 4px; cursor: pointer; height:50px;<br/> <u>hover:</u> background:  white;color:#073763; border: 3px solid #e69138;</code></td>
+                        <td><button class="buttonUpdate buttonUpdateDesktop"> updateMobile</button></td>
+                    </tr>
+                    <tr>
+                        <td><span class="tag">&lt;button delete&gt;</span></td>
+                        <td><code>font-weight:bold;font-size:14px; background: #990000;color: white; padding: 0.5rem 0.75rem;border: none;border-radius: 4px;
+cursor: pointer; height:30px;<br/> <u>hover:</u> background:  white;color:#990000; border: 1px solid #990000;
+            </code></td>
+                        <td ><button class="buttonDelete buttonDeleteMobile">Delete Mobile</button></td>
+                        <td><code>font-weight:bold;font-size:16px; background: #990000;color: white; padding: 0.5rem 0.75rem;border: none;border-radius: 4px;</code>
+cursor: pointer; height:40px;<br/> <u>hover:</u> background:  white;color:#990000; border: 2px solid #990000;</td>
+                        <td ><button class="buttonDelete buttonDeleteTablet">deleteTablet</button></td>
+                        <td><code>font-weight:bold;font-size:18px; background: #990000;color: white; padding: 0.5rem 0.75rem;border: none;border-radius: 4px;
+cursor: pointer; height:50px;<br/> <u>hover:</u> background:  white;color:#990000; border: 3px solid #990000;</code></td>
+                        <td><button class="buttonDelete buttonDeleteDesktop">deleteDesktop</button></td>
+                    </tr>
+                    <tr>
+                        <td><span class="tag">&lt;label&gt;</span></td>
+                        <td><code>display: block; font-size: 14px; font-weight: 500; margin-bottom: 0.25rem;</code></td>
+                        <td><label class="labelMobile">labelMobile</label></td>
+                        <td><code>display: block; font-size:16px; font-weight: 500; margin-bottom: 0.5rem;</code></td>
+                        <td><label class="labelTablet">labelTablet</label></td>
+                        <td><code>display: block; font-size:18px; font-weight: 500; margin-bottom: 0.5rem;</code></td>
+                        <td><label class="labelDesktop">labelDesktop</label></td>
+                    </tr>
+                    <tr>
+                        <td><span class="tag">&lt;Icone eye close&gt;</span></td>
+                        <td><code><u>svg :</u>xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Capa_1" x="0px" y="0px" viewBox="0 0 512.19 512.19" style="enable-background:new 0 0 512.19 512.19;" xml:space="preserve" width="512" height="512">
+                            <g><path d="M496.543,200.771c-19.259-31.537-43.552-59.707-71.915-83.392l59.733-59.733c8.185-8.475,7.95-21.98-0.525-30.165   c-8.267-7.985-21.374-7.985-29.641,0l-64.96,65.045c-40.269-23.918-86.306-36.385-133.141-36.053   c-132.075,0-207.339,90.411-240.448,144.299c-20.862,33.743-20.862,76.379,0,110.123c19.259,31.537,43.552,59.707,71.915,83.392   l-59.733,59.733c-8.475,8.185-8.71,21.691-0.525,30.165c8.185,8.475,21.691,8.71,30.165,0.525c0.178-0.172,0.353-0.347,0.525-0.525   l65.109-65.109c40.219,23.915,86.201,36.402,132.992,36.117c132.075,0,207.339-90.411,240.448-144.299   C517.405,277.151,517.405,234.515,496.543,200.771z M128.095,255.833c-0.121-70.575,56.992-127.885,127.567-128.006   c26.703-0.046,52.75,8.275,74.481,23.793l-30.976,30.976c-13.004-7.842-27.887-12.022-43.072-12.096   c-47.128,0-85.333,38.205-85.333,85.333c0.074,15.185,4.254,30.068,12.096,43.072l-30.976,30.976   C136.414,308.288,128.096,282.394,128.095,255.833z M256.095,383.833c-26.561-0.001-52.455-8.319-74.048-23.787l30.976-30.976   c13.004,7.842,27.887,12.022,43.072,12.096c47.128,0,85.333-38.205,85.333-85.333c-0.074-15.185-4.254-30.068-12.096-43.072   l30.976-30.976c41.013,57.434,27.702,137.242-29.732,178.255C308.845,375.558,282.798,383.879,256.095,383.833z"/>
+                            </g> <br/><u>css :</u>height:20px;width:20px;color:#073763;
+                            fill: currentColor;</code></td>
+                            <td><svg class="iconeMobile eyeClose" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Capa_1" x="0px" y="0px" viewBox="0 0 512.19 512.19" style="enable-background:new 0 0 512.19 512.19;" xml:space="preserve" width="512" height="512">
+                                <g><path d="M496.543,200.771c-19.259-31.537-43.552-59.707-71.915-83.392l59.733-59.733c8.185-8.475,7.95-21.98-0.525-30.165   c-8.267-7.985-21.374-7.985-29.641,0l-64.96,65.045c-40.269-23.918-86.306-36.385-133.141-36.053   c-132.075,0-207.339,90.411-240.448,144.299c-20.862,33.743-20.862,76.379,0,110.123c19.259,31.537,43.552,59.707,71.915,83.392   l-59.733,59.733c-8.475,8.185-8.71,21.691-0.525,30.165c8.185,8.475,21.691,8.71,30.165,0.525c0.178-0.172,0.353-0.347,0.525-0.525   l65.109-65.109c40.219,23.915,86.201,36.402,132.992,36.117c132.075,0,207.339-90.411,240.448-144.299   C517.405,277.151,517.405,234.515,496.543,200.771z M128.095,255.833c-0.121-70.575,56.992-127.885,127.567-128.006   c26.703-0.046,52.75,8.275,74.481,23.793l-30.976,30.976c-13.004-7.842-27.887-12.022-43.072-12.096   c-47.128,0-85.333,38.205-85.333,85.333c0.074,15.185,4.254,30.068,12.096,43.072l-30.976,30.976   C136.414,308.288,128.096,282.394,128.095,255.833z M256.095,383.833c-26.561-0.001-52.455-8.319-74.048-23.787l30.976-30.976   c13.004,7.842,27.887,12.022,43.072,12.096c47.128,0,85.333-38.205,85.333-85.333c-0.074-15.185-4.254-30.068-12.096-43.072   l30.976-30.976c41.013,57.434,27.702,137.242-29.732,178.255C308.845,375.558,282.798,383.879,256.095,383.833z"/>
+                                </g></svg></td>
+                        <td><code><u>svg :</u> xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Capa_1" x="0px" y="0px" viewBox="0 0 512.19 512.19" style="enable-background:new 0 0 512.19 512.19;" xml:space="preserve" width="512" height="512">
+                            <g><path d="M496.543,200.771c-19.259-31.537-43.552-59.707-71.915-83.392l59.733-59.733c8.185-8.475,7.95-21.98-0.525-30.165   c-8.267-7.985-21.374-7.985-29.641,0l-64.96,65.045c-40.269-23.918-86.306-36.385-133.141-36.053   c-132.075,0-207.339,90.411-240.448,144.299c-20.862,33.743-20.862,76.379,0,110.123c19.259,31.537,43.552,59.707,71.915,83.392   l-59.733,59.733c-8.475,8.185-8.71,21.691-0.525,30.165c8.185,8.475,21.691,8.71,30.165,0.525c0.178-0.172,0.353-0.347,0.525-0.525   l65.109-65.109c40.219,23.915,86.201,36.402,132.992,36.117c132.075,0,207.339-90.411,240.448-144.299   C517.405,277.151,517.405,234.515,496.543,200.771z M128.095,255.833c-0.121-70.575,56.992-127.885,127.567-128.006   c26.703-0.046,52.75,8.275,74.481,23.793l-30.976,30.976c-13.004-7.842-27.887-12.022-43.072-12.096   c-47.128,0-85.333,38.205-85.333,85.333c0.074,15.185,4.254,30.068,12.096,43.072l-30.976,30.976   C136.414,308.288,128.096,282.394,128.095,255.833z M256.095,383.833c-26.561-0.001-52.455-8.319-74.048-23.787l30.976-30.976   c13.004,7.842,27.887,12.022,43.072,12.096c47.128,0,85.333-38.205,85.333-85.333c-0.074-15.185-4.254-30.068-12.096-43.072   l30.976-30.976c41.013,57.434,27.702,137.242-29.732,178.255C308.845,375.558,282.798,383.879,256.095,383.833z"/>
+                            </g><br/><u>css :</u>height:24px;width:24px;color:#073763;
+                            fill: currentColor;</code></td>
+                            <td><svg class="iconeTablet eyeClose" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Capa_1" x="0px" y="0px" viewBox="0 0 512.19 512.19" style="enable-background:new 0 0 512.19 512.19;" xml:space="preserve" width="512" height="512">
+                                <g><path d="M496.543,200.771c-19.259-31.537-43.552-59.707-71.915-83.392l59.733-59.733c8.185-8.475,7.95-21.98-0.525-30.165   c-8.267-7.985-21.374-7.985-29.641,0l-64.96,65.045c-40.269-23.918-86.306-36.385-133.141-36.053   c-132.075,0-207.339,90.411-240.448,144.299c-20.862,33.743-20.862,76.379,0,110.123c19.259,31.537,43.552,59.707,71.915,83.392   l-59.733,59.733c-8.475,8.185-8.71,21.691-0.525,30.165c8.185,8.475,21.691,8.71,30.165,0.525c0.178-0.172,0.353-0.347,0.525-0.525   l65.109-65.109c40.219,23.915,86.201,36.402,132.992,36.117c132.075,0,207.339-90.411,240.448-144.299   C517.405,277.151,517.405,234.515,496.543,200.771z M128.095,255.833c-0.121-70.575,56.992-127.885,127.567-128.006   c26.703-0.046,52.75,8.275,74.481,23.793l-30.976,30.976c-13.004-7.842-27.887-12.022-43.072-12.096   c-47.128,0-85.333,38.205-85.333,85.333c0.074,15.185,4.254,30.068,12.096,43.072l-30.976,30.976   C136.414,308.288,128.096,282.394,128.095,255.833z M256.095,383.833c-26.561-0.001-52.455-8.319-74.048-23.787l30.976-30.976   c13.004,7.842,27.887,12.022,43.072,12.096c47.128,0,85.333-38.205,85.333-85.333c-0.074-15.185-4.254-30.068-12.096-43.072   l30.976-30.976c41.013,57.434,27.702,137.242-29.732,178.255C308.845,375.558,282.798,383.879,256.095,383.833z"/>
+                                </g></svg></td>
+                        <td><code><u>svg :</u>xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Capa_1" x="0px" y="0px" viewBox="0 0 512.19 512.19" style="enable-background:new 0 0 512.19 512.19;" xml:space="preserve" width="512" height="512">
+                            <g><path d="M496.543,200.771c-19.259-31.537-43.552-59.707-71.915-83.392l59.733-59.733c8.185-8.475,7.95-21.98-0.525-30.165   c-8.267-7.985-21.374-7.985-29.641,0l-64.96,65.045c-40.269-23.918-86.306-36.385-133.141-36.053   c-132.075,0-207.339,90.411-240.448,144.299c-20.862,33.743-20.862,76.379,0,110.123c19.259,31.537,43.552,59.707,71.915,83.392   l-59.733,59.733c-8.475,8.185-8.71,21.691-0.525,30.165c8.185,8.475,21.691,8.71,30.165,0.525c0.178-0.172,0.353-0.347,0.525-0.525   l65.109-65.109c40.219,23.915,86.201,36.402,132.992,36.117c132.075,0,207.339-90.411,240.448-144.299   C517.405,277.151,517.405,234.515,496.543,200.771z M128.095,255.833c-0.121-70.575,56.992-127.885,127.567-128.006   c26.703-0.046,52.75,8.275,74.481,23.793l-30.976,30.976c-13.004-7.842-27.887-12.022-43.072-12.096   c-47.128,0-85.333,38.205-85.333,85.333c0.074,15.185,4.254,30.068,12.096,43.072l-30.976,30.976   C136.414,308.288,128.096,282.394,128.095,255.833z M256.095,383.833c-26.561-0.001-52.455-8.319-74.048-23.787l30.976-30.976   c13.004,7.842,27.887,12.022,43.072,12.096c47.128,0,85.333-38.205,85.333-85.333c-0.074-15.185-4.254-30.068-12.096-43.072   l30.976-30.976c41.013,57.434,27.702,137.242-29.732,178.255C308.845,375.558,282.798,383.879,256.095,383.833z"/>
+                            </g> <br/><u>css :</u>height:24px;width:24px;color:#073763;
+                            fill: currentColor;</code></td>
+                            <td><svg class="iconeDesktop eyeClose" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Capa_1" x="0px" y="0px" viewBox="0 0 512.19 512.19" style="enable-background:new 0 0 512.19 512.19;" xml:space="preserve" width="512" height="512">
+                                <g><path d="M496.543,200.771c-19.259-31.537-43.552-59.707-71.915-83.392l59.733-59.733c8.185-8.475,7.95-21.98-0.525-30.165   c-8.267-7.985-21.374-7.985-29.641,0l-64.96,65.045c-40.269-23.918-86.306-36.385-133.141-36.053   c-132.075,0-207.339,90.411-240.448,144.299c-20.862,33.743-20.862,76.379,0,110.123c19.259,31.537,43.552,59.707,71.915,83.392   l-59.733,59.733c-8.475,8.185-8.71,21.691-0.525,30.165c8.185,8.475,21.691,8.71,30.165,0.525c0.178-0.172,0.353-0.347,0.525-0.525   l65.109-65.109c40.219,23.915,86.201,36.402,132.992,36.117c132.075,0,207.339-90.411,240.448-144.299   C517.405,277.151,517.405,234.515,496.543,200.771z M128.095,255.833c-0.121-70.575,56.992-127.885,127.567-128.006   c26.703-0.046,52.75,8.275,74.481,23.793l-30.976,30.976c-13.004-7.842-27.887-12.022-43.072-12.096   c-47.128,0-85.333,38.205-85.333,85.333c0.074,15.185,4.254,30.068,12.096,43.072l-30.976,30.976   C136.414,308.288,128.096,282.394,128.095,255.833z M256.095,383.833c-26.561-0.001-52.455-8.319-74.048-23.787l30.976-30.976   c13.004,7.842,27.887,12.022,43.072,12.096c47.128,0,85.333-38.205,85.333-85.333c-0.074-15.185-4.254-30.068-12.096-43.072   l30.976-30.976c41.013,57.434,27.702,137.242-29.732,178.255C308.845,375.558,282.798,383.879,256.095,383.833z"/>
+                                </g></svg></td>
+                    </tr>
+                    <tr>
+                        <td><span class="tag">&lt;Icone eye open&gt;</span></td>
+                        <td><code><u>svg :</u> xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Capa_1" x="0px" y="0px" viewBox="0 0 512.19 512.19" style="enable-background:new 0 0 512.19 512.19;" xml:space="preserve" width="512" height="512">
+                            <g>
+                                <circle cx="256.095" cy="256.095" r="85.333"/>
+                                <path d="M496.543,201.034C463.455,147.146,388.191,56.735,256.095,56.735S48.735,147.146,15.647,201.034   c-20.862,33.743-20.862,76.379,0,110.123c33.088,53.888,108.352,144.299,240.448,144.299s207.36-90.411,240.448-144.299   C517.405,277.413,517.405,234.777,496.543,201.034z M256.095,384.095c-70.692,0-128-57.308-128-128s57.308-128,128-128   s128,57.308,128,128C384.024,326.758,326.758,384.024,256.095,384.095z"/>
+                            </g><br/><u>css :</u>height:20px;width:20px;color:#073763;
+                            fill: currentColor;</code>
+                        </td>
+                            <td>
+                                <svg class="iconeMobile eyeOpen" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Capa_1" x="0px" y="0px" viewBox="0 0 512.19 512.19" style="enable-background:new 0 0 512.19 512.19;" xml:space="preserve" width="512" height="512">
+                                <g>
+                                    <circle cx="256.095" cy="256.095" r="85.333"/>
+                                    <path d="M496.543,201.034C463.455,147.146,388.191,56.735,256.095,56.735S48.735,147.146,15.647,201.034   c-20.862,33.743-20.862,76.379,0,110.123c33.088,53.888,108.352,144.299,240.448,144.299s207.36-90.411,240.448-144.299   C517.405,277.413,517.405,234.777,496.543,201.034z M256.095,384.095c-70.692,0-128-57.308-128-128s57.308-128,128-128   s128,57.308,128,128C384.024,326.758,326.758,384.024,256.095,384.095z"/>
+                                </g>
+                                </svg>
+                            </td>
+                        <td><code><u>svg :</u>xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Capa_1" x="0px" y="0px" viewBox="0 0 512.19 512.19" style="enable-background:new 0 0 512.19 512.19;" xml:space="preserve" width="512" height="512">
+                            <g>
+                                <circle cx="256.095" cy="256.095" r="85.333"/>
+                                <path d="M496.543,201.034C463.455,147.146,388.191,56.735,256.095,56.735S48.735,147.146,15.647,201.034   c-20.862,33.743-20.862,76.379,0,110.123c33.088,53.888,108.352,144.299,240.448,144.299s207.36-90.411,240.448-144.299   C517.405,277.413,517.405,234.777,496.543,201.034z M256.095,384.095c-70.692,0-128-57.308-128-128s57.308-128,128-128   s128,57.308,128,128C384.024,326.758,326.758,384.024,256.095,384.095z"/>
+                            </g> <br/><u>css :</u>height:24px;width:24px;color:#073763;
+                            fill: currentColor;</code>
+                        </td>
+                            <td>
+                                <svg class="iconeTablet eyeOpen" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Capa_1" x="0px" y="0px" viewBox="0 0 512.19 512.19" style="enable-background:new 0 0 512.19 512.19;" xml:space="preserve" width="512" height="512">
+                                <g>
+                                    <circle cx="256.095" cy="256.095" r="85.333"/>
+                                    <path d="M496.543,201.034C463.455,147.146,388.191,56.735,256.095,56.735S48.735,147.146,15.647,201.034   c-20.862,33.743-20.862,76.379,0,110.123c33.088,53.888,108.352,144.299,240.448,144.299s207.36-90.411,240.448-144.299   C517.405,277.413,517.405,234.777,496.543,201.034z M256.095,384.095c-70.692,0-128-57.308-128-128s57.308-128,128-128   s128,57.308,128,128C384.024,326.758,326.758,384.024,256.095,384.095z"/>
+                                </g>
+                                </svg>
+                            </td>
+                        <td>
+                            <code><u>svg :</u> xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Capa_1" x="0px" y="0px" viewBox="0 0 512.19 512.19" style="enable-background:new 0 0 512.19 512.19;" xml:space="preserve" width="512" height="512">
+                            <g>
+                                <circle cx="256.095" cy="256.095" r="85.333"/>
+                                <path d="M496.543,201.034C463.455,147.146,388.191,56.735,256.095,56.735S48.735,147.146,15.647,201.034   c-20.862,33.743-20.862,76.379,0,110.123c33.088,53.888,108.352,144.299,240.448,144.299s207.36-90.411,240.448-144.299   C517.405,277.413,517.405,234.777,496.543,201.034z M256.095,384.095c-70.692,0-128-57.308-128-128s57.308-128,128-128   s128,57.308,128,128C384.024,326.758,326.758,384.024,256.095,384.095z"/>
+                            </g><br/><u>css :</u>height:24px;width:24px;color:#073763;
+                            fill: currentColor;
+                            </code>
+                        </td>
+                            <td>
+                                <svg class="iconeDesktop eyeOpen" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Capa_1" x="0px" y="0px" viewBox="0 0 512.19 512.19" style="enable-background:new 0 0 512.19 512.19;" xml:space="preserve" width="512" height="512">
+                                <g>
+                                    <circle cx="256.095" cy="256.095" r="85.333"/>
+                                    <path d="M496.543,201.034C463.455,147.146,388.191,56.735,256.095,56.735S48.735,147.146,15.647,201.034   c-20.862,33.743-20.862,76.379,0,110.123c33.088,53.888,108.352,144.299,240.448,144.299s207.36-90.411,240.448-144.299   C517.405,277.413,517.405,234.777,496.543,201.034z M256.095,384.095c-70.692,0-128-57.308-128-128s57.308-128,128-128   s128,57.308,128,128C384.024,326.758,326.758,384.024,256.095,384.095z"/>
+                                </g>
+                                </svg>
+                            </td>
+                    </tr>
+                    <tr>
+                        <td><span class="tag">&lt;Icone poubelle&gt;</span></td>
+                        <td><code><u>svg :</u>xmlns="http://www.w3.org/2000/svg" id="Layer_1" data-name="Layer 1" viewBox="0 0 24 24" width="512" height="512"<path d="M17,4V2a2,2,0,0,0-2-2H9A2,2,0,0,0,7,2V4H2V6H4V21a3,3,0,0,0,3,3H17a3,3,0,0,0,3-3V6h2V4ZM11,17H9V11h2Zm4,0H13V11h2ZM15,4H9V2h6Z"/> <br/><u>css :</u>height:20px;width:20px;color:#073763;
+                            fill: currentColor;</code></td>
+                            <td><svg class="iconeMobile poubelle" xmlns="http://www.w3.org/2000/svg" id="Layer_1" data-name="Layer 1" viewBox="0 0 24 24" width="512" height="512"><path d="M17,4V2a2,2,0,0,0-2-2H9A2,2,0,0,0,7,2V4H2V6H4V21a3,3,0,0,0,3,3H17a3,3,0,0,0,3-3V6h2V4ZM11,17H9V11h2Zm4,0H13V11h2ZM15,4H9V2h6Z"/></svg></td>
+                        <td><code><u>svg :</u>xmlns="http://www.w3.org/2000/svg" id="Layer_1" data-name="Layer 1" viewBox="0 0 24 24" width="512" height="512"<path d="M17,4V2a2,2,0,0,0-2-2H9A2,2,0,0,0,7,2V4H2V6H4V21a3,3,0,0,0,3,3H17a3,3,0,0,0,3-3V6h2V4ZM11,17H9V11h2Zm4,0H13V11h2ZM15,4H9V2h6Z"/> <br/><u>css :</u>height:24px;width:24px;color:#073763;
+                            fill: currentColor;</code></td>
+                            <td><svg class="iconeTablet poubelle" xmlns="http://www.w3.org/2000/svg" id="Layer_1" data-name="Layer 1" viewBox="0 0 24 24" width="512" height="512"><path d="M17,4V2a2,2,0,0,0-2-2H9A2,2,0,0,0,7,2V4H2V6H4V21a3,3,0,0,0,3,3H17a3,3,0,0,0,3-3V6h2V4ZM11,17H9V11h2Zm4,0H13V11h2ZM15,4H9V2h6Z"/></svg></td>
+                        <td><code><u>svg :</u>xmlns="http://www.w3.org/2000/svg" id="Layer_1" data-name="Layer 1" viewBox="0 0 24 24" width="512" height="512"<path d="M17,4V2a2,2,0,0,0-2-2H9A2,2,0,0,0,7,2V4H2V6H4V21a3,3,0,0,0,3,3H17a3,3,0,0,0,3-3V6h2V4ZM11,17H9V11h2Zm4,0H13V11h2ZM15,4H9V2h6Z"/> <br/><u>css :</u>height:24px;width:24px;color:#073763;
+                            fill: currentColor;</code></td>
+                            <td><svg class="iconeDesktop poubelle" xmlns="http://www.w3.org/2000/svg" id="Layer_1" data-name="Layer 1" viewBox="0 0 24 24" width="512" height="512"><path d="M17,4V2a2,2,0,0,0-2-2H9A2,2,0,0,0,7,2V4H2V6H4V21a3,3,0,0,0,3,3H17a3,3,0,0,0,3-3V6h2V4ZM11,17H9V11h2Zm4,0H13V11h2ZM15,4H9V2h6Z"/></svg></td>
+                    </tr>
+                    <tr>
+                        <td><span class="tag">&lt;Icone demande en attente&gt;</span></td>
+                        <td><code><u>svg :</u>xmlns="http://www.w3.org/2000/svg" id="Layer_1" data-name="Layer 1" viewBox="0 0 24 24" width="512" height="512"<path d="M12,24C5.383,24,0,18.617,0,12S5.383,0,12,0s12,5.383,12,12-5.383,12-12,12Zm5-13h-4V5h-2V13h6v-2Z"/> <br/><u>css :</u>height:20px;width:20px;color:#38761d;
+                            fill: currentColor;</code></td>
+                            <td><svg class="iconeMobile clock" xmlns="http://www.w3.org/2000/svg" id="Layer_1" data-name="Layer 1" viewBox="0 0 24 24" width="512" height="512"><path d="M12,24C5.383,24,0,18.617,0,12S5.383,0,12,0s12,5.383,12,12-5.383,12-12,12Zm5-13h-4V5h-2V13h6v-2Z"/></svg></td>
+                        <td><code><u>svg :</u>xmlns="http://www.w3.org/2000/svg" id="Layer_1" data-name="Layer 1" viewBox="0 0 24 24" width="512" height="512"<path d="M12,24C5.383,24,0,18.617,0,12S5.383,0,12,0s12,5.383,12,12-5.383,12-12,12Zm5-13h-4V5h-2V13h6v-2Z"/> <br/><u>css :</u>height:24px;width:24px;color:#38761d;
+                            fill: currentColor;</code></td>
+                            <td><svg class="iconeTablet clock" xmlns="http://www.w3.org/2000/svg" id="Layer_1" data-name="Layer 1" viewBox="0 0 24 24" width="512" height="512"><path d="M12,24C5.383,24,0,18.617,0,12S5.383,0,12,0s12,5.383,12,12-5.383,12-12,12Zm5-13h-4V5h-2V13h6v-2Z"/></svg></td>
+                        <td><code><u>svg :</u> xmlns="http://www.w3.org/2000/svg" id="Layer_1" data-name="Layer 1" viewBox="0 0 24 24" width="512" height="512"<path d="M12,24C5.383,24,0,18.617,0,12S5.383,0,12,0s12,5.383,12,12-5.383,12-12,12Zm5-13h-4V5h-2V13h6v-2Z"/><br/><u>css :</u>height:24px;width:24px;color:#38761d;
+                            fill: currentColor;</code></td>
+                            <td><svg class="iconeDesktop clock" xmlns="http://www.w3.org/2000/svg" id="Layer_1" data-name="Layer 1" viewBox="0 0 24 24" width="512" height="512"><path d="M12,24C5.383,24,0,18.617,0,12S5.383,0,12,0s12,5.383,12,12-5.383,12-12,12Zm5-13h-4V5h-2V13h6v-2Z"/></svg></td>
+                    </tr>
+                     <tr>
+                        <td><span class="tag">&lt;Icone demande en cours&gt;</span></td>
+                        <td><code><u>svg :</u> xmlns="http://www.w3.org/2000/svg" id="Filled" viewBox="0 0 24 24" width="512" height="512"<path d="M19,4H17.9A5.009,5.009,0,0,0,13,0H11A5.009,5.009,0,0,0,6.1,4H5A5.006,5.006,0,0,0,0,9v3H24V9A5.006,5.006,0,0,0,19,4ZM8.184,4A3,3,0,0,1,11,2h2a3,3,0,0,1,2.816,2Z"/><path d="M13,15a1,1,0,0,1-2,0V14H0v5a5.006,5.006,0,0,0,5,5H19a5.006,5.006,0,0,0,5-5V14H13Z"/><br/><u>css :</u>height:20px;width:20px;color:#e69138;
+                            fill: currentColor;</code></td>
+                            <td><svg class="iconeMobile valise" xmlns="http://www.w3.org/2000/svg" id="Filled" viewBox="0 0 24 24" width="512" height="512"><path d="M19,4H17.9A5.009,5.009,0,0,0,13,0H11A5.009,5.009,0,0,0,6.1,4H5A5.006,5.006,0,0,0,0,9v3H24V9A5.006,5.006,0,0,0,19,4ZM8.184,4A3,3,0,0,1,11,2h2a3,3,0,0,1,2.816,2Z"/><path d="M13,15a1,1,0,0,1-2,0V14H0v5a5.006,5.006,0,0,0,5,5H19a5.006,5.006,0,0,0,5-5V14H13Z"/></svg></td>
+                        <td><code><u>svg :</u> xmlns="http://www.w3.org/2000/svg" id="Filled" viewBox="0 0 24 24" width="512" height="512"<path d="M19,4H17.9A5.009,5.009,0,0,0,13,0H11A5.009,5.009,0,0,0,6.1,4H5A5.006,5.006,0,0,0,0,9v3H24V9A5.006,5.006,0,0,0,19,4ZM8.184,4A3,3,0,0,1,11,2h2a3,3,0,0,1,2.816,2Z"/><path d="M13,15a1,1,0,0,1-2,0V14H0v5a5.006,5.006,0,0,0,5,5H19a5.006,5.006,0,0,0,5-5V14H13Z"/><br/><u>css :</u>height:24px;width:24px;color:#e69138;
+                            fill: currentColor;</code></td>
+                            <td><svg class="iconeTablet valise" xmlns="http://www.w3.org/2000/svg" id="Filled" viewBox="0 0 24 24" width="512" height="512"><path d="M19,4H17.9A5.009,5.009,0,0,0,13,0H11A5.009,5.009,0,0,0,6.1,4H5A5.006,5.006,0,0,0,0,9v3H24V9A5.006,5.006,0,0,0,19,4ZM8.184,4A3,3,0,0,1,11,2h2a3,3,0,0,1,2.816,2Z"/><path d="M13,15a1,1,0,0,1-2,0V14H0v5a5.006,5.006,0,0,0,5,5H19a5.006,5.006,0,0,0,5-5V14H13Z"/></svg></td>
+                        <td><code><u>svg :</u>xmlns="http://www.w3.org/2000/svg" id="Filled" viewBox="0 0 24 24" width="512" height="512"<path d="M19,4H17.9A5.009,5.009,0,0,0,13,0H11A5.009,5.009,0,0,0,6.1,4H5A5.006,5.006,0,0,0,0,9v3H24V9A5.006,5.006,0,0,0,19,4ZM8.184,4A3,3,0,0,1,11,2h2a3,3,0,0,1,2.816,2Z"/><path d="M13,15a1,1,0,0,1-2,0V14H0v5a5.006,5.006,0,0,0,5,5H19a5.006,5.006,0,0,0,5-5V14H13Z"/> <br/><u>css :</u>height:24px;width:24px;color:#e69138;
+                            fill: currentColor;</code></td>
+                            <td><svg class="iconeDesktop valise" xmlns="http://www.w3.org/2000/svg" id="Filled" viewBox="0 0 24 24" width="512" height="512"><path d="M19,4H17.9A5.009,5.009,0,0,0,13,0H11A5.009,5.009,0,0,0,6.1,4H5A5.006,5.006,0,0,0,0,9v3H24V9A5.006,5.006,0,0,0,19,4ZM8.184,4A3,3,0,0,1,11,2h2a3,3,0,0,1,2.816,2Z"/><path d="M13,15a1,1,0,0,1-2,0V14H0v5a5.006,5.006,0,0,0,5,5H19a5.006,5.006,0,0,0,5-5V14H13Z"/></svg></td>
+                    </tr>
+                     <tr>
+                        <td><span class="tag">&lt;Icone entretien programmé&gt;</span></td>
+                        <td><code><u>svg :</u> xmlns="http://www.w3.org/2000/svg" id="Filled" viewBox="0 0 24 24" width="512" height="512"<path d="M0,19a5.006,5.006,0,0,0,5,5H19a5.006,5.006,0,0,0,5-5V10H0Zm17-4.5A1.5,1.5,0,1,1,15.5,16,1.5,1.5,0,0,1,17,14.5Zm-5,0A1.5,1.5,0,1,1,10.5,16,1.5,1.5,0,0,1,12,14.5Zm-5,0A1.5,1.5,0,1,1,5.5,16,1.5,1.5,0,0,1,7,14.5Z"/><path d="M19,2H18V1a1,1,0,0,0-2,0V2H8V1A1,1,0,0,0,6,1V2H5A5.006,5.006,0,0,0,0,7V8H24V7A5.006,5.006,0,0,0,19,2Z"/><br/><u>css:</u>height:20px;width:20px;color:#073763;
+                            fill: currentColor;</code></td>
+                            <td><svg class="iconeMobile programme" xmlns="http://www.w3.org/2000/svg" id="Filled" viewBox="0 0 24 24" width="512" height="512"><path d="M0,19a5.006,5.006,0,0,0,5,5H19a5.006,5.006,0,0,0,5-5V10H0Zm17-4.5A1.5,1.5,0,1,1,15.5,16,1.5,1.5,0,0,1,17,14.5Zm-5,0A1.5,1.5,0,1,1,10.5,16,1.5,1.5,0,0,1,12,14.5Zm-5,0A1.5,1.5,0,1,1,5.5,16,1.5,1.5,0,0,1,7,14.5Z"/><path d="M19,2H18V1a1,1,0,0,0-2,0V2H8V1A1,1,0,0,0,6,1V2H5A5.006,5.006,0,0,0,0,7V8H24V7A5.006,5.006,0,0,0,19,2Z"/></svg></td>
+                        <td><code><u>svg :</u> xmlns="http://www.w3.org/2000/svg" id="Filled" viewBox="0 0 24 24" width="512" height="512"<path d="M0,19a5.006,5.006,0,0,0,5,5H19a5.006,5.006,0,0,0,5-5V10H0Zm17-4.5A1.5,1.5,0,1,1,15.5,16,1.5,1.5,0,0,1,17,14.5Zm-5,0A1.5,1.5,0,1,1,10.5,16,1.5,1.5,0,0,1,12,14.5Zm-5,0A1.5,1.5,0,1,1,5.5,16,1.5,1.5,0,0,1,7,14.5Z"/><path d="M19,2H18V1a1,1,0,0,0-2,0V2H8V1A1,1,0,0,0,6,1V2H5A5.006,5.006,0,0,0,0,7V8H24V7A5.006,5.006,0,0,0,19,2Z"/><br/><u>css:</u>height:24px;width:24px;color:#073763;
+                            fill: currentColor;</code></td>
+                            <td><svg class="iconeTablet programme" xmlns="http://www.w3.org/2000/svg" id="Filled" viewBox="0 0 24 24" width="512" height="512"><path d="M0,19a5.006,5.006,0,0,0,5,5H19a5.006,5.006,0,0,0,5-5V10H0Zm17-4.5A1.5,1.5,0,1,1,15.5,16,1.5,1.5,0,0,1,17,14.5Zm-5,0A1.5,1.5,0,1,1,10.5,16,1.5,1.5,0,0,1,12,14.5Zm-5,0A1.5,1.5,0,1,1,5.5,16,1.5,1.5,0,0,1,7,14.5Z"/><path d="M19,2H18V1a1,1,0,0,0-2,0V2H8V1A1,1,0,0,0,6,1V2H5A5.006,5.006,0,0,0,0,7V8H24V7A5.006,5.006,0,0,0,19,2Z"/></svg></td>
+                        <td><code><u>svg :</u> xmlns="http://www.w3.org/2000/svg" id="Filled" viewBox="0 0 24 24" width="512" height="512"<path d="M0,19a5.006,5.006,0,0,0,5,5H19a5.006,5.006,0,0,0,5-5V10H0Zm17-4.5A1.5,1.5,0,1,1,15.5,16,1.5,1.5,0,0,1,17,14.5Zm-5,0A1.5,1.5,0,1,1,10.5,16,1.5,1.5,0,0,1,12,14.5Zm-5,0A1.5,1.5,0,1,1,5.5,16,1.5,1.5,0,0,1,7,14.5Z"/><path d="M19,2H18V1a1,1,0,0,0-2,0V2H8V1A1,1,0,0,0,6,1V2H5A5.006,5.006,0,0,0,0,7V8H24V7A5.006,5.006,0,0,0,19,2Z"/><br/><u>css:</u>height:24px;width:24px;color:#073763;
+                            fill: currentColor;</code></td>
+                            <td><svg class="iconeDesktop programme" >xmlns="http://www.w3.org/2000/svg" id="Filled" viewBox="0 0 24 24" width="512" height="512"><path d="M0,19a5.006,5.006,0,0,0,5,5H19a5.006,5.006,0,0,0,5-5V10H0Zm17-4.5A1.5,1.5,0,1,1,15.5,16,1.5,1.5,0,0,1,17,14.5Zm-5,0A1.5,1.5,0,1,1,10.5,16,1.5,1.5,0,0,1,12,14.5Zm-5,0A1.5,1.5,0,1,1,5.5,16,1.5,1.5,0,0,1,7,14.5Z"/><path d="M19,2H18V1a1,1,0,0,0-2,0V2H8V1A1,1,0,0,0,6,1V2H5A5.006,5.006,0,0,0,0,7V8H24V7A5.006,5.006,0,0,0,19,2Z"/></svg></td>
+                    </tr>
+                     <tr>
+                        <td><span class="tag">&lt;Icone user&gt;</span></td>
+                        <td><code><u>svg :</u> xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Capa_1" x="0px" y="0px" viewBox="0 0 512 512" style="enable-background:new 0 0 512 512;" xml:space="preserve" width="512" height="512"
+                            <g>
+                                <circle cx="256" cy="128" r="128"/>
+                                <path d="M256,298.667c-105.99,0.118-191.882,86.01-192,192C64,502.449,73.551,512,85.333,512h341.333   c11.782,0,21.333-9.551,21.333-21.333C447.882,384.677,361.99,298.784,256,298.667z"/>
+                            </g><br/><u>css :</u>height:20px;width:20px;color:#073763;
+                            fill: currentColor;</code></td>
+                            <td><svg class="iconeMobile utilisateur" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Capa_1" x="0px" y="0px" viewBox="0 0 512 512" style="enable-background:new 0 0 512 512;" xml:space="preserve" width="512" height="512">
+                                <g>
+                                    <circle cx="256" cy="128" r="128"/>
+                                    <path d="M256,298.667c-105.99,0.118-191.882,86.01-192,192C64,502.449,73.551,512,85.333,512h341.333   c11.782,0,21.333-9.551,21.333-21.333C447.882,384.677,361.99,298.784,256,298.667z"/>
+                                </g></svg></td>
+                        <td><code><u>svg :</u>xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Capa_1" x="0px" y="0px" viewBox="0 0 512 512" style="enable-background:new 0 0 512 512;" xml:space="preserve" width="512" height="512"
+                            <g>
+                                <circle cx="256" cy="128" r="128"/>
+                                <path d="M256,298.667c-105.99,0.118-191.882,86.01-192,192C64,502.449,73.551,512,85.333,512h341.333   c11.782,0,21.333-9.551,21.333-21.333C447.882,384.677,361.99,298.784,256,298.667z"/>
+                            </g> <br/><u>css :</u>height:24px;width:24px;color:#073763;
+                            fill: currentColor;</code></td>
+                            <td><svg class="iconeTablet utilisateur" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Capa_1" x="0px" y="0px" viewBox="0 0 512 512" style="enable-background:new 0 0 512 512;" xml:space="preserve" width="512" height="512">
+                                <g>
+                                    <circle cx="256" cy="128" r="128"/>
+                                    <path d="M256,298.667c-105.99,0.118-191.882,86.01-192,192C64,502.449,73.551,512,85.333,512h341.333   c11.782,0,21.333-9.551,21.333-21.333C447.882,384.677,361.99,298.784,256,298.667z"/>
+                                </g></svg></td>
+                        <td><code><u>svg :</u> xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Capa_1" x="0px" y="0px" viewBox="0 0 512 512" style="enable-background:new 0 0 512 512;" xml:space="preserve" width="512" height="512"
+                            <g>
+                                <circle cx="256" cy="128" r="128"/>
+                                <path d="M256,298.667c-105.99,0.118-191.882,86.01-192,192C64,502.449,73.551,512,85.333,512h341.333   c11.782,0,21.333-9.551,21.333-21.333C447.882,384.677,361.99,298.784,256,298.667z"/>
+                            </g><br/><u>css :</u>height:24px;width:24px;color:#073763;
+                            fill: currentColor;</code></td>
+                            <td><svg class="iconeDesktop utilisateur" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Capa_1" x="0px" y="0px" viewBox="0 0 512 512" style="enable-background:new 0 0 512 512;" xml:space="preserve" width="512" height="512">
+                                <g>
+                                    <circle cx="256" cy="128" r="128"/>
+                                    <path d="M256,298.667c-105.99,0.118-191.882,86.01-192,192C64,502.449,73.551,512,85.333,512h341.333   c11.782,0,21.333-9.551,21.333-21.333C447.882,384.677,361.99,298.784,256,298.667z"/>
+                                </g></svg></td>
+                    </tr>
+                     <tr>
+                        <td><span class="tag">&lt;Icone menu burger&gt;</span></td>
+                        <td><code><u>svg :</u> xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Capa_1" x="0px" y="0px" viewBox="0 0 512 512" style="enable-background:new 0 0 512 512;" xml:space="preserve" width="512" height="512"
+                            <g>
+                                <path d="M480,224H32c-17.673,0-32,14.327-32,32s14.327,32,32,32h448c17.673,0,32-14.327,32-32S497.673,224,480,224z"/>
+                                <path d="M32,138.667h448c17.673,0,32-14.327,32-32s-14.327-32-32-32H32c-17.673,0-32,14.327-32,32S14.327,138.667,32,138.667z"/>
+                                <path d="M480,373.333H32c-17.673,0-32,14.327-32,32s14.327,32,32,32h448c17.673,0,32-14.327,32-32S497.673,373.333,480,373.333z"/>
+                            </g><br/><u>css :</u>height:20px;width:20px;color:#073763;
+                            fill: currentColor;</code></td>
+                            <td><svg class="iconeMobile burger" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Capa_1" x="0px" y="0px" viewBox="0 0 512 512" style="enable-background:new 0 0 512 512;" xml:space="preserve" width="512" height="512">
+                                <g>
+                                    <path d="M480,224H32c-17.673,0-32,14.327-32,32s14.327,32,32,32h448c17.673,0,32-14.327,32-32S497.673,224,480,224z"/>
+                                    <path d="M32,138.667h448c17.673,0,32-14.327,32-32s-14.327-32-32-32H32c-17.673,0-32,14.327-32,32S14.327,138.667,32,138.667z"/>
+                                    <path d="M480,373.333H32c-17.673,0-32,14.327-32,32s14.327,32,32,32h448c17.673,0,32-14.327,32-32S497.673,373.333,480,373.333z"/>
+                                </g></svg></td>
+                        <td><code><u>svg :</u> xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Capa_1" x="0px" y="0px" viewBox="0 0 512 512" style="enable-background:new 0 0 512 512;" xml:space="preserve" width="512" height="512"
+                            <g>
+                                <path d="M480,224H32c-17.673,0-32,14.327-32,32s14.327,32,32,32h448c17.673,0,32-14.327,32-32S497.673,224,480,224z"/>
+                                <path d="M32,138.667h448c17.673,0,32-14.327,32-32s-14.327-32-32-32H32c-17.673,0-32,14.327-32,32S14.327,138.667,32,138.667z"/>
+                                <path d="M480,373.333H32c-17.673,0-32,14.327-32,32s14.327,32,32,32h448c17.673,0,32-14.327,32-32S497.673,373.333,480,373.333z"/>
+                            </g><br/><u>css :</u>height:24px;width:24px;color:#073763;
+                            fill: currentColor;</code></td>
+                            <td><svg class="iconeTablet burger" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Capa_1" x="0px" y="0px" viewBox="0 0 512 512" style="enable-background:new 0 0 512 512;" xml:space="preserve" width="512" height="512">
+                                <g>
+                                    <path d="M480,224H32c-17.673,0-32,14.327-32,32s14.327,32,32,32h448c17.673,0,32-14.327,32-32S497.673,224,480,224z"/>
+                                    <path d="M32,138.667h448c17.673,0,32-14.327,32-32s-14.327-32-32-32H32c-17.673,0-32,14.327-32,32S14.327,138.667,32,138.667z"/>
+                                    <path d="M480,373.333H32c-17.673,0-32,14.327-32,32s14.327,32,32,32h448c17.673,0,32-14.327,32-32S497.673,373.333,480,373.333z"/>
+                                </g></svg></td>
+                        <td><code><u>svg :</u> xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Capa_1" x="0px" y="0px" viewBox="0 0 512 512" style="enable-background:new 0 0 512 512;" xml:space="preserve" width="512" height="512"
+                            <g>
+                                <path d="M480,224H32c-17.673,0-32,14.327-32,32s14.327,32,32,32h448c17.673,0,32-14.327,32-32S497.673,224,480,224z"/>
+                                <path d="M32,138.667h448c17.673,0,32-14.327,32-32s-14.327-32-32-32H32c-17.673,0-32,14.327-32,32S14.327,138.667,32,138.667z"/>
+                                <path d="M480,373.333H32c-17.673,0-32,14.327-32,32s14.327,32,32,32h448c17.673,0,32-14.327,32-32S497.673,373.333,480,373.333z"/>
+                            </g><br/><u>css :</u>height:24px;width:24px;color:#073763;
+                            fill: currentColor;</code></td>
+                            <td><svg class="iconeDesktop burger" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Capa_1" x="0px" y="0px" viewBox="0 0 512 512" style="enable-background:new 0 0 512 512;" xml:space="preserve" width="512" height="512">
+                                <g>
+                                    <path d="M480,224H32c-17.673,0-32,14.327-32,32s14.327,32,32,32h448c17.673,0,32-14.327,32-32S497.673,224,480,224z"/>
+                                    <path d="M32,138.667h448c17.673,0,32-14.327,32-32s-14.327-32-32-32H32c-17.673,0-32,14.327-32,32S14.327,138.667,32,138.667z"/>
+                                    <path d="M480,373.333H32c-17.673,0-32,14.327-32,32s14.327,32,32,32h448c17.673,0,32-14.327,32-32S497.673,373.333,480,373.333z"/>
+                                </g></svg></td>
+                    </tr>
+                    <tr>
+                        <td><span class="tag">&lt;Icone statistiques&gt;</span></td>
+                        <td><code><u>svg :</u> xmlns="http://www.w3.org/2000/svg" id="Layer_1" data-name="Layer 1" viewBox="0 0 24 24" width="512" height="512"<path d="M23,22H5a3,3,0,0,1-3-3V1A1,1,0,0,0,0,1V19a5.006,5.006,0,0,0,5,5H23a1,1,0,0,0,0-2Z"/><path d="M6,20a1,1,0,0,0,1-1V12a1,1,0,0,0-2,0v7A1,1,0,0,0,6,20Z"/><path d="M10,10v9a1,1,0,0,0,2,0V10a1,1,0,0,0-2,0Z"/><path d="M15,13v6a1,1,0,0,0,2,0V13a1,1,0,0,0-2,0Z"/><path d="M20,9V19a1,1,0,0,0,2,0V9a1,1,0,0,0-2,0Z"/><path d="M6,9a1,1,0,0,0,.707-.293l3.586-3.586a1.025,1.025,0,0,1,1.414,0l2.172,2.172a3,3,0,0,0,4.242,0l5.586-5.586A1,1,0,0,0,22.293.293L16.707,5.878a1,1,0,0,1-1.414,0L13.121,3.707a3,3,0,0,0-4.242,0L5.293,7.293A1,1,0,0,0,6,9Z"></path><br/><u>css :</u>height:20px;width:20px;color:#073763;
+                            fill: currentColor;</code></td>
+                        <td><svg class="iconeMobile histo" xmlns="http://www.w3.org/2000/svg" id="Layer_1" data-name="Layer 1" viewBox="0 0 24 24" width="512" height="512"><path d="M23,22H5a3,3,0,0,1-3-3V1A1,1,0,0,0,0,1V19a5.006,5.006,0,0,0,5,5H23a1,1,0,0,0,0-2Z"/><path d="M6,20a1,1,0,0,0,1-1V12a1,1,0,0,0-2,0v7A1,1,0,0,0,6,20Z"/><path d="M10,10v9a1,1,0,0,0,2,0V10a1,1,0,0,0-2,0Z"/><path d="M15,13v6a1,1,0,0,0,2,0V13a1,1,0,0,0-2,0Z"/><path d="M20,9V19a1,1,0,0,0,2,0V9a1,1,0,0,0-2,0Z"/><path d="M6,9a1,1,0,0,0,.707-.293l3.586-3.586a1.025,1.025,0,0,1,1.414,0l2.172,2.172a3,3,0,0,0,4.242,0l5.586-5.586A1,1,0,0,0,22.293.293L16.707,5.878a1,1,0,0,1-1.414,0L13.121,3.707a3,3,0,0,0-4.242,0L5.293,7.293A1,1,0,0,0,6,9Z"/></svg></td>
+                        <td><code><u>svg :</u> xmlns="http://www.w3.org/2000/svg" id="Layer_1" data-name="Layer 1" viewBox="0 0 24 24" width="512" height="512"<path d="M23,22H5a3,3,0,0,1-3-3V1A1,1,0,0,0,0,1V19a5.006,5.006,0,0,0,5,5H23a1,1,0,0,0,0-2Z"/><path d="M6,20a1,1,0,0,0,1-1V12a1,1,0,0,0-2,0v7A1,1,0,0,0,6,20Z"/><path d="M10,10v9a1,1,0,0,0,2,0V10a1,1,0,0,0-2,0Z"/><path d="M15,13v6a1,1,0,0,0,2,0V13a1,1,0,0,0-2,0Z"/><path d="M20,9V19a1,1,0,0,0,2,0V9a1,1,0,0,0-2,0Z"/><path d="M6,9a1,1,0,0,0,.707-.293l3.586-3.586a1.025,1.025,0,0,1,1.414,0l2.172,2.172a3,3,0,0,0,4.242,0l5.586-5.586A1,1,0,0,0,22.293.293L16.707,5.878a1,1,0,0,1-1.414,0L13.121,3.707a3,3,0,0,0-4.242,0L5.293,7.293A1,1,0,0,0,6,9Z"></path><br/><u>css :</u>height:24px;width:24px;color:#073763;
+                            fill: currentColor;</code></td>
+                        <td><svg class="iconeTablet histo" xmlns="http://www.w3.org/2000/svg" id="Layer_1" data-name="Layer 1" viewBox="0 0 24 24" width="512" height="512"><path d="M23,22H5a3,3,0,0,1-3-3V1A1,1,0,0,0,0,1V19a5.006,5.006,0,0,0,5,5H23a1,1,0,0,0,0-2Z"/><path d="M6,20a1,1,0,0,0,1-1V12a1,1,0,0,0-2,0v7A1,1,0,0,0,6,20Z"/><path d="M10,10v9a1,1,0,0,0,2,0V10a1,1,0,0,0-2,0Z"/><path d="M15,13v6a1,1,0,0,0,2,0V13a1,1,0,0,0-2,0Z"/><path d="M20,9V19a1,1,0,0,0,2,0V9a1,1,0,0,0-2,0Z"/><path d="M6,9a1,1,0,0,0,.707-.293l3.586-3.586a1.025,1.025,0,0,1,1.414,0l2.172,2.172a3,3,0,0,0,4.242,0l5.586-5.586A1,1,0,0,0,22.293.293L16.707,5.878a1,1,0,0,1-1.414,0L13.121,3.707a3,3,0,0,0-4.242,0L5.293,7.293A1,1,0,0,0,6,9Z"/></svg></td>
+                        <td><code><u>svg :</u> xmlns="http://www.w3.org/2000/svg" id="Layer_1" data-name="Layer 1" viewBox="0 0 24 24" width="512" height="512"<path d="M23,22H5a3,3,0,0,1-3-3V1A1,1,0,0,0,0,1V19a5.006,5.006,0,0,0,5,5H23a1,1,0,0,0,0-2Z"/><path d="M6,20a1,1,0,0,0,1-1V12a1,1,0,0,0-2,0v7A1,1,0,0,0,6,20Z"/><path d="M10,10v9a1,1,0,0,0,2,0V10a1,1,0,0,0-2,0Z"/><path d="M15,13v6a1,1,0,0,0,2,0V13a1,1,0,0,0-2,0Z"/><path d="M20,9V19a1,1,0,0,0,2,0V9a1,1,0,0,0-2,0Z"/><path d="M6,9a1,1,0,0,0,.707-.293l3.586-3.586a1.025,1.025,0,0,1,1.414,0l2.172,2.172a3,3,0,0,0,4.242,0l5.586-5.586A1,1,0,0,0,22.293.293L16.707,5.878a1,1,0,0,1-1.414,0L13.121,3.707a3,3,0,0,0-4.242,0L5.293,7.293A1,1,0,0,0,6,9Z"></path><br/><u>css :</u>;width:30px;color:#073763;
+                            fill: currentColor;</code></td>
+                        <td><svg class="iconeDesktop histo" xmlns="http://www.w3.org/2000/svg" id="Layer_1" data-name="Layer 1" viewBox="0 0 24 24" width="512" height="512"><path d="M23,22H5a3,3,0,0,1-3-3V1A1,1,0,0,0,0,1V19a5.006,5.006,0,0,0,5,5H23a1,1,0,0,0,0-2Z"/><path d="M6,20a1,1,0,0,0,1-1V12a1,1,0,0,0-2,0v7A1,1,0,0,0,6,20Z"/><path d="M10,10v9a1,1,0,0,0,2,0V10a1,1,0,0,0-2,0Z"/><path d="M15,13v6a1,1,0,0,0,2,0V13a1,1,0,0,0-2,0Z"/><path d="M20,9V19a1,1,0,0,0,2,0V9a1,1,0,0,0-2,0Z"/><path d="M6,9a1,1,0,0,0,.707-.293l3.586-3.586a1.025,1.025,0,0,1,1.414,0l2.172,2.172a3,3,0,0,0,4.242,0l5.586-5.586A1,1,0,0,0,22.293.293L16.707,5.878a1,1,0,0,1-1.414,0L13.121,3.707a3,3,0,0,0-4.242,0L5.293,7.293A1,1,0,0,0,6,9Z"/></svg></td>
+                    </tr>
+                     <tr>
+                        <td><span class="tag">&lt;Ajouter un emploi&gt;</span></td>
+                        <td><code><u>svg :</u> id="Layer_1" height="512" viewBox="0 0 24 24" width="512" xmlns="http://www.w3.org/2000/svg" data-name="Layer 1"<path d="m14 7v-6.54a6.977 6.977 0 0 1 2.465 1.59l3.484 3.486a6.954 6.954 0 0 1 1.591 2.464h-6.54a1 1 0 0 1 -1-1zm8 3.485v8.515a5.006 5.006 0 0 1 -5 5h-10a5.006 5.006 0 0 1 -5-5v-14a5.006 5.006 0 0 1 5-5h4.515c.163 0 .324.013.485.024v6.976a3 3 0 0 0 3 3h6.976c.011.161.024.322.024.485zm-6 6.515a1 1 0 0 0 -1-1h-2v-2a1 1 0 0 0 -2 0v2h-2a1 1 0 0 0 0 2h2v2a1 1 0 0 0 2 0v-2h2a1 1 0 0 0 1-1z"/><br/><u>css :</u>height:20px;width:20px;color:#073763;
+                            fill: currentColor;</code></td>
+                            <td><svg class="iconeMobile ajoutEmploi" id="Layer_1" height="512" viewBox="0 0 24 24" width="512" xmlns="http://www.w3.org/2000/svg" data-name="Layer 1"><path d="m14 7v-6.54a6.977 6.977 0 0 1 2.465 1.59l3.484 3.486a6.954 6.954 0 0 1 1.591 2.464h-6.54a1 1 0 0 1 -1-1zm8 3.485v8.515a5.006 5.006 0 0 1 -5 5h-10a5.006 5.006 0 0 1 -5-5v-14a5.006 5.006 0 0 1 5-5h4.515c.163 0 .324.013.485.024v6.976a3 3 0 0 0 3 3h6.976c.011.161.024.322.024.485zm-6 6.515a1 1 0 0 0 -1-1h-2v-2a1 1 0 0 0 -2 0v2h-2a1 1 0 0 0 0 2h2v2a1 1 0 0 0 2 0v-2h2a1 1 0 0 0 1-1z"/></svg></td>
+                        <td><code><u>svg :</u> id="Layer_1" height="512" viewBox="0 0 24 24" width="512" xmlns="http://www.w3.org/2000/svg" data-name="Layer 1"<path d="m14 7v-6.54a6.977 6.977 0 0 1 2.465 1.59l3.484 3.486a6.954 6.954 0 0 1 1.591 2.464h-6.54a1 1 0 0 1 -1-1zm8 3.485v8.515a5.006 5.006 0 0 1 -5 5h-10a5.006 5.006 0 0 1 -5-5v-14a5.006 5.006 0 0 1 5-5h4.515c.163 0 .324.013.485.024v6.976a3 3 0 0 0 3 3h6.976c.011.161.024.322.024.485zm-6 6.515a1 1 0 0 0 -1-1h-2v-2a1 1 0 0 0 -2 0v2h-2a1 1 0 0 0 0 2h2v2a1 1 0 0 0 2 0v-2h2a1 1 0 0 0 1-1z"/><br/><u>css :</u>height:24px;width:24px;color:#073763;
+                            fill: currentColor;</code></td>
+                            <td><svg class="iconeTablet ajoutEmploi" id="Layer_1" height="512" viewBox="0 0 24 24" width="512" xmlns="http://www.w3.org/2000/svg" data-name="Layer 1"><path d="m14 7v-6.54a6.977 6.977 0 0 1 2.465 1.59l3.484 3.486a6.954 6.954 0 0 1 1.591 2.464h-6.54a1 1 0 0 1 -1-1zm8 3.485v8.515a5.006 5.006 0 0 1 -5 5h-10a5.006 5.006 0 0 1 -5-5v-14a5.006 5.006 0 0 1 5-5h4.515c.163 0 .324.013.485.024v6.976a3 3 0 0 0 3 3h6.976c.011.161.024.322.024.485zm-6 6.515a1 1 0 0 0 -1-1h-2v-2a1 1 0 0 0 -2 0v2h-2a1 1 0 0 0 0 2h2v2a1 1 0 0 0 2 0v-2h2a1 1 0 0 0 1-1z"/></svg></td>
+                        <td><code><u>svg :</u> id="Layer_1" height="512" viewBox="0 0 24 24" width="512" xmlns="http://www.w3.org/2000/svg" data-name="Layer 1"<path d="m14 7v-6.54a6.977 6.977 0 0 1 2.465 1.59l3.484 3.486a6.954 6.954 0 0 1 1.591 2.464h-6.54a1 1 0 0 1 -1-1zm8 3.485v8.515a5.006 5.006 0 0 1 -5 5h-10a5.006 5.006 0 0 1 -5-5v-14a5.006 5.006 0 0 1 5-5h4.515c.163 0 .324.013.485.024v6.976a3 3 0 0 0 3 3h6.976c.011.161.024.322.024.485zm-6 6.515a1 1 0 0 0 -1-1h-2v-2a1 1 0 0 0 -2 0v2h-2a1 1 0 0 0 0 2h2v2a1 1 0 0 0 2 0v-2h2a1 1 0 0 0 1-1z"/><br/><u>css :</u>height:24px;width:24px;color:#073763;
+                            fill: currentColor;</code></td>
+                            <td><svg class="iconeDesktop ajoutEmploi" id="Layer_1" height="512" viewBox="0 0 24 24" width="512" xmlns="http://www.w3.org/2000/svg" data-name="Layer 1"><path d="m14 7v-6.54a6.977 6.977 0 0 1 2.465 1.59l3.484 3.486a6.954 6.954 0 0 1 1.591 2.464h-6.54a1 1 0 0 1 -1-1zm8 3.485v8.515a5.006 5.006 0 0 1 -5 5h-10a5.006 5.006 0 0 1 -5-5v-14a5.006 5.006 0 0 1 5-5h4.515c.163 0 .324.013.485.024v6.976a3 3 0 0 0 3 3h6.976c.011.161.024.322.024.485zm-6 6.515a1 1 0 0 0 -1-1h-2v-2a1 1 0 0 0 -2 0v2h-2a1 1 0 0 0 0 2h2v2a1 1 0 0 0 2 0v-2h2a1 1 0 0 0 1-1z"/></svg></td>
+                    </tr>
+                     <tr>
+                        <td><span class="tag">&lt;Icone Temps de travail&gt;</span></td>
+                        <td><code><u>svg :</u> xmlns="http://www.w3.org/2000/svg" id="Filled" viewBox="0 0 24 24" width="512" height="512"<path d="M19,4H17.9A5.009,5.009,0,0,0,13,0H11A5.009,5.009,0,0,0,6.1,4H5A5.006,5.006,0,0,0,0,9v3H24V9A5.006,5.006,0,0,0,19,4ZM8.184,4A3,3,0,0,1,11,2h2a3,3,0,0,1,2.816,2Z"/><path d="M13,15a1,1,0,0,1-2,0V14H0v5a5.006,5.006,0,0,0,5,5H19a5.006,5.006,0,0,0,5-5V14H13Z"/><br/><u>css :</u>height:20px;width:20px;color:#073763;
+                            fill: currentColor;</code></td>
+                            <td><svg class="iconeMobile tempsTravail" xmlns="http://www.w3.org/2000/svg" id="Filled" viewBox="0 0 24 24" width="512" height="512"><path d="M19,4H17.9A5.009,5.009,0,0,0,13,0H11A5.009,5.009,0,0,0,6.1,4H5A5.006,5.006,0,0,0,0,9v3H24V9A5.006,5.006,0,0,0,19,4ZM8.184,4A3,3,0,0,1,11,2h2a3,3,0,0,1,2.816,2Z"/><path d="M13,15a1,1,0,0,1-2,0V14H0v5a5.006,5.006,0,0,0,5,5H19a5.006,5.006,0,0,0,5-5V14H13Z"/></svg></td>
+                        <td><code><u>svg :</u> xmlns="http://www.w3.org/2000/svg" id="Filled" viewBox="0 0 24 24" width="512" height="512"<path d="M19,4H17.9A5.009,5.009,0,0,0,13,0H11A5.009,5.009,0,0,0,6.1,4H5A5.006,5.006,0,0,0,0,9v3H24V9A5.006,5.006,0,0,0,19,4ZM8.184,4A3,3,0,0,1,11,2h2a3,3,0,0,1,2.816,2Z"/><path d="M13,15a1,1,0,0,1-2,0V14H0v5a5.006,5.006,0,0,0,5,5H19a5.006,5.006,0,0,0,5-5V14H13Z"/><br/><u>css :</u>height:24px;width:24px;color:#073763;
+                            fill: currentColor;</code></td>
+                            <td><svg class="iconeTablet tempsTravail" xmlns="http://www.w3.org/2000/svg" id="Filled" viewBox="0 0 24 24" width="512" height="512"><path d="M19,4H17.9A5.009,5.009,0,0,0,13,0H11A5.009,5.009,0,0,0,6.1,4H5A5.006,5.006,0,0,0,0,9v3H24V9A5.006,5.006,0,0,0,19,4ZM8.184,4A3,3,0,0,1,11,2h2a3,3,0,0,1,2.816,2Z"/><path d="M13,15a1,1,0,0,1-2,0V14H0v5a5.006,5.006,0,0,0,5,5H19a5.006,5.006,0,0,0,5-5V14H13Z"/></svg></td>
+                        <td><code><u>svg :</u> xmlns="http://www.w3.org/2000/svg" id="Filled" viewBox="0 0 24 24" width="512" height="512"<path d="M19,4H17.9A5.009,5.009,0,0,0,13,0H11A5.009,5.009,0,0,0,6.1,4H5A5.006,5.006,0,0,0,0,9v3H24V9A5.006,5.006,0,0,0,19,4ZM8.184,4A3,3,0,0,1,11,2h2a3,3,0,0,1,2.816,2Z"/><path d="M13,15a1,1,0,0,1-2,0V14H0v5a5.006,5.006,0,0,0,5,5H19a5.006,5.006,0,0,0,5-5V14H13Z"/><br/><u>css :</u>height:24px;width:24px;color:#073763;
+                            fill: currentColor;</code></td>
+                            <td><svg class="iconeDesktop tempsTravail" xmlns="http://www.w3.org/2000/svg" id="Filled" viewBox="0 0 24 24" width="512" height="512"><path d="M19,4H17.9A5.009,5.009,0,0,0,13,0H11A5.009,5.009,0,0,0,6.1,4H5A5.006,5.006,0,0,0,0,9v3H24V9A5.006,5.006,0,0,0,19,4ZM8.184,4A3,3,0,0,1,11,2h2a3,3,0,0,1,2.816,2Z"/><path d="M13,15a1,1,0,0,1-2,0V14H0v5a5.006,5.006,0,0,0,5,5H19a5.006,5.006,0,0,0,5-5V14H13Z"/></svg></td>
+                    </tr>
+                     <tr>
+                        <td><span class="tag">&lt;Icone Lieu de travail&gt;</span></td>
+                        <td><code><u>svg :</u> xmlns="http://www.w3.org/2000/svg" id="Layer_1" data-name="Layer 1" viewBox="0 0 24 24" width="512" height="512"<path d="M12,0A10.011,10.011,0,0,0,2,10c0,5.282,8.4,12.533,9.354,13.343l.646.546.646-.546C13.6,22.533,22,15.282,22,10A10.011,10.011,0,0,0,12,0Zm0,15a5,5,0,1,1,5-5A5.006,5.006,0,0,1,12,15Z"/><circle cx="12" cy="10" r="3"/><br/><u>css :</u>height:20px;width:20px;color:#073763;
+                            fill: currentColor;</code></td>
+                            <td><svg class="iconeMobile lieu"  xmlns="http://www.w3.org/2000/svg" id="Layer_1" data-name="Layer 1" viewBox="0 0 24 24" width="512" height="512"><path d="M12,0A10.011,10.011,0,0,0,2,10c0,5.282,8.4,12.533,9.354,13.343l.646.546.646-.546C13.6,22.533,22,15.282,22,10A10.011,10.011,0,0,0,12,0Zm0,15a5,5,0,1,1,5-5A5.006,5.006,0,0,1,12,15Z"/><circle cx="12" cy="10" r="3"/></svg></td>
+                        <td><code><u>svg :</u> xmlns="http://www.w3.org/2000/svg" id="Layer_1" data-name="Layer 1" viewBox="0 0 24 24" width="512" height="512"<path d="M12,0A10.011,10.011,0,0,0,2,10c0,5.282,8.4,12.533,9.354,13.343l.646.546.646-.546C13.6,22.533,22,15.282,22,10A10.011,10.011,0,0,0,12,0Zm0,15a5,5,0,1,1,5-5A5.006,5.006,0,0,1,12,15Z"/><circle cx="12" cy="10" r="3"/><br/><u>css :</u>height:24px;width:24px;color:#073763;
+                            fill: currentColor;</code></td>
+                            <td><svg class="iconeTablet lieu"  xmlns="http://www.w3.org/2000/svg" id="Layer_1" data-name="Layer 1" viewBox="0 0 24 24" width="512" height="512"><path d="M12,0A10.011,10.011,0,0,0,2,10c0,5.282,8.4,12.533,9.354,13.343l.646.546.646-.546C13.6,22.533,22,15.282,22,10A10.011,10.011,0,0,0,12,0Zm0,15a5,5,0,1,1,5-5A5.006,5.006,0,0,1,12,15Z"/><circle cx="12" cy="10" r="3"/></svg></td>
+                        <td><code><u>svg :</u> xmlns="http://www.w3.org/2000/svg" id="Layer_1" data-name="Layer 1" viewBox="0 0 24 24" width="512" height="512"<path d="M12,0A10.011,10.011,0,0,0,2,10c0,5.282,8.4,12.533,9.354,13.343l.646.546.646-.546C13.6,22.533,22,15.282,22,10A10.011,10.011,0,0,0,12,0Zm0,15a5,5,0,1,1,5-5A5.006,5.006,0,0,1,12,15Z"/><circle cx="12" cy="10" r="3"/><br/><u>css :</u>height:24px;width:24px;color:#073763;
+                            fill: currentColor;</code></td>
+                            <td><svg class="iconeDesktop lieu"  xmlns="http://www.w3.org/2000/svg" id="Layer_1" data-name="Layer 1" viewBox="0 0 24 24" width="512" height="512"><path d="M12,0A10.011,10.011,0,0,0,2,10c0,5.282,8.4,12.533,9.354,13.343l.646.546.646-.546C13.6,22.533,22,15.282,22,10A10.011,10.011,0,0,0,12,0Zm0,15a5,5,0,1,1,5-5A5.006,5.006,0,0,1,12,15Z"/><circle cx="12" cy="10" r="3"/></svg></td>
+                    </tr>
+                    <tr>
+                        <td><span class="tag">&lt;Icone DateCalendar&gt;</span></td>
+                        <td><code><u>svg :</u> xmlns="http://www.w3.org/2000/svg" id="Layer_1" data-name="Layer 1" viewBox="0 0 24 24" width="512" height="512"<path d="M24,10V24H0V10Zm0-2V5a3,3,0,0,0-3-3H18V0H16V2H8V0H6V2H3A3,3,0,0,0,0,5V8Zm-6,6H16v2h2Zm-5,0H11v2h2ZM8,14H6v2H8Zm10,4H16v2h2Zm-5,0H11v2h2ZM8,18H6v2H8Z"/><br/><u>css :</u>height:20px;width:20px;color:#073763;
+                            fill: currentColor;</code></td>
+                            <td><svg class="iconeMobile dateCalendar" xmlns="http://www.w3.org/2000/svg" id="Layer_1" data-name="Layer 1" viewBox="0 0 24 24" width="512" height="512"><path d="M24,10V24H0V10Zm0-2V5a3,3,0,0,0-3-3H18V0H16V2H8V0H6V2H3A3,3,0,0,0,0,5V8Zm-6,6H16v2h2Zm-5,0H11v2h2ZM8,14H6v2H8Zm10,4H16v2h2Zm-5,0H11v2h2ZM8,18H6v2H8Z"/></svg></td>
+                        <td><code><u>svg :</u> xmlns="http://www.w3.org/2000/svg" id="Layer_1" data-name="Layer 1" viewBox="0 0 24 24" width="512" height="512"<path d="M24,10V24H0V10Zm0-2V5a3,3,0,0,0-3-3H18V0H16V2H8V0H6V2H3A3,3,0,0,0,0,5V8Zm-6,6H16v2h2Zm-5,0H11v2h2ZM8,14H6v2H8Zm10,4H16v2h2Zm-5,0H11v2h2ZM8,18H6v2H8Z"/><br/><u>css :</u>height:24px;width:24px;color:#073763;
+                            fill: currentColor;</code></td>
+                            <td><svg class="iconeTablet dateCalendar" xmlns="http://www.w3.org/2000/svg" id="Layer_1" data-name="Layer 1" viewBox="0 0 24 24" width="512" height="512"><path d="M24,10V24H0V10Zm0-2V5a3,3,0,0,0-3-3H18V0H16V2H8V0H6V2H3A3,3,0,0,0,0,5V8Zm-6,6H16v2h2Zm-5,0H11v2h2ZM8,14H6v2H8Zm10,4H16v2h2Zm-5,0H11v2h2ZM8,18H6v2H8Z"/></svg></td>
+                        <td><code><u>svg :</u> xmlns="http://www.w3.org/2000/svg" id="Layer_1" data-name="Layer 1" viewBox="0 0 24 24" width="512" height="512"<path d="M24,10V24H0V10Zm0-2V5a3,3,0,0,0-3-3H18V0H16V2H8V0H6V2H3A3,3,0,0,0,0,5V8Zm-6,6H16v2h2Zm-5,0H11v2h2ZM8,14H6v2H8Zm10,4H16v2h2Zm-5,0H11v2h2ZM8,18H6v2H8Z"/><br/><u>css :</u>height:24px;width:24px;color:#073763;
+                            fill: currentColor;</code></td>
+                            <td><svg class="iconeDesktop dateCalendar" xmlns="http://www.w3.org/2000/svg" id="Layer_1" data-name="Layer 1" viewBox="0 0 24 24" width="512" height="512"><path d="M24,10V24H0V10Zm0-2V5a3,3,0,0,0-3-3H18V0H16V2H8V0H6V2H3A3,3,0,0,0,0,5V8Zm-6,6H16v2h2Zm-5,0H11v2h2ZM8,14H6v2H8Zm10,4H16v2h2Zm-5,0H11v2h2ZM8,18H6v2H8Z"/></svg></td>
+                    </tr>
+                     <tr>
+                        <td><span class="tag">&lt;Icone Accueil&gt;</span></td>
+                        <td><code><u>svg :</u> xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Capa_1" x="0px" y="0px" viewBox="0 0 512 512" style="enable-background:new 0 0 512 512;" xml:space="preserve" width="512" height="512">
+                            <g><path d="M256,319.841c-35.346,0-64,28.654-64,64v128h128v-128C320,348.495,291.346,319.841,256,319.841z"/><g><path d="M362.667,383.841v128H448c35.346,0,64-28.654,64-64V253.26c0.005-11.083-4.302-21.733-12.011-29.696l-181.29-195.99    c-31.988-34.61-85.976-36.735-120.586-4.747c-1.644,1.52-3.228,3.103-4.747,4.747L12.395,223.5    C4.453,231.496-0.003,242.31,0,253.58v194.261c0,35.346,28.654,64,64,64h85.333v-128c0.399-58.172,47.366-105.676,104.073-107.044    C312.01,275.383,362.22,323.696,362.667,383.841z"/><path d="M256,319.841c-35.346,0-64,28.654-64,64v128h128v-128C320,348.495,291.346,319.841,256,319.841z"/></g></g><br/><u>css :</u>height:20px;width:20px;color:#073763;
+                            fill: currentColor;</code></td>
+                            <td><svg class="iconeMobile house" mlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Capa_1" x="0px" y="0px" viewBox="0 0 512 512" style="enable-background:new 0 0 512 512;" xml:space="preserve" width="512" height="512">
+                                <g><path d="M256,319.841c-35.346,0-64,28.654-64,64v128h128v-128C320,348.495,291.346,319.841,256,319.841z"/><g><path d="M362.667,383.841v128H448c35.346,0,64-28.654,64-64V253.26c0.005-11.083-4.302-21.733-12.011-29.696l-181.29-195.99    c-31.988-34.61-85.976-36.735-120.586-4.747c-1.644,1.52-3.228,3.103-4.747,4.747L12.395,223.5    C4.453,231.496-0.003,242.31,0,253.58v194.261c0,35.346,28.654,64,64,64h85.333v-128c0.399-58.172,47.366-105.676,104.073-107.044    C312.01,275.383,362.22,323.696,362.667,383.841z"/><path d="M256,319.841c-35.346,0-64,28.654-64,64v128h128v-128C320,348.495,291.346,319.841,256,319.841z"/></g></g>
+                                </svg></td>
+                        <td><code><u>svg :</u> xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Capa_1" x="0px" y="0px" viewBox="0 0 512 512" style="enable-background:new 0 0 512 512;" xml:space="preserve" width="512" height="512">
+                            <g><path d="M256,319.841c-35.346,0-64,28.654-64,64v128h128v-128C320,348.495,291.346,319.841,256,319.841z"/><g><path d="M362.667,383.841v128H448c35.346,0,64-28.654,64-64V253.26c0.005-11.083-4.302-21.733-12.011-29.696l-181.29-195.99    c-31.988-34.61-85.976-36.735-120.586-4.747c-1.644,1.52-3.228,3.103-4.747,4.747L12.395,223.5    C4.453,231.496-0.003,242.31,0,253.58v194.261c0,35.346,28.654,64,64,64h85.333v-128c0.399-58.172,47.366-105.676,104.073-107.044    C312.01,275.383,362.22,323.696,362.667,383.841z"/><path d="M256,319.841c-35.346,0-64,28.654-64,64v128h128v-128C320,348.495,291.346,319.841,256,319.841z"/></g></g><br/><u>css :</u>height:24px;width:24px;color:#073763;
+                            fill: currentColor;</code></td>
+                            <td><svg class="iconeTablet house" mlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Capa_1" x="0px" y="0px" viewBox="0 0 512 512" style="enable-background:new 0 0 512 512;" xml:space="preserve" width="512" height="512">
+                                <g><path d="M256,319.841c-35.346,0-64,28.654-64,64v128h128v-128C320,348.495,291.346,319.841,256,319.841z"/><g><path d="M362.667,383.841v128H448c35.346,0,64-28.654,64-64V253.26c0.005-11.083-4.302-21.733-12.011-29.696l-181.29-195.99    c-31.988-34.61-85.976-36.735-120.586-4.747c-1.644,1.52-3.228,3.103-4.747,4.747L12.395,223.5    C4.453,231.496-0.003,242.31,0,253.58v194.261c0,35.346,28.654,64,64,64h85.333v-128c0.399-58.172,47.366-105.676,104.073-107.044    C312.01,275.383,362.22,323.696,362.667,383.841z"/><path d="M256,319.841c-35.346,0-64,28.654-64,64v128h128v-128C320,348.495,291.346,319.841,256,319.841z"/></g></g>
+                                </svg></td>
+                        <td><code><u>svg :</u> xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Capa_1" x="0px" y="0px" viewBox="0 0 512 512" style="enable-background:new 0 0 512 512;" xml:space="preserve" width="512" height="512">
+                            <g><path d="M256,319.841c-35.346,0-64,28.654-64,64v128h128v-128C320,348.495,291.346,319.841,256,319.841z"/><g><path d="M362.667,383.841v128H448c35.346,0,64-28.654,64-64V253.26c0.005-11.083-4.302-21.733-12.011-29.696l-181.29-195.99    c-31.988-34.61-85.976-36.735-120.586-4.747c-1.644,1.52-3.228,3.103-4.747,4.747L12.395,223.5    C4.453,231.496-0.003,242.31,0,253.58v194.261c0,35.346,28.654,64,64,64h85.333v-128c0.399-58.172,47.366-105.676,104.073-107.044    C312.01,275.383,362.22,323.696,362.667,383.841z"/><path d="M256,319.841c-35.346,0-64,28.654-64,64v128h128v-128C320,348.495,291.346,319.841,256,319.841z"/></g></g><br/><u>css :</u>height:24px;width:24px;color:#073763;
+                            fill: currentColor;</code></td>
+                            <td><svg class="iconeDesktop house" mlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Capa_1" x="0px" y="0px" viewBox="0 0 512 512" style="enable-background:new 0 0 512 512;" xml:space="preserve" width="512" height="512">
+                                <g><path d="M256,319.841c-35.346,0-64,28.654-64,64v128h128v-128C320,348.495,291.346,319.841,256,319.841z"/><g><path d="M362.667,383.841v128H448c35.346,0,64-28.654,64-64V253.26c0.005-11.083-4.302-21.733-12.011-29.696l-181.29-195.99    c-31.988-34.61-85.976-36.735-120.586-4.747c-1.644,1.52-3.228,3.103-4.747,4.747L12.395,223.5    C4.453,231.496-0.003,242.31,0,253.58v194.261c0,35.346,28.654,64,64,64h85.333v-128c0.399-58.172,47.366-105.676,104.073-107.044    C312.01,275.383,362.22,323.696,362.667,383.841z"/><path d="M256,319.841c-35.346,0-64,28.654-64,64v128h128v-128C320,348.495,291.346,319.841,256,319.841z"/></g></g>
+                                </svg></td>
+                    </tr>
+                    <tr>
+                        <td><span class="tag">&lt;carré Icone demande en cours&gt;</span></td>
+                        <td><code></code></td>
+                        <td><div class="carreMobile carreCours carreCoursMobile"></div></td>
+                        <td><code></code></td>
+                        <td><div class="carreTablet carreCours carreCoursTablet"></div></td>
+                        <td><code></code></td>
+                        <td><div class="carreDesktop carreCours carreCoursDesktop"></div></td>
+                    </tr>
+                    <tr>
+                        <td><span class="tag">&lt;carré Icone demande en attente&gt;</span></td>
+                        <td><code></code></td>
+                        <td><div class="carreMobile carreAttente carreAttenteMobile"></div></td>
+                        <td><code></code></td>
+                        <td><div class="carreTablet carreAttente carreAttenteTablet"></div></td>
+                        <td><code></code></td>
+                        <td><div class="carreDesktop carreAttente carreAttenteDesktop"></div></td>
+                    </tr>
+                    <tr>
+                        <td><span class="tag">&lt;carré Icone demande refus;</span></td>
+                        <td><code></code></td>
+                        <td><div class="carreMobile carreRefus carreRefusMobile"></div></td>
+                        <td><code></code></td>
+                        <td><div class="carreTablet carreRefus carreRefusTablet"></div></td>
+                        <td><code></code></td>
+                        <td><div class="carreDesktop carreRefus carreRefusDesktop"></div></td>
+                    </tr>
+                    <tr>
+                        <td><span class="tag">&lt;carré Icone entretien programmé;</span></td>
+                        <td><code></code></td>
+                        <td><div class="carreMobile carreProgramme carreProgrammeMobile"></div></td>
+                        <td><code></code></td>
+                        <td><div class="carreTablet carreProgramme carreProgrammeTablet"></div></td>
+                        <td><code></code></td>
+                        <td><div class="carreDesktop carreProgramme carreProgrammeDesktop"></div></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        
+    </div>
+
+    
+</body>
+</html>

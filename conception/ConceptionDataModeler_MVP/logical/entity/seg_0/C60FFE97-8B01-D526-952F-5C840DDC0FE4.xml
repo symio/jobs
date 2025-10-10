@@ -1,0 +1,97 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="C60FFE97-8B01-D526-952F-5C840DDC0FE4" name="JOBS_HAS_STATUS">
+<createdBy>symio</createdBy>
+<createdTime>2025-10-10 12:57:56 UTC</createdTime>
+<ownerDesignName>ConceptionDataModeler_MVP</ownerDesignName>
+<engineerTo>
+<item key="307008C4-A6F5-D679-7A89-1240AF32BB15" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="id_jhs" id="165DD32E-A5DD-00FC-8381-0B8D7F136CC3">
+<createdBy>symio</createdBy>
+<createdTime>2025-10-10 12:58:12 UTC</createdTime>
+<ownerDesignName>ConceptionDataModeler_MVP</ownerDesignName>
+<engineerTo>
+<item key="307008C4-A6F5-D679-7A89-1240AF32BB15" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="applied_at" id="B88E1C58-51DE-C5BF-1A41-AC8ED59FCD2E">
+<createdBy>symio</createdBy>
+<createdTime>2025-10-10 12:58:26 UTC</createdTime>
+<ownerDesignName>ConceptionDataModeler_MVP</ownerDesignName>
+<engineerTo>
+<item key="307008C4-A6F5-D679-7A89-1240AF32BB15" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT008</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="offer_status" id="F800613F-3A21-1FE6-15D3-39F756E06DF8">
+<createdBy>symio</createdBy>
+<createdTime>2025-10-10 12:58:53 UTC</createdTime>
+<ownerDesignName>ConceptionDataModeler_MVP</ownerDesignName>
+<engineerTo>
+<item key="307008C4-A6F5-D679-7A89-1240AF32BB15" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<use>0</use>
+<logicalDatatype>A3A3C77D-0366-9768-FF89-1C25E56881C8</logicalDatatype>
+<domain>CCB179B4-6EC9-7128-BD68-B5C7BE7E906F</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="job_status" id="C152BE1F-27DE-1B5D-840B-69E5CA3FAE6C">
+<createdBy>symio</createdBy>
+<createdTime>2025-10-10 12:59:14 UTC</createdTime>
+<ownerDesignName>ConceptionDataModeler_MVP</ownerDesignName>
+<engineerTo>
+<item key="307008C4-A6F5-D679-7A89-1240AF32BB15" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<use>0</use>
+<logicalDatatype>A3A3C77D-0366-9768-FF89-1C25E56881C8</logicalDatatype>
+<domain>B270F4D4-A289-5E72-DF30-5B7C3E9C5AB3</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="id_job" id="5B727991-DD58-B7ED-4248-FAA098D8251F">
+<createdBy>symio</createdBy>
+<createdTime>2025-10-10 12:59:46 UTC</createdTime>
+<generatorID>5ADC4906-5C7A-9D42-5CF0-A43FD1762AC2</generatorID>
+<ownerDesignName>ConceptionDataModeler_MVP</ownerDesignName>
+<engineerTo>
+<item key="307008C4-A6F5-D679-7A89-1240AF32BB15" value="true"/>
+</engineerTo>
+<referedAttribute>C771A7FC-604D-6B4F-8AE3-552B758B4779</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="AC38645D-8FAB-E5F8-D14F-E4B2F03C49DF" name="JOBS_HAS_STATUS PK">
+<createdBy>symio</createdBy>
+<createdTime>2025-10-10 12:58:24 UTC</createdTime>
+<ownerDesignName>ConceptionDataModeler_MVP</ownerDesignName>
+<engineerTo>
+<item key="307008C4-A6F5-D679-7A89-1240AF32BB15" value="true"/>
+</engineerTo>
+<pk>true</pk>
+<usedAttributes>
+<attributeRef>165DD32E-A5DD-00FC-8381-0B8D7F136CC3</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>

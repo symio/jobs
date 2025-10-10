@@ -1,0 +1,8 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<OSDM_Design class="oracle.dbtools.crest.model.design.Design" name="ConceptionDataModeler_MVP" id="19FFFC51-31B5-4A12-FB94-77BD04224DDD" version="3.5">
+<createdBy>symio</createdBy>
+<createdTime>2025-08-26 13:53:20 UTC</createdTime>
+<ownerDesignName>conceptionOracleDataModeler</ownerDesignName>
+<capitalNames>false</capitalNames>
+<designId>19FFFC51-31B5-4A12-FB94-77BD04224DDD</designId>
+</OSDM_Design>

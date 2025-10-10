@@ -1,0 +1,229 @@
+<?xml version="1.0" encoding="UTF-8"?><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentStyleType="text/css" height="1740px" preserveAspectRatio="none" style="width:1687px;height:1740px;background:#FFFFFF;" version="1.1" viewBox="0 0 1687 1740" width="1687px" zoomAndPan="magnify">
+    <defs/>
+    <g>
+        <text fill="#000000" font-family="Verdana" font-size="22" font-weight="bold" lengthAdjust="spacing" textLength="654" x="515" y="37.1182">Diagramme d'activité — Se connecter (Flux détaillé)</text>
+        <ellipse cx="1120.25" cy="62.7373" fill="#FFFFFF" rx="10" ry="10" style="stroke:#000000;stroke-width:1.0;"/>
+        <rect fill="#FFFFFF" height="34.584" rx="12.5" ry="12.5" style="stroke:#000000;stroke-width:1.0;" width="241" x="999.75" y="92.7373"/>
+        <text fill="#000000" font-family="Verdana" font-size="12" lengthAdjust="spacing" textLength="221" x="1009.75" y="114.8018">Utilisateur ouvre la page d'accueil /</text>
+        <rect fill="#FFFFFF" height="34.584" rx="12.5" ry="12.5" style="stroke:#000000;stroke-width:1.0;" width="292" x="974.25" y="147.3213"/>
+        <text fill="#000000" font-family="Verdana" font-size="12" lengthAdjust="spacing" textLength="272" x="984.25" y="169.3857">LandingPageComponent (Angular) initialisé</text>
+        <rect fill="#FFFFFF" height="34.584" rx="12.5" ry="12.5" style="stroke:#000000;stroke-width:1.0;" width="386" x="927.25" y="201.9053"/>
+        <text fill="#000000" font-family="Verdana" font-size="12" lengthAdjust="spacing" textLength="366" x="937.25" y="223.9697">Vérifie si un token existe (OAuth2Service.getStoredToken)</text>
+        <polygon fill="#FFFFFF" points="1078.75,256.4893,1161.75,256.4893,1173.75,268.4893,1161.75,280.4893,1078.75,280.4893,1066.75,268.4893,1078.75,256.4893" style="stroke:#000000;stroke-width:1.0;"/>
+        <text fill="#000000" font-family="Verdana" font-size="11" lengthAdjust="spacing" textLength="83" x="1078.75" y="272.864">Token valide ?</text>
+        <text fill="#000000" font-family="Verdana" font-size="11" lengthAdjust="spacing" textLength="19" x="1047.75" y="266.1797">Oui</text>
+        <text fill="#000000" font-family="Verdana" font-size="11" lengthAdjust="spacing" textLength="22" x="1173.75" y="266.1797">Non</text>
+        <rect fill="#FFFFFF" height="34.584" rx="12.5" ry="12.5" style="stroke:#000000;stroke-width:1.0;" width="325" x="824.25" y="290.4893"/>
+        <text fill="#000000" font-family="Verdana" font-size="12" lengthAdjust="spacing" textLength="305" x="834.25" y="312.5537">Redirection automatique vers le tableau de bord</text>
+        <ellipse cx="986.75" cy="356.0732" fill="none" rx="11" ry="11" style="stroke:#000000;stroke-width:1.0;"/>
+        <ellipse cx="986.75" cy="356.0732" fill="#FFFFFF" rx="6" ry="6" style="stroke:#000000;stroke-width:1.0;"/>
+        <rect fill="#FFFFFF" height="34.584" rx="12.5" ry="12.5" style="stroke:#000000;stroke-width:1.0;" width="169" x="1169.25" y="290.4893"/>
+        <text fill="#000000" font-family="Verdana" font-size="12" lengthAdjust="spacing" textLength="149" x="1179.25" y="312.5537">Affiche la page d'accueil</text>
+        <rect fill="#FFFFFF" height="34.584" rx="12.5" ry="12.5" style="stroke:#000000;stroke-width:1.0;" width="458" x="891.25" y="387.0732"/>
+        <text fill="#000000" font-family="Verdana" font-size="12" lengthAdjust="spacing" textLength="438" x="901.25" y="409.1377">Utilisateur ouvre la page /login en cliquant sur le bouton "Connexion"</text>
+        <rect fill="#FFFFFF" height="34.584" rx="12.5" ry="12.5" style="stroke:#000000;stroke-width:1.0;" width="244" x="998.25" y="441.6572"/>
+        <text fill="#000000" font-family="Verdana" font-size="12" lengthAdjust="spacing" textLength="224" x="1008.25" y="463.7217">LoginComponent (Angular) initialisé</text>
+        <rect fill="#FFFFFF" height="34.584" rx="12.5" ry="12.5" style="stroke:#000000;stroke-width:1.0;" width="386" x="927.25" y="496.2412"/>
+        <text fill="#000000" font-family="Verdana" font-size="12" lengthAdjust="spacing" textLength="366" x="937.25" y="518.3057">Vérifie si un token existe (OAuth2Service.getStoredToken)</text>
+        <polygon fill="#FFFFFF" points="1078.75,550.8252,1161.75,550.8252,1173.75,562.8252,1161.75,574.8252,1078.75,574.8252,1066.75,562.8252,1078.75,550.8252" style="stroke:#000000;stroke-width:1.0;"/>
+        <text fill="#000000" font-family="Verdana" font-size="11" lengthAdjust="spacing" textLength="83" x="1078.75" y="567.2">Token valide ?</text>
+        <text fill="#000000" font-family="Verdana" font-size="11" lengthAdjust="spacing" textLength="19" x="1047.75" y="560.5156">Oui</text>
+        <text fill="#000000" font-family="Verdana" font-size="11" lengthAdjust="spacing" textLength="22" x="1173.75" y="560.5156">Non</text>
+        <rect fill="#FFFFFF" height="34.584" rx="12.5" ry="12.5" style="stroke:#000000;stroke-width:1.0;" width="325" x="808.75" y="584.8252"/>
+        <text fill="#000000" font-family="Verdana" font-size="12" lengthAdjust="spacing" textLength="305" x="818.75" y="606.8896">Redirection automatique vers le tableau de bord</text>
+        <ellipse cx="971.25" cy="650.4092" fill="none" rx="11" ry="11" style="stroke:#000000;stroke-width:1.0;"/>
+        <ellipse cx="971.25" cy="650.4092" fill="#FFFFFF" rx="6" ry="6" style="stroke:#000000;stroke-width:1.0;"/>
+        <rect fill="#FFFFFF" height="34.584" rx="12.5" ry="12.5" style="stroke:#000000;stroke-width:1.0;" width="231" x="1153.75" y="584.8252"/>
+        <text fill="#000000" font-family="Verdana" font-size="12" lengthAdjust="spacing" textLength="211" x="1163.75" y="606.8896">Affiche le formulaire de connexion</text>
+        <rect fill="#FFFFFF" height="34.584" rx="12.5" ry="12.5" style="stroke:#000000;stroke-width:1.0;" width="342" x="949.25" y="681.4092"/>
+        <text fill="#000000" font-family="Verdana" font-size="12" lengthAdjust="spacing" textLength="322" x="959.25" y="703.4736">Utilisateur saisit email, mot de passe, rememberMe</text>
+        <rect fill="#FFFFFF" height="34.584" rx="12.5" ry="12.5" style="stroke:#000000;stroke-width:1.0;" width="178" x="1031.25" y="735.9932"/>
+        <text fill="#000000" font-family="Verdana" font-size="12" lengthAdjust="spacing" textLength="158" x="1041.25" y="758.0576">Soumission du formulaire</text>
+        <polygon fill="#FFFFFF" points="1065.75,790.5771,1174.75,790.5771,1186.75,802.5771,1174.75,814.5771,1065.75,814.5771,1053.75,802.5771,1065.75,790.5771" style="stroke:#000000;stroke-width:1.0;"/>
+        <text fill="#000000" font-family="Verdana" font-size="11" lengthAdjust="spacing" textLength="109" x="1065.75" y="806.9519">Formulaire valide ?</text>
+        <text fill="#000000" font-family="Verdana" font-size="11" lengthAdjust="spacing" textLength="19" x="1034.75" y="800.2676">Oui</text>
+        <text fill="#000000" font-family="Verdana" font-size="11" lengthAdjust="spacing" textLength="22" x="1186.75" y="800.2676">Non</text>
+        <rect fill="#FFFFFF" height="34.584" rx="12.5" ry="12.5" style="stroke:#000000;stroke-width:1.0;" width="386" x="498" y="824.5771"/>
+        <text fill="#000000" font-family="Verdana" font-size="12" lengthAdjust="spacing" textLength="366" x="508" y="846.6416">LoginComponent appelle OAuth2Service.login(credentials)</text>
+        <rect fill="#FFFFFF" height="34.584" rx="12.5" ry="12.5" style="stroke:#000000;stroke-width:1.0;" width="540" x="421" y="879.1611"/>
+        <text fill="#000000" font-family="Verdana" font-size="12" lengthAdjust="spacing" textLength="520" x="431" y="901.2256">Prépare le corps de la requête OAuth2 (grant_type, client_id, client_secret, scope)</text>
+        <rect fill="#FFFFFF" height="34.584" rx="12.5" ry="12.5" style="stroke:#000000;stroke-width:1.0;" width="325" x="528.5" y="933.7451"/>
+        <text fill="#000000" font-family="Verdana" font-size="12" lengthAdjust="spacing" textLength="305" x="538.5" y="955.8096">Envoi HTTP POST /authorize/token via HttpClient</text>
+        <rect fill="#000000" height="6" rx="2.5" ry="2.5" style="stroke:#000000;stroke-width:1.0;" width="1382" x="6" y="988.3291"/>
+        <rect fill="#FFFFFF" height="34.584" rx="12.5" ry="12.5" style="stroke:#000000;stroke-width:1.0;" width="239" x="259.75" y="1014.3291"/>
+        <text fill="#000000" font-family="Verdana" font-size="12" lengthAdjust="spacing" textLength="219" x="269.75" y="1036.3936">CORS Filter (Spring) vérifie l'origine</text>
+        <rect fill="#FFFFFF" height="34.584" rx="12.5" ry="12.5" style="stroke:#000000;stroke-width:1.0;" width="281" x="238.75" y="1068.9131"/>
+        <text fill="#000000" font-family="Verdana" font-size="12" lengthAdjust="spacing" textLength="261" x="248.75" y="1090.9775">AuthenticationController reçoit la requête</text>
+        <rect fill="#FFFFFF" height="34.584" rx="12.5" ry="12.5" style="stroke:#000000;stroke-width:1.0;" width="275" x="241.75" y="1123.4971"/>
+        <text fill="#000000" font-family="Verdana" font-size="12" lengthAdjust="spacing" textLength="255" x="251.75" y="1145.5615">Valide les credentials et le type de grant</text>
+        <rect fill="#FFFFFF" height="34.584" rx="12.5" ry="12.5" style="stroke:#000000;stroke-width:1.0;" width="332" x="213.25" y="1193.0811"/>
+        <text fill="#000000" font-family="Verdana" font-size="12" lengthAdjust="spacing" textLength="312" x="223.25" y="1215.1455">Construit la signature du client (User-Agent, IP...)</text>
+        <rect fill="#FFFFFF" height="34.584" rx="12.5" ry="12.5" style="stroke:#000000;stroke-width:1.0;" width="250" x="254.25" y="1262.665"/>
+        <text fill="#000000" font-family="Verdana" font-size="12" lengthAdjust="spacing" textLength="230" x="264.25" y="1284.7295">Appelle OAuth2Service côté backend</text>
+        <rect fill="#FFFFFF" height="34.584" rx="12.5" ry="12.5" style="stroke:#000000;stroke-width:1.0;" width="350" x="204.25" y="1318.041"/>
+        <text fill="#000000" font-family="Verdana" font-size="12" lengthAdjust="spacing" textLength="330" x="214.25" y="1340.1055">Recherche de l'utilisateur par email (UserRepository)</text>
+        <rect fill="#FFFFFF" height="34.584" rx="12.5" ry="12.5" style="stroke:#000000;stroke-width:1.0;" width="399" x="179.75" y="1373.417"/>
+        <text fill="#000000" font-family="Verdana" font-size="12" lengthAdjust="spacing" textLength="379" x="189.75" y="1395.4814">Comparaison mot de passe via PasswordEncoder.matches()</text>
+        <polygon fill="#FFFFFF" points="317.75,1428.793,440.75,1428.793,452.75,1440.793,440.75,1452.793,317.75,1452.793,305.75,1440.793,317.75,1428.793" style="stroke:#000000;stroke-width:1.0;"/>
+        <text fill="#000000" font-family="Verdana" font-size="11" lengthAdjust="spacing" textLength="123" x="317.75" y="1445.1677">Mot de passe valide ?</text>
+        <text fill="#000000" font-family="Verdana" font-size="11" lengthAdjust="spacing" textLength="19" x="286.75" y="1438.4834">Oui</text>
+        <text fill="#000000" font-family="Verdana" font-size="11" lengthAdjust="spacing" textLength="22" x="452.75" y="1438.4834">Non</text>
+        <rect fill="#FFFFFF" height="34.584" rx="12.5" ry="12.5" style="stroke:#000000;stroke-width:1.0;" width="402" x="18" y="1462.793"/>
+        <text fill="#000000" font-family="Verdana" font-size="12" lengthAdjust="spacing" textLength="382" x="28" y="1484.8574">Génération des tokens JWT (authToken, rememberMeToken)</text>
+        <rect fill="#FFFFFF" height="34.584" rx="12.5" ry="12.5" style="stroke:#000000;stroke-width:1.0;" width="333" x="52.5" y="1517.377"/>
+        <text fill="#000000" font-family="Verdana" font-size="12" lengthAdjust="spacing" textLength="313" x="62.5" y="1539.4414">Sauvegarde de l'utilisateur (UserRepository.save)</text>
+        <rect fill="#FFFFFF" height="34.584" rx="12.5" ry="12.5" style="stroke:#000000;stroke-width:1.0;" width="235" x="101.5" y="1571.9609"/>
+        <text fill="#000000" font-family="Verdana" font-size="12" lengthAdjust="spacing" textLength="215" x="111.5" y="1594.0254">Retourne la réponse JSON 200 OK</text>
+        <rect fill="#FFFFFF" height="34.584" rx="12.5" ry="12.5" style="stroke:#000000;stroke-width:1.0;" width="199" x="440" y="1462.793"/>
+        <text fill="#000000" font-family="Verdana" font-size="12" lengthAdjust="spacing" textLength="179" x="450" y="1484.8574">Nettoyage tokens obsolètes</text>
+        <rect fill="#FFFFFF" height="34.584" rx="12.5" ry="12.5" style="stroke:#000000;stroke-width:1.0;" width="195" x="442" y="1517.377"/>
+        <text fill="#000000" font-family="Verdana" font-size="12" lengthAdjust="spacing" textLength="175" x="452" y="1539.4414">Retourne 401 Unauthorized</text>
+        <polygon fill="#FFFFFF" points="379.25,1612.5449,391.25,1624.5449,379.25,1636.5449,367.25,1624.5449,379.25,1612.5449" style="stroke:#000000;stroke-width:1.0;"/>
+        <rect fill="#FFFFFF" height="34.584" rx="12.5" ry="12.5" style="stroke:#000000;stroke-width:1.0;" width="193" x="931.75" y="1158.2891"/>
+        <text fill="#000000" font-family="Verdana" font-size="12" lengthAdjust="spacing" textLength="173" x="941.75" y="1180.3535">HttpClient reçoit la réponse</text>
+        <polygon fill="#FFFFFF" points="1003.25,1227.873,1053.25,1227.873,1065.25,1239.873,1053.25,1251.873,1003.25,1251.873,991.25,1239.873,1003.25,1227.873" style="stroke:#000000;stroke-width:1.0;"/>
+        <text fill="#000000" font-family="Verdana" font-size="11" lengthAdjust="spacing" textLength="50" x="1003.25" y="1244.2478">Succès ?</text>
+        <text fill="#000000" font-family="Verdana" font-size="11" lengthAdjust="spacing" textLength="19" x="972.25" y="1237.5635">Oui</text>
+        <text fill="#000000" font-family="Verdana" font-size="11" lengthAdjust="spacing" textLength="22" x="1065.25" y="1237.5635">Non</text>
+        <rect fill="#FFFFFF" height="34.584" rx="12.5" ry="12.5" style="stroke:#000000;stroke-width:1.0;" width="318" x="695" y="1261.873"/>
+        <text fill="#000000" font-family="Verdana" font-size="12" lengthAdjust="spacing" textLength="298" x="705" y="1283.9375">OAuth2Service stocke les tokens (localStorage)</text>
+        <rect fill="#FFFFFF" height="34.584" rx="12.5" ry="12.5" style="stroke:#000000;stroke-width:1.0;" width="233" x="737.5" y="1317.249"/>
+        <text fill="#000000" font-family="Verdana" font-size="12" lengthAdjust="spacing" textLength="213" x="747.5" y="1339.3135">Extrait les infos utilisateur du JWT</text>
+        <rect fill="#FFFFFF" height="34.584" rx="12.5" ry="12.5" style="stroke:#000000;stroke-width:1.0;" width="334" x="687" y="1372.625"/>
+        <text fill="#000000" font-family="Verdana" font-size="12" lengthAdjust="spacing" textLength="314" x="697" y="1394.6895">Met à jour les observables (isAuthenticated=true)</text>
+        <rect fill="#FFFFFF" height="34.584" rx="12.5" ry="12.5" style="stroke:#000000;stroke-width:1.0;" width="179" x="764.5" y="1428.001"/>
+        <text fill="#000000" font-family="Verdana" font-size="12" lengthAdjust="spacing" textLength="159" x="774.5" y="1450.0654">Redirige vers /dashboard</text>
+        <rect fill="#FFFFFF" height="34.584" rx="12.5" ry="12.5" style="stroke:#000000;stroke-width:1.0;" width="323" x="1041" y="1261.873"/>
+        <text fill="#000000" font-family="Verdana" font-size="12" lengthAdjust="spacing" textLength="303" x="1051" y="1283.9375">Affiche message d'erreur "Identifiants invalides"</text>
+        <polygon fill="#FFFFFF" points="1028.25,1468.585,1040.25,1480.585,1028.25,1492.585,1016.25,1480.585,1028.25,1468.585" style="stroke:#000000;stroke-width:1.0;"/>
+        <rect fill="#000000" height="6" rx="2.5" ry="2.5" style="stroke:#000000;stroke-width:1.0;" width="1382" x="6" y="1656.5449"/>
+        <rect fill="#FFFFFF" height="34.584" rx="12.5" ry="12.5" style="stroke:#000000;stroke-width:1.0;" width="283" x="1398" y="824.5771"/>
+        <text fill="#000000" font-family="Verdana" font-size="12" lengthAdjust="spacing" textLength="263" x="1408" y="846.6416">Affiche erreurs de validation du formulaire</text>
+        <polygon fill="#FFFFFF" points="1120.25,1668.5449,1132.25,1680.5449,1120.25,1692.5449,1108.25,1680.5449,1120.25,1668.5449" style="stroke:#000000;stroke-width:1.0;"/>
+        <ellipse cx="1120.25" cy="1723.5449" fill="none" rx="11" ry="11" style="stroke:#000000;stroke-width:1.0;"/>
+        <ellipse cx="1120.25" cy="1723.5449" fill="#FFFFFF" rx="6" ry="6" style="stroke:#000000;stroke-width:1.0;"/>
+        <line style="stroke:#000000;stroke-width:1.0;" x1="1120.25" x2="1120.25" y1="72.7373" y2="92.7373"/>
+        <polygon fill="#000000" points="1116.25,82.7373,1120.25,92.7373,1124.25,82.7373,1120.25,86.7373" style="stroke:#000000;stroke-width:1.0;"/>
+        <line style="stroke:#000000;stroke-width:1.0;" x1="1120.25" x2="1120.25" y1="127.3213" y2="147.3213"/>
+        <polygon fill="#000000" points="1116.25,137.3213,1120.25,147.3213,1124.25,137.3213,1120.25,141.3213" style="stroke:#000000;stroke-width:1.0;"/>
+        <line style="stroke:#000000;stroke-width:1.0;" x1="1120.25" x2="1120.25" y1="181.9053" y2="201.9053"/>
+        <polygon fill="#000000" points="1116.25,191.9053,1120.25,201.9053,1124.25,191.9053,1120.25,195.9053" style="stroke:#000000;stroke-width:1.0;"/>
+        <line style="stroke:#000000;stroke-width:1.0;" x1="986.75" x2="986.75" y1="325.0732" y2="345.0732"/>
+        <polygon fill="#000000" points="982.75,335.0732,986.75,345.0732,990.75,335.0732,986.75,339.0732" style="stroke:#000000;stroke-width:1.0;"/>
+        <line style="stroke:#000000;stroke-width:1.0;" x1="1066.75" x2="986.75" y1="268.4893" y2="268.4893"/>
+        <line style="stroke:#000000;stroke-width:1.0;" x1="986.75" x2="986.75" y1="268.4893" y2="290.4893"/>
+        <polygon fill="#000000" points="982.75,280.4893,986.75,290.4893,990.75,280.4893,986.75,284.4893" style="stroke:#000000;stroke-width:1.0;"/>
+        <line style="stroke:#000000;stroke-width:1.0;" x1="1173.75" x2="1253.75" y1="268.4893" y2="268.4893"/>
+        <line style="stroke:#000000;stroke-width:1.0;" x1="1253.75" x2="1253.75" y1="268.4893" y2="290.4893"/>
+        <polygon fill="#000000" points="1249.75,280.4893,1253.75,290.4893,1257.75,280.4893,1253.75,284.4893" style="stroke:#000000;stroke-width:1.0;"/>
+        <line style="stroke:#000000;stroke-width:1.0;" x1="1253.75" x2="1253.75" y1="325.0732" y2="372.0732"/>
+        <line style="stroke:#000000;stroke-width:1.0;" x1="1253.75" x2="1120.25" y1="372.0732" y2="372.0732"/>
+        <line style="stroke:#000000;stroke-width:1.0;" x1="1120.25" x2="1120.25" y1="372.0732" y2="387.0732"/>
+        <polygon fill="#000000" points="1116.25,377.0732,1120.25,387.0732,1124.25,377.0732,1120.25,381.0732" style="stroke:#000000;stroke-width:1.0;"/>
+        <line style="stroke:#000000;stroke-width:1.0;" x1="1120.25" x2="1120.25" y1="236.4893" y2="256.4893"/>
+        <polygon fill="#000000" points="1116.25,246.4893,1120.25,256.4893,1124.25,246.4893,1120.25,250.4893" style="stroke:#000000;stroke-width:1.0;"/>
+        <line style="stroke:#000000;stroke-width:1.0;" x1="1120.25" x2="1120.25" y1="421.6572" y2="441.6572"/>
+        <polygon fill="#000000" points="1116.25,431.6572,1120.25,441.6572,1124.25,431.6572,1120.25,435.6572" style="stroke:#000000;stroke-width:1.0;"/>
+        <line style="stroke:#000000;stroke-width:1.0;" x1="1120.25" x2="1120.25" y1="476.2412" y2="496.2412"/>
+        <polygon fill="#000000" points="1116.25,486.2412,1120.25,496.2412,1124.25,486.2412,1120.25,490.2412" style="stroke:#000000;stroke-width:1.0;"/>
+        <line style="stroke:#000000;stroke-width:1.0;" x1="971.25" x2="971.25" y1="619.4092" y2="639.4092"/>
+        <polygon fill="#000000" points="967.25,629.4092,971.25,639.4092,975.25,629.4092,971.25,633.4092" style="stroke:#000000;stroke-width:1.0;"/>
+        <line style="stroke:#000000;stroke-width:1.0;" x1="1066.75" x2="971.25" y1="562.8252" y2="562.8252"/>
+        <line style="stroke:#000000;stroke-width:1.0;" x1="971.25" x2="971.25" y1="562.8252" y2="584.8252"/>
+        <polygon fill="#000000" points="967.25,574.8252,971.25,584.8252,975.25,574.8252,971.25,578.8252" style="stroke:#000000;stroke-width:1.0;"/>
+        <line style="stroke:#000000;stroke-width:1.0;" x1="1173.75" x2="1269.25" y1="562.8252" y2="562.8252"/>
+        <line style="stroke:#000000;stroke-width:1.0;" x1="1269.25" x2="1269.25" y1="562.8252" y2="584.8252"/>
+        <polygon fill="#000000" points="1265.25,574.8252,1269.25,584.8252,1273.25,574.8252,1269.25,578.8252" style="stroke:#000000;stroke-width:1.0;"/>
+        <line style="stroke:#000000;stroke-width:1.0;" x1="1269.25" x2="1269.25" y1="619.4092" y2="666.4092"/>
+        <line style="stroke:#000000;stroke-width:1.0;" x1="1269.25" x2="1120.25" y1="666.4092" y2="666.4092"/>
+        <line style="stroke:#000000;stroke-width:1.0;" x1="1120.25" x2="1120.25" y1="666.4092" y2="681.4092"/>
+        <polygon fill="#000000" points="1116.25,671.4092,1120.25,681.4092,1124.25,671.4092,1120.25,675.4092" style="stroke:#000000;stroke-width:1.0;"/>
+        <line style="stroke:#000000;stroke-width:1.0;" x1="1120.25" x2="1120.25" y1="530.8252" y2="550.8252"/>
+        <polygon fill="#000000" points="1116.25,540.8252,1120.25,550.8252,1124.25,540.8252,1120.25,544.8252" style="stroke:#000000;stroke-width:1.0;"/>
+        <line style="stroke:#000000;stroke-width:1.0;" x1="1120.25" x2="1120.25" y1="715.9932" y2="735.9932"/>
+        <polygon fill="#000000" points="1116.25,725.9932,1120.25,735.9932,1124.25,725.9932,1120.25,729.9932" style="stroke:#000000;stroke-width:1.0;"/>
+        <line style="stroke:#000000;stroke-width:1.0;" x1="691" x2="691" y1="859.1611" y2="879.1611"/>
+        <polygon fill="#000000" points="687,869.1611,691,879.1611,695,869.1611,691,873.1611" style="stroke:#000000;stroke-width:1.0;"/>
+        <line style="stroke:#000000;stroke-width:1.0;" x1="691" x2="691" y1="913.7451" y2="933.7451"/>
+        <polygon fill="#000000" points="687,923.7451,691,933.7451,695,923.7451,691,927.7451" style="stroke:#000000;stroke-width:1.0;"/>
+        <line style="stroke:#000000;stroke-width:1.0;" x1="379.25" x2="379.25" y1="1048.9131" y2="1068.9131"/>
+        <polygon fill="#000000" points="375.25,1058.9131,379.25,1068.9131,383.25,1058.9131,379.25,1062.9131" style="stroke:#000000;stroke-width:1.0;"/>
+        <line style="stroke:#000000;stroke-width:1.0;" x1="379.25" x2="379.25" y1="1103.4971" y2="1123.4971"/>
+        <polygon fill="#000000" points="375.25,1113.4971,379.25,1123.4971,383.25,1113.4971,379.25,1117.4971" style="stroke:#000000;stroke-width:1.0;"/>
+        <line style="stroke:#000000;stroke-width:1.0;" x1="379.25" x2="379.25" y1="1158.0811" y2="1193.0811"/>
+        <polygon fill="#000000" points="375.25,1183.0811,379.25,1193.0811,383.25,1183.0811,379.25,1187.0811" style="stroke:#000000;stroke-width:1.0;"/>
+        <line style="stroke:#000000;stroke-width:1.0;" x1="379.25" x2="379.25" y1="1227.665" y2="1262.665"/>
+        <polygon fill="#000000" points="375.25,1252.665,379.25,1262.665,383.25,1252.665,379.25,1256.665" style="stroke:#000000;stroke-width:1.0;"/>
+        <line style="stroke:#000000;stroke-width:1.0;" x1="379.25" x2="379.25" y1="1297.249" y2="1318.041"/>
+        <polygon fill="#000000" points="375.25,1308.041,379.25,1318.041,383.25,1308.041,379.25,1312.041" style="stroke:#000000;stroke-width:1.0;"/>
+        <line style="stroke:#000000;stroke-width:1.0;" x1="379.25" x2="379.25" y1="1352.625" y2="1373.417"/>
+        <polygon fill="#000000" points="375.25,1363.417,379.25,1373.417,383.25,1363.417,379.25,1367.417" style="stroke:#000000;stroke-width:1.0;"/>
+        <line style="stroke:#000000;stroke-width:1.0;" x1="219" x2="219" y1="1497.377" y2="1517.377"/>
+        <polygon fill="#000000" points="215,1507.377,219,1517.377,223,1507.377,219,1511.377" style="stroke:#000000;stroke-width:1.0;"/>
+        <line style="stroke:#000000;stroke-width:1.0;" x1="219" x2="219" y1="1551.9609" y2="1571.9609"/>
+        <polygon fill="#000000" points="215,1561.9609,219,1571.9609,223,1561.9609,219,1565.9609" style="stroke:#000000;stroke-width:1.0;"/>
+        <line style="stroke:#000000;stroke-width:1.0;" x1="539.5" x2="539.5" y1="1497.377" y2="1517.377"/>
+        <polygon fill="#000000" points="535.5,1507.377,539.5,1517.377,543.5,1507.377,539.5,1511.377" style="stroke:#000000;stroke-width:1.0;"/>
+        <line style="stroke:#000000;stroke-width:1.0;" x1="305.75" x2="219" y1="1440.793" y2="1440.793"/>
+        <line style="stroke:#000000;stroke-width:1.0;" x1="219" x2="219" y1="1440.793" y2="1462.793"/>
+        <polygon fill="#000000" points="215,1452.793,219,1462.793,223,1452.793,219,1456.793" style="stroke:#000000;stroke-width:1.0;"/>
+        <line style="stroke:#000000;stroke-width:1.0;" x1="452.75" x2="539.5" y1="1440.793" y2="1440.793"/>
+        <line style="stroke:#000000;stroke-width:1.0;" x1="539.5" x2="539.5" y1="1440.793" y2="1462.793"/>
+        <polygon fill="#000000" points="535.5,1452.793,539.5,1462.793,543.5,1452.793,539.5,1456.793" style="stroke:#000000;stroke-width:1.0;"/>
+        <line style="stroke:#000000;stroke-width:1.0;" x1="219" x2="219" y1="1606.5449" y2="1624.5449"/>
+        <line style="stroke:#000000;stroke-width:1.0;" x1="219" x2="367.25" y1="1624.5449" y2="1624.5449"/>
+        <polygon fill="#000000" points="357.25,1620.5449,367.25,1624.5449,357.25,1628.5449,361.25,1624.5449" style="stroke:#000000;stroke-width:1.0;"/>
+        <line style="stroke:#000000;stroke-width:1.0;" x1="539.5" x2="539.5" y1="1551.9609" y2="1624.5449"/>
+        <line style="stroke:#000000;stroke-width:1.0;" x1="539.5" x2="391.25" y1="1624.5449" y2="1624.5449"/>
+        <polygon fill="#000000" points="401.25,1620.5449,391.25,1624.5449,401.25,1628.5449,397.25,1624.5449" style="stroke:#000000;stroke-width:1.0;"/>
+        <line style="stroke:#000000;stroke-width:1.0;" x1="379.25" x2="379.25" y1="1408.001" y2="1428.793"/>
+        <polygon fill="#000000" points="375.25,1418.793,379.25,1428.793,383.25,1418.793,379.25,1422.793" style="stroke:#000000;stroke-width:1.0;"/>
+        <line style="stroke:#000000;stroke-width:1.0;" x1="854" x2="854" y1="1296.457" y2="1317.249"/>
+        <polygon fill="#000000" points="850,1307.249,854,1317.249,858,1307.249,854,1311.249" style="stroke:#000000;stroke-width:1.0;"/>
+        <line style="stroke:#000000;stroke-width:1.0;" x1="854" x2="854" y1="1351.833" y2="1372.625"/>
+        <polygon fill="#000000" points="850,1362.625,854,1372.625,858,1362.625,854,1366.625" style="stroke:#000000;stroke-width:1.0;"/>
+        <line style="stroke:#000000;stroke-width:1.0;" x1="854" x2="854" y1="1407.209" y2="1428.001"/>
+        <polygon fill="#000000" points="850,1418.001,854,1428.001,858,1418.001,854,1422.001" style="stroke:#000000;stroke-width:1.0;"/>
+        <line style="stroke:#000000;stroke-width:1.0;" x1="991.25" x2="854" y1="1239.873" y2="1239.873"/>
+        <line style="stroke:#000000;stroke-width:1.0;" x1="854" x2="854" y1="1239.873" y2="1261.873"/>
+        <polygon fill="#000000" points="850,1251.873,854,1261.873,858,1251.873,854,1255.873" style="stroke:#000000;stroke-width:1.0;"/>
+        <line style="stroke:#000000;stroke-width:1.0;" x1="1065.25" x2="1202.5" y1="1239.873" y2="1239.873"/>
+        <line style="stroke:#000000;stroke-width:1.0;" x1="1202.5" x2="1202.5" y1="1239.873" y2="1261.873"/>
+        <polygon fill="#000000" points="1198.5,1251.873,1202.5,1261.873,1206.5,1251.873,1202.5,1255.873" style="stroke:#000000;stroke-width:1.0;"/>
+        <line style="stroke:#000000;stroke-width:1.0;" x1="854" x2="854" y1="1462.585" y2="1480.585"/>
+        <line style="stroke:#000000;stroke-width:1.0;" x1="854" x2="1016.25" y1="1480.585" y2="1480.585"/>
+        <polygon fill="#000000" points="1006.25,1476.585,1016.25,1480.585,1006.25,1484.585,1010.25,1480.585" style="stroke:#000000;stroke-width:1.0;"/>
+        <line style="stroke:#000000;stroke-width:1.0;" x1="1202.5" x2="1202.5" y1="1296.457" y2="1480.585"/>
+        <line style="stroke:#000000;stroke-width:1.0;" x1="1202.5" x2="1040.25" y1="1480.585" y2="1480.585"/>
+        <polygon fill="#000000" points="1050.25,1476.585,1040.25,1480.585,1050.25,1484.585,1046.25,1480.585" style="stroke:#000000;stroke-width:1.0;"/>
+        <line style="stroke:#000000;stroke-width:1.0;" x1="1028.25" x2="1028.25" y1="1192.873" y2="1227.873"/>
+        <polygon fill="#000000" points="1024.25,1217.873,1028.25,1227.873,1032.25,1217.873,1028.25,1221.873" style="stroke:#000000;stroke-width:1.0;"/>
+        <line style="stroke:#000000;stroke-width:1.0;" x1="379.25" x2="379.25" y1="994.3291" y2="1014.3291"/>
+        <polygon fill="#000000" points="375.25,1004.3291,379.25,1014.3291,383.25,1004.3291,379.25,1008.3291" style="stroke:#000000;stroke-width:1.0;"/>
+        <line style="stroke:#000000;stroke-width:1.0;" x1="1028.25" x2="1028.25" y1="994.3291" y2="1158.2891"/>
+        <polygon fill="#000000" points="1024.25,1148.2891,1028.25,1158.2891,1032.25,1148.2891,1028.25,1152.2891" style="stroke:#000000;stroke-width:1.0;"/>
+        <line style="stroke:#000000;stroke-width:1.0;" x1="379.25" x2="379.25" y1="1636.5449" y2="1656.5449"/>
+        <polygon fill="#000000" points="375.25,1646.5449,379.25,1656.5449,383.25,1646.5449,379.25,1650.5449" style="stroke:#000000;stroke-width:1.0;"/>
+        <line style="stroke:#000000;stroke-width:1.0;" x1="1028.25" x2="1028.25" y1="1492.585" y2="1656.5449"/>
+        <polygon fill="#000000" points="1024.25,1646.5449,1028.25,1656.5449,1032.25,1646.5449,1028.25,1650.5449" style="stroke:#000000;stroke-width:1.0;"/>
+        <line style="stroke:#000000;stroke-width:1.0;" x1="691" x2="691" y1="968.3291" y2="988.3291"/>
+        <polygon fill="#000000" points="687,978.3291,691,988.3291,695,978.3291,691,982.3291" style="stroke:#000000;stroke-width:1.0;"/>
+        <line style="stroke:#000000;stroke-width:1.0;" x1="1053.75" x2="691" y1="802.5771" y2="802.5771"/>
+        <line style="stroke:#000000;stroke-width:1.0;" x1="691" x2="691" y1="802.5771" y2="824.5771"/>
+        <polygon fill="#000000" points="687,814.5771,691,824.5771,695,814.5771,691,818.5771" style="stroke:#000000;stroke-width:1.0;"/>
+        <line style="stroke:#000000;stroke-width:1.0;" x1="1186.75" x2="1539.5" y1="802.5771" y2="802.5771"/>
+        <line style="stroke:#000000;stroke-width:1.0;" x1="1539.5" x2="1539.5" y1="802.5771" y2="824.5771"/>
+        <polygon fill="#000000" points="1535.5,814.5771,1539.5,824.5771,1543.5,814.5771,1539.5,818.5771" style="stroke:#000000;stroke-width:1.0;"/>
+        <line style="stroke:#000000;stroke-width:1.0;" x1="691" x2="691" y1="1662.5449" y2="1680.5449"/>
+        <line style="stroke:#000000;stroke-width:1.0;" x1="691" x2="1108.25" y1="1680.5449" y2="1680.5449"/>
+        <polygon fill="#000000" points="1098.25,1676.5449,1108.25,1680.5449,1098.25,1684.5449,1102.25,1680.5449" style="stroke:#000000;stroke-width:1.0;"/>
+        <line style="stroke:#000000;stroke-width:1.0;" x1="1539.5" x2="1539.5" y1="859.1611" y2="1680.5449"/>
+        <line style="stroke:#000000;stroke-width:1.0;" x1="1539.5" x2="1132.25" y1="1680.5449" y2="1680.5449"/>
+        <polygon fill="#000000" points="1142.25,1676.5449,1132.25,1680.5449,1142.25,1684.5449,1138.25,1680.5449" style="stroke:#000000;stroke-width:1.0;"/>
+        <line style="stroke:#000000;stroke-width:1.0;" x1="1120.25" x2="1120.25" y1="770.5771" y2="790.5771"/>
+        <polygon fill="#000000" points="1116.25,780.5771,1120.25,790.5771,1124.25,780.5771,1120.25,784.5771" style="stroke:#000000;stroke-width:1.0;"/>
+        <line style="stroke:#000000;stroke-width:1.0;" x1="1120.25" x2="1120.25" y1="1692.5449" y2="1712.5449"/>
+        <polygon fill="#000000" points="1116.25,1702.5449,1120.25,1712.5449,1124.25,1702.5449,1120.25,1706.5449" style="stroke:#000000;stroke-width:1.0;"/>
+        <!--SRC=[tLN1Sjis4BtpAxQ-c9fn93VJapMTZiUrcwIrfH7bv9Y1o1M51WGOOC7QFUKZyW6zDUgvVy0_wPTq0KeofP7JUtNGO2Jistrltow-eHLM2BKIKYSaII7yA4LfHSM_5gSY9zb8QjVmpwVFa27aHclC2IsaDye_GD6kIKYbslKWIHm9IqboSKzIIIS8lGNZ6ukW1DIYx11pZrB1Q9nS_29q8NKvvN-kJ5KRZPeWlTIbLy8EG6f9KZ1Ik-RBRzkrbKk9u2Hu3MG-e0Pya8uGqicbfzNB36qZSnoMI1aPYyKyN1gC4xc4D9wXORm2uOS1C77DWLuE4k3FnGmBQPcQD1g49rC9aXyzGeFM0Sj2Og5GUE3eXR75E4OvCdM2od49TqPla2wNIvclZf0U9yY4bryJQAHCAPcNXbnnUi62EBwaGb8kIiF9LUZ00rTv4XGCj_-NsY4iZQsO30E7k7nBUolYlefEI2S9i68pda5bACJKmZay0yiEhnPeRv6bo8olf7EXqiBtSeoJoFJcAUdpT0zK5tMDYWlU5p8sCirPIRx3hN23ZlR5rBRhMjZ8CJUsTg5Kxh_5ZxxzYxOuaF8KQdfFZpLpO3Smp7jPx8uE6PlEmEMcnYtsjMwCX5Vp-HIcasmE8-x6obZvEuwwfZTIm2kY-Yg2T57nYvNu40yHvseoo-16gZZeMMrvIWVGR5saJXcIsU7uAIBK78Zc8hY0JKhMi2YMQRL_6cvDZs4lx6qdia87FQa0ATg6gGTneX2z84PtP7q7wcIf1VdW4h_H1j9xX_R5PSddCtWz7Gw7Wtwfn_e5UVjts7CBaRDEHU_w3DcGDfWo57hgUwxZDdQMwpBEi3RiGcCV1tlLLdoF_ScMwnipzcBAfzzu9AvrRWgqGvuSpkJI7a2mvUrUt7F6tANygLrhRbPi1SUvRk8Tl7atXpHO8WvqVpAsqxu7amdVO2biSOJw0U6X4mqUni-GZBUwSpURdjk6y2QRtC7BytEO_Fnq_M0Dx13kaCWyXiMuOM0MpgZs2w5xBjTtvz_2lTxvljV9RczipGwY36_U3k1fAlOikobxlnsPp_FsY_jQ2_RDnRkERHLjlY6IAfCB5LOjipiKxlg1s30KxqkzD0xwqhFFkP478RSyCkqVyAk9hqKKYdE7lSkvfEkD9nRVy_0SQHRlS5bkblQe46wrCC8M_zsaxSwkqBdklKDhGw4dh-D0BoMFRo3I6TUT76i9dxeTzDoBq676PHbnDkRUt-6Rfo4yBVy2]-->
+    </g>
+</svg>

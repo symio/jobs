@@ -1,0 +1,61 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="0EE0064C-2382-0CD5-C720-3DCB5278EE00" name="ROLES">
+<createdBy>symio</createdBy>
+<createdTime>2025-10-10 13:00:25 UTC</createdTime>
+<generatorID>B8CDA581-AFF8-CA4A-E295-0923B4901F0D</generatorID>
+<ownerDesignName>ConceptionDataModeler_MVP</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="id_role" id="4A7C6FD7-C98A-FD7B-9781-DB6506F60B92">
+<createdBy>symio</createdBy>
+<createdTime>2025-10-10 13:00:25 UTC</createdTime>
+<generatorID>DC76FE10-AE26-EDB3-158C-DE035C5F9F0D</generatorID>
+<ownerDesignName>ConceptionDataModeler_MVP</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="role" id="288D23D0-85C2-8DE2-7411-45613BE83941">
+<createdBy>symio</createdBy>
+<createdTime>2025-10-10 13:00:25 UTC</createdTime>
+<generatorID>2741AB52-C853-0A4F-C572-FDD4B4A3BF50</generatorID>
+<ownerDesignName>ConceptionDataModeler_MVP</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>A3A3C77D-0366-9768-FF89-1C25E56881C8</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="is_admin" id="D372EC1F-2F1E-931C-916E-DC177AD1BD35">
+<createdBy>symio</createdBy>
+<createdTime>2025-10-10 13:00:25 UTC</createdTime>
+<generatorID>224BA9AA-7535-CB97-A617-6AC61BC1FE87</generatorID>
+<ownerDesignName>ConceptionDataModeler_MVP</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT006</logicalDatatype>
+<dataTypeSize>1</dataTypeSize>
+<ownDataTypeParameters>1,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="AA885353-643B-7E3B-2F1C-CCEC21A92F08" name="ROLES_PK">
+<createdBy>symio</createdBy>
+<createdTime>2025-10-10 13:00:25 UTC</createdTime>
+<generatorID>EEFA5C10-F5F4-9EAF-2ACB-7915DA4BDEAE</generatorID>
+<ownerDesignName>ConceptionDataModeler_MVP</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="4A7C6FD7-C98A-FD7B-9781-DB6506F60B92"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

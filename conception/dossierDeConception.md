@@ -29,11 +29,11 @@
 
 ![Use Cases Jobs](UML/exports/usecaseDiagram.svg)
 
-### Diagramme UML de Classes du domaine :
+### Diagramme UML de Classes :
 
 ![Domain CLasses Jobs](UML/exports/classes_classDiagram.svg)
 
-### Diagramme UML de Classes des entités :
+### Diagramme UML de Classes de conception :
 
 ![Domain CLasses Jobs](UML/exports/entities_ClassDiagram.svg)
 
@@ -41,6 +41,12 @@
 
 ![Logic datas model Jobs](UML/exports/logicModelMVP.png)
 
-## Diagramme UML de séquence Action "Login" :
+## Diagramme UML d'activité :
+### Action « Se connecter »
+
+![Logic datas model Jobs](UML/exports/login_activityDiagram.svg)
+
+## Diagramme UML de séquence :
+### Action « Se connecter »
 
 ![Logic datas model Jobs](UML/exports/login_sequenceDiagram.svg)

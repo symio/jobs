@@ -1,0 +1,213 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="32B059EF-4493-D5ED-6E85-E97088C74721" name="USERS">
+<createdBy>symio</createdBy>
+<createdTime>2025-08-26 14:00:44 UTC</createdTime>
+<ownerDesignName>ConceptionDataModeler_MVP</ownerDesignName>
+<engineerTo>
+<item key="307008C4-A6F5-D679-7A89-1240AF32BB15" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="id_user" id="21A16834-42B9-7B8B-EC2F-40A8D3074B3E">
+<createdBy>symio</createdBy>
+<createdTime>2025-08-26 14:00:52 UTC</createdTime>
+<ownerDesignName>ConceptionDataModeler_MVP</ownerDesignName>
+<engineerTo>
+<item key="307008C4-A6F5-D679-7A89-1240AF32BB15" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="name" id="1AF5B83F-2CB4-3145-89D2-25605F8AF4C0">
+<createdBy>symio</createdBy>
+<createdTime>2025-08-26 14:09:55 UTC</createdTime>
+<ownerDesignName>ConceptionDataModeler_MVP</ownerDesignName>
+<engineerTo>
+<item key="307008C4-A6F5-D679-7A89-1240AF32BB15" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="firstname" id="2444FE24-D8F8-79EA-1B3F-B4AF99089B2A">
+<createdBy>symio</createdBy>
+<createdTime>2025-08-26 14:10:14 UTC</createdTime>
+<ownerDesignName>ConceptionDataModeler_MVP</ownerDesignName>
+<engineerTo>
+<item key="307008C4-A6F5-D679-7A89-1240AF32BB15" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="email" id="723B757A-0122-A6BD-34E5-41AA1C5ECF23">
+<createdBy>symio</createdBy>
+<createdTime>2025-08-26 14:10:31 UTC</createdTime>
+<ownerDesignName>ConceptionDataModeler_MVP</ownerDesignName>
+<engineerTo>
+<item key="307008C4-A6F5-D679-7A89-1240AF32BB15" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="gdproptin" id="6BA5C86A-346A-5249-CF28-66AA09F37743">
+<createdBy>symio</createdBy>
+<createdTime>2025-09-18 07:19:12 UTC</createdTime>
+<ownerDesignName>ConceptionDataModeler_MVP</ownerDesignName>
+<engineerTo>
+<item key="307008C4-A6F5-D679-7A89-1240AF32BB15" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT006</logicalDatatype>
+<dataTypeSize>1</dataTypeSize>
+<ownDataTypeParameters>1,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="created_at" id="2B9BBFE1-C13F-9E55-4CAA-D5260BF09948">
+<createdBy>symio</createdBy>
+<createdTime>2025-08-26 14:17:06 UTC</createdTime>
+<ownerDesignName>ConceptionDataModeler_MVP</ownerDesignName>
+<engineerTo>
+<item key="307008C4-A6F5-D679-7A89-1240AF32BB15" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT008</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="updated_at" id="967BEDB0-F83E-3774-52DD-D27FAC99C4B9">
+<createdBy>symio</createdBy>
+<createdTime>2025-08-26 14:17:23 UTC</createdTime>
+<ownerDesignName>ConceptionDataModeler_MVP</ownerDesignName>
+<engineerTo>
+<item key="307008C4-A6F5-D679-7A89-1240AF32BB15" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT008</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="password" id="2DADE560-8523-7FFB-8879-74003929D6B7">
+<createdBy>symio</createdBy>
+<createdTime>2025-08-26 14:11:18 UTC</createdTime>
+<ownerDesignName>ConceptionDataModeler_MVP</ownerDesignName>
+<engineerTo>
+<item key="307008C4-A6F5-D679-7A89-1240AF32BB15" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>72 BYTE</dataTypeSize>
+<ownDataTypeParameters>72 BYTE,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="auth_token" id="B2AB5008-BE1B-295D-7CED-17A560060EDF">
+<createdBy>symio</createdBy>
+<createdTime>2025-09-18 07:14:17 UTC</createdTime>
+<ownerDesignName>ConceptionDataModeler_MVP</ownerDesignName>
+<engineerTo>
+<item key="307008C4-A6F5-D679-7A89-1240AF32BB15" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>A3A3C77D-0366-9768-FF89-1C25E56881C8</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="remember_me_token" id="73638E6C-1D70-30E1-19F2-124B7A250498">
+<createdBy>symio</createdBy>
+<createdTime>2025-09-18 07:14:41 UTC</createdTime>
+<ownerDesignName>ConceptionDataModeler_MVP</ownerDesignName>
+<engineerTo>
+<item key="307008C4-A6F5-D679-7A89-1240AF32BB15" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>A3A3C77D-0366-9768-FF89-1C25E56881C8</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="email_verification_key" id="D0264985-98F2-57AB-7A1C-EF72F387767C">
+<createdBy>symio</createdBy>
+<createdTime>2025-09-18 07:17:22 UTC</createdTime>
+<ownerDesignName>ConceptionDataModeler_MVP</ownerDesignName>
+<engineerTo>
+<item key="307008C4-A6F5-D679-7A89-1240AF32BB15" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>A3A3C77D-0366-9768-FF89-1C25E56881C8</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="enabled" id="C7C1FBD3-C027-EEA5-5B8E-C4F4C148CBF0">
+<createdBy>symio</createdBy>
+<createdTime>2025-09-18 07:18:54 UTC</createdTime>
+<ownerDesignName>ConceptionDataModeler_MVP</ownerDesignName>
+<engineerTo>
+<item key="307008C4-A6F5-D679-7A89-1240AF32BB15" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT006</logicalDatatype>
+<dataTypeSize>1</dataTypeSize>
+<ownDataTypeParameters>1,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="id_role" id="C6AC2DEA-965F-2458-9C82-BC00511EAC1E">
+<createdBy>symio</createdBy>
+<createdTime>2025-09-18 07:22:56 UTC</createdTime>
+<generatorID>48E539F1-ACD4-E1B8-3450-B6D7F492F547</generatorID>
+<ownerDesignName>ConceptionDataModeler_MVP</ownerDesignName>
+<engineerTo>
+<item key="307008C4-A6F5-D679-7A89-1240AF32BB15" value="true"/>
+</engineerTo>
+<referedAttribute>DC76FE10-AE26-EDB3-158C-DE035C5F9F0D</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="08DD9048-7345-6176-364C-C0BB1C2FE1D7" name="USER PK">
+<createdBy>symio</createdBy>
+<createdTime>2025-08-26 14:01:07 UTC</createdTime>
+<ownerDesignName>ConceptionDataModeler_MVP</ownerDesignName>
+<shouldEngineer>false</shouldEngineer>
+<engineerTo>
+<item key="307008C4-A6F5-D679-7A89-1240AF32BB15" value="false"/>
+</engineerTo>
+<pk>true</pk>
+<usedAttributes>
+<attributeRef>21A16834-42B9-7B8B-EC2F-40A8D3074B3E</attributeRef>
+</usedAttributes>
+</identifier>
+<identifier id="5FED526C-B404-D392-B6C6-72E5F69505D9" name="email_unique">
+<createdBy>symio</createdBy>
+<createdTime>2025-09-18 07:17:53 UTC</createdTime>
+<ownerDesignName>ConceptionDataModeler_MVP</ownerDesignName>
+<shouldEngineer>false</shouldEngineer>
+<engineerTo>
+<item key="307008C4-A6F5-D679-7A89-1240AF32BB15" value="false"/>
+</engineerTo>
+<newElementsIDs>723B757A-0122-A6BD-34E5-41AA1C5ECF23</newElementsIDs>
+<usedAttributes>
+<attributeRef>723B757A-0122-A6BD-34E5-41AA1C5ECF23</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>

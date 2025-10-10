@@ -1,0 +1,7 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<BusinessInfoDesign class="oracle.dbtools.crest.model.businessinfo.BusinessInfoDesign" name="Business Information" id="B5524241-F752-7137-FB2A-5F7991D9DD3C">
+<createdBy>symio</createdBy>
+<createdTime>2025-08-26 13:53:20 UTC</createdTime>
+<ownerDesignName>conceptionOracleDataModeler</ownerDesignName>
+<shouldBeOpen>false</shouldBeOpen>
+</BusinessInfoDesign>

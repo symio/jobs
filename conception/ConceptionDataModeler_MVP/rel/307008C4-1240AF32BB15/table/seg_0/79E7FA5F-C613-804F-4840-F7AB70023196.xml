@@ -1,0 +1,98 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="79E7FA5F-C613-804F-4840-F7AB70023196" name="JOBS_HAS_STATUS">
+<createdBy>symio</createdBy>
+<createdTime>2025-10-10 13:00:25 UTC</createdTime>
+<generatorID>C60FFE97-8B01-D526-952F-5C840DDC0FE4</generatorID>
+<ownerDesignName>ConceptionDataModeler_MVP</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="id_jhs" id="FDD41E57-5C47-FE22-B199-1B583E2F6AD8">
+<createdBy>symio</createdBy>
+<createdTime>2025-10-10 13:00:25 UTC</createdTime>
+<generatorID>165DD32E-A5DD-00FC-8381-0B8D7F136CC3</generatorID>
+<ownerDesignName>ConceptionDataModeler_MVP</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="applied_at" id="E61FAE13-5409-FA3A-5738-9AA0B31F638C">
+<createdBy>symio</createdBy>
+<createdTime>2025-10-10 13:00:25 UTC</createdTime>
+<generatorID>B88E1C58-51DE-C5BF-1A41-AC8ED59FCD2E</generatorID>
+<ownerDesignName>ConceptionDataModeler_MVP</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT008</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="offer_status" id="7CB89384-3B76-6282-5E50-CFAB637D9D83">
+<createdBy>symio</createdBy>
+<createdTime>2025-10-10 13:00:25 UTC</createdTime>
+<generatorID>F800613F-3A21-1FE6-15D3-39F756E06DF8</generatorID>
+<ownerDesignName>ConceptionDataModeler_MVP</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<use>0</use>
+<logicalDatatype>A3A3C77D-0366-9768-FF89-1C25E56881C8</logicalDatatype>
+<domain>CCB179B4-6EC9-7128-BD68-B5C7BE7E906F</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="job_status" id="49D46B19-CF54-49A0-414D-3D28F879E661">
+<createdBy>symio</createdBy>
+<createdTime>2025-10-10 13:00:25 UTC</createdTime>
+<generatorID>C152BE1F-27DE-1B5D-840B-69E5CA3FAE6C</generatorID>
+<ownerDesignName>ConceptionDataModeler_MVP</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<use>0</use>
+<logicalDatatype>A3A3C77D-0366-9768-FF89-1C25E56881C8</logicalDatatype>
+<domain>B270F4D4-A289-5E72-DF30-5B7C3E9C5AB3</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="JOBS_id_job" id="418798AF-A58F-B261-8E75-C5105486851D">
+<createdBy>symio</createdBy>
+<createdTime>2025-10-10 13:00:25 UTC</createdTime>
+<generatorID>5B727991-DD58-B7ED-4248-FAA098D8251F</generatorID>
+<ownerDesignName>ConceptionDataModeler_MVP</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="CD3C95C7-621E-2756-9C8D-98A230EC9A6E" referredColumn="EA176E20-8EE2-2D8C-469A-BC838F872E8B"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="680E8F14-1081-BB38-345C-9BCFECF56FCC" name="JOBS_HAS_STATUS_PK">
+<createdBy>symio</createdBy>
+<createdTime>2025-10-10 13:00:25 UTC</createdTime>
+<generatorID>AC38645D-8FAB-E5F8-D14F-E4B2F03C49DF</generatorID>
+<ownerDesignName>ConceptionDataModeler_MVP</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="FDD41E57-5C47-FE22-B199-1B583E2F6AD8"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="B3E995C0-E952-35B3-39FB-B9471A85B57D" name="JOBS_HAS_STATUS_JOBS_FK">
+<createdBy>symio</createdBy>
+<createdTime>2025-10-10 13:00:25 UTC</createdTime>
+<generatorID>5ADC4906-5C7A-9D42-5CF0-A43FD1762AC2</generatorID>
+<ownerDesignName>ConceptionDataModeler_MVP</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="418798AF-A58F-B261-8E75-C5105486851D"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

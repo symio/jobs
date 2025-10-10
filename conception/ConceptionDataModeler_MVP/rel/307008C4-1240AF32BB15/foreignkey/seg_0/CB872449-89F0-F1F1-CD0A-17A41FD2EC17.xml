@@ -1,0 +1,17 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<FKIndexAssociation class="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" directorySegmentName="seg_0" id="CB872449-89F0-F1F1-CD0A-17A41FD2EC17" containerWithKeyObject="FD4E641B-9250-8BE5-101D-85DA6684779B" localFKIndex="9E9FCD5B-EA0E-28FD-ECCA-327C05011DD2" name="USERS_ROLES_FK">
+<createdBy>symio</createdBy>
+<createdTime>2025-10-10 13:00:25 UTC</createdTime>
+<generatorID>48E539F1-ACD4-E1B8-3450-B6D7F492F547</generatorID>
+<ownerDesignName>ConceptionDataModeler_MVP</ownerDesignName>
+<referredTableLongName>ROLES</referredTableLongName>
+<deleteRule>NO ACTION</deleteRule>
+<referredTableID>0EE0064C-2382-0CD5-C720-3DCB5278EE00</referredTableID>
+<keyObject>AA885353-643B-7E3B-2F1C-CCEC21A92F08</keyObject>
+<referredKeyID>AA885353-643B-7E3B-2F1C-CCEC21A92F08</referredKeyID>
+<mandatory>true</mandatory>
+<refColNames>id_role</refColNames>
+<transferable>true</transferable>
+<rely>false</rely>
+<columnDependencyConstraintGenerateInDDL>true</columnDependencyConstraintGenerateInDDL>
+</FKIndexAssociation>

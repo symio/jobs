@@ -1,0 +1,19 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Relation class="oracle.dbtools.crest.model.design.logical.Relation" name="Relation_4" directorySegmentName="seg_0" id="5ADC4906-5C7A-9D42-5CF0-A43FD1762AC2">
+<createdBy>symio</createdBy>
+<createdTime>2025-10-10 12:59:46 UTC</createdTime>
+<ownerDesignName>ConceptionDataModeler_MVP</ownerDesignName>
+<engineerTo>
+<item key="307008C4-A6F5-D679-7A89-1240AF32BB15" value="true"/>
+</engineerTo>
+<sourcePk>EBABA036-3469-D2EF-1F0C-91C6C6A82A09</sourcePk>
+<identifying>false</identifying>
+<optionalSource>true</optionalSource>
+<optionalTarget>false</optionalTarget>
+<sourceCardinality>1</sourceCardinality>
+<sourceEntity>EAD29362-47BF-59C7-707D-335E578E1831</sourceEntity>
+<targetCardinalityString>*</targetCardinalityString>
+<targetEntity>C60FFE97-8B01-D526-952F-5C840DDC0FE4</targetEntity>
+<transferable>true</transferable>
+<deleteRule>NO ACTION</deleteRule>
+</Relation>

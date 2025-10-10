@@ -1,0 +1,66 @@
+@startuml
+!theme plain
+title Diagramme d'activité — Se connecter (Flux détaillé)
+
+start
+
+:Utilisateur ouvre la page d'accueil /;
+:LandingPageComponent (Angular) initialisé;
+:Vérifie si un token existe (OAuth2Service.getStoredToken);
+if (Token valide ?) then (Oui)
+    :Redirection automatique vers le tableau de bord;
+    stop
+else (Non)
+    :Affiche la page d'accueil;
+endif
+:Utilisateur ouvre la page /login en cliquant sur le bouton "Connexion";
+:LoginComponent (Angular) initialisé;
+:Vérifie si un token existe (OAuth2Service.getStoredToken);
+if (Token valide ?) then (Oui)
+    :Redirection automatique vers le tableau de bord;
+    stop
+else (Non)
+    :Affiche le formulaire de connexion;
+endif
+
+:Utilisateur saisit email, mot de passe, rememberMe;
+:Soumission du formulaire;
+
+if (Formulaire valide ?) then (Oui)
+    :LoginComponent appelle OAuth2Service.login(credentials);
+    :Prépare le corps de la requête OAuth2 (grant_type, client_id, client_secret, scope);
+    :Envoi HTTP POST /authorize/token via HttpClient;
+    
+    fork
+        :CORS Filter (Spring) vérifie l'origine;
+        :AuthenticationController reçoit la requête;
+        :Valide les credentials et le type de grant;
+        :Construit la signature du client (User-Agent, IP...);
+        :Appelle OAuth2Service côté backend;
+        :Recherche de l'utilisateur par email (UserRepository);
+        :Comparaison mot de passe via PasswordEncoder.matches();
+        if (Mot de passe valide ?) then (Oui)
+            :Génération des tokens JWT (authToken, rememberMeToken);
+            :Sauvegarde de l'utilisateur (UserRepository.save);
+            :Retourne la réponse JSON 200 OK;
+        else (Non)
+            :Nettoyage tokens obsolètes;
+            :Retourne 401 Unauthorized;
+        endif
+    fork again
+        :HttpClient reçoit la réponse;
+        if (Succès ?) then (Oui)
+            :OAuth2Service stocke les tokens (localStorage);
+            :Extrait les infos utilisateur du JWT;
+            :Met à jour les observables (isAuthenticated=true);
+            :Redirige vers /dashboard;
+        else (Non)
+            :Affiche message d'erreur "Identifiants invalides";
+        endif
+    end fork
+else (Non)
+    :Affiche erreurs de validation du formulaire;
+endif
+
+stop
+@enduml

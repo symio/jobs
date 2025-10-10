@@ -1,0 +1,195 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="B7DDC782-848C-07A6-75A0-D31989EAA3C4" name="JOBS">
+<createdBy>symio</createdBy>
+<createdTime>2025-10-10 13:00:25 UTC</createdTime>
+<generatorID>EAD29362-47BF-59C7-707D-335E578E1831</generatorID>
+<ownerDesignName>ConceptionDataModeler_MVP</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="city" id="6A1A185C-C664-D8B8-205E-0D5EC540251F">
+<createdBy>symio</createdBy>
+<createdTime>2025-10-10 13:00:25 UTC</createdTime>
+<generatorID>BB0D07C1-0543-8886-0D86-6D05E121EC0D</generatorID>
+<ownerDesignName>ConceptionDataModeler_MVP</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="compagny" id="C5318F9B-D615-1E90-6F6B-1EE2CA78AD4C">
+<createdBy>symio</createdBy>
+<createdTime>2025-10-10 13:00:25 UTC</createdTime>
+<generatorID>F2ADA8C0-AC29-4242-AF9A-8A4C8FA05C64</generatorID>
+<ownerDesignName>ConceptionDataModeler_MVP</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>50</dataTypeSize>
+<ownDataTypeParameters>50,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="contract" id="AD6EF3D8-5AFB-116A-9F3A-E2AE62227222">
+<createdBy>symio</createdBy>
+<createdTime>2025-10-10 13:00:25 UTC</createdTime>
+<generatorID>E761BEF1-805A-2C27-3E97-2E28CA8AEC53</generatorID>
+<ownerDesignName>ConceptionDataModeler_MVP</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<use>0</use>
+<logicalDatatype>A3A3C77D-0366-9768-FF89-1C25E56881C8</logicalDatatype>
+<domain>AD45FD36-3F93-86D4-59DD-5BDBB5F27587</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="created_at" id="D14FA69B-4CB8-84AC-5A8F-5BC8D0AEFCCE">
+<createdBy>symio</createdBy>
+<createdTime>2025-10-10 13:00:25 UTC</createdTime>
+<generatorID>0F234EC9-925D-2171-6F28-101FC5D6BE46</generatorID>
+<ownerDesignName>ConceptionDataModeler_MVP</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT008</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="description" id="3D349ED1-B510-4993-9E59-1925EA7E387A">
+<createdBy>symio</createdBy>
+<createdTime>2025-10-10 13:00:25 UTC</createdTime>
+<generatorID>149E4C00-858D-F72B-F262-E92EAC0D0EEE</generatorID>
+<ownerDesignName>ConceptionDataModeler_MVP</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT040</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="from_officialdom" id="5B105307-42F8-AC2A-8211-95017DCD2C47">
+<createdBy>symio</createdBy>
+<createdTime>2025-10-10 13:00:25 UTC</createdTime>
+<generatorID>7928AE0F-2F6F-9B7A-B5E3-0FEA9B85105F</generatorID>
+<ownerDesignName>ConceptionDataModeler_MVP</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT006</logicalDatatype>
+<dataTypeSize>1 BYTE</dataTypeSize>
+<ownDataTypeParameters>1 BYTE,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="id_job" id="EA176E20-8EE2-2D8C-469A-BC838F872E8B">
+<createdBy>symio</createdBy>
+<createdTime>2025-10-10 13:00:25 UTC</createdTime>
+<generatorID>C771A7FC-604D-6B4F-8AE3-552B758B4779</generatorID>
+<ownerDesignName>ConceptionDataModeler_MVP</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="offer_status" id="DB98CF7A-2690-CE0F-890A-BCCC416A13DF">
+<createdBy>symio</createdBy>
+<createdTime>2025-10-10 13:00:25 UTC</createdTime>
+<generatorID>8B3E0606-CDB1-5BB1-4E90-0CD7093DAC09</generatorID>
+<ownerDesignName>ConceptionDataModeler_MVP</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<use>0</use>
+<logicalDatatype>A3A3C77D-0366-9768-FF89-1C25E56881C8</logicalDatatype>
+<domain>CCB179B4-6EC9-7128-BD68-B5C7BE7E906F</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="position" id="BEDC266A-4077-2D68-9404-4308E5C0A568">
+<createdBy>symio</createdBy>
+<createdTime>2025-10-10 13:00:25 UTC</createdTime>
+<generatorID>C332C641-E565-8F3A-9DCB-F3E6B9796F59</generatorID>
+<ownerDesignName>ConceptionDataModeler_MVP</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>100</dataTypeSize>
+<ownDataTypeParameters>100,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="updated_at" id="CF0808A0-39DE-67F9-F30B-BDB97C80685A">
+<createdBy>symio</createdBy>
+<createdTime>2025-10-10 13:00:25 UTC</createdTime>
+<generatorID>D7AD5911-A2C3-FC4C-B1FF-761980C0A682</generatorID>
+<ownerDesignName>ConceptionDataModeler_MVP</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT008</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="USERS_id_user" id="B57E4FF1-2E73-F207-2294-7F0773318855">
+<createdBy>symio</createdBy>
+<createdTime>2025-10-10 13:00:25 UTC</createdTime>
+<generatorID>EAF183B3-D46A-9DD5-A95A-D05CD96EBD84</generatorID>
+<ownerDesignName>ConceptionDataModeler_MVP</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="546E0681-C58F-1EDE-BE1A-467DA65E3FD1" referredColumn="74992BAA-FCFD-E961-0B86-6106CD8C221E"/>
+</associations>
+</Column>
+<Column name="work_time" id="70831B0C-0FD4-D112-C22E-CBE81713D527">
+<createdBy>symio</createdBy>
+<createdTime>2025-10-10 13:00:25 UTC</createdTime>
+<commentInRDBMS><![CDATA[One of : "full-time", "part-time"]]></commentInRDBMS>
+<generatorID>7C954E3D-03FF-2F35-79B9-D669A451959B</generatorID>
+<ownerDesignName>ConceptionDataModeler_MVP</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>0</use>
+<logicalDatatype>A3A3C77D-0366-9768-FF89-1C25E56881C8</logicalDatatype>
+<domain>11F1D412-ED9B-0C89-2244-F05622590AAE</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="work_mode" id="421B1282-027F-D6EF-0DF5-4BA5DAE3B190">
+<createdBy>symio</createdBy>
+<createdTime>2025-10-10 13:00:25 UTC</createdTime>
+<commentInRDBMS><![CDATA[One of : "remote", "hybrid", "on-site"]]></commentInRDBMS>
+<generatorID>2F1EAD59-FD83-1BBC-C2E3-16C47E488B92</generatorID>
+<ownerDesignName>ConceptionDataModeler_MVP</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>0</use>
+<logicalDatatype>A3A3C77D-0366-9768-FF89-1C25E56881C8</logicalDatatype>
+<domain>3DED664C-174C-B89A-42C1-7575462F9C57</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="7A9AF86D-F464-2B9B-E120-380DA0673A59" name="JOBS_PK">
+<createdBy>symio</createdBy>
+<createdTime>2025-10-10 13:00:25 UTC</createdTime>
+<generatorID>EBABA036-3469-D2EF-1F0C-91C6C6A82A09</generatorID>
+<ownerDesignName>ConceptionDataModeler_MVP</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="EA176E20-8EE2-2D8C-469A-BC838F872E8B"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="78AE5498-812A-5702-FD0C-EEB23F92A8FF" name="JOBS_USERS_FK">
+<createdBy>symio</createdBy>
+<createdTime>2025-10-10 13:00:25 UTC</createdTime>
+<generatorID>1422CC51-9558-B87C-959C-A69C5CFD9A53</generatorID>
+<ownerDesignName>ConceptionDataModeler_MVP</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="B57E4FF1-2E73-F207-2294-7F0773318855"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

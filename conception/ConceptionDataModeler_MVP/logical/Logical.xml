@@ -1,0 +1,7 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<LogicalDesign class="oracle.dbtools.crest.model.design.logical.LogicalDesign" name="Logical" id="3F0A31B2-8E47-130E-617D-656F34E5F654" mainViewID="B1CA04BD-9703-5B83-3F06-DBD67C7EA640">
+<createdBy>symio</createdBy>
+<createdTime>2025-08-26 13:53:20 UTC</createdTime>
+<ownerDesignName>conceptionOracleDataModeler</ownerDesignName>
+<shouldBeOpen>false</shouldBeOpen>
+</LogicalDesign>
