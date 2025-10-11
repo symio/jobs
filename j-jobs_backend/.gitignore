@@ -37,4 +37,3 @@ out/
 .vscode/
 
 ## Sprint secrets
-/src/main/resources/application-secrets.yml

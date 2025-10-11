@@ -25,7 +25,7 @@ import org.springframework.web.cors.UrlBasedCorsConfigurationSource;
 @EnableWebSecurity
 public class SecurityConfig {
 
-    @Value("${CORS_ALLOWED_ORIGINS:http://localhost}")
+    @Value("${CORS_ALLOWED_ORIGINS}")
     private String allowedOriginsEnv;
 
     protected final Log logger = LogFactory.getLog(getClass());

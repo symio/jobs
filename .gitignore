@@ -41,7 +41,6 @@
 /j-jobs_backend/.vscode/
 
 ## Sprint secrets
-/j-jobs_backend/src/main/resources/application-secrets.yml
 
 ## Front
 # See https://docs.github.com/get-started/getting-started-with-git/ignoring-files for more about ignoring files.
