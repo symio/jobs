@@ -39,7 +39,7 @@ Ce guide explique comment lancer la stack Docker sur **Linux**, **macOS** et **W
 
 ---
 
-##### Étapes d'installation en résumé (démarrage rapide): 
+## Étapes d'installation en résumé (démarrage rapide): 
 
 - 1. Cloner le projet
 > ```bash
@@ -52,7 +52,7 @@ Ce guide explique comment lancer la stack Docker sur **Linux**, **macOS** et **W
 > ```
 - 3. 🚀Lancement
 > ```bash
-> chmod +x test-encoding.sh encode-env.sh build-and-run.sh init-roles.sh && ./build-and-run.sh
+> chmod +x *.sh && ./build-and-run.sh
 > ```
 - 4. Vérification
 > Une fois lancé, les services sont disponibles sur :
