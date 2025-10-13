@@ -1,0 +1,52 @@
+@startuml
+start
+
+:Requête API;
+:Extraire JWT du header Authorization;
+
+if (Token valide ?) then (non)
+  :401 Unauthorized;
+  stop
+else (oui)
+  :Extraire clientId du token;
+  :userRepository.findByEmail(clientId);
+  
+  if (authToken en base\ncorrespond ?) then (non)
+    :401 Unauthorized;
+    stop
+  else (oui)
+    if (Signature client\ncorrespond ?) then (non)
+      :401 Unauthorized;
+      stop
+    else (oui)
+      :Définir SecurityContext;
+      :Appel repository method;
+      :getCurrentUser() depuis SecurityContext;
+      
+      if (isAdminWithScopeAdmin ?) then (oui)
+        :Specification: cb.conjunction();
+        note right: Pas de filtre
+      else (non)
+        :Specification: cb.equal(user, currentUser);
+        note right: Filtre par utilisateur
+      endif
+      
+      :Construire CriteriaQuery;
+      :Ajouter critères métier;
+      :EntityManager.createQuery();
+      
+      if (Type admin ?) then (oui)
+        :SELECT * FROM jobs\nWHERE critères métier;
+      else (non)
+        :SELECT * FROM jobs\nWHERE id_user = ?\nAND critères métier;
+      endif
+      
+      :Exécuter sur PostgreSQL;
+      :Résultats filtrés;
+      :200 OK avec données;
+    endif
+  endif
+endif
+
+stop
+@enduml

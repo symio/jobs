@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="UTF-8"?><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentStyleType="text/css" height="1506px" preserveAspectRatio="none" style="width:1444px;height:1506px;background:#FFFFFF;" version="1.1" viewBox="0 0 1444 1506" width="1444px" zoomAndPan="magnify">
+    <defs/>
+    <g>
+        <rect fill="none" height="1012.6563" style="stroke:#000000;stroke-width:1.5;" width="1427.5" x="10" y="395.8906"/>
+        <rect fill="none" height="749.7891" style="stroke:#000000;stroke-width:1.5;" width="1407.5" x="20" y="651.7578"/>
+        <rect fill="none" height="220.1953" style="stroke:#000000;stroke-width:1.5;" width="533" x="717.5" y="849.3594"/>
+        <line style="stroke:#181818;stroke-width:0.5;stroke-dasharray:5.0,5.0;" x1="67" x2="67" y1="81.2969" y2="1425.5469"/>
+        <line style="stroke:#181818;stroke-width:0.5;stroke-dasharray:5.0,5.0;" x1="266.5" x2="266.5" y1="81.2969" y2="1425.5469"/>
+        <line style="stroke:#181818;stroke-width:0.5;stroke-dasharray:5.0,5.0;" x1="378.5" x2="378.5" y1="81.2969" y2="1425.5469"/>
+        <line style="stroke:#181818;stroke-width:0.5;stroke-dasharray:5.0,5.0;" x1="774.5" x2="774.5" y1="81.2969" y2="1425.5469"/>
+        <line style="stroke:#181818;stroke-width:0.5;stroke-dasharray:5.0,5.0;" x1="1070.5" x2="1070.5" y1="81.2969" y2="1425.5469"/>
+        <line style="stroke:#181818;stroke-width:0.5;stroke-dasharray:5.0,5.0;" x1="1187.5" x2="1187.5" y1="81.2969" y2="1425.5469"/>
+        <line style="stroke:#181818;stroke-width:0.5;stroke-dasharray:5.0,5.0;" x1="1373.5" x2="1373.5" y1="81.2969" y2="1425.5469"/>
+        <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="68" x="30" y="77.9951">Utilisateur</text>
+        <ellipse cx="67" cy="13.5" fill="#E2E2F0" rx="8" ry="8" style="stroke:#181818;stroke-width:0.5;"/>
+        <path d="M67,21.5 L67,48.5 M54,29.5 L80,29.5 M67,48.5 L54,63.5 M67,48.5 L80,63.5 " fill="none" style="stroke:#181818;stroke-width:0.5;"/>
+        <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="68" x="30" y="1437.542">Utilisateur</text>
+        <ellipse cx="67" cy="1449.3438" fill="#E2E2F0" rx="8" ry="8" style="stroke:#181818;stroke-width:0.5;"/>
+        <path d="M67,1457.3438 L67,1484.3438 M54,1465.3438 L80,1465.3438 M67,1484.3438 L54,1499.3438 M67,1484.3438 L80,1499.3438 " fill="none" style="stroke:#181818;stroke-width:0.5;"/>
+        <rect fill="#E2E2F0" height="46.5938" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="77" x="228.5" y="33.7031"/>
+        <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="63" x="235.5" y="53.6982">Frontend</text>
+        <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="52" x="241" y="69.9951">Angular</text>
+        <rect fill="#E2E2F0" height="46.5938" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="77" x="228.5" y="1424.5469"/>
+        <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="63" x="235.5" y="1444.542">Frontend</text>
+        <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="52" x="241" y="1460.8389">Angular</text>
+        <rect fill="#E2E2F0" height="30.2969" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="127" x="315.5" y="50"/>
+        <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="113" x="322.5" y="69.9951">JobEventHandler</text>
+        <rect fill="#E2E2F0" height="30.2969" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="127" x="315.5" y="1424.5469"/>
+        <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="113" x="322.5" y="1444.542">JobEventHandler</text>
+        <rect fill="#E2E2F0" height="30.2969" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="95" x="727.5" y="50"/>
+        <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="81" x="734.5" y="69.9951">JobManager</text>
+        <rect fill="#E2E2F0" height="30.2969" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="95" x="727.5" y="1424.5469"/>
+        <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="81" x="734.5" y="1444.542">JobManager</text>
+        <rect fill="#E2E2F0" height="30.2969" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="109" x="1016.5" y="50"/>
+        <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="95" x="1023.5" y="69.9951">JobRepository</text>
+        <rect fill="#E2E2F0" height="30.2969" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="109" x="1016.5" y="1424.5469"/>
+        <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="95" x="1023.5" y="1444.542">JobRepository</text>
+        <rect fill="#E2E2F0" height="30.2969" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="105" x="1135.5" y="50"/>
+        <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="91" x="1142.5" y="69.9951">JobHasStatus</text>
+        <rect fill="#E2E2F0" height="30.2969" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="105" x="1135.5" y="1424.5469"/>
+        <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="91" x="1142.5" y="1444.542">JobHasStatus</text>
+        <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="81" x="1330.5" y="77.9951">PostgreSQL</text>
+        <path d="M1356,29 C1356,19 1374,19 1374,19 C1374,19 1392,19 1392,29 L1392,55 C1392,65 1374,65 1374,65 C1374,65 1356,65 1356,55 L1356,29 " fill="#E2E2F0" style="stroke:#181818;stroke-width:1.5;"/>
+        <path d="M1356,29 C1356,39 1374,39 1374,39 C1374,39 1392,39 1392,29 " fill="none" style="stroke:#181818;stroke-width:1.5;"/>
+        <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="81" x="1330.5" y="1437.542">PostgreSQL</text>
+        <path d="M1356,1450.8438 C1356,1440.8438 1374,1440.8438 1374,1440.8438 C1374,1440.8438 1392,1440.8438 1392,1450.8438 L1392,1476.8438 C1392,1486.8438 1374,1486.8438 1374,1486.8438 C1374,1486.8438 1356,1486.8438 1356,1476.8438 L1356,1450.8438 " fill="#E2E2F0" style="stroke:#181818;stroke-width:1.5;"/>
+        <path d="M1356,1450.8438 C1356,1460.8438 1374,1460.8438 1374,1460.8438 C1374,1460.8438 1392,1460.8438 1392,1450.8438 " fill="none" style="stroke:#181818;stroke-width:1.5;"/>
+        <polygon fill="#181818" points="255,123.5625,265,127.5625,255,131.5625,259,127.5625" style="stroke:#181818;stroke-width:1.0;"/>
+        <line style="stroke:#181818;stroke-width:1.0;" x1="67" x2="261" y1="127.5625" y2="127.5625"/>
+        <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="122" x="74" y="107.3638">Modifier offre #123</text>
+        <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="153" x="74" y="122.4966">(changement de statut)</text>
+        <polygon fill="#181818" points="1059,182.9609,1069,186.9609,1059,190.9609,1063,186.9609" style="stroke:#181818;stroke-width:1.0;"/>
+        <line style="stroke:#181818;stroke-width:1.0;" x1="267" x2="1065" y1="186.9609" y2="186.9609"/>
+        <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="87" x="274" y="151.6294">PUT /jobs/123</text>
+        <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="177" x="274" y="166.7622">Authorization: Bearer {JWT}</text>
+        <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="199" x="274" y="181.895">{ offerStatus: "D_ENTRETIEN" }</text>
+        <path d="M960,199.9609 L960,239.9609 L1182,239.9609 L1182,209.9609 L1172,199.9609 L960,199.9609 " fill="#FEFFDD" style="stroke:#181818;stroke-width:0.5;"/>
+        <path d="M1172,199.9609 L1172,209.9609 L1182,209.9609 L1172,199.9609 " fill="#FEFFDD" style="stroke:#181818;stroke-width:0.5;"/>
+        <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="112" x="966" y="217.0278">Spring Data REST</text>
+        <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="201" x="966" y="232.1606">déclenche @HandleBeforeSave</text>
+        <polygon fill="#181818" points="390,262.3594,380,266.3594,390,270.3594,386,266.3594" style="stroke:#181818;stroke-width:1.0;"/>
+        <line style="stroke:#181818;stroke-width:1.0;" x1="384" x2="1070" y1="266.3594" y2="266.3594"/>
+        <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="146" x="396" y="261.2935">handleBeforeSave(job)</text>
+        <polygon fill="#181818" points="763,291.4922,773,295.4922,763,299.4922,767,295.4922" style="stroke:#181818;stroke-width:1.0;"/>
+        <line style="stroke:#181818;stroke-width:1.0;" x1="379" x2="769" y1="295.4922" y2="295.4922"/>
+        <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="93" x="386" y="290.4263">updateJob(job)</text>
+        <line style="stroke:#181818;stroke-width:1.0;" x1="775" x2="817" y1="328.6914" y2="328.6914"/>
+        <line style="stroke:#181818;stroke-width:1.0;" x1="817" x2="817" y1="328.6914" y2="341.6914"/>
+        <line style="stroke:#181818;stroke-width:1.0;" x1="776" x2="817" y1="341.6914" y2="341.6914"/>
+        <polygon fill="#181818" points="786,337.6914,776,341.6914,786,345.6914,782,341.6914" style="stroke:#181818;stroke-width:1.0;"/>
+        <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="210" x="782" y="323.6255">loadCurrentUserAndIsAdmin(job)</text>
+        <path d="M1004,308.4922 L1004,348.4922 L1197,348.4922 L1197,318.4922 L1187,308.4922 L1004,308.4922 " fill="#FEFFDD" style="stroke:#181818;stroke-width:0.5;"/>
+        <path d="M1187,308.4922 L1187,318.4922 L1197,318.4922 L1187,308.4922 " fill="#FEFFDD" style="stroke:#181818;stroke-width:0.5;"/>
+        <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="172" x="1010" y="325.5591">Charge l'utilisateur courant</text>
+        <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="117" x="1010" y="340.6919">et vérifie les droits</text>
+        <polygon fill="#181818" points="1059,373.8906,1069,377.8906,1059,381.8906,1063,377.8906" style="stroke:#181818;stroke-width:1.0;"/>
+        <line style="stroke:#181818;stroke-width:1.0;" x1="775" x2="1065" y1="377.8906" y2="377.8906"/>
+        <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="229" x="782" y="372.8247">findByIdFilteredForCurrentUser(123)</text>
+        <path d="M1076,358.7578 L1076,383.7578 L1288,383.7578 L1288,368.7578 L1278,358.7578 L1076,358.7578 " fill="#FEFFDD" style="stroke:#181818;stroke-width:0.5;"/>
+        <path d="M1278,358.7578 L1278,368.7578 L1288,368.7578 L1278,358.7578 " fill="#FEFFDD" style="stroke:#181818;stroke-width:0.5;"/>
+        <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="191" x="1082" y="375.8247">Applique les filtres de sécurité</text>
+        <path d="M10,395.8906 L74,395.8906 L74,403.0234 L64,413.0234 L10,413.0234 L10,395.8906 " fill="#EEEEEE" style="stroke:#000000;stroke-width:1.5;"/>
+        <rect fill="none" height="1012.6563" style="stroke:#000000;stroke-width:1.5;" width="1427.5" x="10" y="395.8906"/>
+        <text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="19" x="25" y="408.9575">alt</text>
+        <text fill="#000000" font-family="sans-serif" font-size="11" font-weight="bold" lengthAdjust="spacing" textLength="209" x="89" y="408.1011">[Job non trouvé ou accès refusé]</text>
+        <polygon fill="#181818" points="786,430.1563,776,434.1563,786,438.1563,782,434.1563" style="stroke:#181818;stroke-width:1.0;"/>
+        <line style="stroke:#181818;stroke-width:1.0;stroke-dasharray:2.0,2.0;" x1="780" x2="1070" y1="434.1563" y2="434.1563"/>
+        <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="108" x="792" y="429.0903">Optional.empty()</text>
+        <polygon fill="#181818" points="390,459.2891,380,463.2891,390,467.2891,386,463.2891" style="stroke:#181818;stroke-width:1.0;"/>
+        <line style="stroke:#181818;stroke-width:1.0;stroke-dasharray:2.0,2.0;" x1="384" x2="774" y1="463.2891" y2="463.2891"/>
+        <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="372" x="396" y="458.2231">throw SecurityException("Job introuvable ou accès refusé")</text>
+        <polygon fill="#181818" points="1059,488.4219,1069,492.4219,1059,496.4219,1063,492.4219" style="stroke:#181818;stroke-width:1.0;"/>
+        <line style="stroke:#181818;stroke-width:1.0;stroke-dasharray:2.0,2.0;" x1="379" x2="1065" y1="492.4219" y2="492.4219"/>
+        <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="127" x="386" y="487.356">Exception propagée</text>
+        <polygon fill="#181818" points="278,517.5547,268,521.5547,278,525.5547,274,521.5547" style="stroke:#181818;stroke-width:1.0;"/>
+        <line style="stroke:#181818;stroke-width:1.0;stroke-dasharray:2.0,2.0;" x1="272" x2="1070" y1="521.5547" y2="521.5547"/>
+        <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="91" x="284" y="516.4888">403 Forbidden</text>
+        <polygon fill="#181818" points="78,546.6875,68,550.6875,78,554.6875,74,550.6875" style="stroke:#181818;stroke-width:1.0;"/>
+        <line style="stroke:#181818;stroke-width:1.0;stroke-dasharray:2.0,2.0;" x1="72" x2="266" y1="550.6875" y2="550.6875"/>
+        <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="92" x="84" y="545.6216">"Accès refusé"</text>
+        <line style="stroke:#000000;stroke-width:1.0;stroke-dasharray:2.0,2.0;" x1="10" x2="1437.5" y1="559.6875" y2="559.6875"/>
+        <text fill="#000000" font-family="sans-serif" font-size="11" font-weight="bold" lengthAdjust="spacing" textLength="149" x="15" y="569.8979">[Job trouvé et autorisé]</text>
+        <polygon fill="#181818" points="786,590.625,776,594.625,786,598.625,782,594.625" style="stroke:#181818;stroke-width:1.0;"/>
+        <line style="stroke:#181818;stroke-width:1.0;stroke-dasharray:2.0,2.0;" x1="780" x2="1070" y1="594.625" y2="594.625"/>
+        <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="166" x="792" y="589.5591">Optional&lt;Job&gt; existingJob</text>
+        <line style="stroke:#181818;stroke-width:1.0;" x1="775" x2="817" y1="623.7578" y2="623.7578"/>
+        <line style="stroke:#181818;stroke-width:1.0;" x1="817" x2="817" y1="623.7578" y2="636.7578"/>
+        <line style="stroke:#181818;stroke-width:1.0;" x1="776" x2="817" y1="636.7578" y2="636.7578"/>
+        <polygon fill="#181818" points="786,632.7578,776,636.7578,786,640.7578,782,636.7578" style="stroke:#181818;stroke-width:1.0;"/>
+        <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="279" x="782" y="618.6919">doCheckJobRegistering(job, failedValidation)</text>
+        <path d="M1073,611.125 L1073,636.125 L1317,636.125 L1317,621.125 L1307,611.125 L1073,611.125 " fill="#FEFFDD" style="stroke:#181818;stroke-width:0.5;"/>
+        <path d="M1307,611.125 L1307,621.125 L1317,621.125 L1307,611.125 " fill="#FEFFDD" style="stroke:#181818;stroke-width:0.5;"/>
+        <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="223" x="1079" y="628.1919">Validation des champs obligatoires</text>
+        <path d="M20,651.7578 L84,651.7578 L84,658.8906 L74,668.8906 L20,668.8906 L20,651.7578 " fill="#EEEEEE" style="stroke:#000000;stroke-width:1.5;"/>
+        <rect fill="none" height="749.7891" style="stroke:#000000;stroke-width:1.5;" width="1407.5" x="20" y="651.7578"/>
+        <text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="19" x="35" y="664.8247">alt</text>
+        <text fill="#000000" font-family="sans-serif" font-size="11" font-weight="bold" lengthAdjust="spacing" textLength="134" x="99" y="663.9683">[Validation échouée]</text>
+        <polygon fill="#181818" points="390,686.0234,380,690.0234,390,694.0234,386,690.0234" style="stroke:#181818;stroke-width:1.0;"/>
+        <line style="stroke:#181818;stroke-width:1.0;stroke-dasharray:2.0,2.0;" x1="384" x2="774" y1="690.0234" y2="690.0234"/>
+        <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="259" x="396" y="684.9575">throw MissingFieldsException(fieldName)</text>
+        <polygon fill="#181818" points="1059,715.1563,1069,719.1563,1059,723.1563,1063,719.1563" style="stroke:#181818;stroke-width:1.0;"/>
+        <line style="stroke:#181818;stroke-width:1.0;stroke-dasharray:2.0,2.0;" x1="379" x2="1065" y1="719.1563" y2="719.1563"/>
+        <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="127" x="386" y="714.0903">Exception propagée</text>
+        <polygon fill="#181818" points="278,744.2891,268,748.2891,278,752.2891,274,748.2891" style="stroke:#181818;stroke-width:1.0;"/>
+        <line style="stroke:#181818;stroke-width:1.0;stroke-dasharray:2.0,2.0;" x1="272" x2="1070" y1="748.2891" y2="748.2891"/>
+        <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="109" x="284" y="743.2231">400 Bad Request</text>
+        <polygon fill="#181818" points="78,773.4219,68,777.4219,78,781.4219,74,777.4219" style="stroke:#181818;stroke-width:1.0;"/>
+        <line style="stroke:#181818;stroke-width:1.0;stroke-dasharray:2.0,2.0;" x1="72" x2="266" y1="777.4219" y2="777.4219"/>
+        <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="176" x="84" y="772.356">"Champ manquant: {field}"</text>
+        <line style="stroke:#000000;stroke-width:1.0;stroke-dasharray:2.0,2.0;" x1="20" x2="1427.5" y1="786.4219" y2="786.4219"/>
+        <text fill="#000000" font-family="sans-serif" font-size="11" font-weight="bold" lengthAdjust="spacing" textLength="98" x="25" y="796.6323">[Validation OK]</text>
+        <line style="stroke:#181818;stroke-width:1.0;" x1="775" x2="817" y1="821.3594" y2="821.3594"/>
+        <line style="stroke:#181818;stroke-width:1.0;" x1="817" x2="817" y1="821.3594" y2="834.3594"/>
+        <line style="stroke:#181818;stroke-width:1.0;" x1="776" x2="817" y1="834.3594" y2="834.3594"/>
+        <polygon fill="#181818" points="786,830.3594,776,834.3594,786,838.3594,782,834.3594" style="stroke:#181818;stroke-width:1.0;"/>
+        <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="282" x="782" y="816.2935">if (existingJob.offerStatus != job.offerStatus)</text>
+        <path d="M717.5,849.3594 L781.5,849.3594 L781.5,856.4922 L771.5,866.4922 L717.5,866.4922 L717.5,849.3594 " fill="#EEEEEE" style="stroke:#000000;stroke-width:1.5;"/>
+        <rect fill="none" height="220.1953" style="stroke:#000000;stroke-width:1.5;" width="533" x="717.5" y="849.3594"/>
+        <text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="19" x="732.5" y="862.4263">alt</text>
+        <text fill="#000000" font-family="sans-serif" font-size="11" font-weight="bold" lengthAdjust="spacing" textLength="100" x="796.5" y="861.5698">[Statut changé]</text>
+        <line style="stroke:#181818;stroke-width:1.0;" x1="775" x2="817" y1="887.625" y2="887.625"/>
+        <line style="stroke:#181818;stroke-width:1.0;" x1="817" x2="817" y1="887.625" y2="900.625"/>
+        <line style="stroke:#181818;stroke-width:1.0;" x1="776" x2="817" y1="900.625" y2="900.625"/>
+        <polygon fill="#181818" points="786,896.625,776,900.625,786,904.625,782,900.625" style="stroke:#181818;stroke-width:1.0;"/>
+        <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="114" x="782" y="882.5591">addJobStatus(job)</text>
+        <path d="M908,874.9922 L908,899.9922 L1114,899.9922 L1114,884.9922 L1104,874.9922 L908,874.9922 " fill="#FEFFDD" style="stroke:#181818;stroke-width:0.5;"/>
+        <path d="M1104,874.9922 L1104,884.9922 L1114,884.9922 L1104,874.9922 " fill="#FEFFDD" style="stroke:#181818;stroke-width:0.5;"/>
+        <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="185" x="914" y="892.0591">Historisation du changement</text>
+        <polygon fill="#181818" points="1176,986.2891,1186,990.2891,1176,994.2891,1180,990.2891" style="stroke:#181818;stroke-width:1.0;"/>
+        <line style="stroke:#181818;stroke-width:1.0;" x1="775" x2="1182" y1="990.2891" y2="990.2891"/>
+        <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="143" x="782" y="924.6919">JobHasStatus.builder()</text>
+        <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="257" x="782" y="939.8247">.jobStatus(job.offerStatus.toJobStatus())</text>
+        <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="179" x="782" y="954.9575">.offerStatus(job.offerStatus)</text>
+        <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="52" x="782" y="970.0903">.job(job)</text>
+        <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="44" x="782" y="985.2231">.build()</text>
+        <polygon fill="#181818" points="786,1015.4219,776,1019.4219,786,1023.4219,782,1019.4219" style="stroke:#181818;stroke-width:1.0;"/>
+        <line style="stroke:#181818;stroke-width:1.0;stroke-dasharray:2.0,2.0;" x1="780" x2="1187" y1="1019.4219" y2="1019.4219"/>
+        <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="157" x="792" y="1014.356">JobHasStatus newStatus</text>
+        <line style="stroke:#181818;stroke-width:1.0;" x1="775" x2="817" y1="1048.5547" y2="1048.5547"/>
+        <line style="stroke:#181818;stroke-width:1.0;" x1="817" x2="817" y1="1048.5547" y2="1061.5547"/>
+        <line style="stroke:#181818;stroke-width:1.0;" x1="776" x2="817" y1="1061.5547" y2="1061.5547"/>
+        <polygon fill="#181818" points="786,1057.5547,776,1061.5547,786,1065.5547,782,1061.5547" style="stroke:#181818;stroke-width:1.0;"/>
+        <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="229" x="782" y="1043.4888">job.jobHasStatuses.add(newStatus)</text>
+        <polygon fill="#181818" points="390,1093.6875,380,1097.6875,390,1101.6875,386,1097.6875" style="stroke:#181818;stroke-width:1.0;"/>
+        <line style="stroke:#181818;stroke-width:1.0;stroke-dasharray:2.0,2.0;" x1="384" x2="774" y1="1097.6875" y2="1097.6875"/>
+        <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="85" x="396" y="1092.6216">Validation OK</text>
+        <polygon fill="#181818" points="1059,1122.8203,1069,1126.8203,1059,1130.8203,1063,1126.8203" style="stroke:#181818;stroke-width:1.0;"/>
+        <line style="stroke:#181818;stroke-width:1.0;stroke-dasharray:2.0,2.0;" x1="379" x2="1065" y1="1126.8203" y2="1126.8203"/>
+        <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="91" x="386" y="1121.7544">Continue save</text>
+        <polygon fill="#181818" points="1362,1227.6172,1372,1231.6172,1362,1235.6172,1366,1231.6172" style="stroke:#181818;stroke-width:1.0;"/>
+        <line style="stroke:#181818;stroke-width:1.0;" x1="1071" x2="1368" y1="1231.6172" y2="1231.6172"/>
+        <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="110" x="1078" y="1150.8872">UPDATE jobs SET</text>
+        <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="80" x="1078" y="1166.02">position = ?,</text>
+        <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="106" x="1078" y="1181.1528">offer_status = ?,</text>
+        <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="133" x="1078" y="1196.2856">updated_at = NOW()</text>
+        <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="129" x="1078" y="1211.4185">WHERE id_job = 123</text>
+        <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="122" x="1078" y="1226.5513">AND id_user = 456</text>
+        <polygon fill="#181818" points="1362,1287.0156,1372,1291.0156,1362,1295.0156,1366,1291.0156" style="stroke:#181818;stroke-width:1.0;"/>
+        <line style="stroke:#181818;stroke-width:1.0;" x1="1071" x2="1368" y1="1291.0156" y2="1291.0156"/>
+        <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="186" x="1078" y="1255.6841">INSERT INTO jobs_has_status</text>
+        <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="279" x="1078" y="1270.8169">(job_status, offer_status, applied_at, job_id)</text>
+        <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="169" x="1078" y="1285.9497">VALUES (?, ?, NOW(), 123)</text>
+        <polygon fill="#181818" points="1082,1316.1484,1072,1320.1484,1082,1324.1484,1078,1320.1484" style="stroke:#181818;stroke-width:1.0;"/>
+        <line style="stroke:#181818;stroke-width:1.0;stroke-dasharray:2.0,2.0;" x1="1076" x2="1373" y1="1320.1484" y2="1320.1484"/>
+        <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="53" x="1088" y="1315.0825">Success</text>
+        <polygon fill="#181818" points="278,1345.2813,268,1349.2813,278,1353.2813,274,1349.2813" style="stroke:#181818;stroke-width:1.0;"/>
+        <line style="stroke:#181818;stroke-width:1.0;stroke-dasharray:2.0,2.0;" x1="272" x2="1070" y1="1349.2813" y2="1349.2813"/>
+        <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="183" x="284" y="1344.2153">200 OK { updated job data }</text>
+        <polygon fill="#181818" points="78,1389.5469,68,1393.5469,78,1397.5469,74,1393.5469" style="stroke:#181818;stroke-width:1.0;"/>
+        <line style="stroke:#181818;stroke-width:1.0;stroke-dasharray:2.0,2.0;" x1="72" x2="266" y1="1393.5469" y2="1393.5469"/>
+        <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="111" x="84" y="1373.3481">"Offre mise à jour</text>
+        <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="139" x="84" y="1388.481">Historique enregistré"</text>
+        <!--SRC=[ZLPVSnet47-_Jx6b3uKPIj8axGFJ90Lp7Zk9mGKSlp33YDC2SW_f8kcSE1v_bpxMduClrfNkE7GXjkCPnZff__psjwjTiSGg3HTMfC8mYxcECgQjI4J6f8N6iLRIekGpsPEhF6Mw0Sn0kQwBlbEB-1gbFM6IfrW8bki3mJCcsQgKATS7CcFCb164xiQBkSy3cHDc9fRPt7YHOXbnPjc26OJ6kJ9sfN7ozmT_FkX7KH0f_Ffc5qaNpXGNIu4Qr7Af4Nx-xSNBcMmcQoPNkA6eW2COPz-sebB9wJjKNJY_cCApAxKmpxnQBxThfSLNPeMINUWZqsJuzjtbz6ucRvq7r0NMBZG6ytWu7SVJqtZOWBieaieYg6jIA6nFCYta2WOK58pZoNGc-VO-IL4cQuI_2eBxk5GK9hl6A79Q3bb9VHVMtuWq2MWhAe-TP9c0BkGPKOT4Qo4IbGSrcLGnVfHhJPHS6DGzoKzDZs-4B7GyUYrMQzk5epNJAuJqbppWF56vfkpD95gutjvhHpgaQ81h9QofEIq8M0h9-pUd_5Ya5ZNoOwK304rYlEwsbsMf-9GNLfUaf9rroXxHbcjXj_THn58B52T89S5gbHCIK3cm9Dd-Pq3ZCYVf2EYle3DaO9IvjBAqWvlCtZHRNgn27J9lrrfzXWbwjpVnbmIzQjDLBWZf7RD5YeUk6uNLAaaL6PKHoBJAs6fxZtMOLK6_UluIYAg5u1obbwdAbiI2Qq0rsAixZp2bs-D0xhYXPB6Shg9ucfO_IUyDu1TXBDKjVNZvEac16bT7Qqp-yVTzHJhegjtLKXkMJAJ8Fx9KS7-J2ax2LE_FAC46wBPkCWDgaOeLiqfGulVENSe3UIg6jSftz3sHmZDX3C4w5fXoiy_ZqdqFsGPRbP4VpzX3MNiEVSRfX2hOs4houTmTkQ1Xm-IddEvL5suzghk6L_M93A8UlJyCDqY6M48po5mdw5Jmqskugc_jewuMZcH_QC6tph9Q7lF9E2TNXSMYXuGQORPF29WhmJBXEUoxSqtd8PUxbXlEZSuY5ocdDjAQoSvLY2ECj6FL7cFBYGQ7tmgNbdmijFGEclMeIafhzoT41H8_byFiHmAhR3WaLu4TD1sYjrbPswEWaNwOlU_UWEzNps6T7z53GKXgkyQDeGFRkx4qw7VXudpGcyOEBStic2QQ7_JEmsjusvv9J-RS55GKMyLeudDcQMCukdJvkZo9np48FYT3j5kCtk70xL3echPU_Vx7uqXEXvDuFAL_qv67CrypKpgU-ObMVhGXnDG6vcQCXzDsUdF12S_7teUBU0BDjss2N81iWnzF1nW6_O2vIPuaQCmZNU45TONHUxWj9pHtFi4zS-Z1y7I76FaNpKPGAzZ-IwgvdidoBhanYLBxpgjTvz_LXllz3m00]-->
+    </g>
+</svg>

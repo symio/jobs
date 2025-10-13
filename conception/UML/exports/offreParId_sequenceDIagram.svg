@@ -1,0 +1,221 @@
+<?xml version="1.0" encoding="UTF-8"?><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentStyleType="text/css" height="1756px" preserveAspectRatio="none" style="width:1722px;height:1756px;background:#FFFFFF;" version="1.1" viewBox="0 0 1722 1756" width="1722px" zoomAndPan="magnify">
+    <defs/>
+    <g>
+        <rect fill="none" height="219.8672" style="stroke:#000000;stroke-width:1.5;" width="910.5" x="603.5" y="1071.6797"/>
+        <rect fill="none" height="265" style="stroke:#000000;stroke-width:1.5;" width="1705.5" x="10" y="1394.0781"/>
+        <line style="stroke:#181818;stroke-width:0.5;stroke-dasharray:5.0,5.0;" x1="57" x2="57" y1="81.2969" y2="1676.0781"/>
+        <line style="stroke:#181818;stroke-width:0.5;stroke-dasharray:5.0,5.0;" x1="239.5" x2="239.5" y1="81.2969" y2="1676.0781"/>
+        <line style="stroke:#181818;stroke-width:0.5;stroke-dasharray:5.0,5.0;" x1="441" x2="441" y1="81.2969" y2="1676.0781"/>
+        <line style="stroke:#181818;stroke-width:0.5;stroke-dasharray:5.0,5.0;" x1="681.5" x2="681.5" y1="81.2969" y2="1676.0781"/>
+        <line style="stroke:#181818;stroke-width:0.5;stroke-dasharray:5.0,5.0;" x1="924.5" x2="924.5" y1="81.2969" y2="1676.0781"/>
+        <line style="stroke:#181818;stroke-width:0.5;stroke-dasharray:5.0,5.0;" x1="1088" x2="1088" y1="81.2969" y2="1676.0781"/>
+        <line style="stroke:#181818;stroke-width:0.5;stroke-dasharray:5.0,5.0;" x1="1240" x2="1240" y1="81.2969" y2="1676.0781"/>
+        <line style="stroke:#181818;stroke-width:0.5;stroke-dasharray:5.0,5.0;" x1="1509" x2="1509" y1="81.2969" y2="1676.0781"/>
+        <line style="stroke:#181818;stroke-width:0.5;stroke-dasharray:5.0,5.0;" x1="1661.5" x2="1661.5" y1="81.2969" y2="1676.0781"/>
+        <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="68" x="20" y="77.9951">Utilisateur</text>
+        <ellipse cx="57" cy="13.5" fill="#E2E2F0" rx="8" ry="8" style="stroke:#181818;stroke-width:0.5;"/>
+        <path d="M57,21.5 L57,48.5 M44,29.5 L70,29.5 M57,48.5 L44,63.5 M57,48.5 L70,63.5 " fill="none" style="stroke:#181818;stroke-width:0.5;"/>
+        <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="68" x="20" y="1688.0732">Utilisateur</text>
+        <ellipse cx="57" cy="1699.875" fill="#E2E2F0" rx="8" ry="8" style="stroke:#181818;stroke-width:0.5;"/>
+        <path d="M57,1707.875 L57,1734.875 M44,1715.875 L70,1715.875 M57,1734.875 L44,1749.875 M57,1734.875 L70,1749.875 " fill="none" style="stroke:#181818;stroke-width:0.5;"/>
+        <rect fill="#E2E2F0" height="46.5938" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="77" x="201.5" y="33.7031"/>
+        <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="63" x="208.5" y="53.6982">Frontend</text>
+        <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="52" x="214" y="69.9951">Angular</text>
+        <rect fill="#E2E2F0" height="46.5938" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="77" x="201.5" y="1675.0781"/>
+        <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="63" x="208.5" y="1695.0732">Frontend</text>
+        <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="52" x="214" y="1711.3701">Angular</text>
+        <rect fill="#E2E2F0" height="30.2969" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="166" x="358" y="50"/>
+        <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="152" x="365" y="69.9951">JwtAuthenticationFilter</text>
+        <rect fill="#E2E2F0" height="30.2969" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="166" x="358" y="1675.0781"/>
+        <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="152" x="365" y="1695.0732">JwtAuthenticationFilter</text>
+        <rect fill="#E2E2F0" height="30.2969" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="137" x="613.5" y="50"/>
+        <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="123" x="620.5" y="69.9951">JobRepositoryImpl</text>
+        <rect fill="#E2E2F0" height="30.2969" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="137" x="613.5" y="1675.0781"/>
+        <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="123" x="620.5" y="1695.0732">JobRepositoryImpl</text>
+        <rect fill="#E2E2F0" height="30.2969" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="151" x="849.5" y="50"/>
+        <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="137" x="856.5" y="69.9951">IdentifiedRepository</text>
+        <rect fill="#E2E2F0" height="30.2969" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="151" x="849.5" y="1675.0781"/>
+        <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="137" x="856.5" y="1695.0732">IdentifiedRepository</text>
+        <rect fill="#E2E2F0" height="30.2969" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="120" x="1028" y="50"/>
+        <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="106" x="1035" y="69.9951">UserRepository</text>
+        <rect fill="#E2E2F0" height="30.2969" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="120" x="1028" y="1675.0781"/>
+        <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="106" x="1035" y="1695.0732">UserRepository</text>
+        <rect fill="#E2E2F0" height="30.2969" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="164" x="1158" y="50"/>
+        <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="150" x="1165" y="69.9951">SecuritySpecifications</text>
+        <rect fill="#E2E2F0" height="30.2969" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="164" x="1158" y="1675.0781"/>
+        <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="150" x="1165" y="1695.0732">SecuritySpecifications</text>
+        <rect fill="#E2E2F0" height="30.2969" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="112" x="1453" y="50"/>
+        <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="98" x="1460" y="69.9951">EntityManager</text>
+        <rect fill="#E2E2F0" height="30.2969" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="112" x="1453" y="1675.0781"/>
+        <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="98" x="1460" y="1695.0732">EntityManager</text>
+        <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="81" x="1618.5" y="77.9951">PostgreSQL</text>
+        <path d="M1644,29 C1644,19 1662,19 1662,19 C1662,19 1680,19 1680,29 L1680,55 C1680,65 1662,65 1662,65 C1662,65 1644,65 1644,55 L1644,29 " fill="#E2E2F0" style="stroke:#181818;stroke-width:1.5;"/>
+        <path d="M1644,29 C1644,39 1662,39 1662,39 C1662,39 1680,39 1680,29 " fill="none" style="stroke:#181818;stroke-width:1.5;"/>
+        <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="81" x="1618.5" y="1688.0732">PostgreSQL</text>
+        <path d="M1644,1701.375 C1644,1691.375 1662,1691.375 1662,1691.375 C1662,1691.375 1680,1691.375 1680,1701.375 L1680,1727.375 C1680,1737.375 1662,1737.375 1662,1737.375 C1662,1737.375 1644,1737.375 1644,1727.375 L1644,1701.375 " fill="#E2E2F0" style="stroke:#181818;stroke-width:1.5;"/>
+        <path d="M1644,1701.375 C1644,1711.375 1662,1711.375 1662,1711.375 C1662,1711.375 1680,1711.375 1680,1701.375 " fill="none" style="stroke:#181818;stroke-width:1.5;"/>
+        <polygon fill="#181818" points="228,108.4297,238,112.4297,228,116.4297,232,112.4297" style="stroke:#181818;stroke-width:1.0;"/>
+        <line style="stroke:#181818;stroke-width:1.0;" x1="57" x2="234" y1="112.4297" y2="112.4297"/>
+        <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="90" x="64" y="107.3638">GET /jobs/{id}</text>
+        <polygon fill="#181818" points="429,152.6953,439,156.6953,429,160.6953,433,156.6953" style="stroke:#181818;stroke-width:1.0;"/>
+        <line style="stroke:#181818;stroke-width:1.0;" x1="240" x2="435" y1="156.6953" y2="156.6953"/>
+        <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="87" x="247" y="136.4966">GET /jobs/123</text>
+        <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="177" x="247" y="151.6294">Authorization: Bearer {JWT}</text>
+        <path d="M357,169.6953 L357,209.6953 L524,209.6953 L524,179.6953 L514,169.6953 L357,169.6953 " fill="#FEFFDD" style="stroke:#181818;stroke-width:0.5;"/>
+        <path d="M514,169.6953 L514,179.6953 L524,179.6953 L514,169.6953 " fill="#FEFFDD" style="stroke:#181818;stroke-width:0.5;"/>
+        <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="146" x="363" y="186.7622">Extraction et validation</text>
+        <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="41" x="363" y="201.895">du JWT</text>
+        <line style="stroke:#181818;stroke-width:1.0;" x1="441" x2="483" y1="236.0938" y2="236.0938"/>
+        <line style="stroke:#181818;stroke-width:1.0;" x1="483" x2="483" y1="236.0938" y2="249.0938"/>
+        <line style="stroke:#181818;stroke-width:1.0;" x1="442" x2="483" y1="249.0938" y2="249.0938"/>
+        <polygon fill="#181818" points="452,245.0938,442,249.0938,452,253.0938,448,249.0938" style="stroke:#181818;stroke-width:1.0;"/>
+        <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="141" x="448" y="231.0278">extractUserName(jwt)</text>
+        <polygon fill="#181818" points="1076,274.2266,1086,278.2266,1076,282.2266,1080,278.2266" style="stroke:#181818;stroke-width:1.0;"/>
+        <line style="stroke:#181818;stroke-width:1.0;" x1="441" x2="1082" y1="278.2266" y2="278.2266"/>
+        <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="129" x="448" y="273.1606">findByEmail(clientId)</text>
+        <polygon fill="#181818" points="1650,318.4922,1660,322.4922,1650,326.4922,1654,322.4922" style="stroke:#181818;stroke-width:1.0;"/>
+        <line style="stroke:#181818;stroke-width:1.0;" x1="1088" x2="1656" y1="322.4922" y2="322.4922"/>
+        <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="138" x="1095" y="302.2935">SELECT * FROM users</text>
+        <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="110" x="1095" y="317.4263">WHERE email = ?</text>
+        <polygon fill="#181818" points="1099,347.625,1089,351.625,1099,355.625,1095,351.625" style="stroke:#181818;stroke-width:1.0;"/>
+        <line style="stroke:#181818;stroke-width:1.0;stroke-dasharray:2.0,2.0;" x1="1093" x2="1661" y1="351.625" y2="351.625"/>
+        <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="70" x="1105" y="346.5591">User entity</text>
+        <polygon fill="#181818" points="452,376.7578,442,380.7578,452,384.7578,448,380.7578" style="stroke:#181818;stroke-width:1.0;"/>
+        <line style="stroke:#181818;stroke-width:1.0;stroke-dasharray:2.0,2.0;" x1="446" x2="1087" y1="380.7578" y2="380.7578"/>
+        <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="110" x="458" y="375.6919">User currentUser</text>
+        <line style="stroke:#181818;stroke-width:1.0;" x1="441" x2="483" y1="409.8906" y2="409.8906"/>
+        <line style="stroke:#181818;stroke-width:1.0;" x1="483" x2="483" y1="409.8906" y2="422.8906"/>
+        <line style="stroke:#181818;stroke-width:1.0;" x1="442" x2="483" y1="422.8906" y2="422.8906"/>
+        <polygon fill="#181818" points="452,418.8906,442,422.8906,452,426.8906,448,422.8906" style="stroke:#181818;stroke-width:1.0;"/>
+        <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="227" x="448" y="404.8247">Valide authToken + signature client</text>
+        <path d="M318,435.8906 L318,475.8906 L563,475.8906 L563,445.8906 L553,435.8906 L318,435.8906 " fill="#FEFFDD" style="stroke:#181818;stroke-width:0.5;"/>
+        <path d="M553,435.8906 L553,445.8906 L563,445.8906 L553,435.8906 " fill="#FEFFDD" style="stroke:#181818;stroke-width:0.5;"/>
+        <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="151" x="324" y="452.9575">Définit SecurityContext:</text>
+        <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="224" x="324" y="468.0903">Authentication(clientId, authorities)</text>
+        <polygon fill="#181818" points="670,498.2891,680,502.2891,670,506.2891,674,502.2891" style="stroke:#181818;stroke-width:1.0;"/>
+        <line style="stroke:#181818;stroke-width:1.0;" x1="441" x2="676" y1="502.2891" y2="502.2891"/>
+        <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="84" x="448" y="497.2231">findById(123)</text>
+        <path d="M584,515.2891 L584,555.2891 L779,555.2891 L779,525.2891 L769,515.2891 L584,515.2891 " fill="#FEFFDD" style="stroke:#181818;stroke-width:0.5;"/>
+        <path d="M769,515.2891 L769,525.2891 L779,525.2891 L769,515.2891 " fill="#FEFFDD" style="stroke:#181818;stroke-width:0.5;"/>
+        <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="174" x="590" y="532.356">Appel via Spring Data REST</text>
+        <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="85" x="590" y="547.4888">ou contrôleur</text>
+        <line style="stroke:#181818;stroke-width:1.0;" x1="682" x2="724" y1="581.6875" y2="581.6875"/>
+        <line style="stroke:#181818;stroke-width:1.0;" x1="724" x2="724" y1="581.6875" y2="594.6875"/>
+        <line style="stroke:#181818;stroke-width:1.0;" x1="683" x2="724" y1="594.6875" y2="594.6875"/>
+        <polygon fill="#181818" points="693,590.6875,683,594.6875,693,598.6875,689,594.6875" style="stroke:#181818;stroke-width:1.0;"/>
+        <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="229" x="689" y="576.6216">findByIdFilteredForCurrentUser(123)</text>
+        <polygon fill="#181818" points="913,619.8203,923,623.8203,913,627.8203,917,623.8203" style="stroke:#181818;stroke-width:1.0;"/>
+        <line style="stroke:#181818;stroke-width:1.0;" x1="682" x2="919" y1="623.8203" y2="623.8203"/>
+        <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="109" x="689" y="618.7544">getCurrentUser()</text>
+        <line style="stroke:#181818;stroke-width:1.0;" x1="925" x2="967" y1="652.9531" y2="652.9531"/>
+        <line style="stroke:#181818;stroke-width:1.0;" x1="967" x2="967" y1="652.9531" y2="665.9531"/>
+        <line style="stroke:#181818;stroke-width:1.0;" x1="926" x2="967" y1="665.9531" y2="665.9531"/>
+        <polygon fill="#181818" points="936,661.9531,926,665.9531,936,669.9531,932,665.9531" style="stroke:#181818;stroke-width:1.0;"/>
+        <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="149" x="932" y="647.8872">getAuth().getPrincipal()</text>
+        <polygon fill="#181818" points="1076,691.0859,1086,695.0859,1076,699.0859,1080,695.0859" style="stroke:#181818;stroke-width:1.0;"/>
+        <line style="stroke:#181818;stroke-width:1.0;" x1="925" x2="1082" y1="695.0859" y2="695.0859"/>
+        <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="129" x="932" y="690.02">findByEmail(clientId)</text>
+        <polygon fill="#181818" points="1650,735.3516,1660,739.3516,1650,743.3516,1654,739.3516" style="stroke:#181818;stroke-width:1.0;"/>
+        <line style="stroke:#181818;stroke-width:1.0;" x1="1088" x2="1656" y1="739.3516" y2="739.3516"/>
+        <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="138" x="1095" y="719.1528">SELECT * FROM users</text>
+        <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="110" x="1095" y="734.2856">WHERE email = ?</text>
+        <polygon fill="#181818" points="1099,764.4844,1089,768.4844,1099,772.4844,1095,768.4844" style="stroke:#181818;stroke-width:1.0;"/>
+        <line style="stroke:#181818;stroke-width:1.0;stroke-dasharray:2.0,2.0;" x1="1093" x2="1661" y1="768.4844" y2="768.4844"/>
+        <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="70" x="1105" y="763.4185">User entity</text>
+        <polygon fill="#181818" points="936,793.6172,926,797.6172,936,801.6172,932,797.6172" style="stroke:#181818;stroke-width:1.0;"/>
+        <line style="stroke:#181818;stroke-width:1.0;stroke-dasharray:2.0,2.0;" x1="930" x2="1087" y1="797.6172" y2="797.6172"/>
+        <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="110" x="942" y="792.5513">User currentUser</text>
+        <polygon fill="#181818" points="693,822.75,683,826.75,693,830.75,689,826.75" style="stroke:#181818;stroke-width:1.0;"/>
+        <line style="stroke:#181818;stroke-width:1.0;stroke-dasharray:2.0,2.0;" x1="687" x2="924" y1="826.75" y2="826.75"/>
+        <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="110" x="699" y="821.6841">User currentUser</text>
+        <polygon fill="#181818" points="913,851.8828,923,855.8828,913,859.8828,917,855.8828" style="stroke:#181818;stroke-width:1.0;"/>
+        <line style="stroke:#181818;stroke-width:1.0;" x1="682" x2="919" y1="855.8828" y2="855.8828"/>
+        <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="169" x="689" y="850.8169">isAdminWithScopeAdmin()</text>
+        <line style="stroke:#181818;stroke-width:1.0;" x1="925" x2="967" y1="885.0156" y2="885.0156"/>
+        <line style="stroke:#181818;stroke-width:1.0;" x1="967" x2="967" y1="885.0156" y2="898.0156"/>
+        <line style="stroke:#181818;stroke-width:1.0;" x1="926" x2="967" y1="898.0156" y2="898.0156"/>
+        <polygon fill="#181818" points="936,894.0156,926,898.0156,936,902.0156,932,898.0156" style="stroke:#181818;stroke-width:1.0;"/>
+        <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="109" x="932" y="879.9497">getCurrentUser()</text>
+        <line style="stroke:#181818;stroke-width:1.0;" x1="925" x2="967" y1="927.1484" y2="927.1484"/>
+        <line style="stroke:#181818;stroke-width:1.0;" x1="967" x2="967" y1="927.1484" y2="940.1484"/>
+        <line style="stroke:#181818;stroke-width:1.0;" x1="926" x2="967" y1="940.1484" y2="940.1484"/>
+        <polygon fill="#181818" points="936,936.1484,926,940.1484,936,944.1484,932,940.1484" style="stroke:#181818;stroke-width:1.0;"/>
+        <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="123" x="932" y="922.0825">hasScope("admin")</text>
+        <polygon fill="#181818" points="693,965.2813,683,969.2813,693,973.2813,689,969.2813" style="stroke:#181818;stroke-width:1.0;"/>
+        <line style="stroke:#181818;stroke-width:1.0;stroke-dasharray:2.0,2.0;" x1="687" x2="924" y1="969.2813" y2="969.2813"/>
+        <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="106" x="699" y="964.2153">boolean isAdmin</text>
+        <polygon fill="#181818" points="1497,994.4141,1507,998.4141,1497,1002.4141,1501,998.4141" style="stroke:#181818;stroke-width:1.0;"/>
+        <line style="stroke:#181818;stroke-width:1.0;" x1="682" x2="1503" y1="998.4141" y2="998.4141"/>
+        <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="144" x="689" y="993.3481">createQuery(Job.class)</text>
+        <polygon fill="#181818" points="693,1023.5469,683,1027.5469,693,1031.5469,689,1027.5469" style="stroke:#181818;stroke-width:1.0;"/>
+        <line style="stroke:#181818;stroke-width:1.0;stroke-dasharray:2.0,2.0;" x1="687" x2="1508" y1="1027.5469" y2="1027.5469"/>
+        <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="125" x="699" y="1022.481">CriteriaQuery&lt;Job&gt;</text>
+        <polygon fill="#181818" points="1228,1052.6797,1238,1056.6797,1228,1060.6797,1232,1056.6797" style="stroke:#181818;stroke-width:1.0;"/>
+        <line style="stroke:#181818;stroke-width:1.0;" x1="682" x2="1234" y1="1056.6797" y2="1056.6797"/>
+        <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="380" x="689" y="1051.6138">byIdAndBelongsToUserOrAdmin(123, currentUser, isAdmin)</text>
+        <path d="M603.5,1071.6797 L667.5,1071.6797 L667.5,1078.8125 L657.5,1088.8125 L603.5,1088.8125 L603.5,1071.6797 " fill="#EEEEEE" style="stroke:#000000;stroke-width:1.5;"/>
+        <rect fill="none" height="219.8672" style="stroke:#000000;stroke-width:1.5;" width="910.5" x="603.5" y="1071.6797"/>
+        <text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="19" x="618.5" y="1084.7466">alt</text>
+        <text fill="#000000" font-family="sans-serif" font-size="11" font-weight="bold" lengthAdjust="spacing" textLength="168" x="682.5" y="1083.8901">[Admin avec scope admin]</text>
+        <line style="stroke:#181818;stroke-width:1.0;" x1="1240" x2="1282" y1="1109.9453" y2="1109.9453"/>
+        <line style="stroke:#181818;stroke-width:1.0;" x1="1282" x2="1282" y1="1109.9453" y2="1122.9453"/>
+        <line style="stroke:#181818;stroke-width:1.0;" x1="1241" x2="1282" y1="1122.9453" y2="1122.9453"/>
+        <polygon fill="#181818" points="1251,1118.9453,1241,1122.9453,1251,1126.9453,1247,1122.9453" style="stroke:#181818;stroke-width:1.0;"/>
+        <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="178" x="1247" y="1104.8794">cb.equal(root.get("id"), 123)</text>
+        <polygon fill="#181818" points="693,1148.0781,683,1152.0781,693,1156.0781,689,1152.0781" style="stroke:#181818;stroke-width:1.0;"/>
+        <line style="stroke:#181818;stroke-width:1.0;stroke-dasharray:2.0,2.0;" x1="687" x2="1239" y1="1152.0781" y2="1152.0781"/>
+        <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="128" x="699" y="1147.0122">Predicate (id = 123)</text>
+        <line style="stroke:#000000;stroke-width:1.0;stroke-dasharray:2.0,2.0;" x1="603.5" x2="1514" y1="1161.0781" y2="1161.0781"/>
+        <text fill="#000000" font-family="sans-serif" font-size="11" font-weight="bold" lengthAdjust="spacing" textLength="125" x="608.5" y="1171.2886">[Utilisateur normal]</text>
+        <line style="stroke:#181818;stroke-width:1.0;" x1="1240" x2="1282" y1="1241.4141" y2="1241.4141"/>
+        <line style="stroke:#181818;stroke-width:1.0;" x1="1282" x2="1282" y1="1241.4141" y2="1254.4141"/>
+        <line style="stroke:#181818;stroke-width:1.0;" x1="1241" x2="1282" y1="1254.4141" y2="1254.4141"/>
+        <polygon fill="#181818" points="1251,1250.4141,1241,1254.4141,1251,1258.4141,1247,1254.4141" style="stroke:#181818;stroke-width:1.0;"/>
+        <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="48" x="1247" y="1190.9497">cb.and(</text>
+        <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="182" x="1255" y="1206.0825">cb.equal(root.get("id"), 123),</text>
+        <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="247" x="1255" y="1221.2153">cb.equal(root.get("user"), currentUser)</text>
+        <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="5" x="1247" y="1236.3481">)</text>
+        <polygon fill="#181818" points="693,1279.5469,683,1283.5469,693,1287.5469,689,1283.5469" style="stroke:#181818;stroke-width:1.0;"/>
+        <line style="stroke:#181818;stroke-width:1.0;stroke-dasharray:2.0,2.0;" x1="687" x2="1239" y1="1283.5469" y2="1283.5469"/>
+        <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="237" x="699" y="1278.481">Predicate (id = 123 AND id_user = ?)</text>
+        <polygon fill="#181818" points="1497,1315.6797,1507,1319.6797,1497,1323.6797,1501,1319.6797" style="stroke:#181818;stroke-width:1.0;"/>
+        <line style="stroke:#181818;stroke-width:1.0;" x1="682" x2="1503" y1="1319.6797" y2="1319.6797"/>
+        <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="148" x="689" y="1314.6138">query.where(predicate)</text>
+        <polygon fill="#181818" points="1650,1375.0781,1660,1379.0781,1650,1383.0781,1654,1379.0781" style="stroke:#181818;stroke-width:1.0;"/>
+        <line style="stroke:#181818;stroke-width:1.0;" x1="1509" x2="1656" y1="1379.0781" y2="1379.0781"/>
+        <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="129" x="1516" y="1343.7466">SELECT * FROM jobs</text>
+        <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="129" x="1516" y="1358.8794">WHERE id_job = 123</text>
+        <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="122" x="1516" y="1374.0122">AND id_user = 456</text>
+        <path d="M10,1394.0781 L74,1394.0781 L74,1401.2109 L64,1411.2109 L10,1411.2109 L10,1394.0781 " fill="#EEEEEE" style="stroke:#000000;stroke-width:1.5;"/>
+        <rect fill="none" height="265" style="stroke:#000000;stroke-width:1.5;" width="1705.5" x="10" y="1394.0781"/>
+        <text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="19" x="25" y="1407.145">alt</text>
+        <text fill="#000000" font-family="sans-serif" font-size="11" font-weight="bold" lengthAdjust="spacing" textLength="252" x="89" y="1406.2886">[Job trouvé et appartient à l'utilisateur]</text>
+        <polygon fill="#181818" points="1520,1428.3438,1510,1432.3438,1520,1436.3438,1516,1432.3438" style="stroke:#181818;stroke-width:1.0;"/>
+        <line style="stroke:#181818;stroke-width:1.0;stroke-dasharray:2.0,2.0;" x1="1514" x2="1661" y1="1432.3438" y2="1432.3438"/>
+        <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="59" x="1526" y="1427.2778">Job entity</text>
+        <polygon fill="#181818" points="693,1457.4766,683,1461.4766,693,1465.4766,689,1461.4766" style="stroke:#181818;stroke-width:1.0;"/>
+        <line style="stroke:#181818;stroke-width:1.0;stroke-dasharray:2.0,2.0;" x1="687" x2="1508" y1="1461.4766" y2="1461.4766"/>
+        <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="59" x="699" y="1456.4106">Job result</text>
+        <polygon fill="#181818" points="251,1486.6094,241,1490.6094,251,1494.6094,247,1490.6094" style="stroke:#181818;stroke-width:1.0;"/>
+        <line style="stroke:#181818;stroke-width:1.0;stroke-dasharray:2.0,2.0;" x1="245" x2="681" y1="1490.6094" y2="1490.6094"/>
+        <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="126" x="257" y="1485.5435">200 OK { job data }</text>
+        <polygon fill="#181818" points="68,1515.7422,58,1519.7422,68,1523.7422,64,1519.7422" style="stroke:#181818;stroke-width:1.0;"/>
+        <line style="stroke:#181818;stroke-width:1.0;stroke-dasharray:2.0,2.0;" x1="62" x2="239" y1="1519.7422" y2="1519.7422"/>
+        <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="118" x="74" y="1514.6763">Affichage de l'offre</text>
+        <line style="stroke:#000000;stroke-width:1.0;stroke-dasharray:2.0,2.0;" x1="10" x2="1715.5" y1="1528.7422" y2="1528.7422"/>
+        <text fill="#000000" font-family="sans-serif" font-size="11" font-weight="bold" lengthAdjust="spacing" textLength="209" x="15" y="1538.9526">[Job non trouvé ou accès refusé]</text>
+        <polygon fill="#181818" points="1520,1559.6797,1510,1563.6797,1520,1567.6797,1516,1563.6797" style="stroke:#181818;stroke-width:1.0;"/>
+        <line style="stroke:#181818;stroke-width:1.0;stroke-dasharray:2.0,2.0;" x1="1514" x2="1661" y1="1563.6797" y2="1563.6797"/>
+        <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="81" x="1526" y="1558.6138">Empty result</text>
+        <polygon fill="#181818" points="693,1588.8125,683,1592.8125,693,1596.8125,689,1592.8125" style="stroke:#181818;stroke-width:1.0;"/>
+        <line style="stroke:#181818;stroke-width:1.0;stroke-dasharray:2.0,2.0;" x1="687" x2="1508" y1="1592.8125" y2="1592.8125"/>
+        <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="108" x="699" y="1587.7466">Optional.empty()</text>
+        <polygon fill="#181818" points="251,1617.9453,241,1621.9453,251,1625.9453,247,1621.9453" style="stroke:#181818;stroke-width:1.0;"/>
+        <line style="stroke:#181818;stroke-width:1.0;stroke-dasharray:2.0,2.0;" x1="245" x2="681" y1="1621.9453" y2="1621.9453"/>
+        <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="94" x="257" y="1616.8794">404 Not Found</text>
+        <polygon fill="#181818" points="68,1647.0781,58,1651.0781,68,1655.0781,64,1651.0781" style="stroke:#181818;stroke-width:1.0;"/>
+        <line style="stroke:#181818;stroke-width:1.0;stroke-dasharray:2.0,2.0;" x1="62" x2="239" y1="1651.0781" y2="1651.0781"/>
+        <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="159" x="74" y="1646.0122">Erreur "Offre introuvable"</text>
+        <!--SRC=[nLN1Sjis4BtpAtPq2TagYfiwFMZQT2IBRfr6bcCfzKKp7OXSIKWXW051EOh7_z9ZVUyVwCUw2ueIwIYUtieJ2BpTVRlxi129CnRUEwbaBXmMDiY4TJAHcT0EMkVMQ8SwdUgUNXHAs1Q877Rh9lJDhUiLRecQjeIJHfzBvR0qA9UFy6PsZPd99H7ONAmovP6yrSHTfEnoBZ4zm4iM5Aq9VP-ZVGIgjfh0CIQ5bMuppZ0XroNVt1lmLXCSKtYt6Gej5hjquc6G2YTc8aTeNPdSBIoEtxtrPuD-4DJA2SzVL-NgmY_n15vyCBFynPrCxuFTFaFA0jKHtxtydefEAHehFtj-NUYZi6ZXxitDv3u8j748PaqRbNNyoLcHC1RGmLeecNhBgKuB8ACWA97rY5ZQS9qknGh33xSkgi6g-dLXBdNQtyGh8LMOA4bDkKYZe3fdxA3VXN7yDZwRm3TmVZqQGa6d-LJV_1fVnu1i2Z_1py6W3yyRlda5wEjSyrXZwG7KCqiWNX_Bv7VE5q5GpIRcJzJmBUHoeOKhB4B9-5ZH1ji7Iaqwg4HnnfB_vBfb-GzwtcVTzZ6eBqvY7jMfr2jraORKmwWMiJpjPHagM4j1KhDIBs10KeBhU3oPQbD0Gj7jzX_5Lp6eAjlqMyR3zDpOiqD9ocXx4-RUXGMwEYGAUBjnp8imwj3gYjYmvbKDzZ-tlsJvHVDBTlkwV2cEPX5atajNKjz8jnmd9aF_TwmMJvLgAN9l7BO4cxUYnoncnYWKkefs814Fkv1Of77mha2x2MdmTH8bSf9EFAmvE2D1ePN2etuarEk33vvA58AQtwCse39waKyC4ntPCXtgVhjUX7P5X3GXb0E_1h7617BE0tmQ0T37pWz1aba7FnQa0ckCOrs4BPcseZPuVHtmUzvN94M-8WYXJAd17eUAPcDz3cfZLq8TZoTq6aurF1sw_HK4YumnjToZgVwlJA5tEG2P_i5UM9p4NAVDtdtaVdHkbtJbmgpoKFRkcEXvUbUQ9yVqMqQYST88TVhgXx8pr6bmrXJhxGEFRP7vruTIWUrVe9uLjRUPSzhT7cR6bhjhmoSDDV6PnRnGpfyThbJr6BqyEO7HRt37X86VCxZtoFshn5Vq49i6rvnUoYKzWa1JLZqpyxd5iiySIzEZKsL1OqmaoVRld1ZCYtpxy9XulChSfawlGNsKyRWLgeCC2wEl971wSWgNni6vAQXbJrAFIHgamTQ8EOFKdgYOAMpvTlyB]-->
+    </g>
+</svg>

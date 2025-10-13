@@ -1,0 +1,117 @@
+@startuml
+class User {
+    - id : Integer
+    - name : String
+    - firstname : String
+    - email : String
+    - password : String
+    - authToken : String
+    - rememberMeToken : String
+    - enabled : Boolean
+    - role : Role
+    + getAuthorities() : Collection<GrantedAuthority>
+    + getUsername() : String
+    + isAccountNonExpired() : boolean
+    + isAccountNonLocked() : boolean
+    + isCredentialsNonExpired() : boolean
+    + isEnabled() : boolean
+}
+
+class Role {
+    - id : Integer
+    - role : String
+    - isAdmin : Boolean
+}
+
+class Job {
+    - id : Integer
+    - position : String
+    - compagny : String
+    - user : User
+    - offerStatus : OfferStatusEnum
+    - contract : ContractEnum
+    - workMode : WorkModeEnum
+    - workTime : WorkTimeEnum
+    - jobHasStatuses : List<JobHasStatus>
+}
+
+class JobHasStatus {
+    - id : Integer
+    - jobStatus : JobStatusEnum
+    - offerStatus : OfferStatusEnum
+    - appliedAt : Instant
+    - job : Job
+}
+
+abstract class IdentifiedHandler {
+    # userRepository : UserRepository
+    # getAuth() : Authentication
+    # getClientId() : String
+    # getAuthorities() : Collection<GrantedAuthority>
+    # hasScope(String) : boolean
+    # getCurrentUser() : User
+    # isAdminWithScopeAdmin() : boolean
+}
+
+class JobManager {
+    - jobRepository : JobRepository
+    + registerJob(Job) : void
+    + updateJob(Job) : void
+    + searchJobsForCurrentUser(JobSearchRequest, int, int) : Map
+    - loadCurrentUserAndIsAdmin(Job) : void
+    - buildSpecification(JobSearchRequest) : Specification<Job>
+}
+
+class JobEventHandler {
+    - jobManager : JobManager
+    + handleBeforeCreate(Job) : void
+    + handleBeforeSave(Job) : void
+    + handleBeforeDelete(Job) : void
+}
+
+class SecuritySpecifications {
+    + {static} belongsToUserOrAdmin(User, boolean) : Specification<Job>
+    + {static} byIdAndBelongsToUserOrAdmin(Integer, User, boolean) : Specification<Job>
+}
+
+class JwtAuthenticationFilter {
+    - jwtService : JwtService
+    - userDetailsService : UserDetailsService
+    - userRepository : UserRepository
+    - csb : ClientSignatureBuilder
+    + doFilterInternal(HttpServletRequest, HttpServletResponse, FilterChain) : void
+    - handleClientCredentialsToken(String, HttpServletRequest) : boolean
+    - setAuthentication(String) : void
+}
+
+class JwtService {
+    - SECRET_KEY : String
+    + extractAllClaims(String) : Claims
+    + extractUserName(String) : String
+    + generateClientCredentialsToken(Map, String, int) : String
+    + isClientCredentialsTokenValid(String, String) : boolean
+    + extractScopes(String) : String
+    + extractAuthority(String) : String
+}
+
+interface JobRepository
+interface UserRepository
+
+User "1" --> "1" Role : has
+Job "n" --> "1" User : belongsTo
+Job "1" --> "n" JobHasStatus : has
+
+IdentifiedHandler <|-- JobManager
+IdentifiedHandler <|-- JobEventHandler
+
+JobManager --> JobRepository : uses
+JobManager --> SecuritySpecifications : uses
+JobEventHandler --> JobManager : delegates to
+
+JwtAuthenticationFilter --> JwtService : uses
+JwtAuthenticationFilter --> UserRepository : uses
+JwtAuthenticationFilter --> User : loads
+
+SecuritySpecifications --> User : filters by
+
+@enduml

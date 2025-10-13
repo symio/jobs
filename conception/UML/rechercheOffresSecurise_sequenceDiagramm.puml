@@ -1,0 +1,73 @@
+@startuml
+actor Utilisateur
+participant "Frontend\nAngular" as Angular
+participant "JobSearchController" as Controller
+participant "JobManager" as Service
+participant "SecurityContext" as Auth
+participant "JobRepositoryImpl" as Repo
+participant "SecuritySpecifications" as Spec
+participant "EntityManager" as EM
+database "PostgreSQL" as DB
+
+Utilisateur -> Angular: Recherche d'offres\n(critères + pagination)
+Angular -> Controller: POST /jobs/search\nAuthorization: Bearer {JWT}
+
+note over Controller: JwtAuthenticationFilter\nvalide le token
+
+Controller -> Service: searchJobsForCurrentUser(request, page, size)
+
+Service -> Auth: getCurrentUser()
+Auth --> Service: User currentUser
+
+Service -> Auth: isAdminWithScopeAdmin()
+Auth --> Service: boolean isAdmin
+
+Service -> Spec: belongsToUserOrAdmin(currentUser, isAdmin)
+Spec --> Service: Specification<Job> securitySpec
+
+Service -> Service: buildSpecification(request)
+note right: Construit les critères\nde recherche métier
+Service --> Service: Specification<Job> searchSpec
+
+Service -> Service: securitySpec.and(searchSpec)
+Service --> Service: Specification<Job> finalSpec
+
+Service -> Repo: findBySearch(finalSpec, pageable)
+
+Repo -> EM: createQuery(Job.class)
+EM --> Repo: CriteriaQuery<Job>
+
+Repo -> Spec: securitySpec.toPredicate(root, query, cb)
+
+alt Utilisateur Admin
+    Spec --> Repo: cb.conjunction() // Pas de filtre
+else Utilisateur Normal
+    Spec --> Repo: cb.equal(root.get("user"), currentUser)
+end
+
+Repo -> Spec: searchSpec.toPredicate(root, query, cb)
+Spec --> Repo: Predicate critèresMétier
+
+Repo -> EM: query.where(securityPredicate AND searchPredicate)
+Repo -> EM: typedQuery.setFirstResult(offset)
+Repo -> EM: typedQuery.setMaxResults(size)
+
+EM -> DB: SELECT * FROM jobs\nWHERE id_user = ?\nAND contract = ?\nLIMIT ? OFFSET ?
+DB --> EM: List<Job> results
+
+EM --> Repo: List<Job> filteredJobs
+Repo -> Repo: count(finalSpec)
+Repo -> EM: SELECT COUNT(*) FROM jobs\nWHERE conditions
+EM -> DB: COUNT query
+DB --> EM: long total
+EM --> Repo: total
+
+Repo --> Service: Page<Job>(filteredJobs, total)
+
+Service -> Service: buildHalResponse(jobPage)
+Service --> Controller: Map<String, Object> response
+
+Controller --> Angular: 200 OK\n{ _embedded: { jobs: [...] },\npage: {...} }
+Angular --> Utilisateur: Affichage des résultats\n(uniquement ses offres)
+
+@enduml

@@ -1,0 +1,73 @@
+@startuml
+actor Utilisateur
+participant "Frontend\nAngular" as Angular
+participant "JwtAuthenticationFilter" as Filter
+participant "JobRepositoryImpl" as Repo
+participant "IdentifiedRepository" as Auth
+participant "UserRepository" as UserRepo
+participant "SecuritySpecifications" as Spec
+participant "EntityManager" as EM
+database "PostgreSQL" as DB
+
+Utilisateur -> Angular: GET /jobs/{id}
+Angular -> Filter: GET /jobs/123\nAuthorization: Bearer {JWT}
+
+note over Filter: Extraction et validation\ndu JWT
+
+Filter -> Filter: extractUserName(jwt)
+Filter -> UserRepo: findByEmail(clientId)
+UserRepo -> DB: SELECT * FROM users\nWHERE email = ?
+DB --> UserRepo: User entity
+UserRepo --> Filter: User currentUser
+
+Filter -> Filter: Valide authToken + signature client
+
+note over Filter: Définit SecurityContext:\nAuthentication(clientId, authorities)
+
+Filter -> Repo: findById(123)
+note over Repo: Appel via Spring Data REST\nou contrôleur
+
+Repo -> Repo: findByIdFilteredForCurrentUser(123)
+
+Repo -> Auth: getCurrentUser()
+Auth -> Auth: getAuth().getPrincipal()
+Auth -> UserRepo: findByEmail(clientId)
+UserRepo -> DB: SELECT * FROM users\nWHERE email = ?
+DB --> UserRepo: User entity
+UserRepo --> Auth: User currentUser
+Auth --> Repo: User currentUser
+
+Repo -> Auth: isAdminWithScopeAdmin()
+Auth -> Auth: getCurrentUser()
+Auth -> Auth: hasScope("admin")
+Auth --> Repo: boolean isAdmin
+
+Repo -> EM: createQuery(Job.class)
+EM --> Repo: CriteriaQuery<Job>
+
+Repo -> Spec: byIdAndBelongsToUserOrAdmin(123, currentUser, isAdmin)
+
+alt Admin avec scope admin
+    Spec -> Spec: cb.equal(root.get("id"), 123)
+    Spec --> Repo: Predicate (id = 123)
+else Utilisateur normal
+    Spec -> Spec: cb.and(\n  cb.equal(root.get("id"), 123),\n  cb.equal(root.get("user"), currentUser)\n)
+    Spec --> Repo: Predicate (id = 123 AND id_user = ?)
+end
+
+Repo -> EM: query.where(predicate)
+EM -> DB: SELECT * FROM jobs\nWHERE id_job = 123\nAND id_user = 456
+
+alt Job trouvé et appartient à l'utilisateur
+    DB --> EM: Job entity
+    EM --> Repo: Job result
+    Repo --> Angular: 200 OK { job data }
+    Angular --> Utilisateur: Affichage de l'offre
+else Job non trouvé ou accès refusé
+    DB --> EM: Empty result
+    EM --> Repo: Optional.empty()
+    Repo --> Angular: 404 Not Found
+    Angular --> Utilisateur: Erreur "Offre introuvable"
+end
+
+@enduml

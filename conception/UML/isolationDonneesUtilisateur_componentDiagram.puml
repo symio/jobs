@@ -1,0 +1,75 @@
+@startuml
+package "Couche Présentation" {
+  [Angular App] as A
+}
+
+package "Couche Sécurité" {
+  [JwtAuthenticationFilter] as B
+  [SecurityContext] as C
+  [Authentication Object] as D
+}
+
+package "Couche Contrôleur" {
+  [JobSearchController] as E
+  [JobCountController] as F
+}
+
+package "Couche Service" {
+  [JobManager] as G
+  [IdentifiedHandler] as H
+}
+
+package "Couche Repository" {
+  [JobRepositoryImpl] as I
+  [IdentifiedRepository] as J
+  [SecuritySpecifications] as K
+}
+
+package "Couche Persistance" {
+  database "PostgreSQL" as L
+}
+
+A -down-> B : JWT Token
+B -down-> C : Set Authentication
+C -down-> D : Store
+
+A -down-> E : API Calls
+A -down-> F : API Calls
+
+E -down-> G : Delegate
+F -down-> I : Direct Call
+
+G .up.|> H : Extends
+H -up-> D : getCurrentUser
+
+I .up.|> J : Extends
+J -up-> D : getCurrentUser
+I -right-> K : Use
+
+K -down-> I : Generate Predicate
+I -down-> L : Execute Query
+
+L -up-> I : Filtered Data
+I -up-> G : Filtered Results
+G -up-> E : Response
+E -up-> A : JSON
+
+note right of K #ff6b6b
+  **SecuritySpecifications**
+  Génère les prédicats
+  de filtrage utilisateur
+end note
+
+note right of D #4ecdc4
+  **Authentication**
+  Contient l'identité
+  de l'utilisateur connecté
+end note
+
+note right of L #ffe66d
+  **PostgreSQL**
+  Données isolées
+  par utilisateur
+end note
+
+@enduml

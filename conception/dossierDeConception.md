@@ -50,3 +50,26 @@
 ### Action « Se connecter »
 
 ![Logic datas model Jobs](UML/exports/login_sequenceDiagram.svg)
+
+## Focus sécurité : 
+### Architecture Globale de sécurité
+
+![Logic datas model Jobs](UML/exports/archtectureGlobaleSecurite_packageDiagram.svg)
+
+### isolation des données utilisateur (composants)
+
+![Logic datas model Jobs](UML/exports/isolationDonneesUtilisateur_componentDiagram.svg)
+
+### Filtrage sécurisé
+
+#### Filtrer des offres (activité)
+
+![Logic datas model Jobs](UML/exports/filtrageSecurise_activityDiagram.svg)
+
+#### Filtrer des offres (séquence)
+
+![Logic datas model Jobs](UML/exports/rechercheOffresSecurise_sequenceDiagramm.svg)
+
+#### Architecture des repositories et filtrage de sécurité (class diagram)
+
+![Logic datas model Jobs](UML/exports/securedRessourceRepository_classDiagram.svg)

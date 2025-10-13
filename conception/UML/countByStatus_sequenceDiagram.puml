@@ -1,0 +1,59 @@
+@startuml
+actor Utilisateur
+participant "Frontend\nAngular" as Angular
+participant "JobCountController" as Controller
+participant "JobRepositoryImpl" as Repo
+participant "IdentifiedRepository" as Auth
+participant "SecuritySpecifications" as Spec
+participant "EntityManager" as EM
+database "PostgreSQL" as DB
+
+Utilisateur -> Angular: Demande statistiques\n(offres en cours)
+Angular -> Controller: GET /jobs/countbystatus\n?status=EN_COURS
+
+Controller -> Controller: LogicalStatusEnum.EN_COURS\n.getOfferStatuses()
+note right: [A_EN_COURS]
+
+loop Pour chaque OfferStatusEnum
+    Controller -> Repo: countFilteredForCurrentUserByOfferStatus(A_EN_COURS)
+    
+    Repo -> Auth: getCurrentUser()
+    Auth --> Repo: User currentUser
+    
+    Repo -> Auth: isAdminWithScopeAdmin()
+    Auth --> Repo: boolean isAdmin
+    
+    Repo -> EM: createQuery(Long.class)
+    Repo -> EM: query.select(cb.count(root))
+    
+    Repo -> Spec: belongsToUserOrAdmin(currentUser, isAdmin)
+    
+    alt Admin
+        Spec --> Repo: cb.conjunction()
+        note right: Pas de filtre utilisateur
+    else User
+        Spec --> Repo: cb.equal(root.get("user"), currentUser)
+    end
+    
+    Repo -> Repo: cb.equal(root.get("offerStatus"), A_EN_COURS)
+    Repo -> Repo: cb.and(securityPredicate, statusPredicate)
+    
+    Repo -> EM: query.where(finalPredicate)
+    
+    alt Admin
+        EM -> DB: SELECT COUNT(*)\nFROM jobs\nWHERE offer_status = 'A_EN_COURS'
+    else User
+        EM -> DB: SELECT COUNT(*)\nFROM jobs\nWHERE offer_status = 'A_EN_COURS'\nAND id_user = 456
+    end
+    
+    DB --> EM: long count
+    EM --> Repo: count
+    Repo --> Controller: count
+    
+    Controller -> Controller: totalCount += count
+end
+
+Controller --> Angular: 200 OK { count: totalCount }
+Angular --> Utilisateur: Badge "En cours (5)"
+
+@enduml

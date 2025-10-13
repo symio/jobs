@@ -1,0 +1,100 @@
+@startuml
+abstract class IdentifiedRepository {
+    # EntityManager em
+    # UserRepository userRepository
+    # getAuth() : Authentication
+    # getClientId() : String
+    # getAuthorities() : Collection<GrantedAuthority>
+    # hasScope(String scope) : boolean
+    # getCurrentUser() : User
+    # isAdminWithScopeAdmin() : boolean
+    # paginateQuery(TypedQuery, Pageable, LongSupplier) : Page
+}
+
+interface JobRepositoryCustom {
+    + findAllFilteredForCurrentUser() : List<Job>
+    + findAllFilteredForCurrentUser(Pageable) : Page<Job>
+    + findByIdFilteredForCurrentUser(Integer) : Optional<Job>
+    + countFilteredForCurrentUserByOfferStatus(OfferStatusEnum) : long
+    + findBySearch(Specification, Pageable) : Page<Job>
+}
+
+class JobRepositoryImpl {
+    - count(Specification) : long
+    - countJobs(User, boolean) : long
+    + findBySearch(Specification, Pageable) : Page<Job>
+    + findAllFilteredForCurrentUser() : List<Job>
+    + findAllFilteredForCurrentUser(Pageable) : Page<Job>
+    + findByIdFilteredForCurrentUser(Integer) : Optional<Job>
+    + countFilteredForCurrentUserByOfferStatus(OfferStatusEnum) : long
+}
+
+interface JobRepository {
+    + findAll() : List<Job>
+    + findAll(Pageable) : Page<Job>
+    + findById(Integer) : Optional<Job>
+    + save(Job) : Job
+    + deleteById(Integer) : void
+}
+
+class SecuritySpecifications {
+    + {static} belongsToUserOrAdmin(User, boolean) : Specification<T>
+    + {static} byIdAndBelongsToUserOrAdmin(Integer, User, boolean) : Specification<T>
+}
+
+interface UserRepository {
+    + findByEmail(String) : User
+    + findByEmailAndPassword(String, String) : User
+    + findByEmailContaining(String) : List<User>
+    + findByNameContaining(String) : List<User>
+    + findByRole_Role(String) : List<User>
+}
+
+class SecurityContextHolder <<Spring Security>> {
+    + {static} getContext() : SecurityContext
+}
+
+class SecurityContext <<Spring Security>> {
+    + getAuthentication() : Authentication
+}
+
+class Authentication <<Spring Security>> {
+    + getPrincipal() : Object
+    + getAuthorities() : Collection<GrantedAuthority>
+    + isAuthenticated() : boolean
+}
+
+class EntityManager <<JPA>> {
+    + createQuery(Class) : CriteriaQuery
+    + createQuery(CriteriaQuery) : TypedQuery
+    + getCriteriaBuilder() : CriteriaBuilder
+}
+
+interface "Specification<T>" as Specification {
+    + toPredicate(Root, CriteriaQuery, CriteriaBuilder) : Predicate
+    + and(Specification) : Specification
+    + or(Specification) : Specification
+}
+
+interface "JpaRepository<Job, Integer>" as JpaRepository
+interface "JpaSpecificationExecutor<Job>" as JpaSpecificationExecutor
+
+IdentifiedRepository <|-- JobRepositoryImpl
+JobRepositoryCustom <|.. JobRepositoryImpl
+JobRepository --|> JobRepositoryCustom
+JobRepository --|> JpaRepository
+JobRepository --|> JpaSpecificationExecutor
+
+JobRepositoryImpl --> UserRepository : uses
+JobRepositoryImpl --> EntityManager : uses
+JobRepositoryImpl --> SecuritySpecifications : uses
+JobRepositoryImpl --> Specification : uses
+
+IdentifiedRepository --> UserRepository : depends on
+IdentifiedRepository --> SecurityContextHolder : uses
+SecurityContextHolder --> SecurityContext : provides
+SecurityContext --> Authentication : provides
+
+SecuritySpecifications ..> Specification : creates
+
+@enduml

@@ -1,0 +1,499 @@
+<?xml version="1.0" encoding="UTF-8"?><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentStyleType="text/css" height="1695px" preserveAspectRatio="none" style="width:3143px;height:1695px;background:#FFFFFF;" version="1.1" viewBox="0 0 3143 1695" width="3143px" zoomAndPan="magnify">
+    <defs/>
+    <g>
+        <!--cluster org-->
+        <g id="cluster_org">
+            <path d="M8.5,6 L36.5,6 A3.75,3.75 0 0 1 39,8.5 L46,28.2969 L3133.5,28.2969 A2.5,2.5 0 0 1 3136,30.7969 L3136,1547.5 A2.5,2.5 0 0 1 3133.5,1550 L8.5,1550 A2.5,2.5 0 0 1 6,1547.5 L6,8.5 A2.5,2.5 0 0 1 8.5,6 " fill="none" style="stroke:#000000;stroke-width:1.5;"/>
+            <line style="stroke:#000000;stroke-width:1.5;" x1="6" x2="46" y1="28.2969" y2="28.2969"/>
+            <text fill="#000000" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacing" textLength="27" x="10" y="20.9951">org</text>
+        </g>
+        <!--cluster loamok-->
+        <g id="cluster_loamok">
+            <path d="M32.5,49 L89.5,49 A3.75,3.75 0 0 1 92,51.5 L99,71.2969 L3109.5,71.2969 A2.5,2.5 0 0 1 3112,73.7969 L3112,1523.5 A2.5,2.5 0 0 1 3109.5,1526 L32.5,1526 A2.5,2.5 0 0 1 30,1523.5 L30,51.5 A2.5,2.5 0 0 1 32.5,49 " fill="none" style="stroke:#000000;stroke-width:1.5;"/>
+            <line style="stroke:#000000;stroke-width:1.5;" x1="30" x2="99" y1="71.2969" y2="71.2969"/>
+            <text fill="#000000" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacing" textLength="56" x="34" y="63.9951">loamok</text>
+        </g>
+        <!--cluster jobs-->
+        <g id="cluster_jobs">
+            <path d="M56.5,92 L90.5,92 A3.75,3.75 0 0 1 93,94.5 L100,114.2969 L3085.5,114.2969 A2.5,2.5 0 0 1 3088,116.7969 L3088,1499.5 A2.5,2.5 0 0 1 3085.5,1502 L56.5,1502 A2.5,2.5 0 0 1 54,1499.5 L54,94.5 A2.5,2.5 0 0 1 56.5,92 " fill="none" style="stroke:#000000;stroke-width:1.5;"/>
+            <line style="stroke:#000000;stroke-width:1.5;" x1="54" x2="100" y1="114.2969" y2="114.2969"/>
+            <text fill="#000000" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacing" textLength="33" x="58" y="106.9951">jobs</text>
+        </g>
+        <!--cluster web-->
+        <g id="cluster_web">
+            <path d="M395.5,143 L430.5,143 A3.75,3.75 0 0 1 433,145.5 L440,165.2969 L860.5,165.2969 A2.5,2.5 0 0 1 863,167.7969 L863,415.5 A2.5,2.5 0 0 1 860.5,418 L395.5,418 A2.5,2.5 0 0 1 393,415.5 L393,145.5 A2.5,2.5 0 0 1 395.5,143 " fill="none" style="stroke:#000000;stroke-width:1.5;"/>
+            <line style="stroke:#000000;stroke-width:1.5;" x1="393" x2="440" y1="165.2969" y2="165.2969"/>
+            <text fill="#000000" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacing" textLength="34" x="397" y="157.9951">web</text>
+            <text fill="#000000" font-family="sans-serif" font-size="14" font-style="italic" lengthAdjust="spacing" textLength="85" x="589.5" y="180.292">«Controller»</text>
+        </g>
+        <!--cluster security-->
+        <g id="cluster_security">
+            <path d="M1656.5,483 L1721.5,483 A3.75,3.75 0 0 1 1724,485.5 L1731,505.2969 L2575.5,505.2969 A2.5,2.5 0 0 1 2578,507.7969 L2578,928.5 A2.5,2.5 0 0 1 2575.5,931 L1656.5,931 A2.5,2.5 0 0 1 1654,928.5 L1654,485.5 A2.5,2.5 0 0 1 1656.5,483 " fill="none" style="stroke:#000000;stroke-width:1.5;"/>
+            <line style="stroke:#000000;stroke-width:1.5;" x1="1654" x2="1731" y1="505.2969" y2="505.2969"/>
+            <text fill="#000000" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacing" textLength="64" x="1658" y="497.9951">security</text>
+            <text fill="#000000" font-family="sans-serif" font-size="14" font-style="italic" lengthAdjust="spacing" textLength="74" x="2083" y="520.292">«Security»</text>
+        </g>
+        <!--cluster jwt-->
+        <g id="cluster_jwt">
+            <path d="M2195.5,566 L2220.5,566 A3.75,3.75 0 0 1 2223,568.5 L2230,588.2969 L2543.5,588.2969 A2.5,2.5 0 0 1 2546,590.7969 L2546,896.5 A2.5,2.5 0 0 1 2543.5,899 L2195.5,899 A2.5,2.5 0 0 1 2193,896.5 L2193,568.5 A2.5,2.5 0 0 1 2195.5,566 " fill="none" style="stroke:#000000;stroke-width:1.5;"/>
+            <line style="stroke:#000000;stroke-width:1.5;" x1="2193" x2="2230" y1="588.2969" y2="588.2969"/>
+            <text fill="#000000" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacing" textLength="24" x="2197" y="580.9951">jwt</text>
+        </g>
+        <!--cluster oauth2-->
+        <g id="cluster_oauth2">
+            <path d="M2005.5,566 L2061.5,566 A3.75,3.75 0 0 1 2064,568.5 L2071,588.2969 L2166.5,588.2969 A2.5,2.5 0 0 1 2169,590.7969 L2169,681.5 A2.5,2.5 0 0 1 2166.5,684 L2005.5,684 A2.5,2.5 0 0 1 2003,681.5 L2003,568.5 A2.5,2.5 0 0 1 2005.5,566 " fill="none" style="stroke:#000000;stroke-width:1.5;"/>
+            <line style="stroke:#000000;stroke-width:1.5;" x1="2003" x2="2071" y1="588.2969" y2="588.2969"/>
+            <text fill="#000000" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacing" textLength="55" x="2007" y="580.9951">oauth2</text>
+        </g>
+        <!--cluster manager-->
+        <g id="cluster_manager">
+            <path d="M618.5,526 L688.5,526 A3.75,3.75 0 0 1 691,528.5 L698,548.2969 L942.5,548.2969 A2.5,2.5 0 0 1 945,550.7969 L945,904.5 A2.5,2.5 0 0 1 942.5,907 L618.5,907 A2.5,2.5 0 0 1 616,904.5 L616,528.5 A2.5,2.5 0 0 1 618.5,526 " fill="none" style="stroke:#000000;stroke-width:1.5;"/>
+            <line style="stroke:#000000;stroke-width:1.5;" x1="616" x2="698" y1="548.2969" y2="548.2969"/>
+            <text fill="#000000" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacing" textLength="69" x="620" y="540.9951">manager</text>
+            <text fill="#000000" font-family="sans-serif" font-size="14" font-style="italic" lengthAdjust="spacing" textLength="69" x="750" y="563.292">«Service»</text>
+        </g>
+        <!--cluster repository-->
+        <g id="cluster_repository">
+            <path d="M999.5,741 L1082.5,741 A3.75,3.75 0 0 1 1085,743.5 L1092,763.2969 L1611.5,763.2969 A2.5,2.5 0 0 1 1614,765.7969 L1614,1340.5 A2.5,2.5 0 0 1 1611.5,1343 L999.5,1343 A2.5,2.5 0 0 1 997,1340.5 L997,743.5 A2.5,2.5 0 0 1 999.5,741 " fill="none" style="stroke:#000000;stroke-width:1.5;"/>
+            <line style="stroke:#000000;stroke-width:1.5;" x1="997" x2="1092" y1="763.2969" y2="763.2969"/>
+            <text fill="#000000" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacing" textLength="82" x="1001" y="755.9951">repository</text>
+            <text fill="#000000" font-family="sans-serif" font-size="14" font-style="italic" lengthAdjust="spacing" textLength="92" x="1263.5" y="778.292">«Repository»</text>
+        </g>
+        <!--cluster event-->
+        <g id="cluster_event">
+            <path d="M88.5,526 L134.5,526 A3.75,3.75 0 0 1 137,528.5 L144,548.2969 L481.5,548.2969 A2.5,2.5 0 0 1 484,550.7969 L484,904.5 A2.5,2.5 0 0 1 481.5,907 L88.5,907 A2.5,2.5 0 0 1 86,904.5 L86,528.5 A2.5,2.5 0 0 1 88.5,526 " fill="none" style="stroke:#000000;stroke-width:1.5;"/>
+            <line style="stroke:#000000;stroke-width:1.5;" x1="86" x2="144" y1="548.2969" y2="548.2969"/>
+            <text fill="#000000" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacing" textLength="45" x="90" y="540.9951">event</text>
+            <text fill="#000000" font-family="sans-serif" font-size="14" font-style="italic" lengthAdjust="spacing" textLength="112" x="233" y="563.292">«EventHandler»</text>
+        </g>
+        <!--cluster entity-->
+        <g id="cluster_entity">
+            <path d="M88.5,996 L134.5,996 A3.75,3.75 0 0 1 137,998.5 L144,1018.2969 L362.5,1018.2969 A2.5,2.5 0 0 1 365,1020.7969 L365,1340.5 A2.5,2.5 0 0 1 362.5,1343 L88.5,1343 A2.5,2.5 0 0 1 86,1340.5 L86,998.5 A2.5,2.5 0 0 1 88.5,996 " fill="none" style="stroke:#000000;stroke-width:1.5;"/>
+            <line style="stroke:#000000;stroke-width:1.5;" x1="86" x2="144" y1="1018.2969" y2="1018.2969"/>
+            <text fill="#000000" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacing" textLength="45" x="90" y="1010.9951">entity</text>
+            <text fill="#000000" font-family="sans-serif" font-size="14" font-style="italic" lengthAdjust="spacing" textLength="57" x="201" y="1033.292">«Entity»</text>
+        </g>
+        <!--cluster enums-->
+        <g id="cluster_enums">
+            <path d="M407.5,1209 L461.5,1209 A3.75,3.75 0 0 1 464,1211.5 L471,1231.2969 L954.5,1231.2969 A2.5,2.5 0 0 1 957,1233.7969 L957,1467.5 A2.5,2.5 0 0 1 954.5,1470 L407.5,1470 A2.5,2.5 0 0 1 405,1467.5 L405,1211.5 A2.5,2.5 0 0 1 407.5,1209 " fill="none" style="stroke:#000000;stroke-width:1.5;"/>
+            <line style="stroke:#000000;stroke-width:1.5;" x1="405" x2="471" y1="1231.2969" y2="1231.2969"/>
+            <text fill="#000000" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacing" textLength="53" x="409" y="1223.9951">enums</text>
+        </g>
+        <!--cluster util-->
+        <g id="cluster_util">
+            <path d="M2620.5,773 L2645.5,773 A3.75,3.75 0 0 1 2648,775.5 L2655,795.2969 L3053.5,795.2969 A2.5,2.5 0 0 1 3056,797.7969 L3056,904.5 A2.5,2.5 0 0 1 3053.5,907 L2620.5,907 A2.5,2.5 0 0 1 2618,904.5 L2618,775.5 A2.5,2.5 0 0 1 2620.5,773 " fill="none" style="stroke:#000000;stroke-width:1.5;"/>
+            <line style="stroke:#000000;stroke-width:1.5;" x1="2618" x2="2655" y1="795.2969" y2="795.2969"/>
+            <text fill="#000000" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacing" textLength="24" x="2622" y="787.9951">util</text>
+        </g>
+        <!--class AuthenticationController-->
+        <g id="elem_AuthenticationController">
+            <rect codeLine="4" fill="#F1F1F1" height="48" id="AuthenticationController" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="199" x="417.5" y="237"/>
+            <ellipse cx="432.5" cy="253" fill="#ADD1B2" rx="11" ry="11" style="stroke:#181818;stroke-width:1.0;"/>
+            <path d="M435.4688,258.6406 Q434.8906,258.9375 434.25,259.0781 Q433.6094,259.2344 432.9063,259.2344 Q430.4063,259.2344 429.0781,257.5938 Q427.7656,255.9375 427.7656,252.8125 Q427.7656,249.6875 429.0781,248.0313 Q430.4063,246.375 432.9063,246.375 Q433.6094,246.375 434.25,246.5313 Q434.9063,246.6875 435.4688,246.9844 L435.4688,249.7031 Q434.8438,249.125 434.25,248.8594 Q433.6563,248.5781 433.0313,248.5781 Q431.6875,248.5781 431,249.6563 Q430.3125,250.7188 430.3125,252.8125 Q430.3125,254.9063 431,255.9844 Q431.6875,257.0469 433.0313,257.0469 Q433.6563,257.0469 434.25,256.7813 Q434.8438,256.5 435.4688,255.9219 L435.4688,258.6406 Z " fill="#000000"/>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="167" x="446.5" y="257.8467">AuthenticationController</text>
+            <line style="stroke:#181818;stroke-width:0.5;" x1="418.5" x2="615.5" y1="269" y2="269"/>
+            <line style="stroke:#181818;stroke-width:0.5;" x1="418.5" x2="615.5" y1="277" y2="277"/>
+        </g>
+        <!--class JobSearchController-->
+        <g id="elem_JobSearchController">
+            <rect codeLine="5" fill="#F1F1F1" height="48" id="JobSearchController" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="168" x="652" y="237"/>
+            <ellipse cx="667" cy="253" fill="#ADD1B2" rx="11" ry="11" style="stroke:#181818;stroke-width:1.0;"/>
+            <path d="M669.9688,258.6406 Q669.3906,258.9375 668.75,259.0781 Q668.1094,259.2344 667.4063,259.2344 Q664.9063,259.2344 663.5781,257.5938 Q662.2656,255.9375 662.2656,252.8125 Q662.2656,249.6875 663.5781,248.0313 Q664.9063,246.375 667.4063,246.375 Q668.1094,246.375 668.75,246.5313 Q669.4063,246.6875 669.9688,246.9844 L669.9688,249.7031 Q669.3438,249.125 668.75,248.8594 Q668.1563,248.5781 667.5313,248.5781 Q666.1875,248.5781 665.5,249.6563 Q664.8125,250.7188 664.8125,252.8125 Q664.8125,254.9063 665.5,255.9844 Q666.1875,257.0469 667.5313,257.0469 Q668.1563,257.0469 668.75,256.7813 Q669.3438,256.5 669.9688,255.9219 L669.9688,258.6406 Z " fill="#000000"/>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="136" x="681" y="257.8467">JobSearchController</text>
+            <line style="stroke:#181818;stroke-width:0.5;" x1="653" x2="819" y1="269" y2="269"/>
+            <line style="stroke:#181818;stroke-width:0.5;" x1="653" x2="819" y1="277" y2="277"/>
+        </g>
+        <!--class JobCountController-->
+        <g id="elem_JobCountController">
+            <rect codeLine="6" fill="#F1F1F1" height="48" id="JobCountController" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="162" x="417" y="346"/>
+            <ellipse cx="432" cy="362" fill="#ADD1B2" rx="11" ry="11" style="stroke:#181818;stroke-width:1.0;"/>
+            <path d="M434.9688,367.6406 Q434.3906,367.9375 433.75,368.0781 Q433.1094,368.2344 432.4063,368.2344 Q429.9063,368.2344 428.5781,366.5938 Q427.2656,364.9375 427.2656,361.8125 Q427.2656,358.6875 428.5781,357.0313 Q429.9063,355.375 432.4063,355.375 Q433.1094,355.375 433.75,355.5313 Q434.4063,355.6875 434.9688,355.9844 L434.9688,358.7031 Q434.3438,358.125 433.75,357.8594 Q433.1563,357.5781 432.5313,357.5781 Q431.1875,357.5781 430.5,358.6563 Q429.8125,359.7188 429.8125,361.8125 Q429.8125,363.9063 430.5,364.9844 Q431.1875,366.0469 432.5313,366.0469 Q433.1563,366.0469 433.75,365.7813 Q434.3438,365.5 434.9688,364.9219 L434.9688,367.6406 Z " fill="#000000"/>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="130" x="446" y="366.8467">JobCountController</text>
+            <line style="stroke:#181818;stroke-width:0.5;" x1="418" x2="578" y1="378" y2="378"/>
+            <line style="stroke:#181818;stroke-width:0.5;" x1="418" x2="578" y1="386" y2="386"/>
+        </g>
+        <!--class LabelsController-->
+        <g id="elem_LabelsController">
+            <rect codeLine="7" fill="#F1F1F1" height="48" id="LabelsController" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="143" x="614.5" y="346"/>
+            <ellipse cx="629.5" cy="362" fill="#ADD1B2" rx="11" ry="11" style="stroke:#181818;stroke-width:1.0;"/>
+            <path d="M632.4688,367.6406 Q631.8906,367.9375 631.25,368.0781 Q630.6094,368.2344 629.9063,368.2344 Q627.4063,368.2344 626.0781,366.5938 Q624.7656,364.9375 624.7656,361.8125 Q624.7656,358.6875 626.0781,357.0313 Q627.4063,355.375 629.9063,355.375 Q630.6094,355.375 631.25,355.5313 Q631.9063,355.6875 632.4688,355.9844 L632.4688,358.7031 Q631.8438,358.125 631.25,357.8594 Q630.6563,357.5781 630.0313,357.5781 Q628.6875,357.5781 628,358.6563 Q627.3125,359.7188 627.3125,361.8125 Q627.3125,363.9063 628,364.9844 Q628.6875,366.0469 630.0313,366.0469 Q630.6563,366.0469 631.25,365.7813 Q631.8438,365.5 632.4688,364.9219 L632.4688,367.6406 Z " fill="#000000"/>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="111" x="643.5" y="366.8467">LabelsController</text>
+            <line style="stroke:#181818;stroke-width:0.5;" x1="615.5" x2="756.5" y1="378" y2="378"/>
+            <line style="stroke:#181818;stroke-width:0.5;" x1="615.5" x2="756.5" y1="386" y2="386"/>
+        </g>
+        <!--class SecurityConfig-->
+        <g id="elem_SecurityConfig">
+            <rect codeLine="11" fill="#F1F1F1" height="48" id="SecurityConfig" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="131" x="1852.5" y="620"/>
+            <ellipse cx="1867.5" cy="636" fill="#ADD1B2" rx="11" ry="11" style="stroke:#181818;stroke-width:1.0;"/>
+            <path d="M1870.4688,641.6406 Q1869.8906,641.9375 1869.25,642.0781 Q1868.6094,642.2344 1867.9063,642.2344 Q1865.4063,642.2344 1864.0781,640.5938 Q1862.7656,638.9375 1862.7656,635.8125 Q1862.7656,632.6875 1864.0781,631.0313 Q1865.4063,629.375 1867.9063,629.375 Q1868.6094,629.375 1869.25,629.5313 Q1869.9063,629.6875 1870.4688,629.9844 L1870.4688,632.7031 Q1869.8438,632.125 1869.25,631.8594 Q1868.6563,631.5781 1868.0313,631.5781 Q1866.6875,631.5781 1866,632.6563 Q1865.3125,633.7188 1865.3125,635.8125 Q1865.3125,637.9063 1866,638.9844 Q1866.6875,640.0469 1868.0313,640.0469 Q1868.6563,640.0469 1869.25,639.7813 Q1869.8438,639.5 1870.4688,638.9219 L1870.4688,641.6406 Z " fill="#000000"/>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="99" x="1881.5" y="640.8467">SecurityConfig</text>
+            <line style="stroke:#181818;stroke-width:0.5;" x1="1853.5" x2="1982.5" y1="652" y2="652"/>
+            <line style="stroke:#181818;stroke-width:0.5;" x1="1853.5" x2="1982.5" y1="660" y2="660"/>
+        </g>
+        <!--class LoggingFilter-->
+        <g id="elem_LoggingFilter">
+            <rect codeLine="12" fill="#F1F1F1" height="48" id="LoggingFilter" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="120" x="1697" y="620"/>
+            <ellipse cx="1712" cy="636" fill="#ADD1B2" rx="11" ry="11" style="stroke:#181818;stroke-width:1.0;"/>
+            <path d="M1714.9688,641.6406 Q1714.3906,641.9375 1713.75,642.0781 Q1713.1094,642.2344 1712.4063,642.2344 Q1709.9063,642.2344 1708.5781,640.5938 Q1707.2656,638.9375 1707.2656,635.8125 Q1707.2656,632.6875 1708.5781,631.0313 Q1709.9063,629.375 1712.4063,629.375 Q1713.1094,629.375 1713.75,629.5313 Q1714.4063,629.6875 1714.9688,629.9844 L1714.9688,632.7031 Q1714.3438,632.125 1713.75,631.8594 Q1713.1563,631.5781 1712.5313,631.5781 Q1711.1875,631.5781 1710.5,632.6563 Q1709.8125,633.7188 1709.8125,635.8125 Q1709.8125,637.9063 1710.5,638.9844 Q1711.1875,640.0469 1712.5313,640.0469 Q1713.1563,640.0469 1713.75,639.7813 Q1714.3438,639.5 1714.9688,638.9219 L1714.9688,641.6406 Z " fill="#000000"/>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="88" x="1726" y="640.8467">LoggingFilter</text>
+            <line style="stroke:#181818;stroke-width:0.5;" x1="1698" x2="1816" y1="652" y2="652"/>
+            <line style="stroke:#181818;stroke-width:0.5;" x1="1698" x2="1816" y1="660" y2="660"/>
+        </g>
+        <!--class JwtAuthenticationFilter-->
+        <g id="elem_JwtAuthenticationFilter">
+            <rect codeLine="15" fill="#F1F1F1" height="48" id="JwtAuthenticationFilter" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="184" x="2209" y="620"/>
+            <ellipse cx="2224" cy="636" fill="#ADD1B2" rx="11" ry="11" style="stroke:#181818;stroke-width:1.0;"/>
+            <path d="M2226.9688,641.6406 Q2226.3906,641.9375 2225.75,642.0781 Q2225.1094,642.2344 2224.4063,642.2344 Q2221.9063,642.2344 2220.5781,640.5938 Q2219.2656,638.9375 2219.2656,635.8125 Q2219.2656,632.6875 2220.5781,631.0313 Q2221.9063,629.375 2224.4063,629.375 Q2225.1094,629.375 2225.75,629.5313 Q2226.4063,629.6875 2226.9688,629.9844 L2226.9688,632.7031 Q2226.3438,632.125 2225.75,631.8594 Q2225.1563,631.5781 2224.5313,631.5781 Q2223.1875,631.5781 2222.5,632.6563 Q2221.8125,633.7188 2221.8125,635.8125 Q2221.8125,637.9063 2222.5,638.9844 Q2223.1875,640.0469 2224.5313,640.0469 Q2225.1563,640.0469 2225.75,639.7813 Q2226.3438,639.5 2226.9688,638.9219 L2226.9688,641.6406 Z " fill="#000000"/>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="152" x="2238" y="640.8467">JwtAuthenticationFilter</text>
+            <line style="stroke:#181818;stroke-width:0.5;" x1="2210" x2="2392" y1="652" y2="652"/>
+            <line style="stroke:#181818;stroke-width:0.5;" x1="2210" x2="2392" y1="660" y2="660"/>
+        </g>
+        <!--class JwtService-->
+        <g id="elem_JwtService">
+            <rect codeLine="16" fill="#F1F1F1" height="48" id="JwtService" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="101" x="2428.5" y="620"/>
+            <ellipse cx="2443.5" cy="636" fill="#ADD1B2" rx="11" ry="11" style="stroke:#181818;stroke-width:1.0;"/>
+            <path d="M2446.4688,641.6406 Q2445.8906,641.9375 2445.25,642.0781 Q2444.6094,642.2344 2443.9063,642.2344 Q2441.4063,642.2344 2440.0781,640.5938 Q2438.7656,638.9375 2438.7656,635.8125 Q2438.7656,632.6875 2440.0781,631.0313 Q2441.4063,629.375 2443.9063,629.375 Q2444.6094,629.375 2445.25,629.5313 Q2445.9063,629.6875 2446.4688,629.9844 L2446.4688,632.7031 Q2445.8438,632.125 2445.25,631.8594 Q2444.6563,631.5781 2444.0313,631.5781 Q2442.6875,631.5781 2442,632.6563 Q2441.3125,633.7188 2441.3125,635.8125 Q2441.3125,637.9063 2442,638.9844 Q2442.6875,640.0469 2444.0313,640.0469 Q2444.6563,640.0469 2445.25,639.7813 Q2445.8438,639.5 2446.4688,638.9219 L2446.4688,641.6406 Z " fill="#000000"/>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="69" x="2457.5" y="640.8467">JwtService</text>
+            <line style="stroke:#181818;stroke-width:0.5;" x1="2429.5" x2="2528.5" y1="652" y2="652"/>
+            <line style="stroke:#181818;stroke-width:0.5;" x1="2429.5" x2="2528.5" y1="660" y2="660"/>
+        </g>
+        <!--class JwtAppConfig-->
+        <g id="elem_JwtAppConfig">
+            <rect codeLine="17" fill="#F1F1F1" height="48" id="JwtAppConfig" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="122" x="2240" y="835"/>
+            <ellipse cx="2255" cy="851" fill="#ADD1B2" rx="11" ry="11" style="stroke:#181818;stroke-width:1.0;"/>
+            <path d="M2257.9688,856.6406 Q2257.3906,856.9375 2256.75,857.0781 Q2256.1094,857.2344 2255.4063,857.2344 Q2252.9063,857.2344 2251.5781,855.5938 Q2250.2656,853.9375 2250.2656,850.8125 Q2250.2656,847.6875 2251.5781,846.0313 Q2252.9063,844.375 2255.4063,844.375 Q2256.1094,844.375 2256.75,844.5313 Q2257.4063,844.6875 2257.9688,844.9844 L2257.9688,847.7031 Q2257.3438,847.125 2256.75,846.8594 Q2256.1563,846.5781 2255.5313,846.5781 Q2254.1875,846.5781 2253.5,847.6563 Q2252.8125,848.7188 2252.8125,850.8125 Q2252.8125,852.9063 2253.5,853.9844 Q2254.1875,855.0469 2255.5313,855.0469 Q2256.1563,855.0469 2256.75,854.7813 Q2257.3438,854.5 2257.9688,853.9219 L2257.9688,856.6406 Z " fill="#000000"/>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="90" x="2269" y="855.8467">JwtAppConfig</text>
+            <line style="stroke:#181818;stroke-width:0.5;" x1="2241" x2="2361" y1="867" y2="867"/>
+            <line style="stroke:#181818;stroke-width:0.5;" x1="2241" x2="2361" y1="875" y2="875"/>
+        </g>
+        <!--class OAuth2Service-->
+        <g id="elem_OAuth2Service">
+            <rect codeLine="21" fill="#F1F1F1" height="48" id="OAuth2Service" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="134" x="2019" y="620"/>
+            <ellipse cx="2034" cy="636" fill="#ADD1B2" rx="11" ry="11" style="stroke:#181818;stroke-width:1.0;"/>
+            <path d="M2036.9688,641.6406 Q2036.3906,641.9375 2035.75,642.0781 Q2035.1094,642.2344 2034.4063,642.2344 Q2031.9063,642.2344 2030.5781,640.5938 Q2029.2656,638.9375 2029.2656,635.8125 Q2029.2656,632.6875 2030.5781,631.0313 Q2031.9063,629.375 2034.4063,629.375 Q2035.1094,629.375 2035.75,629.5313 Q2036.4063,629.6875 2036.9688,629.9844 L2036.9688,632.7031 Q2036.3438,632.125 2035.75,631.8594 Q2035.1563,631.5781 2034.5313,631.5781 Q2033.1875,631.5781 2032.5,632.6563 Q2031.8125,633.7188 2031.8125,635.8125 Q2031.8125,637.9063 2032.5,638.9844 Q2033.1875,640.0469 2034.5313,640.0469 Q2035.1563,640.0469 2035.75,639.7813 Q2036.3438,639.5 2036.9688,638.9219 L2036.9688,641.6406 Z " fill="#000000"/>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="102" x="2048" y="640.8467">OAuth2Service</text>
+            <line style="stroke:#181818;stroke-width:0.5;" x1="2020" x2="2152" y1="652" y2="652"/>
+            <line style="stroke:#181818;stroke-width:0.5;" x1="2020" x2="2152" y1="660" y2="660"/>
+        </g>
+        <!--class JobService-->
+        <g id="elem_JobService">
+            <rect codeLine="26" fill="#F1F1F1" height="48" id="JobService" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="105" x="648.5" y="620"/>
+            <ellipse cx="663.5" cy="636" fill="#B4A7E5" rx="11" ry="11" style="stroke:#181818;stroke-width:1.0;"/>
+            <path d="M659.4219,631.7656 L659.4219,629.6094 L666.8125,629.6094 L666.8125,631.7656 L664.3438,631.7656 L664.3438,639.8438 L666.8125,639.8438 L666.8125,642 L659.4219,642 L659.4219,639.8438 L661.8906,639.8438 L661.8906,631.7656 L659.4219,631.7656 Z " fill="#000000"/>
+            <text fill="#000000" font-family="sans-serif" font-size="14" font-style="italic" lengthAdjust="spacing" textLength="73" x="677.5" y="640.8467">JobService</text>
+            <line style="stroke:#181818;stroke-width:0.5;" x1="649.5" x2="752.5" y1="652" y2="652"/>
+            <line style="stroke:#181818;stroke-width:0.5;" x1="649.5" x2="752.5" y1="660" y2="660"/>
+        </g>
+        <!--class JobManager-->
+        <g id="elem_JobManager">
+            <rect codeLine="27" fill="#F1F1F1" height="48" id="JobManager" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="113" x="788.5" y="620"/>
+            <ellipse cx="803.5" cy="636" fill="#ADD1B2" rx="11" ry="11" style="stroke:#181818;stroke-width:1.0;"/>
+            <path d="M806.4688,641.6406 Q805.8906,641.9375 805.25,642.0781 Q804.6094,642.2344 803.9063,642.2344 Q801.4063,642.2344 800.0781,640.5938 Q798.7656,638.9375 798.7656,635.8125 Q798.7656,632.6875 800.0781,631.0313 Q801.4063,629.375 803.9063,629.375 Q804.6094,629.375 805.25,629.5313 Q805.9063,629.6875 806.4688,629.9844 L806.4688,632.7031 Q805.8438,632.125 805.25,631.8594 Q804.6563,631.5781 804.0313,631.5781 Q802.6875,631.5781 802,632.6563 Q801.3125,633.7188 801.3125,635.8125 Q801.3125,637.9063 802,638.9844 Q802.6875,640.0469 804.0313,640.0469 Q804.6563,640.0469 805.25,639.7813 Q805.8438,639.5 806.4688,638.9219 L806.4688,641.6406 Z " fill="#000000"/>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="81" x="817.5" y="640.8467">JobManager</text>
+            <line style="stroke:#181818;stroke-width:0.5;" x1="789.5" x2="900.5" y1="652" y2="652"/>
+            <line style="stroke:#181818;stroke-width:0.5;" x1="789.5" x2="900.5" y1="660" y2="660"/>
+        </g>
+        <!--class userService-->
+        <g id="elem_userService">
+            <rect codeLine="28" fill="#F1F1F1" height="48" id="userService" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="113" x="640.5" y="835"/>
+            <ellipse cx="655.5" cy="851" fill="#B4A7E5" rx="11" ry="11" style="stroke:#181818;stroke-width:1.0;"/>
+            <path d="M651.4219,846.7656 L651.4219,844.6094 L658.8125,844.6094 L658.8125,846.7656 L656.3438,846.7656 L656.3438,854.8438 L658.8125,854.8438 L658.8125,857 L651.4219,857 L651.4219,854.8438 L653.8906,854.8438 L653.8906,846.7656 L651.4219,846.7656 Z " fill="#000000"/>
+            <text fill="#000000" font-family="sans-serif" font-size="14" font-style="italic" lengthAdjust="spacing" textLength="81" x="669.5" y="855.8467">userService</text>
+            <line style="stroke:#181818;stroke-width:0.5;" x1="641.5" x2="752.5" y1="867" y2="867"/>
+            <line style="stroke:#181818;stroke-width:0.5;" x1="641.5" x2="752.5" y1="875" y2="875"/>
+        </g>
+        <!--class UserManager-->
+        <g id="elem_UserManager">
+            <rect codeLine="29" fill="#F1F1F1" height="48" id="UserManager" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="124" x="789" y="835"/>
+            <ellipse cx="804" cy="851" fill="#ADD1B2" rx="11" ry="11" style="stroke:#181818;stroke-width:1.0;"/>
+            <path d="M806.9688,856.6406 Q806.3906,856.9375 805.75,857.0781 Q805.1094,857.2344 804.4063,857.2344 Q801.9063,857.2344 800.5781,855.5938 Q799.2656,853.9375 799.2656,850.8125 Q799.2656,847.6875 800.5781,846.0313 Q801.9063,844.375 804.4063,844.375 Q805.1094,844.375 805.75,844.5313 Q806.4063,844.6875 806.9688,844.9844 L806.9688,847.7031 Q806.3438,847.125 805.75,846.8594 Q805.1563,846.5781 804.5313,846.5781 Q803.1875,846.5781 802.5,847.6563 Q801.8125,848.7188 801.8125,850.8125 Q801.8125,852.9063 802.5,853.9844 Q803.1875,855.0469 804.5313,855.0469 Q805.1563,855.0469 805.75,854.7813 Q806.3438,854.5 806.9688,853.9219 L806.9688,856.6406 Z " fill="#000000"/>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="92" x="818" y="855.8467">UserManager</text>
+            <line style="stroke:#181818;stroke-width:0.5;" x1="790" x2="912" y1="867" y2="867"/>
+            <line style="stroke:#181818;stroke-width:0.5;" x1="790" x2="912" y1="875" y2="875"/>
+        </g>
+        <!--class IdentifiedRepository-->
+        <g id="elem_IdentifiedRepository">
+            <rect codeLine="33" fill="#F1F1F1" height="48" id="IdentifiedRepository" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="170" x="1040" y="835"/>
+            <ellipse cx="1055" cy="851" fill="#A9DCDF" rx="11" ry="11" style="stroke:#181818;stroke-width:1.0;"/>
+            <path d="M1055.1094,846.3438 L1053.9531,851.4219 L1056.2813,851.4219 L1055.1094,846.3438 Z M1053.625,844.1094 L1056.6094,844.1094 L1059.9688,856.5 L1057.5156,856.5 L1056.75,853.4375 L1053.4688,853.4375 L1052.7188,856.5 L1050.2813,856.5 L1053.625,844.1094 Z " fill="#000000"/>
+            <text fill="#000000" font-family="sans-serif" font-size="14" font-style="italic" lengthAdjust="spacing" textLength="138" x="1069" y="855.8467">IdentifiedRepository</text>
+            <line style="stroke:#181818;stroke-width:0.5;" x1="1041" x2="1209" y1="867" y2="867"/>
+            <line style="stroke:#181818;stroke-width:0.5;" x1="1041" x2="1209" y1="875" y2="875"/>
+        </g>
+        <!--class JobRepository-->
+        <g id="elem_JobRepository">
+            <rect codeLine="34" fill="#F1F1F1" height="48" id="JobRepository" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="128" x="1245" y="835"/>
+            <ellipse cx="1260" cy="851" fill="#B4A7E5" rx="11" ry="11" style="stroke:#181818;stroke-width:1.0;"/>
+            <path d="M1255.9219,846.7656 L1255.9219,844.6094 L1263.3125,844.6094 L1263.3125,846.7656 L1260.8438,846.7656 L1260.8438,854.8438 L1263.3125,854.8438 L1263.3125,857 L1255.9219,857 L1255.9219,854.8438 L1258.3906,854.8438 L1258.3906,846.7656 L1255.9219,846.7656 Z " fill="#000000"/>
+            <text fill="#000000" font-family="sans-serif" font-size="14" font-style="italic" lengthAdjust="spacing" textLength="96" x="1274" y="855.8467">JobRepository</text>
+            <line style="stroke:#181818;stroke-width:0.5;" x1="1246" x2="1372" y1="867" y2="867"/>
+            <line style="stroke:#181818;stroke-width:0.5;" x1="1246" x2="1372" y1="875" y2="875"/>
+        </g>
+        <!--class JobRepositoryCustom-->
+        <g id="elem_JobRepositoryCustom">
+            <rect codeLine="35" fill="#F1F1F1" height="48" id="JobRepositoryCustom" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="181" x="1408.5" y="835"/>
+            <ellipse cx="1423.5" cy="851" fill="#B4A7E5" rx="11" ry="11" style="stroke:#181818;stroke-width:1.0;"/>
+            <path d="M1419.4219,846.7656 L1419.4219,844.6094 L1426.8125,844.6094 L1426.8125,846.7656 L1424.3438,846.7656 L1424.3438,854.8438 L1426.8125,854.8438 L1426.8125,857 L1419.4219,857 L1419.4219,854.8438 L1421.8906,854.8438 L1421.8906,846.7656 L1419.4219,846.7656 Z " fill="#000000"/>
+            <text fill="#000000" font-family="sans-serif" font-size="14" font-style="italic" lengthAdjust="spacing" textLength="149" x="1437.5" y="855.8467">JobRepositoryCustom</text>
+            <line style="stroke:#181818;stroke-width:0.5;" x1="1409.5" x2="1588.5" y1="867" y2="867"/>
+            <line style="stroke:#181818;stroke-width:0.5;" x1="1409.5" x2="1588.5" y1="875" y2="875"/>
+        </g>
+        <!--class JobRepositoryImpl-->
+        <g id="elem_JobRepositoryImpl">
+            <rect codeLine="36" fill="#F1F1F1" height="48" id="JobRepositoryImpl" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="155" x="1044.5" y="1090"/>
+            <ellipse cx="1059.5" cy="1106" fill="#ADD1B2" rx="11" ry="11" style="stroke:#181818;stroke-width:1.0;"/>
+            <path d="M1062.4688,1111.6406 Q1061.8906,1111.9375 1061.25,1112.0781 Q1060.6094,1112.2344 1059.9063,1112.2344 Q1057.4063,1112.2344 1056.0781,1110.5938 Q1054.7656,1108.9375 1054.7656,1105.8125 Q1054.7656,1102.6875 1056.0781,1101.0313 Q1057.4063,1099.375 1059.9063,1099.375 Q1060.6094,1099.375 1061.25,1099.5313 Q1061.9063,1099.6875 1062.4688,1099.9844 L1062.4688,1102.7031 Q1061.8438,1102.125 1061.25,1101.8594 Q1060.6563,1101.5781 1060.0313,1101.5781 Q1058.6875,1101.5781 1058,1102.6563 Q1057.3125,1103.7188 1057.3125,1105.8125 Q1057.3125,1107.9063 1058,1108.9844 Q1058.6875,1110.0469 1060.0313,1110.0469 Q1060.6563,1110.0469 1061.25,1109.7813 Q1061.8438,1109.5 1062.4688,1108.9219 L1062.4688,1111.6406 Z " fill="#000000"/>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="123" x="1073.5" y="1110.8467">JobRepositoryImpl</text>
+            <line style="stroke:#181818;stroke-width:0.5;" x1="1045.5" x2="1198.5" y1="1122" y2="1122"/>
+            <line style="stroke:#181818;stroke-width:0.5;" x1="1045.5" x2="1198.5" y1="1130" y2="1130"/>
+        </g>
+        <!--class SecuritySpecifications-->
+        <g id="elem_SecuritySpecifications">
+            <rect codeLine="37" fill="#F1F1F1" height="48" id="SecuritySpecifications" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="182" x="1235" y="1090"/>
+            <ellipse cx="1250" cy="1106" fill="#ADD1B2" rx="11" ry="11" style="stroke:#181818;stroke-width:1.0;"/>
+            <path d="M1252.9688,1111.6406 Q1252.3906,1111.9375 1251.75,1112.0781 Q1251.1094,1112.2344 1250.4063,1112.2344 Q1247.9063,1112.2344 1246.5781,1110.5938 Q1245.2656,1108.9375 1245.2656,1105.8125 Q1245.2656,1102.6875 1246.5781,1101.0313 Q1247.9063,1099.375 1250.4063,1099.375 Q1251.1094,1099.375 1251.75,1099.5313 Q1252.4063,1099.6875 1252.9688,1099.9844 L1252.9688,1102.7031 Q1252.3438,1102.125 1251.75,1101.8594 Q1251.1563,1101.5781 1250.5313,1101.5781 Q1249.1875,1101.5781 1248.5,1102.6563 Q1247.8125,1103.7188 1247.8125,1105.8125 Q1247.8125,1107.9063 1248.5,1108.9844 Q1249.1875,1110.0469 1250.5313,1110.0469 Q1251.1563,1110.0469 1251.75,1109.7813 Q1252.3438,1109.5 1252.9688,1108.9219 L1252.9688,1111.6406 Z " fill="#000000"/>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="150" x="1264" y="1110.8467">SecuritySpecifications</text>
+            <line style="stroke:#181818;stroke-width:0.5;" x1="1236" x2="1416" y1="1122" y2="1122"/>
+            <line style="stroke:#181818;stroke-width:0.5;" x1="1236" x2="1416" y1="1130" y2="1130"/>
+        </g>
+        <!--class UserRepository-->
+        <g id="elem_UserRepository">
+            <rect codeLine="38" fill="#F1F1F1" height="48" id="UserRepository" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="137" x="1452.5" y="1090"/>
+            <ellipse cx="1467.5" cy="1106" fill="#B4A7E5" rx="11" ry="11" style="stroke:#181818;stroke-width:1.0;"/>
+            <path d="M1463.4219,1101.7656 L1463.4219,1099.6094 L1470.8125,1099.6094 L1470.8125,1101.7656 L1468.3438,1101.7656 L1468.3438,1109.8438 L1470.8125,1109.8438 L1470.8125,1112 L1463.4219,1112 L1463.4219,1109.8438 L1465.8906,1109.8438 L1465.8906,1101.7656 L1463.4219,1101.7656 Z " fill="#000000"/>
+            <text fill="#000000" font-family="sans-serif" font-size="14" font-style="italic" lengthAdjust="spacing" textLength="105" x="1481.5" y="1110.8467">UserRepository</text>
+            <line style="stroke:#181818;stroke-width:0.5;" x1="1453.5" x2="1588.5" y1="1122" y2="1122"/>
+            <line style="stroke:#181818;stroke-width:0.5;" x1="1453.5" x2="1588.5" y1="1130" y2="1130"/>
+        </g>
+        <!--class RoleRepository-->
+        <g id="elem_RoleRepository">
+            <rect codeLine="39" fill="#F1F1F1" height="48" id="RoleRepository" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="137" x="1053.5" y="1271"/>
+            <ellipse cx="1068.5" cy="1287" fill="#B4A7E5" rx="11" ry="11" style="stroke:#181818;stroke-width:1.0;"/>
+            <path d="M1064.4219,1282.7656 L1064.4219,1280.6094 L1071.8125,1280.6094 L1071.8125,1282.7656 L1069.3438,1282.7656 L1069.3438,1290.8438 L1071.8125,1290.8438 L1071.8125,1293 L1064.4219,1293 L1064.4219,1290.8438 L1066.8906,1290.8438 L1066.8906,1282.7656 L1064.4219,1282.7656 Z " fill="#000000"/>
+            <text fill="#000000" font-family="sans-serif" font-size="14" font-style="italic" lengthAdjust="spacing" textLength="105" x="1082.5" y="1291.8467">RoleRepository</text>
+            <line style="stroke:#181818;stroke-width:0.5;" x1="1054.5" x2="1189.5" y1="1303" y2="1303"/>
+            <line style="stroke:#181818;stroke-width:0.5;" x1="1054.5" x2="1189.5" y1="1311" y2="1311"/>
+        </g>
+        <!--class IdentifiedHandler-->
+        <g id="elem_IdentifiedHandler">
+            <rect codeLine="43" fill="#F1F1F1" height="48" id="IdentifiedHandler" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="150" x="110" y="620"/>
+            <ellipse cx="125" cy="636" fill="#A9DCDF" rx="11" ry="11" style="stroke:#181818;stroke-width:1.0;"/>
+            <path d="M125.1094,631.3438 L123.9531,636.4219 L126.2813,636.4219 L125.1094,631.3438 Z M123.625,629.1094 L126.6094,629.1094 L129.9688,641.5 L127.5156,641.5 L126.75,638.4375 L123.4688,638.4375 L122.7188,641.5 L120.2813,641.5 L123.625,629.1094 Z " fill="#000000"/>
+            <text fill="#000000" font-family="sans-serif" font-size="14" font-style="italic" lengthAdjust="spacing" textLength="118" x="139" y="640.8467">IdentifiedHandler</text>
+            <line style="stroke:#181818;stroke-width:0.5;" x1="111" x2="259" y1="652" y2="652"/>
+            <line style="stroke:#181818;stroke-width:0.5;" x1="111" x2="259" y1="660" y2="660"/>
+        </g>
+        <!--class JobEventHandler-->
+        <g id="elem_JobEventHandler">
+            <rect codeLine="44" fill="#F1F1F1" height="48" id="JobEventHandler" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="145" x="295.5" y="620"/>
+            <ellipse cx="310.5" cy="636" fill="#ADD1B2" rx="11" ry="11" style="stroke:#181818;stroke-width:1.0;"/>
+            <path d="M313.4688,641.6406 Q312.8906,641.9375 312.25,642.0781 Q311.6094,642.2344 310.9063,642.2344 Q308.4063,642.2344 307.0781,640.5938 Q305.7656,638.9375 305.7656,635.8125 Q305.7656,632.6875 307.0781,631.0313 Q308.4063,629.375 310.9063,629.375 Q311.6094,629.375 312.25,629.5313 Q312.9063,629.6875 313.4688,629.9844 L313.4688,632.7031 Q312.8438,632.125 312.25,631.8594 Q311.6563,631.5781 311.0313,631.5781 Q309.6875,631.5781 309,632.6563 Q308.3125,633.7188 308.3125,635.8125 Q308.3125,637.9063 309,638.9844 Q309.6875,640.0469 311.0313,640.0469 Q311.6563,640.0469 312.25,639.7813 Q312.8438,639.5 313.4688,638.9219 L313.4688,641.6406 Z " fill="#000000"/>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="113" x="324.5" y="640.8467">JobEventHandler</text>
+            <line style="stroke:#181818;stroke-width:0.5;" x1="296.5" x2="439.5" y1="652" y2="652"/>
+            <line style="stroke:#181818;stroke-width:0.5;" x1="296.5" x2="439.5" y1="660" y2="660"/>
+        </g>
+        <!--class UserEventHandler-->
+        <g id="elem_UserEventHandler">
+            <rect codeLine="45" fill="#F1F1F1" height="48" id="UserEventHandler" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="156" x="110" y="835"/>
+            <ellipse cx="125" cy="851" fill="#ADD1B2" rx="11" ry="11" style="stroke:#181818;stroke-width:1.0;"/>
+            <path d="M127.9688,856.6406 Q127.3906,856.9375 126.75,857.0781 Q126.1094,857.2344 125.4063,857.2344 Q122.9063,857.2344 121.5781,855.5938 Q120.2656,853.9375 120.2656,850.8125 Q120.2656,847.6875 121.5781,846.0313 Q122.9063,844.375 125.4063,844.375 Q126.1094,844.375 126.75,844.5313 Q127.4063,844.6875 127.9688,844.9844 L127.9688,847.7031 Q127.3438,847.125 126.75,846.8594 Q126.1563,846.5781 125.5313,846.5781 Q124.1875,846.5781 123.5,847.6563 Q122.8125,848.7188 122.8125,850.8125 Q122.8125,852.9063 123.5,853.9844 Q124.1875,855.0469 125.5313,855.0469 Q126.1563,855.0469 126.75,854.7813 Q127.3438,854.5 127.9688,853.9219 L127.9688,856.6406 Z " fill="#000000"/>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="124" x="139" y="855.8467">UserEventHandler</text>
+            <line style="stroke:#181818;stroke-width:0.5;" x1="111" x2="265" y1="867" y2="867"/>
+            <line style="stroke:#181818;stroke-width:0.5;" x1="111" x2="265" y1="875" y2="875"/>
+        </g>
+        <!--class Job-->
+        <g id="elem_Job">
+            <rect codeLine="49" fill="#F1F1F1" height="48" id="Job" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="53" x="110.5" y="1090"/>
+            <ellipse cx="125.5" cy="1106" fill="#ADD1B2" rx="11" ry="11" style="stroke:#181818;stroke-width:1.0;"/>
+            <path d="M128.4688,1111.6406 Q127.8906,1111.9375 127.25,1112.0781 Q126.6094,1112.2344 125.9063,1112.2344 Q123.4063,1112.2344 122.0781,1110.5938 Q120.7656,1108.9375 120.7656,1105.8125 Q120.7656,1102.6875 122.0781,1101.0313 Q123.4063,1099.375 125.9063,1099.375 Q126.6094,1099.375 127.25,1099.5313 Q127.9063,1099.6875 128.4688,1099.9844 L128.4688,1102.7031 Q127.8438,1102.125 127.25,1101.8594 Q126.6563,1101.5781 126.0313,1101.5781 Q124.6875,1101.5781 124,1102.6563 Q123.3125,1103.7188 123.3125,1105.8125 Q123.3125,1107.9063 124,1108.9844 Q124.6875,1110.0469 126.0313,1110.0469 Q126.6563,1110.0469 127.25,1109.7813 Q127.8438,1109.5 128.4688,1108.9219 L128.4688,1111.6406 Z " fill="#000000"/>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="21" x="139.5" y="1110.8467">Job</text>
+            <line style="stroke:#181818;stroke-width:0.5;" x1="111.5" x2="162.5" y1="1122" y2="1122"/>
+            <line style="stroke:#181818;stroke-width:0.5;" x1="111.5" x2="162.5" y1="1130" y2="1130"/>
+        </g>
+        <!--class JobHasStatus-->
+        <g id="elem_JobHasStatus">
+            <rect codeLine="50" fill="#F1F1F1" height="48" id="JobHasStatus" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="123" x="198.5" y="1090"/>
+            <ellipse cx="213.5" cy="1106" fill="#ADD1B2" rx="11" ry="11" style="stroke:#181818;stroke-width:1.0;"/>
+            <path d="M216.4688,1111.6406 Q215.8906,1111.9375 215.25,1112.0781 Q214.6094,1112.2344 213.9063,1112.2344 Q211.4063,1112.2344 210.0781,1110.5938 Q208.7656,1108.9375 208.7656,1105.8125 Q208.7656,1102.6875 210.0781,1101.0313 Q211.4063,1099.375 213.9063,1099.375 Q214.6094,1099.375 215.25,1099.5313 Q215.9063,1099.6875 216.4688,1099.9844 L216.4688,1102.7031 Q215.8438,1102.125 215.25,1101.8594 Q214.6563,1101.5781 214.0313,1101.5781 Q212.6875,1101.5781 212,1102.6563 Q211.3125,1103.7188 211.3125,1105.8125 Q211.3125,1107.9063 212,1108.9844 Q212.6875,1110.0469 214.0313,1110.0469 Q214.6563,1110.0469 215.25,1109.7813 Q215.8438,1109.5 216.4688,1108.9219 L216.4688,1111.6406 Z " fill="#000000"/>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="91" x="227.5" y="1110.8467">JobHasStatus</text>
+            <line style="stroke:#181818;stroke-width:0.5;" x1="199.5" x2="320.5" y1="1122" y2="1122"/>
+            <line style="stroke:#181818;stroke-width:0.5;" x1="199.5" x2="320.5" y1="1130" y2="1130"/>
+        </g>
+        <!--class User-->
+        <g id="elem_User">
+            <rect codeLine="51" fill="#F1F1F1" height="48" id="User" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="64" x="110" y="1271"/>
+            <ellipse cx="125" cy="1287" fill="#ADD1B2" rx="11" ry="11" style="stroke:#181818;stroke-width:1.0;"/>
+            <path d="M127.9688,1292.6406 Q127.3906,1292.9375 126.75,1293.0781 Q126.1094,1293.2344 125.4063,1293.2344 Q122.9063,1293.2344 121.5781,1291.5938 Q120.2656,1289.9375 120.2656,1286.8125 Q120.2656,1283.6875 121.5781,1282.0313 Q122.9063,1280.375 125.4063,1280.375 Q126.1094,1280.375 126.75,1280.5313 Q127.4063,1280.6875 127.9688,1280.9844 L127.9688,1283.7031 Q127.3438,1283.125 126.75,1282.8594 Q126.1563,1282.5781 125.5313,1282.5781 Q124.1875,1282.5781 123.5,1283.6563 Q122.8125,1284.7188 122.8125,1286.8125 Q122.8125,1288.9063 123.5,1289.9844 Q124.1875,1291.0469 125.5313,1291.0469 Q126.1563,1291.0469 126.75,1290.7813 Q127.3438,1290.5 127.9688,1289.9219 L127.9688,1292.6406 Z " fill="#000000"/>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="32" x="139" y="1291.8467">User</text>
+            <line style="stroke:#181818;stroke-width:0.5;" x1="111" x2="173" y1="1303" y2="1303"/>
+            <line style="stroke:#181818;stroke-width:0.5;" x1="111" x2="173" y1="1311" y2="1311"/>
+        </g>
+        <!--class Role-->
+        <g id="elem_Role">
+            <rect codeLine="52" fill="#F1F1F1" height="48" id="Role" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="63" x="209.5" y="1271"/>
+            <ellipse cx="224.5" cy="1287" fill="#ADD1B2" rx="11" ry="11" style="stroke:#181818;stroke-width:1.0;"/>
+            <path d="M227.4688,1292.6406 Q226.8906,1292.9375 226.25,1293.0781 Q225.6094,1293.2344 224.9063,1293.2344 Q222.4063,1293.2344 221.0781,1291.5938 Q219.7656,1289.9375 219.7656,1286.8125 Q219.7656,1283.6875 221.0781,1282.0313 Q222.4063,1280.375 224.9063,1280.375 Q225.6094,1280.375 226.25,1280.5313 Q226.9063,1280.6875 227.4688,1280.9844 L227.4688,1283.7031 Q226.8438,1283.125 226.25,1282.8594 Q225.6563,1282.5781 225.0313,1282.5781 Q223.6875,1282.5781 223,1283.6563 Q222.3125,1284.7188 222.3125,1286.8125 Q222.3125,1288.9063 223,1289.9844 Q223.6875,1291.0469 225.0313,1291.0469 Q225.6563,1291.0469 226.25,1290.7813 Q226.8438,1290.5 227.4688,1289.9219 L227.4688,1292.6406 Z " fill="#000000"/>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="31" x="238.5" y="1291.8467">Role</text>
+            <line style="stroke:#181818;stroke-width:0.5;" x1="210.5" x2="271.5" y1="1303" y2="1303"/>
+            <line style="stroke:#181818;stroke-width:0.5;" x1="210.5" x2="271.5" y1="1311" y2="1311"/>
+        </g>
+        <!--class LabelledEnum-->
+        <g id="elem_LabelledEnum">
+            <rect codeLine="56" fill="#F1F1F1" height="48" id="LabelledEnum" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="130" x="448" y="1271"/>
+            <ellipse cx="463" cy="1287" fill="#B4A7E5" rx="11" ry="11" style="stroke:#181818;stroke-width:1.0;"/>
+            <path d="M458.9219,1282.7656 L458.9219,1280.6094 L466.3125,1280.6094 L466.3125,1282.7656 L463.8438,1282.7656 L463.8438,1290.8438 L466.3125,1290.8438 L466.3125,1293 L458.9219,1293 L458.9219,1290.8438 L461.3906,1290.8438 L461.3906,1282.7656 L458.9219,1282.7656 Z " fill="#000000"/>
+            <text fill="#000000" font-family="sans-serif" font-size="14" font-style="italic" lengthAdjust="spacing" textLength="98" x="477" y="1291.8467">LabelledEnum</text>
+            <line style="stroke:#181818;stroke-width:0.5;" x1="449" x2="577" y1="1303" y2="1303"/>
+            <line style="stroke:#181818;stroke-width:0.5;" x1="449" x2="577" y1="1311" y2="1311"/>
+        </g>
+        <!--class ContractEnum-->
+        <g id="elem_ContractEnum">
+            <rect codeLine="57" fill="#F1F1F1" height="48" id="ContractEnum" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="131" x="613.5" y="1271"/>
+            <ellipse cx="628.5" cy="1287" fill="#EB937F" rx="11" ry="11" style="stroke:#181818;stroke-width:1.0;"/>
+            <path d="M632.6094,1293 L624.8906,1293 L624.8906,1280.6094 L632.6094,1280.6094 L632.6094,1282.7656 L627.3438,1282.7656 L627.3438,1285.4375 L632.1094,1285.4375 L632.1094,1287.5938 L627.3438,1287.5938 L627.3438,1290.8438 L632.6094,1290.8438 L632.6094,1293 Z " fill="#000000"/>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="99" x="642.5" y="1291.8467">ContractEnum</text>
+            <line style="stroke:#181818;stroke-width:0.5;" x1="614.5" x2="743.5" y1="1303" y2="1303"/>
+            <line style="stroke:#181818;stroke-width:0.5;" x1="614.5" x2="743.5" y1="1311" y2="1311"/>
+        </g>
+        <!--class OfferStatusEnum-->
+        <g id="elem_OfferStatusEnum">
+            <rect codeLine="58" fill="#F1F1F1" height="48" id="OfferStatusEnum" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="149" x="779.5" y="1271"/>
+            <ellipse cx="794.5" cy="1287" fill="#EB937F" rx="11" ry="11" style="stroke:#181818;stroke-width:1.0;"/>
+            <path d="M798.6094,1293 L790.8906,1293 L790.8906,1280.6094 L798.6094,1280.6094 L798.6094,1282.7656 L793.3438,1282.7656 L793.3438,1285.4375 L798.1094,1285.4375 L798.1094,1287.5938 L793.3438,1287.5938 L793.3438,1290.8438 L798.6094,1290.8438 L798.6094,1293 Z " fill="#000000"/>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="117" x="808.5" y="1291.8467">OfferStatusEnum</text>
+            <line style="stroke:#181818;stroke-width:0.5;" x1="780.5" x2="927.5" y1="1303" y2="1303"/>
+            <line style="stroke:#181818;stroke-width:0.5;" x1="780.5" x2="927.5" y1="1311" y2="1311"/>
+        </g>
+        <!--class JobStatusEnum-->
+        <g id="elem_JobStatusEnum">
+            <rect codeLine="59" fill="#F1F1F1" height="48" id="JobStatusEnum" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="137" x="437.5" y="1398"/>
+            <ellipse cx="452.5" cy="1414" fill="#EB937F" rx="11" ry="11" style="stroke:#181818;stroke-width:1.0;"/>
+            <path d="M456.6094,1420 L448.8906,1420 L448.8906,1407.6094 L456.6094,1407.6094 L456.6094,1409.7656 L451.3438,1409.7656 L451.3438,1412.4375 L456.1094,1412.4375 L456.1094,1414.5938 L451.3438,1414.5938 L451.3438,1417.8438 L456.6094,1417.8438 L456.6094,1420 Z " fill="#000000"/>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="105" x="466.5" y="1418.8467">JobStatusEnum</text>
+            <line style="stroke:#181818;stroke-width:0.5;" x1="438.5" x2="573.5" y1="1430" y2="1430"/>
+            <line style="stroke:#181818;stroke-width:0.5;" x1="438.5" x2="573.5" y1="1438" y2="1438"/>
+        </g>
+        <!--class WorkModeEnum-->
+        <g id="elem_WorkModeEnum">
+            <rect codeLine="60" fill="#F1F1F1" height="48" id="WorkModeEnum" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="146" x="610" y="1398"/>
+            <ellipse cx="625" cy="1414" fill="#EB937F" rx="11" ry="11" style="stroke:#181818;stroke-width:1.0;"/>
+            <path d="M629.1094,1420 L621.3906,1420 L621.3906,1407.6094 L629.1094,1407.6094 L629.1094,1409.7656 L623.8438,1409.7656 L623.8438,1412.4375 L628.6094,1412.4375 L628.6094,1414.5938 L623.8438,1414.5938 L623.8438,1417.8438 L629.1094,1417.8438 L629.1094,1420 Z " fill="#000000"/>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="114" x="639" y="1418.8467">WorkModeEnum</text>
+            <line style="stroke:#181818;stroke-width:0.5;" x1="611" x2="755" y1="1430" y2="1430"/>
+            <line style="stroke:#181818;stroke-width:0.5;" x1="611" x2="755" y1="1438" y2="1438"/>
+        </g>
+        <!--class WorkTimeEnum-->
+        <g id="elem_WorkTimeEnum">
+            <rect codeLine="61" fill="#F1F1F1" height="48" id="WorkTimeEnum" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="141" x="791.5" y="1398"/>
+            <ellipse cx="806.5" cy="1414" fill="#EB937F" rx="11" ry="11" style="stroke:#181818;stroke-width:1.0;"/>
+            <path d="M810.6094,1420 L802.8906,1420 L802.8906,1407.6094 L810.6094,1407.6094 L810.6094,1409.7656 L805.3438,1409.7656 L805.3438,1412.4375 L810.1094,1412.4375 L810.1094,1414.5938 L805.3438,1414.5938 L805.3438,1417.8438 L810.6094,1417.8438 L810.6094,1420 Z " fill="#000000"/>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="109" x="820.5" y="1418.8467">WorkTimeEnum</text>
+            <line style="stroke:#181818;stroke-width:0.5;" x1="792.5" x2="931.5" y1="1430" y2="1430"/>
+            <line style="stroke:#181818;stroke-width:0.5;" x1="792.5" x2="931.5" y1="1438" y2="1438"/>
+        </g>
+        <!--class ClientSignatureBuilder-->
+        <g id="elem_ClientSignatureBuilder">
+            <rect codeLine="65" fill="#F1F1F1" height="48" id="ClientSignatureBuilder" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="185" x="2847.5" y="835"/>
+            <ellipse cx="2862.5" cy="851" fill="#ADD1B2" rx="11" ry="11" style="stroke:#181818;stroke-width:1.0;"/>
+            <path d="M2865.4688,856.6406 Q2864.8906,856.9375 2864.25,857.0781 Q2863.6094,857.2344 2862.9063,857.2344 Q2860.4063,857.2344 2859.0781,855.5938 Q2857.7656,853.9375 2857.7656,850.8125 Q2857.7656,847.6875 2859.0781,846.0313 Q2860.4063,844.375 2862.9063,844.375 Q2863.6094,844.375 2864.25,844.5313 Q2864.9063,844.6875 2865.4688,844.9844 L2865.4688,847.7031 Q2864.8438,847.125 2864.25,846.8594 Q2863.6563,846.5781 2863.0313,846.5781 Q2861.6875,846.5781 2861,847.6563 Q2860.3125,848.7188 2860.3125,850.8125 Q2860.3125,852.9063 2861,853.9844 Q2861.6875,855.0469 2863.0313,855.0469 Q2863.6563,855.0469 2864.25,854.7813 Q2864.8438,854.5 2865.4688,853.9219 L2865.4688,856.6406 Z " fill="#000000"/>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="153" x="2876.5" y="855.8467">ClientSignatureBuilder</text>
+            <line style="stroke:#181818;stroke-width:0.5;" x1="2848.5" x2="3031.5" y1="867" y2="867"/>
+            <line style="stroke:#181818;stroke-width:0.5;" x1="2848.5" x2="3031.5" y1="875" y2="875"/>
+        </g>
+        <!--class SpringContextUtil-->
+        <g id="elem_SpringContextUtil">
+            <rect codeLine="66" fill="#F1F1F1" height="48" id="SpringContextUtil" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="151" x="2661.5" y="835"/>
+            <ellipse cx="2676.5" cy="851" fill="#ADD1B2" rx="11" ry="11" style="stroke:#181818;stroke-width:1.0;"/>
+            <path d="M2679.4688,856.6406 Q2678.8906,856.9375 2678.25,857.0781 Q2677.6094,857.2344 2676.9063,857.2344 Q2674.4063,857.2344 2673.0781,855.5938 Q2671.7656,853.9375 2671.7656,850.8125 Q2671.7656,847.6875 2673.0781,846.0313 Q2674.4063,844.375 2676.9063,844.375 Q2677.6094,844.375 2678.25,844.5313 Q2678.9063,844.6875 2679.4688,844.9844 L2679.4688,847.7031 Q2678.8438,847.125 2678.25,846.8594 Q2677.6563,846.5781 2677.0313,846.5781 Q2675.6875,846.5781 2675,847.6563 Q2674.3125,848.7188 2674.3125,850.8125 Q2674.3125,852.9063 2675,853.9844 Q2675.6875,855.0469 2677.0313,855.0469 Q2677.6563,855.0469 2678.25,854.7813 Q2678.8438,854.5 2679.4688,853.9219 L2679.4688,856.6406 Z " fill="#000000"/>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="119" x="2690.5" y="855.8467">SpringContextUtil</text>
+            <line style="stroke:#181818;stroke-width:0.5;" x1="2662.5" x2="2811.5" y1="867" y2="867"/>
+            <line style="stroke:#181818;stroke-width:0.5;" x1="2662.5" x2="2811.5" y1="875" y2="875"/>
+        </g>
+        <!--link web to manager-->
+        <g id="link_web_manager">
+            <path codeLine="71" d="M863.1774,279.0921 C863.3398,279.4411 863.5041,279.7948 863.6704,280.1532 C864.0029,280.87 864.3432,281.6055 864.6908,282.3594 C870.2528,294.4206 877.7056,311.1625 885.6863,330.7225 C901.6475,369.8425 919.72,420.235 929,467 C932.7525,485.9 934.698,500.1734 936.169,519.9746 " fill="none" id="web-to-manager" style="stroke:#181818;stroke-width:1.0;"/>
+            <polygon fill="#181818" points="936.6134,525.9581,939.9357,516.6865,936.243,520.9719,931.9577,517.2792,936.6134,525.9581" style="stroke:#181818;stroke-width:1.0;"/>
+            <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="30" x="922" y="374.5669">uses</text>
+        </g>
+        <!--link web to security-->
+        <g id="link_web_security">
+            <path codeLine="72" d="M863.4073,262.5901 C868.2268,262.958 874.978,263.5166 883.2948,264.3145 C899.9284,265.9103 922.8244,268.4631 949.0538,272.3613 C1001.5125,280.1575 1067.305,293.335 1123,315 C1252.655,365.43 1386.32,446.5475 1488.1075,515.4938 C1539.0013,549.9669 1581.9256,581.3972 1612.3947,604.4273 C1627.6292,615.9424 1639.7499,625.3575 1648.1961,632.0028 C1650.3076,633.6641 1647.4902,631.4218 1649.1336,632.7265 " fill="none" id="web-to-security" style="stroke:#181818;stroke-width:1.0;"/>
+            <polygon fill="#181818" points="1653.8329,636.457,1649.271,627.7284,1649.9168,633.3482,1644.297,633.9941,1653.8329,636.457" style="stroke:#181818;stroke-width:1.0;"/>
+            <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="70" x="1355" y="374.5669">secured by</text>
+        </g>
+        <!--link web to repository-->
+        <g id="link_web_repository">
+            <path codeLine="73" d="M863.0093,266.1726 C863.1041,266.2239 863.1997,266.2757 863.296,266.3279 C863.4886,266.4323 863.6841,266.5385 863.8824,266.6465 C864.279,266.8625 864.687,267.0857 865.106,267.3161 C865.9441,267.7767 866.826,268.2658 867.7488,268.7828 C875.1306,272.9187 885.1225,278.8387 896.1075,286.24 C918.0775,301.0425 944.02,321.77 961,346 C1056.17,481.82 1052.43,536.3 1079,700 C1080.21,707.46 1083.94,711.29 1079,717 C1062.84,735.68 1041.44,707.51 1024,725 C1021.4056,727.6012 1019.0586,730.3859 1016.9382,733.3214 C1015.878,734.7892 1014.8745,736.2947 1013.9251,737.8339 C1013.4504,738.6035 1012.9892,739.3815 1012.5412,740.1675 C1012.4292,740.364 1015.245,735.3233 1015.1346,735.5208 " fill="none" id="web-to-repository" style="stroke:#181818;stroke-width:1.0;"/>
+            <polygon fill="#181818" points="1012.2077,740.7584,1020.0899,734.8533,1014.6468,736.3937,1013.1063,730.9506,1012.2077,740.7584" style="stroke:#181818;stroke-width:1.0;"/>
+            <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="30" x="1027" y="455.0669">uses</text>
+        </g>
+        <!--link security to repository-->
+        <g id="link_security_repository">
+            <path codeLine="75" d="M1653.7897,646.2233 C1653.5755,646.2551 1653.3572,646.2874 1653.1349,646.3204 C1651.3565,646.584 1649.3222,646.885 1647.0428,647.2215 C1637.9254,648.5675 1624.8863,650.4816 1608.6164,652.8413 C1576.0766,657.5606 1530.6131,664.0625 1477.7513,671.3675 C1372.0275,685.9775 1236.71,703.8 1116,717 C1105.8,718.12 1031.45,717.95 1024,725 C1021.3319,727.525 1018.9201,730.2427 1016.7433,733.1199 C1015.6549,734.5585 1014.6252,736.037 1013.6515,737.5512 C1013.1647,738.3082 1012.6919,739.0743 1012.2328,739.8487 C1012.118,740.0423 1015.018,735.0483 1014.9049,735.243 " fill="none" id="security-to-repository" style="stroke:#181818;stroke-width:1.0;"/>
+            <polygon fill="#181818" points="1011.891,740.4311,1019.8706,734.6582,1014.4026,736.1077,1012.9532,730.6396,1011.891,740.4311" style="stroke:#181818;stroke-width:1.0;"/>
+            <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="30" x="1252" y="713.0669">uses</text>
+        </g>
+        <!--link repository to security-->
+        <g id="link_repository_security">
+            <path codeLine="83" d="M1011.2436,740.6781 C1011.4715,740.2923 1011.7028,739.9087 1011.9377,739.5273 C1012.4075,738.7645 1012.8914,738.0106 1013.3898,737.2661 C1014.3866,735.7772 1015.4413,734.326 1016.5567,732.9168 C1018.7876,730.0984 1021.2613,727.4481 1024,725 C1035.06,715.11 1276.25,718.64 1291,717 C1373.165,707.855 1464.3225,690.27 1535.7163,674.7688 C1571.4131,667.0181 1602.1691,659.7884 1624.3895,654.3952 C1635.4998,651.6985 1644.4761,649.461 1650.8693,647.847 C1651.6685,647.6452 1652.4273,647.4532 1653.1448,647.2713 C1653.3242,647.2258 1647.6854,648.6571 1647.8596,648.6129 " fill="none" id="repository-to-security" style="stroke:#181818;stroke-width:1.0;"/>
+            <polygon fill="#181818" points="1653.6752,647.1367,1643.9677,645.474,1648.8289,648.3669,1645.936,653.2281,1653.6752,647.1367" style="stroke:#181818;stroke-width:1.0;"/>
+            <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="51" x="1405" y="713.0669">extends</text>
+        </g>
+        <!--link security to util-->
+        <g id="link_security_util">
+            <path codeLine="76" d="M2578.1417,753.5448 C2578.4806,753.9619 2578.8174,754.3809 2579.1522,754.8015 C2580.4913,756.4839 2581.7974,758.1931 2583.0711,759.9242 C2593.2603,773.7734 2601.3719,789.0319 2607.6763,803.3038 C2610.8284,810.4397 2613.5288,817.329 2615.8112,823.6722 C2616.3818,825.258 2616.9263,826.8096 2617.4452,828.3225 C2617.5749,828.7007 2617.703,829.0765 2617.8296,829.4498 C2617.8612,829.5431 2615.9717,823.9521 2616.0031,824.0451 " fill="none" id="security-to-util" style="stroke:#181818;stroke-width:1.0;"/>
+            <polygon fill="#181818" points="2617.9242,829.7293,2618.832,819.9223,2616.3233,824.9925,2611.2532,822.4837,2617.9242,829.7293" style="stroke:#181818;stroke-width:1.0;"/>
+            <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="30" x="2515" y="713.0669">uses</text>
+        </g>
+        <!--link manager to repository-->
+        <g id="link_manager_repository">
+            <path codeLine="78" d="M945.2239,646.5944 C945.3207,646.6155 945.4182,646.6369 945.5165,646.6585 C945.713,646.7017 945.9124,646.7458 946.1146,646.7909 C946.519,646.8811 946.9347,646.975 947.3613,647.0727 C948.2144,647.2682 949.111,647.479 950.0473,647.7058 C957.5384,649.5197 967.5794,652.3531 978.3438,656.5188 C999.8725,664.85 1024.295,678.51 1037,700 C1040.85,706.5 1040.69,710.4 1037,717 C1033.69,722.92 1027.72,719.33 1024,725 C1021.985,728.0719 1020.146,731.2692 1018.469,734.5649 C1017.6305,736.2127 1016.8325,737.8851 1016.0733,739.5788 C1015.8834,740.0022 1018.086,734.9234 1017.901,735.3494 " fill="none" id="manager-to-repository" style="stroke:#181818;stroke-width:1.0;"/>
+            <polygon fill="#181818" points="1015.511,740.8529,1022.765,734.191,1017.5027,736.2667,1015.427,731.0044,1015.511,740.8529" style="stroke:#181818;stroke-width:1.0;"/>
+            <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="30" x="1040" y="713.0669">uses</text>
+        </g>
+        <!--link manager to entity-->
+        <g id="link_manager_entity">
+            <path codeLine="79" d="M615.7554,698.1378 C615.2216,698.2836 614.6868,698.4333 614.151,698.5869 C613.0795,698.8941 612.004,699.2171 610.9241,699.5565 C608.7643,700.2352 606.587,700.9794 604.3894,701.7937 C599.9942,703.4222 595.5176,705.3308 590.936,707.556 C581.7728,712.0066 572.19,717.7238 562,725 C473.17,788.42 508.56,850.8 457,947 C436.975,984.365 412.4375,1025.1625 392.68,1056.9612 C382.8013,1072.8606 374.1175,1086.5103 367.7903,1096.3564 C366.9994,1097.5872 366.2453,1098.7585 365.5303,1099.8674 C365.3516,1100.1446 368.4286,1095.3765 368.2548,1095.6458 " fill="none" id="manager-to-entity" style="stroke:#181818;stroke-width:1.0;"/>
+            <polygon fill="#181818" points="365.0015,1100.6873,373.2424,1095.294,367.7126,1096.4861,366.5206,1090.9563,365.0015,1100.6873" style="stroke:#181818;stroke-width:1.0;"/>
+            <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="60" x="563" y="863.5669">manages</text>
+        </g>
+        <!--link manager to event-->
+        <g id="link_manager_event">
+            <path codeLine="80" d="M945.072,617.7199 C945.1187,617.5355 945.1653,617.3504 945.212,617.1645 C945.3053,616.7929 945.3986,616.4184 945.4917,616.0411 C945.678,615.2865 945.8638,614.5207 946.0487,613.7444 C946.7881,610.639 947.5129,607.3639 948.1959,603.9532 C949.5619,597.1318 950.7606,589.7678 951.575,582.1338 C954.8325,551.5975 951.94,516.74 929,495 C879.81,448.38 686.57,468.96 624,495 C582.26,512.37 546.2325,547.87 520.1763,579.8612 C507.1481,595.8569 496.6128,610.9753 489.1027,622.5117 C487.2251,625.3958 488.7086,622.9631 487.2176,625.3571 " fill="none" id="manager-to-event" style="stroke:#181818;stroke-width:1.0;"/>
+            <polygon fill="#181818" points="484.0456,630.4501,492.1989,624.9253,486.6889,626.206,485.4082,620.696,484.0456,630.4501" style="stroke:#181818;stroke-width:1.0;"/>
+            <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="30" x="801" y="455.0669">uses</text>
+        </g>
+        <!--link event to manager-->
+        <g id="link_event_manager">
+            <path codeLine="85" d="M484.0456,630.4501 C485.5367,628.056 487.2251,625.3958 489.1027,622.5117 C496.6128,610.9753 507.1481,595.8569 520.1763,579.8612 C546.2325,547.87 582.26,512.37 624,495 C686.57,468.96 879.81,448.38 929,495 C951.94,516.74 954.8325,551.5975 951.575,582.1338 C950.7606,589.7678 949.5619,597.1318 948.1959,603.9532 C947.5129,607.3639 946.7881,610.639 946.0487,613.7444 C945.8638,614.5207 945.678,615.2865 945.4917,616.0411 C945.3986,616.4184 945.3053,616.7929 945.212,617.1645 C945.1653,617.3504 946.5915,611.7191 946.5448,611.9035 " fill="none" id="event-to-manager" style="stroke:#181818;stroke-width:1.0;"/>
+            <polygon fill="#181818" points="945.072,617.7199,951.1588,609.9771,946.2993,612.8729,943.4036,608.0134,945.072,617.7199" style="stroke:#181818;stroke-width:1.0;"/>
+            <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="63" x="838.5" y="455.0669">delegates</text>
+        </g>
+        <!--link repository to entity-->
+        <g id="link_repository_entity">
+            <path codeLine="82" d="M996.962,873.2738 C996.8949,873.3784 996.8275,873.4834 996.7596,873.589 C996.6239,873.8 996.4867,874.013 996.3479,874.2278 C996.0703,874.6574 995.7866,875.0944 995.4969,875.5385 C994.338,877.3149 993.0823,879.2045 991.7351,881.1861 C989.0405,885.1494 985.9797,889.4806 982.5938,894.01 C969.05,912.1275 950.305,933.415 929,947 C818.27,1017.6 676.63,1059.005 562,1082.8075 C504.685,1094.7087 454.1225,1102.2094 417.5525,1106.7584 C399.2675,1109.033 384.4806,1110.5696 374.0969,1111.5495 C371.5009,1111.7945 369.1802,1112.0046 367.1488,1112.1828 C366.6409,1112.2274 372.129,1111.7552 371.6576,1111.7958 " fill="none" id="repository-to-entity" style="stroke:#181818;stroke-width:1.0;"/>
+            <polygon fill="#181818" points="365.6797,1112.3105,374.9897,1115.5236,370.6613,1111.8816,374.3033,1107.5531,365.6797,1112.3105" style="stroke:#181818;stroke-width:1.0;"/>
+            <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="50" x="916" y="968.0669">persists</text>
+        </g>
+        <!--link event to repository-->
+        <g id="link_event_repository">
+            <path codeLine="86" d="M484.2796,648.2758 C484.4913,648.3583 484.7066,648.4421 484.9255,648.5272 C486.6773,649.2082 488.6629,649.9744 490.8605,650.8138 C499.6509,654.1713 511.8344,658.7 526.0188,663.635 C554.3875,673.505 590.76,685 624,692 C690.71,706.05 871.96,687.66 929,725 C957.035,743.355 975.885,775.86 987.8,804.14 C990.7788,811.21 993.3241,818.0159 995.4711,824.2707 C995.7395,825.0525 996.0016,825.8258 996.2576,826.5898 C996.3856,826.9719 996.5121,827.3516 996.637,827.729 C996.6995,827.9177 994.886,822.4064 994.9477,822.5939 " fill="none" id="event-to-repository" style="stroke:#181818;stroke-width:1.0;"/>
+            <polygon fill="#181818" points="996.8233,828.2933,997.8095,818.4939,995.2603,823.5438,990.2104,820.9946,996.8233,828.2933" style="stroke:#181818;stroke-width:1.0;"/>
+            <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="30" x="909" y="713.0669">uses</text>
+        </g>
+        <!--link entity to enums-->
+        <g id="link_entity_enums">
+            <path codeLine="88" d="M365.0643,1140.7783 C365.1414,1141.0247 365.2189,1141.2725 365.2968,1141.5216 C365.6085,1142.5179 365.9269,1143.5353 366.2514,1144.5727 C371.4441,1161.1697 378.2281,1182.8531 385.0113,1204.5338 C391.7944,1226.2144 398.5766,1247.8922 403.7655,1264.478 C404.0898,1265.5146 404.4079,1266.5313 404.7193,1267.5269 C404.7972,1267.7758 403.0832,1262.2971 403.1602,1262.5433 " fill="none" id="entity-to-enums" style="stroke:#181818;stroke-width:1.0;"/>
+            <polygon fill="#181818" points="404.9517,1268.2696,406.082,1258.4858,403.4588,1263.4977,398.4469,1260.8745,404.9517,1268.2696" style="stroke:#181818;stroke-width:1.0;"/>
+            <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="30" x="379" y="1181.0669">uses</text>
+        </g>
+        <rect fill="#DDDDDD" height="107.7813" id="_legend" rx="7.5" ry="7.5" style="stroke:#000000;stroke-width:1.0;" width="263" x="2854" y="1568"/>
+        <text fill="#000000" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacing" textLength="127" x="2859" y="1585.9951">Flux de sécurité</text>
+        <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="253" x="2859" y="1602.292">1. Controller: Point d'entrée sécurisé</text>
+        <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="237" x="2859" y="1618.5889">2. Security: Validation JWT + Filtres</text>
+        <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="189" x="2859" y="1634.8857">3. Manager: Logique métier</text>
+        <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="241" x="2859" y="1651.1826">4. Repository: Filtrage automatique</text>
+        <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="242" x="2859" y="1667.4795">5. Entity: Données isolées par user</text>
+        <!--SRC=[ZLNRRjim37ttLn1vAP2X1jPjBq5HOCjQj4MB3dMxFYisuwgL9K-IcnP3FYZVaHyR9Tyl0GO4iImUdaDIf9op-9Mb23Ebqr0ebgdNy4Mjp0p-1W3qosl01bSpE3rTAccr4WBrsPd70CI26GFV2_kCqlAOMQva2-j0hjKgGgRZvqFMfIgadJJUi1KAqpDj1m4QZ0lDxOUBCghMWnZhRU9PyxHBhzAKo_I22rl9-h-6-sLZPnLJ4-x6zbFkE7Sm4Uet7kF8DSyxGMmd91KZzfEXwftJFEcIRYTAaJ59JrrMmaERGd19GQvPZELfj3pD8ToMpWDqOL2FuO-qs-A7OMZCbU5MQNyczyrR4mnR6QjPR2ksgyHLSyqnQR7ZeF_FjYoCLLa_izPwbULYeY-Y76FIBy_J3EXThWUrxvN0dd5O2toZt5mPpjtYaicaEq872r41-tbqAGQ7CJ2DeY3QSaBE_Mem7yJTVxja9hBC5cOWqtbrcKyg5PcPZPhEpx70v9pCtkHmuEUQqk_ltgtNr7DUlczmdJkn_QJqwwrASBpxmBDwTnXdORcOzOgm59pA5F5KaeJ67mKNII_ZADTqLxYOyTq-ah-dtGR14ToZA7k7jAt6MiO4T7l2SQ8sylWCgkc4XHkglgc-myZcbvZ0wgE7Q6UgzWyQfyEO4SIbtH3K0Hts7oBAFY9hQPW0k3vi13g48uOSjU76cYbGfnnKQfG9SPNCurecA31bbkJwY8c2LTfjADIgZV48RlQxbBGm849wWkRfiwKpdiylHF5EGc3sEn_OVZUVa-5p2EsNQG6_5FKx94Uk1VQx1aqFmfw4pMspWDzCyCGt35m_FS0dSDyGZMxQleHGNQmBztNYVmg4RB-ptBVYrn3QssPHkhbsfc-6oeYGq8Jw5a8vvWlugQIaM0nmeuHVv4pxIvsgaPI91ly0]-->
+    </g>
+</svg>

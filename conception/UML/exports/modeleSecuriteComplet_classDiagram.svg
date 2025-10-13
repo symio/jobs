@@ -1,0 +1,320 @@
+<?xml version="1.0" encoding="UTF-8"?><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentStyleType="text/css" height="1387px" preserveAspectRatio="none" style="width:1637px;height:1387px;background:#FFFFFF;" version="1.1" viewBox="0 0 1637 1387" width="1637px" zoomAndPan="magnify">
+    <defs/>
+    <g>
+        <!--class User-->
+        <g id="elem_User">
+            <rect codeLine="1" fill="#F1F1F1" height="292.4531" id="User" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="355" x="427" y="915"/>
+            <ellipse cx="584.25" cy="931" fill="#ADD1B2" rx="11" ry="11" style="stroke:#181818;stroke-width:1.0;"/>
+            <path d="M587.2188,936.6406 Q586.6406,936.9375 586,937.0781 Q585.3594,937.2344 584.6563,937.2344 Q582.1563,937.2344 580.8281,935.5938 Q579.5156,933.9375 579.5156,930.8125 Q579.5156,927.6875 580.8281,926.0313 Q582.1563,924.375 584.6563,924.375 Q585.3594,924.375 586,924.5313 Q586.6563,924.6875 587.2188,924.9844 L587.2188,927.7031 Q586.5938,927.125 586,926.8594 Q585.4063,926.5781 584.7813,926.5781 Q583.4375,926.5781 582.75,927.6563 Q582.0625,928.7188 582.0625,930.8125 Q582.0625,932.9063 582.75,933.9844 Q583.4375,935.0469 584.7813,935.0469 Q585.4063,935.0469 586,934.7813 Q586.5938,934.5 587.2188,933.9219 L587.2188,936.6406 Z " fill="#000000"/>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="32" x="604.75" y="935.8467">User</text>
+            <line style="stroke:#181818;stroke-width:0.5;" x1="428" x2="781" y1="947" y2="947"/>
+            <rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="435" y="957.6484"/>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="74" x="447" y="963.9951">id : Integer</text>
+            <rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="435" y="973.9453"/>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="92" x="447" y="980.292">name : String</text>
+            <rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="435" y="990.2422"/>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="117" x="447" y="996.5889">firstname : String</text>
+            <rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="435" y="1006.5391"/>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="89" x="447" y="1012.8857">email : String</text>
+            <rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="435" y="1022.8359"/>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="120" x="447" y="1029.1826">password : String</text>
+            <rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="435" y="1039.1328"/>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="128" x="447" y="1045.4795">authToken : String</text>
+            <rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="435" y="1055.4297"/>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="190" x="447" y="1061.7764">rememberMeToken : String</text>
+            <rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="435" y="1071.7266"/>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="126" x="447" y="1078.0732">enabled : Boolean</text>
+            <rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="435" y="1088.0234"/>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="70" x="447" y="1094.3701">role : Role</text>
+            <line style="stroke:#181818;stroke-width:0.5;" x1="428" x2="781" y1="1101.6719" y2="1101.6719"/>
+            <ellipse cx="438" cy="1115.3203" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="329" x="447" y="1118.667">getAuthorities() : Collection&lt;GrantedAuthority&gt;</text>
+            <ellipse cx="438" cy="1131.6172" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="157" x="447" y="1134.9639">getUsername() : String</text>
+            <ellipse cx="438" cy="1147.9141" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="226" x="447" y="1151.2607">isAccountNonExpired() : boolean</text>
+            <ellipse cx="438" cy="1164.2109" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="225" x="447" y="1167.5576">isAccountNonLocked() : boolean</text>
+            <ellipse cx="438" cy="1180.5078" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="247" x="447" y="1183.8545">isCredentialsNonExpired() : boolean</text>
+            <ellipse cx="438" cy="1196.8047" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="146" x="447" y="1200.1514">isEnabled() : boolean</text>
+        </g>
+        <!--class Role-->
+        <g id="elem_Role">
+            <rect codeLine="19" fill="#F1F1F1" height="96.8906" id="Role" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="150" x="529.5" y="1284"/>
+            <ellipse cx="584.75" cy="1300" fill="#ADD1B2" rx="11" ry="11" style="stroke:#181818;stroke-width:1.0;"/>
+            <path d="M587.7188,1305.6406 Q587.1406,1305.9375 586.5,1306.0781 Q585.8594,1306.2344 585.1563,1306.2344 Q582.6563,1306.2344 581.3281,1304.5938 Q580.0156,1302.9375 580.0156,1299.8125 Q580.0156,1296.6875 581.3281,1295.0313 Q582.6563,1293.375 585.1563,1293.375 Q585.8594,1293.375 586.5,1293.5313 Q587.1563,1293.6875 587.7188,1293.9844 L587.7188,1296.7031 Q587.0938,1296.125 586.5,1295.8594 Q585.9063,1295.5781 585.2813,1295.5781 Q583.9375,1295.5781 583.25,1296.6563 Q582.5625,1297.7188 582.5625,1299.8125 Q582.5625,1301.9063 583.25,1302.9844 Q583.9375,1304.0469 585.2813,1304.0469 Q585.9063,1304.0469 586.5,1303.7813 Q587.0938,1303.5 587.7188,1302.9219 L587.7188,1305.6406 Z " fill="#000000"/>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="31" x="605.25" y="1304.8467">Role</text>
+            <line style="stroke:#181818;stroke-width:0.5;" x1="530.5" x2="678.5" y1="1316" y2="1316"/>
+            <rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="537.5" y="1326.6484"/>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="74" x="549.5" y="1332.9951">id : Integer</text>
+            <rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="537.5" y="1342.9453"/>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="79" x="549.5" y="1349.292">role : String</text>
+            <rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="537.5" y="1359.2422"/>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="124" x="549.5" y="1365.5889">isAdmin : Boolean</text>
+            <line style="stroke:#181818;stroke-width:0.5;" x1="530.5" x2="678.5" y1="1372.8906" y2="1372.8906"/>
+        </g>
+        <!--class Job-->
+        <g id="elem_Job">
+            <rect codeLine="25" fill="#F1F1F1" height="194.6719" id="Job" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="285" x="7" y="643"/>
+            <ellipse cx="134.75" cy="659" fill="#ADD1B2" rx="11" ry="11" style="stroke:#181818;stroke-width:1.0;"/>
+            <path d="M137.7188,664.6406 Q137.1406,664.9375 136.5,665.0781 Q135.8594,665.2344 135.1563,665.2344 Q132.6563,665.2344 131.3281,663.5938 Q130.0156,661.9375 130.0156,658.8125 Q130.0156,655.6875 131.3281,654.0313 Q132.6563,652.375 135.1563,652.375 Q135.8594,652.375 136.5,652.5313 Q137.1563,652.6875 137.7188,652.9844 L137.7188,655.7031 Q137.0938,655.125 136.5,654.8594 Q135.9063,654.5781 135.2813,654.5781 Q133.9375,654.5781 133.25,655.6563 Q132.5625,656.7188 132.5625,658.8125 Q132.5625,660.9063 133.25,661.9844 Q133.9375,663.0469 135.2813,663.0469 Q135.9063,663.0469 136.5,662.7813 Q137.0938,662.5 137.7188,661.9219 L137.7188,664.6406 Z " fill="#000000"/>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="21" x="155.25" y="663.8467">Job</text>
+            <line style="stroke:#181818;stroke-width:0.5;" x1="8" x2="291" y1="675" y2="675"/>
+            <rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="15" y="685.6484"/>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="74" x="27" y="691.9951">id : Integer</text>
+            <rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="15" y="701.9453"/>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="108" x="27" y="708.292">position : String</text>
+            <rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="15" y="718.2422"/>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="125" x="27" y="724.5889">compagny : String</text>
+            <rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="15" y="734.5391"/>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="76" x="27" y="740.8857">user : User</text>
+            <rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="15" y="750.8359"/>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="205" x="27" y="757.1826">offerStatus : OfferStatusEnum</text>
+            <rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="15" y="767.1328"/>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="169" x="27" y="773.4795">contract : ContractEnum</text>
+            <rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="15" y="783.4297"/>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="199" x="27" y="789.7764">workMode : WorkModeEnum</text>
+            <rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="15" y="799.7266"/>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="189" x="27" y="806.0732">workTime : WorkTimeEnum</text>
+            <rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="15" y="816.0234"/>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="259" x="27" y="822.3701">jobHasStatuses : List&lt;JobHasStatus&gt;</text>
+            <line style="stroke:#181818;stroke-width:0.5;" x1="8" x2="291" y1="829.6719" y2="829.6719"/>
+        </g>
+        <!--class JobHasStatus-->
+        <g id="elem_JobHasStatus">
+            <rect codeLine="37" fill="#F1F1F1" height="129.4844" id="JobHasStatus" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="231" x="34" y="996.5"/>
+            <ellipse cx="99.75" cy="1012.5" fill="#ADD1B2" rx="11" ry="11" style="stroke:#181818;stroke-width:1.0;"/>
+            <path d="M102.7188,1018.1406 Q102.1406,1018.4375 101.5,1018.5781 Q100.8594,1018.7344 100.1563,1018.7344 Q97.6563,1018.7344 96.3281,1017.0938 Q95.0156,1015.4375 95.0156,1012.3125 Q95.0156,1009.1875 96.3281,1007.5313 Q97.6563,1005.875 100.1563,1005.875 Q100.8594,1005.875 101.5,1006.0313 Q102.1563,1006.1875 102.7188,1006.4844 L102.7188,1009.2031 Q102.0938,1008.625 101.5,1008.3594 Q100.9063,1008.0781 100.2813,1008.0781 Q98.9375,1008.0781 98.25,1009.1563 Q97.5625,1010.2188 97.5625,1012.3125 Q97.5625,1014.4063 98.25,1015.4844 Q98.9375,1016.5469 100.2813,1016.5469 Q100.9063,1016.5469 101.5,1016.2813 Q102.0938,1016 102.7188,1015.4219 L102.7188,1018.1406 Z " fill="#000000"/>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="91" x="120.25" y="1017.3467">JobHasStatus</text>
+            <line style="stroke:#181818;stroke-width:0.5;" x1="35" x2="264" y1="1028.5" y2="1028.5"/>
+            <rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="42" y="1039.1484"/>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="74" x="54" y="1045.4951">id : Integer</text>
+            <rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="42" y="1055.4453"/>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="183" x="54" y="1061.792">jobStatus : JobStatusEnum</text>
+            <rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="42" y="1071.7422"/>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="205" x="54" y="1078.0889">offerStatus : OfferStatusEnum</text>
+            <rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="42" y="1088.0391"/>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="124" x="54" y="1094.3857">appliedAt : Instant</text>
+            <rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="42" y="1104.3359"/>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="55" x="54" y="1110.6826">job : Job</text>
+            <line style="stroke:#181818;stroke-width:0.5;" x1="35" x2="264" y1="1117.9844" y2="1117.9844"/>
+        </g>
+        <!--class IdentifiedHandler-->
+        <g id="elem_IdentifiedHandler">
+            <rect codeLine="45" fill="#F1F1F1" height="162.0781" id="IdentifiedHandler" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="355" x="607" y="7"/>
+            <ellipse cx="721.25" cy="23" fill="#A9DCDF" rx="11" ry="11" style="stroke:#181818;stroke-width:1.0;"/>
+            <path d="M721.3594,18.3438 L720.2031,23.4219 L722.5313,23.4219 L721.3594,18.3438 Z M719.875,16.1094 L722.8594,16.1094 L726.2188,28.5 L723.7656,28.5 L723,25.4375 L719.7188,25.4375 L718.9688,28.5 L716.5313,28.5 L719.875,16.1094 Z " fill="#000000"/>
+            <text fill="#000000" font-family="sans-serif" font-size="14" font-style="italic" lengthAdjust="spacing" textLength="118" x="741.75" y="27.8467">IdentifiedHandler</text>
+            <line style="stroke:#181818;stroke-width:0.5;" x1="608" x2="961" y1="39" y2="39"/>
+            <polygon fill="none" points="618,47.6484,622,51.6484,618,55.6484,614,51.6484" style="stroke:#B38D22;stroke-width:1.0;"/>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="224" x="627" y="55.9951">userRepository : UserRepository</text>
+            <line style="stroke:#181818;stroke-width:0.5;" x1="608" x2="961" y1="63.2969" y2="63.2969"/>
+            <polygon fill="#FFFF44" points="618,71.9453,622,75.9453,618,79.9453,614,75.9453" style="stroke:#B38D22;stroke-width:1.0;"/>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="178" x="627" y="80.292">getAuth() : Authentication</text>
+            <polygon fill="#FFFF44" points="618,88.2422,622,92.2422,618,96.2422,614,92.2422" style="stroke:#B38D22;stroke-width:1.0;"/>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="137" x="627" y="96.5889">getClientId() : String</text>
+            <polygon fill="#FFFF44" points="618,104.5391,622,108.5391,618,112.5391,614,108.5391" style="stroke:#B38D22;stroke-width:1.0;"/>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="329" x="627" y="112.8857">getAuthorities() : Collection&lt;GrantedAuthority&gt;</text>
+            <polygon fill="#FFFF44" points="618,120.8359,622,124.8359,618,128.8359,614,124.8359" style="stroke:#B38D22;stroke-width:1.0;"/>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="188" x="627" y="129.1826">hasScope(String) : boolean</text>
+            <polygon fill="#FFFF44" points="618,137.1328,622,141.1328,618,145.1328,614,141.1328" style="stroke:#B38D22;stroke-width:1.0;"/>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="162" x="627" y="145.4795">getCurrentUser() : User</text>
+            <polygon fill="#FFFF44" points="618,153.4297,622,157.4297,618,161.4297,614,157.4297" style="stroke:#B38D22;stroke-width:1.0;"/>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="250" x="627" y="161.7764">isAdminWithScopeAdmin() : boolean</text>
+        </g>
+        <!--class JobManager-->
+        <g id="elem_JobManager">
+            <rect codeLine="55" fill="#F1F1F1" height="145.7813" id="JobManager" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="438" x="574.5" y="420"/>
+            <ellipse cx="748.75" cy="436" fill="#ADD1B2" rx="11" ry="11" style="stroke:#181818;stroke-width:1.0;"/>
+            <path d="M751.7188,441.6406 Q751.1406,441.9375 750.5,442.0781 Q749.8594,442.2344 749.1563,442.2344 Q746.6563,442.2344 745.3281,440.5938 Q744.0156,438.9375 744.0156,435.8125 Q744.0156,432.6875 745.3281,431.0313 Q746.6563,429.375 749.1563,429.375 Q749.8594,429.375 750.5,429.5313 Q751.1563,429.6875 751.7188,429.9844 L751.7188,432.7031 Q751.0938,432.125 750.5,431.8594 Q749.9063,431.5781 749.2813,431.5781 Q747.9375,431.5781 747.25,432.6563 Q746.5625,433.7188 746.5625,435.8125 Q746.5625,437.9063 747.25,438.9844 Q747.9375,440.0469 749.2813,440.0469 Q749.9063,440.0469 750.5,439.7813 Q751.0938,439.5 751.7188,438.9219 L751.7188,441.6406 Z " fill="#000000"/>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="81" x="769.25" y="440.8467">JobManager</text>
+            <line style="stroke:#181818;stroke-width:0.5;" x1="575.5" x2="1011.5" y1="452" y2="452"/>
+            <rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="582.5" y="462.6484"/>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="203" x="594.5" y="468.9951">jobRepository : JobRepository</text>
+            <line style="stroke:#181818;stroke-width:0.5;" x1="575.5" x2="1011.5" y1="476.2969" y2="476.2969"/>
+            <ellipse cx="585.5" cy="489.9453" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="146" x="594.5" y="493.292">registerJob(Job) : void</text>
+            <ellipse cx="585.5" cy="506.2422" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="142" x="594.5" y="509.5889">updateJob(Job) : void</text>
+            <ellipse cx="585.5" cy="522.5391" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="412" x="594.5" y="525.8857">searchJobsForCurrentUser(JobSearchRequest, int, int) : Map</text>
+            <rect fill="#F24D5C" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="582.5" y="535.8359"/>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="266" x="594.5" y="542.1826">loadCurrentUserAndIsAdmin(Job) : void</text>
+            <rect fill="#F24D5C" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="582.5" y="552.1328"/>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="403" x="594.5" y="558.4795">buildSpecification(JobSearchRequest) : Specification&lt;Job&gt;</text>
+        </g>
+        <!--class JobEventHandler-->
+        <g id="elem_JobEventHandler">
+            <rect codeLine="64" fill="#F1F1F1" height="113.1875" id="JobEventHandler" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="237" x="818" y="230"/>
+            <ellipse cx="875.75" cy="246" fill="#ADD1B2" rx="11" ry="11" style="stroke:#181818;stroke-width:1.0;"/>
+            <path d="M878.7188,251.6406 Q878.1406,251.9375 877.5,252.0781 Q876.8594,252.2344 876.1563,252.2344 Q873.6563,252.2344 872.3281,250.5938 Q871.0156,248.9375 871.0156,245.8125 Q871.0156,242.6875 872.3281,241.0313 Q873.6563,239.375 876.1563,239.375 Q876.8594,239.375 877.5,239.5313 Q878.1563,239.6875 878.7188,239.9844 L878.7188,242.7031 Q878.0938,242.125 877.5,241.8594 Q876.9063,241.5781 876.2813,241.5781 Q874.9375,241.5781 874.25,242.6563 Q873.5625,243.7188 873.5625,245.8125 Q873.5625,247.9063 874.25,248.9844 Q874.9375,250.0469 876.2813,250.0469 Q876.9063,250.0469 877.5,249.7813 Q878.0938,249.5 878.7188,248.9219 L878.7188,251.6406 Z " fill="#000000"/>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="113" x="896.25" y="250.8467">JobEventHandler</text>
+            <line style="stroke:#181818;stroke-width:0.5;" x1="819" x2="1054" y1="262" y2="262"/>
+            <rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="826" y="272.6484"/>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="175" x="838" y="278.9951">jobManager : JobManager</text>
+            <line style="stroke:#181818;stroke-width:0.5;" x1="819" x2="1054" y1="286.2969" y2="286.2969"/>
+            <ellipse cx="829" cy="299.9453" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="211" x="838" y="303.292">handleBeforeCreate(Job) : void</text>
+            <ellipse cx="829" cy="316.2422" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="198" x="838" y="319.5889">handleBeforeSave(Job) : void</text>
+            <ellipse cx="829" cy="332.5391" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="211" x="838" y="335.8857">handleBeforeDelete(Job) : void</text>
+        </g>
+        <!--class SecuritySpecifications-->
+        <g id="elem_SecuritySpecifications">
+            <rect codeLine="71" fill="#F1F1F1" height="80.5938" id="SecuritySpecifications" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="555" x="327" y="700"/>
+            <ellipse cx="525.25" cy="716" fill="#ADD1B2" rx="11" ry="11" style="stroke:#181818;stroke-width:1.0;"/>
+            <path d="M528.2188,721.6406 Q527.6406,721.9375 527,722.0781 Q526.3594,722.2344 525.6563,722.2344 Q523.1563,722.2344 521.8281,720.5938 Q520.5156,718.9375 520.5156,715.8125 Q520.5156,712.6875 521.8281,711.0313 Q523.1563,709.375 525.6563,709.375 Q526.3594,709.375 527,709.5313 Q527.6563,709.6875 528.2188,709.9844 L528.2188,712.7031 Q527.5938,712.125 527,711.8594 Q526.4063,711.5781 525.7813,711.5781 Q524.4375,711.5781 523.75,712.6563 Q523.0625,713.7188 523.0625,715.8125 Q523.0625,717.9063 523.75,718.9844 Q524.4375,720.0469 525.7813,720.0469 Q526.4063,720.0469 527,719.7813 Q527.5938,719.5 528.2188,718.9219 L528.2188,721.6406 Z " fill="#000000"/>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="150" x="545.75" y="720.8467">SecuritySpecifications</text>
+            <line style="stroke:#181818;stroke-width:0.5;" x1="328" x2="881" y1="732" y2="732"/>
+            <line style="stroke:#181818;stroke-width:0.5;" x1="328" x2="881" y1="740" y2="740"/>
+            <ellipse cx="338" cy="753.6484" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" text-decoration="underline" textLength="416" x="347" y="756.9951">belongsToUserOrAdmin(User, boolean) : Specification&lt;Job&gt;</text>
+            <ellipse cx="338" cy="769.9453" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" text-decoration="underline" textLength="529" x="347" y="773.292">byIdAndBelongsToUserOrAdmin(Integer, User, boolean) : Specification&lt;Job&gt;</text>
+        </g>
+        <!--class JwtAuthenticationFilter-->
+        <g id="elem_JwtAuthenticationFilter">
+            <rect codeLine="76" fill="#F1F1F1" height="162.0781" id="JwtAuthenticationFilter" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="549" x="1081" y="659.5"/>
+            <ellipse cx="1275.25" cy="675.5" fill="#ADD1B2" rx="11" ry="11" style="stroke:#181818;stroke-width:1.0;"/>
+            <path d="M1278.2188,681.1406 Q1277.6406,681.4375 1277,681.5781 Q1276.3594,681.7344 1275.6563,681.7344 Q1273.1563,681.7344 1271.8281,680.0938 Q1270.5156,678.4375 1270.5156,675.3125 Q1270.5156,672.1875 1271.8281,670.5313 Q1273.1563,668.875 1275.6563,668.875 Q1276.3594,668.875 1277,669.0313 Q1277.6563,669.1875 1278.2188,669.4844 L1278.2188,672.2031 Q1277.5938,671.625 1277,671.3594 Q1276.4063,671.0781 1275.7813,671.0781 Q1274.4375,671.0781 1273.75,672.1563 Q1273.0625,673.2188 1273.0625,675.3125 Q1273.0625,677.4063 1273.75,678.4844 Q1274.4375,679.5469 1275.7813,679.5469 Q1276.4063,679.5469 1277,679.2813 Q1277.5938,679 1278.2188,678.4219 L1278.2188,681.1406 Z " fill="#000000"/>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="152" x="1295.75" y="680.3467">JwtAuthenticationFilter</text>
+            <line style="stroke:#181818;stroke-width:0.5;" x1="1082" x2="1629" y1="691.5" y2="691.5"/>
+            <rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="1089" y="702.1484"/>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="151" x="1101" y="708.4951">jwtService : JwtService</text>
+            <rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="1089" y="718.4453"/>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="270" x="1101" y="724.792">userDetailsService : UserDetailsService</text>
+            <rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="1089" y="734.7422"/>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="224" x="1101" y="741.0889">userRepository : UserRepository</text>
+            <rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="1089" y="751.0391"/>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="191" x="1101" y="757.3857">csb : ClientSignatureBuilder</text>
+            <line style="stroke:#181818;stroke-width:0.5;" x1="1082" x2="1629" y1="764.6875" y2="764.6875"/>
+            <ellipse cx="1092" cy="778.3359" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="523" x="1101" y="781.6826">doFilterInternal(HttpServletRequest, HttpServletResponse, FilterChain) : void</text>
+            <rect fill="#F24D5C" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="1089" y="791.6328"/>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="470" x="1101" y="797.9795">handleClientCredentialsToken(String, HttpServletRequest) : boolean</text>
+            <rect fill="#F24D5C" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="1089" y="807.9297"/>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="213" x="1101" y="814.2764">setAuthentication(String) : void</text>
+        </g>
+        <!--class JwtService-->
+        <g id="elem_JwtService">
+            <rect codeLine="86" fill="#F1F1F1" height="162.0781" id="JwtService" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="415" x="992" y="980"/>
+            <ellipse cx="1160.75" cy="996" fill="#ADD1B2" rx="11" ry="11" style="stroke:#181818;stroke-width:1.0;"/>
+            <path d="M1163.7188,1001.6406 Q1163.1406,1001.9375 1162.5,1002.0781 Q1161.8594,1002.2344 1161.1563,1002.2344 Q1158.6563,1002.2344 1157.3281,1000.5938 Q1156.0156,998.9375 1156.0156,995.8125 Q1156.0156,992.6875 1157.3281,991.0313 Q1158.6563,989.375 1161.1563,989.375 Q1161.8594,989.375 1162.5,989.5313 Q1163.1563,989.6875 1163.7188,989.9844 L1163.7188,992.7031 Q1163.0938,992.125 1162.5,991.8594 Q1161.9063,991.5781 1161.2813,991.5781 Q1159.9375,991.5781 1159.25,992.6563 Q1158.5625,993.7188 1158.5625,995.8125 Q1158.5625,997.9063 1159.25,998.9844 Q1159.9375,1000.0469 1161.2813,1000.0469 Q1161.9063,1000.0469 1162.5,999.7813 Q1163.0938,999.5 1163.7188,998.9219 L1163.7188,1001.6406 Z " fill="#000000"/>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="69" x="1181.25" y="1000.8467">JwtService</text>
+            <line style="stroke:#181818;stroke-width:0.5;" x1="993" x2="1406" y1="1012" y2="1012"/>
+            <rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="1000" y="1022.6484"/>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="143" x="1012" y="1028.9951">SECRET_KEY : String</text>
+            <line style="stroke:#181818;stroke-width:0.5;" x1="993" x2="1406" y1="1036.2969" y2="1036.2969"/>
+            <ellipse cx="1003" cy="1049.9453" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="215" x="1012" y="1053.292">extractAllClaims(String) : Claims</text>
+            <ellipse cx="1003" cy="1066.2422" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="222" x="1012" y="1069.5889">extractUserName(String) : String</text>
+            <ellipse cx="1003" cy="1082.5391" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="389" x="1012" y="1085.8857">generateClientCredentialsToken(Map, String, int) : String</text>
+            <ellipse cx="1003" cy="1098.8359" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="371" x="1012" y="1102.1826">isClientCredentialsTokenValid(String, String) : boolean</text>
+            <ellipse cx="1003" cy="1115.1328" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="202" x="1012" y="1118.4795">extractScopes(String) : String</text>
+            <ellipse cx="1003" cy="1131.4297" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="211" x="1012" y="1134.7764">extractAuthority(String) : String</text>
+        </g>
+        <!--class JobRepository-->
+        <g id="elem_JobRepository">
+            <rect codeLine="96" fill="#F1F1F1" height="48" id="JobRepository" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="128" x="917.5" y="716.5"/>
+            <ellipse cx="932.5" cy="732.5" fill="#B4A7E5" rx="11" ry="11" style="stroke:#181818;stroke-width:1.0;"/>
+            <path d="M928.4219,728.2656 L928.4219,726.1094 L935.8125,726.1094 L935.8125,728.2656 L933.3438,728.2656 L933.3438,736.3438 L935.8125,736.3438 L935.8125,738.5 L928.4219,738.5 L928.4219,736.3438 L930.8906,736.3438 L930.8906,728.2656 L928.4219,728.2656 Z " fill="#000000"/>
+            <text fill="#000000" font-family="sans-serif" font-size="14" font-style="italic" lengthAdjust="spacing" textLength="96" x="946.5" y="737.3467">JobRepository</text>
+            <line style="stroke:#181818;stroke-width:0.5;" x1="918.5" x2="1044.5" y1="748.5" y2="748.5"/>
+            <line style="stroke:#181818;stroke-width:0.5;" x1="918.5" x2="1044.5" y1="756.5" y2="756.5"/>
+        </g>
+        <!--class UserRepository-->
+        <g id="elem_UserRepository">
+            <rect codeLine="97" fill="#F1F1F1" height="48" id="UserRepository" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="137" x="1442" y="1037"/>
+            <ellipse cx="1457" cy="1053" fill="#B4A7E5" rx="11" ry="11" style="stroke:#181818;stroke-width:1.0;"/>
+            <path d="M1452.9219,1048.7656 L1452.9219,1046.6094 L1460.3125,1046.6094 L1460.3125,1048.7656 L1457.8438,1048.7656 L1457.8438,1056.8438 L1460.3125,1056.8438 L1460.3125,1059 L1452.9219,1059 L1452.9219,1056.8438 L1455.3906,1056.8438 L1455.3906,1048.7656 L1452.9219,1048.7656 Z " fill="#000000"/>
+            <text fill="#000000" font-family="sans-serif" font-size="14" font-style="italic" lengthAdjust="spacing" textLength="105" x="1471" y="1057.8467">UserRepository</text>
+            <line style="stroke:#181818;stroke-width:0.5;" x1="1443" x2="1578" y1="1069" y2="1069"/>
+            <line style="stroke:#181818;stroke-width:0.5;" x1="1443" x2="1578" y1="1077" y2="1077"/>
+        </g>
+        <!--link User to Role-->
+        <g id="link_User_Role">
+            <path codeLine="99" d="M604.5,1207.01 C604.5,1234.79 604.5,1255.99 604.5,1277.84 " fill="none" id="User-to-Role" style="stroke:#181818;stroke-width:1.0;"/>
+            <polygon fill="#181818" points="604.5,1283.84,608.5,1274.84,604.5,1278.84,600.5,1274.84,604.5,1283.84" style="stroke:#181818;stroke-width:1.0;"/>
+            <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="23" x="605.5" y="1250.0669">has</text>
+            <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="8" x="596.2813" y="1227.4632">1</text>
+            <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="8" x="595.9375" y="1273.0264">1</text>
+        </g>
+        <!--link Job to User-->
+        <g id="link_Job_User">
+            <path codeLine="100" d="M287.56,838.14 C331.36,868.8 375.5041,899.7099 421.7041,932.0399 " fill="none" id="Job-to-User" style="stroke:#181818;stroke-width:1.0;"/>
+            <polygon fill="#181818" points="426.62,935.48,421.5395,927.0426,422.5234,932.6133,416.9528,933.5972,426.62,935.48" style="stroke:#181818;stroke-width:1.0;"/>
+            <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="65" x="351.5" y="881.0669">belongsTo</text>
+            <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="8" x="288.9861" y="857.6158">n</text>
+            <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="8" x="410.9469" y="926.9284">1</text>
+        </g>
+        <!--link Job to JobHasStatus-->
+        <g id="link_Job_JobHasStatus">
+            <path codeLine="101" d="M149.5,838.36 C149.5,889.6 149.5,945.09 149.5,990.28 " fill="none" id="Job-to-JobHasStatus" style="stroke:#181818;stroke-width:1.0;"/>
+            <polygon fill="#181818" points="149.5,996.28,153.5,987.28,149.5,991.28,145.5,987.28,149.5,996.28" style="stroke:#181818;stroke-width:1.0;"/>
+            <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="23" x="150.5" y="881.0669">has</text>
+            <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="8" x="141.2188" y="857.8512">1</text>
+            <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="8" x="141.0625" y="985.4286">n</text>
+        </g>
+        <!--reverse link IdentifiedHandler to JobManager-->
+        <g id="link_IdentifiedHandler_JobManager">
+            <path codeLine="103" d="M786.6912,187.0955 C788.3212,260.2055 790.31,349.32 791.89,419.83 " fill="none" id="IdentifiedHandler-backto-JobManager" style="stroke:#181818;stroke-width:1.0;"/>
+            <polygon fill="none" points="786.29,169.1,780.6927,187.2293,792.6897,186.9618,786.29,169.1" style="stroke:#181818;stroke-width:1.0;"/>
+        </g>
+        <!--reverse link IdentifiedHandler to JobEventHandler-->
+        <g id="link_IdentifiedHandler_JobEventHandler">
+            <path codeLine="104" d="M857.5546,183.4465 C873.3146,203.8165 878.89,211.03 893.48,229.88 " fill="none" id="IdentifiedHandler-backto-JobEventHandler" style="stroke:#181818;stroke-width:1.0;"/>
+            <polygon fill="none" points="846.54,169.21,852.8091,187.1181,862.3001,179.775,846.54,169.21" style="stroke:#181818;stroke-width:1.0;"/>
+        </g>
+        <!--link JobManager to JobRepository-->
+        <g id="link_JobManager_JobRepository">
+            <path codeLine="106" d="M848.89,566.33 C887.88,617.25 933.9514,677.4168 960.0414,711.4768 " fill="none" id="JobManager-to-JobRepository" style="stroke:#181818;stroke-width:1.0;"/>
+            <polygon fill="#181818" points="963.69,716.24,961.3926,706.6629,960.6495,712.2707,955.0417,711.5276,963.69,716.24" style="stroke:#181818;stroke-width:1.0;"/>
+            <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="30" x="883.5" y="609.0669">uses</text>
+        </g>
+        <!--link JobManager to SecuritySpecifications-->
+        <g id="link_JobManager_SecuritySpecifications">
+            <path codeLine="107" d="M737.82,566.33 C704.28,609.89 666.51,658.9556 638.82,694.9256 " fill="none" id="JobManager-to-SecuritySpecifications" style="stroke:#181818;stroke-width:1.0;"/>
+            <polygon fill="#181818" points="635.16,699.68,643.8196,694.9884,638.21,695.718,637.4804,690.1084,635.16,699.68" style="stroke:#181818;stroke-width:1.0;"/>
+            <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="30" x="711.5" y="609.0669">uses</text>
+        </g>
+        <!--link JobEventHandler to JobManager-->
+        <g id="link_JobEventHandler_JobManager">
+            <path codeLine="108" d="M897.61,343.11 C881.07,366.77 865.0085,389.7431 847.3785,414.9531 " fill="none" id="JobEventHandler-to-JobManager" style="stroke:#181818;stroke-width:1.0;"/>
+            <polygon fill="#181818" points="843.94,419.87,852.3758,414.7869,846.8055,415.7725,845.8199,410.2022,843.94,419.87" style="stroke:#181818;stroke-width:1.0;"/>
+            <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="80" x="875.5" y="386.0669">delegates to</text>
+        </g>
+        <!--link JwtAuthenticationFilter to JwtService-->
+        <g id="link_JwtAuthenticationFilter_JwtService">
+            <path codeLine="110" d="M1316.13,821.87 C1292.44,870.25 1265.0186,926.2213 1241.3586,974.5413 " fill="none" id="JwtAuthenticationFilter-to-JwtService" style="stroke:#181818;stroke-width:1.0;"/>
+            <polygon fill="#181818" points="1238.72,979.93,1246.2703,973.606,1240.9188,975.4394,1239.0854,970.0879,1238.72,979.93" style="stroke:#181818;stroke-width:1.0;"/>
+            <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="30" x="1292.5" y="881.0669">uses</text>
+        </g>
+        <!--link JwtAuthenticationFilter to UserRepository-->
+        <g id="link_JwtAuthenticationFilter_UserRepository">
+            <path codeLine="111" d="M1394.61,821.87 C1429.23,893 1474.8945,986.8349 1496.5645,1031.3649 " fill="none" id="JwtAuthenticationFilter-to-UserRepository" style="stroke:#181818;stroke-width:1.0;"/>
+            <polygon fill="#181818" points="1499.19,1036.76,1498.8485,1026.9171,1497.0021,1032.2641,1491.6551,1030.4177,1499.19,1036.76" style="stroke:#181818;stroke-width:1.0;"/>
+            <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="30" x="1425.5" y="881.0669">uses</text>
+        </g>
+        <!--link JwtAuthenticationFilter to User-->
+        <g id="link_JwtAuthenticationFilter_User">
+            <path codeLine="112" d="M1166.48,821.67 C1048.61,871.65 903.4239,933.2276 787.7539,982.2776 " fill="none" id="JwtAuthenticationFilter-to-User" style="stroke:#181818;stroke-width:1.0;"/>
+            <polygon fill="#181818" points="782.23,984.62,792.0774,984.789,786.8332,982.668,788.9542,977.4238,782.23,984.62" style="stroke:#181818;stroke-width:1.0;"/>
+            <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="34" x="1048.5" y="881.0669">loads</text>
+        </g>
+        <!--link SecuritySpecifications to User-->
+        <g id="link_SecuritySpecifications_User">
+            <path codeLine="114" d="M604.5,781.19 C604.5,815.05 604.5,859.88 604.5,908.91 " fill="none" id="SecuritySpecifications-to-User" style="stroke:#181818;stroke-width:1.0;"/>
+            <polygon fill="#181818" points="604.5,914.91,608.5,905.91,604.5,909.91,600.5,905.91,604.5,914.91" style="stroke:#181818;stroke-width:1.0;"/>
+            <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="54" x="605.5" y="881.0669">filters by</text>
+        </g>
+        <!--SRC=[dLPDJniz4Bxlhx3WGaLow1KX94ZJahIqKW9lrLFbNKysBbvxQtkXgEr_VyVsVdYT152H0E_CUCRpp3DZ5u8QG-uCQF8x8_Wp9PoHCxAG5ahGhKZI2b2ujfhBifLjk3Psdm8goaKgh37Cez8ibTF6Rc_LFSXKeQ62AWTz0tlL86akmBcxKae0bTqs_43X2lzvoIafmLvY4AMvvM1Etg1sfeI0md8bppzeYfcopkBfOjZbG77v-IrHy5F2pMLHg4RQpqhEVzLS0_D6UNIKiTKdLTmVC9hXRf2MKs5US3SFEOzqVxEiy2Lq6JzNmXQO4OXuGbPn6O7Okrkg_3bljJBSuPTwB5HLqr8-fVB64UpCywoLgCq6zDfIsnXKV1c-vhAfUc_IQbfONxAmZBH8f_iRnLnMNzjbehtbLQTroqZxG-NNr8I0u0xmYHjxleoa5oCiUl5peA3JFg5bjuw2lYPbMjU28n-jzsuiidFm7lowWz7S16J22HUUGHlSU4qb4tqp7tlWL-3BfVHJMu91q5grFUAPvHREMq5TWGU36PvBsWLBs-7udphic6mHqaBLS19yfOGFCHkjCQWxitVRy-Uuu-vNRhVUZV_Qtng8sGsLj8nc788vGcKPVxSDfw54Ke16tGd-EjSFYhDMszICMjYlCq1riKMvUQzqd8DZXTUju6S3nau8b-6Fyt13w_PuGb4MxRkKR17ItGas9Nd31LlNK63zGyrsmlYAnHQEwME2pnymrfWy7gKEkBC8nJRBhRU-WetIW4CCqTW3HMoqfWylcRm30OcV_fHhA1f7e54cNKEUaj_OBCZQloG7eMHfRfM3xeiEkBdrfAF60JnIFqyBXiXVxNFNDlw4lCRlWFEZ7NVNUoviZFUZNOD-u8MRMil-8vgXxy3YvMe6gxiTOMJzKkFZX3Lkg8JMNlDIuZJISEKOrPUPgN1AbpBUX-BasjhQnS9AzJGUoKoDTO492VjcMyfbmjbGyX0skl_yJT_EWyHdp-DyTDqRI12DficOFGESFTph-Mmrl_t-SVujlU3Xbv-kbqBC1EMLYRm6mTZEGVlPlHG6iv6x4YHex8y32MFVJqYNTJiBalV6_ft_KS5PZzV-ETeVqaz9S-Y8NSRTbDwrGoIvey268eJZUJd84v9b_c5vzFQ8JASN_lygF4Dm-6VkYN4a1zLTU2FqxHiCkhreEBg7Wuziz-Ox_pETniFgi4Kyyx8ikYLSm6LoGxXtGcfpO28DngEfsdeT9Yh3OLSYBGon2kCV60v-MpmOWlDdhE_Ird_L3hHprmvYUY2jo73ZjneSaTd_]-->
+    </g>
+</svg>

@@ -1,0 +1,273 @@
+<?xml version="1.0" encoding="UTF-8"?><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentStyleType="text/css" height="1069px" preserveAspectRatio="none" style="width:850px;height:1069px;background:#FFFFFF;" version="1.1" viewBox="0 0 850 1069" width="850px" zoomAndPan="magnify">
+    <defs/>
+    <g>
+        <!--cluster Couche Pr?sentation-->
+        <g id="cluster_Couche Présentation">
+            <path d="M430.5,6 L597.5,6 A3.75,3.75 0 0 1 600,8.5 L607,28.2969 L607.5,28.2969 A2.5,2.5 0 0 1 610,30.7969 L610,100.5 A2.5,2.5 0 0 1 607.5,103 L430.5,103 A2.5,2.5 0 0 1 428,100.5 L428,8.5 A2.5,2.5 0 0 1 430.5,6 " fill="none" style="stroke:#000000;stroke-width:1.5;"/>
+            <line style="stroke:#000000;stroke-width:1.5;" x1="428" x2="607" y1="28.2969" y2="28.2969"/>
+            <text fill="#000000" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacing" textLength="166" x="432" y="20.9951">Couche Présentation</text>
+        </g>
+        <!--cluster Couche S?curit?-->
+        <g id="cluster_Couche Sécurité">
+            <path d="M33.5,152 L165.5,152 A3.75,3.75 0 0 1 168,154.5 L175,174.2969 L252.5,174.2969 A2.5,2.5 0 0 1 255,176.7969 L255,499 A2.5,2.5 0 0 1 252.5,501.5 L33.5,501.5 A2.5,2.5 0 0 1 31,499 L31,154.5 A2.5,2.5 0 0 1 33.5,152 " fill="none" style="stroke:#000000;stroke-width:1.5;"/>
+            <line style="stroke:#000000;stroke-width:1.5;" x1="31" x2="175" y1="174.2969" y2="174.2969"/>
+            <text fill="#000000" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacing" textLength="131" x="35" y="166.9951">Couche Sécurité</text>
+        </g>
+        <!--cluster Couche Contr?leur-->
+        <g id="cluster_Couche Contrôleur">
+            <path d="M432.5,152 L583.5,152 A3.75,3.75 0 0 1 586,154.5 L593,174.2969 L840.5,174.2969 A2.5,2.5 0 0 1 843,176.7969 L843,246.5 A2.5,2.5 0 0 1 840.5,249 L432.5,249 A2.5,2.5 0 0 1 430,246.5 L430,154.5 A2.5,2.5 0 0 1 432.5,152 " fill="none" style="stroke:#000000;stroke-width:1.5;"/>
+            <line style="stroke:#000000;stroke-width:1.5;" x1="430" x2="593" y1="174.2969" y2="174.2969"/>
+            <text fill="#000000" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacing" textLength="150" x="434" y="166.9951">Couche Contrôleur</text>
+        </g>
+        <!--cluster Couche Service-->
+        <g id="cluster_Couche Service">
+            <path d="M292.5,553 L417.5,553 A3.75,3.75 0 0 1 420,555.5 L427,575.2969 L475.5,575.2969 A2.5,2.5 0 0 1 478,577.7969 L478,791.5 A2.5,2.5 0 0 1 475.5,794 L292.5,794 A2.5,2.5 0 0 1 290,791.5 L290,555.5 A2.5,2.5 0 0 1 292.5,553 " fill="none" style="stroke:#000000;stroke-width:1.5;"/>
+            <line style="stroke:#000000;stroke-width:1.5;" x1="290" x2="427" y1="575.2969" y2="575.2969"/>
+            <text fill="#000000" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacing" textLength="124" x="294" y="567.9951">Couche Service</text>
+        </g>
+        <!--cluster Couche Repository-->
+        <g id="cluster_Couche Repository">
+            <path d="M8.5,697 L159.5,697 A3.75,3.75 0 0 1 162,699.5 L169,719.2969 L263.5,719.2969 A2.5,2.5 0 0 1 266,721.7969 L266,1060 A2.5,2.5 0 0 1 263.5,1062.5 L8.5,1062.5 A2.5,2.5 0 0 1 6,1060 L6,699.5 A2.5,2.5 0 0 1 8.5,697 " fill="none" style="stroke:#000000;stroke-width:1.5;"/>
+            <line style="stroke:#000000;stroke-width:1.5;" x1="6" x2="169" y1="719.2969" y2="719.2969"/>
+            <text fill="#000000" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacing" textLength="150" x="10" y="711.9951">Couche Repository</text>
+        </g>
+        <!--cluster Couche Persistance-->
+        <g id="cluster_Couche Persistance">
+            <path d="M292.5,966 L451.5,966 A3.75,3.75 0 0 1 454,968.5 L461,988.2969 L461.5,988.2969 A2.5,2.5 0 0 1 464,990.7969 L464,1059.5 A2.5,2.5 0 0 1 461.5,1062 L292.5,1062 A2.5,2.5 0 0 1 290,1059.5 L290,968.5 A2.5,2.5 0 0 1 292.5,966 " fill="none" style="stroke:#000000;stroke-width:1.5;"/>
+            <line style="stroke:#000000;stroke-width:1.5;" x1="290" x2="461" y1="988.2969" y2="988.2969"/>
+            <text fill="#000000" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacing" textLength="158" x="294" y="980.9951">Couche Persistance</text>
+        </g>
+        <!--entity A-->
+        <g id="elem_A">
+            <rect fill="#F1F1F1" height="46.2969" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="123" x="457.5" y="41"/>
+            <rect fill="#F1F1F1" height="10" style="stroke:#181818;stroke-width:0.5;" width="15" x="560.5" y="46"/>
+            <rect fill="#F1F1F1" height="2" style="stroke:#181818;stroke-width:0.5;" width="4" x="558.5" y="48"/>
+            <rect fill="#F1F1F1" height="2" style="stroke:#181818;stroke-width:0.5;" width="4" x="558.5" y="52"/>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="83" x="472.5" y="73.9951">Angular App</text>
+        </g>
+        <!--entity B-->
+        <g id="elem_B">
+            <rect fill="#F1F1F1" height="46.2969" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="192" x="47" y="187"/>
+            <rect fill="#F1F1F1" height="10" style="stroke:#181818;stroke-width:0.5;" width="15" x="219" y="192"/>
+            <rect fill="#F1F1F1" height="2" style="stroke:#181818;stroke-width:0.5;" width="4" x="217" y="194"/>
+            <rect fill="#F1F1F1" height="2" style="stroke:#181818;stroke-width:0.5;" width="4" x="217" y="198"/>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="152" x="62" y="219.9951">JwtAuthenticationFilter</text>
+        </g>
+        <!--entity C-->
+        <g id="elem_C">
+            <rect fill="#F1F1F1" height="46.2969" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="149" x="56.5" y="312"/>
+            <rect fill="#F1F1F1" height="10" style="stroke:#181818;stroke-width:0.5;" width="15" x="185.5" y="317"/>
+            <rect fill="#F1F1F1" height="2" style="stroke:#181818;stroke-width:0.5;" width="4" x="183.5" y="319"/>
+            <rect fill="#F1F1F1" height="2" style="stroke:#181818;stroke-width:0.5;" width="4" x="183.5" y="323"/>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="109" x="71.5" y="344.9951">SecurityContext</text>
+        </g>
+        <!--entity D-->
+        <g id="elem_D">
+            <rect fill="#F1F1F1" height="46.2969" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="189" x="47.5" y="439.5"/>
+            <rect fill="#F1F1F1" height="10" style="stroke:#181818;stroke-width:0.5;" width="15" x="216.5" y="444.5"/>
+            <rect fill="#F1F1F1" height="2" style="stroke:#181818;stroke-width:0.5;" width="4" x="214.5" y="446.5"/>
+            <rect fill="#F1F1F1" height="2" style="stroke:#181818;stroke-width:0.5;" width="4" x="214.5" y="450.5"/>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="149" x="62.5" y="472.4951">Authentication Object</text>
+        </g>
+        <!--entity E-->
+        <g id="elem_E">
+            <rect fill="#F1F1F1" height="46.2969" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="176" x="446" y="187"/>
+            <rect fill="#F1F1F1" height="10" style="stroke:#181818;stroke-width:0.5;" width="15" x="602" y="192"/>
+            <rect fill="#F1F1F1" height="2" style="stroke:#181818;stroke-width:0.5;" width="4" x="600" y="194"/>
+            <rect fill="#F1F1F1" height="2" style="stroke:#181818;stroke-width:0.5;" width="4" x="600" y="198"/>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="136" x="461" y="219.9951">JobSearchController</text>
+        </g>
+        <!--entity F-->
+        <g id="elem_F">
+            <rect fill="#F1F1F1" height="46.2969" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="170" x="657" y="187"/>
+            <rect fill="#F1F1F1" height="10" style="stroke:#181818;stroke-width:0.5;" width="15" x="807" y="192"/>
+            <rect fill="#F1F1F1" height="2" style="stroke:#181818;stroke-width:0.5;" width="4" x="805" y="194"/>
+            <rect fill="#F1F1F1" height="2" style="stroke:#181818;stroke-width:0.5;" width="4" x="805" y="198"/>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="130" x="672" y="219.9951">JobCountController</text>
+        </g>
+        <!--entity G-->
+        <g id="elem_G">
+            <rect fill="#F1F1F1" height="46.2969" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="121" x="335.5" y="732"/>
+            <rect fill="#F1F1F1" height="10" style="stroke:#181818;stroke-width:0.5;" width="15" x="436.5" y="737"/>
+            <rect fill="#F1F1F1" height="2" style="stroke:#181818;stroke-width:0.5;" width="4" x="434.5" y="739"/>
+            <rect fill="#F1F1F1" height="2" style="stroke:#181818;stroke-width:0.5;" width="4" x="434.5" y="743"/>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="81" x="350.5" y="764.9951">JobManager</text>
+        </g>
+        <!--entity H-->
+        <g id="elem_H">
+            <rect fill="#F1F1F1" height="46.2969" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="156" x="306" y="588"/>
+            <rect fill="#F1F1F1" height="10" style="stroke:#181818;stroke-width:0.5;" width="15" x="442" y="593"/>
+            <rect fill="#F1F1F1" height="2" style="stroke:#181818;stroke-width:0.5;" width="4" x="440" y="595"/>
+            <rect fill="#F1F1F1" height="2" style="stroke:#181818;stroke-width:0.5;" width="4" x="440" y="599"/>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="116" x="321" y="620.9951">IdentifiedHandler</text>
+        </g>
+        <!--entity I-->
+        <g id="elem_I">
+            <rect fill="#F1F1F1" height="46.2969" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="163" x="86.5" y="857"/>
+            <rect fill="#F1F1F1" height="10" style="stroke:#181818;stroke-width:0.5;" width="15" x="229.5" y="862"/>
+            <rect fill="#F1F1F1" height="2" style="stroke:#181818;stroke-width:0.5;" width="4" x="227.5" y="864"/>
+            <rect fill="#F1F1F1" height="2" style="stroke:#181818;stroke-width:0.5;" width="4" x="227.5" y="868"/>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="123" x="101.5" y="889.9951">JobRepositoryImpl</text>
+        </g>
+        <!--entity J-->
+        <g id="elem_J">
+            <rect fill="#F1F1F1" height="46.2969" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="177" x="63.5" y="732"/>
+            <rect fill="#F1F1F1" height="10" style="stroke:#181818;stroke-width:0.5;" width="15" x="220.5" y="737"/>
+            <rect fill="#F1F1F1" height="2" style="stroke:#181818;stroke-width:0.5;" width="4" x="218.5" y="739"/>
+            <rect fill="#F1F1F1" height="2" style="stroke:#181818;stroke-width:0.5;" width="4" x="218.5" y="743"/>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="137" x="78.5" y="764.9951">IdentifiedRepository</text>
+        </g>
+        <!--entity K-->
+        <g id="elem_K">
+            <rect fill="#F1F1F1" height="46.2969" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="190" x="29" y="1000.5"/>
+            <rect fill="#F1F1F1" height="10" style="stroke:#181818;stroke-width:0.5;" width="15" x="199" y="1005.5"/>
+            <rect fill="#F1F1F1" height="2" style="stroke:#181818;stroke-width:0.5;" width="4" x="197" y="1007.5"/>
+            <rect fill="#F1F1F1" height="2" style="stroke:#181818;stroke-width:0.5;" width="4" x="197" y="1011.5"/>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="150" x="44" y="1033.4951">SecuritySpecifications</text>
+        </g>
+        <!--entity L-->
+        <g id="elem_L">
+            <path d="M344.5,1011 C344.5,1001 395,1001 395,1001 C395,1001 445.5,1001 445.5,1011 L445.5,1036.2969 C445.5,1046.2969 395,1046.2969 395,1046.2969 C395,1046.2969 344.5,1046.2969 344.5,1036.2969 L344.5,1011 " fill="#F1F1F1" style="stroke:#181818;stroke-width:0.5;"/>
+            <path d="M344.5,1011 C344.5,1021 395,1021 395,1021 C395,1021 445.5,1021 445.5,1011 " fill="none" style="stroke:#181818;stroke-width:0.5;"/>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="81" x="354.5" y="1037.9951">PostgreSQL</text>
+        </g>
+        <g id="elem_GMN46">
+            <path d="M480.5,996 L480.5,1051.3984 L663.5,1051.3984 L663.5,1006 L653.5,996 L480.5,996 " fill="#FF6B6B" style="stroke:#181818;stroke-width:0.5;"/>
+            <path d="M653.5,996 L653.5,1006 L663.5,1006 L653.5,996 " fill="#FF6B6B" style="stroke:#181818;stroke-width:1.0;"/>
+            <text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="162" x="486.5" y="1013.0669">SecuritySpecifications</text>
+            <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="132" x="486.5" y="1028.1997">Génère les prédicats</text>
+            <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="131" x="486.5" y="1043.3325">de filtrage utilisateur</text>
+        </g>
+        <g id="elem_GMN49">
+            <path d="M271.5,435 L271.5,458.5 L236.92,462.5 L271.5,466.5 L271.5,490.3984 A0,0 0 0 0 271.5,490.3984 L444.5,490.3984 A0,0 0 0 0 444.5,490.3984 L444.5,445 L434.5,435 L271.5,435 A0,0 0 0 0 271.5,435 " fill="#4ECDC4" style="stroke:#181818;stroke-width:0.5;"/>
+            <path d="M434.5,435 L434.5,445 L444.5,445 L434.5,435 " fill="#4ECDC4" style="stroke:#181818;stroke-width:0.5;"/>
+            <text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="107" x="277.5" y="452.0669">Authentication</text>
+            <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="112" x="277.5" y="467.1997">Contient l'identité</text>
+            <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="152" x="277.5" y="482.3325">de l'utilisateur connecté</text>
+        </g>
+        <g id="elem_GMN52">
+            <path d="M699,996 L699,1051.3984 L825,1051.3984 L825,1006 L815,996 L699,996 " fill="#FFE66D" style="stroke:#181818;stroke-width:0.5;"/>
+            <path d="M815,996 L815,1006 L825,1006 L815,996 " fill="#FFE66D" style="stroke:#181818;stroke-width:1.0;"/>
+            <text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="86" x="705" y="1013.0669">PostgreSQL</text>
+            <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="105" x="705" y="1028.1997">Données isolées</text>
+            <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="88" x="705" y="1043.3325">par utilisateur</text>
+        </g>
+        <!--link A to B-->
+        <g id="link_A_B">
+            <path d="M461.48,87.03 C390.72,114.13 276.8729,157.7234 206.1129,184.8334 " fill="none" id="A-to-B" style="stroke:#181818;stroke-width:1.0;"/>
+            <polygon fill="#181818" points="200.51,186.98,210.3454,187.4953,205.1791,185.1912,207.4832,180.0249,200.51,186.98" style="stroke:#181818;stroke-width:1.0;"/>
+            <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="63" x="377" y="132.0669">JWT Token</text>
+        </g>
+        <!--link B to C-->
+        <g id="link_B_C">
+            <path d="M140.83,233.27 C138.65,255.57 135.9129,283.6884 133.7429,305.9184 " fill="none" id="B-to-C" style="stroke:#181818;stroke-width:1.0;"/>
+            <polygon fill="#181818" points="133.16,311.89,138.0155,303.3212,133.6458,306.9137,130.0533,302.544,133.16,311.89" style="stroke:#181818;stroke-width:1.0;"/>
+            <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="119" x="139" y="278.0669">Set Authentication</text>
+        </g>
+        <!--link C to D-->
+        <g id="link_C_D">
+            <path d="M132.94,358.15 C134.94,380.95 137.5173,410.3028 139.5173,433.1728 " fill="none" id="C-to-D" style="stroke:#181818;stroke-width:1.0;"/>
+            <polygon fill="#181818" points="140.04,439.15,143.2407,429.8357,139.6044,434.169,135.2711,430.5327,140.04,439.15" style="stroke:#181818;stroke-width:1.0;"/>
+            <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="35" x="138" y="401.0669">Store</text>
+        </g>
+        <!--link A to E-->
+        <g id="link_A_E">
+            <path d="M487.93,87.21 C473.57,100.4 461.07,118.01 468,136 C475.67,155.93 487.164,169.749 501.444,182.819 " fill="none" id="A-to-E" style="stroke:#181818;stroke-width:1.0;"/>
+            <polygon fill="#181818" points="505.87,186.87,501.9316,177.8429,502.1817,183.4942,496.5303,183.7442,505.87,186.87" style="stroke:#181818;stroke-width:1.0;"/>
+            <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="54" x="469" y="132.0669">API Calls</text>
+        </g>
+        <!--reverse link A to E-->
+        <g id="link_A_E">
+            <path d="M524.2596,93.1693 C525.9696,102.8893 526.78,108.52 528,119 C530.68,142.02 532.27,168.5 533.13,186.75 " fill="none" id="A-backto-E" style="stroke:#181818;stroke-width:1.0;"/>
+            <polygon fill="#181818" points="523.22,87.26,520.8399,96.8169,524.0863,92.1844,528.7189,95.4308,523.22,87.26" style="stroke:#181818;stroke-width:1.0;"/>
+            <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="32" x="531" y="132.0669">JSON</text>
+        </g>
+        <!--link A to F-->
+        <g id="link_A_F">
+            <path d="M553.36,87.18 C595.26,114.24 660.6392,156.4657 702.5692,183.5357 " fill="none" id="A-to-F" style="stroke:#181818;stroke-width:1.0;"/>
+            <polygon fill="#181818" points="707.61,186.79,702.2184,178.548,703.4094,184.0781,697.8793,185.269,707.61,186.79" style="stroke:#181818;stroke-width:1.0;"/>
+            <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="54" x="624" y="132.0669">API Calls</text>
+        </g>
+        <!--link E to G-->
+        <g id="link_E_G">
+            <path d="M528.5,233.06 C522.89,257.56 515,298.35 515,334 C515,334 515,334 515,612 C515,664.27 471.9643,703.9577 436.9443,728.4877 " fill="none" id="E-to-G" style="stroke:#181818;stroke-width:1.0;"/>
+            <polygon fill="#181818" points="432.03,731.93,441.6964,730.0428,436.1253,729.0614,437.1067,723.4904,432.03,731.93" style="stroke:#181818;stroke-width:1.0;"/>
+            <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="58" x="516" y="467.0669">Delegate</text>
+        </g>
+        <!--reverse link E to G-->
+        <g id="link_E_G">
+            <path d="M578.1235,236.4564 C610.0835,257.7464 645,289.85 645,334 C645,334 645,334 645,612 C645,698.47 530.3,732.97 456.59,746.22 " fill="none" id="E-backto-G" style="stroke:#181818;stroke-width:1.0;"/>
+            <polygon fill="#181818" points="573.13,233.13,578.4027,241.4486,577.2913,235.902,582.8379,234.7906,573.13,233.13" style="stroke:#181818;stroke-width:1.0;"/>
+            <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="62" x="646" y="467.0669">Response</text>
+        </g>
+        <!--link F to I-->
+        <g id="link_F_I">
+            <path d="M747.78,233.04 C753.69,257.52 762,298.3 762,334 C762,334 762,334 762,756 C762,859.4 418.4694,876.4523 255.6594,878.8323 " fill="none" id="F-to-I" style="stroke:#181818;stroke-width:1.0;"/>
+            <polygon fill="#181818" points="249.66,878.92,258.7175,882.788,254.6595,878.8469,258.6006,874.7889,249.66,878.92" style="stroke:#181818;stroke-width:1.0;"/>
+            <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="65" x="763" y="533.0669">Direct Call</text>
+        </g>
+        <!--reverse link H to G-->
+        <g id="link_H_G">
+            <path d="M387.3932,652.1263 C389.6432,678.7963 391.89,705.36 394.14,731.97 " fill="none" id="H-backto-G" style="stroke:#181818;stroke-width:1.0;stroke-dasharray:7.0,7.0;"/>
+            <polygon fill="none" points="385.88,634.19,381.4144,652.6307,393.3719,651.6219,385.88,634.19" style="stroke:#181818;stroke-width:1.0;"/>
+            <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="51" x="391" y="677.0669">Extends</text>
+        </g>
+        <!--reverse link D to H-->
+        <g id="link_D_H">
+            <path d="M183.6227,488.6973 C229.3127,516.3573 301.97,560.34 347.61,587.97 " fill="none" id="D-backto-H" style="stroke:#181818;stroke-width:1.0;"/>
+            <polygon fill="#181818" points="178.49,485.59,184.1176,493.6727,182.7673,488.1794,188.2606,486.8291,178.49,485.59" style="stroke:#181818;stroke-width:1.0;"/>
+            <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="99" x="264" y="533.0669">getCurrentUser</text>
+        </g>
+        <!--reverse link J to I-->
+        <g id="link_J_I">
+            <path d="M157.2213,796.1197 C160.1213,818.4197 162.23,834.66 165.12,856.89 " fill="none" id="J-backto-I" style="stroke:#181818;stroke-width:1.0;stroke-dasharray:7.0,7.0;"/>
+            <polygon fill="none" points="154.9,778.27,151.2714,796.8935,163.1712,795.3459,154.9,778.27" style="stroke:#181818;stroke-width:1.0;"/>
+            <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="51" x="162" y="823.0669">Extends</text>
+        </g>
+        <!--reverse link D to J-->
+        <g id="link_D_J">
+            <path d="M142.9762,491.8065 C144.8362,545.8865 149.37,677.46 151.23,731.61 " fill="none" id="D-backto-J" style="stroke:#181818;stroke-width:1.0;"/>
+            <polygon fill="#181818" points="142.77,485.81,139.0817,494.9422,142.9419,490.807,147.077,494.6672,142.77,485.81" style="stroke:#181818;stroke-width:1.0;"/>
+            <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="99" x="149" y="615.5669">getCurrentUser</text>
+        </g>
+        <!--link I to K-->
+        <g id="link_I_K">
+            <path d="M88.24,903.02 C74.67,910.36 62.29,920.1 54,933 C38.53,957.06 58.1897,979.0481 82.3597,996.6481 " fill="none" id="I-to-K" style="stroke:#181818;stroke-width:1.0;"/>
+            <polygon fill="#181818" points="87.21,1000.18,82.2891,991.6486,83.1681,997.2368,77.5799,998.1157,87.21,1000.18" style="stroke:#181818;stroke-width:1.0;"/>
+            <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="25" x="55" y="946.0669">Use</text>
+        </g>
+        <!--link K to I-->
+        <g id="link_K_I">
+            <path d="M118.57,1000.37 C115.09,981.75 112.62,954.76 121,933 C125.28,921.87 129.0074,915.9515 137.1174,907.5715 " fill="none" id="K-to-I" style="stroke:#181818;stroke-width:1.0;"/>
+            <polygon fill="#181818" points="141.29,903.26,132.1567,906.9456,137.8128,906.8529,137.9054,912.509,141.29,903.26" style="stroke:#181818;stroke-width:1.0;"/>
+            <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="124" x="122" y="946.0669">Generate Predicate</text>
+        </g>
+        <!--link I to L-->
+        <g id="link_I_L">
+            <path d="M249.67,892.57 C299.67,901.3 357.35,914.88 375,933 C392.44,950.91 395.9625,974.5102 396.1225,994.7302 " fill="none" id="I-to-L" style="stroke:#181818;stroke-width:1.0;"/>
+            <polygon fill="#181818" points="396.17,1000.73,400.0987,991.6986,396.1304,995.7302,392.0989,991.7619,396.17,1000.73" style="stroke:#181818;stroke-width:1.0;"/>
+            <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="93" x="388" y="946.0669">Execute Query</text>
+        </g>
+        <!--reverse link I to L-->
+        <g id="link_I_L">
+            <path d="M208.5618,906.2839 C251.3318,932.9439 317.66,974.29 360.15,1000.78 " fill="none" id="I-backto-L" style="stroke:#181818;stroke-width:1.0;"/>
+            <polygon fill="#181818" points="203.47,903.11,208.9918,911.2654,207.7132,905.7549,213.2236,904.4763,203.47,903.11" style="stroke:#181818;stroke-width:1.0;"/>
+            <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="82" x="276" y="946.0669">Filtered Data</text>
+        </g>
+        <!--reverse link G to I-->
+        <g id="link_G_I">
+            <path d="M349.6894,780.9788 C308.4094,803.2488 250.38,834.56 209.08,856.84 " fill="none" id="G-backto-I" style="stroke:#181818;stroke-width:1.0;"/>
+            <polygon fill="#181818" points="354.97,778.13,345.15,778.8828,350.5695,780.504,348.9483,785.9236,354.97,778.13" style="stroke:#181818;stroke-width:1.0;"/>
+            <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="97" x="297" y="823.0669">Filtered Results</text>
+        </g>
+        <!--link K to GMN46-->
+        <g id="link_K_GMN46">
+            <path d="M157.44,1000.45 C215.97,963.07 340.66,896.65 444.5,930.5 C483.83,943.32 521.13,973.37 545.1,995.87 " fill="none" id="K-GMN46" style="stroke:#181818;stroke-width:1.0;stroke-dasharray:7.0,7.0;"/>
+        </g>
+        <!--link L to GMN52-->
+        <g id="link_L_GMN52">
+            <path d="M407.96,1000.87 C422.37,978.23 447.97,944.78 480.5,930.5 C554.97,897.8 587.92,900.46 663.5,930.5 C696.28,943.53 724.47,973.22 742.18,995.57 " fill="none" id="L-GMN52" style="stroke:#181818;stroke-width:1.0;stroke-dasharray:7.0,7.0;"/>
+        </g>
+        <!--SRC=[TLJBRjim4BppAnR98O01vnJuq4C0MR9bsMxZH2bwA7gWfRNDXYK5acfYjFsV-ju_q8zrIRzamxa9Cpix-w8gNhpm9S9LhEjYXJ0ppSQYSjm9hQxW5mFu6gbbBRc1gAg-0RSGiJ-CLMV2lDaKjH6ksUnKurSNrMv5kKGHiWs5T6X2XhuFo348rh5M3jzS8EBWToA3X_btBBPqSidPwqtpJs9jzjPwdYCtnIfGMigTxM17ab2vCsvuiIaqFqM1nxGVkI9-gqWzbfM-qeN0SiHLkKyskfJi2IjjXTDcVSntnB8VbGpQx3JjCIAmu_RayWeB2jhEoGP-SibvXiOAwxZQjr9on-VSKiHCMxSqc3zEhxnywkKHT4lzghhtq8SFCFxo3C_w1HNh7_2Oy1mTd6wAnOU0n0TGqTZEDY0mccKGSobj2n-Uu6nm858Y4fIuv0xPy01d7XQ6ZY9864lXjgvkVz_3Y9Z1cqDLMZQ2RbtjIbcYYsjZgDJF5WrZsLumRWd6xmiow1gnN3bY9yGInjZaf9uK5HeganuGbduUw4MxW6bmeQKH_rYZMJCstPbvxVPXO0a9hSNB0fEscIUqjNIMEjsIVfI4LRHsz0CBOEItbJzyOanfSWeLWrvGoTUBHM_UczFcEvtBnzFf49as6zNyDGWIBLJq9mYTM7ym20kgnVYhgfsGmbA7jM4qEF1cvvO9NDzXKHPtmVBqJ8ALVts2C90t8jmw_JYsFlAcPG25LeeMJUHxLbFV7VPwPR0wtdEmIKZURAWRORNq7uHLz2kxsCD_]-->
+    </g>
+</svg>

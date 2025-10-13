@@ -1,0 +1,67 @@
+@startuml
+actor Utilisateur
+participant "Frontend\nAngular" as Angular
+participant "JobEventHandler" as Handler
+participant "JobManager" as Manager
+participant "JobRepository" as Repo
+participant "JobHasStatus" as Status
+database "PostgreSQL" as DB
+
+Utilisateur -> Angular: Modifier offre #123\n(changement de statut)
+Angular -> Repo: PUT /jobs/123\nAuthorization: Bearer {JWT}\n{ offerStatus: "D_ENTRETIEN" }
+
+note over Repo: Spring Data REST\ndéclenche @HandleBeforeSave
+
+Repo -> Handler: handleBeforeSave(job)
+Handler -> Manager: updateJob(job)
+
+Manager -> Manager: loadCurrentUserAndIsAdmin(job)
+note right: Charge l'utilisateur courant\net vérifie les droits
+
+Manager -> Repo: findByIdFilteredForCurrentUser(123)
+note right: Applique les filtres de sécurité
+
+alt Job non trouvé ou accès refusé
+    Repo --> Manager: Optional.empty()
+    Manager --> Handler: throw SecurityException("Job introuvable ou accès refusé")
+    Handler --> Repo: Exception propagée
+    Repo --> Angular: 403 Forbidden
+    Angular --> Utilisateur: "Accès refusé"
+else Job trouvé et autorisé
+    Repo --> Manager: Optional<Job> existingJob
+    
+    Manager -> Manager: doCheckJobRegistering(job, failedValidation)
+    note right: Validation des champs obligatoires
+    
+    alt Validation échouée
+        Manager --> Handler: throw MissingFieldsException(fieldName)
+        Handler --> Repo: Exception propagée
+        Repo --> Angular: 400 Bad Request
+        Angular --> Utilisateur: "Champ manquant: {field}"
+    else Validation OK
+        Manager -> Manager: if (existingJob.offerStatus != job.offerStatus)
+        
+        alt Statut changé
+            Manager -> Manager: addJobStatus(job)
+            note right: Historisation du changement
+            
+            Manager -> Status: JobHasStatus.builder()\n.jobStatus(job.offerStatus.toJobStatus())\n.offerStatus(job.offerStatus)\n.job(job)\n.build()
+            Status --> Manager: JobHasStatus newStatus
+            
+            Manager -> Manager: job.jobHasStatuses.add(newStatus)
+        end
+        
+        Manager --> Handler: Validation OK
+        Handler --> Repo: Continue save
+        
+        Repo -> DB: UPDATE jobs SET\nposition = ?,\noffer_status = ?,\nupdated_at = NOW()\nWHERE id_job = 123\nAND id_user = 456
+        
+        Repo -> DB: INSERT INTO jobs_has_status\n(job_status, offer_status, applied_at, job_id)\nVALUES (?, ?, NOW(), 123)
+        
+        DB --> Repo: Success
+        Repo --> Angular: 200 OK { updated job data }
+        Angular --> Utilisateur: "Offre mise à jour\nHistorique enregistré"
+    end
+end
+
+@enduml

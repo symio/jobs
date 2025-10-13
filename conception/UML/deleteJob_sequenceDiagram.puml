@@ -1,0 +1,39 @@
+@startuml
+actor Utilisateur
+participant "Frontend\nAngular" as Angular
+participant "JobEventHandler" as Handler
+participant "IdentifiedHandler" as Auth
+participant "JobRepository" as Repo
+database "PostgreSQL" as DB
+
+Utilisateur -> Angular: Supprime offre #123
+Angular -> Repo: DELETE /jobs/123\nAuthorization: Bearer {JWT}
+
+note over Repo: Spring Data REST\ndéclenche l'événement
+
+Repo -> Handler: @HandleBeforeDelete(job)
+
+Handler -> Auth: getCurrentUser()
+Auth --> Handler: User currentUser
+
+Handler -> Auth: isAdminWithScopeAdmin()
+Auth --> Handler: boolean isAdmin
+
+alt currentUser == null
+    Handler --> Repo: throw SecurityException("Utilisateur introuvable")
+    Repo --> Angular: 403 Forbidden
+    Angular --> Utilisateur: "Erreur d'authentification"
+else !isAdmin && job.user != currentUser
+    Handler --> Repo: throw SecurityException("Accès refusé")
+    Repo --> Angular: 403 Forbidden
+    Angular --> Utilisateur: "Vous ne pouvez pas supprimer\ncette offre"
+else Autorisé
+    Handler --> Repo: Validation OK
+    Repo -> DB: DELETE FROM jobs_has_status\nWHERE job_id = 123
+    Repo -> DB: DELETE FROM jobs\nWHERE id_job = 123
+    DB --> Repo: Success
+    Repo --> Angular: 204 No Content
+    Angular --> Utilisateur: "Offre supprimée"
+end
+
+@enduml

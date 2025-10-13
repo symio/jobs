@@ -1,0 +1,101 @@
+@startuml
+package "org.loamok.jobs" {
+  
+  package "web" <<Controller>> {
+    class AuthenticationController
+    class JobSearchController
+    class JobCountController
+    class LabelsController
+  }
+  
+  package "security" <<Security>> {
+    class SecurityConfig
+    class LoggingFilter
+    
+    package "jwt" {
+      class JwtAuthenticationFilter
+      class JwtService
+      class JwtAppConfig
+    }
+    
+    package "oauth2" {
+      class OAuth2Service
+    }
+  }
+  
+  package "manager" <<Service>> {
+    interface JobService
+    class JobManager
+    interface userService
+    class UserManager
+  }
+  
+  package "repository" <<Repository>> {
+    abstract class IdentifiedRepository
+    interface JobRepository
+    interface JobRepositoryCustom
+    class JobRepositoryImpl
+    class SecuritySpecifications
+    interface UserRepository
+    interface RoleRepository
+  }
+  
+  package "event" <<EventHandler>> {
+    abstract class IdentifiedHandler
+    class JobEventHandler
+    class UserEventHandler
+  }
+  
+  package "entity" <<Entity>> {
+    class Job
+    class JobHasStatus
+    class User
+    class Role
+  }
+  
+  package "enums" {
+    interface LabelledEnum
+    enum ContractEnum
+    enum OfferStatusEnum
+    enum JobStatusEnum
+    enum WorkModeEnum
+    enum WorkTimeEnum
+  }
+  
+  package "util" {
+    class ClientSignatureBuilder
+    class SpringContextUtil
+  }
+}
+
+' Relations entre packages
+web -down-> manager : uses
+web -down-> security : secured by
+web -down-> repository : uses
+
+security -down-> repository : uses
+security -down-> util : uses
+
+manager -down-> repository : uses
+manager -down-> entity : manages
+manager -down-> event : uses
+
+repository -down-> entity : persists
+repository -down-> security : extends
+
+event -down-> manager : delegates
+event -down-> repository : uses
+
+entity -down-> enums : uses
+
+' Légende
+legend right
+  **Flux de sécurité**
+  1. Controller: Point d'entrée sécurisé
+  2. Security: Validation JWT + Filtres
+  3. Manager: Logique métier
+  4. Repository: Filtrage automatique
+  5. Entity: Données isolées par user
+endlegend
+
+@enduml
