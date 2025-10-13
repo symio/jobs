@@ -1,10 +1,10 @@
 #!/bin/bash
 set -e
 
-echo "⏳ Attente que le backend soit prêt..."
+echo "Attente que le backend soit prêt..."
 sleep 10
 
-echo "🔍 Vérification de l'existence de la table roles..."
+echo "Vérification de l'existence de la table roles..."
 
 # Vérifie si la table existe et est vide avant d'insérer
 PGPASSWORD=$POSTGRES_PASSWORD psql -h db -U $POSTGRES_USER -d $POSTGRES_DB <<-EOSQL
