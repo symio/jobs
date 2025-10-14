@@ -25,6 +25,7 @@ import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import lombok.ToString;
 import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.UpdateTimestamp;
 import org.loamok.jobs.enums.ContractEnum;
@@ -40,13 +41,14 @@ import org.loamok.jobs.enums.WorkTimeEnum;
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
-@EqualsAndHashCode
+@EqualsAndHashCode(exclude = {"jobHasStatuses", "user"})
 @Entity
+@ToString(exclude = {"jobHasStatuses", "user"})
 @Table(name = "jobs", indexes = {
     @Index(columnList = "position")
 })
 public class Job {
-
+    
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id_job")
@@ -109,18 +111,33 @@ public class Job {
             this.offerStatus = OfferStatusEnum.valueOf(status.trim().toUpperCase());
         }
     }
+    
+    public void setWorkMode(WorkModeEnum mode) {
+        this.workMode = mode;
+    }
+    
     @JsonProperty("workMode") 
     public void setWorkMode(String mode) {
         if (mode != null) {
             this.workMode = WorkModeEnum.valueOf(mode.trim().toUpperCase());
         }
     }
+    
+    public void setWorkTime(WorkTimeEnum time) {
+        this.workTime = time;
+    }
+    
     @JsonProperty("workTime") 
     public void setWorkTime(String time) {
         if (time != null) {
             this.workTime = WorkTimeEnum.valueOf(time.trim().toUpperCase());
         }
     }
+    
+    public void setContract(ContractEnum contract) {
+        this.contract = contract;
+    }
+    
     @JsonProperty("contract") 
     public void setContract(String contract) {
         if (contract != null) {

@@ -1,11 +1,9 @@
 package org.loamok.jobs.event;
 
 import org.loamok.jobs.entity.Job;
-import org.loamok.jobs.entity.JobHasStatus;
 import org.loamok.jobs.entity.User;
-import org.loamok.jobs.enums.JobStatusEnum;
 import org.loamok.jobs.manager.JobManager;
-import org.loamok.jobs.repository.JobRepository;
+import org.loamok.jobs.manager.JobService;
 import org.loamok.jobs.repository.UserRepository;
 import org.springframework.data.rest.core.annotation.HandleBeforeCreate;
 import org.springframework.data.rest.core.annotation.HandleBeforeDelete;
@@ -21,7 +19,7 @@ import org.springframework.stereotype.Component;
 @RepositoryEventHandler(Job.class)
 public class JobEventHandler extends IdentifiedHandler {
 
-    private final JobManager jobManager;
+    private final JobService jobManager;
 
     public JobEventHandler(UserRepository userRepository, JobManager jobManager) {
         super(userRepository);

@@ -75,7 +75,7 @@ public class User implements UserDetails {
     @UpdateTimestamp
     private Instant updatedAt;
     // -- relations
-    @ManyToOne(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    @ManyToOne(cascade = CascadeType.MERGE, fetch = FetchType.LAZY)
     @JoinColumn(name = "id_role", nullable = false)
     @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
     private Role role;

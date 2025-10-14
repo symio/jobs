@@ -15,6 +15,7 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
+import lombok.ToString;
 import org.hibernate.annotations.CreationTimestamp;
 import org.loamok.jobs.enums.JobStatusEnum;
 import org.loamok.jobs.enums.OfferStatusEnum;
@@ -27,8 +28,9 @@ import org.loamok.jobs.enums.OfferStatusEnum;
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
-@EqualsAndHashCode
+@EqualsAndHashCode(exclude = {"job"})
 @Entity
+@ToString(exclude = {"job"})
 @Table(name = "JOBS_HAS_STATUS")
 public class JobHasStatus {
     @Id

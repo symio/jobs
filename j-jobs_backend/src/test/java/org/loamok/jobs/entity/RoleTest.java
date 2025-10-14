@@ -2,16 +2,15 @@ package org.loamok.jobs.entity;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Optional;
 import lombok.extern.slf4j.Slf4j;
 import static org.assertj.core.api.Assertions.assertThat;
 import org.junit.jupiter.api.Test;
-import static org.junit.jupiter.api.Assertions.*;
 import org.junit.jupiter.api.MethodOrderer;
 import org.junit.jupiter.api.TestMethodOrder;
 import org.loamok.jobs.repository.RoleRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.test.context.ActiveProfiles;
 
 /**
  *
@@ -20,6 +19,7 @@ import org.springframework.boot.test.context.SpringBootTest;
 @Slf4j
 @SpringBootTest
 @TestMethodOrder(MethodOrderer.MethodName.class)
+@ActiveProfiles("test")
 public class RoleTest {
     
     @Autowired
@@ -57,6 +57,4 @@ public class RoleTest {
     
     }
 
-    
-    
 }

@@ -21,11 +21,13 @@ import org.springframework.web.cors.CorsConfiguration;
 import org.springframework.web.cors.CorsConfigurationSource;
 import org.springframework.web.cors.UrlBasedCorsConfigurationSource;
 
+import org.springframework.beans.factory.InitializingBean;
+
 @Configuration
 @EnableWebSecurity
-public class SecurityConfig {
+public class SecurityConfig implements InitializingBean {
 
-    @Value("${CORS_ALLOWED_ORIGINS}")
+    @Value("${CORS_ALLOWED_ORIGINS:http://localhost}")
     private String allowedOriginsEnv;
 
     protected final Log logger = LogFactory.getLog(getClass());
@@ -36,6 +38,13 @@ public class SecurityConfig {
     @Autowired
     private AuthenticationProvider authenticationProvider;
 
+    @Override
+    public void afterPropertiesSet() throws Exception {
+        logger.info("==================== CORS CONFIGURATION ====================");
+        logger.info("Variable CORS_ALLOWED_ORIGINS chargée depuis .env : '" + allowedOriginsEnv + "'");
+        logger.info("==========================================================");
+    }
+    
     @Bean
     public SecurityFilterChain oauth2ApiFilterChain(HttpSecurity http) throws Exception {
         http
@@ -55,7 +64,7 @@ public class SecurityConfig {
                 .requestMatchers("/swagger-ui.html").permitAll() // Page principale de l'interface Swagger
                 .requestMatchers("/swagger-resources/**").permitAll() // Métadonnées et configuration Swagger
                 .requestMatchers("/webjars/**").permitAll() // Librairies JavaScript/CSS (Bootstrap, jQuery, etc.)
-
+                        
                 // Rôles - Administration des rôles (Admin uniquement)
                 .requestMatchers(HttpMethod.GET, "/roles", "/roles/**").hasRole("ADMIN")
                 .requestMatchers(HttpMethod.POST, "/roles").hasRole("ADMIN")
