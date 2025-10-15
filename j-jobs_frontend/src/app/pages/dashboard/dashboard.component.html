@@ -145,60 +145,56 @@
       </div>
 
       <!-- Row2 : Contract, WorkTime, WorkMode - 3 colonnes -->
-      <div
-        class="search-row2 form-group"
-        [ngClass]="{ 'is-search-closed': !isSearchOpen }"
-      >
-        <label for="contract">Type de contrat</label>
-        <label for="workTime">Temps de travail</label>
-        <label for="workMode">Mode de travail</label>
+      <div class="search-row2" [ngClass]="{ 'is-search-closed': !isSearchOpen }" >
+        <div class="form-group">
+          <label for="contract">Type de contrat</label>
+          <select id="contract" formControlName="contract">
+            <option value="" disabled="disabled">
+              Sélectionner un type de contrat
+            </option>
+            <option
+              *ngFor="let contract of contractEnum | keyvalue"
+              [value]="contract.key"
+            >
+              {{ contract.value }}
+            </option>
+          </select>
+        </div>
 
-        <select id="contract" formControlName="contract">
-          <option value="" disabled="disabled">
-            Sélectionner un type de contrat
-          </option>
-          <option
-            *ngFor="let contract of contractEnum | keyvalue"
-            [value]="contract.key"
-          >
-            {{ contract.value }}
-          </option>
-        </select>
+        <div class="form-group">
+          <label for="workTime">Temps de travail</label>
+          <select id="workTime" formControlName="workTime">
+            <option value="" disabled="disabled">
+              Sélectionner un temps de travail
+            </option>
+            <option
+              *ngFor="let workTime of workTimeEnum | keyvalue"
+              [value]="workTime.key"
+            >
+              {{ workTime.value }}
+            </option>
+          </select>
+        </div>
 
-        <select id="workTime" formControlName="workTime">
-          <option value="" disabled="disabled">
-            Sélectionner un temps de travail
-          </option>
-          <option
-            *ngFor="let workTime of workTimeEnum | keyvalue"
-            [value]="workTime.key"
-          >
-            {{ workTime.value }}
-          </option>
-        </select>
-
-        <select id="workMode" formControlName="workMode">
-          <option value="" disabled="disabled">
-            Sélectionner un mode de travail
-          </option>
-          <option
-            *ngFor="let workMode of workModeEnum | keyvalue"
-            [value]="workMode.key"
-          >
-            {{ workMode.value }}
-          </option>
-        </select>
+        <div class="form-group">
+          <label for="workMode">Mode de travail</label>
+          <select id="workMode" formControlName="workMode">
+            <option value="" disabled="disabled">
+              Sélectionner un mode de travail
+            </option>
+            <option
+              *ngFor="let workMode of workModeEnum | keyvalue"
+              [value]="workMode.key"
+            >
+              {{ workMode.value }}
+            </option>
+          </select>
+        </div>
       </div>
 
       <!-- Row3 : OfferStatus, EventAfter, EventBefore - 3 colonnes -->
-      <div
-        class="search-row3 form-group"
-        [ngClass]="{ 'is-search-closed': !isSearchOpen }"
-      >
+      <div class="search-row3 form-group" [ngClass]="{ 'is-search-closed': !isSearchOpen }" >
         <label for="offerStatus">Statut de l'offre</label>
-        <label for="eventAfter">Depuis le</label>
-        <label for="eventBefore">Jusqu'au</label>
-
         <select id="offerStatus" formControlName="offerStatus">
           <option value="" disabled="disabled">Sélectionner un statut</option>
           <option
@@ -208,8 +204,11 @@
             {{ offerStatus.value }}
           </option>
         </select>
-
+        
+        <label for="eventAfter">Depuis le</label>
         <input type="date" id="eventAfter" formControlName="eventAfter" />
+        
+        <label for="eventBefore">Jusqu'au</label>
         <input type="date" id="eventBefore" formControlName="eventBefore" />
       </div>
 

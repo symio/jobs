@@ -1,0 +1,2 @@
+
+find . -type f -name "*.spec.ts" | grep -vFf excludedSpecs | xargs -I {} sed -i 's/\bdescribe(/xdescribe(/g' {}

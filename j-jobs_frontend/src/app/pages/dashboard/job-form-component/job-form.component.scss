@@ -14,163 +14,167 @@
 @use "app/theme/stats";
 
 .main-title-section {
-  grid-area: title;
-  @media (min-width: variables.$large) {
-    display: none;
-  }
+    grid-area: title;
+    @media (min-width: variables.$large) {
+        display: none;
+    }
 }
 
 .left-content-wrapper {
-  grid-area: sidebar;
-  background: #f5f7fa;
-  padding: 1rem;
-  display: none;
+    grid-area: sidebar;
+    background: #f5f7fa;
+    padding: 1rem;
+    display: none;
 
-  @media (min-width: variables.$large) {
-    display: flex;
-  }
-
-  .sidebar-nav {
-    ul {
-      list-style-type: none;
-      padding: 0;
+    @media (min-width: variables.$large) {
+        display: flex;
     }
 
-    ::ng-deep li a {
-      display: flex;
-      align-items: center;
-      text-decoration: none;
+    .sidebar-nav {
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
 
-      span svg {
-        color: variables.$blue6;
-        height: 20px;
-        width: 20px;
-        flex-shrink: 0;
-      }
+        ::ng-deep li a {
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+
+            span svg {
+                color: variables.$blue6;
+                height: 20px;
+                width: 20px;
+                flex-shrink: 0;
+            }
+        }
     }
-  }
 }
 
 .dashboard-container {
-  display: grid;
-  grid-template-areas:
-    "title"
-    "form";
-  gap: 1rem;
-  padding: 1rem;
-  padding-left: 5px;
-  max-width: variables.$mediumContainerWidth;
-  margin: 0 auto;
-
-  @media (min-width: variables.$small) {
-    padding-left: 0;
+    display: grid;
+    grid-template-areas:
+        "title"
+        "form";
+    gap: 1rem;
     padding: 1rem;
-  }
-
-  @media (min-width: variables.$large) {
-    max-width: variables.$largeContainerWidth;
     padding-left: 5px;
+    max-width: variables.$mediumContainerWidth;
     margin: 0 auto;
-    grid-template-columns: 235px 715px;
-    grid-template-areas: "sidebar form";
-  }
 
-  @media (min-width: variables.$extralarge) {
-    max-width: variables.$extralargeContainerWidth;
-    grid-template-columns: 250px 1fr;
-  }
+    @media (min-width: variables.$small) {
+        padding-left: 0;
+        padding: 1rem;
+    }
 
-  @media (min-width: variables.$extraextralarge) {
-    max-width: variables.$extraextralargeContainerWidth;
-  }
+    @media (min-width: variables.$large) {
+        max-width: variables.$largeContainerWidth;
+        padding-left: 5px;
+        margin: 0 auto;
+        grid-template-columns: 235px 715px;
+        grid-template-areas: "sidebar form";
+    }
+
+    @media (min-width: variables.$extralarge) {
+        max-width: variables.$extralargeContainerWidth;
+        grid-template-columns: 250px 1fr;
+    }
+
+    @media (min-width: variables.$extraextralarge) {
+        max-width: variables.$extraextralargeContainerWidth;
+    }
 }
 
 .form-content-wrapper {
-  grid-area: form;
-  background: variables.$white;
-  padding: 1.5rem;
-  border-radius: 8px;
+    grid-area: form;
+    background: variables.$white;
+    padding: 1.5rem;
+    border-radius: 8px;
 
-  .job-form {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 1rem;
+    .job-form {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 1rem;
 
-    @media (min-width: variables.$medium) {
-      grid-template-columns: repeat(2, 1fr);
-    }
-
-    #officialdom-group {
-      grid-column: 1 / -1;
-      margin-bottom: 0.5rem;
-
-      > label {
-        margin-bottom: 0.5rem;
-        display: block;
-      }
-
-      .radio-options {
-        display: flex;
-        gap: 2rem;
-
-        label {
-          display: flex;
-          align-items: center;
-          gap: 0.5rem;
-          cursor: pointer;
-          margin: 0;
-
-          input[type="radio"] {
-            cursor: pointer;
-          }
+        @media (min-width: variables.$medium) {
+            grid-template-columns: repeat(2, 1fr);
         }
-      }
-    }
 
-    .description-group {
-      grid-column: 1 / -1;
+        #officialdom-group {
+            grid-column: 1 / -1;
+            margin-bottom: 0.5rem;
 
-      textarea {
-        min-height: 150px;
-        resize: vertical;
-      }
-    }
+            > label {
+                margin-bottom: 0.5rem;
+                display: block;
 
-    button[type="submit"] {
-      grid-column: 1 / -1;
-      max-width: 300px;
-      justify-self: center;
-      margin-top: 1rem;
-    }
+                @media (min-width: variables.$small) {
+                    margin-bottom: 0;
+                }
+            }
 
-    .form-group {
-      margin-bottom: 0;
-    }
+            .radio-options {
+                display: flex;
+                gap: 2rem;
 
-    input,
-    select,
-    textarea {
-      width: 100%;
+                label {
+                    display: flex;
+                    align-items: center;
+                    gap: 0.5rem;
+                    cursor: pointer;
+                    margin: 0;
+
+                    input[type="radio"] {
+                        cursor: pointer;
+                    }
+                }
+            }
+        }
+
+        .description-group {
+            grid-column: 1 / -1;
+
+            textarea {
+                min-height: 150px;
+                resize: vertical;
+            }
+        }
+
+        button[type="submit"] {
+            grid-column: 1 / -1;
+            max-width: 300px;
+            justify-self: center;
+            margin-top: 1rem;
+        }
+
+        .form-group {
+            margin-bottom: 0;
+        }
+
+        input,
+        select,
+        textarea {
+            width: 100%;
+        }
     }
-  }
 }
 
 .loading {
-  text-align: center;
-  padding: 2rem;
-  color: variables.$gray-600;
-  font-style: italic;
+    text-align: center;
+    padding: 2rem;
+    color: variables.$gray-600;
+    font-style: italic;
 }
 
 .error-display {
-  background: variables.$alert-error-bg;
-  color: variables.$alert-error-text;
-  border: 1px solid variables.$alert-error-border;
-  padding: 1rem;
-  border-radius: 4px;
-  margin-bottom: 1rem;
+    background: variables.$alert-error-bg;
+    color: variables.$alert-error-text;
+    border: 1px solid variables.$alert-error-border;
+    padding: 1rem;
+    border-radius: 4px;
+    margin-bottom: 1rem;
 }
 
 .cta-button.validate {
-  margin-top: 0 !important;
+    margin-top: 0 !important;
 }
