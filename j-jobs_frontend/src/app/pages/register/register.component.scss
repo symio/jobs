@@ -78,3 +78,44 @@
     max-width: 740px;
   }
 }
+
+.form-group {
+    .password-input-container {
+        position: relative;
+        display: flex;
+        align-items: center;
+    }
+  
+    input[type="password"],
+    input[type="text"] {
+        // Ajoute de l'espace à droite pour ne pas que le texte passe sous l'icône
+        padding-right: 45px !important;
+    }
+  
+    .toggle-password-btn {
+        position: absolute;
+        right: 10px;
+        top: 50%;
+        transform: translateY(-50%);
+        background: none;
+        border: none;
+        cursor: pointer;
+        padding: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100%;
+
+        svg.iconeMobile {
+            width: 20px;
+            height: 20px;
+            fill: variables.$blue6;
+            opacity: 0.7;
+            transition: opacity 0.2s ease;
+      
+            &:hover {
+                opacity: 1;
+            }
+        }
+    }
+}
