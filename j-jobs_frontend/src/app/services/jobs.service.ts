@@ -106,13 +106,24 @@ export class JobsService {
     ) {
         this.apiUrl = `${this.apiurlService.getApiBaseUrl()}/jobs`;
     }
-
+    
     private normalizeHalLink(link: string): string {
-        if (link.startsWith('/jobs')) {
-            return link.substring('/jobs'.length);
+        const correctPrefix = '/jobs/';
+        const incorrectPrefix = '/jobs/jobs/';
+
+        if (link.startsWith(incorrectPrefix)) {
+            return correctPrefix + link.substring(incorrectPrefix.length);
         }
+
         return link;
     }
+
+//    private normalizeHalLink(link: string): string {
+//        if (link.startsWith('/jobs')) {
+//            return link.substring('/jobs'.length);
+//        }
+//        return link;
+//    }
 
     createJob(job: CreateJobRequest): Observable<Job> {
         const headers = this.oAuth2Service.buildRequestHeadersHal(true);
