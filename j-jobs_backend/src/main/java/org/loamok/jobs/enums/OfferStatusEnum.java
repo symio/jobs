@@ -20,7 +20,8 @@ import lombok.ToString;
 public enum OfferStatusEnum implements LabelledEnum {
     A_EN_COURS("Candidature en cours de traitement", JobStatusEnum.CANDIDATURE_ENVOYEE),
     B_EN_ATTENTE("En attente de retour", JobStatusEnum.CANDIDATURE_ENVOYEE),
-    B_RELANCE("Relance nécessaire", JobStatusEnum.RELANCE),
+    B_RELANCE_A("Relance nécessaire", JobStatusEnum.RELANCE_A),
+    B_RELANCE_E("Relance éffectuée", JobStatusEnum.RELANCE_E),
     C_REFUSE("Candidature refusée", JobStatusEnum.REFUS),
     D_ENTRETIEN("Entretien programmé ou passé", JobStatusEnum.ENTRETIEN),
     O_ACCEPT("Offre acceptée", JobStatusEnum.AUTRE),

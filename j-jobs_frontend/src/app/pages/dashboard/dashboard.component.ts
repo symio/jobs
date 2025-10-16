@@ -336,7 +336,10 @@ export class DashboardComponent implements OnInit, OnDestroy {
       B_EN_ATTENTE: `<svg xmlns="http://www.w3.org/2000/svg" data-name="Layer 1" viewBox="0 0 24 24" fill="currentColor">
             <path d="M12,24C5.383,24,0,18.617,0,12S5.383,0,12,0s12,5.383,12,12-5.383,12-12,12Zm5-13h-4V5h-2V13h6v-2Z"/>
         </svg>`,
-      B_RELANCE: `<svg xmlns="http://www.w3.org/2000/svg" data-name="Layer 1" viewBox="0 0 24 24" fill="currentColor">
+      B_RELANCE_A: `<svg xmlns="http://www.w3.org/2000/svg" data-name="Layer 1" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M12,24C5.383,24,0,18.617,0,12S5.383,0,12,0s12,5.383,12,12-5.383,12-12,12Zm5-13h-4V5h-2V13h6v-2Z"/>
+        </svg>`,
+      B_RELANCE_E: `<svg xmlns="http://www.w3.org/2000/svg" data-name="Layer 1" viewBox="0 0 24 24" fill="currentColor">
             <path d="M12,24C5.383,24,0,18.617,0,12S5.383,0,12,0s12,5.383,12,12-5.383,12-12,12Zm5-13h-4V5h-2V13h6v-2Z"/>
         </svg>`,
       D_ENTRETIEN: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
@@ -360,7 +363,8 @@ export class DashboardComponent implements OnInit, OnDestroy {
       A_EN_COURS: 'status-yellow',
       O_ACCEPT: 'status-yellow',
       B_EN_ATTENTE: 'status-green',
-      B_RELANCE: 'status-green',
+      B_RELANCE_A: 'status-yellow',
+      B_RELANCE_E: 'status-green',
       D_ENTRETIEN: 'status-blue',
       C_REFUSE: 'status-red',
       O_REFUS: 'status-red',

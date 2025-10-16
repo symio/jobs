@@ -90,7 +90,7 @@ public class Job {
     /**
      * Relation avec JobHasStatus *
      */
-    @OneToMany(mappedBy = "job", cascade = CascadeType.ALL, orphanRemoval = true)
+    @OneToMany(mappedBy = "job", cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.EAGER)
     @Builder.Default
     private List<JobHasStatus> jobHasStatuses = new ArrayList<>();
     /**

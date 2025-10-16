@@ -55,9 +55,9 @@ export class MenuService {
     return {
       title: 'Nous connaître',
       items: [
-        { label: 'Mentions légales', link: '#' },
-        { label: 'Politique de confidentialité', link: '#' },
-        { label: 'Aide / Nous contacter', link: '#' },
+        { label: 'Mentions légales', link: 'mentions-legales' },
+        { label: 'Politique de confidentialité', link: 'confidentialite' },
+        { label: 'Aide / Nous contacter', link: 'aide' },
       ],
     };
   }

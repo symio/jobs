@@ -18,7 +18,8 @@ import lombok.ToString;
 @ToString(of = {"name"})
 public enum JobStatusEnum implements LabelledEnum {
     CANDIDATURE_ENVOYEE("Candidature envoyée"),
-    RELANCE("Relance effectuée"),
+    RELANCE_A("Relance à faire"),
+    RELANCE_E("Relance effectuée"),
     REFUS("Refus reçu"),
     ENTRETIEN("Entretien programmé/passé"),
     AUTRE("Autre type d'événement");

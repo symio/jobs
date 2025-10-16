@@ -1,5 +1,7 @@
 package org.loamok.jobs.manager;
 
+import jakarta.persistence.EntityManager;
+import jakarta.persistence.PersistenceContext;
 import java.time.Instant;
 import java.util.HashMap;
 import java.util.List;
@@ -30,20 +32,22 @@ public class JobManager extends IdentifiedHandler implements JobService {
 
     private final JobRepository jobRepository;
     private User u;
+    @PersistenceContext
+    private EntityManager entityManager;
 
     public JobManager(JobRepository jobRepository, UserRepository userRepository) {
         super(userRepository);
         this.jobRepository = jobRepository;
     }
-    
+
     private void loadCurrentUserAndIsAdmin(Job j) {
         u = getCurrentUser();
         boolean adminAccess = isAdminWithScopeAdmin();
-        
+
         if (u == null) {
             throw new SecurityException("Utilisateur introuvable");
         }
-        
+
         if (!adminAccess) {
             j.setUser(u);
         } else {
@@ -52,17 +56,17 @@ public class JobManager extends IdentifiedHandler implements JobService {
             }
         }
     }
-    
+
     private void addJobStatus(Job j) {
         j.getJobHasStatuses().add(
-            JobHasStatus.builder()
-                .jobStatus(j.getOfferStatus().toJobStatus())
-                .offerStatus(j.getOfferStatus())
-                .job(j)
-                .build()
+                JobHasStatus.builder()
+                        .jobStatus(j.getOfferStatus().toJobStatus())
+                        .offerStatus(j.getOfferStatus())
+                        .job(j)
+                        .build()
         );
     }
-    
+
     private Map<String, Object> jobToMap(Job job) {
         Map<String, Object> jobMap = new HashMap<>();
         jobMap.put("position", job.getPosition());
@@ -76,60 +80,68 @@ public class JobManager extends IdentifiedHandler implements JobService {
         jobMap.put("workTime", job.getWorkTime().getName());
         jobMap.put("workMode", job.getWorkMode().getName());
         jobMap.put("offerStatus", job.getOfferStatus().getName());
-        
+
         if (job.getJobHasStatuses() != null && !job.getJobHasStatuses().isEmpty()) {
             List<Map<String, Object>> statuses = job.getJobHasStatuses().stream()
-                .map(jhs -> {
-                    Map<String, Object> statusMap = new HashMap<>();
-                    statusMap.put("id", jhs.getId());
-                    statusMap.put("job_status", jhs.getJobStatus().getName());
-                    statusMap.put("offer_status", jhs.getOfferStatus().getName());
-                    statusMap.put("applied_at", jhs.getAppliedAt());
+                    .map(jhs -> {
+                        Map<String, Object> statusMap = new HashMap<>();
+                        statusMap.put("id", jhs.getId());
+                        statusMap.put("job_status", jhs.getJobStatus().getName());
+                        statusMap.put("offer_status", jhs.getOfferStatus().getName());
+                        statusMap.put("applied_at", jhs.getAppliedAt());
 
-                    return statusMap;
-                })
-                .toList();
+                        return statusMap;
+                    })
+                    .toList();
             jobMap.put("job_has_statuses", statuses);
         }
-        
+
         Map<String, Map<String, String>> links = new HashMap<>();
         links.put("self", Map.of("href", "/jobs/" + job.getId()));
         jobMap.put("_links", links);
-        
+
         return jobMap;
     }
-    
+
+    private OfferStatusEnum getOldOfferStatus(Integer jobId) {
+        return (OfferStatusEnum) entityManager.createQuery(
+                    "SELECT j.offerStatus FROM Job j WHERE j.id = :id"
+                )
+                .setParameter("id", jobId)
+                .getSingleResult();
+    }
+
     private Map<String, Object> buildHalResponse(Page<Job> jobPage, int page, int size) {
         Map<String, Object> response = new HashMap<>();
-        
+
         // _embedded
         Map<String, Object> embedded = new HashMap<>();
         List<Map<String, Object>> jobsWithLinks = jobPage.getContent().stream()
-            .map(this::jobToMap)
-            .toList();
+                .map(this::jobToMap)
+                .toList();
         embedded.put("jobs", jobsWithLinks);
         response.put("_embedded", embedded);
-        
+
         Map<String, Map<String, String>> links = new HashMap<>();
-        
+
         String selfHref = String.format("/jobs/search?page=%d&size=%d", page, size);
         links.put("self", Map.of("href", selfHref));
-        
+
         links.put("first", Map.of("href", String.format("/jobs/search?page=0&size=%d", size)));
-        
+
         int lastPage = jobPage.getTotalPages() - 1;
         links.put("last", Map.of("href", String.format("/jobs/search?page=%d&size=%d", lastPage, size)));
-        
+
         if (page > 0) {
             links.put("prev", Map.of("href", String.format("/jobs/search?page=%d&size=%d", page - 1, size)));
         }
-        
+
         if (page < lastPage) {
             links.put("next", Map.of("href", String.format("/jobs/search?page=%d&size=%d", page + 1, size)));
         }
-        
+
         response.put("_links", links);
-        
+
         // page info
         Map<String, Object> pageInfo = new HashMap<>();
         pageInfo.put("size", jobPage.getSize());
@@ -137,79 +149,84 @@ public class JobManager extends IdentifiedHandler implements JobService {
         pageInfo.put("total_pages", jobPage.getTotalPages());
         pageInfo.put("number", jobPage.getNumber());
         response.put("page", pageInfo);
-        
+
         return response;
     }
-    
+
     private Specification<Job> buildSpecification(JobSearchRequest request) {
         Specification<Job> spec = (root, query, cb) -> cb.conjunction();
-        
+
         if (request.getContract() != null) {
-            spec = spec.and((root, query, cb) -> 
-                cb.equal(root.get("contract"), request.getContract()));
+            spec = spec.and((root, query, cb)
+                    -> cb.equal(root.get("contract"), request.getContract()));
         }
-        
+
         if (request.getWorkMode() != null) {
-            spec = spec.and((root, query, cb) -> 
-                cb.equal(root.get("workMode"), request.getWorkMode()));
+            spec = spec.and((root, query, cb)
+                    -> cb.equal(root.get("workMode"), request.getWorkMode()));
         }
-        
+
         if (request.getWorkTime() != null) {
-            spec = spec.and((root, query, cb) -> 
-                cb.equal(root.get("workTime"), request.getWorkTime()));
+            spec = spec.and((root, query, cb)
+                    -> cb.equal(root.get("workTime"), request.getWorkTime()));
         }
-        
+
         if (request.getOfferStatus() != null) {
-            spec = spec.and((root, query, cb) -> 
-                cb.equal(root.get("offerStatus"), request.getOfferStatus()));
+            spec = spec.and((root, query, cb)
+                    -> cb.equal(root.get("offerStatus"), request.getOfferStatus()));
         }
-        
+
         if (request.isOfficialdom()) {
-            spec = spec.and((root, query, cb) -> 
-                cb.isTrue(root.get("fromOfficialDom")));
+            spec = spec.and((root, query, cb)
+                    -> cb.isTrue(root.get("fromOfficialDom")));
         }
-        
+
         if (request.getEventAfter() != null) {
             Instant eventAfter = request.getEventAfterAsInstant();
-            spec = spec.and((root, query, cb) -> 
-                cb.greaterThanOrEqualTo(root.get("createdAt"), eventAfter));
+            spec = spec.and((root, query, cb)
+                    -> cb.greaterThanOrEqualTo(root.get("createdAt"), eventAfter));
         }
-        
+
         if (request.getEventBefore() != null) {
             Instant eventBefore = request.getEventBeforeAsInstant();
-            spec = spec.and((root, query, cb) -> 
-                cb.lessThanOrEqualTo(root.get("createdAt"), eventBefore));
+            spec = spec.and((root, query, cb)
+                    -> cb.lessThanOrEqualTo(root.get("createdAt"), eventBefore));
         }
-        
+
         if (request.getTextual() != null && !request.getTextual().isBlank()) {
             String searchPattern = "%" + request.getTextual().toLowerCase() + "%";
-            spec = spec.and((root, query, cb) -> 
-                cb.or(
-                    cb.like(cb.lower(root.get("position")), searchPattern),
-                    cb.like(cb.lower(root.get("compagny")), searchPattern),
-                    cb.like(cb.lower(root.get("city")), searchPattern),
-                    cb.like(cb.lower(root.get("description")), searchPattern)
-                )
+            spec = spec.and((root, query, cb)
+                    -> cb.or(
+                            cb.like(cb.lower(root.get("position")), searchPattern),
+                            cb.like(cb.lower(root.get("compagny")), searchPattern),
+                            cb.like(cb.lower(root.get("city")), searchPattern),
+                            cb.like(cb.lower(root.get("description")), searchPattern)
+                    )
             );
         }
-        
+
         return spec;
     }
-    
+
     private Sort buildSort(String sortParam) {
         if (sortParam == null || sortParam.isBlank()) {
             return Sort.by(Sort.Direction.DESC, "createdAt");
         }
-        
+
         return switch (sortParam.toUpperCase()) {
-            case "A-Z" -> Sort.by(Sort.Direction.ASC, "position");
-            case "Z-A" -> Sort.by(Sort.Direction.DESC, "position");
-            case "DATE_ASC" -> Sort.by(Sort.Direction.ASC, "createdAt");
-            case "DATE_DESC" -> Sort.by(Sort.Direction.DESC, "createdAt");
-            default -> Sort.by(Sort.Direction.DESC, "createdAt");
+            case "A-Z" ->
+                Sort.by(Sort.Direction.ASC, "position");
+            case "Z-A" ->
+                Sort.by(Sort.Direction.DESC, "position");
+            case "DATE_ASC" ->
+                Sort.by(Sort.Direction.ASC, "createdAt");
+            case "DATE_DESC" ->
+                Sort.by(Sort.Direction.DESC, "createdAt");
+            default ->
+                Sort.by(Sort.Direction.DESC, "createdAt");
         };
     }
-    
+
     @Override
     public Map<String, Object> searchJobsForCurrentUser(JobSearchRequest searchRequest, int page, int size) {
         User currentUser = getCurrentUser();
@@ -223,21 +240,20 @@ public class JobManager extends IdentifiedHandler implements JobService {
         Sort sort = buildSort(searchRequest.getSort());
         Pageable pageable = PageRequest.of(page, size, sort);
         Page<Job> jobPage = jobRepository.findBySearch(finalSpec, pageable);
-        
+
         return buildHalResponse(jobPage, page, size);
     }
-    
-    
+
     @Override
     public void registerJob(Job j) {
         loadCurrentUserAndIsAdmin(j);
-        
+
         StringBuilder failedValidation = new StringBuilder();
-        if(!doCheckJobRegistering(j, failedValidation)) {
+        if (!doCheckJobRegistering(j, failedValidation)) {
             throw new MissingFieldsException(failedValidation.toString());
         }
-        
-        if(!j.isFromOfficialDom()) {
+
+        if (!j.isFromOfficialDom()) {
             switch (j.getOfferStatus().getName()) {
                 case "O_ACCEPT":
                     j.setOfferStatus(OfferStatusEnum.A_EN_COURS);
@@ -247,35 +263,36 @@ public class JobManager extends IdentifiedHandler implements JobService {
                     break;
             }
         }
-        
+
         addJobStatus(j);
     }
 
     @Override
     public void updateJob(Job j) {
         loadCurrentUserAndIsAdmin(j);
-        
+
         Job existingJob = jobRepository.findByIdFilteredForCurrentUser(j.getId())
-            .orElseThrow(() -> new SecurityException("Job introuvable ou accès refusé"));
-        
+                .orElseThrow(() -> new SecurityException("Job introuvable ou accès refusé"));
+
+
         StringBuilder failedValidation = new StringBuilder();
-        if(!doCheckJobRegistering(j, failedValidation)) {
+        if (!doCheckJobRegistering(j, failedValidation)) {
             throw new MissingFieldsException(failedValidation.toString());
         }
-        
-        if(existingJob.getOfferStatus() != j.getOfferStatus())
+
+        if (getOldOfferStatus(j.getId()) != j.getOfferStatus()) 
             addJobStatus(j);
     }
-    
+
     @Override
     public Boolean doCheckJobRegistering(Job j, StringBuilder failedValidation) {
         StringBuilder fieldName = new StringBuilder();
         Boolean areFieldsFilled = checkNonNullFields(j, fieldName);
-        
-        if(!areFieldsFilled) {
+
+        if (!areFieldsFilled) {
             failedValidation.setLength(0);
             failedValidation.append(fieldName);
-        
+
             return false;
         }
 
@@ -284,56 +301,56 @@ public class JobManager extends IdentifiedHandler implements JobService {
 
     @Override
     public Boolean checkNonNullFields(Job j, StringBuilder fieldName) {
-        if(j.getContract() == null) {
+        if (j.getContract() == null) {
             fieldName.setLength(0);
             fieldName.append("contract");
-            
-            return false;
-        }
-        
-        if(j.getOfferStatus() == null) {
-            fieldName.setLength(0);
-            fieldName.append("offerStatus");
-            
+
             return false;
         }
 
-        if(j.getWorkMode() == null) {
+        if (j.getOfferStatus() == null) {
+            fieldName.setLength(0);
+            fieldName.append("offerStatus");
+
+            return false;
+        }
+
+        if (j.getWorkMode() == null) {
             fieldName.setLength(0);
             fieldName.append("workMode");
-            
+
             return false;
         }
-        
-        if(j.getWorkTime() == null) {
+
+        if (j.getWorkTime() == null) {
             fieldName.setLength(0);
             fieldName.append("workTime");
-            
+
             return false;
         }
-        
-        if(j.getCompagny() == null || j.getCompagny().isBlank()) {
+
+        if (j.getCompagny() == null || j.getCompagny().isBlank()) {
             fieldName.setLength(0);
             fieldName.append("compagny");
-            
+
             return false;
         }
-        
-        if(j.getCity() == null || j.getCity().isBlank()) {
+
+        if (j.getCity() == null || j.getCity().isBlank()) {
             fieldName.setLength(0);
             fieldName.append("city");
-            
+
             return false;
         }
-        
-        if(j.getPosition()== null || j.getPosition().isBlank()) {
+
+        if (j.getPosition() == null || j.getPosition().isBlank()) {
             fieldName.setLength(0);
             fieldName.append("position");
-            
+
             return false;
         }
-        
+
         return true;
     }
-    
+
 }

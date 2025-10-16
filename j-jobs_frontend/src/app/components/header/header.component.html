@@ -1,62 +1,83 @@
 <div class="header-container">
-  <div class="logo">
-    <span class="logo-j">J</span><span class="logo-rest">obs</span>
-  </div>
-  <h1 class="page-title" *ngIf="isAuthenticated && pageTitle">
-    {{ pageTitle }}
-  </h1>
-  <!-- Badge utilisateur (visible seulement si connecté) -->
-  <div
-    class="user-badge cta-button"
-    *ngIf="isAuthenticated && userInfo"
-    (click)="toggleUserMenu()"
-  >
-    <div class="user-info">
-      <!-- Icône utilisateur -->
-      <svg class="user-icon" viewBox="0 0 24 24" fill="currentColor">
-        <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" />
-        <circle cx="12" cy="7" r="4" />
-      </svg>
-      <!-- Nom utilisateur (visible uniquement à partir de tablette) -->
-      <span class="username">{{ getUserDisplayName() }}</span>
-      <!-- Flèche -->
-      <svg
-        class="arrow-icon"
-        [class.rotated]="isUserMenuOpen"
-        viewBox="0 0 24 24"
-        fill="currentColor"
-      >
-        <path d="M6 9l6 6 6-6" />
-      </svg>
+    <div class="logo">
+        <span class="logo-j">J</span><span class="logo-rest">obs</span>
+    </div>
+    <h1 class="page-title" *ngIf="isAuthenticated && pageTitle">
+        {{ pageTitle }}
+    </h1>
+    <!-- Badge utilisateur (visible seulement si connecté) -->
+    <div
+        class="user-badge cta-button"
+        *ngIf="isAuthenticated && userInfo"
+        (click)="toggleUserMenu()"
+        >
+        <div class="user-info">
+            <!-- Icône utilisateur -->
+            <svg class="user-icon" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" />
+            <circle cx="12" cy="7" r="4" />
+            </svg>
+            <!-- Nom utilisateur (visible uniquement à partir de tablette) -->
+            <span class="username">{{ getUserDisplayName() }}</span>
+            <!-- Flèche -->
+            <svg
+                class="arrow-icon"
+                [class.rotated]="isUserMenuOpen"
+                viewBox="0 0 24 24"
+                fill="currentColor"
+                >
+            <path d="M6 9l6 6 6-6" />
+            </svg>
+        </div>
+
+        <!-- Menu déroulant utilisateur -->
+        <div class="user-dropdown" [class.open]="isUserMenuOpen">
+            <a
+                routerLink="/"
+                class="dropdown-item"
+                (click)="isUserMenuOpen = false"
+                >
+                <svg 
+                    xmlns="http://www.w3.org/2000/svg" 
+                    xmlns:xlink="http://www.w3.org/1999/xlink" 
+                    version="1.1" 
+                    x="0px" y="0px" 
+                    viewBox="0 0 512 512" 
+                    style="enable-background:new 0 0 512 512; color: #blue6"  fill="currentColor" xml:space="preserve" width="512" height="512">
+                    <g>
+                        <path d="M256,319.841c-35.346,0-64,28.654-64,64v128h128v-128C320,348.495,291.346,319.841,256,319.841z"></path>
+                        <g>
+                            <path d="M362.667,383.841v128H448c35.346,0,64-28.654,64-64V253.26c0.005-11.083-4.302-21.733-12.011-29.696l-181.29-195.99 c-31.988-34.61-85.976-36.735-120.586-4.747c-1.644,1.52-3.228,3.103-4.747,4.747L12.395,223.5 C4.453,231.496-0.003,242.31,0,253.58v194.261c0,35.346,28.654,64,64,64h85.333v-128c0.399-58.172,47.366-105.676,104.073-107.044    C312.01,275.383,362.22,323.696,362.667,383.841z"></path>
+                            <path d="M256,319.841c-35.346,0-64,28.654-64,64v128h128v-128C320,348.495,291.346,319.841,256,319.841z"></path>
+                        </g>
+                    </g>
+                </svg>
+                Accueil
+            </a>
+            <a
+                routerLink="/profil"
+                class="dropdown-item"
+                >
+                <svg viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" />
+                    <circle cx="12" cy="7" r="4" />
+                </svg>
+                Mon Profil
+            </a>
+            <button class="dropdown-item logout-btn" (click)="logout()">
+                <svg viewBox="0 0 24 24" fill="currentColor">
+                <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4" />
+                <polyline points="16,17 21,12 16,7" />
+                <line x1="21" y1="12" x2="9" y2="12" />
+                </svg>
+                Déconnexion
+            </button>
+        </div>
     </div>
 
-    <!-- Menu déroulant utilisateur -->
-    <div class="user-dropdown" [class.open]="isUserMenuOpen">
-      <a
-        routerLink="/profil"
-        class="dropdown-item"
-        (click)="isUserMenuOpen = false"
-      >
-        <svg viewBox="0 0 24 24" fill="currentColor">
-          <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" />
-          <circle cx="12" cy="7" r="4" />
-        </svg>
-        Mon Profil
-      </a>
-      <button class="dropdown-item logout-btn" (click)="logout()">
-        <svg viewBox="0 0 24 24" fill="currentColor">
-          <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4" />
-          <polyline points="16,17 21,12 16,7" />
-          <line x1="21" y1="12" x2="9" y2="12" />
-        </svg>
-        Déconnexion
-      </button>
-    </div>
-  </div>
-
-  <button class="menu-button" aria-label="Menu" (click)="toggleMenu()">
-    <span class="burger-line"></span>
-    <span class="burger-line"></span>
-    <span class="burger-line"></span>
-  </button>
+    <button class="menu-button" aria-label="Menu" (click)="toggleMenu()">
+        <span class="burger-line"></span>
+        <span class="burger-line"></span>
+        <span class="burger-line"></span>
+    </button>
 </div>

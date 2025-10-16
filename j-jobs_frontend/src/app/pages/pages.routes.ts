@@ -4,6 +4,9 @@ import { LandingPageComponent } from './landing-page/landing-page.component';
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
 import { AuthGuard } from '@app/guards/auth.guard';
+import { MentionsLegalesComponent } from './mentions-legales/mentions-legales.component';
+import { RgpdComponent } from './rgpd/rgpd.component';
+import { AideComponent } from './aide/aide.component';
 
 export const routes: Routes = [
   {
@@ -17,6 +20,18 @@ export const routes: Routes = [
   {
     path: 'register',
     component: RegisterComponent,
+  },
+  {
+    path: 'mentions-legales',
+    component: MentionsLegalesComponent,
+  },
+  {
+    path: 'confidentialite',
+    component: RgpdComponent,
+  },
+  {
+    path: 'aide',
+    component: AideComponent,
   },
   {
     path: 'dashboard',
