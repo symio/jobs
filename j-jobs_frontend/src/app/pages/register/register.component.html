@@ -82,6 +82,8 @@
                     [class.is-invalid]="password?.invalid && password?.touched"
                     >
                     <label for="password" class="form-label required">Mot de passe</label>
+                    <p><em>Le mot de passe doit contenir au moins 8 caractères dont une majuscule, une minuscule,
+                            un chiffre et un caractère spécial</em></p>
                     <div class="password-input-container">
                         <input
                             [type]="passwordVisible ? 'text' : 'password'"
@@ -114,7 +116,7 @@
                             Le mot de passe est requis
                         </div>
                         <div *ngIf="password?.errors?.['pattern']">
-                            Le mot de passe doit contenir au moins 8 caractères, une lettre,
+                            Le mot de passe doit contenir au moins 8 caractères dont une majuscule, une minuscule,
                             un chiffre et un caractère spécial
                         </div>
                     </div>

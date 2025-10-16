@@ -22,7 +22,7 @@ public class UserManager implements userService {
 
     // Regex pour valider le mot de passe
     private static final String PASSWORD_PATTERN
-            = "^(?=.*[A-Z])(?=.*[a-z])(?=.*\\d)(?=.*[@$!%*?&\\-_|~#])[A-Za-z\\d@$!%*?&\\-_|~#]{8,}$";
+            = "^(?=.*[a-z])(?=.*[A-Z])(?=.*\\d)(?=.*[@$!%*?&_\\-|~#])[A-Za-z\\d@$!%*?&_\\-|~#]{8,}$";
     private static final Pattern pattern = Pattern.compile(PASSWORD_PATTERN);
     private final BCryptPasswordEncoder passwordEncoder = new BCryptPasswordEncoder();
 
