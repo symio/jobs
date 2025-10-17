@@ -7,9 +7,9 @@ export const environment = {
   defaultLanguage: 'fr-FR',
   supportedLanguages: ['fr-FR'],
   apiUrl: {
-    httpPort: '4200',
-    httpsPort: '4243',
-    fallback: 'http://${window.location.hostname}:4200/jobs',
+    httpPort: '',
+    httpsPort: '',
+    fallback: 'http://${window.location.hostname}/jobs',
     getPort(protocol: string): string {
       return protocol === 'https:' ? this.httpsPort : this.httpPort;
     },
