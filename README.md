@@ -48,7 +48,7 @@ Ce guide explique comment lancer la stack Docker sur **Linux**, **macOS** et **W
 > ```
 - 2. Configurer l'environnement 
 > ```bash
-> chmod +x *.sh && setup-environment.sh
+> chmod +x *.sh && ./setup-environment.sh
 > ```
 > Indiquez le nom d'instance (ou laissez vide pour utiliser "jobs" par défaut)
 - 3. 🚀Lancement
