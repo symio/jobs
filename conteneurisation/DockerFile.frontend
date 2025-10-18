@@ -1,13 +1,21 @@
 # DockerFile.frontend
-
 FROM node:22-alpine AS build
 WORKDIR /usr/src/app
 COPY j-jobs_frontend/. .
 RUN yarn install --frozen-lockfile --ignore-scripts
 RUN yarn build --configuration production
 
-FROM nginx:1.27-alpine
-COPY conteneurisation/nginx.conf /etc/nginx/conf.d/default.conf
-COPY --from=build /usr/src/app/dist/j-jobs_frontend/browser/ /usr/share/nginx/html/
+FROM httpd:2.4-alpine
+LABEL maintainer="symio"
+
+# Copie du build Angular
+COPY --from=build /usr/src/app/dist/j-jobs_frontend/browser/ /usr/local/apache2/htdocs/
+
+# Copie seulement le complément de config (sans écraser httpd.conf)
+COPY conteneurisation/apache.conf /usr/local/apache2/conf/extra/jobs.conf
+
+# Inclure ce fichier dans la conf principale
+RUN echo "Include conf/extra/jobs.conf" >> /usr/local/apache2/conf/httpd.conf
+
 EXPOSE 80
-CMD ["nginx", "-g", "daemon off;"]
+CMD ["httpd-foreground"]
