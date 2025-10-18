@@ -89,10 +89,12 @@ services:
     volumes:
       - pgadmin_working_dir:/var/lib/pgadmin
       - pgadmin_config_dir:/pgadmin4
+      - ./generate-servers-json.sh:/generate-servers-json.sh:ro
     env_file:
       - .env    
     environment:
       PGADMIN_DEFAULT_EMAIL: ${PGADMIN_DEFAULT_EMAIL}
+      PGADMIN_DEFAULT_PASSWORD: ${PGADMIN_DEFAULT_PASSWORD}
       POSTGRES_USER: ${POSTGRES_USER}
       POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
     depends_on:
@@ -102,6 +104,8 @@ services:
     networks:
       - projetjobs_network
     restart: unless-stopped
+    user: root
+    entrypoint: ["/bin/bash", "/generate-servers-json.sh"]
 
 volumes:
   postgresql_data:
