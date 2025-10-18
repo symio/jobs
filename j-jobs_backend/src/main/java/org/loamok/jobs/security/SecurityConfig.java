@@ -38,9 +38,6 @@ public class SecurityConfig implements InitializingBean {
 
     @Autowired
     private AuthenticationProvider authenticationProvider;
-    
-//    @Autowired
-//    private ForceCorsFilter forceCorsFilter;
 
     @Override
     public void afterPropertiesSet() throws Exception {
@@ -48,48 +45,54 @@ public class SecurityConfig implements InitializingBean {
         logger.info("Variable CORS_ALLOWED_ORIGINS chargée depuis .env : '" + allowedOriginsEnv + "'");
         logger.info("==========================================================");
     }
-    
+
     @Bean
     public SecurityFilterChain oauth2ApiFilterChain(HttpSecurity http) throws Exception {
         http
-                .securityMatcher("/jobs/**")
-                .authorizeHttpRequests(auth -> auth
-                // APIs ouvertes au public sans authentification
-                .requestMatchers(HttpMethod.OPTIONS, "/**").permitAll() 
-                .requestMatchers(HttpMethod.POST, "/profil/register").permitAll()
-                .requestMatchers(HttpMethod.POST, "/authorize/token").permitAll()
-                .requestMatchers(HttpMethod.POST, "/authorize/refresh").permitAll()
-                // Sauf pour le cleanup qui sert de déconnexion
-                .requestMatchers(HttpMethod.POST, "/authorize/cleanup").permitAll()
-                //                .requestMatchers(HttpMethod.POST, "/authorize/remembered").permitAll()
-                // SpringDoc OpenAPI / Swagger UI endpoints - Documentation API accessible publiquement
-                .requestMatchers("/v3/api-docs/**").permitAll() // Spécification OpenAPI 3.0 en JSON/YAML
-                .requestMatchers("/swagger-ui/**").permitAll() // Interface utilisateur Swagger (HTML, CSS, JS)
-                .requestMatchers("/swagger-ui.html").permitAll() // Page principale de l'interface Swagger
-                .requestMatchers("/swagger-resources/**").permitAll() // Métadonnées et configuration Swagger
-                .requestMatchers("/webjars/**").permitAll() // Librairies JavaScript/CSS (Bootstrap, jQuery, etc.)
+            .securityMatcher("/jobs/**")
+            .authorizeHttpRequests(
+                auth -> auth
+                    // APIs ouvertes au public sans authentification
+                    .requestMatchers(HttpMethod.OPTIONS, "/**").permitAll()
+                    .requestMatchers(HttpMethod.POST, "/profil/register").permitAll()
+                    .requestMatchers(HttpMethod.POST, "/authorize/token").permitAll()
+                    .requestMatchers(HttpMethod.POST, "/authorize/refresh").permitAll()
+                    // Sauf pour le cleanup qui sert de déconnexion
+                    .requestMatchers(HttpMethod.POST, "/authorize/cleanup").permitAll()
+                    // SpringDoc OpenAPI / Swagger UI endpoints - Documentation API accessible publiquement
+//                    .requestMatchers("/v3/api-docs/**").permitAll() // Spécification OpenAPI 3.0 en JSON/YAML
+//                    .requestMatchers("/swagger-ui/**").permitAll() // Interface utilisateur Swagger (HTML, CSS, JS)
+//                    .requestMatchers("/swagger-ui.html").permitAll() // Page principale de l'interface Swagger
+//                    .requestMatchers("/swagger-resources/**").permitAll() // Métadonnées et configuration Swagger
+//                    .requestMatchers("/webjars/**").permitAll() // Librairies JavaScript/CSS (Bootstrap, jQuery, etc.)
                         
-                // Rôles - Administration des rôles (Admin uniquement)
-                .requestMatchers(HttpMethod.GET, "/roles", "/roles/**").hasRole("ADMIN")
-                .requestMatchers(HttpMethod.POST, "/roles").hasRole("ADMIN")
-                .requestMatchers(HttpMethod.PUT, "/roles/**").hasRole("ADMIN")
-                .requestMatchers(HttpMethod.DELETE, "/roles/**").hasRole("ADMIN")
-                // Profils - Consultation des profils (Admin seulement pour la gestion globale)
-                .requestMatchers(HttpMethod.GET, "/profile").hasRole("ADMIN")
-                // Utilisateurs - Gestion des entités en général
-                .requestMatchers(HttpMethod.POST, "/users").permitAll()
-                .requestMatchers(HttpMethod.GET, "/**").hasAnyRole("USER", "ADMIN")
-                .requestMatchers(HttpMethod.PUT, "/**").hasAnyRole("USER", "ADMIN")
-                .requestMatchers(HttpMethod.DELETE, "/users/**").hasRole("ADMIN")
-                .requestMatchers(HttpMethod.DELETE, "/**").hasAnyRole("USER", "ADMIN")
-                // Tout le reste nécessite authentification + scope
-                .anyRequest().access(this::hasAccessScopeAndAuthenticated)
-                )
-//                .addFilterBefore(forceCorsFilter, JwtAuthenticationFilter.class)
-                .addFilterBefore(jwtAuthenticationFilter, UsernamePasswordAuthenticationFilter.class)
-                .sessionManagement(session -> session.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
-                .csrf(csrf -> csrf.disable())
-                .cors(cors -> cors.configurationSource(corsConfigurationSource()));
+                    // SpringDoc OpenAPI désactivés en production
+                    .requestMatchers("/v3/api-docs/**").denyAll() // Spécification OpenAPI 3.0 en JSON/YAML
+                    .requestMatchers("/swagger-ui/**").denyAll() // Interface utilisateur Swagger (HTML, CSS, JS)
+                    .requestMatchers("/swagger-ui.html").denyAll() // Page principale de l'interface Swagger
+                    .requestMatchers("/swagger-resources/**").denyAll() // Métadonnées et configuration Swagger
+                    .requestMatchers("/webjars/**").denyAll() // Librairies JavaScript/CSS (Bootstrap, jQuery, etc.)
+
+                    // Rôles - Administration des rôles (Admin uniquement)
+                    .requestMatchers(HttpMethod.GET, "/roles", "/roles/**").hasRole("ADMIN")
+                    .requestMatchers(HttpMethod.POST, "/roles").hasRole("ADMIN")
+                    .requestMatchers(HttpMethod.PUT, "/roles/**").hasRole("ADMIN")
+                    .requestMatchers(HttpMethod.DELETE, "/roles/**").hasRole("ADMIN")
+                    // Profils - Consultation des profils (Admin seulement pour la gestion globale)
+                    .requestMatchers(HttpMethod.GET, "/profile").hasRole("ADMIN")
+                    // Utilisateurs - Gestion des entités en général
+                    .requestMatchers(HttpMethod.POST, "/users").permitAll()
+                    .requestMatchers(HttpMethod.GET, "/**").hasAnyRole("USER", "ADMIN")
+                    .requestMatchers(HttpMethod.PUT, "/**").hasAnyRole("USER", "ADMIN")
+                    .requestMatchers(HttpMethod.DELETE, "/users/**").hasRole("ADMIN")
+                    .requestMatchers(HttpMethod.DELETE, "/**").hasAnyRole("USER", "ADMIN")
+                    // Tout le reste nécessite authentification + scope
+                    .anyRequest().access(this::hasAccessScopeAndAuthenticated)
+            )
+            .addFilterBefore(jwtAuthenticationFilter, UsernamePasswordAuthenticationFilter.class)
+            .sessionManagement(session -> session.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
+            .csrf(csrf -> csrf.disable())
+            .cors(cors -> cors.configurationSource(corsConfigurationSource()));
         return http.build();
     }
 
@@ -124,7 +127,7 @@ public class SecurityConfig implements InitializingBean {
         logger.info("CorsFilter global activé pour origines : " + config.getAllowedOrigins());
         return new CorsFilter(source);
     }
-    
+
     @Bean
     public CorsConfigurationSource corsConfigurationSource() {
         CorsConfiguration config = new CorsConfiguration();
