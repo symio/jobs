@@ -10,18 +10,24 @@ cat > /pgadmin4/servers.json << EOF
       "Group": "Servers",
       "Host": "db",
       "Port": 5432,
-      "MaintenanceDB": "postgres",
+      "MaintenanceDB": "${POSTGRES_DB}",
       "Username": "${POSTGRES_USER}",
       "SSLMode": "prefer",
-      "PassFile": "/pgpass"
+      "PassFile": "/var/lib/pgadmin/pgpass"
     }
   }
 }
 EOF
 
-# Génère le fichier pgpass avec les credentials du .env
-echo "db:5432:*:${POSTGRES_USER}:${POSTGRES_PASSWORD}" > /pgpass
-chmod 600 /pgpass
+# Crée le répertoire si nécessaire
+mkdir -p /var/lib/pgadmin
+
+# Génère le fichier pgpass dans le bon emplacement
+echo "db:5432:*:${POSTGRES_USER}:${POSTGRES_PASSWORD}" > /var/lib/pgadmin/pgpass
+chmod 600 /var/lib/pgadmin/pgpass
+
+# Change le propriétaire pour l'utilisateur pgadmin (UID 5050)
+chown -R 5050:5050 /var/lib/pgadmin
 
 # Lance pgAdmin normalement
-/entrypoint.sh
+exec /entrypoint.sh
