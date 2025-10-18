@@ -23,6 +23,7 @@ services:
           "CORS_ALLOWED_ORIGINS":"${CORS_ALLOWED_ORIGINS}"
         }
       SPRING_JWT_B64_KEY: ${SPRING_JWT_B64_KEY}
+      SPRINGDOC_ENABLED: ${SPRINGDOC_ENABLED}
     depends_on:
       db:
         condition: service_healthy
