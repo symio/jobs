@@ -48,17 +48,32 @@ Ce guide explique comment lancer la stack Docker sur **Linux**, **macOS** et **W
 > ```
 - 2. Configurer l'environnement 
 > ```bash
-> cp .env.sample .env
+> chmod +x *.sh && setup-environment.sh
 > ```
+> Indiquez le nom d'instance (ou laissez vide pour utiliser "jobs" par défaut)
 - 3. 🚀Lancement
 > ```bash
-> chmod +x *.sh && ./build-and-run.sh
+> ./build-and-run.sh
 > ```
 - 4. Vérification
 > Une fois lancé, les services sont disponibles sur :
 > 
 > - **Backend (API)** : [http://localhost:8080](http://localhost:8080)
-> - **Frontend (Angular)** : [http://localhost:4200](http://localhost:4200)
+> - **Frontend (Angular)** : [http://localhost](http://localhost)
+> - **Alternative :** 
+>> - **Frontend (Angular)** : http://votre.ip.reseau.local 
+>> - (mais pas 127.0.0.1 par exemple 192.468.1.252)
+>> - cette adresse vous est donnée par le script de lancement : 
+>> ```
+>> Stack démarrée avec succès !
+>> 
+>>📊  Services disponibles :
+>>    - Backend:  http://localhost:8080
+>>    - Frontend: http://localhost:80, ou http://localhost,
+>>    - PgAdmin:  http://localhost:5433
+>>    - Accès depuis le réseau local: http://192.168.1.252
+>> ```
+
 > - **PgAdmin** : [http://localhost:5433](http://localhost:5433) (login et mot de passe  dans votre .env : 
 > > - PGADMIN_DEFAULT_EMAIL : Login
 > > - PGADMIN_DEFAULT_PASSWORD : Mot de passe
