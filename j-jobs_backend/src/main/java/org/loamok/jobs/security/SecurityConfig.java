@@ -22,6 +22,7 @@ import org.springframework.web.cors.CorsConfigurationSource;
 import org.springframework.web.cors.UrlBasedCorsConfigurationSource;
 
 import org.springframework.beans.factory.InitializingBean;
+import org.springframework.web.filter.CorsFilter;
 
 @Configuration
 @EnableWebSecurity
@@ -37,6 +38,9 @@ public class SecurityConfig implements InitializingBean {
 
     @Autowired
     private AuthenticationProvider authenticationProvider;
+    
+//    @Autowired
+//    private ForceCorsFilter forceCorsFilter;
 
     @Override
     public void afterPropertiesSet() throws Exception {
@@ -81,6 +85,7 @@ public class SecurityConfig implements InitializingBean {
                 // Tout le reste nécessite authentification + scope
                 .anyRequest().access(this::hasAccessScopeAndAuthenticated)
                 )
+//                .addFilterBefore(forceCorsFilter, JwtAuthenticationFilter.class)
                 .addFilterBefore(jwtAuthenticationFilter, UsernamePasswordAuthenticationFilter.class)
                 .sessionManagement(session -> session.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
                 .csrf(csrf -> csrf.disable())
@@ -106,6 +111,21 @@ public class SecurityConfig implements InitializingBean {
     }
 
     @Bean
+    public CorsFilter corsFilter() {
+        CorsConfiguration config = new CorsConfiguration();
+        config.setAllowCredentials(true);
+        config.setAllowedOrigins(List.of(allowedOriginsEnv.split(",")));
+        config.setAllowedHeaders(List.of("*"));
+        config.setAllowedMethods(List.of("GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS"));
+
+        UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();
+        source.registerCorsConfiguration("/**", config);
+
+        logger.info("CorsFilter global activé pour origines : " + config.getAllowedOrigins());
+        return new CorsFilter(source);
+    }
+    
+    @Bean
     public CorsConfigurationSource corsConfigurationSource() {
         CorsConfiguration config = new CorsConfiguration();
 
@@ -128,6 +148,7 @@ public class SecurityConfig implements InitializingBean {
         config.setAllowCredentials(true);
 
         UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();
+        source.registerCorsConfiguration("/jobs/**", config);
         source.registerCorsConfiguration("/**", config);
 
         return source;
