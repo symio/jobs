@@ -5,6 +5,7 @@
     <h1 class="page-title" *ngIf="isAuthenticated && pageTitle">
         {{ pageTitle }}
     </h1>
+    <a routerLink="/" class="secondary-link" *ngIf="!pageTitle">Accueil</a>
     <!-- Badge utilisateur (visible seulement si connecté) -->
     <div
         class="user-badge cta-button"

@@ -1,483 +1,489 @@
 <!-- src/app/pages/dashboard/dashboard.component.html -->
 <main class="dashboard-container">
-  <!-- Titre uniquement mobile / tablettes -->
-  <section id="title" class="main-title-section">
-    <h1 class="main-title">Tableau de bord</h1>
-  </section>
+    <!-- Titre uniquement mobile / tablettes -->
+    <section id="title" class="main-title-section">
+        <h1 class="main-title">Tableau de bord</h1>
+    </section>
 
-  <!-- Sidebar gauche (navigation / actions) -->
-  <aside class="left-content-wrapper">
-    <nav class="sidebar-nav">
-      <ul>
-        <li *ngFor="let item of menuData.items">
-          <a href="{{ item.link }}" class="nav-link">
-            <span [innerHTML]="getIcon(item.icon)"></span>&nbsp;{{ item.label }}
-          </a>
-        </li>
-      </ul>
-    </nav>
-  </aside>
+    <!-- Sidebar gauche (navigation / actions) -->
+    <aside class="left-content-wrapper">
+        <nav class="sidebar-nav">
+            <ul>
+                <li *ngFor="let item of menuData.items">
+                    <a href="{{ item.link }}" class="nav-link">
+                        <span [innerHTML]="getIcon(item.icon)"></span>&nbsp;{{ item.label }}
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </aside>
 
-  <!-- Zone statistiques (les 4 cartes en haut) -->
-  <section id="stats" class="stats-content-wrapper">
-    <div class="stats-grid">
-      <!-- Card 1 : Demandes en cours -->
-      <div class="stat-card stat-card-yellow">
-        <div class="stat-value">{{ enCoursCount }}</div>
-        <div class="stat-icon">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            viewBox="0 0 24 24"
-            fill="currentColor"
-          >
-            <path
-              d="M19,4H17.9A5.009,5.009,0,0,0,13,0H11A5.009,5.009,0,0,0,6.1,4H5A5.006,5.006,0,0,0,0,9v3H24V9A5.006,5.006,0,0,0,19,4ZM8.184,4A3,3,0,0,1,11,2h2a3,3,0,0,1,2.816,2Z"
-            />
-            <path
-              d="M13,15a1,1,0,0,1-2,0V14H0v5a5.006,5.006,0,0,0,5,5H19a5.006,5.006,0,0,0,5-5V14H13Z"
-            />
-          </svg>
-        </div>
-        <div class="stat-label">
-          Demande{{ enCoursCount > 1 ? 's' : '' }} en cours
-        </div>
-      </div>
-
-      <!-- Card 2 : Demandes en attente -->
-      <div class="stat-card stat-card-green">
-        <div class="stat-value">{{ enAttenteCount }}</div>
-        <div class="stat-icon">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            data-name="Layer 1"
-            viewBox="0 0 24 24"
-            fill="currentColor"
-          >
-            <path
-              d="M12,24C5.383,24,0,18.617,0,12S5.383,0,12,0s12,5.383,12,12-5.383,12-12,12Zm5-13h-4V5h-2V13h6v-2Z"
-            />
-          </svg>
-        </div>
-        <div class="stat-label">
-          Demande{{ enAttenteCount > 1 ? 's' : '' }} en attente
-        </div>
-      </div>
-
-      <!-- Card 3 : Entretiens programmés -->
-      <div class="stat-card stat-card-blue">
-        <div class="stat-value">{{ entretienCount }}</div>
-        <div class="stat-icon">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            viewBox="0 0 24 24"
-            fill="currentColor"
-          >
-            <path
-              d="M0,19a5.006,5.006,0,0,0,5,5H19a5.006,5.006,0,0,0,5-5V10H0Zm17-4.5A1.5,1.5,0,1,1,15.5,16,1.5,1.5,0,0,1,17,14.5Zm-5,0A1.5,1.5,0,1,1,10.5,16,1.5,1.5,0,0,1,12,14.5Zm-5,0A1.5,1.5,0,1,1,5.5,16,1.5,1.5,0,0,1,7,14.5Z"
-            />
-            <path
-              d="M19,2H18V1a1,1,0,0,0-2,0V2H8V1A1,1,0,0,0,6,1V2H5A5.006,5.006,0,0,0,0,7V8H24V7A5.006,5.006,0,0,0,19,2Z"
-            />
-          </svg>
-        </div>
-        <div class="stat-label">
-          Entretien{{ entretienCount > 1 ? 's' : '' }} programmé{{
-            entretienCount > 1 ? 's' : ''
-          }}
-        </div>
-      </div>
-
-      <!-- Card 4 : Refus -->
-      <div class="stat-card stat-card-red">
-        <div class="stat-value">{{ refuseCount }}</div>
-        <div class="stat-icon">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            data-name="Layer 1"
-            viewBox="0 0 24 24"
-            fill="currentColor"
-          >
-            <path
-              d="M17,4V2a2,2,0,0,0-2-2H9A2,2,0,0,0,7,2V4H2V6H4V21a3,3,0,0,0,3,3H17a3,3,0,0,0,3-3V6h2V4ZM11,17H9V11h2Zm4,0H13V11h2ZM15,4H9V2h6Z"
-            />
-          </svg>
-        </div>
-        <div class="stat-label">Refus</div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Zone recherche -->
-  <section id="search" class="search-content-wrapper">
-    <form class="search-form" [formGroup]="searchForm" (ngSubmit)="onSearch()">
-      <!-- Textual - 3 colonnes -->
-      <div class="form-group search-textual">
-        <label for="textual" [class.is-search-closed]="!isSearchOpen"
-          >Poste / Description / Entreprise / Lieu</label
-        >
-        <input
-          id="textual"
-          type="text"
-          placeholder="Poste / Description / Entreprise / Lieu"
-          formControlName="textual"
-        />
-        <!-- Flèche -->
-        <button
-          type="button"
-          class="search-toggle-btn"
-          [attr.aria-label]="
-            isSearchOpen
-              ? 'Masquer les filtres de recherche'
-              : 'Afficher les filtres de recherche'
-          "
-          [attr.aria-expanded]="isSearchOpen"
-          (click)="isSearchOpen = !isSearchOpen"
-        >
-          <svg
-            class="arrow-icon"
-            [class.rotated]="isSearchOpen"
-            viewBox="0 0 24 24"
-            fill="currentColor"
-          >
-            <path d="M6 9l6 6 6-6" />
-          </svg>
-        </button>
-      </div>
-
-      <!-- Row2 : Contract, WorkTime, WorkMode - 3 colonnes -->
-      <div class="search-row2" [ngClass]="{ 'is-search-closed': !isSearchOpen }" >
-        <div class="form-group">
-          <label for="contract">Type de contrat</label>
-          <select id="contract" formControlName="contract">
-            <option value="" disabled="disabled">
-              Sélectionner un type de contrat
-            </option>
-            <option
-              *ngFor="let contract of contractEnum | keyvalue"
-              [value]="contract.key"
-            >
-              {{ contract.value }}
-            </option>
-          </select>
-        </div>
-
-        <div class="form-group">
-          <label for="workTime">Temps de travail</label>
-          <select id="workTime" formControlName="workTime">
-            <option value="" disabled="disabled">
-              Sélectionner un temps de travail
-            </option>
-            <option
-              *ngFor="let workTime of workTimeEnum | keyvalue"
-              [value]="workTime.key"
-            >
-              {{ workTime.value }}
-            </option>
-          </select>
-        </div>
-
-        <div class="form-group">
-          <label for="workMode">Mode de travail</label>
-          <select id="workMode" formControlName="workMode">
-            <option value="" disabled="disabled">
-              Sélectionner un mode de travail
-            </option>
-            <option
-              *ngFor="let workMode of workModeEnum | keyvalue"
-              [value]="workMode.key"
-            >
-              {{ workMode.value }}
-            </option>
-          </select>
-        </div>
-      </div>
-
-      <!-- Row3 : OfferStatus, EventAfter, EventBefore - 3 colonnes -->
-      <div class="search-row3 form-group" [ngClass]="{ 'is-search-closed': !isSearchOpen }" >
-        <label for="offerStatus">Statut de l'offre</label>
-        <select id="offerStatus" formControlName="offerStatus">
-          <option value="" disabled="disabled">Sélectionner un statut</option>
-          <option
-            *ngFor="let offerStatus of offerStatusEnum | keyvalue"
-            [value]="offerStatus.key"
-          >
-            {{ offerStatus.value }}
-          </option>
-        </select>
-        
-        <label for="eventAfter">Depuis le</label>
-        <input type="date" id="eventAfter" formControlName="eventAfter" />
-        
-        <label for="eventBefore">Jusqu'au</label>
-        <input type="date" id="eventBefore" formControlName="eventBefore" />
-      </div>
-
-      <!-- Sort - 1 colonne -->
-      <div
-        class="form-group"
-        id="sort-group"
-        [ngClass]="{ 'is-search-closed': !isSearchOpen }"
-      >
-        <label for="sort">Tri</label>
-        <select id="sort" formControlName="sort">
-          <option value="DATE_DESC">Plus récents</option>
-          <option value="DATE_ASC">Plus anciens</option>
-          <option value="A-Z">A-Z</option>
-          <option value="Z-A">Z-A</option>
-        </select>
-      </div>
-
-      <!-- Officialdom - 2 colonnes -->
-      <div
-        class="form-group checkbox-group"
-        id="officialdom-group"
-        [ngClass]="{ 'is-search-closed': !isSearchOpen }"
-      >
-        <label for="officialdom">
-          <input
-            type="checkbox"
-            id="officialdom"
-            formControlName="officialdom"
-          />
-          &nbsp;Offre&nbsp;institutionnelle</label
-        >
-      </div>
-
-      <!-- Boutons - 2 colonnes -->
-      <div class="search-row4">
-        <button type="submit" class="cta-button validate">Rechercher</button>
-        <button
-          type="button"
-          class="cta-button delete"
-          (click)="onResetSearch()"
-        >
-          Réinitialiser
-        </button>
-      </div>
-    </form>
-  </section>
-
-  <!-- Zone principale (liste d'emplois ou placeholder) -->
-  <section id="main" class="main-content-wrapper">
-    <div *ngIf="isLoading" class="loading">Chargement en cours...</div>
-    <div *ngIf="error" class="error">
-      {{ error }}
-    </div>
-
-    <h4 *ngIf="!isLoading && !error && jobs && pageInfos">
-      {{ pageInfos.total_elements }} offre(s) trouvée(s),
-      {{ pageInfos.total_pages }} page(s).
-    </h4>
-    <ng-container *ngIf="!isLoading && !error && jobs">
-      <div class="job-card" *ngFor="let job of jobs">
-        <!-- En-tête (inchangé) -->
-        <div class="row0">
-          <div class="col0">
-            <div class="job-incity-initial" style="text-transform: uppercase">
-              {{ job.compagny.substring(0, 1) }}
+    <!-- Zone statistiques (les 4 cartes en haut) -->
+    <section id="stats" class="stats-content-wrapper">
+        <div class="stats-grid">
+            <!-- Card 1 : Demandes en cours -->
+            <div class="stat-card stat-card-yellow">
+                <div class="stat-value">{{ enCoursCount }}</div>
+                <div class="stat-icon">
+                    <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 24 24"
+                        fill="currentColor"
+                        >
+                        <path
+                            d="M19,4H17.9A5.009,5.009,0,0,0,13,0H11A5.009,5.009,0,0,0,6.1,4H5A5.006,5.006,0,0,0,0,9v3H24V9A5.006,5.006,0,0,0,19,4ZM8.184,4A3,3,0,0,1,11,2h2a3,3,0,0,1,2.816,2Z"
+                            />
+                        <path
+                            d="M13,15a1,1,0,0,1-2,0V14H0v5a5.006,5.006,0,0,0,5,5H19a5.006,5.006,0,0,0,5-5V14H13Z"
+                            />
+                    </svg>
+                </div>
+                <div class="stat-label">
+                    Demande{{ enCoursCount > 1 ? 's' : '' }} en cours
+                </div>
             </div>
-          </div>
-          <div class="col1">
-            <h3>{{ job.position }}</h3>
-            <p>
-              <strong>{{ job.compagny }}</strong>
-            </p>
-          </div>
+
+            <!-- Card 2 : Demandes en attente -->
+            <div class="stat-card stat-card-green">
+                <div class="stat-value">{{ enAttenteCount }}</div>
+                <div class="stat-icon">
+                    <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        data-name="Layer 1"
+                        viewBox="0 0 24 24"
+                        fill="currentColor"
+                        >
+                        <path
+                            d="M12,24C5.383,24,0,18.617,0,12S5.383,0,12,0s12,5.383,12,12-5.383,12-12,12Zm5-13h-4V5h-2V13h6v-2Z"
+                            />
+                    </svg>
+                </div>
+                <div class="stat-label">
+                    Demande{{ enAttenteCount > 1 ? 's' : '' }} en attente
+                </div>
+            </div>
+
+            <!-- Card 3 : Entretiens programmés -->
+            <div class="stat-card stat-card-blue">
+                <div class="stat-value">{{ entretienCount }}</div>
+                <div class="stat-icon">
+                    <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 24 24"
+                        fill="currentColor"
+                        >
+                        <path
+                            d="M0,19a5.006,5.006,0,0,0,5,5H19a5.006,5.006,0,0,0,5-5V10H0Zm17-4.5A1.5,1.5,0,1,1,15.5,16,1.5,1.5,0,0,1,17,14.5Zm-5,0A1.5,1.5,0,1,1,10.5,16,1.5,1.5,0,0,1,12,14.5Zm-5,0A1.5,1.5,0,1,1,5.5,16,1.5,1.5,0,0,1,7,14.5Z"
+                            />
+                        <path
+                            d="M19,2H18V1a1,1,0,0,0-2,0V2H8V1A1,1,0,0,0,6,1V2H5A5.006,5.006,0,0,0,0,7V8H24V7A5.006,5.006,0,0,0,19,2Z"
+                            />
+                    </svg>
+                </div>
+                <div class="stat-label">
+                    Entretien{{ entretienCount > 1 ? 's' : '' }} programmé{{
+            entretienCount > 1 ? 's' : ''
+                    }}
+                </div>
+            </div>
+
+            <!-- Card 4 : Refus -->
+            <div class="stat-card stat-card-red">
+                <div class="stat-value">{{ refuseCount }}</div>
+                <div class="stat-icon">
+                    <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        data-name="Layer 1"
+                        viewBox="0 0 24 24"
+                        fill="currentColor"
+                        >
+                        <path
+                            d="M17,4V2a2,2,0,0,0-2-2H9A2,2,0,0,0,7,2V4H2V6H4V21a3,3,0,0,0,3,3H17a3,3,0,0,0,3-3V6h2V4ZM11,17H9V11h2Zm4,0H13V11h2ZM15,4H9V2h6Z"
+                            />
+                    </svg>
+                </div>
+                <div class="stat-label">Refus</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Zone recherche -->
+    <section id="search" class="search-content-wrapper">
+        <form class="search-form" [formGroup]="searchForm" (ngSubmit)="onSearch()">
+            <!-- Textual - 3 colonnes -->
+            <div class="form-group search-textual">
+                <label for="textual" [class.is-search-closed]="!isSearchOpen"
+                       >Poste / Description / Entreprise / Lieu</label
+                >
+                <input
+                    id="textual"
+                    type="text"
+                    placeholder="Poste / Description / Entreprise / Lieu"
+                    formControlName="textual"
+                    />
+                <!-- Flèche -->
+                <button
+                    type="button"
+                    class="search-toggle-btn"
+                    [attr.aria-label]="
+                    isSearchOpen
+                    ? 'Masquer les filtres de recherche'
+                    : 'Afficher les filtres de recherche'
+                    "
+                    [attr.aria-expanded]="isSearchOpen"
+                    (click)="isSearchOpen = !isSearchOpen"
+                    >
+                    <svg
+                        class="arrow-icon"
+                        [class.rotated]="isSearchOpen"
+                        viewBox="0 0 24 24"
+                        fill="currentColor"
+                        >
+                        <path d="M6 9l6 6 6-6" />
+                    </svg>
+                </button>
+            </div>
+
+            <!-- Row2 : Contract, WorkTime, WorkMode - 3 colonnes -->
+            <div class="search-row2" [ngClass]="{ 'is-search-closed': !isSearchOpen }" >
+                <div class="form-group">
+                    <label for="contract">Type de contrat</label>
+                    <select id="contract" formControlName="contract">
+                        <option value="" disabled="disabled">
+                            Sélectionner un type de contrat
+                        </option>
+                        <option
+                            *ngFor="let contract of contractEnum | keyvalue"
+                            [value]="contract.key"
+                            >
+                            {{ contract.value }}
+                        </option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="workTime">Temps de travail</label>
+                    <select id="workTime" formControlName="workTime">
+                        <option value="" disabled="disabled">
+                            Sélectionner un temps de travail
+                        </option>
+                        <option
+                            *ngFor="let workTime of workTimeEnum | keyvalue"
+                            [value]="workTime.key"
+                            >
+                            {{ workTime.value }}
+                        </option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="workMode">Mode de travail</label>
+                    <select id="workMode" formControlName="workMode">
+                        <option value="" disabled="disabled">
+                            Sélectionner un mode de travail
+                        </option>
+                        <option
+                            *ngFor="let workMode of workModeEnum | keyvalue"
+                            [value]="workMode.key"
+                            >
+                            {{ workMode.value }}
+                        </option>
+                    </select>
+                </div>
+            </div>
+
+            <!-- Row3 : OfferStatus, EventAfter, EventBefore - 3 colonnes -->
+            <div class="search-row3" [ngClass]="{ 'is-search-closed': !isSearchOpen }" >
+                <div class="form-group">
+                    <label for="offerStatus">Statut de l'offre</label>
+                    <select id="offerStatus" formControlName="offerStatus">
+                        <option value="" disabled="disabled">Sélectionner un statut</option>
+                        <option
+                            *ngFor="let offerStatus of offerStatusEnum | keyvalue"
+                            [value]="offerStatus.key"
+                            >
+                            {{ offerStatus.value }}
+                        </option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="eventAfter">Depuis le</label>
+                    <input type="date" id="eventAfter" formControlName="eventAfter" />
+                </div>
+
+                <div class="form-group">
+                    <label for="eventBefore">Jusqu'au</label>
+                    <input type="date" id="eventBefore" formControlName="eventBefore" />
+                </div>
+            </div>
+
+            <!-- Sort - 1 colonne -->
+            <div
+                class="form-group"
+                id="sort-group"
+                [ngClass]="{ 'is-search-closed': !isSearchOpen }"
+                >
+                <label for="sort">Tri</label>
+                <select id="sort" formControlName="sort">
+                    <option value="DATE_DESC">Plus récents</option>
+                    <option value="DATE_ASC">Plus anciens</option>
+                    <option value="A-Z">A-Z</option>
+                    <option value="Z-A">Z-A</option>
+                </select>
+            </div>
+
+            <!-- Officialdom - 2 colonnes -->
+            <div
+                class="form-group checkbox-group"
+                id="officialdom-group"
+                [ngClass]="{ 'is-search-closed': !isSearchOpen }"
+                >
+                <label for="officialdom">
+                    <input
+                        type="checkbox"
+                        id="officialdom"
+                        formControlName="officialdom"
+                        />
+                    &nbsp;Offre&nbsp;institutionnelle</label
+                >
+            </div>
+
+            <!-- Boutons - 2 colonnes -->
+            <div class="search-row4">
+                <button type="submit" class="cta-button validate">Rechercher</button>
+                <button
+                    type="button"
+                    class="cta-button delete"
+                    (click)="onResetSearch()"
+                    >
+                    Réinitialiser
+                </button>
+            </div>
+        </form>
+    </section>
+
+    <!-- Zone principale (liste d'emplois ou placeholder) -->
+    <section id="main" class="main-content-wrapper">
+        <div *ngIf="isLoading" class="loading">Chargement en cours...</div>
+        <div *ngIf="error" class="error">
+            {{ error }}
         </div>
 
-        <hr class="row1" />
+        <h4 *ngIf="!isLoading && !error && jobs && pageInfos">
+            {{ pageInfos.total_elements }} offre(s) trouvée(s),
+            {{ pageInfos.total_pages }} page(s).
+        </h4>
+        <ng-container *ngIf="!isLoading && !error && jobs">
+            <div class="job-card" *ngFor="let job of jobs">
+                <!-- En-tête (inchangé) -->
+                <div class="row0">
+                    <div class="col0">
+                        <div class="job-incity-initial" style="text-transform: uppercase">
+                            {{ job.compagny.substring(0, 1) }}
+                        </div>
+                    </div>
+                    <div class="col1">
+                        <h3>{{ job.position }}</h3>
+                        <p>
+                            <strong>{{ job.compagny }}</strong>
+                        </p>
+                    </div>
+                </div>
 
-        <!-- Grille unique : 3 colonnes x 3 lignes + métadonnées -->
-        <div class="row2">
-          <!-- Ligne 1 : 3 colonnes -->
-          <p>
-            <svg
-              class="job-card-icon location-icon"
-              xmlns="http://www.w3.org/2000/svg"
-              viewBox="0 0 24 24"
-              fill="currentColor"
-            >
-              <path
-                d="M12,0A10.011,10.011,0,0,0,2,10c0,5.282,8.4,12.533,9.354,13.343l.646.546.646-.546C13.6,22.533,22,15.282,22,10A10.011,10.011,0,0,0,12,0Zm0,15a5,5,0,1,1,5-5A5.006,5.006,0,0,1,12,15Z"
-              ></path>
-              <circle cx="12" cy="10" r="3"></circle></svg
-            >&nbsp;
-            <strong>{{ job.city }}</strong>
-          </p>
+                <hr class="row1" />
 
-          <p>
-            <svg
-              class="job-card-icon work-icon"
-              xmlns="http://www.w3.org/2000/svg"
-              viewBox="0 0 24 24"
-              fill="currentColor"
-            >
-              <path
-                d="M19,4H17.9A5.009,5.009,0,0,0,13,0H11A5.009,5.009,0,0,0,6.1,4H5A5.006,5.006,0,0,0,0,9v3H24V9A5.006,5.006,0,0,0,19,4ZM8.184,4A3,3,0,0,1,11,2h2a3,3,0,0,1,2.816,2Z"
-              ></path>
-              <path
-                d="M13,15a1,1,0,0,1-2,0V14H0v5a5.006,5.006,0,0,0,5,5H19a5.006,5.006,0,0,0,5-5V14H13Z"
-              ></path></svg
-            >&nbsp;
-            <strong>{{ getWorkModeLabel(job.workMode) }}</strong>
-          </p>
+                <!-- Grille unique : 3 colonnes x 3 lignes + métadonnées -->
+                <div class="row2">
+                    <!-- Ligne 1 : 3 colonnes -->
+                    <p>
+                        <svg
+                            class="job-card-icon location-icon"
+                            xmlns="http://www.w3.org/2000/svg"
+                            viewBox="0 0 24 24"
+                            fill="currentColor"
+                            >
+                            <path
+                                d="M12,0A10.011,10.011,0,0,0,2,10c0,5.282,8.4,12.533,9.354,13.343l.646.546.646-.546C13.6,22.533,22,15.282,22,10A10.011,10.011,0,0,0,12,0Zm0,15a5,5,0,1,1,5-5A5.006,5.006,0,0,1,12,15Z"
+                                ></path>
+                            <circle cx="12" cy="10" r="3"></circle></svg
+                        >&nbsp;
+                        <strong>{{ job.city }}</strong>
+                    </p>
 
-          <p>
-            <svg
-              class="job-card-icon work-icon"
-              xmlns="http://www.w3.org/2000/svg"
-              viewBox="0 0 24 24"
-              fill="currentColor"
-            >
-              <path
-                d="M19,4H17.9A5.009,5.009,0,0,0,13,0H11A5.009,5.009,0,0,0,6.1,4H5A5.006,5.006,0,0,0,0,9v3H24V9A5.006,5.006,0,0,0,19,4ZM8.184,4A3,3,0,0,1,11,2h2a3,3,0,0,1,2.816,2Z"
-              ></path>
-              <path
-                d="M13,15a1,1,0,0,1-2,0V14H0v5a5.006,5.006,0,0,0,5,5H19a5.006,5.006,0,0,0,5-5V14H13Z"
-              ></path></svg
-            >&nbsp;
-            <strong>{{ getWorkTimeLabel(job.workTime) }}</strong>
-          </p>
+                    <p>
+                        <svg
+                            class="job-card-icon work-icon"
+                            xmlns="http://www.w3.org/2000/svg"
+                            viewBox="0 0 24 24"
+                            fill="currentColor"
+                            >
+                            <path
+                                d="M19,4H17.9A5.009,5.009,0,0,0,13,0H11A5.009,5.009,0,0,0,6.1,4H5A5.006,5.006,0,0,0,0,9v3H24V9A5.006,5.006,0,0,0,19,4ZM8.184,4A3,3,0,0,1,11,2h2a3,3,0,0,1,2.816,2Z"
+                                ></path>
+                            <path
+                                d="M13,15a1,1,0,0,1-2,0V14H0v5a5.006,5.006,0,0,0,5,5H19a5.006,5.006,0,0,0,5-5V14H13Z"
+                                ></path></svg
+                        >&nbsp;
+                        <strong>{{ getWorkModeLabel(job.workMode) }}</strong>
+                    </p>
 
-          <!-- Ligne 2 : 3 colonnes -->
-          <p>
-            <svg
-              class="job-card-icon work-icon"
-              xmlns="http://www.w3.org/2000/svg"
-              viewBox="0 0 24 24"
-              fill="currentColor"
-            >
-              <path
-                d="M19,4H17.9A5.009,5.009,0,0,0,13,0H11A5.009,5.009,0,0,0,6.1,4H5A5.006,5.006,0,0,0,0,9v3H24V9A5.006,5.006,0,0,0,19,4ZM8.184,4A3,3,0,0,1,11,2h2a3,3,0,0,1,2.816,2Z"
-              ></path>
-              <path
-                d="M13,15a1,1,0,0,1-2,0V14H0v5a5.006,5.006,0,0,0,5,5H19a5.006,5.006,0,0,0,5-5V14H13Z"
-              ></path></svg
-            >&nbsp;
-            <strong>{{ getContractLabel(job.contract) }}</strong>
-          </p>
+                    <p>
+                        <svg
+                            class="job-card-icon work-icon"
+                            xmlns="http://www.w3.org/2000/svg"
+                            viewBox="0 0 24 24"
+                            fill="currentColor"
+                            >
+                            <path
+                                d="M19,4H17.9A5.009,5.009,0,0,0,13,0H11A5.009,5.009,0,0,0,6.1,4H5A5.006,5.006,0,0,0,0,9v3H24V9A5.006,5.006,0,0,0,19,4ZM8.184,4A3,3,0,0,1,11,2h2a3,3,0,0,1,2.816,2Z"
+                                ></path>
+                            <path
+                                d="M13,15a1,1,0,0,1-2,0V14H0v5a5.006,5.006,0,0,0,5,5H19a5.006,5.006,0,0,0,5-5V14H13Z"
+                                ></path></svg
+                        >&nbsp;
+                        <strong>{{ getWorkTimeLabel(job.workTime) }}</strong>
+                    </p>
 
-          <p
-            class="status-with-icon"
-            [ngClass]="getOfferStatusClass(job.offerStatus)"
-          >
-            <span
-              class="status-icon"
-              [innerHTML]="getOfferStatusIcon(job.offerStatus)"
-            ></span>
-            <strong>{{ getOfferStatusLabel(job.offerStatus) }}</strong>
-          </p>
+                    <!-- Ligne 2 : 3 colonnes -->
+                    <p>
+                        <svg
+                            class="job-card-icon work-icon"
+                            xmlns="http://www.w3.org/2000/svg"
+                            viewBox="0 0 24 24"
+                            fill="currentColor"
+                            >
+                            <path
+                                d="M19,4H17.9A5.009,5.009,0,0,0,13,0H11A5.009,5.009,0,0,0,6.1,4H5A5.006,5.006,0,0,0,0,9v3H24V9A5.006,5.006,0,0,0,19,4ZM8.184,4A3,3,0,0,1,11,2h2a3,3,0,0,1,2.816,2Z"
+                                ></path>
+                            <path
+                                d="M13,15a1,1,0,0,1-2,0V14H0v5a5.006,5.006,0,0,0,5,5H19a5.006,5.006,0,0,0,5-5V14H13Z"
+                                ></path></svg
+                        >&nbsp;
+                        <strong>{{ getContractLabel(job.contract) }}</strong>
+                    </p>
 
-          <div class="job-meta">
-            <p>
-              <svg
-                class="job-card-icon calendar-icon small-icon"
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 24 24"
-                fill="currentColor"
-              >
-                <path
-                  d="M24,10V24H0V10Zm0-2V5a3,3,0,0,0-3-3H18V0H16V2H8V0H6V2H3A3,3,0,0,0,0,5V8Zm-6,6H16v2h2Zm-5,0H11v2h2ZM8,14H6v2H8Zm10,4H16v2h2Zm-5,0H11v2h2ZM8,18H6v2H8Z"
-                ></path></svg
-              >&nbsp;
-              <small
-                >Créé le :
-                {{ job.created_at | date: 'dd/MM/yyyy HH:mm' }}</small
-              >
-            </p>
-            <p>
-              <svg
-                class="job-card-icon calendar-icon small-icon"
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 24 24"
-                fill="currentColor"
-              >
-                <path
-                  d="M24,10V24H0V10Zm0-2V5a3,3,0,0,0-3-3H18V0H16V2H8V0H6V2H3A3,3,0,0,0,0,5V8Zm-6,6H16v2h2Zm-5,0H11v2h2ZM8,14H6v2H8Zm10,4H16v2h2Zm-5,0H11v2h2ZM8,18H6v2H8Z"
-                ></path></svg
-              >&nbsp;
-              <small
-                >Mis à jour le :
-                {{ job.updated_at | date: 'dd/MM/yyyy HH:mm' }}</small
-              >
-            </p>
-            <p>
-              <small
-                >Offre institutionelle (France Travail) :
-                {{ job.from_official_dom ? 'Oui' : 'Non' }}</small
-              >
-            </p>
-          </div>
+                    <p
+                        class="status-with-icon"
+                        [ngClass]="getOfferStatusClass(job.offerStatus)"
+                        >
+                        <span
+                            class="status-icon"
+                            [innerHTML]="getOfferStatusIcon(job.offerStatus)"
+                            ></span>
+                        <strong>{{ getOfferStatusLabel(job.offerStatus) }}</strong>
+                    </p>
 
-          <!-- Ligne 3 : 3 colonnes -->
-          <button class="cta-button validate" (click)="onViewJob(job)">
-            Consulter
-          </button>
-          <button class="cta-button update" (click)="onUpdateJob(job)">
-            Modifier
-          </button>
-          <button class="cta-button delete" (click)="onDeleteJob(job)">
-            Supprimer
-          </button>
-        </div>
-      </div>
+                    <div class="job-meta">
+                        <p>
+                            <svg
+                                class="job-card-icon calendar-icon small-icon"
+                                xmlns="http://www.w3.org/2000/svg"
+                                viewBox="0 0 24 24"
+                                fill="currentColor"
+                                >
+                                <path
+                                    d="M24,10V24H0V10Zm0-2V5a3,3,0,0,0-3-3H18V0H16V2H8V0H6V2H3A3,3,0,0,0,0,5V8Zm-6,6H16v2h2Zm-5,0H11v2h2ZM8,14H6v2H8Zm10,4H16v2h2Zm-5,0H11v2h2ZM8,18H6v2H8Z"
+                                    ></path></svg
+                            >&nbsp;
+                            <small
+                                >Créé le :
+                                {{ job.created_at | date: 'dd/MM/yyyy HH:mm' }}</small
+                            >
+                        </p>
+                        <p>
+                            <svg
+                                class="job-card-icon calendar-icon small-icon"
+                                xmlns="http://www.w3.org/2000/svg"
+                                viewBox="0 0 24 24"
+                                fill="currentColor"
+                                >
+                                <path
+                                    d="M24,10V24H0V10Zm0-2V5a3,3,0,0,0-3-3H18V0H16V2H8V0H6V2H3A3,3,0,0,0,0,5V8Zm-6,6H16v2h2Zm-5,0H11v2h2ZM8,14H6v2H8Zm10,4H16v2h2Zm-5,0H11v2h2ZM8,18H6v2H8Z"
+                                    ></path></svg
+                            >&nbsp;
+                            <small
+                                >Mis à jour le :
+                                {{ job.updated_at | date: 'dd/MM/yyyy HH:mm' }}</small
+                            >
+                        </p>
+                        <p>
+                            <small
+                                >Offre institutionelle (France Travail) :
+                                {{ job.from_official_dom ? 'Oui' : 'Non' }}</small
+                            >
+                        </p>
+                    </div>
 
-      <div
-        *ngIf="
-          !isLoading && !error && jobs && pageInfos && pageInfos.total_pages > 1
-        "
-        class="pager"
-      >
-        <button
-          (click)="goToPage(0)"
-          [disabled]="currentPage === 0"
-          class="cta-button primary"
-        >
-          |<<
-        </button>
-        <button
-          (click)="goToPage(currentPage - 1)"
-          [disabled]="currentPage === 0"
-          class="cta-button primary"
-        >
-          <
-        </button>
+                    <!-- Ligne 3 : 3 colonnes -->
+                    <button class="cta-button validate" (click)="onViewJob(job)">
+                        Consulter
+                    </button>
+                    <button class="cta-button update" (click)="onUpdateJob(job)">
+                        Modifier
+                    </button>
+                    <button class="cta-button delete" (click)="onDeleteJob(job)">
+                        Supprimer
+                    </button>
+                </div>
+            </div>
 
-        <ng-container *ngFor="let page of pages">
-          <button
-            *ngIf="page !== '...'; else ellipsis"
-            (click)="goToPage(page)"
-            [class.validate]="page === currentPage"
-            [class.primary]="page !== currentPage"
-            [disabled]="page === currentPage"
-            class="cta-button"
-          >
-            {{ page + 1 }}
-          </button>
-          <ng-template #ellipsis>
-            <span class="ellipsis cta-button primary">...</span>
-          </ng-template>
+            <div
+                *ngIf="
+                !isLoading && !error && jobs && pageInfos && pageInfos.total_pages > 1
+                "
+                class="pager"
+                >
+                <button
+                    (click)="goToPage(0)"
+                    [disabled]="currentPage === 0"
+                    class="cta-button primary"
+                    >
+                    |<<
+                </button>
+                <button
+                    (click)="goToPage(currentPage - 1)"
+                    [disabled]="currentPage === 0"
+                    class="cta-button primary"
+                    >
+                    <
+                </button>
+
+                <ng-container *ngFor="let page of pages">
+                    <button
+                        *ngIf="page !== '...'; else ellipsis"
+                        (click)="goToPage(page)"
+                        [class.validate]="page === currentPage"
+                        [class.primary]="page !== currentPage"
+                        [disabled]="page === currentPage"
+                        class="cta-button"
+                        >
+                        {{ page + 1 }}
+                    </button>
+                    <ng-template #ellipsis>
+                        <span class="ellipsis cta-button primary">...</span>
+                    </ng-template>
+                </ng-container>
+
+                <button
+                    (click)="goToPage(currentPage + 1)"
+                    [disabled]="currentPage === pageInfos.total_pages - 1"
+                    class="cta-button primary"
+                    >
+                    >
+                </button>
+                <button
+                    (click)="goToPage(pageInfos.total_pages - 1)"
+                    [disabled]="currentPage === pageInfos.total_pages - 1"
+                    class="cta-button primary"
+                    >
+                    >>|
+                </button>
+            </div>
         </ng-container>
 
-        <button
-          (click)="goToPage(currentPage + 1)"
-          [disabled]="currentPage === pageInfos.total_pages - 1"
-          class="cta-button primary"
-        >
-          >
-        </button>
-        <button
-          (click)="goToPage(pageInfos.total_pages - 1)"
-          [disabled]="currentPage === pageInfos.total_pages - 1"
-          class="cta-button primary"
-        >
-          >>|
-        </button>
-      </div>
-    </ng-container>
-
-    <div *ngIf="!isLoading && !error && !jobs" class="no-jobs">
-      Aucune offre à afficher
-    </div>
-  </section>
+        <div *ngIf="!isLoading && !error && !jobs" class="no-jobs">
+            Aucune offre à afficher
+        </div>
+    </section>
 </main>
