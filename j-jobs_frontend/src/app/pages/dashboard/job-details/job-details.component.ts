@@ -81,6 +81,8 @@ export class JobDetailsComponent implements OnInit, OnDestroy {
       error: (err) => {
         this.offerStatusEnum = this.labelsService.getOfferStatusEnum();
         this.isLoading = false;
+        alert('Erreur: Offre non trouvé.');
+        this.router.navigate(['/dashboard']);
       },
     });
   }
