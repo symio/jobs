@@ -3,7 +3,10 @@ package org.loamok.jobs.security;
 import java.util.List;
 import java.util.function.Supplier;
 import org.apache.commons.logging.*;
+import org.loamok.jobs.repository.UserRepository;
 import org.loamok.jobs.security.jwt.JwtAuthenticationFilter;
+import org.loamok.jobs.security.jwt.JwtService;
+import org.loamok.jobs.util.ClientSignatureBuilder;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.*;
@@ -22,7 +25,7 @@ import org.springframework.web.cors.CorsConfigurationSource;
 import org.springframework.web.cors.UrlBasedCorsConfigurationSource;
 
 import org.springframework.beans.factory.InitializingBean;
-import org.springframework.web.filter.CorsFilter;
+import org.springframework.security.core.userdetails.UserDetailsService;
 
 @Configuration
 @EnableWebSecurity
@@ -32,9 +35,6 @@ public class SecurityConfig implements InitializingBean {
     private String allowedOriginsEnv;
 
     protected final Log logger = LogFactory.getLog(getClass());
-
-    @Autowired
-    private JwtAuthenticationFilter jwtAuthenticationFilter;
 
     @Autowired
     private AuthenticationProvider authenticationProvider;
@@ -50,56 +50,68 @@ public class SecurityConfig implements InitializingBean {
     private boolean swaggerEnabled;
 
     @Bean
-    public SecurityFilterChain oauth2ApiFilterChain(HttpSecurity http) throws Exception {
+    public SecurityFilterChain securityFilterChain(
+            HttpSecurity http,
+            JwtService jwtService,
+            UserDetailsService userDetailsService,
+            UserRepository userRepository,
+            ClientSignatureBuilder csb
+    ) throws Exception {
+        logger.info("============================================================");
+        logger.info("CHARGEMENT SECURITY FILTER CHAIN UNIQUE");
+        logger.info("============================================================");
+
+        JwtAuthenticationFilter jwtFilter = new JwtAuthenticationFilter(
+            jwtService,
+            userDetailsService,
+            userRepository,
+            csb
+        );
+
         http
-            .securityMatcher("/jobs/**")
-            .authorizeHttpRequests(
-                auth -> {
-                    // SpringDoc OpenAPI désactivés en production
-                    if (!swaggerEnabled) {
-                        auth
-                                .requestMatchers("/v3/api-docs/**").denyAll()
-                                .requestMatchers("/swagger-ui/**").denyAll()
-                                .requestMatchers("/swagger-ui.html").denyAll()
-                                .requestMatchers("/swagger-resources/**").denyAll()
-                                .requestMatchers("/webjars/**").denyAll();
-                    } else {
-                        auth
-                                .requestMatchers("/v3/api-docs/**").permitAll()
-                                .requestMatchers("/swagger-ui/**").permitAll()
-                                .requestMatchers("/swagger-ui.html").permitAll()
-                                .requestMatchers("/swagger-resources/**").permitAll()
-                                .requestMatchers("/webjars/**").permitAll();
-                    }
-                    // APIs ouvertes au public sans authentification
-                    auth
-                        .requestMatchers(HttpMethod.OPTIONS, "/**").permitAll()
-                        .requestMatchers(HttpMethod.POST, "/profil/register").permitAll()
-                        .requestMatchers(HttpMethod.POST, "/authorize/token").permitAll()
-                        .requestMatchers(HttpMethod.POST, "/authorize/refresh").permitAll()
-                        // Sauf pour le cleanup qui sert de déconnexion
-                        .requestMatchers(HttpMethod.POST, "/authorize/cleanup").permitAll()
-                        // Rôles - Administration des rôles (Admin uniquement)
-                        .requestMatchers(HttpMethod.GET, "/roles", "/roles/**").hasRole("ADMIN")
-                        .requestMatchers(HttpMethod.POST, "/roles").hasRole("ADMIN")
-                        .requestMatchers(HttpMethod.PUT, "/roles/**").hasRole("ADMIN")
-                        .requestMatchers(HttpMethod.DELETE, "/roles/**").hasRole("ADMIN")
-                        // Profils - Consultation des profils (Admin seulement pour la gestion globale)
-                        .requestMatchers(HttpMethod.GET, "/profile").hasRole("ADMIN")
-                        // Utilisateurs - Gestion des entités en général
-                        .requestMatchers(HttpMethod.POST, "/users").permitAll()
-                        .requestMatchers(HttpMethod.GET, "/**").hasAnyRole("USER", "ADMIN")
-                        .requestMatchers(HttpMethod.PUT, "/**").hasAnyRole("USER", "ADMIN")
-                        .requestMatchers(HttpMethod.DELETE, "/users/**").hasRole("ADMIN")
-                        .requestMatchers(HttpMethod.DELETE, "/**").hasAnyRole("USER", "ADMIN")
-                        // Tout le reste nécessite authentification + scope
-                        .anyRequest().access(this::hasAccessScopeAndAuthenticated);
+            .authorizeHttpRequests(auth -> {
+                logger.info("Configuration des règles d'autorisation...");
+                
+                auth.requestMatchers(HttpMethod.OPTIONS, "/**").permitAll();
+                
+                auth.requestMatchers(HttpMethod.POST, 
+                    "/authorize/token",
+                    "/authorize/refresh", 
+                    "/authorize/cleanup",
+                    "/authorize/remembered",
+                    "/profil/register",
+                    "/users"
+                ).permitAll();
+                
+                if (swaggerEnabled) {
+                    auth.requestMatchers(
+                        "/v3/api-docs/**", 
+                        "/swagger-ui/**", 
+                        "/swagger-ui.html", 
+                        "/swagger-resources/**", 
+                        "/webjars/**"
+                    ).permitAll();
                 }
-            )
-            .addFilterBefore(jwtAuthenticationFilter, UsernamePasswordAuthenticationFilter.class)
+                
+                // 4. Routes ADMIN uniquement (nécessitent ROLE_ADMIN)
+                auth.requestMatchers(HttpMethod.GET, "/roles/**").hasRole("ADMIN");
+                auth.requestMatchers(HttpMethod.POST, "/roles/**").hasRole("ADMIN");
+                auth.requestMatchers(HttpMethod.PUT, "/roles/**").hasRole("ADMIN");
+                auth.requestMatchers(HttpMethod.PATCH, "/roles/**").hasRole("ADMIN");
+                auth.requestMatchers(HttpMethod.DELETE, "/roles/**").hasRole("ADMIN");
+                
+                auth.requestMatchers(HttpMethod.GET, "/profile/**").hasRole("ADMIN");
+                auth.requestMatchers(HttpMethod.GET, "/users/**").hasRole("ADMIN");
+                auth.requestMatchers(HttpMethod.DELETE, "/users/**").hasRole("ADMIN");
+                
+                // 5. Toutes les autres requêtes nécessitent le scope "access"
+                auth.anyRequest().access(this::hasAccessScopeAndAuthenticated);
+            })
+            .addFilterBefore(jwtFilter, UsernamePasswordAuthenticationFilter.class)
             .sessionManagement(session -> session.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
             .csrf(csrf -> csrf.disable())
             .cors(cors -> cors.configurationSource(corsConfigurationSource()));
+
         return http.build();
     }
 
@@ -118,21 +130,6 @@ public class SecurityConfig implements InitializingBean {
                 .anyMatch(authority -> authority.getAuthority().equals("SCOPE_access"));
 
         return new AuthorizationDecision(hasAccessScope);
-    }
-
-    @Bean
-    public CorsFilter corsFilter() {
-        CorsConfiguration config = new CorsConfiguration();
-        config.setAllowCredentials(true);
-        config.setAllowedOrigins(List.of(allowedOriginsEnv.split(",")));
-        config.setAllowedHeaders(List.of("*"));
-        config.setAllowedMethods(List.of("GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS"));
-
-        UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();
-        source.registerCorsConfiguration("/**", config);
-
-        logger.info("CorsFilter global activé pour origines : " + config.getAllowedOrigins());
-        return new CorsFilter(source);
     }
 
     @Bean

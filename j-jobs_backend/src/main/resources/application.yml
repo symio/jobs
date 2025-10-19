@@ -3,7 +3,10 @@ springdoc:
     enabled: ${SPRINGDOC_ENABLED:false}
   swagger-ui:
     enabled: ${SPRINGDOC_ENABLED:false}
-server.port: ${PORT:8080}
+server:
+  port: ${PORT:8080}
+#  servlet:
+#    context-path: /jobs
 spring:
   profiles.active: secrets
   jackson:

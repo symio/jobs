@@ -17,19 +17,18 @@ import org.loamok.jobs.repository.UserRepository;
 import org.loamok.jobs.util.ClientSignatureBuilder;
 import org.springframework.lang.NonNull;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
+import org.springframework.security.core.Authentication;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.web.authentication.WebAuthenticationDetailsSource;
-import org.springframework.stereotype.Component;
 import org.springframework.web.filter.OncePerRequestFilter;
 
 /**
  *
  * @author Huby Franck
  */
-@Component
 @AllArgsConstructor
 public class JwtAuthenticationFilter extends OncePerRequestFilter {
 
@@ -42,62 +41,72 @@ public class JwtAuthenticationFilter extends OncePerRequestFilter {
     protected void doFilterInternal(@NonNull HttpServletRequest request,
             @NonNull HttpServletResponse response,
             @NonNull FilterChain filterChain)
-    throws ServletException, IOException {
+            throws ServletException, IOException {
+
+        logger.info("========== JWT FILTER ==========");
+        logger.info("URI: " + request.getRequestURI());
+        logger.info("Method: " + request.getMethod());
+        logger.info("Authorization header: " + request.getHeader("Authorization"));
+
+        // Vérifier si l'authentification existe déjà
+        Authentication existingAuth = SecurityContextHolder.getContext().getAuthentication();
+        if (existingAuth != null) {
+            logger.info("Authentication déjà présente: " + existingAuth.getName());
+            logger.info("Authorities: " + existingAuth.getAuthorities());
+        }
+
         final String authHeader = request.getHeader("Authorization");
         final String jwt;
-        
+
         if (authHeader == null || !authHeader.startsWith("Bearer ")) {
             filterChain.doFilter(request, response);
             return;
         }
-        
+
         jwt = authHeader.substring(7);
         boolean isAuth = handleClientCredentialsToken(jwt, request);
-        
-        if(!isAuth) {
+
+        if (!isAuth) {
             filterChain.doFilter(request, response);
             return;
         }
-        
+
         setAuthentication(jwt);
-        
+
         filterChain.doFilter(request, response);
     }
-    
-    
+
     private boolean handleClientCredentialsToken(String jwt, HttpServletRequest request) {
         try {
-            final String clientId = jwtService.extractUserName(jwt); // subject = clientId
+            final String clientId = jwtService.extractUserName(jwt);
             String scopes = jwtService.extractScopes(jwt);
 
             if (clientId != null && SecurityContextHolder.getContext().getAuthentication() == null) {
                 User user = userRepository.findByEmail(clientId);
-                
-                String clientSignature = csb.buildClientSignature(request);
-                
-                String authTokenSignature = jwtService.extractAllClaims(user.getAuthToken()).get("client-signature", String.class);
-                
-                if (
-                    user.getAuthToken() != null && 
-                    jwtService.isClientCredentialsTokenValid(jwt, clientId) &&
-                    jwtService.isClientCredentialsTokenValid(user.getAuthToken(), clientId) &&
-                    (authTokenSignature != null && authTokenSignature.equals(clientSignature))
-                ) {
-                    Collection<GrantedAuthority> authorities = Arrays.stream(scopes.split(" "))
-                        .map(scope -> new SimpleGrantedAuthority("SCOPE_" + scope))
-                        .collect(Collectors.toList());
 
-                    UsernamePasswordAuthenticationToken authToken = 
-                        new UsernamePasswordAuthenticationToken(clientId, null, authorities);
+                String clientSignature = csb.buildClientSignature(request);
+
+                String authTokenSignature = jwtService.extractAllClaims(user.getAuthToken()).get("client-signature", String.class);
+
+                if (user.getAuthToken() != null
+                        && jwtService.isClientCredentialsTokenValid(jwt, clientId)
+                        && jwtService.isClientCredentialsTokenValid(user.getAuthToken(), clientId)
+                        && (authTokenSignature != null && authTokenSignature.equals(clientSignature))) {
+                    Collection<GrantedAuthority> authorities = Arrays.stream(scopes.split(" "))
+                            .map(scope -> new SimpleGrantedAuthority("SCOPE_" + scope))
+                            .collect(Collectors.toList());
+
+                    UsernamePasswordAuthenticationToken authToken
+                            = new UsernamePasswordAuthenticationToken(clientId, null, authorities);
                     authToken.setDetails(new WebAuthenticationDetailsSource().buildDetails(request));
                     SecurityContextHolder.getContext().setAuthentication(authToken);
                     return true;
                 }
-            }    
+            }
         } catch (Exception e) {
             logger.error("Erreur lors de l'authentification JWT", e);
         }
-        
+
         return false;
     }
 
@@ -106,22 +115,25 @@ public class JwtAuthenticationFilter extends OncePerRequestFilter {
         String clientId = claims.get("client_id", String.class);
         String scope = claims.get("scope", String.class);
         String authority = claims.get("authority", String.class); // Le rôle
-        
+
         List<SimpleGrantedAuthority> authorities = new ArrayList<>();
-        
-        if ("access".equals(scope))
+
+        if ("access".equals(scope)) {
             authorities.add(new SimpleGrantedAuthority("SCOPE_access"));
-        if ("admin".equals(scope))
+        }
+        if ("admin".equals(scope)) {
             authorities.add(new SimpleGrantedAuthority("SCOPE_admin"));
-        
-        if (authority != null)
+        }
+
+        if (authority != null) {
             authorities.add(new SimpleGrantedAuthority(authority));
-        
+        }
+
         UsernamePasswordAuthenticationToken authToken = new UsernamePasswordAuthenticationToken(
-            clientId, null, authorities
+                clientId, null, authorities
         );
-        
+
         SecurityContextHolder.getContext().setAuthentication(authToken);
     }
-    
+
 }
