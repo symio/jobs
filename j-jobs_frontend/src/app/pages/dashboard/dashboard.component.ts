@@ -29,6 +29,7 @@ import {
     PageInfo,
     SearchJobsRequest,
 } from '@app/services/jobs.service';
+import { SanitizationService } from '@app/services/sanitization.service';
 
 @Component({
     standalone: true,
@@ -76,6 +77,7 @@ export class DashboardComponent implements OnInit, OnDestroy {
         private jobsService: JobsService,
         private cdRef: ChangeDetectorRef,
         private router: Router,
+        private sanitizationService: SanitizationService
     ) { }
 
     getIcon(name: string): SafeHtml {
@@ -126,9 +128,7 @@ export class DashboardComponent implements OnInit, OnDestroy {
                     this.entretienCount = this.stats.ENTRETIEN;
                     this.refuseCount = this.stats.REFUSE;
 
-                    //                    setTimeout(() => {
                     this.fetchJobs();
-                    //                    }, 1000);
                 },
                 error: (err) => {
                     this.stats = this.statusStatsService.getStats();
@@ -147,33 +147,24 @@ export class DashboardComponent implements OnInit, OnDestroy {
         this.isLoading = true;
         this.error = null;
 
-        if (this.isSearchMode) {
-            this.performSearch();
-        } else {
-            this.jobsService.getJobs(this.currentPage, 3).subscribe({
-                next: (response: GetJobsResponse) => {
-                    this.handleJobsResponse(response);
-                },
-                error: (err) => {
-                    this.handleJobsError(err);
-                },
-            });
-        }
+        this.performSearch();
     }
 
     performSearch(): void {
-        const formValue = this.searchForm.value;
+        const sanitized = this.sanitizationService.sanitizeFormData(
+            this.searchForm.value, {skipFields: ['sort', 'page', 'size', 'isActive']}
+        );
 
         const searchRequest: SearchJobsRequest = {
-            contract: formValue.contract || null,
-            eventBefore: formValue.eventBefore || null,
-            eventAfter: formValue.eventAfter || null,
-            officialdom: formValue.officialdom || false,
-            offerStatus: formValue.offerStatus || null,
-            sort: formValue.sort || 'DATE_DESC',
-            textual: formValue.textual || null,
-            workTime: formValue.workTime || null,
-            workMode: formValue.workMode || null,
+            contract: sanitized.contract || null,
+            eventBefore: sanitized.eventBefore || null,
+            eventAfter: sanitized.eventAfter || null,
+            officialdom: sanitized.officialdom || false,
+            offerStatus: sanitized.offerStatus || null,
+            sort: sanitized.sort || 'DATE_DESC',
+            textual: sanitized.textual || null,
+            workTime: sanitized.workTime || null,
+            workMode: sanitized.workMode || null,
         };
 
         this.jobsService.searchJobs(searchRequest, this.currentPage, 3).subscribe({
@@ -208,6 +199,7 @@ export class DashboardComponent implements OnInit, OnDestroy {
         console.log('Recherche lancée avec:', this.searchForm.value);
         this.isSearchMode = true;
         this.currentPage = 0;
+        
         this.fetchJobs();
     }
 

@@ -10,6 +10,7 @@ import { Router, ActivatedRoute, RouterModule } from '@angular/router';
 import { OAuth2Service } from '@services/oauth2.service';
 import { CommonModule } from '@angular/common';
 import { Subscription } from 'rxjs';
+import { SanitizationService } from '@services/sanitization.service';
 
 @Component({
     selector: 'app-login',
@@ -32,6 +33,7 @@ export class LoginComponent implements OnInit, OnDestroy {
         private oauth2Service: OAuth2Service,
         private router: Router,
         private route: ActivatedRoute,
+        private sanitizationService: SanitizationService,
     ) { }
 
     ngOnDestroy(): void {
@@ -83,9 +85,19 @@ export class LoginComponent implements OnInit, OnDestroy {
         this.loading = true;
         this.error = '';
 
+        const formValue = this.loginForm.value;
+
+        const sanitizedEmail = this.sanitizationService.sanitizeEmail(formValue.clientId);
+
+        if (!sanitizedEmail || sanitizedEmail === '') {
+            this.error = "L'adresse email est invalide.";
+            this.loading = false;
+            return;
+        }
+
         const credentials = {
-            clientId: this.loginForm.value.clientId,
-            clientSecret: this.loginForm.value.clientSecret,
+            clientId: sanitizedEmail,
+            clientSecret: formValue.clientSecret,
             rememberMe: this.rememberMe,
         };
 

@@ -1,25 +1,20 @@
 import { Component, OnDestroy, OnInit, Input } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import {
-    FormBuilder,
-    FormGroup,
-    ReactiveFormsModule,
-    Validators,
+    FormBuilder, FormGroup,
+    ReactiveFormsModule, Validators,
 } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
 import {
-    ContractEnum,
-    JobStatusEnum,
-    LabelsService,
-    OfferStatusEnum,
-    WorkModeEnum,
-    WorkTimeEnum,
+    ContractEnum, JobStatusEnum, LabelsService,
+    OfferStatusEnum, WorkModeEnum, WorkTimeEnum,
 } from '@app/services/labels.service';
 import { MenuDataNoTitle, MenuService } from '@app/services/menu.service';
 import { PageTitleService } from '@app/services/page-title.service';
 import { catchError, forkJoin, of, Subscription } from 'rxjs';
-import { JobsService, Job } from '@app/services/jobs.service';
+import { JobsService, Job, CreateJobRequest, UpdateJobRequest } from '@app/services/jobs.service';
+import { SanitizationService } from '@app/services/sanitization.service';
 
 @Component({
     standalone: true,
@@ -57,6 +52,7 @@ export class JobFormComponent implements OnInit, OnDestroy {
         private pageTitleService: PageTitleService,
         private jobsService: JobsService,
         private fb: FormBuilder,
+        private sanitizationService: SanitizationService
     ) { }
 
     ngOnInit(): void {
@@ -125,15 +121,26 @@ export class JobFormComponent implements OnInit, OnDestroy {
 
     private initForm(job: Job | null): void {
         this.form = this.fb.group({
-            position: [job?.position || '', Validators.required],
-            compagny: [job?.compagny || '', Validators.required],
-            city: [job?.city || '', Validators.required],
+            position: [
+                job?.position ? this.sanitizationService.decodeHtml(job.position) : '',
+                Validators.required
+            ],
+            compagny: [
+                job?.compagny ? this.sanitizationService.decodeHtml(job.compagny) : '',
+                Validators.required
+            ],
+            city: [
+                job?.city ? this.sanitizationService.decodeHtml(job.city) : '',
+                Validators.required
+            ],
             contract: [job?.contract || ''],
             workTime: [job?.workTime || ''],
             workMode: [job?.workMode || ''],
             offerStatus: [job?.offerStatus || ''],
             from_official_dom: [job?.from_official_dom || false],
-            description: [job?.description || ''],
+            description: [
+                job?.description ? this.sanitizationService.decodeHtml(job.description) : ''
+            ],
         });
     }
 
@@ -148,8 +155,33 @@ export class JobFormComponent implements OnInit, OnDestroy {
         this.isSubmitting = true;
         const formValue = this.form.value;
 
+        const sanitizedData = this.sanitizationService.sanitizeFormData(formValue, {
+            multilineFields: ['description'], skipFields: ['from_official_dom'],
+        });
+
+        const hasDangerousContent = Object.entries(sanitizedData).some(([key, value]) => {
+            if (typeof value === 'string') {
+                const isDangerous = this.sanitizationService.containsDangerousContent(value);
+                if (isDangerous) {
+                    console.warn(`Contenu dangereux détecté dans le champ: ${key}`);
+                }
+                return isDangerous;
+            }
+            return false;
+        });
+
+        if (hasDangerousContent) {
+            alert(
+                'Des contenus potentiellement dangereux ont été détectés dans votre formulaire. ' +
+                'Veuillez vérifier vos données et réessayer.'
+            );
+            this.isSubmitting = false;
+            return;
+        }
+
+        // Envoi des données nettoyées
         if (this.job && this.link) {
-            this.jobsService.updateJob(this.link, formValue).subscribe({
+            this.jobsService.updateJob(this.link, sanitizedData as UpdateJobRequest).subscribe({
                 next: () => {
                     alert('Offre mise à jour avec succès !');
                     this.router.navigate(['/dashboard']);
@@ -161,7 +193,7 @@ export class JobFormComponent implements OnInit, OnDestroy {
                 },
             });
         } else {
-            this.jobsService.createJob(formValue).subscribe({
+            this.jobsService.createJob(sanitizedData as CreateJobRequest).subscribe({
                 next: () => {
                     alert('Offre créée avec succès !');
                     this.router.navigate(['/dashboard']);

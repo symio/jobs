@@ -1,16 +1,15 @@
 // src/app/pages/register/register.component.ts
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import {
-    ReactiveFormsModule,
-    FormBuilder,
-    FormGroup,
-    Validators,
+    ReactiveFormsModule, FormBuilder,
+    FormGroup, Validators,
 } from '@angular/forms';
 import { Router, ActivatedRoute, RouterModule } from '@angular/router';
 import { OAuth2Service } from '@services/oauth2.service';
 import { UserRegister, UserService } from '@services/user.service';
 import { CommonModule } from '@angular/common';
 import { Subscription } from 'rxjs';
+import { SanitizationService } from '@services/sanitization.service';
 
 @Component({
     selector: 'app-register',
@@ -33,6 +32,7 @@ export class RegisterComponent implements OnInit, OnDestroy {
         private oAuth2Service: OAuth2Service,
         private router: Router,
         private route: ActivatedRoute,
+        private sanitizationService: SanitizationService
     ) { }
 
     ngOnDestroy(): void {
@@ -96,12 +96,37 @@ export class RegisterComponent implements OnInit, OnDestroy {
         this.loading = true;
         this.error = '';
 
+        const formValue = this.registerForm.value;
+
+        const sanitizedData = this.sanitizationService.sanitizeFormData(formValue, {
+            emailFields: ['email'],
+            skipFields: ['password', 'passwordConfirm', 'gdproptin'],
+        });
+
+        if (!sanitizedData.email || sanitizedData.email === '') {
+            this.error = 'L\'adresse email est invalide.';
+            this.loading = false;
+            return;
+        }
+
+        const fieldsToCheck = ['name', 'firstname'];
+        const hasDangerousContent = fieldsToCheck.some((field) => {
+            const value = sanitizedData[field];
+            return this.sanitizationService.containsDangerousContent(value);
+        });
+
+        if (hasDangerousContent) {
+            this.error = 'Des caractères invalides ont été détectés dans vos informations.';
+            this.loading = false;
+            return;
+        }
+
         const userRegister: UserRegister = {
-            name: this.name?.value,
-            firstname: this.firstname?.value,
-            email: this.email?.value,
-            password: this.password?.value,
-            gdproptin: this.gdproptin?.value,
+            name: sanitizedData.name,
+            firstname: sanitizedData.firstname,
+            email: sanitizedData.email,
+            password: formValue.password,
+            gdproptin: formValue.gdproptin,
         };
 
         this.userService.registerUser(userRegister).subscribe({
