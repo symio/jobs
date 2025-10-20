@@ -210,7 +210,7 @@ public class JobManager extends IdentifiedHandler implements JobService {
 
     private Sort buildSort(String sortParam) {
         if (sortParam == null || sortParam.isBlank()) {
-            return Sort.by(Sort.Direction.DESC, "createdAt");
+            return Sort.by(Sort.Direction.DESC, "updatedAt", "createdAt");
         }
 
         return switch (sortParam.toUpperCase()) {
@@ -219,11 +219,11 @@ public class JobManager extends IdentifiedHandler implements JobService {
             case "Z-A" ->
                 Sort.by(Sort.Direction.DESC, "position");
             case "DATE_ASC" ->
-                Sort.by(Sort.Direction.ASC, "createdAt");
+                Sort.by(Sort.Direction.ASC, "updatedAt", "createdAt");
             case "DATE_DESC" ->
-                Sort.by(Sort.Direction.DESC, "createdAt");
+                Sort.by(Sort.Direction.DESC, "updatedAt", "createdAt");
             default ->
-                Sort.by(Sort.Direction.DESC, "createdAt");
+                Sort.by(Sort.Direction.DESC, "updatedAt", "createdAt");
         };
     }
 
