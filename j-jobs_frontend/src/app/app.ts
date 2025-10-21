@@ -9,6 +9,7 @@ import { PageTitleService } from '@services/page-title.service';
 import { CommonModule } from '@angular/common';
 import { HTTP_INTERCEPTORS } from '@angular/common/http';
 import { AuthInterceptor } from '@app/interceptors/auth.interceptor';
+import { ModalComponent } from '@app/components/modal/modal.component';
 
 @Component({
   selector: 'app-root',
@@ -18,6 +19,7 @@ import { AuthInterceptor } from '@app/interceptors/auth.interceptor';
     HeaderComponent,
     FooterComponent,
     MobileMenuComponent,
+    ModalComponent
   ],
   templateUrl: './app.html',
   styleUrl: './app.scss',

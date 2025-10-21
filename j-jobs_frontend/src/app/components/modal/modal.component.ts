@@ -1,0 +1,83 @@
+// src/app/components/modal/modal.component.ts
+import { Component, OnInit, OnDestroy } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { Subscription } from 'rxjs';
+import { ModalService, ModalConfig } from '@app/services/modal.service';
+
+@Component({
+    selector: 'app-modal',
+    standalone: true,
+    imports: [CommonModule],
+    templateUrl: './modal.component.html',
+    styleUrl: './modal.component.scss',
+})
+export class ModalComponent implements OnInit, OnDestroy {
+    isOpen = false;
+    config: ModalConfig | null = null;
+    private subscription?: Subscription;
+
+    constructor(private modalService: ModalService) { }
+
+    ngOnInit(): void {
+        this.subscription = this.modalService.modalState$.subscribe((state) => {
+            this.isOpen = state.isOpen;
+            this.config = state.config;
+        });
+    }
+
+    ngOnDestroy(): void {
+        this.subscription?.unsubscribe();
+    }
+
+    onConfirm(): void {
+        this.modalService.close(true);
+    }
+
+    onCancel(): void {
+        this.modalService.close(false);
+    }
+
+    onBackdropClick(event: MouseEvent): void {
+        if (event.target === event.currentTarget) {
+            this.onCancel();
+        }
+    }
+
+    getIconClass(): string {
+        if (!this.config) return '';
+
+        const iconMap: Record<string, string> = {
+            info: 'modal-icon-info',
+            success: 'modal-icon-success',
+            warning: 'modal-icon-warning',
+            error: 'modal-icon-error',
+            confirm: 'modal-icon-confirm',
+        };
+
+        return iconMap[this.config.type] || '';
+    }
+
+    getIcon(): string {
+        if (!this.config) return '';
+
+        const icons: Record<string, string> = {
+            info: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+        <path d="M12,0A12,12,0,1,0,24,12,12.013,12.013,0,0,0,12,0Zm.25,5a1.5,1.5,0,1,1-1.5,1.5A1.5,1.5,0,0,1,12.25,5ZM14.5,18.5h-4a1,1,0,0,1,0-2h.75a.25.25,0,0,0,.25-.25v-4.5a.25.25,0,0,0-.25-.25H10.5a1,1,0,0,1,0-2h1a2,2,0,0,1,2,2v4.75a.25.25,0,0,0,.25.25h.75a1,1,0,1,1,0,2Z"/>
+      </svg>`,
+            success: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+        <path d="M12,0A12,12,0,1,0,24,12,12.014,12.014,0,0,0,12,0Zm6.927,8.2-6.845,9.289a1.011,1.011,0,0,1-1.43.188L5.764,13.769a1,1,0,1,1,1.25-1.562l4.076,3.261,6.227-8.451A1,1,0,1,1,18.927,8.2Z"/>
+      </svg>`,
+            warning: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+        <path d="M12,16a1,1,0,1,0,1,1A1,1,0,0,0,12,16Zm10.67,1.47-8.05-14a3,3,0,0,0-5.24,0l-8,14A3,3,0,0,0,3.94,22H20.06a3,3,0,0,0,2.61-4.53Zm-1.73,2a1,1,0,0,1-.88.51H3.94a1,1,0,0,1-.88-.51,1,1,0,0,1,0-1l8-14a1,1,0,0,1,1.78,0l8.05,14A1,1,0,0,1,20.94,19.49ZM12,8a1,1,0,0,0-1,1v4a1,1,0,0,0,2,0V9A1,1,0,0,0,12,8Z"/>
+      </svg>`,
+            error: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+        <path d="M12,0A12,12,0,1,0,24,12,12.013,12.013,0,0,0,12,0Zm4.707,15.293a1,1,0,1,1-1.414,1.414L12,13.414,8.707,16.707a1,1,0,0,1-1.414-1.414L10.586,12,7.293,8.707A1,1,0,1,1,8.707,7.293L12,10.586l3.293-3.293a1,1,0,1,1,1.414,1.414L13.414,12Z"/>
+      </svg>`,
+            confirm: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+        <path d="M12,0A12,12,0,1,0,24,12,12.013,12.013,0,0,0,12,0Zm.25,5a1.5,1.5,0,1,1-1.5,1.5A1.5,1.5,0,0,1,12.25,5ZM14.5,18.5h-4a1,1,0,0,1,0-2h.75a.25.25,0,0,0,.25-.25v-4.5a.25.25,0,0,0-.25-.25H10.5a1,1,0,0,1,0-2h1a2,2,0,0,1,2,2v4.75a.25.25,0,0,0,.25.25h.75a1,1,0,1,1,0,2Z"/>
+      </svg>`,
+        };
+
+        return icons[this.config.type] || icons['info'];
+    }
+}

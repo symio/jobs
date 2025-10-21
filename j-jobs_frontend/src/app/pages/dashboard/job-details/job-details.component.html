@@ -25,13 +25,13 @@
             <div class="row0">
                 <div class="col0">
                     <div class="job-incity-initial" style="text-transform: uppercase">
-                        {{ job.compagny.substring(0, 1) }}
+                        {{ decodeHtml(job.compagny).substring(0, 1) }}
                     </div>
                 </div>
                 <div class="col1">
-                    <h3>{{ job.position }}</h3>
+                    <h3>{{ decodeHtml(job.position) }}</h3>
                     <p>
-                        <strong>{{ job.compagny }}</strong>
+                        <strong>{{ decodeHtml(job.compagny) }}</strong>
                     </p>
                 </div>
             </div>
@@ -60,7 +60,7 @@
                     </div>
                     <div class="col1">
                         <p>
-                            &nbsp;{{ job.compagny }}
+                            &nbsp;{{ decodeHtml(job.compagny) }}
                         </p>
                     </div>
                 </div>
@@ -83,7 +83,7 @@
                     </div>
                     <div class="col1">
                         <p>
-                            &nbsp;{{ job.city }}
+                            &nbsp;{{ decodeHtml(job.city) }}
                         </p>
                     </div>
                 </div>
@@ -186,7 +186,7 @@
 
             <div class="job-description">
                 <h4>Description</h4>
-                <p>{{ job.description }}</p>
+                <p>{{ decodeHtml(job.description) }}</p>
             </div>
 
             <div class="job-statuses" *ngIf="job.job_has_statuses.length > 0">

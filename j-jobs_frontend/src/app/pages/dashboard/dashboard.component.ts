@@ -1,20 +1,13 @@
 // src/app/pages/dashboard/dashboard.component.ts
 import { CommonModule } from '@angular/common';
 import {
-    ChangeDetectorRef,
-    Component,
-    Input,
-    OnDestroy,
-    OnInit,
+    ChangeDetectorRef, Component, Input,
+    OnDestroy, OnInit,
 } from '@angular/core';
 import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
 import {
-    ContractEnum,
-    JobStatusEnum,
-    LabelsService,
-    OfferStatusEnum,
-    WorkModeEnum,
-    WorkTimeEnum,
+    ContractEnum, JobStatusEnum, LabelsService,
+    OfferStatusEnum, WorkModeEnum, WorkTimeEnum,
 } from '@app/services/labels.service';
 import { forkJoin, Subscription, tap } from 'rxjs';
 import { ReactiveFormsModule, FormBuilder, FormGroup } from '@angular/forms';
@@ -23,13 +16,11 @@ import { PageTitleService } from '@app/services/page-title.service';
 import { MenuDataNoTitle, MenuService } from '@app/services/menu.service';
 import { StatusStatsService, Stats } from '@app/services/status-stats.service';
 import {
-    JobsService,
-    Job,
-    GetJobsResponse,
-    PageInfo,
-    SearchJobsRequest,
+    JobsService, Job, GetJobsResponse,
+    PageInfo, SearchJobsRequest,
 } from '@app/services/jobs.service';
 import { SanitizationService } from '@app/services/sanitization.service';
+import { ModalService } from '@app/services/modal.service';
 
 @Component({
     standalone: true,
@@ -77,7 +68,8 @@ export class DashboardComponent implements OnInit, OnDestroy {
         private jobsService: JobsService,
         private cdRef: ChangeDetectorRef,
         private router: Router,
-        private sanitizationService: SanitizationService
+        private sanitizationService: SanitizationService,
+        private modalService: ModalService
     ) { }
 
     getIcon(name: string): SafeHtml {
@@ -152,7 +144,7 @@ export class DashboardComponent implements OnInit, OnDestroy {
 
     performSearch(): void {
         const sanitized = this.sanitizationService.sanitizeFormData(
-            this.searchForm.value, {skipFields: ['sort', 'page', 'size', 'isActive']}
+            this.searchForm.value, { skipFields: ['sort', 'page', 'size', 'isActive'] }
         );
 
         const searchRequest: SearchJobsRequest = {
@@ -199,7 +191,7 @@ export class DashboardComponent implements OnInit, OnDestroy {
         console.log('Recherche lancée avec:', this.searchForm.value);
         this.isSearchMode = true;
         this.currentPage = 0;
-        
+
         this.fetchJobs();
     }
 
@@ -237,7 +229,12 @@ export class DashboardComponent implements OnInit, OnDestroy {
 
         this.router.navigate(['/dashboard/job-form'], { queryParams: { link } });
     }
+    
+     decodeHtml(value: string): string {
+        return this.sanitizationService.decodeHtml(value);
+    }
 
+//    async onDeleteJob(job: any): Promise<void> {
     onDeleteJob(job: any): void {
         let href = job?._links?.self?.href || job?._links?.job?.href;
 
@@ -246,12 +243,22 @@ export class DashboardComponent implements OnInit, OnDestroy {
                 "Impossible de trouver le lien de suppression pour l'offre.",
             );
             alert('Erreur: Lien de suppression non trouvé.');
+//            await this.modalService.error(
+//                'Erreur',
+//                "Impossible de trouver le lien de suppression pour l'offre."
+//            );
             return;
         }
 
         const confirmation = confirm(
             `Êtes-vous sûr de vouloir supprimer l'offre : "${job.position}" (${job.compagny}) ? Cette action est irréversible.`,
         );
+
+//        const confirmation = await this.modalService.confirm(
+//            'Confirmer la suppression',
+//            `Êtes-vous sûr de vouloir supprimer l'offre : "${job.position}" (${job.compagny}) ? Cette action est irréversible.`,
+//            'Supprimer', 'Annuler'
+//        );
 
         if (confirmation) {
             const linkToDelete = href.replace(/^(https?:)?\/\/[^/]+/, '');

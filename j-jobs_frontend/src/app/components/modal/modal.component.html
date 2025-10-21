@@ -1,0 +1,39 @@
+<!-- src/app/components/modal/modal.component.html -->
+<div class="modal-overlay" *ngIf="isOpen" (click)="onBackdropClick($event)">
+  <div class="modal-container">
+    <div class="modal-header">
+      <div class="modal-icon" [ngClass]="getIconClass()">
+        <span [innerHTML]="getIcon()"></span>
+      </div>
+      <h2 class="modal-title">{{ config?.title }}</h2>
+    </div>
+
+    <div class="modal-body">
+      <p class="modal-message">{{ config?.message }}</p>
+    </div>
+
+    <div class="modal-footer">
+      <button
+        *ngIf="config?.showCancel"
+        type="button"
+        class="cta-button primary"
+        (click)="onCancel()"
+      >
+        {{ config?.cancelText || 'Annuler' }}
+      </button>
+      <button
+        type="button"
+        class="cta-button"
+        [ngClass]="{
+          validate: config?.type === 'success' || config?.type === 'confirm',
+          delete: config?.type === 'error',
+          update: config?.type === 'warning',
+          primary: config?.type === 'info'
+        }"
+        (click)="onConfirm()"
+      >
+        {{ config?.confirmText || 'OK' }}
+      </button>
+    </div>
+  </div>
+</div>

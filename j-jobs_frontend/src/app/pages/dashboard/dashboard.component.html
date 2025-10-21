@@ -280,13 +280,13 @@
                 <div class="row0">
                     <div class="col0">
                         <div class="job-incity-initial" style="text-transform: uppercase">
-                            {{ job.compagny.substring(0, 1) }}
+                            {{ decodeHtml(job.compagny).substring(0, 1) }}
                         </div>
                     </div>
                     <div class="col1">
-                        <h3>{{ job.position }}</h3>
+                        <h3>{{ decodeHtml(job.position) }}</h3>
                         <p>
-                            <strong>{{ job.compagny }}</strong>
+                            <strong>{{ decodeHtml(job.compagny) }}</strong>
                         </p>
                     </div>
                 </div>
@@ -308,7 +308,7 @@
                                 ></path>
                             <circle cx="12" cy="10" r="3"></circle></svg
                         >&nbsp;
-                        <strong>{{ job.city }}</strong>
+                        <strong>{{ decodeHtml(job.city) }}</strong>
                     </p>
 
                     <p>
