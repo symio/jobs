@@ -186,7 +186,7 @@
 
             <div class="job-description">
                 <h4>Description</h4>
-                <p>{{ decodeAndPreserveLineBreaks(job.description) }}</p>
+                <p [innerHTML]="decodeAndPreserveLineBreaks(job.description)"></p>
             </div>
 
             <div class="job-statuses" *ngIf="job.job_has_statuses.length > 0">
