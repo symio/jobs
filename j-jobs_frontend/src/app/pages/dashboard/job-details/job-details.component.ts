@@ -60,6 +60,11 @@ export class JobDetailsComponent implements OnInit, OnDestroy {
         return this.sanitizationService.decodeHtml(value);
     }
 
+    decodeAndPreserveLineBreaks(value: string): string {
+        const decoded = this.sanitizationService.decodeHtml(value);
+        return decoded.replace(/\n/g, '<br>');
+    }
+
     ngOnInit(): void {
         this.link = this.route.snapshot.queryParamMap.get('link');
         console.log('Link reçu :', this.link);
