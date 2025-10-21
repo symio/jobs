@@ -9,7 +9,7 @@ import org.springframework.security.core.context.SecurityContextHolder;
 
 /**
  *
- * @author symio
+ * @author Huby Franck
  */
 public abstract class IdentifiedHandler {
     protected final UserRepository userRepository;

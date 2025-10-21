@@ -22,7 +22,7 @@ import org.assertj.core.api.Assertions;
 
 /**
  *
- * @author symio
+ * @author Huby Franck
  */
 @Slf4j
 @SpringBootTest
