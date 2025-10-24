@@ -9,7 +9,7 @@
     </div>
 
     <div class="modal-body">
-      <p class="modal-message">{{ config?.message }}</p>
+        <p class="modal-message" [innerHTML]="config?.message"></p>
     </div>
 
     <div class="modal-footer">
@@ -17,6 +17,7 @@
         *ngIf="config?.showCancel"
         type="button"
         class="cta-button primary"
+        [ngClass]="getButtonClass('cancel')"
         (click)="onCancel()"
       >
         {{ config?.cancelText || 'Annuler' }}
@@ -24,12 +25,7 @@
       <button
         type="button"
         class="cta-button"
-        [ngClass]="{
-          validate: config?.type === 'success' || config?.type === 'confirm',
-          delete: config?.type === 'error',
-          update: config?.type === 'warning',
-          primary: config?.type === 'info'
-        }"
+        [ngClass]="getConfirmButtonClasses()"
         (click)="onConfirm()"
       >
         {{ config?.confirmText || 'OK' }}

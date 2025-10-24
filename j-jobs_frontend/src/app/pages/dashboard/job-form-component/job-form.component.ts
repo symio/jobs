@@ -15,6 +15,7 @@ import { PageTitleService } from '@app/services/page-title.service';
 import { catchError, forkJoin, of, Subscription } from 'rxjs';
 import { JobsService, Job, CreateJobRequest, UpdateJobRequest } from '@app/services/jobs.service';
 import { SanitizationService } from '@app/services/sanitization.service';
+import { ModalService } from '@app/services/modal.service';
 
 @Component({
     standalone: true,
@@ -52,6 +53,7 @@ export class JobFormComponent implements OnInit, OnDestroy {
         private pageTitleService: PageTitleService,
         private jobsService: JobsService,
         private fb: FormBuilder,
+        private modalService: ModalService,
         private sanitizationService: SanitizationService
     ) { }
 
@@ -144,7 +146,7 @@ export class JobFormComponent implements OnInit, OnDestroy {
         });
     }
 
-    onSubmit(): void {
+    async onSubmit(): Promise<void> {
         if (this.form.invalid) {
             Object.keys(this.form.controls).forEach((key) => {
                 this.form.get(key)?.markAsTouched();
@@ -155,86 +157,78 @@ export class JobFormComponent implements OnInit, OnDestroy {
         this.isSubmitting = true;
         const formValue = this.form.value;
 
-        const sanitizedData = this.sanitizationService.sanitizeFormData(formValue, {
-            multilineFields: ['description'], skipFields: ['from_official_dom'],
-        });
-
-        const hasDangerousContent = Object.entries(sanitizedData).some(([key, value]) => {
+        const hasDangerousContent = Object.entries(formValue).some(([key, value]) => {
             if (typeof value === 'string') {
                 const isDangerous = this.sanitizationService.containsDangerousContent(value);
-                if (isDangerous) {
-                    console.warn(`Contenu dangereux détecté dans le champ: ${key}`);
-                }
                 return isDangerous;
             }
             return false;
         });
 
         if (hasDangerousContent) {
-            alert(
-                'Des contenus potentiellement dangereux ont été détectés dans votre formulaire. ' +
-                'Veuillez vérifier vos données et réessayer.'
+            await this.modalService.warning("Avertissement", "Des contenus potentiellement dangereux ont été détectés dans votre formulaire.<br>" +
+                "Veuillez vérifier vos données et réessayer."
             );
             this.isSubmitting = false;
             return;
         }
 
+        const sanitizedData = this.sanitizationService.sanitizeFormData(formValue, {
+            multilineFields: ['description'], skipFields: ['from_official_dom'],
+        });
+        
         // Envoi des données nettoyées
         if (this.job && this.link) {
             this.jobsService.updateJob(this.link, sanitizedData as UpdateJobRequest).subscribe({
-                next: () => {
-                    alert('Offre mise à jour avec succès !');
+                next: async () => {
+                    await this.modalService.success("Succès", 'Offre mise à jour avec succès !');
                     this.router.navigate(['/dashboard']);
                 },
-                error: (err) => {
-                    console.error('Erreur lors de la mise à jour', err);
-                    alert("Erreur lors de la mise à jour de l'offre.");
+                error: async (err) => {
+                    await this.modalService.error("Erreur", "Erreur lors de la mise à jour de l'offre.");
                     this.isSubmitting = false;
                 },
             });
         } else {
             this.jobsService.createJob(sanitizedData as CreateJobRequest).subscribe({
-                next: () => {
-                    alert('Offre créée avec succès !');
+                next: async () => {
+                    await this.modalService.success("Succès", 'Offre créée avec succès !');
                     this.router.navigate(['/dashboard']);
                 },
-                error: (err) => {
-                    console.error('Erreur lors de la création', err);
-                    alert("Erreur lors de la création de l'offre.");
+                error: async (err) => {
+                    await this.modalService.error("Erreur", "Erreur lors de la création de l'offre.");
                     this.isSubmitting = false;
                 },
             });
         }
     }
 
-    onDeleteJob(job: any): void {
+    async onDeleteJob(job: any): Promise<void> {
         let href = job?._links?.self?.href || job?._links?.job?.href;
 
         if (!href) {
-            console.error(
-                "Impossible de trouver le lien de suppression pour l'offre.",
-            );
-            alert('Erreur: Lien de suppression non trouvé.');
+            await this.modalService.error("Erreur", 'Erreur: Lien de suppression non trouvé.');
             return;
         }
 
-        const confirmation = confirm(
-            `Êtes-vous sûr de vouloir supprimer l'offre : "${job.position}" (${job.compagny}) ? Cette action est irréversible.`,
+        const confirmation = await this.modalService.confirm(
+            'Confirmer la suppression',
+            `Êtes-vous sûr de vouloir supprimer l'offre : <br>` +
+            `"${this.sanitizationService.decodeHtml(job.position)}" (${this.sanitizationService.decodeHtml(job.compagny)}) ?<br>` +
+            ` Cette action est irréversible.`,
+            'Supprimer', 'Annuler', "delete"
         );
 
         if (confirmation) {
             const linkToDelete = href.replace(/^(https?:)?\/\/[^/]+/, '');
 
             this.jobsService.deleteJob(linkToDelete).subscribe({
-                next: () => {
-                    alert(`L'offre "${job.position}" a été supprimée avec succès.`);
+                next: async () => {
+                    await this.modalService.success("Succès", `L'offre "${this.sanitizationService.decodeHtml(job.position)}" a été supprimée avec succès.`);
                     this.router.navigate(['/dashboard']);
                 },
-                error: (err) => {
-                    console.error("Erreur lors de la suppression de l'offre:", err);
-                    alert(
-                        "Erreur lors de la suppression de l'offre. Veuillez réessayer.",
-                    );
+                error: async (err) => {
+                    await this.modalService.error("Erreur", "Erreur lors de la suppression de l'offre:");
                 },
             });
         }

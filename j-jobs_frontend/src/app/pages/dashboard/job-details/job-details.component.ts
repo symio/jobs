@@ -21,6 +21,7 @@ import {
     SearchJobsRequest,
 } from '@app/services/jobs.service';
 import { SanitizationService } from '@app/services/sanitization.service';
+import { ModalService } from '@app/services/modal.service';
 
 @Component({
     standalone: true,
@@ -53,6 +54,7 @@ export class JobDetailsComponent implements OnInit, OnDestroy {
         private pageTitleService: PageTitleService,
         private jobsService: JobsService,
         private router: Router,
+        private modalService: ModalService,
         private sanitizationService: SanitizationService
     ) { }
 
@@ -89,10 +91,10 @@ export class JobDetailsComponent implements OnInit, OnDestroy {
                 this.job = job;
                 this.isLoading = false;
             },
-            error: (err) => {
+            error: async (err) => {
                 this.offerStatusEnum = this.labelsService.getOfferStatusEnum();
                 this.isLoading = false;
-                alert('Erreur: Offre non trouvé.');
+                await this.modalService.error("Erreur", "Erreur: Offre non trouvé.");
                 this.router.navigate(['/dashboard']);
             },
         });
@@ -112,34 +114,32 @@ export class JobDetailsComponent implements OnInit, OnDestroy {
         this.router.navigate(['/dashboard/job-form'], { queryParams: { link } });
     }
 
-    onDeleteJob(job: any): void {
+    async onDeleteJob(job: any): Promise<void> {
         let href = job?._links?.self?.href || job?._links?.job?.href;
 
         if (!href) {
-            console.error(
-                "Impossible de trouver le lien de suppression pour l'offre.",
-            );
-            alert('Erreur: Lien de suppression non trouvé.');
+            await this.modalService.error("Erreur", "Erreur: Lien de suppression non trouvé.");
             return;
         }
 
-        const confirmation = confirm(
-            `Êtes-vous sûr de vouloir supprimer l'offre : "${job.position}" (${job.compagny}) ? Cette action est irréversible.`,
+        const confirmation = await this.modalService.confirm(
+            'Confirmer la suppression',
+            `Êtes-vous sûr de vouloir supprimer l'offre : <br>` +
+            `"${this.decodeHtml(job.position)}" (${this.decodeHtml(job.compagny)}) ?<br>` +
+            ` Cette action est irréversible.`,
+            'Supprimer', 'Annuler', "delete"
         );
 
         if (confirmation) {
             const linkToDelete = href.replace(/^(https?:)?\/\/[^/]+/, '');
 
             this.jobsService.deleteJob(linkToDelete).subscribe({
-                next: () => {
-                    alert(`L'offre "${job.position}" a été supprimée avec succès.`);
+                next: async () => {
+                    await this.modalService.success('Succès', `L'offre "${this.decodeHtml(job.position)}" a été supprimée avec succès.`);
                     this.router.navigate(['/dashboard']);
                 },
-                error: (err) => {
-                    console.error("Erreur lors de la suppression de l'offre:", err);
-                    alert(
-                        "Erreur lors de la suppression de l'offre. Veuillez réessayer.",
-                    );
+                error: async (err) => {
+                    await this.modalService.error("Erreur", "Erreur lors de la suppression de l'offre. Veuillez réessayer.");
                 },
             });
         }

@@ -9,6 +9,7 @@ export interface ModalConfig {
     confirmText?: string;
     cancelText?: string;
     showCancel?: boolean;
+    confirmType?: string;
 }
 
 interface ModalState {
@@ -75,12 +76,14 @@ export class ModalService {
         title: string,
         message: string,
         confirmText: string = 'Confirmer',
-        cancelText: string = 'Annuler'
+        cancelText: string = 'Annuler',
+        confirmType: string = ""
     ): Promise<boolean> {
         return this.showModal({
             title, message, type: 'confirm',
             confirmText, cancelText,
             showCancel: true,
+            confirmType: confirmType
         });
     }
 

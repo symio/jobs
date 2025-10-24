@@ -1,6 +1,7 @@
 // src/app/components/modal/modal.component.ts
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
 import { Subscription } from 'rxjs';
 import { ModalService, ModalConfig } from '@app/services/modal.service';
 
@@ -16,7 +17,10 @@ export class ModalComponent implements OnInit, OnDestroy {
     config: ModalConfig | null = null;
     private subscription?: Subscription;
 
-    constructor(private modalService: ModalService) { }
+    constructor(
+        private modalService: ModalService,
+        private sanitizer: DomSanitizer
+    ) { }
 
     ngOnInit(): void {
         this.subscription = this.modalService.modalState$.subscribe((state) => {
@@ -42,7 +46,35 @@ export class ModalComponent implements OnInit, OnDestroy {
             this.onCancel();
         }
     }
+    getConfirmButtonClasses(): { [key: string]: boolean } {
+        const baseClasses: { [key: string]: boolean } = {
+            'validate': this.config?.type === 'success' || this.config?.type === 'confirm',
+            'delete': this.config?.type === 'error',
+            'update': this.config?.type === 'warning',
+            'primary': this.config?.type === 'info'
+        };
 
+        const dynamicClass = this.getButtonClass('valid');
+
+        if (dynamicClass) { 
+            baseClasses[dynamicClass] = true;
+        }
+
+        return baseClasses;
+    }
+
+    getButtonClass(buttonName: string): string| null {
+        if (!this.config) return null;
+
+        if (this.config.confirmType == "delete") {
+            if (buttonName == "cancel")
+                return "success";
+            else if (buttonName == "valid")
+                return "delete";
+        }
+
+        return null;
+    }
     getIconClass(): string {
         if (!this.config) return '';
 
@@ -57,7 +89,7 @@ export class ModalComponent implements OnInit, OnDestroy {
         return iconMap[this.config.type] || '';
     }
 
-    getIcon(): string {
+    getIcon(): SafeHtml {
         if (!this.config) return '';
 
         const icons: Record<string, string> = {
@@ -78,6 +110,7 @@ export class ModalComponent implements OnInit, OnDestroy {
       </svg>`,
         };
 
-        return icons[this.config.type] || icons['info'];
+        const iconHtml = icons[this.config.type] || icons['info'];
+        return this.sanitizer.bypassSecurityTrustHtml(iconHtml);
     }
 }

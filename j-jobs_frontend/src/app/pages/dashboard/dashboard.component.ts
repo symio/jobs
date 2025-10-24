@@ -9,7 +9,7 @@ import {
     ContractEnum, JobStatusEnum, LabelsService,
     OfferStatusEnum, WorkModeEnum, WorkTimeEnum,
 } from '@app/services/labels.service';
-import { forkJoin, Subscription, tap } from 'rxjs';
+import { forkJoin, skip, Subscription, tap } from 'rxjs';
 import { ReactiveFormsModule, FormBuilder, FormGroup } from '@angular/forms';
 import { Router } from '@angular/router';
 import { PageTitleService } from '@app/services/page-title.service';
@@ -57,6 +57,7 @@ export class DashboardComponent implements OnInit, OnDestroy {
     error: string | null = null;
 
     isSearchMode: boolean = false;
+    firstLoad: boolean = false;
 
     constructor(
         private formBuilder: FormBuilder,
@@ -78,6 +79,7 @@ export class DashboardComponent implements OnInit, OnDestroy {
     }
 
     ngOnInit(): void {
+        this.firstLoad = true;
         this.searchForm = this.formBuilder.group({
             contract: [null, []],
             eventAfter: [null, []],
@@ -97,7 +99,7 @@ export class DashboardComponent implements OnInit, OnDestroy {
         this.menuData = this.menuService.getSideMenuData();
         this.subscription = new Subscription();
         this.subscription.add(
-            this.jobsService.jobsUpdated$.subscribe(() => {
+            this.jobsService.jobsUpdated$.pipe(skip(1)).subscribe(() => {
                 this.fetchJobs();
             }),
         );
@@ -161,38 +163,40 @@ export class DashboardComponent implements OnInit, OnDestroy {
 
         this.jobsService.searchJobs(searchRequest, this.currentPage, 3).subscribe({
             next: (response: GetJobsResponse) => {
-                this.handleJobsResponse(response);
+                this.handleJobsResponse(response, this.firstLoad);
+                this.firstLoad = false;
             },
             error: (err) => {
                 this.handleJobsError(err);
+                this.firstLoad = false;
             },
         });
     }
 
-    private handleJobsResponse(response: GetJobsResponse): void {
+    private async handleJobsResponse(response: GetJobsResponse, firstLoad: boolean): Promise<void> {
         if (response._embedded?.jobs?.length > 0) {
             this.jobs = response._embedded.jobs;
-            console.log('jobs : ', this.jobs);
             this.pageInfos = response.page;
         } else {
+            if(firstLoad === false)
+                await this.modalService.error('Erreur', 'Aucune offre trouvée.');
             this.error = 'Aucune offre trouvée';
             this.jobs = [];
         }
         this.isLoading = false;
     }
 
-    private handleJobsError(err: any): void {
-        console.error('[DashboardComponent] Erreur lors du fetch des jobs:', err);
-        this.error = 'Erreur lors du chargement des jobs';
+    private async handleJobsError(err: any): Promise<void> {
+        await this.modalService.error('Erreur', 'Une erreur est survenue lors du chargement des données.');
         this.isLoading = false;
     }
 
     onSearch(): void {
-        console.log('Recherche lancée avec:', this.searchForm.value);
         this.isSearchMode = true;
         this.currentPage = 0;
 
         this.fetchJobs();
+        this.isSearchMode = false;
     }
 
     onResetSearch(): void {
@@ -229,43 +233,37 @@ export class DashboardComponent implements OnInit, OnDestroy {
 
         this.router.navigate(['/dashboard/job-form'], { queryParams: { link } });
     }
-    
-     decodeHtml(value: string): string {
+
+    decodeHtml(value: string): string {
         return this.sanitizationService.decodeHtml(value);
     }
 
-//    async onDeleteJob(job: any): Promise<void> {
-    onDeleteJob(job: any): void {
+    async onDeleteJob(job: any): Promise<void> {
         let href = job?._links?.self?.href || job?._links?.job?.href;
 
         if (!href) {
-            console.error(
-                "Impossible de trouver le lien de suppression pour l'offre.",
+            await this.modalService.error(
+                'Erreur',
+                "Impossible de trouver le lien de suppression pour l'offre."
             );
-            alert('Erreur: Lien de suppression non trouvé.');
-//            await this.modalService.error(
-//                'Erreur',
-//                "Impossible de trouver le lien de suppression pour l'offre."
-//            );
             return;
         }
 
-        const confirmation = confirm(
-            `Êtes-vous sûr de vouloir supprimer l'offre : "${job.position}" (${job.compagny}) ? Cette action est irréversible.`,
+        const confirmation = await this.modalService.confirm(
+            'Confirmer la suppression',
+            `Êtes-vous sûr de vouloir supprimer l'offre : <br>` +
+            `"${this.decodeHtml(job.position)}" (${this.decodeHtml(job.compagny)}) ?<br>` +
+            ` Cette action est irréversible.`,
+            'Supprimer', 'Annuler', "delete"
         );
-
-//        const confirmation = await this.modalService.confirm(
-//            'Confirmer la suppression',
-//            `Êtes-vous sûr de vouloir supprimer l'offre : "${job.position}" (${job.compagny}) ? Cette action est irréversible.`,
-//            'Supprimer', 'Annuler'
-//        );
 
         if (confirmation) {
             const linkToDelete = href.replace(/^(https?:)?\/\/[^/]+/, '');
 
             this.jobsService.deleteJob(linkToDelete).subscribe({
-                next: () => {
-                    alert(`L'offre "${job.position}" a été supprimée avec succès.`);
+                next: async () => {
+                    await this.modalService.success('Succès',
+                        `L'offre "${this.decodeHtml(job.position)}" a été supprimée avec succès.`);
                     this.statusStatsService.fetchStats().subscribe({
                         next: (statsResponse) => {
                             this.stats = statsResponse;
@@ -279,11 +277,9 @@ export class DashboardComponent implements OnInit, OnDestroy {
                         }
                     });
                 },
-                error: (err) => {
+                error: async (err) => {
                     console.error("Erreur lors de la suppression de l'offre:", err);
-                    alert(
-                        "Erreur lors de la suppression de l'offre. Veuillez réessayer.",
-                    );
+                    await this.modalService.error("Erreur", "Erreur lors de la suppression de l'offre. Veuillez réessayer.");
                 },
             });
         }

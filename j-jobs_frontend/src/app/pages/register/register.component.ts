@@ -98,6 +98,18 @@ export class RegisterComponent implements OnInit, OnDestroy {
 
         const formValue = this.registerForm.value;
 
+        const fieldsToCheck = ['name', 'firstname'];
+        const hasDangerousContent = fieldsToCheck.some((field) => {
+            const value = formValue[field];
+            return this.sanitizationService.containsDangerousContent(value);
+        });
+
+        if (hasDangerousContent) {
+            this.error = 'Des caractères invalides ont été détectés dans vos informations.';
+            this.loading = false;
+            return;
+        }
+
         const sanitizedData = this.sanitizationService.sanitizeFormData(formValue, {
             emailFields: ['email'],
             skipFields: ['password', 'passwordConfirm', 'gdproptin'],
@@ -105,18 +117,6 @@ export class RegisterComponent implements OnInit, OnDestroy {
 
         if (!sanitizedData.email || sanitizedData.email === '') {
             this.error = 'L\'adresse email est invalide.';
-            this.loading = false;
-            return;
-        }
-
-        const fieldsToCheck = ['name', 'firstname'];
-        const hasDangerousContent = fieldsToCheck.some((field) => {
-            const value = sanitizedData[field];
-            return this.sanitizationService.containsDangerousContent(value);
-        });
-
-        if (hasDangerousContent) {
-            this.error = 'Des caractères invalides ont été détectés dans vos informations.';
             this.loading = false;
             return;
         }
