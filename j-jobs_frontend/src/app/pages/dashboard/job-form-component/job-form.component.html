@@ -1,207 +1,231 @@
 <main class="dashboard-container">
-  <!-- Titre uniquement mobile / tablettes -->
-  <section id="title" class="main-title-section">
-    <h1 class="main-title">
-      {{ job ? "Modifier l'offre" : 'Créer une offre' }}
-    </h1>
-  </section>
+    <!-- Titre uniquement mobile / tablettes -->
+    <section id="title" class="main-title-section">
+        <h1 class="main-title">
+            {{ job ? "Modifier l'offre" : 'Créer une offre' }}
+        </h1>
+    </section>
 
-  <!-- Sidebar gauche (navigation / actions) -->
-  <aside class="left-content-wrapper">
-    <nav class="sidebar-nav">
-      <ul>
-        <li *ngFor="let item of menuData.items">
-          <a href="{{ item.link }}" class="nav-link">
-            <span [innerHTML]="getIcon(item.icon)"></span>&nbsp;{{ item.label }}
-          </a>
-        </li>
-      </ul>
-    </nav>
-  </aside>
+    <!-- Sidebar gauche (navigation / actions) -->
+    <aside class="left-content-wrapper">
+        <nav class="sidebar-nav">
+            <ul>
+                <li *ngFor="let item of menuData.items">
+                    <a href="{{ item.link }}" class="nav-link">
+                        <span [innerHTML]="getIcon(item.icon)"></span>&nbsp;{{ item.label }}
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </aside>
 
-  <!-- Zone formulaire -->
-  <section id="form" class="form-content-wrapper">
-    <div *ngIf="isLoading" class="loading">Chargement en cours...</div>
+    <!-- Zone formulaire -->
+    <section id="form" class="form-content-wrapper">
+        <div *ngIf="isLoading" class="loading">Chargement en cours...</div>
 
-    <div *ngIf="error && !isLoading" class="error-display">
-      {{ error }}
-    </div>
-
-    <form
-      class="job-form"
-      [formGroup]="form"
-      (ngSubmit)="onSubmit()"
-      *ngIf="!isLoading"
-    >
-      <div class="form-group radio-group" id="officialdom-group">
-        <label>Offre institutionnelle (France Travail) :</label>
-        <div class="radio-options">
-          <label for="from_official_dom_yes">
-            <input
-              type="radio"
-              id="from_official_dom_yes"
-              formControlName="from_official_dom"
-              [value]="true"
-            />
-            &nbsp;Oui
-          </label>
-          <label for="from_official_dom_no">
-            <input
-              type="radio"
-              id="from_official_dom_no"
-              formControlName="from_official_dom"
-              [value]="false"
-            />
-            &nbsp;Non
-          </label>
+        <div *ngIf="error && !isLoading" class="error-display">
+            {{ error }}
         </div>
-      </div>
 
-      <div
-        class="form-group"
-        [class.is-invalid]="position?.invalid && position?.touched"
-      >
-        <label for="position">Poste *</label>
-        <input
-          type="text"
-          id="position"
-          formControlName="position"
-          [class.error]="position?.invalid && position?.touched"
-          placeholder="Entrez l'intitulé d'une offre d'emploi"
-          autocomplete="position"
-        />
-        <div
-          class="error-message"
-          *ngIf="position?.invalid && position?.touched"
-        >
-          <div *ngIf="position?.errors?.['required']">Le poste est requis</div>
-        </div>
-      </div>
+        <form
+            class="job-form"
+            [formGroup]="form"
+            (ngSubmit)="onSubmit()"
+            *ngIf="!isLoading"
+            >
+            <div class="form-group radio-group" id="officialdom-group">
+                <label>Offre institutionnelle (France Travail) :</label>
+                <div class="radio-options">
+                    <label for="from_official_dom_yes">
+                        <input
+                            type="radio"
+                            id="from_official_dom_yes"
+                            formControlName="from_official_dom"
+                            [value]="true"
+                            />
+                        &nbsp;Oui
+                    </label>
+                    <label for="from_official_dom_no">
+                        <input
+                            type="radio"
+                            id="from_official_dom_no"
+                            formControlName="from_official_dom"
+                            [value]="false"
+                            />
+                        &nbsp;Non
+                    </label>
+                </div>
+            </div>
 
-      <div
-        class="form-group"
-        [class.is-invalid]="compagny?.invalid && compagny?.touched"
-      >
-        <label for="compagny">Entreprise *</label>
-        <input
-          type="text"
-          id="compagny"
-          formControlName="compagny"
-          [class.error]="compagny?.invalid && compagny?.touched"
-          placeholder="Entrez le nom de l'entreprise"
-          autocomplete="organization"
-        />
-        <div
-          class="error-message"
-          *ngIf="compagny?.invalid && compagny?.touched"
-        >
-          <div *ngIf="compagny?.errors?.['required']">
-            L'entreprise est requise
-          </div>
-        </div>
-      </div>
+            <div
+                class="form-group"
+                [class.is-invalid]="position?.invalid && position?.touched"
+                >
+                <label for="position">Poste *</label>
+                <input
+                    type="text"
+                    id="position"
+                    formControlName="position"
+                    [class.error]="position?.invalid && position?.touched"
+                    placeholder="Entrez l'intitulé d'une offre d'emploi"
+                    autocomplete="position"
+                    />
+                <div
+                    class="error-message"
+                    *ngIf="position?.invalid && position?.touched"
+                    >
+                    <div *ngIf="position?.errors?.['required']">Le poste est requis</div>
+                </div>
+            </div>
 
-      <div
-        class="form-group"
-        [class.is-invalid]="city?.invalid && city?.touched"
-      >
-        <label for="city">Ville *</label>
-        <input
-          type="text"
-          id="city"
-          formControlName="city"
-          [class.error]="city?.invalid && city?.touched"
-          placeholder="Entrez le nom de la ville"
-          autocomplete="address-level2"
-        />
-        <div class="error-message" *ngIf="city?.invalid && city?.touched">
-          <div *ngIf="city?.errors?.['required']">La ville est requise</div>
-        </div>
-      </div>
+            <div
+                class="form-group"
+                [class.is-invalid]="compagny?.invalid && compagny?.touched"
+                >
+                <label for="compagny">Entreprise *</label>
+                <input
+                    type="text"
+                    id="compagny"
+                    formControlName="compagny"
+                    [class.error]="compagny?.invalid && compagny?.touched"
+                    placeholder="Entrez le nom de l'entreprise"
+                    autocomplete="organization"
+                    />
+                <div
+                    class="error-message"
+                    *ngIf="compagny?.invalid && compagny?.touched"
+                    >
+                    <div *ngIf="compagny?.errors?.['required']">
+                        L'entreprise est requise
+                    </div>
+                </div>
+            </div>
 
-      <div class="form-group">
-        <label for="contract">Contrat</label>
-        <select id="contract" formControlName="contract">
-          <option value="">Sélectionner un type de contrat</option>
-          <option
-            *ngFor="let contract of contractEnum | keyvalue"
-            [value]="contract.key"
-          >
-            {{ contract.value }}
-          </option>
-        </select>
-      </div>
+            <div
+                class="form-group"
+                [class.is-invalid]="city?.invalid && city?.touched"
+                >
+                <label for="city">Ville *</label>
+                <input
+                    type="text"
+                    id="city"
+                    formControlName="city"
+                    [class.error]="city?.invalid && city?.touched"
+                    placeholder="Entrez le nom de la ville"
+                    autocomplete="address-level2"
+                    />
+                <div class="error-message" *ngIf="city?.invalid && city?.touched">
+                    <div *ngIf="city?.errors?.['required']">La ville est requise</div>
+                </div>
+            </div>
 
-      <div class="form-group">
-        <label for="workTime">Temps de travail</label>
-        <select id="workTime" formControlName="workTime">
-          <option value="">Sélectionner un temps de travail</option>
-          <option
-            *ngFor="let workTime of workTimeEnum | keyvalue"
-            [value]="workTime.key"
-          >
-            {{ workTime.value }}
-          </option>
-        </select>
-      </div>
+            <div class="form-group" [class.is-invalid]="contract?.invalid && contract?.touched">
+                <label for="contract">Contrat *</label>
+                <select id="contract" formControlName="contract" [class.error]="contract?.invalid && contract?.touched">
+                    <option value="">Sélectionner un type de contrat</option>
+                    <option
+                        *ngFor="let contract of contractEnum | keyvalue"
+                        [value]="contract.key"
+                        >
+                        {{ contract.value }}
+                    </option>
+                </select>
+                <div
+                    class="error-message"
+                    *ngIf="contract?.invalid && contract?.touched"
+                    >
+                    <div *ngIf="contract?.errors?.['required']">Le type de contrat est requis</div>
+                </div>
+            </div>
 
-      <div class="form-group">
-        <label for="workMode">Mode de travail</label>
-        <select id="workMode" formControlName="workMode">
-          <option value="">Sélectionner un mode de travail</option>
-          <option
-            *ngFor="let workMode of workModeEnum | keyvalue"
-            [value]="workMode.key"
-          >
-            {{ workMode.value }}
-          </option>
-        </select>
-      </div>
+            <div class="form-group" [class.is-invalid]="workTime?.invalid && workTime?.touched">
+                <label for="workTime">Temps de travail *</label>
+                <select id="workTime" formControlName="workTime" [class.error]="workTime?.invalid && workTime?.touched">
+                    <option value="" >Sélectionner un temps de travail</option>
+                    <option
+                        *ngFor="let workTime of workTimeEnum | keyvalue"
+                        [value]="workTime.key"
+                        >
+                        {{ workTime.value }}
+                    </option>
+                </select>
+            <div
+                    class="error-message"
+                    *ngIf="workTime?.invalid && workTime?.touched"
+                    >
+                    <div *ngIf="workTime?.errors?.['required']">Le temps de travail est requis</div>
+                </div>
+            </div>
 
-      <div class="form-group">
-        <label for="offerStatus">Statut de l'offre</label>
-        <select id="offerStatus" formControlName="offerStatus">
-          <option value="">Sélectionner un statut</option>
-          <option
-            *ngFor="let offerStatus of offerStatusEnum | keyvalue"
-            [value]="offerStatus.key"
-          >
-            {{ offerStatus.value }}
-          </option>
-        </select>
-      </div>
+            <div class="form-group" [class.is-invalid]="workMode?.invalid && workMode?.touched">
+                <label for="workMode">Mode de travail *</label>
+                <select id="workMode" formControlName="workMode" [class.error]="workMode?.invalid && workMode?.touched">
+                    <option value="" disabled="disabled">Sélectionner un mode de travail</option>
+                    <option
+                        *ngFor="let workMode of workModeEnum | keyvalue"
+                        [value]="workMode.key"
+                        >
+                        {{ workMode.value }}
+                    </option>
+                </select>
+                <div
+                    class="error-message"
+                    *ngIf="workMode?.invalid && workMode?.touched"
+                    >
+                    <div *ngIf="workMode?.errors?.['required']">Le mode de travail est requis</div>
+                </div>
+            </div>
 
-      <div class="form-group description-group">
-        <label for="description">Description</label>
-        <textarea
-          id="description"
-          formControlName="description"
-          [class.error]="description?.invalid && description?.touched"
-          placeholder="Entrez la description ou un lien vers l'offre"
-          autocomplete="off"
-        ></textarea>
-      </div>
+            <div class="form-group">
+                <label for="offerStatus">Statut de l'offre *</label>
+                <select id="offerStatus" formControlName="offerStatus" [class.is-invalid]="offerStatus?.invalid && offerStatus?.touched">
+                    <option value="">Sélectionner un statut</option>
+                    <option
+                        *ngFor="let offerStatus of offerStatusEnum | keyvalue"
+                        [value]="offerStatus.key"
+                        >
+                        {{ offerStatus.value }}
+                    </option>
+                </select>
+                <div
+                    class="error-message"
+                    *ngIf="offerStatus?.invalid && offerStatus?.touched"
+                    >
+                    <div *ngIf="offerStatus?.errors?.['required']">Le statut de l'offre est requis</div>
+                </div>
+            </div>
 
-      <div class="form-group">
-        <!-- Bouton de soumission -->
-        <button
-          type="submit"
-          class="cta-button validate"
-          [disabled]="form.invalid || isSubmitting"
-        >
-          {{ isSubmitting ? 'En cours...' : job ? 'Mettre à jour' : 'Créer' }}
-        </button>
-      </div>
-      <div class="form-group">
-        <button
-          type="button"
-          class="cta-button delete"
-          (click)="onDeleteJob(job)"
-          *ngIf="job"
-        >
-          Supprimer
-        </button>
-      </div>
-    </form>
-  </section>
+            <div class="form-group description-group">
+                <label for="description">Description</label>
+                <textarea
+                    id="description"
+                    formControlName="description"
+                    [class.error]="description?.invalid && description?.touched"
+                    placeholder="Entrez la description ou un lien vers l'offre"
+                    autocomplete="off"
+                    ></textarea>
+            </div>
+
+            <div class="form-group">
+                <!-- Bouton de soumission -->
+                <button
+                    type="submit"
+                    class="cta-button validate"
+                    [disabled]="form.invalid || isSubmitting"
+                    >
+                    {{ isSubmitting ? 'En cours...' : job ? 'Mettre à jour' : 'Créer' }}
+                </button>
+            </div>
+            <div class="form-group">
+                <button
+                    type="button"
+                    class="cta-button delete"
+                    (click)="onDeleteJob(job)"
+                    *ngIf="job"
+                    >
+                    Supprimer
+                </button>
+            </div>
+        </form>
+    </section>
 </main>

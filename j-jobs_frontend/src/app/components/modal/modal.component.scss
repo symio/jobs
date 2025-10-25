@@ -1,6 +1,11 @@
 // src/app/components/modal/modal.component.scss
 @use "app/theme/variables";
+@use "app/theme/texts";
+@use "app/theme/titles";
+@use "app/theme/links";
 @use "app/theme/buttons";
+@use "app/theme/form-controls";
+@use "app/theme/icons";
 
 .modal-overlay {
     position: fixed;

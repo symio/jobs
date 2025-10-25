@@ -17,6 +17,10 @@ import { JobsService, Job, CreateJobRequest, UpdateJobRequest } from '@app/servi
 import { SanitizationService } from '@app/services/sanitization.service';
 import { ModalService } from '@app/services/modal.service';
 
+function notEmptyValidator(control: any) {
+    return control.value === '' || control.value === null ? { required: true } : null;
+}
+
 @Component({
     standalone: true,
     selector: 'app-job-form-component',
@@ -135,10 +139,10 @@ export class JobFormComponent implements OnInit, OnDestroy {
                 job?.city ? this.sanitizationService.decodeHtml(job.city) : '',
                 Validators.required
             ],
-            contract: [job?.contract || ''],
-            workTime: [job?.workTime || ''],
-            workMode: [job?.workMode || ''],
-            offerStatus: [job?.offerStatus || ''],
+            contract: [job?.contract || '', [Validators.required, notEmptyValidator]],
+            workTime: [job?.workTime || '', [Validators.required, notEmptyValidator]],
+            workMode: [job?.workMode || '', [Validators.required, notEmptyValidator]],
+            offerStatus: [job?.offerStatus || '', [Validators.required, notEmptyValidator]],
             from_official_dom: [job?.from_official_dom || false],
             description: [
                 job?.description ? this.sanitizationService.decodeHtml(job.description) : ''
@@ -151,6 +155,10 @@ export class JobFormComponent implements OnInit, OnDestroy {
             Object.keys(this.form.controls).forEach((key) => {
                 this.form.get(key)?.markAsTouched();
             });
+            await this.modalService.warning(
+                "Formulaire incomplet",
+                "Veuillez remplir tous les champs obligatoires."
+            );
             return;
         }
 

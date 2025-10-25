@@ -15,24 +15,45 @@ import { ModalService, ModalConfig } from '@app/services/modal.service';
 export class ModalComponent implements OnInit, OnDestroy {
     isOpen = false;
     config: ModalConfig | null = null;
+    
+    isStatusOpen = false;
+    configStatus: ModalConfig | null = null;
+    statusOptions: { [key: string]: string } | null = null;
+    selectedStatus: string = '';
+    
     private subscription?: Subscription;
+    private subscriptionStatus?: Subscription;
 
     constructor(
         private modalService: ModalService,
         private sanitizer: DomSanitizer
     ) { }
 
+    currentStatusValue: string = '';
+
     ngOnInit(): void {
         this.subscription = this.modalService.modalState$.subscribe((state) => {
             this.isOpen = state.isOpen;
             this.config = state.config;
         });
+        
+        this.subscriptionStatus = this.modalService.modalStatusState$.subscribe((state) => {
+            this.isStatusOpen = state.isOpen;
+            this.configStatus = state.config;
+            this.statusOptions = state.statusOptions;
+            if (state.isOpen) {
+                this.currentStatusValue = state.currentStatus || '';
+                this.selectedStatus = '';
+            }
+        });
     }
 
     ngOnDestroy(): void {
         this.subscription?.unsubscribe();
+        this.subscriptionStatus?.unsubscribe();
     }
 
+    // === MÉTHODES MODALE STANDARD ===
     onConfirm(): void {
         this.modalService.close(true);
     }
@@ -46,6 +67,29 @@ export class ModalComponent implements OnInit, OnDestroy {
             this.onCancel();
         }
     }
+    
+    // === MÉTHODES MODALE DE STATUT ===
+    onConfirmStatus(): void {
+        const finalStatus = this.selectedStatus || this.currentStatusValue;
+        this.modalService.closeStatus(true, finalStatus);
+    }
+    
+    onCancelStatus(): void {
+        this.modalService.closeStatus(false);
+    }
+    
+    onStatusChange(event: Event): void {
+        const target = event.target as HTMLSelectElement;
+        this.selectedStatus = target.value;
+    }
+    
+    onBackdropClickStatus(event: MouseEvent): void {
+        if (event.target === event.currentTarget) {
+            this.onCancelStatus();
+        }
+    }
+    
+    // === MÉTHODES COMMUNES ===
     getConfirmButtonClasses(): { [key: string]: boolean } {
         const baseClasses: { [key: string]: boolean } = {
             'validate': this.config?.type === 'success' || this.config?.type === 'confirm',
@@ -63,20 +107,25 @@ export class ModalComponent implements OnInit, OnDestroy {
         return baseClasses;
     }
 
-    getButtonClass(buttonName: string): string| null {
-        if (!this.config) return null;
+    getButtonClass(buttonName: string): string | null {
+        const activeConfig = this.isStatusOpen ? this.configStatus : this.config;
+        
+        if (!activeConfig) return null;
 
-        if (this.config.confirmType == "delete") {
-            if (buttonName == "cancel")
+        if (activeConfig.confirmType === "delete") {
+            if (buttonName === "cancel")
                 return "success";
-            else if (buttonName == "valid")
+            else if (buttonName === "valid")
                 return "delete";
         }
 
         return null;
     }
+    
     getIconClass(): string {
-        if (!this.config) return '';
+        const activeConfig = this.isStatusOpen ? this.configStatus : this.config;
+        
+        if (!activeConfig) return '';
 
         const iconMap: Record<string, string> = {
             info: 'modal-icon-info',
@@ -86,11 +135,13 @@ export class ModalComponent implements OnInit, OnDestroy {
             confirm: 'modal-icon-confirm',
         };
 
-        return iconMap[this.config.type] || '';
+        return iconMap[activeConfig.type] || '';
     }
 
     getIcon(): SafeHtml {
-        if (!this.config) return '';
+        const activeConfig = this.isStatusOpen ? this.configStatus : this.config;
+        
+        if (!activeConfig) return '';
 
         const icons: Record<string, string> = {
             info: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
@@ -110,7 +161,7 @@ export class ModalComponent implements OnInit, OnDestroy {
       </svg>`,
         };
 
-        const iconHtml = icons[this.config.type] || icons['info'];
+        const iconHtml = icons[activeConfig.type] || icons['info'];
         return this.sanitizer.bypassSecurityTrustHtml(iconHtml);
     }
 }

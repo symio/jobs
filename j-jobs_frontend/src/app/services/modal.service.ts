@@ -1,6 +1,6 @@
 // src/app/services/modal.service.ts
 import { Injectable } from '@angular/core';
-import { BehaviorSubject, Observable } from 'rxjs';
+import { BehaviorSubject } from 'rxjs';
 
 export interface ModalConfig {
     title: string;
@@ -18,15 +18,34 @@ interface ModalState {
     resolve: ((value: boolean) => void) | null;
 }
 
+interface ModalStatusState {
+    isOpen: boolean;
+    config: ModalConfig | null;
+    statusOptions: { [key: string]: string } | null;
+    currentStatus: string | null;
+    resolve: ((value: { confirmed: boolean; status?: string }) => void) | null;
+}
+
 @Injectable({
     providedIn: 'root',
 })
 export class ModalService {
     private modalState = new BehaviorSubject<ModalState>({
-        isOpen: false, config: null, resolve: null,
+        isOpen: false, 
+        config: null, 
+        resolve: null,
+    });
+    
+    private modalStatusState = new BehaviorSubject<ModalStatusState>({
+        isOpen: false, 
+        config: null, 
+        statusOptions: null, 
+        currentStatus: null, 
+        resolve: null,
     });
 
     public modalState$ = this.modalState.asObservable();
+    public modalStatusState$ = this.modalStatusState.asObservable();
 
     /**
      * Affiche une modale d'information
@@ -63,9 +82,8 @@ export class ModalService {
      */
     error(title: string, message: string): Promise<boolean> {
         return this.showModal({
-            title, message,
-            type: 'error', confirmText: 'OK',
-            showCancel: false,
+            title, message,type: 'error', 
+            confirmText: 'OK', showCancel: false,
         });
     }
 
@@ -80,10 +98,34 @@ export class ModalService {
         confirmType: string = ""
     ): Promise<boolean> {
         return this.showModal({
-            title, message, type: 'confirm',
+            title,  message, type: 'confirm',
             confirmText, cancelText,
-            showCancel: true,
-            confirmType: confirmType
+            showCancel: true, confirmType: confirmType
+        });
+    }
+    
+    /**
+     * Affiche la modale de changement de statut avec formulaire
+     */
+    confirmStatus(
+        title: string,
+        message: string,
+        statusOptions: { [key: string]: string },
+        currentStatus: string,
+        confirmText: string = 'Confirmer',
+        cancelText: string = 'Annuler'
+    ): Promise<{ confirmed: boolean; status?: string }> {
+        return new Promise<{ confirmed: boolean; status?: string }>((resolve) => {
+            const config: ModalConfig = {
+                title, message, type: 'confirm',
+                confirmText, cancelText,
+                showCancel: true, confirmType: 'status'
+            };
+            
+            this.modalStatusState.next({
+                isOpen: true,config,
+                statusOptions, currentStatus, resolve,
+            });
         });
     }
 
@@ -97,13 +139,29 @@ export class ModalService {
     }
 
     /**
-     * Ferme la modale avec une réponse
+     * Ferme la modale standard avec une réponse
      */
     close(confirmed: boolean): void {
         const currentState = this.modalState.value;
         if (currentState.resolve) {
             currentState.resolve(confirmed);
         }
-        this.modalState.next({isOpen: false, config: null,resolve: null,});
+        this.modalState.next({
+            isOpen: false, config: null,resolve: null,
+        });
+    }
+    
+    /**
+     * Ferme la modale de statut avec une réponse
+     */
+    closeStatus(confirmed: boolean, status?: string): void {
+        const currentState = this.modalStatusState.value;
+        if (currentState.resolve) {
+            currentState.resolve({ confirmed, status });
+        }
+        this.modalStatusState.next({
+            isOpen: false, config: null, statusOptions: null,
+            currentStatus: null, resolve: null,
+        });
     }
 }

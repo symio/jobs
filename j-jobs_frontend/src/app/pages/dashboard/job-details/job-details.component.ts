@@ -4,21 +4,15 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
 import { forkJoin, Subscription, tap } from 'rxjs';
 import {
-    ContractEnum,
-    JobStatusEnum,
-    LabelsService,
-    OfferStatusEnum,
-    WorkModeEnum,
-    WorkTimeEnum,
+    ContractEnum, JobStatusEnum, LabelsService,
+    OfferStatusEnum, WorkModeEnum, WorkTimeEnum,
 } from '@app/services/labels.service';
 import { MenuDataNoTitle, MenuService } from '@app/services/menu.service';
 import { PageTitleService } from '@app/services/page-title.service';
 import {
-    JobsService,
-    Job,
-    GetJobsResponse,
-    PageInfo,
-    SearchJobsRequest,
+    JobsService, Job,
+    GetJobsResponse, PageInfo,
+    SearchJobsRequest, UpdateJobRequest,
 } from '@app/services/jobs.service';
 import { SanitizationService } from '@app/services/sanitization.service';
 import { ModalService } from '@app/services/modal.service';
@@ -109,9 +103,47 @@ export class JobDetailsComponent implements OnInit, OnDestroy {
         let href = job?._links?.self?.href || job?._links?.job?.href;
         if (!href) return;
 
-        const link = href.replace(/^(https?:)?\/\/[^/]+/, '');
+        const link = this.jobsService.cleanLink(href);
 
         this.router.navigate(['/dashboard/job-form'], { queryParams: { link } });
+    }
+
+    async onChangeStatus(job: any): Promise<void> {
+        if (!this.offerStatusEnum) {
+            await this.modalService.error("Erreur", "Les statuts ne sont pas chargÃ©s.");
+            return;
+        }
+
+        const result = await this.modalService.confirmStatus(
+            'Changer le statut',
+            `Modifier le statut de l'offre : <br><strong>"${this.decodeHtml(job.position)}"</strong>`,
+            this.offerStatusEnum, job.offerStatus, 'Valider', 'Annuler'
+        );
+
+        if (result.confirmed && result.status) {
+            console.log('Nouveau statut:', result.status);
+
+            job.offerStatus = result.status;
+            let href = job?._links?.self?.href || job?._links?.job?.href;
+
+            if (!href) {
+                await this.modalService.error("Erreur", "Erreur: Lien de mise à jour non trouvé.");
+                this.isLoading = false;
+                return;
+            }
+
+            const linkToUpdate = this.jobsService.cleanLink(href);
+            this.jobsService.updateJob(linkToUpdate, this.jobsService.makeAJobUpdateFromJob(job)).subscribe({
+                next: async () => {
+                    await this.modalService.success("Succès", 'Offre mise à jour avec succès !');
+                    this.router.navigate(['/dashboard']);
+                },
+                error: async (err) => {
+                    await this.modalService.error("Erreur", "Erreur lors de la mise à jour de l'offre.");
+                    this.isLoading = false;
+                },
+            });
+        }
     }
 
     async onDeleteJob(job: any): Promise<void> {
@@ -131,7 +163,7 @@ export class JobDetailsComponent implements OnInit, OnDestroy {
         );
 
         if (confirmation) {
-            const linkToDelete = href.replace(/^(https?:)?\/\/[^/]+/, '');
+            const linkToDelete = this.jobsService.cleanLink(href);
 
             this.jobsService.deleteJob(linkToDelete).subscribe({
                 next: async () => {
