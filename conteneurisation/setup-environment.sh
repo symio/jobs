@@ -1,7 +1,7 @@
 #!/bin/bash
 set -e
 
-echo "🔧 Configuration de l'environnement"
+echo "Configuration de l'environnement"
 echo "===================================="
 
 # Demande le nom du projet si pas déjà défini
@@ -22,7 +22,7 @@ PROJECT_NAME=${PROJECT_NAME:-jobs}
 PROJECT_NAME=$(echo "$PROJECT_NAME" | tr ' ' '-' | tr '[:upper:]' '[:lower:]' | sed 's/[^a-z0-9-]//g')
 
 echo ""
-echo "📝 Configuration du projet : $PROJECT_NAME"
+echo "Configuration du projet : $PROJECT_NAME"
 echo ""
 
 # Copie le fichier sample si .env n'existe pas
@@ -52,7 +52,7 @@ else
 fi
 
 echo ""
-echo "📋 Résumé de la configuration :"
+echo "Résumé de la configuration :"
 echo "   - Nom du projet : $PROJECT_NAME"
 echo "   - Conteneurs   : ${PROJECT_NAME}_backend, ${PROJECT_NAME}_frontend, ${PROJECT_NAME}_db"
 echo "   - Volumes      : ${PROJECT_NAME}_postgresql_data, ${PROJECT_NAME}_pgadmin_*"
@@ -60,6 +60,6 @@ echo "   - Réseau       : ${PROJECT_NAME}_network"
 echo ""
 echo "Configuration terminée !"
 echo ""
-echo "💡 Prochaines étapes :"
+echo "Prochaines étapes :"
 echo "   1. Éditez le fichier .env pour configurer les secrets"
 echo "   2. Lancez : ./build-and-run.sh"

@@ -1,7 +1,7 @@
 #!/bin/bash
 set -e
 
-echo "🧪 Test d'encodage/décodage de la variable UNENCODED_KEY"
+echo "Test d'encodage/décodage de la variable UNENCODED_KEY"
 echo "===================================================="
 
 # Charge le .env
@@ -15,11 +15,11 @@ else
 fi
 
 echo ""
-echo "📋 Valeur originale :"
+echo "Valeur originale :"
 echo "$UNENCODED_KEY"
 
 echo ""
-echo "🔐 Encodage en base64 :"
+echo "Encodage en base64 :"
 # Encode en base64 (compatible Linux et macOS)
 if [[ "$OSTYPE" == "darwin"* ]]; then
     # macOS
@@ -31,7 +31,7 @@ fi
 echo "$ENCODED"
 
 echo ""
-echo "🔓 Décodage pour vérification :"
+echo "Décodage pour vérification :"
 if [[ "$OSTYPE" == "darwin"* ]]; then
     # macOS
     DECODED=$(echo "$ENCODED" | base64 -D)
@@ -52,8 +52,8 @@ else
 fi
 
 echo ""
-echo "📊 Statistiques :"
+echo "Statistiques :"
 echo "   - Longueur originale : ${#UNENCODED_KEY} caractères"
 echo "   - Longueur base64    : ${#ENCODED} caractères"
 echo ""
-echo "🖥️  OS détecté : $OSTYPE"
+echo "   OS détecté : $OSTYPE"

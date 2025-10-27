@@ -1,7 +1,7 @@
 #!/bin/bash
 set -e
 
-echo "🔧 Préparation des variables d'environnement..."
+echo "Préparation des variables d'environnement..."
 
 # Charge les variables du fichier .env
 if [ -f .env ]; then
@@ -44,7 +44,7 @@ else
     echo "Variable SPRING_JWT_B64_KEY ajoutée au .env"
 fi
 
-echo "📋 Valeur originale: $UNENCODED_KEY"
-echo "🔐 Valeur base64: $SPRING_JWT_B64_KEY"
+echo "Valeur originale: $UNENCODED_KEY"
+echo "Valeur base64: $SPRING_JWT_B64_KEY"
 echo ""
 echo "Fichier .env prêt pour le build Docker"

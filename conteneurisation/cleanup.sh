@@ -1,7 +1,7 @@
 #!/bin/bash
 set -e
 
-echo "🧹 Nettoyage de l'environnement Docker"
+echo "Nettoyage de l'environnement Docker"
 echo "======================================="
 
 # Charge le .env pour obtenir le nom du projet
@@ -17,7 +17,7 @@ fi
 PROJECT_NAME=${COMPOSE_PROJECT_NAME:-jobs}
 
 echo ""
-echo "📋 Projet détecté : $PROJECT_NAME"
+echo "Projet détecté : $PROJECT_NAME"
 echo ""
 echo "Cette action va :"
 echo "  Arrêter tous les conteneurs de $PROJECT_NAME"
@@ -34,7 +34,7 @@ if [[ ! $confirm == "yes" ]]; then
 fi
 
 echo ""
-echo "🛑 Arrêt des conteneurs..."
+echo "Arrêt des conteneurs..."
 docker compose down -v
 
 echo ""
@@ -50,7 +50,7 @@ echo "Suppression du réseau..."
 docker network ls --filter "name=${PROJECT_NAME}" --format "{{.ID}}" | xargs -r docker network rm 2>/dev/null || true
 
 echo ""
-echo "✅ Nettoyage terminé !"
+echo " Nettoyage terminé !"
 echo ""
-echo "💡 Pour redémarrer proprement :"
+echo "Pour redémarrer proprement :"
 echo "   ./build-and-run.sh"
