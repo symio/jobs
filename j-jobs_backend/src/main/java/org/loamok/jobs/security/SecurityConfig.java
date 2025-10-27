@@ -1,6 +1,5 @@
 package org.loamok.jobs.security;
 
-import java.util.List;
 import java.util.function.Supplier;
 import org.apache.commons.logging.*;
 import org.loamok.jobs.repository.UserRepository;
@@ -20,31 +19,20 @@ import org.springframework.security.core.Authentication;
 import org.springframework.security.web.SecurityFilterChain;
 import org.springframework.security.web.access.intercept.RequestAuthorizationContext;
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
-import org.springframework.web.cors.CorsConfiguration;
 import org.springframework.web.cors.CorsConfigurationSource;
-import org.springframework.web.cors.UrlBasedCorsConfigurationSource;
-
-import org.springframework.beans.factory.InitializingBean;
 import org.springframework.security.core.userdetails.UserDetailsService;
 
 @Configuration
 @EnableWebSecurity
-public class SecurityConfig implements InitializingBean {
+public class SecurityConfig {
 
-    @Value("${CORS_ALLOWED_ORIGINS:http://localhost}")
-    private String allowedOriginsEnv;
-
+    @Autowired
+    private CorsConfigurationSource corsConfigurationSource;
+    
     protected final Log logger = LogFactory.getLog(getClass());
 
     @Autowired
     private AuthenticationProvider authenticationProvider;
-
-    @Override
-    public void afterPropertiesSet() throws Exception {
-        logger.info("==================== CORS CONFIGURATION ====================");
-        logger.info("Variable CORS_ALLOWED_ORIGINS chargée depuis .env : '" + allowedOriginsEnv + "'");
-        logger.info("==========================================================");
-    }
 
     @Value("${springdoc.api-docs.enabled:false}")
     private boolean swaggerEnabled;
@@ -110,7 +98,7 @@ public class SecurityConfig implements InitializingBean {
             .addFilterBefore(jwtFilter, UsernamePasswordAuthenticationFilter.class)
             .sessionManagement(session -> session.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
             .csrf(csrf -> csrf.disable())
-            .cors(cors -> cors.configurationSource(corsConfigurationSource()));
+            .cors(cors -> cors.configurationSource(corsConfigurationSource));
 
         return http.build();
     }
@@ -132,32 +120,4 @@ public class SecurityConfig implements InitializingBean {
         return new AuthorizationDecision(hasAccessScope);
     }
 
-    @Bean
-    public CorsConfigurationSource corsConfigurationSource() {
-        CorsConfiguration config = new CorsConfiguration();
-
-        List<String> allowedOrigins = List.of(allowedOriginsEnv.split(","));
-        config.setAllowedOrigins(allowedOrigins);
-
-        config.setAllowedMethods(List.of("GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS"));
-        config.setAllowedHeaders(List.of(
-                "Authorization",
-                "Content-Type",
-                "X-Requested-With",
-                "Accept",
-                "Origin",
-                "Cache-Control",
-                "Pragma",
-                "X-Forwarded-For",
-                "X-Forwarded-Proto",
-                "X-Real-IP"
-        ));
-        config.setAllowCredentials(true);
-
-        UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();
-        source.registerCorsConfiguration("/jobs/**", config);
-        source.registerCorsConfiguration("/**", config);
-
-        return source;
-    }
 }
