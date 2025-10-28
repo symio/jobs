@@ -16,6 +16,12 @@ services:
       SPRING_DATASOURCE_USERNAME: ${POSTGRES_USER}
       SPRING_DATASOURCE_PASSWORD: ${POSTGRES_PASSWORD}
       SPRING_JPA_HIBERNATE_DDL_AUTO: update
+      SPRING_MAIL_AUTH: ${SPRING_MAIL_AUTH}
+      SPRING_MAIL_HOST: ${SPRING_MAIL_HOST}
+      SPRING_MAIL_PORT: ${SPRING_MAIL_PORT}
+      SPRING_MAIL_USER: ${SPRING_MAIL_USER}
+      SPRING_MAIL_PASS: ${SPRING_MAIL_PASS}
+      SPRING_MAIL_STARTTLS: ${SPRING_MAIL_STARTTLS}
       SPRING_PROFILES_ACTIVE: prod,secrets
       CORS_ALLOWED_ORIGINS: ${CORS_ALLOWED_ORIGINS}
       SPRING_APPLICATION_JSON: >
@@ -25,6 +31,8 @@ services:
       SPRING_JWT_B64_KEY: ${SPRING_JWT_B64_KEY}
       SPRINGDOC_ENABLED: ${SPRINGDOC_ENABLED}
     depends_on:
+      mailer:
+        condition: service_started
       db:
         condition: service_healthy
     networks:
@@ -108,7 +116,27 @@ services:
     user: root
     entrypoint: ["/bin/bash", "/generate-servers-json.sh"]
 
+  mailer:
+    image: axllent/mailpit
+    container_name: ${COMPOSE_PROJECT_NAME:-jobs}_mailpit
+    restart: unless-stopped
+    volumes:
+      - ./data:/data
+    ports:
+      - 8025:8025
+      - 1025:1025
+    networks:
+      - projetjobs_network
+    environment:
+      MP_MAX_MESSAGES: 5000
+      MP_DATABASE: /data/mailpit.db
+      MP_SMTP_AUTH_ACCEPT_ANY: 1
+      MP_SMTP_AUTH_ALLOW_INSECURE: 1
+
 volumes:
+  data:
+    name: ${COMPOSE_PROJECT_NAME:-jobs}_mailer_data
+    driver: local
   postgresql_data:
     name: ${COMPOSE_PROJECT_NAME:-jobs}_postgresql_data
     driver: local

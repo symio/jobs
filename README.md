@@ -15,7 +15,7 @@
 - Deployment: WAR sur Tomcat 10 (à venir)
 - Security: JWT, OAuth2 Client Credentials
 
-Url après installation / lancement : [http://localhost:4200](http://localhost:4200)
+Url après installation / lancement : [http://localhost](http://localhost)
 
 ## Installation
 
@@ -71,6 +71,7 @@ Ce guide explique comment lancer la stack Docker sur **Linux**, **macOS** et **W
 >>    - Backend:  http://localhost:8080
 >>    - Frontend: http://localhost:80, ou http://localhost,
 >>    - PgAdmin:  http://localhost:5433
+>>    - Mailpit:  http://localhost:8025
 >>    - Accès depuis le réseau local: http://192.168.1.252
 >> ```
 
@@ -112,20 +113,39 @@ cp .env.sample .env
 Éditez le `.env` et **/!\ changez obligatoirement** `COMPOSE_PROJECT_NAME` :
 
 ```bash
-# IMPORTANT: Changez ce nom pour chaque copie du projet !
-COMPOSE_PROJECT_NAME=jobs-dev # ou jobs-test, jobs-prod, etc.
+# .env.sample
+COMPOSE_PROJECT_NAME=jobs # ou jobs-test, jobs-prod, etc.
 
-# Spring security jwt key - GUILLEMETS SIMPLES OBLIGATOIRES !
+# Spring security jwt key
 UNENCODED_KEY='ThisIsADevJwtSecretForLocalTestingOnly12345'
+PORT=8080
+
+# URL(s) autorisée(s) pour les requêtes CORS, séparées par des virgules
+# Le script build-and-run.sh ajoutera automatiquement l'IP locale à cette liste.
+BASE_ORIGINS=http://localhost,http://frontend,http://localhost:4200
+CORS_ALLOWED_ORIGINS=http://localhost,http://frontend,http://localhost:4200
 
 # Postgresql Environment Variables
 POSTGRES_DB=dbname
 POSTGRES_USER=dbuser
 POSTGRES_PASSWORD='dbuserp@ssw0rd'
 
+# Mailer Environment Variables
+SPRING_MAIL_AUTH=true
+SPRING_MAIL_STARTTLS=true
+SPRING_MAIL_HOST=mailer
+SPRING_MAIL_PORT=1025
+SPRING_MAIL_USER=demo@example.com
+SPRING_MAIL_PASS=MailerP@ssw0rd
+
 # pgAdmin Environment Variables
-PGADMIN_DEFAULT_EMAIL=dummyemail@dummy.org
+PGADMIN_DEFAULT_EMAIL=dummyemail@dummy.org # Dummy email but correctly form
 PGADMIN_DEFAULT_PASSWORD='d3fault_p@ssw0rd'
+PGADMIN_LISTEN_ADDRESS=[::] # Default value
+PPGADMIN_LISTEN_PORT=80 # Default value when TLS disabled
+
+## activate the swaggerui docs, set to false in production
+SPRINGDOC_ENABLED=true
 ```
 
 /!\ **Important** : Utilisez des **guillemets simples** `'...'` pour les valeurs avec caractères spéciaux !
@@ -203,6 +223,7 @@ Une fois lancé, les services sont disponibles sur :
 - **Backend (API)** : http://localhost:8080
 - **Frontend (Angular)** : http://localhost:4200
 - **PgAdmin** : http://localhost:5433
+- **Mailpit** : http://localhost:8025
 - **PostgreSQL** : localhost:5432
 
 ##### Voir les logs
@@ -219,6 +240,12 @@ docker compose logs -f db-init
 ---
 
 #### 🔄Commandes utiles
+
+##### Reconstruire et redémarrer un élément de la stack (exemple: backend)
+```bash
+export TARGET="backend" ; docker compose down ${TARGET} && docker compose build ${TARGET} &&  docker compose up -d 
+```
+
 
 ##### Redémarrer la stack
 ```bash
