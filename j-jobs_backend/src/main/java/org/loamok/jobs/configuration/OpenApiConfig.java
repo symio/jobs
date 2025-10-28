@@ -14,7 +14,7 @@ import org.springframework.context.annotation.Configuration;
  * @author Huby Franck
  */
 @Configuration
-@ConditionalOnProperty(name = "${springdoc.api-docs.enabled", havingValue = "true")
+@ConditionalOnProperty(name = "springdoc.api-docs.enabled", havingValue = "true", matchIfMissing = true)
 public class OpenApiConfig {
 
     @Bean
