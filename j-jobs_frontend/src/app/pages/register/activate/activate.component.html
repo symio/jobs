@@ -1,0 +1,45 @@
+<!-- src/app/pages/register/activate/activate.component.html -->
+<main class="activate-container">
+    <section class="main-title-section">
+        <h1 class="main-title">Activation</h1>
+    </section>
+
+    <div class="activate-form">
+        <section class="content-section">
+            <!-- Messages d'erreur -->
+            <div *ngIf="error" class="alert alert-error">
+                {{ error }}
+            </div>
+
+            <form [formGroup]="activateForm" (ngSubmit)="onSubmit()">
+                <!-- key -->
+                <div
+                    class="form-group"
+                    [class.is-invalid]="key?.invalid && key?.touched"
+                    >
+                    <label for="key" class="form-label required">Clé d'activation e-mail</label>
+                    <input
+                        type="text"
+                        id="key"
+                        formControlName="key"
+                        [class.error]="key?.invalid && key?.touched"
+                        placeholder="Entrez votre clé"
+                        />
+                    <div *ngIf="key?.invalid && key?.touched" class="error-message">
+                        <div *ngIf="key?.errors?.['required']">La clé est requise</div>
+                    </div>
+                </div>
+                <!-- Bouton de soumission -->
+                <div class="cta-section">
+                    <button
+                        type="submit"
+                        class="cta-button primary"
+                        [disabled]="activateForm.invalid || loading"
+                        >
+                        <span *ngIf="loading" class="loading-text">Envoi en cours...</span>
+                        <span *ngIf="!loading">Envoyer</span>
+                    </button>
+                </div>
+            </form>
+        </section>
+    </div>

@@ -20,7 +20,7 @@ import org.loamok.jobs.security.jwt.TokenRequest;
 import org.loamok.jobs.security.jwt.TokenResponse;
 import org.loamok.jobs.security.oauth2.OAuth2Service;
 import org.loamok.jobs.security.oauth2.OAuth2TokenResponse;
-import org.loamok.jobs.util.ClientSignatureBuilder;
+import org.loamok.jobs.util.ClientSignatureUtil;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
@@ -39,7 +39,7 @@ import org.springframework.web.bind.annotation.RestController;
 public class AuthenticationController {
 
     private final OAuth2Service oauth2Service;
-    private final ClientSignatureBuilder csb;
+    private final ClientSignatureUtil csb;
     private final JwtService jwtService;
     
     @Operation(

@@ -5,7 +5,7 @@ import org.apache.commons.logging.*;
 import org.loamok.jobs.repository.UserRepository;
 import org.loamok.jobs.security.jwt.JwtAuthenticationFilter;
 import org.loamok.jobs.security.jwt.JwtService;
-import org.loamok.jobs.util.ClientSignatureBuilder;
+import org.loamok.jobs.util.ClientSignatureUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.*;
@@ -43,7 +43,7 @@ public class SecurityConfig {
             JwtService jwtService,
             UserDetailsService userDetailsService,
             UserRepository userRepository,
-            ClientSignatureBuilder csb
+            ClientSignatureUtil csb
     ) throws Exception {
         logger.info("============================================================");
         logger.info("CHARGEMENT SECURITY FILTER CHAIN UNIQUE");
@@ -67,7 +67,8 @@ public class SecurityConfig {
                     "/authorize/refresh", 
                     "/authorize/cleanup",
                     "/authorize/remembered",
-                    "/profil/register",
+                    "/register/activate",
+                    "/register/deactivate",
                     "/users"
                 ).permitAll();
                 

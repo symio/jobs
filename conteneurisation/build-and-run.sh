@@ -33,7 +33,7 @@ if [ -z "$LOCAL_IP" ]; then
     echo "Attention : impossible de détecter l'IP locale. L'accès depuis d'autres appareils pourrait ne pas fonctionner."
 else
     echo "   - IP locale détectée : $LOCAL_IP"
-    DYNAMIC_ORIGIN="http://${LOCAL_IP}"
+    DYNAMIC_ORIGIN="${BASE_PROTOCOL}://${LOCAL_IP}"
 
     # Construction de la variable CORS finale
     UPDATED_ORIGINS="${BASE_ORIGINS},${DYNAMIC_ORIGIN}"
@@ -41,11 +41,14 @@ else
     # Mise à jour du .env
     if [[ "$OSTYPE" == "darwin"* ]]; then
         sed -i '' "s|^CORS_ALLOWED_ORIGINS=.*|CORS_ALLOWED_ORIGINS=${UPDATED_ORIGINS}|" .env
+        sed -i '' "s|^BASE_URL=.*|BASE_URL=${DYNAMIC_ORIGIN}|" .env
     else
         sed -i "s|^CORS_ALLOWED_ORIGINS=.*|CORS_ALLOWED_ORIGINS=${UPDATED_ORIGINS}|" .env
+        sed -i "s|^BASE_URL=.*|BASE_URL=${DYNAMIC_ORIGIN}|" .env
     fi
 
-    echo "   - CORS_ALLOWED_ORIGINS mis à jour : $UPDATED_ORIGINS"
+    echo "   - CORS_ALLOWED_ORIGINS mis à jour : ${UPDATED_ORIGINS}"
+    echo "   - BASE_URL mis à jour : ${DYNAMIC_ORIGIN}"
 fi
 
 # Étape 1 : Préparer le .env avec l'encodage base64

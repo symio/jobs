@@ -6,7 +6,7 @@ plugins {
 }
 
 group = 'org.loamok'
-version = '0.0.4-SNAPSHOT'
+version = '0.0.5-SNAPSHOT'
 description = 'Api « Jobs » java backend'
 
 java {

@@ -63,7 +63,6 @@ export class JobDetailsComponent implements OnInit, OnDestroy {
 
     ngOnInit(): void {
         this.link = this.route.snapshot.queryParamMap.get('link');
-        console.log('Link reçu :', this.link);
 
         setTimeout(() => {
             this.pageTitleService.setTitle("Détails de l'offre");
@@ -110,7 +109,7 @@ export class JobDetailsComponent implements OnInit, OnDestroy {
 
     async onChangeStatus(job: any): Promise<void> {
         if (!this.offerStatusEnum) {
-            await this.modalService.error("Erreur", "Les statuts ne sont pas chargÃ©s.");
+            await this.modalService.error("Erreur", "Les statuts ne sont pas chargés.");
             return;
         }
 

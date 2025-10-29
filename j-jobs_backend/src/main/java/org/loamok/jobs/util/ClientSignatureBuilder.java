@@ -12,7 +12,8 @@ import org.springframework.stereotype.Component;
  * @author Huby Franck
  */
 @Component
-public class ClientSignatureBuilder {
+public class ClientSignatureBuilder implements ClientSignatureUtil {
+    @Override
     public String buildClientSignature(HttpServletRequest request) {
         String userAgent = request.getHeader("User-Agent");
         String acceptLang = request.getHeader("Accept-Language");
@@ -30,12 +31,18 @@ public class ClientSignatureBuilder {
                 timezone != null ? timezone : ""
         );
 
+        return buildHashedSignature(rawSignature);
+    }
+    
+    @Override
+    public String buildHashedSignature(String source) {
         try {
             MessageDigest digest = MessageDigest.getInstance("SHA-256");
-            byte[] hash = digest.digest(rawSignature.getBytes(StandardCharsets.UTF_8));
+            byte[] hash = digest.digest(source.getBytes(StandardCharsets.UTF_8));
             return Base64.getEncoder().encodeToString(hash);
         } catch (NoSuchAlgorithmException e) {
             throw new RuntimeException("Erreur de hash", e);
         }
+        
     }
 }

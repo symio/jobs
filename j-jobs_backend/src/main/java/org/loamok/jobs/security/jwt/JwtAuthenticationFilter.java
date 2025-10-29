@@ -15,6 +15,7 @@ import lombok.AllArgsConstructor;
 import org.loamok.jobs.entity.User;
 import org.loamok.jobs.repository.UserRepository;
 import org.loamok.jobs.util.ClientSignatureBuilder;
+import org.loamok.jobs.util.ClientSignatureUtil;
 import org.springframework.lang.NonNull;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.Authentication;
@@ -35,7 +36,7 @@ public class JwtAuthenticationFilter extends OncePerRequestFilter {
     private JwtService jwtService;
     private UserDetailsService userDetailsService;
     private UserRepository userRepository;
-    private ClientSignatureBuilder csb;
+    private ClientSignatureUtil csb;
 
     @Override
     protected void doFilterInternal(@NonNull HttpServletRequest request,
