@@ -50,6 +50,7 @@ class Job {
     {field} position : String [NOT NULL]
     {field} description : String [NULLABLE]
     {field} compagny : String [NOT NULL]
+    {field} applicationDate : Instant [NULLABLE]
     {field} city : String [NOT NULL]
     {field} contract : ContractEnum [NOT NULL]
     {field} work_time : WorkTimeEnum [NOT NULL]

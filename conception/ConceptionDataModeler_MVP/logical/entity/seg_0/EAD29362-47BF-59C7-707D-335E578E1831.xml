@@ -15,6 +15,19 @@
 <minVolumes>0</minVolumes>
 <normalForm>Third</normalForm>
 <attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="application_date" id="094B60E7-9717-954E-2B71-754CD0A0AA14">
+<createdBy>symio</createdBy>
+<createdTime>2025-10-30 14:15:56 UTC</createdTime>
+<ownerDesignName>ConceptionDataModeler_MVP</ownerDesignName>
+<engineerTo>
+<item key="307008C4-A6F5-D679-7A89-1240AF32BB15" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT008</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
 <Attribute name="city" id="BB0D07C1-0543-8886-0D86-6D05E121EC0D">
 <createdBy>symio</createdBy>
 <createdTime>2025-08-26 14:43:32 UTC</createdTime>

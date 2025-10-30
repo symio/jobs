@@ -1,58 +1,58 @@
-<?xml version="1.0" encoding="UTF-8"?><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentStyleType="text/css" height="1703px" preserveAspectRatio="none" style="width:2364px;height:1703px;background:#FFFFFF;" version="1.1" viewBox="0 0 2364 1703" width="2364px" zoomAndPan="magnify">
+<?xml version="1.0" encoding="UTF-8"?><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentStyleType="text/css" height="1719px" preserveAspectRatio="none" style="width:2364px;height:1719px;background:#FFFFFF;" version="1.1" viewBox="0 0 2364 1719" width="2364px" zoomAndPan="magnify">
     <defs/>
     <g>
         <!--class User-->
         <g id="elem_User">
-            <rect codeLine="17" fill="#E8F5E9" height="373.9375" id="User" rx="2.5" ry="2.5" style="stroke:#2E7D32;stroke-width:0.5;" width="355" x="28" y="413"/>
-            <ellipse cx="185.25" cy="429" fill="#ADD1B2" rx="11" ry="11" style="stroke:#181818;stroke-width:1.0;"/>
-            <path d="M188.2188,434.6406 Q187.6406,434.9375 187,435.0781 Q186.3594,435.2344 185.6563,435.2344 Q183.1563,435.2344 181.8281,433.5938 Q180.5156,431.9375 180.5156,428.8125 Q180.5156,425.6875 181.8281,424.0313 Q183.1563,422.375 185.6563,422.375 Q186.3594,422.375 187,422.5313 Q187.6563,422.6875 188.2188,422.9844 L188.2188,425.7031 Q187.5938,425.125 187,424.8594 Q186.4063,424.5781 185.7813,424.5781 Q184.4375,424.5781 183.75,425.6563 Q183.0625,426.7188 183.0625,428.8125 Q183.0625,430.9063 183.75,431.9844 Q184.4375,433.0469 185.7813,433.0469 Q186.4063,433.0469 187,432.7813 Q187.5938,432.5 188.2188,431.9219 L188.2188,434.6406 Z " fill="#000000"/>
-            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="32" x="205.75" y="433.8467">User</text>
-            <line style="stroke:#2E7D32;stroke-width:0.5;" x1="29" x2="382" y1="445" y2="445"/>
-            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="152" x="34" y="461.9951">«PK» id_user : Integer</text>
-            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="174" x="34" y="478.292">name : String [NOT NULL]</text>
-            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="199" x="34" y="494.5889">firstname : String [NOT NULL]</text>
-            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="241" x="34" y="510.8857">«unique» email : String [NOT NULL]</text>
-            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="219" x="34" y="527.1826">gdproptin : boolean [NULLABLE]</text>
-            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="127" x="34" y="543.4795">createdAt : Instant</text>
-            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="132" x="34" y="559.7764">updatedAt : Instant</text>
-            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="202" x="34" y="576.0732">password : String [NOT NULL]</text>
-            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="211" x="34" y="592.3701">authToken : String [NULLABLE]</text>
-            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="273" x="34" y="608.667">rememberMeToken : String [NULLABLE]</text>
-            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="272" x="34" y="624.9639">emailVerificationKey : String [NULLABLE]</text>
-            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="209" x="34" y="641.2607">enabled : Boolean [NULLABLE]</text>
-            <line style="stroke:#2E7D32;stroke-width:1.0;" x1="29" x2="382" y1="648.5625" y2="648.5625"/>
-            <ellipse cx="39" cy="662.2109" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
-            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="329" x="48" y="665.5576">getAuthorities() : Collection&lt;GrantedAuthority&gt;</text>
-            <ellipse cx="39" cy="678.5078" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
-            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="147" x="48" y="681.8545">getAuthority() : String</text>
-            <ellipse cx="39" cy="694.8047" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
-            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="157" x="48" y="698.1514">getUsername() : String</text>
-            <ellipse cx="39" cy="711.1016" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
-            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="226" x="48" y="714.4482">isAccountNonExpired() : boolean</text>
-            <ellipse cx="39" cy="727.3984" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
-            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="225" x="48" y="730.7451">isAccountNonLocked() : boolean</text>
-            <ellipse cx="39" cy="743.6953" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
-            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="247" x="48" y="747.042">isCredentialsNonExpired() : boolean</text>
-            <ellipse cx="39" cy="759.9922" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
-            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="146" x="48" y="763.3389">isEnabled() : boolean</text>
-            <ellipse cx="39" cy="776.2891" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
-            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="138" x="48" y="779.6357">getRoleId() : Integer</text>
+            <rect codeLine="17" fill="#E8F5E9" height="373.9375" id="User" rx="2.5" ry="2.5" style="stroke:#2E7D32;stroke-width:0.5;" width="355" x="28" y="429"/>
+            <ellipse cx="185.25" cy="445" fill="#ADD1B2" rx="11" ry="11" style="stroke:#181818;stroke-width:1.0;"/>
+            <path d="M188.2188,450.6406 Q187.6406,450.9375 187,451.0781 Q186.3594,451.2344 185.6563,451.2344 Q183.1563,451.2344 181.8281,449.5938 Q180.5156,447.9375 180.5156,444.8125 Q180.5156,441.6875 181.8281,440.0313 Q183.1563,438.375 185.6563,438.375 Q186.3594,438.375 187,438.5313 Q187.6563,438.6875 188.2188,438.9844 L188.2188,441.7031 Q187.5938,441.125 187,440.8594 Q186.4063,440.5781 185.7813,440.5781 Q184.4375,440.5781 183.75,441.6563 Q183.0625,442.7188 183.0625,444.8125 Q183.0625,446.9063 183.75,447.9844 Q184.4375,449.0469 185.7813,449.0469 Q186.4063,449.0469 187,448.7813 Q187.5938,448.5 188.2188,447.9219 L188.2188,450.6406 Z " fill="#000000"/>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="32" x="205.75" y="449.8467">User</text>
+            <line style="stroke:#2E7D32;stroke-width:0.5;" x1="29" x2="382" y1="461" y2="461"/>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="152" x="34" y="477.9951">«PK» id_user : Integer</text>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="174" x="34" y="494.292">name : String [NOT NULL]</text>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="199" x="34" y="510.5889">firstname : String [NOT NULL]</text>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="241" x="34" y="526.8857">«unique» email : String [NOT NULL]</text>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="219" x="34" y="543.1826">gdproptin : boolean [NULLABLE]</text>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="127" x="34" y="559.4795">createdAt : Instant</text>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="132" x="34" y="575.7764">updatedAt : Instant</text>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="202" x="34" y="592.0732">password : String [NOT NULL]</text>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="211" x="34" y="608.3701">authToken : String [NULLABLE]</text>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="273" x="34" y="624.667">rememberMeToken : String [NULLABLE]</text>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="272" x="34" y="640.9639">emailVerificationKey : String [NULLABLE]</text>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="209" x="34" y="657.2607">enabled : Boolean [NULLABLE]</text>
+            <line style="stroke:#2E7D32;stroke-width:1.0;" x1="29" x2="382" y1="664.5625" y2="664.5625"/>
+            <ellipse cx="39" cy="678.2109" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="329" x="48" y="681.5576">getAuthorities() : Collection&lt;GrantedAuthority&gt;</text>
+            <ellipse cx="39" cy="694.5078" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="147" x="48" y="697.8545">getAuthority() : String</text>
+            <ellipse cx="39" cy="710.8047" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="157" x="48" y="714.1514">getUsername() : String</text>
+            <ellipse cx="39" cy="727.1016" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="226" x="48" y="730.4482">isAccountNonExpired() : boolean</text>
+            <ellipse cx="39" cy="743.3984" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="225" x="48" y="746.7451">isAccountNonLocked() : boolean</text>
+            <ellipse cx="39" cy="759.6953" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="247" x="48" y="763.042">isCredentialsNonExpired() : boolean</text>
+            <ellipse cx="39" cy="775.9922" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="146" x="48" y="779.3389">isEnabled() : boolean</text>
+            <ellipse cx="39" cy="792.2891" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="138" x="48" y="795.6357">getRoleId() : Integer</text>
         </g>
         <!--class Role-->
         <g id="elem_Role">
-            <rect codeLine="41" fill="#E8F5E9" height="96.8906" id="Role" rx="2.5" ry="2.5" style="stroke:#2E7D32;stroke-width:0.5;" width="317" x="397" y="1066"/>
-            <ellipse cx="535.75" cy="1082" fill="#ADD1B2" rx="11" ry="11" style="stroke:#181818;stroke-width:1.0;"/>
-            <path d="M538.7188,1087.6406 Q538.1406,1087.9375 537.5,1088.0781 Q536.8594,1088.2344 536.1563,1088.2344 Q533.6563,1088.2344 532.3281,1086.5938 Q531.0156,1084.9375 531.0156,1081.8125 Q531.0156,1078.6875 532.3281,1077.0313 Q533.6563,1075.375 536.1563,1075.375 Q536.8594,1075.375 537.5,1075.5313 Q538.1563,1075.6875 538.7188,1075.9844 L538.7188,1078.7031 Q538.0938,1078.125 537.5,1077.8594 Q536.9063,1077.5781 536.2813,1077.5781 Q534.9375,1077.5781 534.25,1078.6563 Q533.5625,1079.7188 533.5625,1081.8125 Q533.5625,1083.9063 534.25,1084.9844 Q534.9375,1086.0469 536.2813,1086.0469 Q536.9063,1086.0469 537.5,1085.7813 Q538.0938,1085.5 538.7188,1084.9219 L538.7188,1087.6406 Z " fill="#000000"/>
-            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="31" x="556.25" y="1086.8467">Role</text>
-            <line style="stroke:#2E7D32;stroke-width:0.5;" x1="398" x2="713" y1="1098" y2="1098"/>
-            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="147" x="403" y="1114.9951">«PK» id_role : Integer</text>
-            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="231" x="403" y="1131.292">«unique» role : String [NOT NULL]</text>
-            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="305" x="403" y="1147.5889">isAdmin : Boolean [NOT NULL, default=false]</text>
-            <line style="stroke:#2E7D32;stroke-width:0.5;" x1="398" x2="713" y1="1154.8906" y2="1154.8906"/>
+            <rect codeLine="41" fill="#E8F5E9" height="96.8906" id="Role" rx="2.5" ry="2.5" style="stroke:#2E7D32;stroke-width:0.5;" width="317" x="397" y="1082"/>
+            <ellipse cx="535.75" cy="1098" fill="#ADD1B2" rx="11" ry="11" style="stroke:#181818;stroke-width:1.0;"/>
+            <path d="M538.7188,1103.6406 Q538.1406,1103.9375 537.5,1104.0781 Q536.8594,1104.2344 536.1563,1104.2344 Q533.6563,1104.2344 532.3281,1102.5938 Q531.0156,1100.9375 531.0156,1097.8125 Q531.0156,1094.6875 532.3281,1093.0313 Q533.6563,1091.375 536.1563,1091.375 Q536.8594,1091.375 537.5,1091.5313 Q538.1563,1091.6875 538.7188,1091.9844 L538.7188,1094.7031 Q538.0938,1094.125 537.5,1093.8594 Q536.9063,1093.5781 536.2813,1093.5781 Q534.9375,1093.5781 534.25,1094.6563 Q533.5625,1095.7188 533.5625,1097.8125 Q533.5625,1099.9063 534.25,1100.9844 Q534.9375,1102.0469 536.2813,1102.0469 Q536.9063,1102.0469 537.5,1101.7813 Q538.0938,1101.5 538.7188,1100.9219 L538.7188,1103.6406 Z " fill="#000000"/>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="31" x="556.25" y="1102.8467">Role</text>
+            <line style="stroke:#2E7D32;stroke-width:0.5;" x1="398" x2="713" y1="1114" y2="1114"/>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="147" x="403" y="1130.9951">«PK» id_role : Integer</text>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="231" x="403" y="1147.292">«unique» role : String [NOT NULL]</text>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="305" x="403" y="1163.5889">isAdmin : Boolean [NOT NULL, default=false]</text>
+            <line style="stroke:#2E7D32;stroke-width:0.5;" x1="398" x2="713" y1="1170.8906" y2="1170.8906"/>
         </g>
         <!--class Job-->
         <g id="elem_Job">
-            <rect codeLine="47" fill="#E8F5E9" height="325.0469" id="Job" rx="2.5" ry="2.5" style="stroke:#2E7D32;stroke-width:0.5;" width="301" x="1033" y="7"/>
+            <rect codeLine="47" fill="#E8F5E9" height="341.3438" id="Job" rx="2.5" ry="2.5" style="stroke:#2E7D32;stroke-width:0.5;" width="301" x="1033" y="7"/>
             <ellipse cx="1168.75" cy="23" fill="#ADD1B2" rx="11" ry="11" style="stroke:#181818;stroke-width:1.0;"/>
             <path d="M1171.7188,28.6406 Q1171.1406,28.9375 1170.5,29.0781 Q1169.8594,29.2344 1169.1563,29.2344 Q1166.6563,29.2344 1165.3281,27.5938 Q1164.0156,25.9375 1164.0156,22.8125 Q1164.0156,19.6875 1165.3281,18.0313 Q1166.6563,16.375 1169.1563,16.375 Q1169.8594,16.375 1170.5,16.5313 Q1171.1563,16.6875 1171.7188,16.9844 L1171.7188,19.7031 Q1171.0938,19.125 1170.5,18.8594 Q1169.9063,18.5781 1169.2813,18.5781 Q1167.9375,18.5781 1167.25,19.6563 Q1166.5625,20.7188 1166.5625,22.8125 Q1166.5625,24.9063 1167.25,25.9844 Q1167.9375,27.0469 1169.2813,27.0469 Q1169.9063,27.0469 1170.5,26.7813 Q1171.0938,26.5 1171.7188,25.9219 L1171.7188,28.6406 Z " fill="#000000"/>
             <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="21" x="1189.25" y="27.8467">Job</text>
@@ -61,327 +61,328 @@
             <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="190" x="1039" y="72.292">position : String [NOT NULL]</text>
             <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="213" x="1039" y="88.5889">description : String [NULLABLE]</text>
             <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="207" x="1039" y="104.8857">compagny : String [NOT NULL]</text>
-            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="158" x="1039" y="121.1826">city : String [NOT NULL]</text>
-            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="251" x="1039" y="137.4795">contract : ContractEnum [NOT NULL]</text>
-            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="274" x="1039" y="153.7764">work_time : WorkTimeEnum [NOT NULL]</text>
-            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="289" x="1039" y="170.0732">work_mode : WorkModeEnum [NOT NULL]</text>
-            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="209" x="1039" y="186.3701">createdAt : Instant [NOT NULL]</text>
-            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="214" x="1039" y="202.667">updatedAt : Instant [NOT NULL]</text>
-            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="264" x="1039" y="218.9639">from_officialdom : Boolean [NULLABLE]</text>
-            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="287" x="1039" y="235.2607">offerStatus : OfferStatusEnum [NOT NULL]</text>
-            <line style="stroke:#2E7D32;stroke-width:1.0;" x1="1034" x2="1333" y1="242.5625" y2="242.5625"/>
-            <ellipse cx="1044" cy="256.2109" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
-            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="226" x="1053" y="259.5576">setOfferStatus(OfferStatusEnum)</text>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="250" x="1039" y="121.1826">applicationDate : Instant [NULLABLE]</text>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="158" x="1039" y="137.4795">city : String [NOT NULL]</text>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="251" x="1039" y="153.7764">contract : ContractEnum [NOT NULL]</text>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="274" x="1039" y="170.0732">work_time : WorkTimeEnum [NOT NULL]</text>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="289" x="1039" y="186.3701">work_mode : WorkModeEnum [NOT NULL]</text>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="209" x="1039" y="202.667">createdAt : Instant [NOT NULL]</text>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="214" x="1039" y="218.9639">updatedAt : Instant [NOT NULL]</text>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="264" x="1039" y="235.2607">from_officialdom : Boolean [NULLABLE]</text>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="287" x="1039" y="251.5576">offerStatus : OfferStatusEnum [NOT NULL]</text>
+            <line style="stroke:#2E7D32;stroke-width:1.0;" x1="1034" x2="1333" y1="258.8594" y2="258.8594"/>
             <ellipse cx="1044" cy="272.5078" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
-            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="149" x="1053" y="275.8545">setOfferStatus(String)</text>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="226" x="1053" y="275.8545">setOfferStatus(OfferStatusEnum)</text>
             <ellipse cx="1044" cy="288.8047" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
-            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="146" x="1053" y="292.1514">setWorkMode(String)</text>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="149" x="1053" y="292.1514">setOfferStatus(String)</text>
             <ellipse cx="1044" cy="305.1016" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
-            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="141" x="1053" y="308.4482">setWorkTime(String)</text>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="146" x="1053" y="308.4482">setWorkMode(String)</text>
             <ellipse cx="1044" cy="321.3984" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
-            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="131" x="1053" y="324.7451">setContract(String)</text>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="141" x="1053" y="324.7451">setWorkTime(String)</text>
+            <ellipse cx="1044" cy="337.6953" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="131" x="1053" y="341.042">setContract(String)</text>
         </g>
         <!--class JobHasStatus-->
         <g id="elem_JobHasStatus">
-            <rect codeLine="68" fill="#E8F5E9" height="113.1875" id="JobHasStatus" rx="2.5" ry="2.5" style="stroke:#2E7D32;stroke-width:0.5;" width="299" x="703" y="543.5"/>
-            <ellipse cx="802.75" cy="559.5" fill="#ADD1B2" rx="11" ry="11" style="stroke:#181818;stroke-width:1.0;"/>
-            <path d="M805.7188,565.1406 Q805.1406,565.4375 804.5,565.5781 Q803.8594,565.7344 803.1563,565.7344 Q800.6563,565.7344 799.3281,564.0938 Q798.0156,562.4375 798.0156,559.3125 Q798.0156,556.1875 799.3281,554.5313 Q800.6563,552.875 803.1563,552.875 Q803.8594,552.875 804.5,553.0313 Q805.1563,553.1875 805.7188,553.4844 L805.7188,556.2031 Q805.0938,555.625 804.5,555.3594 Q803.9063,555.0781 803.2813,555.0781 Q801.9375,555.0781 801.25,556.1563 Q800.5625,557.2188 800.5625,559.3125 Q800.5625,561.4063 801.25,562.4844 Q801.9375,563.5469 803.2813,563.5469 Q803.9063,563.5469 804.5,563.2813 Q805.0938,563 805.7188,562.4219 L805.7188,565.1406 Z " fill="#000000"/>
-            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="91" x="823.25" y="564.3467">JobHasStatus</text>
-            <line style="stroke:#2E7D32;stroke-width:0.5;" x1="704" x2="1001" y1="575.5" y2="575.5"/>
-            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="141" x="709" y="592.4951">«PK» id_jhs : Integer</text>
-            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="265" x="709" y="608.792">jobStatus : JobStatusEnum [NOT NULL]</text>
-            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="287" x="709" y="625.0889">offerStatus : OfferStatusEnum [NOT NULL]</text>
-            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="206" x="709" y="641.3857">appliedAt : Instant [NOT NULL]</text>
-            <line style="stroke:#2E7D32;stroke-width:0.5;" x1="704" x2="1001" y1="648.6875" y2="648.6875"/>
+            <rect codeLine="69" fill="#E8F5E9" height="113.1875" id="JobHasStatus" rx="2.5" ry="2.5" style="stroke:#2E7D32;stroke-width:0.5;" width="299" x="703" y="559.5"/>
+            <ellipse cx="802.75" cy="575.5" fill="#ADD1B2" rx="11" ry="11" style="stroke:#181818;stroke-width:1.0;"/>
+            <path d="M805.7188,581.1406 Q805.1406,581.4375 804.5,581.5781 Q803.8594,581.7344 803.1563,581.7344 Q800.6563,581.7344 799.3281,580.0938 Q798.0156,578.4375 798.0156,575.3125 Q798.0156,572.1875 799.3281,570.5313 Q800.6563,568.875 803.1563,568.875 Q803.8594,568.875 804.5,569.0313 Q805.1563,569.1875 805.7188,569.4844 L805.7188,572.2031 Q805.0938,571.625 804.5,571.3594 Q803.9063,571.0781 803.2813,571.0781 Q801.9375,571.0781 801.25,572.1563 Q800.5625,573.2188 800.5625,575.3125 Q800.5625,577.4063 801.25,578.4844 Q801.9375,579.5469 803.2813,579.5469 Q803.9063,579.5469 804.5,579.2813 Q805.0938,579 805.7188,578.4219 L805.7188,581.1406 Z " fill="#000000"/>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="91" x="823.25" y="580.3467">JobHasStatus</text>
+            <line style="stroke:#2E7D32;stroke-width:0.5;" x1="704" x2="1001" y1="591.5" y2="591.5"/>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="141" x="709" y="608.4951">«PK» id_jhs : Integer</text>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="265" x="709" y="624.792">jobStatus : JobStatusEnum [NOT NULL]</text>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="287" x="709" y="641.0889">offerStatus : OfferStatusEnum [NOT NULL]</text>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="206" x="709" y="657.3857">appliedAt : Instant [NOT NULL]</text>
+            <line style="stroke:#2E7D32;stroke-width:0.5;" x1="704" x2="1001" y1="664.6875" y2="664.6875"/>
         </g>
         <!--class OfferStatusEnum-->
         <g id="elem_OfferStatusEnum">
-            <rect codeLine="75" fill="#E8F5E9" height="210.9688" id="OfferStatusEnum" rx="2.5" ry="2.5" style="stroke:#2E7D32;stroke-width:0.5;" width="233" x="1219" y="1009"/>
-            <ellipse cx="1272.75" cy="1025" fill="#EB937F" rx="11" ry="11" style="stroke:#181818;stroke-width:1.0;"/>
-            <path d="M1276.8594,1031 L1269.1406,1031 L1269.1406,1018.6094 L1276.8594,1018.6094 L1276.8594,1020.7656 L1271.5938,1020.7656 L1271.5938,1023.4375 L1276.3594,1023.4375 L1276.3594,1025.5938 L1271.5938,1025.5938 L1271.5938,1028.8438 L1276.8594,1028.8438 L1276.8594,1031 Z " fill="#000000"/>
-            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="117" x="1293.25" y="1029.8467">OfferStatusEnum</text>
-            <line style="stroke:#2E7D32;stroke-width:0.5;" x1="1220" x2="1451" y1="1041" y2="1041"/>
-            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="92" x="1225" y="1057.9951">A_EN_COURS</text>
-            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="107" x="1225" y="1074.292">B_EN_ATTENTE</text>
-            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="81" x="1225" y="1090.5889">B_RELANCE</text>
-            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="72" x="1225" y="1106.8857">C_REFUSE</text>
-            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="96" x="1225" y="1123.1826">D_ENTRETIEN</text>
-            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="74" x="1225" y="1139.4795">O_ACCEPT</text>
-            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="64" x="1225" y="1155.7764">O_REFUS</text>
-            <line style="stroke:#2E7D32;stroke-width:1.0;" x1="1220" x2="1451" y1="1163.0781" y2="1163.0781"/>
-            <ellipse cx="1230" cy="1176.7266" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
-            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="122" x="1239" y="1180.0732">getLabel() : String</text>
-            <ellipse cx="1230" cy="1193.0234" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
-            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="126" x="1239" y="1196.3701">getName() : String</text>
-            <ellipse cx="1230" cy="1209.3203" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
-            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="207" x="1239" y="1212.667">toJobStatus() : JobStatusEnum</text>
+            <rect codeLine="76" fill="#E8F5E9" height="210.9688" id="OfferStatusEnum" rx="2.5" ry="2.5" style="stroke:#2E7D32;stroke-width:0.5;" width="233" x="1219" y="1025"/>
+            <ellipse cx="1272.75" cy="1041" fill="#EB937F" rx="11" ry="11" style="stroke:#181818;stroke-width:1.0;"/>
+            <path d="M1276.8594,1047 L1269.1406,1047 L1269.1406,1034.6094 L1276.8594,1034.6094 L1276.8594,1036.7656 L1271.5938,1036.7656 L1271.5938,1039.4375 L1276.3594,1039.4375 L1276.3594,1041.5938 L1271.5938,1041.5938 L1271.5938,1044.8438 L1276.8594,1044.8438 L1276.8594,1047 Z " fill="#000000"/>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="117" x="1293.25" y="1045.8467">OfferStatusEnum</text>
+            <line style="stroke:#2E7D32;stroke-width:0.5;" x1="1220" x2="1451" y1="1057" y2="1057"/>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="92" x="1225" y="1073.9951">A_EN_COURS</text>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="107" x="1225" y="1090.292">B_EN_ATTENTE</text>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="81" x="1225" y="1106.5889">B_RELANCE</text>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="72" x="1225" y="1122.8857">C_REFUSE</text>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="96" x="1225" y="1139.1826">D_ENTRETIEN</text>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="74" x="1225" y="1155.4795">O_ACCEPT</text>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="64" x="1225" y="1171.7764">O_REFUS</text>
+            <line style="stroke:#2E7D32;stroke-width:1.0;" x1="1220" x2="1451" y1="1179.0781" y2="1179.0781"/>
+            <ellipse cx="1230" cy="1192.7266" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="122" x="1239" y="1196.0732">getLabel() : String</text>
+            <ellipse cx="1230" cy="1209.0234" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="126" x="1239" y="1212.3701">getName() : String</text>
+            <ellipse cx="1230" cy="1225.3203" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="207" x="1239" y="1228.667">toJobStatus() : JobStatusEnum</text>
         </g>
         <!--class JobStatusEnum-->
         <g id="elem_JobStatusEnum">
-            <rect codeLine="89" fill="#E8F5E9" height="162.0781" id="JobStatusEnum" rx="2.5" ry="2.5" style="stroke:#2E7D32;stroke-width:0.5;" width="186" x="1169.5" y="1393"/>
-            <ellipse cx="1206.55" cy="1409" fill="#EB937F" rx="11" ry="11" style="stroke:#181818;stroke-width:1.0;"/>
-            <path d="M1210.6594,1415 L1202.9406,1415 L1202.9406,1402.6094 L1210.6594,1402.6094 L1210.6594,1404.7656 L1205.3938,1404.7656 L1205.3938,1407.4375 L1210.1594,1407.4375 L1210.1594,1409.5938 L1205.3938,1409.5938 L1205.3938,1412.8438 L1210.6594,1412.8438 L1210.6594,1415 Z " fill="#000000"/>
-            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="105" x="1225.45" y="1413.8467">JobStatusEnum</text>
-            <line style="stroke:#2E7D32;stroke-width:0.5;" x1="1170.5" x2="1354.5" y1="1425" y2="1425"/>
-            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="174" x="1175.5" y="1441.9951">CANDIDATURE_ENVOYEE</text>
-            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="64" x="1175.5" y="1458.292">RELANCE</text>
-            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="46" x="1175.5" y="1474.5889">REFUS</text>
-            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="78" x="1175.5" y="1490.8857">ENTRETIEN</text>
-            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="47" x="1175.5" y="1507.1826">AUTRE</text>
-            <line style="stroke:#2E7D32;stroke-width:1.0;" x1="1170.5" x2="1354.5" y1="1514.4844" y2="1514.4844"/>
-            <ellipse cx="1180.5" cy="1528.1328" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
-            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="122" x="1189.5" y="1531.4795">getLabel() : String</text>
-            <ellipse cx="1180.5" cy="1544.4297" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
-            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="126" x="1189.5" y="1547.7764">getName() : String</text>
+            <rect codeLine="90" fill="#E8F5E9" height="162.0781" id="JobStatusEnum" rx="2.5" ry="2.5" style="stroke:#2E7D32;stroke-width:0.5;" width="186" x="1169.5" y="1409"/>
+            <ellipse cx="1206.55" cy="1425" fill="#EB937F" rx="11" ry="11" style="stroke:#181818;stroke-width:1.0;"/>
+            <path d="M1210.6594,1431 L1202.9406,1431 L1202.9406,1418.6094 L1210.6594,1418.6094 L1210.6594,1420.7656 L1205.3938,1420.7656 L1205.3938,1423.4375 L1210.1594,1423.4375 L1210.1594,1425.5938 L1205.3938,1425.5938 L1205.3938,1428.8438 L1210.6594,1428.8438 L1210.6594,1431 Z " fill="#000000"/>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="105" x="1225.45" y="1429.8467">JobStatusEnum</text>
+            <line style="stroke:#2E7D32;stroke-width:0.5;" x1="1170.5" x2="1354.5" y1="1441" y2="1441"/>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="174" x="1175.5" y="1457.9951">CANDIDATURE_ENVOYEE</text>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="64" x="1175.5" y="1474.292">RELANCE</text>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="46" x="1175.5" y="1490.5889">REFUS</text>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="78" x="1175.5" y="1506.8857">ENTRETIEN</text>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="47" x="1175.5" y="1523.1826">AUTRE</text>
+            <line style="stroke:#2E7D32;stroke-width:1.0;" x1="1170.5" x2="1354.5" y1="1530.4844" y2="1530.4844"/>
+            <ellipse cx="1180.5" cy="1544.1328" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="122" x="1189.5" y="1547.4795">getLabel() : String</text>
+            <ellipse cx="1180.5" cy="1560.4297" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="126" x="1189.5" y="1563.7764">getName() : String</text>
         </g>
         <!--class ContractEnum-->
         <g id="elem_ContractEnum">
-            <rect codeLine="100" fill="#E8F5E9" height="162.0781" id="ContractEnum" rx="2.5" ry="2.5" style="stroke:#2E7D32;stroke-width:0.5;" width="152" x="2205.5" y="817"/>
-            <ellipse cx="2229.95" cy="833" fill="#EB937F" rx="11" ry="11" style="stroke:#181818;stroke-width:1.0;"/>
-            <path d="M2234.0594,839 L2226.3406,839 L2226.3406,826.6094 L2234.0594,826.6094 L2234.0594,828.7656 L2228.7938,828.7656 L2228.7938,831.4375 L2233.5594,831.4375 L2233.5594,833.5938 L2228.7938,833.5938 L2228.7938,836.8438 L2234.0594,836.8438 L2234.0594,839 Z " fill="#000000"/>
-            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="99" x="2246.05" y="837.8467">ContractEnum</text>
-            <line style="stroke:#2E7D32;stroke-width:0.5;" x1="2206.5" x2="2356.5" y1="849" y2="849"/>
-            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="32" x="2211.5" y="865.9951">CDD</text>
-            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="24" x="2211.5" y="882.292">CDI</text>
-            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="81" x="2211.5" y="898.5889">FREELANCE</text>
-            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="56" x="2211.5" y="914.8857">INTERIM</text>
-            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="57" x="2211.5" y="931.1826">MISSION</text>
-            <line style="stroke:#2E7D32;stroke-width:1.0;" x1="2206.5" x2="2356.5" y1="938.4844" y2="938.4844"/>
-            <ellipse cx="2216.5" cy="952.1328" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
-            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="122" x="2225.5" y="955.4795">getLabel() : String</text>
-            <ellipse cx="2216.5" cy="968.4297" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
-            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="126" x="2225.5" y="971.7764">getName() : String</text>
+            <rect codeLine="101" fill="#E8F5E9" height="162.0781" id="ContractEnum" rx="2.5" ry="2.5" style="stroke:#2E7D32;stroke-width:0.5;" width="152" x="2205.5" y="833"/>
+            <ellipse cx="2229.95" cy="849" fill="#EB937F" rx="11" ry="11" style="stroke:#181818;stroke-width:1.0;"/>
+            <path d="M2234.0594,855 L2226.3406,855 L2226.3406,842.6094 L2234.0594,842.6094 L2234.0594,844.7656 L2228.7938,844.7656 L2228.7938,847.4375 L2233.5594,847.4375 L2233.5594,849.5938 L2228.7938,849.5938 L2228.7938,852.8438 L2234.0594,852.8438 L2234.0594,855 Z " fill="#000000"/>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="99" x="2246.05" y="853.8467">ContractEnum</text>
+            <line style="stroke:#2E7D32;stroke-width:0.5;" x1="2206.5" x2="2356.5" y1="865" y2="865"/>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="32" x="2211.5" y="881.9951">CDD</text>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="24" x="2211.5" y="898.292">CDI</text>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="81" x="2211.5" y="914.5889">FREELANCE</text>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="56" x="2211.5" y="930.8857">INTERIM</text>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="57" x="2211.5" y="947.1826">MISSION</text>
+            <line style="stroke:#2E7D32;stroke-width:1.0;" x1="2206.5" x2="2356.5" y1="954.4844" y2="954.4844"/>
+            <ellipse cx="2216.5" cy="968.1328" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="122" x="2225.5" y="971.4795">getLabel() : String</text>
+            <ellipse cx="2216.5" cy="984.4297" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="126" x="2225.5" y="987.7764">getName() : String</text>
         </g>
         <!--class WorkTimeEnum-->
         <g id="elem_WorkTimeEnum">
-            <rect codeLine="111" fill="#E8F5E9" height="113.1875" id="WorkTimeEnum" rx="2.5" ry="2.5" style="stroke:#2E7D32;stroke-width:0.5;" width="152" x="1726.5" y="1250"/>
-            <ellipse cx="1746.45" cy="1266" fill="#EB937F" rx="11" ry="11" style="stroke:#181818;stroke-width:1.0;"/>
-            <path d="M1750.5594,1272 L1742.8406,1272 L1742.8406,1259.6094 L1750.5594,1259.6094 L1750.5594,1261.7656 L1745.2938,1261.7656 L1745.2938,1264.4375 L1750.0594,1264.4375 L1750.0594,1266.5938 L1745.2938,1266.5938 L1745.2938,1269.8438 L1750.5594,1269.8438 L1750.5594,1272 Z " fill="#000000"/>
-            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="109" x="1761.55" y="1270.8467">WorkTimeEnum</text>
-            <line style="stroke:#2E7D32;stroke-width:0.5;" x1="1727.5" x2="1877.5" y1="1282" y2="1282"/>
-            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="93" x="1732.5" y="1298.9951">PLEIN_TEMPS</text>
-            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="111" x="1732.5" y="1315.292">TEMPS_PARTIEL</text>
-            <line style="stroke:#2E7D32;stroke-width:1.0;" x1="1727.5" x2="1877.5" y1="1322.5938" y2="1322.5938"/>
-            <ellipse cx="1737.5" cy="1336.2422" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
-            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="122" x="1746.5" y="1339.5889">getLabel() : String</text>
-            <ellipse cx="1737.5" cy="1352.5391" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
-            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="126" x="1746.5" y="1355.8857">getName() : String</text>
+            <rect codeLine="112" fill="#E8F5E9" height="113.1875" id="WorkTimeEnum" rx="2.5" ry="2.5" style="stroke:#2E7D32;stroke-width:0.5;" width="152" x="1726.5" y="1266"/>
+            <ellipse cx="1746.45" cy="1282" fill="#EB937F" rx="11" ry="11" style="stroke:#181818;stroke-width:1.0;"/>
+            <path d="M1750.5594,1288 L1742.8406,1288 L1742.8406,1275.6094 L1750.5594,1275.6094 L1750.5594,1277.7656 L1745.2938,1277.7656 L1745.2938,1280.4375 L1750.0594,1280.4375 L1750.0594,1282.5938 L1745.2938,1282.5938 L1745.2938,1285.8438 L1750.5594,1285.8438 L1750.5594,1288 Z " fill="#000000"/>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="109" x="1761.55" y="1286.8467">WorkTimeEnum</text>
+            <line style="stroke:#2E7D32;stroke-width:0.5;" x1="1727.5" x2="1877.5" y1="1298" y2="1298"/>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="93" x="1732.5" y="1314.9951">PLEIN_TEMPS</text>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="111" x="1732.5" y="1331.292">TEMPS_PARTIEL</text>
+            <line style="stroke:#2E7D32;stroke-width:1.0;" x1="1727.5" x2="1877.5" y1="1338.5938" y2="1338.5938"/>
+            <ellipse cx="1737.5" cy="1352.2422" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="122" x="1746.5" y="1355.5889">getLabel() : String</text>
+            <ellipse cx="1737.5" cy="1368.5391" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="126" x="1746.5" y="1371.8857">getName() : String</text>
         </g>
         <!--class WorkModeEnum-->
         <g id="elem_WorkModeEnum">
-            <rect codeLine="119" fill="#E8F5E9" height="129.4844" id="WorkModeEnum" rx="2.5" ry="2.5" style="stroke:#2E7D32;stroke-width:0.5;" width="152" x="633.5" y="833.5"/>
-            <ellipse cx="651.2" cy="849.5" fill="#EB937F" rx="11" ry="11" style="stroke:#181818;stroke-width:1.0;"/>
-            <path d="M655.3094,855.5 L647.5906,855.5 L647.5906,843.1094 L655.3094,843.1094 L655.3094,845.2656 L650.0438,845.2656 L650.0438,847.9375 L654.8094,847.9375 L654.8094,850.0938 L650.0438,850.0938 L650.0438,853.3438 L655.3094,853.3438 L655.3094,855.5 Z " fill="#000000"/>
-            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="114" x="665.8" y="854.3467">WorkModeEnum</text>
-            <line style="stroke:#2E7D32;stroke-width:0.5;" x1="634.5" x2="784.5" y1="865.5" y2="865.5"/>
-            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="80" x="639.5" y="882.4951">DISTANCIEL</text>
-            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="62" x="639.5" y="898.792">HYBRIDE</text>
-            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="66" x="639.5" y="915.0889">SUR_SITE</text>
-            <line style="stroke:#2E7D32;stroke-width:1.0;" x1="634.5" x2="784.5" y1="922.3906" y2="922.3906"/>
-            <ellipse cx="644.5" cy="936.0391" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
-            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="122" x="653.5" y="939.3857">getLabel() : String</text>
-            <ellipse cx="644.5" cy="952.3359" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
-            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="126" x="653.5" y="955.6826">getName() : String</text>
+            <rect codeLine="120" fill="#E8F5E9" height="129.4844" id="WorkModeEnum" rx="2.5" ry="2.5" style="stroke:#2E7D32;stroke-width:0.5;" width="152" x="633.5" y="849.5"/>
+            <ellipse cx="651.2" cy="865.5" fill="#EB937F" rx="11" ry="11" style="stroke:#181818;stroke-width:1.0;"/>
+            <path d="M655.3094,871.5 L647.5906,871.5 L647.5906,859.1094 L655.3094,859.1094 L655.3094,861.2656 L650.0438,861.2656 L650.0438,863.9375 L654.8094,863.9375 L654.8094,866.0938 L650.0438,866.0938 L650.0438,869.3438 L655.3094,869.3438 L655.3094,871.5 Z " fill="#000000"/>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="114" x="665.8" y="870.3467">WorkModeEnum</text>
+            <line style="stroke:#2E7D32;stroke-width:0.5;" x1="634.5" x2="784.5" y1="881.5" y2="881.5"/>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="80" x="639.5" y="898.4951">DISTANCIEL</text>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="62" x="639.5" y="914.792">HYBRIDE</text>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="66" x="639.5" y="931.0889">SUR_SITE</text>
+            <line style="stroke:#2E7D32;stroke-width:1.0;" x1="634.5" x2="784.5" y1="938.3906" y2="938.3906"/>
+            <ellipse cx="644.5" cy="952.0391" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="122" x="653.5" y="955.3857">getLabel() : String</text>
+            <ellipse cx="644.5" cy="968.3359" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="126" x="653.5" y="971.6826">getName() : String</text>
         </g>
         <!--class LogicalStatusEnum-->
         <g id="elem_LogicalStatusEnum">
-            <rect codeLine="128" fill="#E8F5E9" height="129.4844" id="LogicalStatusEnum" rx="2.5" ry="2.5" style="stroke:#2E7D32;stroke-width:0.5;" width="330" x="1770.5" y="535.5"/>
-            <ellipse cx="1865.75" cy="551.5" fill="#EB937F" rx="11" ry="11" style="stroke:#181818;stroke-width:1.0;"/>
-            <path d="M1869.8594,557.5 L1862.1406,557.5 L1862.1406,545.1094 L1869.8594,545.1094 L1869.8594,547.2656 L1864.5938,547.2656 L1864.5938,549.9375 L1869.3594,549.9375 L1869.3594,552.0938 L1864.5938,552.0938 L1864.5938,555.3438 L1869.8594,555.3438 L1869.8594,557.5 Z " fill="#000000"/>
-            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="131" x="1886.25" y="556.3467">LogicalStatusEnum</text>
-            <line style="stroke:#2E7D32;stroke-width:0.5;" x1="1771.5" x2="2099.5" y1="567.5" y2="567.5"/>
-            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="76" x="1776.5" y="584.4951">EN_COURS</text>
-            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="90" x="1776.5" y="600.792">EN_ATTENTE</text>
-            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="78" x="1776.5" y="617.0889">ENTRETIEN</text>
-            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="55" x="1776.5" y="633.3857">REFUSE</text>
-            <line style="stroke:#2E7D32;stroke-width:1.0;" x1="1771.5" x2="2099.5" y1="640.6875" y2="640.6875"/>
-            <ellipse cx="1781.5" cy="654.3359" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
-            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="304" x="1790.5" y="657.6826">getOfferStatuses() : List&lt;OfferStatusEnum&gt;</text>
+            <rect codeLine="129" fill="#E8F5E9" height="129.4844" id="LogicalStatusEnum" rx="2.5" ry="2.5" style="stroke:#2E7D32;stroke-width:0.5;" width="330" x="1770.5" y="551.5"/>
+            <ellipse cx="1865.75" cy="567.5" fill="#EB937F" rx="11" ry="11" style="stroke:#181818;stroke-width:1.0;"/>
+            <path d="M1869.8594,573.5 L1862.1406,573.5 L1862.1406,561.1094 L1869.8594,561.1094 L1869.8594,563.2656 L1864.5938,563.2656 L1864.5938,565.9375 L1869.3594,565.9375 L1869.3594,568.0938 L1864.5938,568.0938 L1864.5938,571.3438 L1869.8594,571.3438 L1869.8594,573.5 Z " fill="#000000"/>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="131" x="1886.25" y="572.3467">LogicalStatusEnum</text>
+            <line style="stroke:#2E7D32;stroke-width:0.5;" x1="1771.5" x2="2099.5" y1="583.5" y2="583.5"/>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="76" x="1776.5" y="600.4951">EN_COURS</text>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="90" x="1776.5" y="616.792">EN_ATTENTE</text>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="78" x="1776.5" y="633.0889">ENTRETIEN</text>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="55" x="1776.5" y="649.3857">REFUSE</text>
+            <line style="stroke:#2E7D32;stroke-width:1.0;" x1="1771.5" x2="2099.5" y1="656.6875" y2="656.6875"/>
+            <ellipse cx="1781.5" cy="670.3359" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="304" x="1790.5" y="673.6826">getOfferStatuses() : List&lt;OfferStatusEnum&gt;</text>
         </g>
         <!--class UserDetails-->
         <g id="elem_UserDetails">
-            <rect codeLine="137" fill="#E8F5E9" height="162.0781" id="UserDetails" rx="2.5" ry="2.5" style="stroke:#2E7D32;stroke-width:0.5;" width="355" x="7" y="1033.5"/>
-            <ellipse cx="141.75" cy="1049.5" fill="#B4A7E5" rx="11" ry="11" style="stroke:#181818;stroke-width:1.0;"/>
-            <path d="M137.6719,1045.2656 L137.6719,1043.1094 L145.0625,1043.1094 L145.0625,1045.2656 L142.5938,1045.2656 L142.5938,1053.3438 L145.0625,1053.3438 L145.0625,1055.5 L137.6719,1055.5 L137.6719,1053.3438 L140.1406,1053.3438 L140.1406,1045.2656 L137.6719,1045.2656 Z " fill="#000000"/>
-            <text fill="#000000" font-family="sans-serif" font-size="14" font-style="italic" lengthAdjust="spacing" textLength="77" x="162.25" y="1054.3467">UserDetails</text>
-            <line style="stroke:#2E7D32;stroke-width:0.5;" x1="8" x2="361" y1="1065.5" y2="1065.5"/>
-            <line style="stroke:#2E7D32;stroke-width:0.5;" x1="8" x2="361" y1="1073.5" y2="1073.5"/>
-            <ellipse cx="18" cy="1087.1484" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
-            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="329" x="27" y="1090.4951">getAuthorities() : Collection&lt;GrantedAuthority&gt;</text>
-            <ellipse cx="18" cy="1103.4453" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
-            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="153" x="27" y="1106.792">getPassword() : String</text>
-            <ellipse cx="18" cy="1119.7422" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
-            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="157" x="27" y="1123.0889">getUsername() : String</text>
-            <ellipse cx="18" cy="1136.0391" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
-            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="226" x="27" y="1139.3857">isAccountNonExpired() : boolean</text>
-            <ellipse cx="18" cy="1152.3359" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
-            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="225" x="27" y="1155.6826">isAccountNonLocked() : boolean</text>
-            <ellipse cx="18" cy="1168.6328" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
-            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="247" x="27" y="1171.9795">isCredentialsNonExpired() : boolean</text>
-            <ellipse cx="18" cy="1184.9297" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
-            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="146" x="27" y="1188.2764">isEnabled() : boolean</text>
+            <rect codeLine="138" fill="#E8F5E9" height="162.0781" id="UserDetails" rx="2.5" ry="2.5" style="stroke:#2E7D32;stroke-width:0.5;" width="355" x="7" y="1049.5"/>
+            <ellipse cx="141.75" cy="1065.5" fill="#B4A7E5" rx="11" ry="11" style="stroke:#181818;stroke-width:1.0;"/>
+            <path d="M137.6719,1061.2656 L137.6719,1059.1094 L145.0625,1059.1094 L145.0625,1061.2656 L142.5938,1061.2656 L142.5938,1069.3438 L145.0625,1069.3438 L145.0625,1071.5 L137.6719,1071.5 L137.6719,1069.3438 L140.1406,1069.3438 L140.1406,1061.2656 L137.6719,1061.2656 Z " fill="#000000"/>
+            <text fill="#000000" font-family="sans-serif" font-size="14" font-style="italic" lengthAdjust="spacing" textLength="77" x="162.25" y="1070.3467">UserDetails</text>
+            <line style="stroke:#2E7D32;stroke-width:0.5;" x1="8" x2="361" y1="1081.5" y2="1081.5"/>
+            <line style="stroke:#2E7D32;stroke-width:0.5;" x1="8" x2="361" y1="1089.5" y2="1089.5"/>
+            <ellipse cx="18" cy="1103.1484" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="329" x="27" y="1106.4951">getAuthorities() : Collection&lt;GrantedAuthority&gt;</text>
+            <ellipse cx="18" cy="1119.4453" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="153" x="27" y="1122.792">getPassword() : String</text>
+            <ellipse cx="18" cy="1135.7422" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="157" x="27" y="1139.0889">getUsername() : String</text>
+            <ellipse cx="18" cy="1152.0391" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="226" x="27" y="1155.3857">isAccountNonExpired() : boolean</text>
+            <ellipse cx="18" cy="1168.3359" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="225" x="27" y="1171.6826">isAccountNonLocked() : boolean</text>
+            <ellipse cx="18" cy="1184.6328" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="247" x="27" y="1187.9795">isCredentialsNonExpired() : boolean</text>
+            <ellipse cx="18" cy="1200.9297" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="146" x="27" y="1204.2764">isEnabled() : boolean</text>
         </g>
         <!--class LabelledEnum-->
         <g id="elem_LabelledEnum">
-            <rect codeLine="147" fill="#E8F5E9" height="80.5938" id="LabelledEnum" rx="2.5" ry="2.5" style="stroke:#2E7D32;stroke-width:0.5;" width="152" x="1332.5" y="1616"/>
-            <ellipse cx="1357.4" cy="1632" fill="#B4A7E5" rx="11" ry="11" style="stroke:#181818;stroke-width:1.0;"/>
-            <path d="M1353.3219,1627.7656 L1353.3219,1625.6094 L1360.7125,1625.6094 L1360.7125,1627.7656 L1358.2438,1627.7656 L1358.2438,1635.8438 L1360.7125,1635.8438 L1360.7125,1638 L1353.3219,1638 L1353.3219,1635.8438 L1355.7906,1635.8438 L1355.7906,1627.7656 L1353.3219,1627.7656 Z " fill="#000000"/>
-            <text fill="#000000" font-family="sans-serif" font-size="14" font-style="italic" lengthAdjust="spacing" textLength="98" x="1373.6" y="1636.8467">LabelledEnum</text>
-            <line style="stroke:#2E7D32;stroke-width:0.5;" x1="1333.5" x2="1483.5" y1="1648" y2="1648"/>
-            <line style="stroke:#2E7D32;stroke-width:0.5;" x1="1333.5" x2="1483.5" y1="1656" y2="1656"/>
-            <ellipse cx="1343.5" cy="1669.6484" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
-            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="126" x="1352.5" y="1672.9951">getName() : String</text>
-            <ellipse cx="1343.5" cy="1685.9453" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
-            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="122" x="1352.5" y="1689.292">getLabel() : String</text>
+            <rect codeLine="148" fill="#E8F5E9" height="80.5938" id="LabelledEnum" rx="2.5" ry="2.5" style="stroke:#2E7D32;stroke-width:0.5;" width="152" x="1332.5" y="1632"/>
+            <ellipse cx="1357.4" cy="1648" fill="#B4A7E5" rx="11" ry="11" style="stroke:#181818;stroke-width:1.0;"/>
+            <path d="M1353.3219,1643.7656 L1353.3219,1641.6094 L1360.7125,1641.6094 L1360.7125,1643.7656 L1358.2438,1643.7656 L1358.2438,1651.8438 L1360.7125,1651.8438 L1360.7125,1654 L1353.3219,1654 L1353.3219,1651.8438 L1355.7906,1651.8438 L1355.7906,1643.7656 L1353.3219,1643.7656 Z " fill="#000000"/>
+            <text fill="#000000" font-family="sans-serif" font-size="14" font-style="italic" lengthAdjust="spacing" textLength="98" x="1373.6" y="1652.8467">LabelledEnum</text>
+            <line style="stroke:#2E7D32;stroke-width:0.5;" x1="1333.5" x2="1483.5" y1="1664" y2="1664"/>
+            <line style="stroke:#2E7D32;stroke-width:0.5;" x1="1333.5" x2="1483.5" y1="1672" y2="1672"/>
+            <ellipse cx="1343.5" cy="1685.6484" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="126" x="1352.5" y="1688.9951">getName() : String</text>
+            <ellipse cx="1343.5" cy="1701.9453" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="122" x="1352.5" y="1705.292">getLabel() : String</text>
         </g>
         <g id="elem_GMN31">
-            <path d="M418.5,534.5 L418.5,596 L383.02,600 L418.5,604 L418.5,665.5625 A0,0 0 0 0 418.5,665.5625 L588.5,665.5625 A0,0 0 0 0 588.5,665.5625 L588.5,544.5 L578.5,534.5 L418.5,534.5 A0,0 0 0 0 418.5,534.5 " fill="#FEFFDD" style="stroke:#181818;stroke-width:0.5;"/>
-            <path d="M578.5,534.5 L578.5,544.5 L588.5,544.5 L578.5,534.5 " fill="#FEFFDD" style="stroke:#181818;stroke-width:0.5;"/>
-            <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="77" x="424.5" y="551.5669">Table: users</text>
-            <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="53" x="424.5" y="566.6997">Indexes:</text>
-            <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="44" x="424.5" y="581.8325">- email</text>
-            <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="81" x="424.5" y="596.9653">- auth_token</text>
-            <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="149" x="424.5" y="612.0981">- email_verification_key</text>
-            <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="148" x="424.5" y="627.231">- remember_me_token</text>
-            <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="4" x="424.5" y="642.3638"> </text>
-            <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="123" x="424.5" y="657.4966">Inheritance: JOINED</text>
+            <path d="M418.5,550.5 L418.5,612 L383.02,616 L418.5,620 L418.5,681.5625 A0,0 0 0 0 418.5,681.5625 L588.5,681.5625 A0,0 0 0 0 588.5,681.5625 L588.5,560.5 L578.5,550.5 L418.5,550.5 A0,0 0 0 0 418.5,550.5 " fill="#FEFFDD" style="stroke:#181818;stroke-width:0.5;"/>
+            <path d="M578.5,550.5 L578.5,560.5 L588.5,560.5 L578.5,550.5 " fill="#FEFFDD" style="stroke:#181818;stroke-width:0.5;"/>
+            <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="77" x="424.5" y="567.5669">Table: users</text>
+            <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="53" x="424.5" y="582.6997">Indexes:</text>
+            <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="44" x="424.5" y="597.8325">- email</text>
+            <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="81" x="424.5" y="612.9653">- auth_token</text>
+            <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="149" x="424.5" y="628.0981">- email_verification_key</text>
+            <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="148" x="424.5" y="643.231">- remember_me_token</text>
+            <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="4" x="424.5" y="658.3638"> </text>
+            <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="123" x="424.5" y="673.4966">Inheritance: JOINED</text>
         </g>
         <g id="elem_GMN34">
-            <path d="M749.5,1087 L749.5,1110.5 L714.22,1114.5 L749.5,1118.5 L749.5,1142.3984 A0,0 0 0 0 749.5,1142.3984 L887.5,1142.3984 A0,0 0 0 0 887.5,1142.3984 L887.5,1097 L877.5,1087 L749.5,1087 A0,0 0 0 0 749.5,1087 " fill="#FEFFDD" style="stroke:#181818;stroke-width:0.5;"/>
-            <path d="M877.5,1087 L877.5,1097 L887.5,1097 L877.5,1087 " fill="#FEFFDD" style="stroke:#181818;stroke-width:0.5;"/>
-            <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="84" x="755.5" y="1104.0669">Table: ROLES</text>
-            <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="117" x="755.5" y="1119.1997">Unique constraint:</text>
-            <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="113" x="755.5" y="1134.3325">(ROLE, IS_ADMIN)</text>
+            <path d="M749.5,1103 L749.5,1126.5 L714.22,1130.5 L749.5,1134.5 L749.5,1158.3984 A0,0 0 0 0 749.5,1158.3984 L887.5,1158.3984 A0,0 0 0 0 887.5,1158.3984 L887.5,1113 L877.5,1103 L749.5,1103 A0,0 0 0 0 749.5,1103 " fill="#FEFFDD" style="stroke:#181818;stroke-width:0.5;"/>
+            <path d="M877.5,1103 L877.5,1113 L887.5,1113 L877.5,1103 " fill="#FEFFDD" style="stroke:#181818;stroke-width:0.5;"/>
+            <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="84" x="755.5" y="1120.0669">Table: ROLES</text>
+            <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="117" x="755.5" y="1135.1997">Unique constraint:</text>
+            <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="113" x="755.5" y="1150.3325">(ROLE, IS_ADMIN)</text>
         </g>
         <g id="elem_GMN37">
-            <path d="M1377,142 L1377,165.5 L1342.29,169.5 L1377,173.5 L1377,197.3984 A0,0 0 0 0 1377,197.3984 L1590,197.3984 A0,0 0 0 0 1590,197.3984 L1590,152 L1580,142 L1377,142 A0,0 0 0 0 1377,142 " fill="#FEFFDD" style="stroke:#181818;stroke-width:0.5;"/>
-            <path d="M1580,142 L1580,152 L1590,152 L1580,142 " fill="#FEFFDD" style="stroke:#181818;stroke-width:0.5;"/>
-            <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="73" x="1383" y="159.0669">Table: JOBS</text>
-            <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="192" x="1383" y="174.1997">Représente une offre d'emploi</text>
-            <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="92" x="1383" y="189.3325">Index: position</text>
+            <path d="M1377,150 L1377,173.5 L1342.29,177.5 L1377,181.5 L1377,205.3984 A0,0 0 0 0 1377,205.3984 L1590,205.3984 A0,0 0 0 0 1590,205.3984 L1590,160 L1580,150 L1377,150 A0,0 0 0 0 1377,150 " fill="#FEFFDD" style="stroke:#181818;stroke-width:0.5;"/>
+            <path d="M1580,150 L1580,160 L1590,160 L1580,150 " fill="#FEFFDD" style="stroke:#181818;stroke-width:0.5;"/>
+            <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="73" x="1383" y="167.0669">Table: JOBS</text>
+            <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="192" x="1383" y="182.1997">Représente une offre d'emploi</text>
+            <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="92" x="1383" y="197.3325">Index: position</text>
         </g>
         <g id="elem_GMN40">
-            <path d="M1045.5,572.5 L1045.5,596 L1010.21,600 L1045.5,604 L1045.5,627.8984 A0,0 0 0 0 1045.5,627.8984 L1265.5,627.8984 A0,0 0 0 0 1265.5,627.8984 L1265.5,582.5 L1255.5,572.5 L1045.5,572.5 A0,0 0 0 0 1045.5,572.5 " fill="#FEFFDD" style="stroke:#181818;stroke-width:0.5;"/>
-            <path d="M1255.5,572.5 L1255.5,582.5 L1265.5,582.5 L1255.5,572.5 " fill="#FEFFDD" style="stroke:#181818;stroke-width:0.5;"/>
-            <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="166" x="1051.5" y="589.5669">Table: JOBS_HAS_STATUS</text>
-            <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="193" x="1051.5" y="604.6997">Stocke l'historique des statuts</text>
-            <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="199" x="1051.5" y="619.8325">avec double enum (job + offer)</text>
+            <path d="M1045.5,588.5 L1045.5,612 L1010.21,616 L1045.5,620 L1045.5,643.8984 A0,0 0 0 0 1045.5,643.8984 L1265.5,643.8984 A0,0 0 0 0 1265.5,643.8984 L1265.5,598.5 L1255.5,588.5 L1045.5,588.5 A0,0 0 0 0 1045.5,588.5 " fill="#FEFFDD" style="stroke:#181818;stroke-width:0.5;"/>
+            <path d="M1255.5,588.5 L1255.5,598.5 L1265.5,598.5 L1255.5,588.5 " fill="#FEFFDD" style="stroke:#181818;stroke-width:0.5;"/>
+            <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="166" x="1051.5" y="605.5669">Table: JOBS_HAS_STATUS</text>
+            <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="193" x="1051.5" y="620.6997">Stocke l'historique des statuts</text>
+            <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="199" x="1051.5" y="635.8325">avec double enum (job + offer)</text>
         </g>
         <g id="elem_GMN43">
-            <path d="M1487.5,1049 L1487.5,1110.5 L1452.26,1114.5 L1487.5,1118.5 L1487.5,1180.0625 A0,0 0 0 0 1487.5,1180.0625 L1809.5,1180.0625 A0,0 0 0 0 1809.5,1180.0625 L1809.5,1059 L1799.5,1049 L1487.5,1049 A0,0 0 0 0 1487.5,1049 " fill="#FEFFDD" style="stroke:#181818;stroke-width:0.5;"/>
-            <path d="M1799.5,1049 L1799.5,1059 L1809.5,1059 L1799.5,1049 " fill="#FEFFDD" style="stroke:#181818;stroke-width:0.5;"/>
-            <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="301" x="1493.5" y="1066.0669">Statuts d'offre avec correspondance JobStatus:</text>
-            <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="275" x="1493.5" y="1081.1997">- A_EN_COURS → CANDIDATURE_ENVOYEE</text>
-            <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="285" x="1493.5" y="1096.3325">- B_EN_ATTENTE → CANDIDATURE_ENVOYEE</text>
-            <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="162" x="1493.5" y="1111.4653">- B_RELANCE → RELANCE</text>
-            <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="136" x="1493.5" y="1126.5981">- C_REFUSE → REFUS</text>
-            <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="183" x="1493.5" y="1141.731">- D_ENTRETIEN → ENTRETIEN</text>
-            <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="137" x="1493.5" y="1156.8638">- O_ACCEPT → AUTRE</text>
-            <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="129" x="1493.5" y="1171.9966">- O_REFUS → AUTRE</text>
+            <path d="M1487.5,1065 L1487.5,1126.5 L1452.26,1130.5 L1487.5,1134.5 L1487.5,1196.0625 A0,0 0 0 0 1487.5,1196.0625 L1809.5,1196.0625 A0,0 0 0 0 1809.5,1196.0625 L1809.5,1075 L1799.5,1065 L1487.5,1065 A0,0 0 0 0 1487.5,1065 " fill="#FEFFDD" style="stroke:#181818;stroke-width:0.5;"/>
+            <path d="M1799.5,1065 L1799.5,1075 L1809.5,1075 L1799.5,1065 " fill="#FEFFDD" style="stroke:#181818;stroke-width:0.5;"/>
+            <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="301" x="1493.5" y="1082.0669">Statuts d'offre avec correspondance JobStatus:</text>
+            <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="275" x="1493.5" y="1097.1997">- A_EN_COURS → CANDIDATURE_ENVOYEE</text>
+            <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="285" x="1493.5" y="1112.3325">- B_EN_ATTENTE → CANDIDATURE_ENVOYEE</text>
+            <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="162" x="1493.5" y="1127.4653">- B_RELANCE → RELANCE</text>
+            <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="136" x="1493.5" y="1142.5981">- C_REFUSE → REFUS</text>
+            <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="183" x="1493.5" y="1157.731">- D_ENTRETIEN → ENTRETIEN</text>
+            <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="137" x="1493.5" y="1172.8638">- O_ACCEPT → AUTRE</text>
+            <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="129" x="1493.5" y="1187.9966">- O_REFUS → AUTRE</text>
         </g>
         <g id="elem_GMN46">
-            <path d="M1442,580 L1442,620.2656 A0,0 0 0 0 1442,620.2656 L1735,620.2656 A0,0 0 0 0 1735,620.2656 L1735,604 L1770.43,600 L1735,596 L1735,590 L1725,580 L1442,580 A0,0 0 0 0 1442,580 " fill="#FEFFDD" style="stroke:#181818;stroke-width:0.5;"/>
-            <path d="M1725,580 L1725,590 L1735,590 L1725,580 " fill="#FEFFDD" style="stroke:#181818;stroke-width:0.5;"/>
-            <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="272" x="1448" y="597.0669">Groupement logique des OfferStatusEnum</text>
-            <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="209" x="1448" y="612.1997">pour faciliter les requêtes filtrées</text>
+            <path d="M1442,596 L1442,636.2656 A0,0 0 0 0 1442,636.2656 L1735,636.2656 A0,0 0 0 0 1735,636.2656 L1735,620 L1770.43,616 L1735,612 L1735,606 L1725,596 L1442,596 A0,0 0 0 0 1442,596 " fill="#FEFFDD" style="stroke:#181818;stroke-width:0.5;"/>
+            <path d="M1725,596 L1725,606 L1735,606 L1725,596 " fill="#FEFFDD" style="stroke:#181818;stroke-width:0.5;"/>
+            <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="272" x="1448" y="613.0669">Groupement logique des OfferStatusEnum</text>
+            <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="209" x="1448" y="628.1997">pour faciliter les requêtes filtrées</text>
         </g>
         <!--link User to UserDetails-->
         <g id="link_User_UserDetails">
-            <path codeLine="153" d="M197.87,787.11 C194.4,871.87 191.2054,949.725 188.5154,1015.515 " fill="none" id="User-to-UserDetails" style="stroke:#1976D2;stroke-width:1.0;stroke-dasharray:7.0,7.0;"/>
-            <polygon fill="none" points="187.78,1033.5,194.5104,1015.7601,182.5204,1015.2699,187.78,1033.5" style="stroke:#1976D2;stroke-width:1.0;"/>
-            <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="76" x="197.5" y="902.5669">implements</text>
+            <path codeLine="154" d="M197.87,803.11 C194.4,887.87 191.2054,965.725 188.5154,1031.515 " fill="none" id="User-to-UserDetails" style="stroke:#1976D2;stroke-width:1.0;stroke-dasharray:7.0,7.0;"/>
+            <polygon fill="none" points="187.78,1049.5,194.5104,1031.7601,182.5204,1031.2699,187.78,1049.5" style="stroke:#1976D2;stroke-width:1.0;"/>
+            <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="76" x="197.5" y="918.5669">implements</text>
         </g>
         <!--link User to Role-->
         <g id="link_User_Role">
-            <path codeLine="154" d="M332.6,787.11 C400.94,887.18 476.4663,997.7651 519.6663,1061.0251 " fill="none" id="User-to-Role" style="stroke:#1976D2;stroke-width:1.0;"/>
-            <polygon fill="#1976D2" points="523.05,1065.98,521.2778,1056.2919,520.2303,1061.8509,514.6713,1060.8035,523.05,1065.98" style="stroke:#1976D2;stroke-width:1.0;"/>
-            <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="24" x="463.5" y="902.5669">role</text>
-            <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="7" x="330.4281" y="806.7827">*</text>
-            <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="8" x="509.6964" y="1054.8367">1</text>
+            <path codeLine="155" d="M332.6,803.11 C400.94,903.18 476.4663,1013.7651 519.6663,1077.0251 " fill="none" id="User-to-Role" style="stroke:#1976D2;stroke-width:1.0;"/>
+            <polygon fill="#1976D2" points="523.05,1081.98,521.2778,1072.2919,520.2303,1077.8509,514.6713,1076.8035,523.05,1081.98" style="stroke:#1976D2;stroke-width:1.0;"/>
+            <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="24" x="463.5" y="918.5669">role</text>
+            <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="7" x="330.4281" y="822.7827">*</text>
+            <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="8" x="509.6964" y="1070.8367">1</text>
         </g>
         <!--link Job to User-->
         <g id="link_Job_User">
-            <path codeLine="155" d="M1024.63,195.08 C858.99,226.11 596.66,290.88 400.5,413 C394.64,416.65 393.7425,417.0739 387.9525,421.0839 " fill="none" id="Job-to-User" style="stroke:#1976D2;stroke-width:1.0;"/>
-            <polygon fill="#1976D2" points="383.02,424.5,392.6962,422.6641,387.1304,421.6532,388.1414,416.0874,383.02,424.5" style="stroke:#1976D2;stroke-width:1.0;"/>
-            <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="68" x="479.5" y="379.0669">created by</text>
-            <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="7" x="1017.63" y="192.1469">*</text>
-            <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="8" x="391.2451" y="413.2791">1</text>
+            <path codeLine="156" d="M1024.86,205.36 C859.41,238.63 597.24,306.52 400.5,429 C394.64,432.65 393.7425,433.0739 387.9525,437.0839 " fill="none" id="Job-to-User" style="stroke:#1976D2;stroke-width:1.0;"/>
+            <polygon fill="#1976D2" points="383.02,440.5,392.6962,438.6641,387.1304,437.6532,388.1414,432.0874,383.02,440.5" style="stroke:#1976D2;stroke-width:1.0;"/>
+            <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="68" x="479.5" y="395.0669">created by</text>
+            <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="7" x="1017.86" y="202.4269">*</text>
+            <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="8" x="391.2451" y="429.2791">1</text>
         </g>
         <!--link Job to JobHasStatus-->
         <g id="link_Job_JobHasStatus">
-            <path codeLine="156" d="M1055.53,336.17 C1000.31,407.65 942.8879,481.9917 902.2879,534.5517 " fill="none" id="Job-to-JobHasStatus" style="stroke:#1976D2;stroke-width:1.0;"/>
-            <polygon fill="#1976D2" points="898.62,539.3,907.2874,534.6227,901.6766,535.343,900.9562,529.7322,898.62,539.3" style="stroke:#1976D2;stroke-width:1.0;"/>
-            <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="55" x="1029.5" y="379.0669">statuses</text>
-            <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="8" x="1044.437" y="352.32">1</text>
-            <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="7" x="894.084" y="532.4225">*</text>
+            <path codeLine="157" d="M1051.73,352.27 C997.1,424.31 940.9857,498.3194 901.3057,550.6394 " fill="none" id="Job-to-JobHasStatus" style="stroke:#1976D2;stroke-width:1.0;"/>
+            <polygon fill="#1976D2" points="897.68,555.42,906.3056,550.6662,900.7014,551.4361,899.9314,545.8319,897.68,555.42" style="stroke:#1976D2;stroke-width:1.0;"/>
+            <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="55" x="1029.5" y="395.0669">statuses</text>
+            <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="8" x="1040.5479" y="368.6064">1</text>
+            <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="7" x="893.2199" y="548.3366">*</text>
         </g>
         <!--link Job to ContractEnum-->
         <g id="link_Job_ContractEnum">
-            <path codeLine="159" d="M1335.5,132.5 C1381.04,132.5 1326.8,304.31 1359.5,336 C1502.04,474.17 2110.56,271.21 2249.5,413 C2353.53,519.16 2329.32,709 2304.26,816.67 " fill="none" id="Job-ContractEnum" style="stroke:#1976D2;stroke-width:1.0;stroke-dasharray:7.0,7.0;"/>
-            <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="69" x="2195.5" y="379.0669">«maps to»</text>
+            <path codeLine="160" d="M1335.5,148.5 C1381.04,148.5 1326.8,320.31 1359.5,352 C1502.04,490.17 2110.56,287.21 2249.5,429 C2353.53,535.16 2329.32,725 2304.26,832.67 " fill="none" id="Job-ContractEnum" style="stroke:#1976D2;stroke-width:1.0;stroke-dasharray:7.0,7.0;"/>
+            <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="69" x="2195.5" y="395.0669">«maps to»</text>
         </g>
         <!--link Job to WorkTimeEnum-->
         <g id="link_Job_WorkTimeEnum">
-            <path codeLine="160" d="M1330.07,336.02 C1354.06,354.84 1380.11,371.4 1407.5,383 C1480.31,413.84 2063.78,355.92 2118.5,413 C2176.02,472.99 2140.96,706.98 2118.5,787 C2066.08,973.75 1925.77,1159.9 1850.99,1249.84 " fill="none" id="Job-WorkTimeEnum" style="stroke:#1976D2;stroke-width:1.0;stroke-dasharray:7.0,7.0;"/>
-            <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="69" x="2150.5" y="604.5669">«maps to»</text>
+            <path codeLine="161" d="M1331.62,352.1 C1355.09,370.87 1380.58,387.35 1407.5,399 C1480.06,430.41 2063.78,371.92 2118.5,429 C2176.02,488.99 2140.96,722.98 2118.5,803 C2066.08,989.75 1925.77,1175.9 1850.99,1265.84 " fill="none" id="Job-WorkTimeEnum" style="stroke:#1976D2;stroke-width:1.0;stroke-dasharray:7.0,7.0;"/>
+            <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="69" x="2150.5" y="620.5669">«maps to»</text>
         </g>
         <!--link Job to WorkModeEnum-->
         <g id="link_Job_WorkModeEnum">
-            <path codeLine="161" d="M1024.88,199.84 C906.68,230.91 753.15,292.85 677.5,413 C595.39,543.41 647.02,734.7 683.15,833.19 " fill="none" id="Job-WorkModeEnum" style="stroke:#1976D2;stroke-width:1.0;stroke-dasharray:7.0,7.0;"/>
-            <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="69" x="710.5" y="379.0669">«maps to»</text>
+            <path codeLine="162" d="M1024.71,210.33 C906.42,243.25 752.85,307.62 677.5,429 C596.22,559.93 647.5,751 683.35,849.32 " fill="none" id="Job-WorkModeEnum" style="stroke:#1976D2;stroke-width:1.0;stroke-dasharray:7.0,7.0;"/>
+            <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="69" x="710.5" y="395.0669">«maps to»</text>
         </g>
         <!--link Job to OfferStatusEnum-->
         <g id="link_Job_OfferStatusEnum">
-            <path codeLine="162" d="M1335.5,230.5 C1354.76,230.5 1343.77,774.84 1338.17,1008.74 " fill="none" id="Job-OfferStatusEnum" style="stroke:#1976D2;stroke-width:1.0;stroke-dasharray:7.0,7.0;"/>
-            <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="69" x="1347.5" y="604.5669">«maps to»</text>
+            <path codeLine="163" d="M1335.5,246.5 C1354.76,246.5 1343.77,790.84 1338.17,1024.74 " fill="none" id="Job-OfferStatusEnum" style="stroke:#1976D2;stroke-width:1.0;stroke-dasharray:7.0,7.0;"/>
+            <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="69" x="1347.5" y="620.5669">«maps to»</text>
         </g>
         <!--link JobHasStatus to JobStatusEnum-->
         <g id="link_JobHasStatus_JobStatusEnum">
-            <path codeLine="164" d="M1003.5,604 C1024.01,604 1023.79,766.83 1027.5,787 C1063.3,981.55 1061.33,1034.67 1130.5,1220 C1152.93,1280.11 1186.45,1344.14 1214.09,1392.75 " fill="none" id="JobHasStatus-JobStatusEnum" style="stroke:#1976D2;stroke-width:1.0;stroke-dasharray:7.0,7.0;"/>
-            <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="69" x="1131.5" y="1119.0669">«maps to»</text>
+            <path codeLine="165" d="M1003.5,620 C1024.01,620 1023.79,782.83 1027.5,803 C1063.3,997.55 1061.33,1050.67 1130.5,1236 C1152.93,1296.11 1186.45,1360.14 1214.09,1408.75 " fill="none" id="JobHasStatus-JobStatusEnum" style="stroke:#1976D2;stroke-width:1.0;stroke-dasharray:7.0,7.0;"/>
+            <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="69" x="1131.5" y="1135.0669">«maps to»</text>
         </g>
         <!--link JobHasStatus to OfferStatusEnum-->
         <g id="link_JobHasStatus_OfferStatusEnum">
-            <path codeLine="165" d="M1003.5,620 C1040.99,620 1003.46,758.23 1027.5,787 C1054.53,819.36 1083.41,792.18 1117.5,817 C1122.42,820.58 1198.59,924.77 1259.53,1008.64 " fill="none" id="JobHasStatus-OfferStatusEnum" style="stroke:#1976D2;stroke-width:1.0;stroke-dasharray:7.0,7.0;"/>
-            <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="69" x="1236.5" y="902.5669">«maps to»</text>
+            <path codeLine="166" d="M1003.5,636 C1040.99,636 1003.46,774.23 1027.5,803 C1054.53,835.36 1083.41,808.18 1117.5,833 C1122.42,836.58 1198.59,940.77 1259.53,1024.64 " fill="none" id="JobHasStatus-OfferStatusEnum" style="stroke:#1976D2;stroke-width:1.0;stroke-dasharray:7.0,7.0;"/>
+            <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="69" x="1236.5" y="918.5669">«maps to»</text>
         </g>
         <!--link OfferStatusEnum to JobStatusEnum-->
         <g id="link_OfferStatusEnum_JobStatusEnum">
-            <path codeLine="167" d="M1303.72,1220.16 C1301.1,1230.2 1298.64,1240.27 1296.5,1250 C1286.16,1296.95 1278.7256,1344.1943 1272.9456,1386.8543 " fill="none" id="OfferStatusEnum-to-JobStatusEnum" style="stroke:#1976D2;stroke-width:1.0;"/>
-            <polygon fill="#1976D2" points="1272.14,1392.8,1277.3122,1384.4185,1272.8113,1387.8453,1269.3846,1383.3444,1272.14,1392.8" style="stroke:#1976D2;stroke-width:1.0;"/>
-            <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="84" x="1297.5" y="1311.0669">toJobStatus()</text>
+            <path codeLine="168" d="M1303.72,1236.16 C1301.1,1246.2 1298.64,1256.27 1296.5,1266 C1286.16,1312.95 1278.7256,1360.1943 1272.9456,1402.8543 " fill="none" id="OfferStatusEnum-to-JobStatusEnum" style="stroke:#1976D2;stroke-width:1.0;"/>
+            <polygon fill="#1976D2" points="1272.14,1408.8,1277.3122,1400.4185,1272.8113,1403.8453,1269.3846,1399.3444,1272.14,1408.8" style="stroke:#1976D2;stroke-width:1.0;"/>
+            <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="84" x="1297.5" y="1327.0669">toJobStatus()</text>
         </g>
         <!--link LogicalStatusEnum to OfferStatusEnum-->
         <g id="link_LogicalStatusEnum_OfferStatusEnum">
-            <path codeLine="168" d="M1876.85,664.6 C1841.86,701.52 1795.92,748.23 1752.5,787 C1745.4,793.34 1577.669,924.4473 1456.789,1018.8373 " fill="none" id="LogicalStatusEnum-to-OfferStatusEnum" style="stroke:#1976D2;stroke-width:1.0;"/>
-            <polygon fill="#1976D2" points="1452.06,1022.53,1461.6154,1020.1436,1456.0009,1019.4527,1456.6918,1013.8382,1452.06,1022.53" style="stroke:#1976D2;stroke-width:1.0;"/>
-            <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="54" x="1713.5" y="902.5669">contains</text>
+            <path codeLine="169" d="M1876.85,680.6 C1841.86,717.52 1795.92,764.23 1752.5,803 C1745.4,809.34 1577.669,940.4473 1456.789,1034.8373 " fill="none" id="LogicalStatusEnum-to-OfferStatusEnum" style="stroke:#1976D2;stroke-width:1.0;"/>
+            <polygon fill="#1976D2" points="1452.06,1038.53,1461.6154,1036.1436,1456.0009,1035.4527,1456.6918,1029.8382,1452.06,1038.53" style="stroke:#1976D2;stroke-width:1.0;"/>
+            <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="54" x="1713.5" y="918.5669">contains</text>
         </g>
         <!--link OfferStatusEnum to LabelledEnum-->
         <g id="link_OfferStatusEnum_LabelledEnum">
-            <path codeLine="171" d="M1378.74,1220.3 C1381.77,1230.22 1384.43,1240.23 1386.5,1250 C1414.35,1381.75 1413.5142,1524.6408 1410.9742,1597.8408 " fill="none" id="OfferStatusEnum-to-LabelledEnum" style="stroke:#1976D2;stroke-width:1.0;stroke-dasharray:7.0,7.0;"/>
-            <polygon fill="none" points="1410.35,1615.83,1416.9706,1598.0489,1404.9778,1597.6328,1410.35,1615.83" style="stroke:#1976D2;stroke-width:1.0;"/>
+            <path codeLine="172" d="M1378.74,1236.3 C1381.77,1246.22 1384.43,1256.23 1386.5,1266 C1414.35,1397.75 1413.5142,1540.6408 1410.9742,1613.8408 " fill="none" id="OfferStatusEnum-to-LabelledEnum" style="stroke:#1976D2;stroke-width:1.0;stroke-dasharray:7.0,7.0;"/>
+            <polygon fill="none" points="1410.35,1631.83,1416.9706,1614.0489,1404.9778,1613.6328,1410.35,1631.83" style="stroke:#1976D2;stroke-width:1.0;"/>
         </g>
         <!--link JobStatusEnum to LabelledEnum-->
         <g id="link_JobStatusEnum_LabelledEnum">
-            <path codeLine="172" d="M1327.39,1555.22 C1344.3,1576.12 1350.4737,1583.7521 1364.8637,1601.5521 " fill="none" id="JobStatusEnum-to-LabelledEnum" style="stroke:#1976D2;stroke-width:1.0;stroke-dasharray:7.0,7.0;"/>
-            <polygon fill="none" points="1376.18,1615.55,1369.5297,1597.78,1360.1977,1605.3242,1376.18,1615.55" style="stroke:#1976D2;stroke-width:1.0;"/>
+            <path codeLine="173" d="M1327.39,1571.22 C1344.3,1592.12 1350.4737,1599.7521 1364.8637,1617.5521 " fill="none" id="JobStatusEnum-to-LabelledEnum" style="stroke:#1976D2;stroke-width:1.0;stroke-dasharray:7.0,7.0;"/>
+            <polygon fill="none" points="1376.18,1631.55,1369.5297,1613.78,1360.1977,1621.3242,1376.18,1631.55" style="stroke:#1976D2;stroke-width:1.0;"/>
         </g>
         <!--link ContractEnum to LabelledEnum-->
         <g id="link_ContractEnum_LabelledEnum">
-            <path codeLine="173" d="M2223.98,979.37 C2152.87,1075.95 2025.38,1240.3 1896.5,1363 C1793.49,1461.07 1763.49,1483.58 1640.5,1555 C1590.68,1583.93 1547.7217,1603.0592 1501.3517,1621.2092 " fill="none" id="ContractEnum-to-LabelledEnum" style="stroke:#1976D2;stroke-width:1.0;stroke-dasharray:7.0,7.0;"/>
-            <polygon fill="none" points="1484.59,1627.77,1503.5387,1626.7964,1499.1648,1615.6219,1484.59,1627.77" style="stroke:#1976D2;stroke-width:1.0;"/>
+            <path codeLine="174" d="M2223.98,995.37 C2152.87,1091.95 2025.38,1256.3 1896.5,1379 C1793.49,1477.07 1763.49,1499.58 1640.5,1571 C1590.68,1599.93 1547.7217,1619.0592 1501.3517,1637.2092 " fill="none" id="ContractEnum-to-LabelledEnum" style="stroke:#1976D2;stroke-width:1.0;stroke-dasharray:7.0,7.0;"/>
+            <polygon fill="none" points="1484.59,1643.77,1503.5387,1642.7964,1499.1648,1631.6219,1484.59,1643.77" style="stroke:#1976D2;stroke-width:1.0;"/>
         </g>
         <!--link WorkTimeEnum to LabelledEnum-->
         <g id="link_WorkTimeEnum_LabelledEnum">
-            <path codeLine="174" d="M1739.63,1363.03 C1659.68,1433.64 1537.0911,1541.9241 1466.8611,1603.9541 " fill="none" id="WorkTimeEnum-to-LabelledEnum" style="stroke:#1976D2;stroke-width:1.0;stroke-dasharray:7.0,7.0;"/>
-            <polygon fill="none" points="1453.37,1615.87,1470.8331,1608.4511,1462.8892,1599.457,1453.37,1615.87" style="stroke:#1976D2;stroke-width:1.0;"/>
+            <path codeLine="175" d="M1739.63,1379.03 C1659.68,1449.64 1537.0911,1557.9241 1466.8611,1619.9541 " fill="none" id="WorkTimeEnum-to-LabelledEnum" style="stroke:#1976D2;stroke-width:1.0;stroke-dasharray:7.0,7.0;"/>
+            <polygon fill="none" points="1453.37,1631.87,1470.8331,1624.4511,1462.8892,1615.457,1453.37,1631.87" style="stroke:#1976D2;stroke-width:1.0;"/>
         </g>
         <!--link WorkModeEnum to LabelledEnum-->
         <g id="link_WorkModeEnum_LabelledEnum">
-            <path codeLine="175" d="M785.62,928.21 C825.2,946.52 871.96,973.44 904.5,1009 C1084.29,1205.5 958.33,1371.63 1151.5,1555 C1201.45,1602.41 1258.8436,1624.0418 1314.9136,1637.5918 " fill="none" id="WorkModeEnum-to-LabelledEnum" style="stroke:#1976D2;stroke-width:1.0;stroke-dasharray:7.0,7.0;"/>
-            <polygon fill="none" points="1332.41,1641.82,1316.3231,1631.7597,1313.5042,1643.4239,1332.41,1641.82" style="stroke:#1976D2;stroke-width:1.0;"/>
+            <path codeLine="176" d="M785.62,944.21 C825.2,962.52 871.96,989.44 904.5,1025 C1084.29,1221.5 958.33,1387.63 1151.5,1571 C1201.45,1618.41 1258.8436,1640.0418 1314.9136,1653.5918 " fill="none" id="WorkModeEnum-to-LabelledEnum" style="stroke:#1976D2;stroke-width:1.0;stroke-dasharray:7.0,7.0;"/>
+            <polygon fill="none" points="1332.41,1657.82,1316.3231,1647.7597,1313.5042,1659.4239,1332.41,1657.82" style="stroke:#1976D2;stroke-width:1.0;"/>
         </g>
-        <!--SRC=[vLXTSjis47xNAH3d8NOJUHAtQMADgnbQec8w4kMXg7GydGo79Y4PDKam81Z7a-Qr1-Wjqcla9Zr95m194H8fELE_rIy2kDzY_nSBFmhnWYGOcRPhkPVUO3gUEkYn-NhqqZpkFAg8yqb96er6nuEVAj9Ryt95CP-_FkfqiXkIf3xpOnH4VfQXpnq4VwT-SBDaD4_20OqeqmGg06KXPehu-CXyDVpnI7ut6AEtnUSNnwz-7XvrljI5u2IFMsMKUczA6BryDNZ-N1obj9ndc1N7V5uG78LVqCd9nTj-7v7GomMnXwo4uoLc6YZnOmoa6MSaMQBVxAcBxFbu_5u3BGZB-BsG9oTvGZxa6EJYs2VHJePbc3AQSf80yehI2Fi9G05cd8vD7Hemx7CS6boQad4_uHezJyEjz1JyT0i-tAcJd_DhbzxWf8viL8dX6CTNc4tm_V3I9-ym8miI-9pGv2s-sysK-5SH5cgVDZkesrNu6FDh2WnFqH9p0uoWZ722i_q3u8MyYN0WP9wyOU0QS5I1kEjlOR-Jp4h11fX8Ev4OMr0aCu80afhRD34_fOJXKAABQ6-3ZsbmimizWFDmmeaVPVSLO2g7RWE1QGuGB0Kg2wUgDa5hhJOcYCtLLYkF0hKz4y4POInhOnNw0lWCGGlpyuZ_iW3JyVkLSkVqgbMttu7Mh5fACoAoOwTE8Su2Hj9rR7F9qZZrbydTpaC3oBJT89fmvWTSPhDQcg9xji2XrcyyJcJN-XNMBYntucCQblW9BBVX6_fH6xIXDRNsMaPZZowWGK1AXpHkB_kI0y2OpRZFymp0qzMkIVdDNf5XNkFPN-C_s05N4Mj2bIxS0H5HsG8f0rr1wcb-vcU5tQtvVfsrv3jKGkMpytAzBTpVvURgAadJYBG77eoHz__wQSeSmpDjkF_dpapT_s9hk2wC7cRnmJ77XZrGkm7iHlEPsWm1wpgcQvcst4yzOp0mBznY8v7rV90TR-nVuMYzaqkAtT3Ydo9EAyT9ekR6oZRTkSgoWM4FhQ7XpXqJ57qtlJILsdLxLZhgfXXpsFq7tKkzj1PIg3KS5h-M_1qvPaqX2_pkM1EvdbYpcJMr7q0DhJCfDIx6fcLxhZcvKFRBbNTXEE23yGE9h9gR4ZcqPYuOMfv_TddgM4DbzcpkU3FBVGYNZ-aIvfve8nsqD5zBSZtujHIlgrAhdsBS6PECdwoLLLyeGg0Ni8KVO3ao3p67YQpg7myvGLqKu-R_P83IN2jJ0n2r6EjcszjDRiek4F04EJYIStE6KlWOaDIFSDQHZv_3mp_wManxYCHf11DwmWl8tWzxa3PzjFTYJurmFJc6TSJ4LAVDrNkfkE3HrPr2l2WGWDGkdnxAYjJJLVG_uW21VlADbuapUhrgXZayr3jG3swjs4ypwAhzliBU5gr1OBKsqO8LDLrYg_fkmDPlCe2lNpuwHwTkQg-tkZQ1Ks_j6v9gRDydSfqilBukIxjyEfkTHV1iYX7kzqaY0sL1TdpxAjAZY5VufChW3HLaTjNJkgChj4dNehj9rWBQJAvYk4dk99HZnCZociDW8XCMQiWLPTb3uhcVmTPAGlm9PprOTjNJKwx4yzRZuhsw8dWVQuzIxmRVILBvlFLYN378Swy13RDC0CBEfvPj3g6_XqZejAwPABELPivqR8ekFvUl816D37m4NXSwxWlgCsJDF6CuiUo3rZF1ywiZpwUduaG7f-pRrmo2YL6UO36jCGmHnH1aIafdzAfdphR3gxpLfNXdnio3QzALOycCYzwAeYVNSDF09I3iWQUHQWLSiCho3saE1wZ_ykoBrzTJDKYsMxUMULAKF1AiKLR9WmFA6CvIceGY3gloKD5UZOxedp__Qfctkjf8kGDOZ6OIjHhJkjNOMH3KpDQj3w2IKh_6kzKuAadbGDSj1zFQrpKdHNWXVRHHxi3-Xj4ybTqUHK0kux7fpfJc346HauX0jSi6pV27_DlV75OB4d5896ZbbUX_0G00]-->
+        <!--SRC=[vLXTSjis47xNAH3d8KuJUHAtQHADgnbQec8w4kMXg7GydGo79Y4PDKam89Z4a-Qr1-Wjqcla9Zr95m3_895IClLR_MA0-otsVx7GlH2lI8AHQRkMU-cDvjEvW-wRBoRFp9UzUnLnEIj9aydavUYdYlJQlAmfvfCNnxrUTaEIr6T-Z8B8ppBqgOVWxzGFRjQCvaaueX5bca05e2p4J17l7vlFnpyUo-y6O_H3yVdfo-S_Zuzxdvj2S9B7dJ9AlRSbJ9uz7prv8evIMYupp8fZFgq8ZiBFwEJaulLmY4ZevO8uG5R2yHep3PJuCGRIWZEIhD5lzjn5zd8wVQk1LeHb_9kG9oTvGjxb6EJYs2VHNePrc3AQSf80yehI2Fi9G05cd4vD7Hemx7CS6boQad4_uHezJyETz1Jyz05yk5SdF-VNBht1IHFPgXB3COwlC9lXRyDBdxp1ZAn8u7D2azVuTZzJubz5MAXzskwWVb_XOyolAJ0yGclC3J22Ci89pWuV0Y_aJOG38VFa5GFNWACAnErm1_kjP5OAji14sed4s84YcH44aDJSfedvCIKCXn9TH7iNV4g3ctte4Po74qxyAFjM0QPow2uGcEO0mLAWid2gQXEqpcfZWjXUROtoA52xCn6S4SQoDkhG5y3725gOdqVybnMOZj_MoftJgqxTVWTQksefpOZ8ZhqwXJWB64atiUqbI-FKNoUt-qikJQEY9CPGn7K5TvuCgRdtr80cdFa1b-clbgPejnrmQ0ut7YUopVqAQnUMU_4n3Kly39Qxy2qDh0lQqiiwcpEZiKTNq56W1a8QT_U9aWF0c2sup_CCmFDwrwRyTdF9C6_m76xmFzm3Ln5hGvKkt0CHKTa1AGDTGPfrSUPdXTsT1NATTHG8b4xbi_DolIlSt-LchH2w0m_6o85XypHbZk6PDWmCIsUX1WQnDLmNPXMp-E2OKyCUgTq8TfFbGct6W7KTqxLCM-xddZ4QcHTkiP78PZx85Zdrht2qsVebnMwv4nuXJYl7IQBcniestRdAif5XZwsnuIuT4nHzCxyqbTfDUseTTLEC9Up-W-wbNbeBATGQZul_blm_SSo6GXRutR5cSZsp5WjhRj-16bfdKcfSJ4tBzbnpTg7ibollmd301zCx4barDoLoR2rSCBGy_-porB76okp5ql4MbdiNBf_IDTmAqLOwQ6c-aUHwy1iftbIbKJ_5V3Gb6J_PAAkXK8H0Bs0hFy1onXvZ3YDSrJ_kSkIwAERJ_yd4fRbMfWOW6Z7MpRPtczoMNI3W0N9m9AUA3ANmCI2f7-6i9rzBHqT_3BMO3X29qmX6-eGNa8CV3Y1jXkZWwO6Q-GPoRkk94Qj9Mwe7Ld71ewjRXNXQ802fNJu3b1MffwlelyS10ltaep0JPmm6rGnpTAHte07SMh6VPj1LXqE5_L2q1e7LsaG7LjHqYQtgkmNRlCa0lddvw1ozfgc3GNrj0gVUshSaDTY-J-GcMNXzKvPs-VIsEulWsHOZtE-JH0RAWkpu-aMaHn6ly46LmLigoEngfdLFLsYRhaLtcwm5j9rSnN2Rt4ieZDMChAyv32OoOQ66N56M0oH-7yXWQoKX_eYp0IpxwgqgL-8zx77nmAq9tll6AzQxmRUILBw7lHXN3FBSQq33B1E0iFEvPPjZwEyX4ZfjQYRAhDRCcKzDqUMNyjaaef61Zy3hGiT3GNsCh8LdZ6UM_R3pJF1yVUJv_5ISwE2KVVsIGJ0noXCifZM68Q8OWan9wOn1zIxQTNYLjxeKxynOU71Dkd8iMN3HMr7qu1fk6hW4X3tmbbAjW0jMMVuXpU40zRFGeNYkFLA3PBTr6vadHSaZmHfbbJmue8pXBAL9AE9GbuUATZqwed_-_AjZtkfh8-KUO36QILGzflMhiRCWg9cjtnn09QLvZVUhSLIIoe6kNmwcZQyRJehmIlfegzo1_HMZUIgxFOg0NCPZsvqfpHc28YSHWMgN3PhXT_dNlpciLYJYa4ZGoYlH_m80]-->
     </g>
 </svg>

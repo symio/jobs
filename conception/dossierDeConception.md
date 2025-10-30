@@ -31,7 +31,7 @@
 
 ### Diagramme UML de Classes :
 
-![Domain CLasses Jobs](UML/exports/classes_classDiagram.svg)
+![Domain CLasses Jobs](UML/exports/classes_classDiagram.png)
 
 ### Diagramme UML de Classes de conception :
 
