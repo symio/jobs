@@ -74,6 +74,7 @@ public class JobManager extends IdentifiedHandler implements JobService {
         jobMap.put("compagny", job.getCompagny());
         jobMap.put("city", job.getCity());
         jobMap.put("from_official_dom", job.isFromOfficialDom());
+        jobMap.put("application_date", job.getApplicationDate());
         jobMap.put("created_at", job.getCreatedAt());
         jobMap.put("updated_at", job.getUpdatedAt());
         jobMap.put("contract", job.getContract().getName());
@@ -105,10 +106,10 @@ public class JobManager extends IdentifiedHandler implements JobService {
 
     private OfferStatusEnum getOldOfferStatus(Integer jobId) {
         return (OfferStatusEnum) entityManager.createQuery(
-                    "SELECT j.offerStatus FROM Job j WHERE j.id = :id"
-                )
-                .setParameter("id", jobId)
-                .getSingleResult();
+                "SELECT j.offerStatus FROM Job j WHERE j.id = :id"
+            )
+            .setParameter("id", jobId)
+            .getSingleResult();
     }
 
     private Map<String, Object> buildHalResponse(Page<Job> jobPage, int page, int size) {
@@ -157,45 +158,53 @@ public class JobManager extends IdentifiedHandler implements JobService {
         Specification<Job> spec = (root, query, cb) -> cb.conjunction();
 
         if (request.getContract() != null) {
-            spec = spec.and((root, query, cb)
-                    -> cb.equal(root.get("contract"), request.getContract()));
+            spec = spec.and((root, query, cb) -> cb.equal(root.get("contract"), request.getContract()));
         }
 
         if (request.getWorkMode() != null) {
-            spec = spec.and((root, query, cb)
-                    -> cb.equal(root.get("workMode"), request.getWorkMode()));
+            spec = spec.and((root, query, cb) -> cb.equal(root.get("workMode"), request.getWorkMode()));
         }
 
         if (request.getWorkTime() != null) {
-            spec = spec.and((root, query, cb)
-                    -> cb.equal(root.get("workTime"), request.getWorkTime()));
+            spec = spec.and((root, query, cb) -> cb.equal(root.get("workTime"), request.getWorkTime()));
         }
 
         if (request.getOfferStatus() != null) {
-            spec = spec.and((root, query, cb)
-                    -> cb.equal(root.get("offerStatus"), request.getOfferStatus()));
+            spec = spec.and((root, query, cb) -> cb.equal(root.get("offerStatus"), request.getOfferStatus()));
         }
 
         if (request.isOfficialdom()) {
-            spec = spec.and((root, query, cb)
-                    -> cb.isTrue(root.get("fromOfficialDom")));
+            spec = spec.and((root, query, cb) -> cb.isTrue(root.get("fromOfficialDom")));
         }
 
         if (request.getEventAfter() != null) {
             Instant eventAfter = request.getEventAfterAsInstant();
-            spec = spec.and((root, query, cb)
-                    -> cb.greaterThanOrEqualTo(root.get("createdAt"), eventAfter));
+            spec = spec.and(
+                (root, query, cb) 
+                    -> cb.or(
+                        cb.greaterThanOrEqualTo(root.get("createdAt"), eventAfter),
+                        cb.greaterThanOrEqualTo(root.get("updatedAt"), eventAfter),
+                        cb.greaterThanOrEqualTo(root.get("applicationDate"), eventAfter)
+                    )
+            );
         }
 
         if (request.getEventBefore() != null) {
             Instant eventBefore = request.getEventBeforeAsInstant();
-            spec = spec.and((root, query, cb)
-                    -> cb.lessThanOrEqualTo(root.get("createdAt"), eventBefore));
+            spec = spec.and(
+                (root, query, cb)
+                    -> cb.or(
+                        cb.lessThanOrEqualTo(root.get("createdAt"), eventBefore),
+                        cb.lessThanOrEqualTo(root.get("updatedAt"), eventBefore),
+                        cb.lessThanOrEqualTo(root.get("applicationDate"), eventBefore)
+                    )
+            );
         }
 
         if (request.getTextual() != null && !request.getTextual().isBlank()) {
             String searchPattern = "%" + request.getTextual().toLowerCase() + "%";
-            spec = spec.and((root, query, cb)
+            spec = spec.and(
+                (root, query, cb)
                     -> cb.or(
                             cb.like(cb.lower(root.get("position")), searchPattern),
                             cb.like(cb.lower(root.get("compagny")), searchPattern),
@@ -210,7 +219,7 @@ public class JobManager extends IdentifiedHandler implements JobService {
 
     private Sort buildSort(String sortParam) {
         if (sortParam == null || sortParam.isBlank()) {
-            return Sort.by(Sort.Direction.DESC, "updatedAt", "createdAt");
+            return Sort.by(Sort.Direction.DESC, "updatedAt", "createdAt", "applicationDate");
         }
 
         return switch (sortParam.toUpperCase()) {
@@ -219,11 +228,11 @@ public class JobManager extends IdentifiedHandler implements JobService {
             case "Z-A" ->
                 Sort.by(Sort.Direction.DESC, "position");
             case "DATE_ASC" ->
-                Sort.by(Sort.Direction.ASC, "updatedAt", "createdAt");
+                Sort.by(Sort.Direction.ASC, "updatedAt", "createdAt", "applicationDate");
             case "DATE_DESC" ->
-                Sort.by(Sort.Direction.DESC, "updatedAt", "createdAt");
+                Sort.by(Sort.Direction.DESC, "updatedAt", "createdAt", "applicationDate");
             default ->
-                Sort.by(Sort.Direction.DESC, "updatedAt", "createdAt");
+                Sort.by(Sort.Direction.DESC, "updatedAt", "createdAt", "applicationDate");
         };
     }
 
@@ -255,16 +264,15 @@ public class JobManager extends IdentifiedHandler implements JobService {
 
         if (!j.isFromOfficialDom()) {
             switch (j.getOfferStatus().getName()) {
-                case "O_ACCEPT":
-                    j.setOfferStatus(OfferStatusEnum.A_EN_COURS);
-                    break;
-                case "O_REFUS":
-                    j.setOfferStatus(OfferStatusEnum.C_REFUSE);
-                    break;
+                case "O_ACCEPT" -> j.setOfferStatus(OfferStatusEnum.A_EN_COURS);
+                case "O_REFUS" -> j.setOfferStatus(OfferStatusEnum.C_REFUSE);
             }
         }
 
         addJobStatus(j);
+        
+        if(j.getApplicationDate() == null)
+            j.setApplicationDate(j.getCreatedAt());
     }
 
     @Override
@@ -282,6 +290,9 @@ public class JobManager extends IdentifiedHandler implements JobService {
 
         if (getOldOfferStatus(j.getId()) != j.getOfferStatus()) 
             addJobStatus(j);
+        
+        if(j.getApplicationDate() == null)
+            j.setApplicationDate(j.getCreatedAt());
     }
 
     @Override

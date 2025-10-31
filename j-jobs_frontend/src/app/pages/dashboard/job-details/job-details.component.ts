@@ -12,7 +12,7 @@ import { PageTitleService } from '@app/services/page-title.service';
 import {
     JobsService, Job,
     GetJobsResponse, PageInfo,
-    SearchJobsRequest, UpdateJobRequest,
+    SearchJobsRequest, CreateUpdateJobRequest,
 } from '@app/services/jobs.service';
 import { SanitizationService } from '@app/services/sanitization.service';
 import { ModalService } from '@app/services/modal.service';

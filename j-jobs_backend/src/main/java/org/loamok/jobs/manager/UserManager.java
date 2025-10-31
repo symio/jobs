@@ -29,7 +29,7 @@ public class UserManager implements userService {
     // Regex pour valider le mot de passe
     private static final String PASSWORD_PATTERN
             = "^(?=.*[a-z])(?=.*[A-Z])(?=.*\\d)(?=.*[@$!%*?&_\\-|~#])[A-Za-z\\d@$!%*?&_\\-|~#]{8,}$";
-    private static final Pattern pattern = Pattern.compile(PASSWORD_PATTERN);
+    private static final Pattern PATTERN = Pattern.compile(PASSWORD_PATTERN);
     private final BCryptPasswordEncoder passwordEncoder = new BCryptPasswordEncoder();
     protected final Log logger = LogFactory.getLog(getClass());
 
@@ -107,7 +107,7 @@ public class UserManager implements userService {
     }
     
     @Override
-    public Boolean checkRegisteredUser(String emailKey) {
+    public Boolean activateRegisteredUser(String emailKey) {
         User u = getUserByEmailKey(emailKey);
         
         if(u != null && u.getEmailVerificationKey() != null && u.getEmailVerificationKey().equals(emailKey)) {
@@ -279,7 +279,7 @@ public class UserManager implements userService {
         if(password == null || password.isBlank()) 
             return false;
 
-        return pattern.matcher(password).matches();
+        return PATTERN.matcher(password).matches();
     }
 
 }

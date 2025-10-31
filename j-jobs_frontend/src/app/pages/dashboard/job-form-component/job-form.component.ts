@@ -13,7 +13,7 @@ import {
 import { MenuDataNoTitle, MenuService } from '@app/services/menu.service';
 import { PageTitleService } from '@app/services/page-title.service';
 import { catchError, forkJoin, of, Subscription } from 'rxjs';
-import { JobsService, Job, CreateJobRequest, UpdateJobRequest } from '@app/services/jobs.service';
+import { JobsService, Job, CreateUpdateJobRequest } from '@app/services/jobs.service';
 import { SanitizationService } from '@app/services/sanitization.service';
 import { ModalService } from '@app/services/modal.service';
 
@@ -144,10 +144,40 @@ export class JobFormComponent implements OnInit, OnDestroy {
             workMode: [job?.workMode || '', [Validators.required, notEmptyValidator]],
             offerStatus: [job?.offerStatus || '', [Validators.required, notEmptyValidator]],
             from_official_dom: [job?.from_official_dom || false],
+            application_date: [this.formatDateForInput(job?.application_date) || ''],
             description: [
                 job?.description ? this.sanitizationService.decodeHtml(job.description) : ''
             ],
         });
+    }
+
+    formatDateForInput(dateString: string | null | undefined): string {
+        if (!dateString) return '';
+
+        const date = new Date(dateString);
+
+        const tzOffset = date.getTimezoneOffset() * 60000;
+        const localISOTime = new Date(date.getTime() - tzOffset)
+            .toISOString()
+            .slice(0, 16);
+
+        return localISOTime;
+    }
+
+    formatDateForBackend(localDateString: string | null | undefined): string | null {
+        if (!localDateString) {
+            return null;
+        }
+
+        const localDate = new Date(localDateString);
+
+        if (isNaN(localDate.getTime())) {
+            return null;
+        }
+
+        const utcISOString = new Date(localDate.getTime()).toISOString();
+
+        return utcISOString;
     }
 
     async onSubmit(): Promise<void> {
@@ -180,14 +210,15 @@ export class JobFormComponent implements OnInit, OnDestroy {
             this.isSubmitting = false;
             return;
         }
+        
+        formValue.application_date = this.formatDateForBackend(formValue.application_date);
 
         const sanitizedData = this.sanitizationService.sanitizeFormData(formValue, {
             multilineFields: ['description'], skipFields: ['from_official_dom'],
         });
-        
-        // Envoi des données nettoyées
+
         if (this.job && this.link) {
-            this.jobsService.updateJob(this.link, sanitizedData as UpdateJobRequest).subscribe({
+            this.jobsService.updateJob(this.link, sanitizedData as CreateUpdateJobRequest).subscribe({
                 next: async () => {
                     await this.modalService.success("Succès", 'Offre mise à jour avec succès !');
                     this.router.navigate(['/dashboard']);
@@ -198,7 +229,7 @@ export class JobFormComponent implements OnInit, OnDestroy {
                 },
             });
         } else {
-            this.jobsService.createJob(sanitizedData as CreateJobRequest).subscribe({
+            this.jobsService.createJob(sanitizedData as CreateUpdateJobRequest).subscribe({
                 next: async () => {
                     await this.modalService.success("Succès", 'Offre créée avec succès !');
                     this.router.navigate(['/dashboard']);
@@ -297,6 +328,9 @@ export class JobFormComponent implements OnInit, OnDestroy {
     }
     get from_official_dom() {
         return this.form.get('from_official_dom');
+    }
+    get application_date() {
+        return this.form.get('application_date');
     }
     get offerStatus() {
         return this.form.get('offerStatus');

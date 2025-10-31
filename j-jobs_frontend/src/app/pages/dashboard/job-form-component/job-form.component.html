@@ -149,7 +149,7 @@
                         {{ workTime.value }}
                     </option>
                 </select>
-            <div
+                <div
                     class="error-message"
                     *ngIf="workTime?.invalid && workTime?.touched"
                     >
@@ -193,6 +193,11 @@
                     >
                     <div *ngIf="offerStatus?.errors?.['required']">Le statut de l'offre est requis</div>
                 </div>
+            </div>
+            
+            <div class="form-group">
+                <label for="application_date">Date de candidature</label>
+                <input type="datetime-local" id="application_date" formControlName="application_date"  />
             </div>
 
             <div class="form-group description-group">

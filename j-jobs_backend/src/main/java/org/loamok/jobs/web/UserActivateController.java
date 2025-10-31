@@ -51,7 +51,7 @@ public class UserActivateController {
             @Valid @RequestBody UserActivateRequest userActivateRequest
     ) {
         try {
-            Boolean verified = userService.checkRegisteredUser(userActivateRequest.getKey());
+            Boolean verified = userService.activateRegisteredUser(userActivateRequest.getKey());
             
             if(verified.equals(Boolean.FALSE))
                 return ResponseEntity.badRequest().build();

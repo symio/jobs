@@ -7,7 +7,7 @@ import {
     JobsService,
     Job,
     GetJobsResponse,
-    CreateJobRequest,
+    CreateUpdateJobRequest,
     UpdateJobRequest,
     SearchJobsRequest,
 } from './jobs.service';
@@ -109,7 +109,7 @@ describe('JobsService', () => {
 
     describe('createJob', () => {
         it('should create a job via POST request', () => {
-            const newJob: CreateJobRequest = {
+            const newJob: CreateUpdateJobRequest = {
                 position: 'Développeur Fullstack Java / Spring / Angular',
                 compagny: 'ACME',
                 city: 'Niort',
@@ -132,7 +132,7 @@ describe('JobsService', () => {
         });
 
         it('should call buildRequestHeadersHal with true', () => {
-            const newJob: CreateJobRequest = {
+            const newJob: CreateUpdateJobRequest = {
                 position: 'Dev',
                 compagny: 'ACME',
                 city: 'Niiort',
@@ -334,7 +334,7 @@ describe('JobsService', () => {
 
     describe('error handling', () => {
         it('should handle HTTP errors on createJob', () => {
-            const newJob: CreateJobRequest = {
+            const newJob: CreateUpdateJobRequest = {
                 position: 'Dev',
                 compagny: 'ACME',
                 city: 'Niort',

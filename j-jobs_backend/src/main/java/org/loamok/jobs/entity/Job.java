@@ -82,14 +82,18 @@ public class Job {
     
     @Column(name = "from_officialdom", nullable = true)
     private boolean fromOfficialDom;
+    @Column(name = "application_date", nullable = true)
+    private Instant applicationDate;
     @CreationTimestamp
     private Instant createdAt;
     @UpdateTimestamp
     private Instant updatedAt;
+    
     // relations 
     /**
      * Relation avec JobHasStatus *
      */
+    @JsonProperty(access = JsonProperty.Access.READ_ONLY)
     @OneToMany(mappedBy = "job", cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.EAGER)
     @Builder.Default
     private List<JobHasStatus> jobHasStatuses = new ArrayList<>();

@@ -43,14 +43,14 @@ services:
     image: postgres:17.4
     container_name: ${COMPOSE_PROJECT_NAME:-jobs}_db-init
     volumes:
-      - ./init-roles.sh:/init-roles.sh
+      - ./init-datas.sh:/init-datas.sh
     env_file:
       - .env
     environment:
       POSTGRES_DB: ${POSTGRES_DB}
       POSTGRES_USER: ${POSTGRES_USER}
       POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
-    entrypoint: ["/bin/bash", "/init-roles.sh"]
+    entrypoint: ["/bin/bash", "/init-datas.sh"]
     depends_on:
       backend:
         condition: service_started

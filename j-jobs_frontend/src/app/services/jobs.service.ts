@@ -26,6 +26,7 @@ export interface Job {
     compagny: string;
     city: string;
     from_official_dom: boolean;
+    application_date?: string;
     created_at: string;
     updated_at: string;
     job_has_statuses: JobHasStatus[];
@@ -55,7 +56,7 @@ export interface SearchJobsRequest {
     workMode: string | null;
 }
 
-export interface CreateJobRequest {
+export interface CreateUpdateJobRequest {
     position: string;
     compagny: string;
     city: string;
@@ -64,18 +65,7 @@ export interface CreateJobRequest {
     workMode?: string;
     offerStatus?: string;
     from_official_dom?: boolean;
-    description?: string;
-}
-
-export interface UpdateJobRequest {
-    position?: string;
-    compagny?: string;
-    city?: string;
-    contract?: string;
-    workTime?: string;
-    workMode?: string;
-    offerStatus?: string;
-    from_official_dom?: boolean;
+    application_date?: string;
     description?: string;
 }
 
@@ -112,7 +102,7 @@ export class JobsService {
         return this.normalizeHalLink(linkClean);
     }
     
-    makeAJobUpdateFromJob(job: Job) : UpdateJobRequest {
+    makeAJobUpdateFromJob(job: Job) : CreateUpdateJobRequest {
         return {
             position: job.position,
             compagny: job.compagny,
@@ -122,6 +112,7 @@ export class JobsService {
             workMode: job.workMode,
             offerStatus: job.offerStatus,
             from_official_dom: job.from_official_dom,
+            application_date: job.application_date,
             description: job.description
         };
     }
@@ -137,13 +128,13 @@ export class JobsService {
         return link;
     }
 
-    createJob(job: CreateJobRequest): Observable<Job> {
+    createJob(job: CreateUpdateJobRequest): Observable<Job> {
         const headers = this.oAuth2Service.buildRequestHeadersHal(true);
 
         return this.http.post<Job>(this.apiUrl, job, { headers });
     }
 
-    updateJob(link: string, job: UpdateJobRequest): Observable<Job> {
+    updateJob(link: string, job: CreateUpdateJobRequest): Observable<Job> {
         const headers = this.oAuth2Service.buildRequestHeadersHal(true);
         const fullUrl = `${this.apiurlService.getApiBaseUrl()}${this.normalizeHalLink(link)}`;
 
