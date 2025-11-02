@@ -8,87 +8,94 @@ import { LabelsService, OfferStatusEnum } from './labels.service'; // 👈 Impor
 export type StatCount = number;
 
 export interface Stats {
-  EN_COURS: StatCount;
-  EN_ATTENTE: StatCount;
-  REFUSE: StatCount;
-  ENTRETIEN: StatCount;
+    EN_COURS: StatCount;
+    EN_ATTENTE: StatCount;
+    REFUSE: StatCount;
+    ENTRETIEN: StatCount;
 }
 
 @Injectable({
-  providedIn: 'root',
+    providedIn: 'root',
 })
 export class StatusStatsService {
-  private readonly apiBaseUrl: string;
-  private readonly STATS_STORAGE_KEY = 'StatusStats';
+    private readonly apiBaseUrl: string;
+    private readonly STATS_STORAGE_KEY = 'StatusStats';
 
-  constructor(
-    private http: HttpClient,
-    private apiurlService: ApiurlService,
-    private oAuth2Service: OAuth2Service,
-    private labelsService: LabelsService,
-  ) {
-    this.apiBaseUrl = this.apiurlService.getApiBaseUrl();
-  }
+    constructor(
+        private http: HttpClient,
+        private apiurlService: ApiurlService,
+        private oAuth2Service: OAuth2Service,
+        private labelsService: LabelsService,
+    ) {
+        this.apiBaseUrl = this.apiurlService.getApiBaseUrl();
+    }
 
-  fetchStats(): Observable<Stats> {
-    const statuses = ['EN_COURS', 'EN_ATTENTE', 'REFUSE', 'ENTRETIEN'] as const;
+    fetchStats(): Observable<Stats> {
+        const url = `${this.apiBaseUrl}/jobs/statuscount`;
+        const headers = this.oAuth2Service.buildRequestHeaders(true);
 
-    const statsObservables: Record<keyof Stats, Observable<number>> = {
-      EN_COURS: this.fetchCountForStatus('EN_COURS'),
-      EN_ATTENTE: this.fetchCountForStatus('EN_ATTENTE'),
-      REFUSE: this.fetchCountForStatus('REFUSE'),
-      ENTRETIEN: this.fetchCountForStatus('ENTRETIEN'),
-    };
+        return this.http.get<Stats>(url, { headers: headers });
+    }
+        
+    fetchStatsIndividually(): Observable<Stats> {
+        const statuses = ['EN_COURS', 'EN_ATTENTE', 'REFUSE', 'ENTRETIEN'] as const;
 
-    return forkJoin(statsObservables).pipe(
-      tap((response: Stats) => this.storeStats(response)),
-      catchError((err) => {
-        console.error('[StatusStatsService] Erreur fetchStats:', err);
-        return of(
-          this.getStatsFromStorage() || {
-            EN_COURS: 0,
-            EN_ATTENTE: 0,
-            REFUSE: 0,
-            ENTRETIEN: 0,
-          },
+        const statsObservables: Record<keyof Stats, Observable<number>> = {
+            EN_COURS: this.fetchCountForStatus('EN_COURS'),
+            EN_ATTENTE: this.fetchCountForStatus('EN_ATTENTE'),
+            REFUSE: this.fetchCountForStatus('REFUSE'),
+            ENTRETIEN: this.fetchCountForStatus('ENTRETIEN'),
+        };
+
+        return forkJoin(statsObservables).pipe(
+            tap((response: Stats) => this.storeStats(response)),
+            catchError((err) => {
+                console.error('[StatusStatsService] Erreur fetchStats:', err);
+                return of(
+                    this.getStatsFromStorage() || {
+                        EN_COURS: 0,
+                        EN_ATTENTE: 0,
+                        REFUSE: 0,
+                        ENTRETIEN: 0,
+                    },
+                );
+            }),
         );
-      }),
-    );
-  }
+    }
+    
+    private fetchCountForStatus(status: keyof Stats): Observable<number> {
+        const url = `${this.apiBaseUrl}/jobs/countbystatus?status=${status}`;
+        const headers = this.oAuth2Service.buildRequestHeaders(true);
 
-  private fetchCountForStatus(status: keyof Stats): Observable<number> {
-    const url = `${this.apiBaseUrl}/jobs/countbystatus?status=${status}`;
-    const headers = this.oAuth2Service.buildRequestHeaders(true);
+        return this.http.get<number>(url, { headers: headers });
+    }
 
-    return this.http.get<number>(url, { headers: headers });
-  }
+    private storeStats(stats: Stats): void {
+        localStorage.setItem(this.STATS_STORAGE_KEY, JSON.stringify(stats));
+    }
 
-  private storeStats(stats: Stats): void {
-    localStorage.setItem(this.STATS_STORAGE_KEY, JSON.stringify(stats));
-  }
+    private getStatsFromStorage(): Stats | null {
+        const data = localStorage.getItem(this.STATS_STORAGE_KEY);
+        return data ? (JSON.parse(data) as Stats) : null;
+    }
 
-  private getStatsFromStorage(): Stats | null {
-    const data = localStorage.getItem(this.STATS_STORAGE_KEY);
-    return data ? (JSON.parse(data) as Stats) : null;
-  }
+    getStats(): Stats | null {
+        return this.getStatsFromStorage();
+    }
 
-  getStats(): Stats | null {
-    return this.getStatsFromStorage();
-  }
+    getEnCoursCount(): StatCount {
+        return this.getStatsFromStorage()?.EN_COURS ?? 0;
+    }
 
-  getEnCoursCount(): StatCount {
-    return this.getStatsFromStorage()?.EN_COURS ?? 0;
-  }
+    getEnAttenteCount(): StatCount {
+        return this.getStatsFromStorage()?.EN_ATTENTE ?? 0;
+    }
 
-  getEnAttenteCount(): StatCount {
-    return this.getStatsFromStorage()?.EN_ATTENTE ?? 0;
-  }
+    getRefuseCount(): StatCount {
+        return this.getStatsFromStorage()?.REFUSE ?? 0;
+    }
 
-  getRefuseCount(): StatCount {
-    return this.getStatsFromStorage()?.REFUSE ?? 0;
-  }
-
-  getEntretienCount(): StatCount {
-    return this.getStatsFromStorage()?.ENTRETIEN ?? 0;
-  }
+    getEntretienCount(): StatCount {
+        return this.getStatsFromStorage()?.ENTRETIEN ?? 0;
+    }
 }
