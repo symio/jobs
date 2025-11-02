@@ -1,2 +1,0 @@
-cors:
-  allowed-origins: ${CORS_ALLOWED_ORIGINS:https://jobs.loamok.org,https://localhost,https://127.0.0.1

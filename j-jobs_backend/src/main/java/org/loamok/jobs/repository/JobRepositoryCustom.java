@@ -2,6 +2,7 @@ package org.loamok.jobs.repository;
 
 import java.util.List;
 import java.util.Optional;
+import org.loamok.jobs.dto.JobsDto;
 import org.loamok.jobs.entity.Job;
 import org.loamok.jobs.enums.OfferStatusEnum;
 import org.springframework.data.domain.Page;
@@ -18,4 +19,5 @@ public interface JobRepositoryCustom {
     Optional<Job> findByIdFilteredForCurrentUser(Integer id);
     long countFilteredForCurrentUserByOfferStatus(OfferStatusEnum offerStatus);
     Page<Job> findBySearch(Specification<Job> spec, Pageable pageable);
+    List<JobsDto.StatusCountProjection> countAllGroupedByStatusForCurrentUser();
 }
