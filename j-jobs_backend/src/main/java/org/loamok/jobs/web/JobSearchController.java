@@ -1,6 +1,6 @@
 package org.loamok.jobs.web;
 
-import org.loamok.jobs.web.request.JobSearchRequest;
+import org.loamok.jobs.dto.request.JobSearchRequest;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.Parameter;
 import io.swagger.v3.oas.annotations.tags.Tag;

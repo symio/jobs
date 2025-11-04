@@ -17,8 +17,8 @@ import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
 import lombok.ToString;
 import org.hibernate.annotations.CreationTimestamp;
-import org.loamok.jobs.enums.JobStatusEnum;
-import org.loamok.jobs.enums.OfferStatusEnum;
+import org.loamok.jobs.entity.enums.JobStatusEnum;
+import org.loamok.jobs.entity.enums.OfferStatusEnum;
 
 /**
  *

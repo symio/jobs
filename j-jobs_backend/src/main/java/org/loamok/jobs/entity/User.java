@@ -93,6 +93,9 @@ public class User implements UserDetails {
     @Column(name = "email_verification_key", nullable = true, columnDefinition = "TEXT")
     private String emailVerificationKey;
     @JsonIgnore
+    @Column(name = "key_validity", nullable = true)
+    private Instant keyValidity;
+    @JsonIgnore
     @Transient
     private String authority;
     @JsonIgnore

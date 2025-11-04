@@ -28,10 +28,10 @@ import lombok.Setter;
 import lombok.ToString;
 import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.UpdateTimestamp;
-import org.loamok.jobs.enums.ContractEnum;
-import org.loamok.jobs.enums.OfferStatusEnum;
-import org.loamok.jobs.enums.WorkModeEnum;
-import org.loamok.jobs.enums.WorkTimeEnum;
+import org.loamok.jobs.entity.enums.ContractEnum;
+import org.loamok.jobs.entity.enums.OfferStatusEnum;
+import org.loamok.jobs.entity.enums.WorkModeEnum;
+import org.loamok.jobs.entity.enums.WorkTimeEnum;
 
 /**
  *

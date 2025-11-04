@@ -5,11 +5,11 @@ import io.swagger.v3.oas.annotations.media.Content;
 import io.swagger.v3.oas.annotations.media.Schema;
 import io.swagger.v3.oas.annotations.responses.ApiResponse;
 import io.swagger.v3.oas.annotations.responses.ApiResponses;
-import org.loamok.jobs.enums.ContractEnum;
-import org.loamok.jobs.enums.OfferStatusEnum;
-import org.loamok.jobs.enums.WorkModeEnum;
-import org.loamok.jobs.enums.WorkTimeEnum;
-import org.loamok.jobs.enums.LabelledEnum;
+import org.loamok.jobs.entity.enums.ContractEnum;
+import org.loamok.jobs.entity.enums.OfferStatusEnum;
+import org.loamok.jobs.entity.enums.WorkModeEnum;
+import org.loamok.jobs.entity.enums.WorkTimeEnum;
+import org.loamok.jobs.entity.enums.LabelledEnum;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -19,7 +19,7 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.LinkedHashMap;
 import java.util.List;
-import org.loamok.jobs.enums.JobStatusEnum;
+import org.loamok.jobs.entity.enums.JobStatusEnum;
 
 /**
  *

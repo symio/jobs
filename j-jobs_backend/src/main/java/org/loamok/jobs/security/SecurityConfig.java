@@ -69,6 +69,10 @@ public class SecurityConfig {
                     "/authorize/remembered",
                     "/register/activate",
                     "/register/deactivate",
+                    "/register/password-lost/step1",
+                    "/register/password-lost/step1/deactivate",
+                    "/register/password-lost/step2",
+                    "/register/password-lost/step2/deactivate",
                     "/users"
                 ).permitAll();
                 

@@ -2,7 +2,7 @@ package org.loamok.jobs.manager;
 
 import java.util.Map;
 import org.loamok.jobs.entity.Job;
-import org.loamok.jobs.web.request.JobSearchRequest;
+import org.loamok.jobs.dto.request.JobSearchRequest;
 
 /**
  *

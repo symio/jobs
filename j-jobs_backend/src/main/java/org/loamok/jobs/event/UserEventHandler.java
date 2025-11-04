@@ -33,5 +33,6 @@ public class UserEventHandler {
         user.setAuthToken(null);
         user.setRememberMeToken(null);
         user.setEmailVerificationKey(cleanUser.getEmailVerificationKey());
+        user.setKeyValidity(cleanUser.getKeyValidity());
     }
 }

@@ -1,6 +1,6 @@
 package org.loamok.jobs.dto;
 
-import org.loamok.jobs.enums.OfferStatusEnum;
+import org.loamok.jobs.entity.enums.OfferStatusEnum;
 
 /**
  *

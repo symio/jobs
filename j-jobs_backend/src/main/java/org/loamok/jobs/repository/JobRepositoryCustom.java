@@ -4,7 +4,7 @@ import java.util.List;
 import java.util.Optional;
 import org.loamok.jobs.dto.JobsDto;
 import org.loamok.jobs.entity.Job;
-import org.loamok.jobs.enums.OfferStatusEnum;
+import org.loamok.jobs.entity.enums.OfferStatusEnum;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.domain.Specification;
