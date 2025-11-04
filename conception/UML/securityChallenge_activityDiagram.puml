@@ -1,0 +1,70 @@
+@startuml
+!theme plain
+title Diagramme d'activité : Création & Réinitialisation de Mot de Passe
+
+start
+partition "Flux 2 : Challenge Mot de Passe Perdu" {
+    
+    :Utilisateur existant;
+    partition "POST /register/password-lost/step1" {
+        :Requête POST /register/password-lost/step1;
+        :Appel de `resetChallengeRegisteredUser1()`;
+        :Passe **`enabled=FALSE`**;
+        note right
+            L'utilisateur ne peut plus se connecter
+        end note
+        :Génère une clé de reset (valable 1h);
+        :Stocke clé en BDD;
+        :Envoi d'un email (Step 1)
+        (RESET_CHALLENGE_KEY_GENERATION);
+    }
+
+    :Réception de l'email (Step 1);
+
+    if (Action utilisateur avant 1h?) then (oui, clic Changer MDP)
+        partition "POST /register/password-lost/step2" {
+            :Requête POST /register/password-lost/step2;
+            :Appel de `resetChallengeRegisteredUser2()`;
+            :Vérifie clé et expiration;
+            :Met à jour le mot de passe;
+            :Passe **`enabled=TRUE`**;
+            :Génère **Key A (sans expiration)**;
+            :Stocke Key A en BDD;
+            :Envoi email de validation (Step 2) avec Key A
+            (RESET_CHALLENGE_VALIDATION);
+        }
+        :Utilisateur peut se connecter (nouveau MDP);
+
+        if (Annulation immédiate (Key A)?) then (oui, clic Annuler)
+            partition "POST /password-lost/step2/deactivate" {
+                :Requête POST /password-lost/step2/deactivate;
+                :Appel de **`disableResetChallenge2()`**;
+                :Vérifie Key A;
+                :Passe email à "**security_disabled_...**" et **`enabled=FALSE`**;
+                :Envoi email de désactivation;
+            }
+            :Compte désactivé pour sécurité;
+        else (non / ignore)
+        endif
+
+    elseif (oui, clic Annuler Step 1)
+        partition "POST /register/password-lost/step1/deactivate" {
+            :Requête POST /register/password-lost/step1/deactivate;
+            :Appel de `disableResetChallenge1()`;
+            :Vérifie la clé;
+            :Passe **`enabled=TRUE`**;
+            :Restaure l'email original;
+            :Envoi email d'invalidation
+            (RESET_CHALLENGE_INVALIDATION);
+        }
+        :Utilisateur peut se connecter (ancien MDP);
+
+    else (non, après 1h)
+        :Clé expirée;
+        :Compte reste désactivé (`enabled=FALSE`);
+
+    endif
+
+}
+stop
+@enduml

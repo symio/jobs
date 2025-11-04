@@ -1,0 +1,53 @@
+@startuml
+!theme plain
+title Diagramme d'activité : Création & Réinitialisation de Mot de Passe
+
+start
+
+partition "Flux 1 : Création de Compte" {
+
+    partition "POST /users (Spring Data Rest)" {
+        :Requête POST /users;
+        note left
+            Déclenche UserEventHandler.handleUtilisateurCreate()
+        end note
+        :Appel de `userManager.registerUser()`;
+        :Définit **`enabled=FALSE`**;
+        :Génère une clé de validation (valable 1h);
+        :Stocke clé en BDD;
+        :Envoi d'un email de validation
+        (REGISTER_EMAIL_VALIDATION);
+    }
+
+    :Réception de l'email de validation;
+
+    if (Action utilisateur avant 1h?) then (oui, clic Activer)
+        partition "POST /register/activate" {
+            :Requête POST /register/activate;
+            :Appel de `activateRegisteredUser()`;
+            :Vérifie la clé et l'expiration;
+            :Passe **`enabled=TRUE`**;
+            :Efface la clé de la BDD;
+        }
+        :Utilisateur peut se connecter;
+
+    elseif (oui, clic Invalider)
+        partition "POST /register/deactivate" {
+            :Requête POST /register/deactivate;
+            :Appel de `deactivateRegisteredUser()`;
+            :Vérifie la clé et l'expiration;
+            :Passe email à "**disabled_...**" et **`enabled=FALSE`**;
+            :Envoi email d'invalidation;
+        }
+        :Compte désactivé;
+
+    else (non, après 1h)
+        :Clé expirée;
+        :Compte reste non activé;
+
+    endif
+
+}
+stop
+
+@enduml

@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="UTF-8"?><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentStyleType="text/css" height="1125px" preserveAspectRatio="none" style="width:933px;height:1125px;background:#FFFFFF;" version="1.1" viewBox="0 0 933 1125" width="933px" zoomAndPan="magnify">
+    <defs/>
+    <g>
+        <text fill="#000000" font-family="Verdana" font-size="22" font-weight="bold" lengthAdjust="spacing" textLength="832" x="49.25" y="37.1182">Diagramme d'activité : Création &amp; Réinitialisation de Mot de Passe</text>
+        <ellipse cx="503" cy="62.7373" fill="#FFFFFF" rx="10" ry="10" style="stroke:#000000;stroke-width:1.0;"/>
+        <rect fill="#FFFFFF" height="995.063" style="stroke:#000000;stroke-width:1.0;" width="921.5" x="6" y="82.7373"/>
+        <path d="M216,82.7373 L216,92.752 L206,102.752 L6,102.752 " fill="none" style="stroke:#000000;stroke-width:1.0;"/>
+        <text fill="#000000" font-family="Verdana" font-size="14" lengthAdjust="spacing" textLength="200" x="9" y="97.8125">Flux 1 : Création de Compte</text>
+        <rect fill="#FFFFFF" height="371.1025" style="stroke:#000000;stroke-width:1.0;" width="636.5" x="16" y="112.752"/>
+        <path d="M252,112.752 L252,122.7666 L242,132.7666 L16,132.7666 " fill="none" style="stroke:#000000;stroke-width:1.0;"/>
+        <text fill="#000000" font-family="Verdana" font-size="14" lengthAdjust="spacing" textLength="226" x="19" y="127.8271">POST /users (Spring Data Rest)</text>
+        <path d="M26,154.1589 L26,179.9583 A0,0 0 0 0 26,179.9583 L406,179.9583 A0,0 0 0 0 406,179.9583 L406,172.1589 L426,167.0586 L406,164.1589 L406,164.1589 L396,154.1589 L26,154.1589 A0,0 0 0 0 26,154.1589 " fill="#FFFFFF" style="stroke:#000000;stroke-width:1.0;"/>
+        <path d="M396,154.1589 L396,164.1589 L406,164.1589 L396,154.1589 " fill="#FFFFFF" style="stroke:#000000;stroke-width:1.0;"/>
+        <text fill="#000000" font-family="Verdana" font-size="13" lengthAdjust="spacing" textLength="359" x="32" y="172.2288">Déclenche UserEventHandler.handleUtilisateurCreate()</text>
+        <rect fill="#FFFFFF" height="34.584" rx="12.5" ry="12.5" style="stroke:#000000;stroke-width:1.0;" width="154" x="426" y="149.7666"/>
+        <text fill="#000000" font-family="Verdana" font-size="12" lengthAdjust="spacing" textLength="134" x="436" y="171.8311">Requête POST /users</text>
+        <rect fill="#FFFFFF" height="34.584" rx="12.5" ry="12.5" style="stroke:#000000;stroke-width:1.0;" width="270" x="368" y="204.3506"/>
+        <text fill="#000000" font-family="Verdana" font-size="12" lengthAdjust="spacing" textLength="250" x="378" y="226.415">Appel de `userManager.registerUser()`</text>
+        <rect fill="#FFFFFF" height="34.584" rx="12.5" ry="12.5" style="stroke:#000000;stroke-width:1.0;" width="186" x="410" y="258.9346"/>
+        <text fill="#000000" font-family="Verdana" font-size="12" lengthAdjust="spacing" textLength="40" x="420" y="280.999">Définit</text>
+        <text fill="#000000" font-family="Verdana" font-size="12" font-weight="bold" lengthAdjust="spacing" textLength="122" x="464" y="280.999">`enabled=FALSE`</text>
+        <rect fill="#FFFFFF" height="34.584" rx="12.5" ry="12.5" style="stroke:#000000;stroke-width:1.0;" width="279" x="363.5" y="313.5186"/>
+        <text fill="#000000" font-family="Verdana" font-size="12" lengthAdjust="spacing" textLength="259" x="373.5" y="335.583">Génère une clé de validation (valable 1h)</text>
+        <rect fill="#FFFFFF" height="34.584" rx="12.5" ry="12.5" style="stroke:#000000;stroke-width:1.0;" width="133" x="436.5" y="368.1025"/>
+        <text fill="#000000" font-family="Verdana" font-size="12" lengthAdjust="spacing" textLength="113" x="446.5" y="390.167">Stocke clé en BDD</text>
+        <rect fill="#FFFFFF" height="49.168" rx="12.5" ry="12.5" style="stroke:#000000;stroke-width:1.0;" width="221" x="392.5" y="422.6865"/>
+        <text fill="#000000" font-family="Verdana" font-size="12" lengthAdjust="spacing" textLength="187" x="402.5" y="444.751">Envoi d'un email de validation</text>
+        <text fill="#000000" font-family="Verdana" font-size="12" lengthAdjust="spacing" textLength="201" x="402.5" y="459.335">(REGISTER_EMAIL_VALIDATION)</text>
+        <rect fill="#FFFFFF" height="34.584" rx="12.5" ry="12.5" style="stroke:#000000;stroke-width:1.0;" width="230" x="388" y="503.8545"/>
+        <text fill="#000000" font-family="Verdana" font-size="12" lengthAdjust="spacing" textLength="210" x="398" y="525.9189">Réception de l'email de validation</text>
+        <polygon fill="#FFFFFF" points="137,558.4385,292,558.4385,304,570.4385,292,582.4385,137,582.4385,125,570.4385,137,558.4385" style="stroke:#000000;stroke-width:1.0;"/>
+        <text fill="#000000" font-family="Verdana" font-size="11" lengthAdjust="spacing" textLength="87" x="218.5" y="593.4976">oui, clic Activer</text>
+        <text fill="#000000" font-family="Verdana" font-size="11" lengthAdjust="spacing" textLength="155" x="137" y="574.8132">Action utilisateur avant 1h?</text>
+        <rect fill="#FFFFFF" height="362.0405" style="stroke:#000000;stroke-width:1.0;" width="272" x="78.5" y="615.8071"/>
+        <path d="M251.5,615.8071 L251.5,625.8218 L241.5,635.8218 L78.5,635.8218 " fill="none" style="stroke:#000000;stroke-width:1.0;"/>
+        <text fill="#000000" font-family="Verdana" font-size="14" lengthAdjust="spacing" textLength="163" x="81.5" y="630.8823">POST /register/activate</text>
+        <rect fill="#FFFFFF" height="34.584" rx="12.5" ry="12.5" style="stroke:#000000;stroke-width:1.0;" width="223" x="103" y="652.8218"/>
+        <text fill="#000000" font-family="Verdana" font-size="12" lengthAdjust="spacing" textLength="203" x="113" y="674.8862">Requête POST /register/activate</text>
+        <rect fill="#FFFFFF" height="34.584" rx="12.5" ry="12.5" style="stroke:#000000;stroke-width:1.0;" width="252" x="88.5" y="720.7744"/>
+        <text fill="#000000" font-family="Verdana" font-size="12" lengthAdjust="spacing" textLength="232" x="98.5" y="742.8389">Appel de `activateRegisteredUser()`</text>
+        <rect fill="#FFFFFF" height="34.584" rx="12.5" ry="12.5" style="stroke:#000000;stroke-width:1.0;" width="185" x="122" y="788.7271"/>
+        <text fill="#000000" font-family="Verdana" font-size="12" lengthAdjust="spacing" textLength="165" x="132" y="810.7915">Vérifie la clé et l'expiration</text>
+        <rect fill="#FFFFFF" height="34.584" rx="12.5" ry="12.5" style="stroke:#000000;stroke-width:1.0;" width="177" x="126" y="856.6797"/>
+        <text fill="#000000" font-family="Verdana" font-size="12" lengthAdjust="spacing" textLength="38" x="136" y="878.7441">Passe</text>
+        <text fill="#000000" font-family="Verdana" font-size="12" font-weight="bold" lengthAdjust="spacing" textLength="115" x="178" y="878.7441">`enabled=TRUE`</text>
+        <rect fill="#FFFFFF" height="34.584" rx="12.5" ry="12.5" style="stroke:#000000;stroke-width:1.0;" width="159" x="135" y="924.6323"/>
+        <text fill="#000000" font-family="Verdana" font-size="12" lengthAdjust="spacing" textLength="139" x="145" y="946.6968">Efface la clé de la BDD</text>
+        <rect fill="#FFFFFF" height="34.584" rx="12.5" ry="12.5" style="stroke:#000000;stroke-width:1.0;" width="202" x="113.5" y="1011.2163"/>
+        <text fill="#000000" font-family="Verdana" font-size="12" lengthAdjust="spacing" textLength="182" x="123.5" y="1033.2808">Utilisateur peut se connecter</text>
+        <polygon fill="#FFFFFF" points="502.5,558.4385,600.5,558.4385,612.5,570.4385,600.5,582.4385,502.5,582.4385,490.5,570.4385,502.5,558.4385" style="stroke:#000000;stroke-width:1.0;"/>
+        <text fill="#000000" font-family="Verdana" font-size="11" lengthAdjust="spacing" textLength="98" x="502.5" y="574.8132">oui, clic Invalider</text>
+        <text fill="#000000" font-family="Verdana" font-size="11" lengthAdjust="spacing" textLength="79" x="612.5" y="568.1289">non, après 1h</text>
+        <rect fill="#FFFFFF" height="363.4092" style="stroke:#000000;stroke-width:1.0;" width="362" x="370.5" y="602.4385"/>
+        <path d="M560.5,602.4385 L560.5,612.4531 L550.5,622.4531 L370.5,622.4531 " fill="none" style="stroke:#000000;stroke-width:1.0;"/>
+        <text fill="#000000" font-family="Verdana" font-size="14" lengthAdjust="spacing" textLength="180" x="373.5" y="617.5137">POST /register/deactivate</text>
+        <rect fill="#FFFFFF" height="34.584" rx="12.5" ry="12.5" style="stroke:#000000;stroke-width:1.0;" width="239" x="432" y="639.4531"/>
+        <text fill="#000000" font-family="Verdana" font-size="12" lengthAdjust="spacing" textLength="219" x="442" y="661.5176">Requête POST /register/deactivate</text>
+        <rect fill="#FFFFFF" height="34.584" rx="12.5" ry="12.5" style="stroke:#000000;stroke-width:1.0;" width="268" x="417.5" y="707.4058"/>
+        <text fill="#000000" font-family="Verdana" font-size="12" lengthAdjust="spacing" textLength="248" x="427.5" y="729.4702">Appel de `deactivateRegisteredUser()`</text>
+        <rect fill="#FFFFFF" height="34.584" rx="12.5" ry="12.5" style="stroke:#000000;stroke-width:1.0;" width="185" x="459" y="775.3584"/>
+        <text fill="#000000" font-family="Verdana" font-size="12" lengthAdjust="spacing" textLength="165" x="469" y="797.4229">Vérifie la clé et l'expiration</text>
+        <rect fill="#FFFFFF" height="34.584" rx="12.5" ry="12.5" style="stroke:#000000;stroke-width:1.0;" width="342" x="380.5" y="843.311"/>
+        <text fill="#000000" font-family="Verdana" font-size="12" lengthAdjust="spacing" textLength="97" x="390.5" y="865.3755">Passe email à "</text>
+        <text fill="#000000" font-family="Verdana" font-size="12" font-weight="bold" lengthAdjust="spacing" textLength="76" x="487.5" y="865.3755">disabled_...</text>
+        <text fill="#000000" font-family="Verdana" font-size="12" lengthAdjust="spacing" textLength="23" x="563.5" y="865.3755">" et</text>
+        <text fill="#000000" font-family="Verdana" font-size="12" font-weight="bold" lengthAdjust="spacing" textLength="122" x="590.5" y="865.3755">`enabled=FALSE`</text>
+        <rect fill="#FFFFFF" height="34.584" rx="12.5" ry="12.5" style="stroke:#000000;stroke-width:1.0;" width="178" x="462.5" y="911.2637"/>
+        <text fill="#000000" font-family="Verdana" font-size="12" lengthAdjust="spacing" textLength="158" x="472.5" y="933.3281">Envoi email d'invalidation</text>
+        <rect fill="#FFFFFF" height="34.584" rx="12.5" ry="12.5" style="stroke:#000000;stroke-width:1.0;" width="133" x="485" y="997.8477"/>
+        <text fill="#000000" font-family="Verdana" font-size="12" lengthAdjust="spacing" textLength="113" x="495" y="1019.9121">Compte désactivé</text>
+        <rect fill="#FFFFFF" height="34.584" rx="12.5" ry="12.5" style="stroke:#000000;stroke-width:1.0;" width="91" x="784.5" y="776.5354"/>
+        <text fill="#000000" font-family="Verdana" font-size="12" lengthAdjust="spacing" textLength="71" x="794.5" y="798.5999">Clé expirée</text>
+        <rect fill="#FFFFFF" height="34.584" rx="12.5" ry="12.5" style="stroke:#000000;stroke-width:1.0;" width="175" x="742.5" y="844.488"/>
+        <text fill="#000000" font-family="Verdana" font-size="12" lengthAdjust="spacing" textLength="155" x="752.5" y="866.5525">Compte reste non activé</text>
+        <ellipse cx="503" cy="1108.8003" fill="none" rx="11" ry="11" style="stroke:#000000;stroke-width:1.0;"/>
+        <ellipse cx="503" cy="1108.8003" fill="#FFFFFF" rx="6" ry="6" style="stroke:#000000;stroke-width:1.0;"/>
+        <line style="stroke:#000000;stroke-width:1.0;" x1="503" x2="503" y1="184.3506" y2="204.3506"/>
+        <polygon fill="#000000" points="499,194.3506,503,204.3506,507,194.3506,503,198.3506" style="stroke:#000000;stroke-width:1.0;"/>
+        <line style="stroke:#000000;stroke-width:1.0;" x1="503" x2="503" y1="238.9346" y2="258.9346"/>
+        <polygon fill="#000000" points="499,248.9346,503,258.9346,507,248.9346,503,252.9346" style="stroke:#000000;stroke-width:1.0;"/>
+        <line style="stroke:#000000;stroke-width:1.0;" x1="503" x2="503" y1="293.5186" y2="313.5186"/>
+        <polygon fill="#000000" points="499,303.5186,503,313.5186,507,303.5186,503,307.5186" style="stroke:#000000;stroke-width:1.0;"/>
+        <line style="stroke:#000000;stroke-width:1.0;" x1="503" x2="503" y1="348.1025" y2="368.1025"/>
+        <polygon fill="#000000" points="499,358.1025,503,368.1025,507,358.1025,503,362.1025" style="stroke:#000000;stroke-width:1.0;"/>
+        <line style="stroke:#000000;stroke-width:1.0;" x1="503" x2="503" y1="402.6865" y2="422.6865"/>
+        <polygon fill="#000000" points="499,412.6865,503,422.6865,507,412.6865,503,416.6865" style="stroke:#000000;stroke-width:1.0;"/>
+        <line style="stroke:#000000;stroke-width:1.0;" x1="503" x2="503" y1="471.8545" y2="503.8545"/>
+        <polygon fill="#000000" points="499,493.8545,503,503.8545,507,493.8545,503,497.8545" style="stroke:#000000;stroke-width:1.0;"/>
+        <line style="stroke:#000000;stroke-width:1.0;" x1="214.5" x2="214.5" y1="687.4058" y2="720.7744"/>
+        <polygon fill="#000000" points="210.5,710.7744,214.5,720.7744,218.5,710.7744,214.5,714.7744" style="stroke:#000000;stroke-width:1.0;"/>
+        <line style="stroke:#000000;stroke-width:1.0;" x1="214.5" x2="214.5" y1="755.3584" y2="788.7271"/>
+        <polygon fill="#000000" points="210.5,778.7271,214.5,788.7271,218.5,778.7271,214.5,782.7271" style="stroke:#000000;stroke-width:1.0;"/>
+        <line style="stroke:#000000;stroke-width:1.0;" x1="214.5" x2="214.5" y1="823.311" y2="856.6797"/>
+        <polygon fill="#000000" points="210.5,846.6797,214.5,856.6797,218.5,846.6797,214.5,850.6797" style="stroke:#000000;stroke-width:1.0;"/>
+        <line style="stroke:#000000;stroke-width:1.0;" x1="214.5" x2="214.5" y1="891.2637" y2="924.6323"/>
+        <polygon fill="#000000" points="210.5,914.6323,214.5,924.6323,218.5,914.6323,214.5,918.6323" style="stroke:#000000;stroke-width:1.0;"/>
+        <line style="stroke:#000000;stroke-width:1.0;" x1="214.5" x2="214.5" y1="959.2163" y2="1011.2163"/>
+        <polygon fill="#000000" points="210.5,1001.2163,214.5,1011.2163,218.5,1001.2163,214.5,1005.2163" style="stroke:#000000;stroke-width:1.0;"/>
+        <line style="stroke:#000000;stroke-width:1.0;" x1="551.5" x2="551.5" y1="674.0371" y2="707.4058"/>
+        <polygon fill="#000000" points="547.5,697.4058,551.5,707.4058,555.5,697.4058,551.5,701.4058" style="stroke:#000000;stroke-width:1.0;"/>
+        <line style="stroke:#000000;stroke-width:1.0;" x1="551.5" x2="551.5" y1="741.9897" y2="775.3584"/>
+        <polygon fill="#000000" points="547.5,765.3584,551.5,775.3584,555.5,765.3584,551.5,769.3584" style="stroke:#000000;stroke-width:1.0;"/>
+        <line style="stroke:#000000;stroke-width:1.0;" x1="551.5" x2="551.5" y1="809.9424" y2="843.311"/>
+        <polygon fill="#000000" points="547.5,833.311,551.5,843.311,555.5,833.311,551.5,837.311" style="stroke:#000000;stroke-width:1.0;"/>
+        <line style="stroke:#000000;stroke-width:1.0;" x1="551.5" x2="551.5" y1="877.895" y2="911.2637"/>
+        <polygon fill="#000000" points="547.5,901.2637,551.5,911.2637,555.5,901.2637,551.5,905.2637" style="stroke:#000000;stroke-width:1.0;"/>
+        <line style="stroke:#000000;stroke-width:1.0;" x1="551.5" x2="551.5" y1="945.8477" y2="997.8477"/>
+        <polygon fill="#000000" points="547.5,987.8477,551.5,997.8477,555.5,987.8477,551.5,991.8477" style="stroke:#000000;stroke-width:1.0;"/>
+        <line style="stroke:#000000;stroke-width:1.0;" x1="830" x2="830" y1="811.1194" y2="844.488"/>
+        <polygon fill="#000000" points="826,834.488,830,844.488,834,834.488,830,838.488" style="stroke:#000000;stroke-width:1.0;"/>
+        <line style="stroke:#000000;stroke-width:1.0;" x1="214.5" x2="214.5" y1="582.4385" y2="652.8218"/>
+        <polygon fill="#000000" points="210.5,642.8218,214.5,652.8218,218.5,642.8218,214.5,646.8218" style="stroke:#000000;stroke-width:1.0;"/>
+        <line style="stroke:#000000;stroke-width:1.0;" x1="214.5" x2="214.5" y1="1045.8003" y2="1065.8003"/>
+        <polygon fill="#000000" points="210.5,1055.8003,214.5,1065.8003,218.5,1055.8003,214.5,1059.8003" style="stroke:#000000;stroke-width:1.0;"/>
+        <line style="stroke:#000000;stroke-width:1.0;" x1="551.5" x2="551.5" y1="582.4385" y2="639.4531"/>
+        <polygon fill="#000000" points="547.5,629.4531,551.5,639.4531,555.5,629.4531,551.5,633.4531" style="stroke:#000000;stroke-width:1.0;"/>
+        <line style="stroke:#000000;stroke-width:1.0;" x1="551.5" x2="551.5" y1="1032.4316" y2="1065.8003"/>
+        <polygon fill="#000000" points="547.5,1055.8003,551.5,1065.8003,555.5,1055.8003,551.5,1059.8003" style="stroke:#000000;stroke-width:1.0;"/>
+        <line style="stroke:#000000;stroke-width:1.0;" x1="304" x2="490.5" y1="570.4385" y2="570.4385"/>
+        <polygon fill="#000000" points="480.5,566.4385,490.5,570.4385,480.5,574.4385,484.5,570.4385" style="stroke:#000000;stroke-width:1.0;"/>
+        <line style="stroke:#000000;stroke-width:1.0;" x1="503" x2="503" y1="538.4385" y2="543.4385"/>
+        <line style="stroke:#000000;stroke-width:1.0;" x1="503" x2="214.5" y1="543.4385" y2="543.4385"/>
+        <line style="stroke:#000000;stroke-width:1.0;" x1="214.5" x2="214.5" y1="543.4385" y2="558.4385"/>
+        <polygon fill="#000000" points="210.5,548.4385,214.5,558.4385,218.5,548.4385,214.5,552.4385" style="stroke:#000000;stroke-width:1.0;"/>
+        <line style="stroke:#000000;stroke-width:1.0;" x1="612.5" x2="830" y1="570.4385" y2="570.4385"/>
+        <line style="stroke:#000000;stroke-width:1.0;" x1="830" x2="830" y1="570.4385" y2="776.5354"/>
+        <polygon fill="#000000" points="826,766.5354,830,776.5354,834,766.5354,830,770.5354" style="stroke:#000000;stroke-width:1.0;"/>
+        <line style="stroke:#000000;stroke-width:1.0;" x1="830" x2="830" y1="879.072" y2="1065.8003"/>
+        <polygon fill="#000000" points="826,1055.8003,830,1065.8003,834,1055.8003,830,1059.8003" style="stroke:#000000;stroke-width:1.0;"/>
+        <line style="stroke:#000000;stroke-width:1.0;" x1="214.5" x2="830" y1="1065.8003" y2="1065.8003"/>
+        <line style="stroke:#000000;stroke-width:1.0;" x1="503" x2="503" y1="72.7373" y2="149.7666"/>
+        <polygon fill="#000000" points="499,139.7666,503,149.7666,507,139.7666,503,143.7666" style="stroke:#000000;stroke-width:1.0;"/>
+        <line style="stroke:#000000;stroke-width:1.0;" x1="503" x2="503" y1="1065.8003" y2="1097.8003"/>
+        <polygon fill="#000000" points="499,1087.8003,503,1097.8003,507,1087.8003,503,1091.8003" style="stroke:#000000;stroke-width:1.0;"/>
+        <!--SRC=[jLH1Rjim4Bph5LiV6ba87EJge2ZSs4aD94qWsxd6hBIoYT8hbQAC04N-qcEKR_1ZNKgo9ITfqHxAWoYGCxlScINVcJLk438b97b66eKmbcAbnOPNuoCH6RcLnfOmX7DjIs5aIl0UGbjAaaOA9VDwBKQuJesRRaMUe-VbHcZZUHb_PONeNQZY0KuF8Z7yFDra1dlmm_E0HmT_UpERmqcHeyx1dsLQqWh6mWW8CJTznu1c34FyNjXdmybRpjb-crBUKPYO_OeROrj62YbQ8omOFzaYcS-2OeLwiAxcXP5LVLZeSuqy-_rz1AIuYjkUOPHbg5n5IvV-Mf1OSIIDAvaRr2w5tr-sXnfo_iI9246mH19V5SOVBaPNiyao23gmIrkIVT881I54YgtW55iMFgubzFdVaU5qtU_GPYQDlZK49FWq7dSs9xHD9TjR4E16I7KOSe_pmydbT3QVXFUJwz7qwlvkT3KTZ-RJcozDfiVQio6tGuJPpb5rz4RGineg4_17KOKiMdL1R0KPhk1Z7xWXkQYqaCTyU1c1GszHjyg_wf2Tn2TLjugwcRfElsoFLuIpGtZhv0uGDWoCN_bOCUvigMKYkNRHI6wS30-Pr4tr1_3gYdHzduUBGzjhcv94H6tCkFezSFAnzRJJh91XOO0pH2aHHdpkHdrKEJe7MdMdL5dqT_h6-CyAjvJVQjn2_elATI_Qdz0BWfW5SdhV3mQ38EWv_XylN-UoD2rz9AdRqs_uKBzd4Dioh-goPKTyy2cbOn2Pja-vkx4TNbMGgyMM7R5syJI_USWl3i6Bg1JBnFCU-RrDC-yN]-->
+    </g>
+</svg>

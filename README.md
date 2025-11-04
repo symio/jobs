@@ -326,11 +326,23 @@ conteneurisation/
 
 ---
 
-####💡 Notes
+#### Notes
 
 - Les scripts détectent automatiquement votre sytème d'exploitation (Linux, macOS, Windows)
 - L'encodage base64 est géré différemment sur macOS vs Linux
 - Sur Windows, Git Bash est recommandé pour une meilleure compatibilité
+
+---
+
+## Challenges de sécurités renforcés
+
+### Création de compte : 
+
+![Création de compte](conception/UML/exports/creationCompte_activityDiagram.svg)
+
+### Mot de passe perdu : 
+
+![Création de compte](conception/UML/exports/securityChallenge_activityDiagram.svg)
 
 ---
 
