@@ -29,6 +29,13 @@ export interface UserRegister {
     gdproptin: boolean;
 }
 
+export interface LostPasswordStep2 {
+    key: string;
+    email: string;
+    newPassword: string;
+    passwordConfirm: string;
+}
+
 @Injectable({
     providedIn: 'root',
 })
@@ -55,6 +62,61 @@ export class UserService {
                 catchError((err) => this.handleAuthError(err)),
             );
     }
+    
+    //@todo
+    passwordLoststep1(email: string| null = null): Observable<void> {
+        const headers = this.oauth2Service.buildRequestHeaders(false);
+        if(email === null) {
+            return new Observable;
+        }
+        return this.http
+            .post<void>(`${this.apiBaseUrl}/register/password-lost/step1`, { email: email }, { headers })
+            .pipe(
+                tap((response) => this.handleActivateRegisteredUserSuccess(response)),
+                catchError((err) => this.handleAuthError(err)),
+            );
+    }
+    
+    deactivatePasswordStep1(key: string| null = null): Observable<void> {
+        const headers = this.oauth2Service.buildRequestHeaders(false);
+        if(key === null) {
+            return new Observable;
+        }
+        return this.http
+            .post<void>(`${this.apiBaseUrl}/register/password-lost/step1/deactivate`, { key: key }, { headers })
+            .pipe(
+                tap((response) => this.handleDeactivateRegisteredUserSuccess(response)),
+                catchError((err) => this.handleAuthError(err)),
+            );
+    }
+    
+    //@todo
+    passwordLoststep2(lostPasswordStep2: LostPasswordStep2| null = null): Observable<void> {
+        const headers = this.oauth2Service.buildRequestHeaders(false);
+        if(lostPasswordStep2?.key === null) {
+            return new Observable;
+        }
+        return this.http
+            .post<void>(`${this.apiBaseUrl}/register/password-lost/step2`, lostPasswordStep2, { headers })
+            .pipe(
+                tap((response) => this.handleActivateRegisteredUserSuccess(response)),
+                catchError((err) => this.handleAuthError(err)),
+            );
+    }
+    
+    deactivatePasswordStep2(key: string| null = null): Observable<void> {
+        const headers = this.oauth2Service.buildRequestHeaders(false);
+        if(key === null) {
+            return new Observable;
+        }
+        return this.http
+            .post<void>(`${this.apiBaseUrl}/register/password-lost/step2/deactivate`, { key: key }, { headers })
+            .pipe(
+                tap((response) => this.handleDeactivateRegisteredUserSuccess(response)),
+                catchError((err) => this.handleAuthError(err)),
+            );
+    }
+    
     
     deactivateRegisteredUser(key: string| null = null): Observable<void> {
         const headers = this.oauth2Service.buildRequestHeaders(false);

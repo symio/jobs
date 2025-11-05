@@ -7,17 +7,17 @@ import { Observable } from 'rxjs';
 import { UserService } from '@app/services/user.service';
 import { OAuth2Service } from '@app/services/oauth2.service';
 import { SanitizationService } from '@app/services/sanitization.service';
-import { AbstractKeyPageComponent } from '../../../components/abstract-key-page/abstract-key-page.component'; 
+import { AbstractKeyPageComponent } from '@components/abstract-key-page/abstract-key-page.component'; 
 
 @Component({
     standalone: true,
-    selector: 'app-deactivate',
+    selector: 'app-passwordlost_new-password',
     imports: [CommonModule, ReactiveFormsModule, RouterModule],
-    templateUrl: '../../../components/abstract-key-page/abstract-key-page.component.html',
-    styleUrl: '../../../components/abstract-key-page/abstract-key-page.component.scss' 
+    templateUrl: '../../../../components/abstract-key-page/abstract-key-page.component.html',
+    styleUrl: '../../../../components/abstract-key-page/abstract-key-page.component.scss' 
 })
-export class DeactivateComponent extends AbstractKeyPageComponent {
-    mainTitle = "Annulation d'activation"; 
+export class DeactivateStep2Component extends AbstractKeyPageComponent {
+    mainTitle = "Désactivation du compte"; 
     
     constructor(
         route: ActivatedRoute,
@@ -31,7 +31,6 @@ export class DeactivateComponent extends AbstractKeyPageComponent {
     }
 
     protected processKey(key: string): Observable<void> {
-        return this.userService.deactivateRegisteredUser(key); 
+        return this.userService.deactivatePasswordStep2(key); 
     }
-    
 }

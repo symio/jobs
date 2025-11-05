@@ -1,0 +1,42 @@
+<main class="key-page-container">
+    <section class="main-title-section">
+        <h1 class="main-title">{{ mainTitle }}</h1> 
+    </section>
+
+    <div class="key-form-wrapper">
+        <section class="content-section">
+            <div *ngIf="error" class="alert alert-error">
+                {{ error }}
+            </div>
+
+            <form [formGroup]="keyForm" (ngSubmit)="onSubmit()">
+                <div
+                    class="form-group"
+                    [class.is-invalid]="key?.invalid && key?.touched"
+                    >
+                    <label for="key" class="form-label required">Clé d'activation e-mail</label>
+                    <input
+                        type="text"
+                        id="key"
+                        formControlName="key"
+                        [class.error]="key?.invalid && key?.touched"
+                        placeholder="Entrez votre clé"
+                        />
+                    <div *ngIf="key?.invalid && key?.touched" class="error-message">
+                        <div *ngIf="key?.errors?.['required']">La clé est requise</div>
+                    </div>
+                </div>
+                <div class="cta-section">
+                    <button
+                        type="submit"
+                        class="cta-button primary"
+                        [disabled]="keyForm.invalid || loading"
+                        >
+                        <span *ngIf="loading" class="loading-text">Envoi en cours...</span>
+                        <span *ngIf="!loading">Envoyer</span>
+                    </button>
+                </div>
+            </form>
+        </section>
+    </div>
+</main>
