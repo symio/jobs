@@ -8,7 +8,7 @@ cat > /pgadmin4/servers.json << EOF
     "1": {
       "Name": "Jobs PostgreSQL",
       "Group": "Servers",
-      "Host": "db",
+      "Host": "${POSTGRES_HOST}",
       "Port": 5432,
       "MaintenanceDB": "${POSTGRES_DB}",
       "Username": "${POSTGRES_USER}",
@@ -23,7 +23,7 @@ EOF
 mkdir -p /var/lib/pgadmin
 
 # Génère le fichier pgpass dans le bon emplacement
-echo "db:5432:*:${POSTGRES_USER}:${POSTGRES_PASSWORD}" > /var/lib/pgadmin/pgpass
+echo "${POSTGRES_HOST}:5432:*:${POSTGRES_USER}:${POSTGRES_PASSWORD}" > /var/lib/pgadmin/pgpass
 chmod 600 /var/lib/pgadmin/pgpass
 
 # Change le propriétaire pour l'utilisateur pgadmin (UID 5050)

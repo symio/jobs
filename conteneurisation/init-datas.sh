@@ -7,7 +7,7 @@ sleep 10
 echo "Vérification de l'existence de la table roles..."
 
 # Vérifie si la table existe et est vide avant d'insérer
-PGPASSWORD=$POSTGRES_PASSWORD psql -h db -U $POSTGRES_USER -d $POSTGRES_DB <<-EOSQL
+PGPASSWORD=$POSTGRES_PASSWORD psql -h ${POSTGRES_HOST} -U $POSTGRES_USER -d $POSTGRES_DB <<-EOSQL
     DO \$\$
     BEGIN
         -- Vérifie si la table roles existe et est vide
@@ -33,7 +33,7 @@ PGPASSWORD=$POSTGRES_PASSWORD psql -h db -U $POSTGRES_USER -d $POSTGRES_DB <<-EO
 EOSQL
 
 echo "Mise à jour des Jobs sans date de candidature ..."
-PGPASSWORD=$POSTGRES_PASSWORD psql -h db -U $POSTGRES_USER -d $POSTGRES_DB <<-EOSQL
+PGPASSWORD=$POSTGRES_PASSWORD psql -h ${POSTGRES_HOST} -U $POSTGRES_USER -d $POSTGRES_DB <<-EOSQL
     DO \$\$
     BEGIN
         -- Vérifie si la table jobs existe

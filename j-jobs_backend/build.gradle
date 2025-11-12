@@ -6,7 +6,7 @@ plugins {
 }
 
 group = 'org.loamok'
-version = '0.0.9-SNAPSHOT'
+version = '0.0.11-SNAPSHOT'
 description = 'Api « Jobs » java backend'
 
 java {
@@ -40,11 +40,13 @@ dependencies {
 	// Bases de données
 	runtimeOnly 'com.h2database:h2'
 	runtimeOnly 'org.postgresql:postgresql'
+        implementation 'com.zaxxer:HikariCP'
 	// Divers
 	developmentOnly 'org.springframework.boot:spring-boot-devtools'
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
 	testImplementation 'org.springframework.security:spring-security-test'
 	testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
+        implementation 'org.springframework.boot:spring-boot-starter-actuator'
 	// Oauth 2 JWT et documentation auto api
         // https://mvnrepository.com/artifact/io.jsonwebtoken/jjwt-api
         implementation 'io.jsonwebtoken:jjwt-api:0.12.7'

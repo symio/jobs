@@ -62,6 +62,7 @@ public class SecurityConfig {
                 
                 auth.requestMatchers(HttpMethod.OPTIONS, "/**").permitAll();
                 
+                auth.requestMatchers(HttpMethod.GET,  "/actuator/health").permitAll();
                 auth.requestMatchers(HttpMethod.POST, 
                     "/authorize/token",
                     "/authorize/refresh", 
