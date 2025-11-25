@@ -32,6 +32,7 @@ import org.loamok.jobs.entity.enums.ContractEnum;
 import org.loamok.jobs.entity.enums.OfferStatusEnum;
 import org.loamok.jobs.entity.enums.WorkModeEnum;
 import org.loamok.jobs.entity.enums.WorkTimeEnum;
+import org.loamok.libs.o2springsecurity.entity.User;
 
 /**
  *

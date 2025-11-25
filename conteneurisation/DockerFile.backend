@@ -2,6 +2,12 @@
 
 # Étape 1 : Build du WAR avec Gradle et Java 21
 FROM gradle:8.10-jdk21 AS build
+
+ARG GITHUB_TOKEN
+ARG GITHUB_USERNAME
+ENV GITHUB_USERNAME=${GITHUB_USERNAME}
+ENV GITHUB_TOKEN=${GITHUB_TOKEN}
+
 WORKDIR /app
 COPY build.gradle settings.gradle ./
 COPY src ./src

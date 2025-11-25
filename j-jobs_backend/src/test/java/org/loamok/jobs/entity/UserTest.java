@@ -15,10 +15,12 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.test.context.ActiveProfiles;
-import org.loamok.jobs.repository.RoleRepository;
-import org.loamok.jobs.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.assertj.core.api.Assertions;
+import org.loamok.libs.o2springsecurity.entity.Role;
+import org.loamok.libs.o2springsecurity.entity.User;
+import org.loamok.libs.o2springsecurity.repository.RoleRepository;
+import org.loamok.libs.o2springsecurity.repository.UserRepository;
 
 /**
  *
@@ -521,26 +523,6 @@ public class UserTest {
         instance.setEmail(myUser.getEmail());
         
         assertTrue(instance.equals(identicalInstance));
-        
-        instance.setId(instId);
-        instance.setEmail(instEmail);
-    }
-
-    /**
-     * Test of canEqual method, of class User.
-     */
-    @Test
-    public void test_31_CanEqual() {
-        System.out.println("canEqual");
-        User instance = buildAUser("bip.bipA@acme.com");
-        Integer instId = instance.getId();
-        String instEmail = instance.getEmail();
-        
-        instance.setId(myUser.getId());
-        instance.setEmail(myUser.getEmail());
-
-        assertTrue(instance.canEqual(myUser));
-        assertFalse(instance.canEqual(new Object()));
         
         instance.setId(instId);
         instance.setEmail(instEmail);

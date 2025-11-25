@@ -10,7 +10,7 @@ if [ -f .env ]; then
     source .env
     set +a
 else
-    echo "Fichier .env introuvable"
+    echo "[ERREUR] Fichier .env introuvable"
     exit 1
 fi
 
@@ -20,10 +20,10 @@ echo ""
 echo "Projet détecté : $PROJECT_NAME"
 echo ""
 echo "Cette action va :"
-echo "  Arrêter tous les conteneurs de $PROJECT_NAME"
-echo "  Supprimer tous les conteneurs de $PROJECT_NAME"
-echo "  Supprimer tous les volumes de données de $PROJECT_NAME"
-echo "  /!\ TOUTES LES DONNÉES DE LA BASE SERONT PERDUES !"
+echo "  - Arrêter tous les conteneurs de $PROJECT_NAME"
+echo "  - Supprimer tous les conteneurs de $PROJECT_NAME"
+echo "  - Supprimer tous les volumes de données de $PROJECT_NAME"
+echo "  - /!\ TOUTES LES DONNÉES DE LA BASE SERONT PERDUES !"
 echo ""
 
 read -p "Êtes-vous sûr de vouloir continuer ? (yes/N): " confirm
@@ -50,7 +50,7 @@ echo "Suppression du réseau..."
 docker network ls --filter "name=${PROJECT_NAME}" --format "{{.ID}}" | xargs -r docker network rm 2>/dev/null || true
 
 echo ""
-echo " Nettoyage terminé !"
+echo "[OK] Nettoyage terminé !"
 echo ""
 echo "Pour redémarrer proprement :"
 echo "   ./build-and-run.sh"

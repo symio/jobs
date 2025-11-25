@@ -3,7 +3,7 @@ set -e
 
 # Vérification de la présence du fichier .env
 if [ ! -f .env ]; then
-    echo "Erreur : aucun fichier .env trouvé."
+    echo "[ERREUR] Aucun fichier .env trouvé."
     echo "Veuillez lancer setup-environment.sh ou renseigner un fichier .env avant de relancer."
     exit 1
 fi
@@ -21,7 +21,7 @@ get_local_ip() {
 }
 
 echo ""
-echo "Étape 0/4 : Mise à jour des origines CORS avec l'IP locale"
+echo "Étape 0/3 : Mise à jour des origines CORS avec l'IP locale"
 
 # Chargement du fichier .env
 set -a
@@ -30,7 +30,7 @@ set +a
 
 LOCAL_IP=$(get_local_ip)
 if [ -z "$LOCAL_IP" ]; then
-    echo "Attention : impossible de détecter l'IP locale. L'accès depuis d'autres appareils pourrait ne pas fonctionner."
+    echo "[ATTENTION] Impossible de détecter l'IP locale. L'accès depuis d'autres appareils pourrait ne pas fonctionner."
 else
     echo "   - IP locale détectée : $LOCAL_IP"
     DYNAMIC_ORIGIN="${BASE_PROTOCOL}://${LOCAL_IP}"
@@ -40,14 +40,14 @@ else
 
     # Mise à jour du .env
     if [[ "$OSTYPE" == "darwin"* ]]; then
-        sed -i '' "s|^CORS_ALLOWED_ORIGINS=.*|CORS_ALLOWED_ORIGINS=${UPDATED_ORIGINS}|" .env
+        sed -i '' "s|^CORS_ORIGINS=.*|CORS_ORIGINS=${UPDATED_ORIGINS}|" .env
         sed -i '' "s|^BASE_URL=.*|BASE_URL=${DYNAMIC_ORIGIN}|" .env
     else
-        sed -i "s|^CORS_ALLOWED_ORIGINS=.*|CORS_ALLOWED_ORIGINS=${UPDATED_ORIGINS}|" .env
+        sed -i "s|^CORS_ORIGINS=.*|CORS_ORIGINS=${UPDATED_ORIGINS}|" .env
         sed -i "s|^BASE_URL=.*|BASE_URL=${DYNAMIC_ORIGIN}|" .env
     fi
 
-    echo "   - CORS_ALLOWED_ORIGINS mis à jour : ${UPDATED_ORIGINS}"
+    echo "   - CORS_ORIGINS mis à jour : ${UPDATED_ORIGINS}"
     echo "   - BASE_URL mis à jour : ${DYNAMIC_ORIGIN}"
 fi
 
@@ -67,12 +67,13 @@ echo "Étape 3/3 : Démarrage de la stack"
 docker compose up -d
 
 echo ""
-echo "Stack démarrée avec succès !"
+echo "[OK] Stack démarrée avec succès !"
 echo ""
 echo "Services disponibles :"
 echo "   - Backend:  http://localhost:8080"
 echo "   - Frontend: http://localhost:80, ou http://localhost"
 echo "   - PgAdmin:  http://localhost:5433"
+echo "   - Mailler:  http://localhost:8025"
 if [ -n "$LOCAL_IP" ]; then
     echo "   - Accès depuis le réseau local: http://${LOCAL_IP}"
 fi

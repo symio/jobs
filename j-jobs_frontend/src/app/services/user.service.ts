@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { ApiurlService } from '@app/environments/apiurl.service';
 import { OAuth2Service } from './oauth2.service';
-import { catchError, Observable, of, tap, throwError } from 'rxjs';
+import { catchError, Observable, of, switchMap, tap, throwError } from 'rxjs';
 
 export interface UserRegisterResponse {
     id: number;
@@ -27,6 +27,16 @@ export interface UserRegister {
     email: string;
     password: string;
     gdproptin: boolean;
+    password_key: string;
+}
+
+export interface PasswordCheckResponse {
+    passwordKey: string;
+}
+
+export interface PasswordCheckRequest {
+    newPassword: string;
+    passwordConfirm: string;
 }
 
 export interface LostPasswordStep2 {
@@ -63,7 +73,6 @@ export class UserService {
             );
     }
     
-    //@todo
     passwordLoststep1(email: string| null = null): Observable<void> {
         const headers = this.oauth2Service.buildRequestHeaders(false);
         if(email === null) {
@@ -90,7 +99,6 @@ export class UserService {
             );
     }
     
-    //@todo
     passwordLoststep2(lostPasswordStep2: LostPasswordStep2| null = null): Observable<void> {
         const headers = this.oauth2Service.buildRequestHeaders(false);
         if(lostPasswordStep2?.key === null) {
@@ -117,7 +125,6 @@ export class UserService {
             );
     }
     
-    
     deactivateRegisteredUser(key: string| null = null): Observable<void> {
         const headers = this.oauth2Service.buildRequestHeaders(false);
         if(key === null) {
@@ -131,16 +138,25 @@ export class UserService {
             );
     }
     
-    registerUser(userRegister: UserRegister): Observable<UserRegisterResponse> {
+    registerUser(passwordCheck: PasswordCheckRequest, userRegister: UserRegister): Observable<UserRegisterResponse> {
         const headers = this.oauth2Service.buildRequestHeaders(false);
 
         return this.http
-            .post<UserRegisterResponse>(`${this.apiBaseUrl}/users`, userRegister, {
-                headers,
-            })
+            .post<PasswordCheckResponse>(`${this.apiBaseUrl}/register/check-password`, passwordCheck, {headers})
             .pipe(
-                tap((response) => this.handleRegisterSuccess(response)),
-                catchError((err) => this.handleAuthError(err)),
+                switchMap(checkPassword => {
+                    userRegister.password_key = checkPassword.passwordKey;
+                    
+                    return this.http
+                        .post<UserRegisterResponse>(`${this.apiBaseUrl}/users`, userRegister, {
+                            headers,
+                        })
+                        .pipe(
+                            tap((response) => this.handleRegisterSuccess(response)),
+                            catchError((err) => this.handleAuthError(err)),
+                        );
+                }),
+                catchError((err) => this.handleAuthError(err))
             );
     }
 

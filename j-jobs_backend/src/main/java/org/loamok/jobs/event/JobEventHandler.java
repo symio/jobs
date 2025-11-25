@@ -1,10 +1,11 @@
 package org.loamok.jobs.event;
 
 import org.loamok.jobs.entity.Job;
-import org.loamok.jobs.entity.User;
 import org.loamok.jobs.manager.JobManager;
 import org.loamok.jobs.manager.JobService;
-import org.loamok.jobs.repository.UserRepository;
+import org.loamok.libs.o2springsecurity.entity.User;
+import org.loamok.libs.o2springsecurity.event.IdentifiedHandler;
+import org.loamok.libs.o2springsecurity.repository.UserRepository;
 import org.springframework.data.rest.core.annotation.HandleBeforeCreate;
 import org.springframework.data.rest.core.annotation.HandleBeforeDelete;
 import org.springframework.data.rest.core.annotation.HandleBeforeSave;

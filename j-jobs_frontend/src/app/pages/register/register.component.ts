@@ -6,7 +6,7 @@ import {
 } from '@angular/forms';
 import { Router, ActivatedRoute, RouterModule } from '@angular/router';
 import { OAuth2Service } from '@services/oauth2.service';
-import { UserRegister, UserService } from '@services/user.service';
+import { PasswordCheckRequest, UserRegister, UserService } from '@services/user.service';
 import { CommonModule } from '@angular/common';
 import { Subscription } from 'rxjs';
 import { SanitizationService } from '@services/sanitization.service';
@@ -121,15 +121,21 @@ export class RegisterComponent implements OnInit, OnDestroy {
             return;
         }
 
+        const passwordCheck: PasswordCheckRequest = {
+            newPassword: formValue.password,
+            passwordConfirm: formValue.passwordConfirm
+        };
+        
         const userRegister: UserRegister = {
             name: sanitizedData.name,
             firstname: sanitizedData.firstname,
             email: sanitizedData.email,
             password: formValue.password,
             gdproptin: formValue.gdproptin,
+            password_key: "",
         };
 
-        this.userService.registerUser(userRegister).subscribe({
+        this.userService.registerUser(passwordCheck, userRegister).subscribe({
             next: (response) => {
                 this.registerForm.reset();
                 this.router.navigate([this.returnUrl]);

@@ -21,11 +21,36 @@ configurations {
 	}
 }
 
+// Configuration de la stratégie de résolution pour toutes les configurations
+configurations.all {
+        resolutionStrategy {
+                // Seulement en développement
+                if (project.hasProperty('dev') || System.getenv('ENV') == 'dev') {
+                        cacheChangingModulesFor 0, 'seconds'
+                        cacheDynamicVersionsFor 0, 'seconds'
+                } else {
+                        // En production : cache de 24h pour les SNAPSHOT
+                        cacheChangingModulesFor 24, 'hours'
+                }
+        }
+}
+
 repositories {
+        mavenLocal()
 	mavenCentral()
+        maven {
+            name = "GitHubPackages-Loamok"
+            url = uri("https://maven.pkg.github.com/symio/loamok-java-libs") 
+            credentials {
+                username = project.findProperty("gpr.user") ?: System.getenv("GITHUB_USERNAME")
+                password = project.findProperty("gpr.key") ?: System.getenv("GITHUB_TOKEN")
+            }
+        }
 }
 
 dependencies {
+        // Loamok
+        implementation 'org.loamok.libs:o2springsecurity:1.0.7'
 	// Lombok
         compileOnly("org.projectlombok:lombok:1.18.38")
         annotationProcessor("org.projectlombok:lombok:1.18.38")

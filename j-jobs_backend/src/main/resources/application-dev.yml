@@ -1,9 +1,10 @@
+loamok.security.endpoints.enable-request-logging: true
 logging:
   level:
-    root: WARN
-    org.springframework: WARN
-    org.hibernate: WARN
-    org.springframework.boot: WARN
+    root: INFO
+    org.springframework: INFO
+    org.hibernate: INFO
+    org.springframework.boot: INFO
 springdoc:
   api-docs:
     enabled: ${SPRINGDOC_ENABLED:true}
@@ -26,7 +27,7 @@ spring:
     properties:
       hibernate:
         open-in-view: false
-        enable_lazy_load_no_trans: false
+        enable_lazy_load_no_trans: true
         generate_statistics: true
         jdbc:
           batch_size: 20

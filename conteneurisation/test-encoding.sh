@@ -10,7 +10,7 @@ if [ -f .env ]; then
     source .env
     set +a
 else
-    echo "Fichier .env introuvable"
+    echo "[ERREUR] Fichier .env introuvable"
     exit 1
 fi
 
@@ -43,10 +43,10 @@ echo "$DECODED"
 
 echo ""
 if [ "$UNENCODED_KEY" = "$DECODED" ]; then
-    echo "SUCCESS : L'encodage/décodage fonctionne parfaitement !"
+    echo "[OK] L'encodage/décodage fonctionne parfaitement !"
     echo "Tous les caractères spéciaux sont préservés"
 else
-    echo "ERREUR : La valeur décodée ne correspond pas à l'original"
+    echo "[ERREUR] La valeur décodée ne correspond pas à l'original"
     echo "   Vérifie que UNENCODED_KEY utilise des guillemets simples dans .env"
     exit 1
 fi
