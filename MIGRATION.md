@@ -84,14 +84,15 @@ cd jobs/conteneurisation
 # Mettre à jour le code
 git pull origin master
 
-# Relancer la configuration (ajoutera les nouvelles variables)
-./setup-environment.sh
+# Lancer le script de migration (ajoutera les nouvelles variables)
+chmod +x migrate-env.sh
+./migrate-env.sh
 
 # Reconstruire et redémarrer
 ./build-and-run.sh
 ```
 
-Le script `setup-environment.sh` détectera votre fichier `.env` existant et vous proposera de le reconfigurer pour ajouter les identifiants GitHub.
+Le script `migrate-env.sh` détectera votre fichier `.env` existant, créera une sauvegarde, et vous guidera pour ajouter les identifiants GitHub manquants.
 
 ### Option B : Migration manuelle
 
