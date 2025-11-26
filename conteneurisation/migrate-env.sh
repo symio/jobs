@@ -94,6 +94,7 @@ echo ""
 
 # Nouvelles variables diverses
 echo "Vérification des autres nouvelles variables..."
+update_or_add_variable "CORS_ORIGINS" "${CORS_ALLOWED_ORIGINS}"
 update_or_add_variable "BASE_PROTOCOL" "http"
 update_or_add_variable "BASE_URL" "''"
 update_or_add_variable "DB_HOST" "db"
