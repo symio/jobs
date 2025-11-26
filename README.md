@@ -14,22 +14,56 @@
 - Build: Gradle
 - Deployment: WAR sur Tomcat 10 (à venir)
 - Security: JWT, OAuth2 Client Credentials
+- Dependencies: GitHub Packages (librairies Loamok)
 
 Url après installation / lancement : [http://localhost](http://localhost)
 
+---
+
+## IMPORTANT : Migration vers GitHub Packages
+
+A partir de cette version, l'application utilise des librairies Java externalisées publiées sur GitHub Packages.
+
+### Pour les NOUVEAUX utilisateurs
+Suivez la procédure d'installation normale ci-dessous. Le script `setup-environment.sh` vous demandera vos identifiants GitHub.
+
+### Pour les utilisateurs EXISTANTS
+Si vous avez déjà installé une version antérieure de l'application, consultez le 
+[Guide de Migration](MIGRATION.md) pour mettre à jour votre installation.
+
+**Migration rapide :**
+```bash
+cd jobs/conteneurisation
+git pull origin master
+chmod +x migrate-env.sh
+./migrate-env.sh
+./build-and-run.sh
+```
+
+### Prérequis GitHub
+
+Vous devez disposer de :
+1. Un compte GitHub
+2. Un Personal Access Token avec le droit `read:packages`
+
+Voir le [Guide de Migration](MIGRATION.md) pour créer votre token.
+
+---
+
 ## Installation
 
-### 🚀Guide d'installation multi-plateforme
+### Guide d'installation multi-plateforme
 
 Ce guide explique comment lancer la stack Docker sur **Linux**, **macOS** et **Windows**.
 
 ---
 
-#### 📋Prérequis
+#### Prérequis
 
 ##### Tous les systèmes
 - [Docker Desktop](https://www.docker.com/products/docker-desktop/) installé et en cours d'exécution
 - [Docker Compose](https://docs.docker.com/compose/install/) (inclus avec Docker Desktop)
+- **NOUVEAU** : Un compte GitHub et un Personal Access Token
 
 ##### Alternative sous Linux:
 - Démon docker installé et en cours d'éxécution (docker compose reste requis)
@@ -50,8 +84,11 @@ Ce guide explique comment lancer la stack Docker sur **Linux**, **macOS** et **W
 > ```bash
 > chmod +x *.sh && ./setup-environment.sh
 > ```
-> Indiquez le nom d'instance (ou laissez vide pour utiliser "jobs" par défaut)
-- 3. 🚀Lancement
+> Le script vous demandera :
+> - Le nom d'instance (ou laissez vide pour utiliser "jobs" par défaut)
+> - **Votre nom d'utilisateur GitHub**
+> - **Votre Personal Access Token GitHub**
+- 3. Lancement
 > ```bash
 > ./build-and-run.sh
 > ```
@@ -67,7 +104,7 @@ Ce guide explique comment lancer la stack Docker sur **Linux**, **macOS** et **W
 >> ```
 >> Stack démarrée avec succès !
 >> 
->>📊  Services disponibles :
+>> Services disponibles :
 >>    - Backend:  http://localhost:8080
 >>    - Frontend: http://localhost:80, ou http://localhost,
 >>    - PgAdmin:  http://localhost:5433
@@ -100,7 +137,10 @@ chmod +x setup-environment.sh
 ./setup-environment.sh
 ```
 
-Le script vous demandera un nom de projet unique (ex: `jobs-dev`, `jobs-test`, `jobs-prod`).
+Le script vous demandera :
+- Un nom de projet unique (ex: `jobs-dev`, `jobs-test`, `jobs-prod`)
+- **Votre nom d'utilisateur GitHub**
+- **Votre Personal Access Token GitHub** (voir [Guide de Migration](MIGRATION.md) pour le créer)
 
 **Option B : Configuration manuelle**
 
@@ -110,7 +150,9 @@ Copiez le fichier d'exemple et modifiez-le :
 cp .env.sample .env
 ```
 
-Éditez le `.env` et **/!\ changez obligatoirement** `COMPOSE_PROJECT_NAME` :
+Éditez le `.env` et /!\ changez obligatoirement `GITHUB_USERNAME` et `GITHUB_TOKEN`.
+
+Les autres valeurs peuvent être laissées par défaut pour un environnement de développement local :
 
 ```bash
 # .env.sample
@@ -118,14 +160,17 @@ COMPOSE_PROJECT_NAME=jobs # ou jobs-test, jobs-prod, etc.
 
 # Spring security jwt key
 UNENCODED_KEY='ThisIsADevJwtSecretForLocalTestingOnly12345'
-PORT=8080
+BACKEND_PORT=8080
 
 # URL(s) autorisée(s) pour les requêtes CORS, séparées par des virgules
 # Le script build-and-run.sh ajoutera automatiquement l'IP locale à cette liste.
+BASE_PROTOCOL=http
+BASE_URL=''
 BASE_ORIGINS=http://localhost,http://frontend,http://localhost:4200
 CORS_ALLOWED_ORIGINS=http://localhost,http://frontend,http://localhost:4200
 
 # Postgresql Environment Variables
+DB_HOST=db
 POSTGRES_DB=dbname
 POSTGRES_USER=dbuser
 POSTGRES_PASSWORD='dbuserp@ssw0rd'
@@ -135,7 +180,7 @@ SPRING_MAIL_AUTH=true
 SPRING_MAIL_STARTTLS=true
 SPRING_MAIL_HOST=mailer
 SPRING_MAIL_PORT=1025
-SPRING_MAIL_USER=demo@example.com
+SPRING_MAIL_USER=jobs@loamok.org
 SPRING_MAIL_PASS=MailerP@ssw0rd
 
 # pgAdmin Environment Variables
@@ -146,26 +191,26 @@ PPGADMIN_LISTEN_PORT=80 # Default value when TLS disabled
 
 ## activate the swaggerui docs, set to false in production
 SPRINGDOC_ENABLED=true
+
+# github package access (OBLIGATOIRE)
+GITHUB_USERNAME=<votre_nom_utilisateur_github>
+GITHUB_TOKEN=<votre_token_github>
 ```
 
-/!\ **Important** : Utilisez des **guillemets simples** `'...'` pour les valeurs avec caractères spéciaux !
-/!\ **IMPORTANT** : Changez `COMPOSE_PROJECT_NAME` pour chaque environnement !
-- Copie locale de dev : `jobs-dev`
-- Tests : `jobs-test`
-- Production : `jobs-prod`
-- Autre machine : `jobs-machine2`
-
-Cela garantit que chaque stack a ses propres volumes de données isolés.
+/!\ **Important** : 
+- **OBLIGATOIRE** : Renseignez `GITHUB_USERNAME` et `GITHUB_TOKEN` avec vos identifiants GitHub
+- Utilisez des **guillemets simples** `'...'` pour les valeurs avec caractères spéciaux
+- Changez `COMPOSE_PROJECT_NAME` si vous lancez plusieurs environnements (dev, test, prod) pour isoler les volumes de données
 
 ---
 
-#### 3. 🚀Lancement
+#### 3. Lancement
 
 ##### Linux / macOS
 
 ```bash
 # Rendre les scripts exécutables
-chmod +x test-encoding.sh encode-env.sh build-and-run.sh init-roles.sh
+chmod +x test-encoding.sh encode-env.sh build-and-run.sh init-roles.sh migrate-env.sh
 
 # Tester l'encodage (optionnel mais recommandé)
 ./test-encoding.sh
@@ -193,7 +238,7 @@ chmod +x test-encoding.sh encode-env.sh build-and-run.sh init-roles.sh
 
 ```bash
 # Même chose que Linux
-chmod +x test-encoding.sh encode-env.sh build-and-run.sh init-roles.sh
+chmod +x test-encoding.sh encode-env.sh build-and-run.sh init-roles.sh migrate-env.sh
 ./test-encoding.sh
 ./build-and-run.sh
 ```
@@ -239,13 +284,12 @@ docker compose logs -f db-init
 
 ---
 
-#### 🔄Commandes utiles
+#### Commandes utiles
 
 ##### Reconstruire et redémarrer un élément de la stack (exemple: backend)
 ```bash
 export TARGET="backend" ; docker compose down ${TARGET} && docker compose build ${TARGET} &&  docker compose up -d 
 ```
-
 
 ##### Redémarrer la stack
 ```bash
@@ -270,7 +314,7 @@ docker compose up -d
 
 ---
 
-####🐛 Troubleshooting
+#### Troubleshooting
 
 ##### "Permission denied" sur Linux/macOS
 ```bash
@@ -297,9 +341,13 @@ Vérifiez les logs du service `db-init` :
 docker compose logs db-init
 ```
 
+##### Erreur "Could not resolve org.loamok.libs:..."
+Cela signifie que vos identifiants GitHub ne sont pas configurés ou sont invalides.
+Consultez le [Guide de Migration](MIGRATION.md) section "Résolution des problèmes".
+
 ---
 
-#### 📚Architecture
+#### Architecture
 
 ```
 conteneurisation/
@@ -312,17 +360,19 @@ conteneurisation/
 ├── init-roles.sh          # Initialisation des rôles DB
 ├── encode-env.sh          # Encodage JWT en base64
 ├── setup-environment.sh   # Configuration automatique de l'environnement
+├── migrate-env.sh         # Migration des anciennes installations
 ├── test-encoding.sh       # Test de l'encodage
 └── build-and-run.sh       # Script de lancement complet
 ```
 ---
 
-####🔐 Sécurité
+#### Sécurité
 
-- /!\ Ne **jamais** committer le fichier `.env` avec vos credentials (Mots de passes, noms d'utilisateurs, clé non encodée de signature JWT)
+- /!\ Ne **jamais** committer le fichier `.env` avec vos credentials (Mots de passes, noms d'utilisateurs, clé non encodée de signature JWT, token GitHub)
 - Utilisez `.env.sample` pour partager des exemples
-- 🔒Génèrez des mots de passe forts pour la production
-- 🛡Changez les secrets par défaut
+- Générez des mots de passe forts pour la production
+- Changez les secrets par défaut
+- **NOUVEAU** : Protégez votre token GitHub comme un mot de passe
 
 ---
 
@@ -331,51 +381,52 @@ conteneurisation/
 - Les scripts détectent automatiquement votre sytème d'exploitation (Linux, macOS, Windows)
 - L'encodage base64 est géré différemment sur macOS vs Linux
 - Sur Windows, Git Bash est recommandé pour une meilleure compatibilité
+- **NOUVEAU** : Les identifiants GitHub sont nécessaires pour télécharger les dépendances
 
 ---
 
 ## Challenges de sécurités renforcés
 
-### Création de compte : 
+### Création de compte : 
 
 ![Création de compte](conception/UML/exports/creationCompte_activityDiagram.svg)
 
-### Mot de passe perdu : 
+### Mot de passe perdu : 
 
 ![Création de compte](conception/UML/exports/securityChallenge_activityDiagram.svg)
 
 ---
 
-## 📝Notes de Licence
+## Notes de Licence
 
 ### 1. Documents et éléments graphiques
 
-Tous les documents, images, diagrammes et, de manière générale, **toutes les illustrations créées pour l’application _Jobs_** sont couverts par la licence décrite dans le présent chapitre.  
+Tous les documents, images, diagrammes et, de manière générale, **toutes les illustrations créées pour l'application _Jobs_** sont couverts par la licence décrite dans le présent chapitre.  
 **Exception :** les logos, marques et noms de logiciels cités demeurent la propriété exclusive de leurs détenteurs respectifs.
 
-#### 📄 Licence applicable
-L’ensemble de ces éléments est diffusé sous licence **Creative Commons Attribution - Partage dans les Mêmes Conditions 4.0 International (CC BY-SA 4.0)**.  
-🔗 Licence complète : [https://creativecommons.org/licenses/by-sa/4.0/deed.fr](https://creativecommons.org/licenses/by-sa/4.0/deed.fr)
+#### Licence applicable
+L'ensemble de ces éléments est diffusé sous licence **Creative Commons Attribution - Partage dans les Mêmes Conditions 4.0 International (CC BY-SA 4.0)**.  
+Licence complète : [https://creativecommons.org/licenses/by-sa/4.0/deed.fr](https://creativecommons.org/licenses/by-sa/4.0/deed.fr)
 
 #### Résumé de la licence
 La **CC BY-SA 4.0** autorise toute personne à :
 
-- **Partager** : copier, reproduire, distribuer et communiquer l’œuvre ;  
-- **Adapter** : remixer, transformer et créer à partir de l’œuvre,  
+- **Partager** : copier, reproduire, distribuer et communiquer l'œuvre ;  
+- **Adapter** : remixer, transformer et créer à partir de l'œuvre,  
 - **Y compris à des fins commerciales**,  
 - **Sur tout support et par tout moyen**.
 
 #### Obligations associées
-Toute utilisation de l’œuvre implique de :
+Toute utilisation de l'œuvre implique de :
 
-- 🏷️ **Attribuer** l’œuvre à ses auteurs originaux, indiquer la source et signaler les éventuelles modifications ;  
-- 🔁 **Partager dans les mêmes conditions** : toute création dérivée doit être diffusée sous la même licence **CC BY-SA 4.0**, afin de garantir la libre réutilisation et modification.
+- **Attribuer** l'œuvre à ses auteurs originaux, indiquer la source et signaler les éventuelles modifications ;  
+- **Partager dans les mêmes conditions** : toute création dérivée doit être diffusée sous la même licence **CC BY-SA 4.0**, afin de garantir la libre réutilisation et modification.
 
 ---
 
 ### 2. Code source
 
-Le **code source** des éléments logiciels constituant l’application _Jobs_ est placé sous licence **Open Source GNU General Public License version 3 (GPLv3)**.
+Le **code source** des éléments logiciels constituant l'application _Jobs_ est placé sous licence **Open Source GNU General Public License version 3 (GPLv3)**.
 
 #### Résumé de la licence
 La **GPLv3** garantit à tout utilisateur le droit de :
@@ -384,8 +435,8 @@ La **GPLv3** garantit à tout utilisateur le droit de :
 - Redistribuer le code original ou modifié ;  
 - À condition que toute redistribution soit effectuée sous la même licence **GPLv3**, afin de préserver le caractère libre du logiciel.
 
-🔗 Licence complète : [https://www.gnu.org/licenses/gpl-3.0.html](https://www.gnu.org/licenses/gpl-3.0.html)
+Licence complète : [https://www.gnu.org/licenses/gpl-3.0.html](https://www.gnu.org/licenses/gpl-3.0.html)
 
 ---
 
-🧩 _Ce double régime de licences permet de distinguer clairement les droits applicables aux éléments graphiques (CC BY-SA 4.0) et au code source (GPLv3), tout en assurant une compatibilité et une cohérence avec les principes du logiciel libre._
+_Ce double régime de licences permet de distinguer clairement les droits applicables aux éléments graphiques (CC BY-SA 4.0) et au code source (GPLv3), tout en assurant une compatibilité et une cohérence avec les principes du logiciel libre._
