@@ -269,12 +269,15 @@
         <div *ngIf="error" class="error">
             {{ error }}
         </div>
+        <div *ngIf="!isLoading && !error && !jobs" class="no-jobs">
+            Aucune offre à afficher
+        </div>
 
-        <h4 *ngIf="!isLoading && !error && jobs && pageInfos">
-            {{ pageInfos.total_elements }} offre(s) trouvée(s),
-            {{ pageInfos.total_pages }} page(s).
-        </h4>
         <ng-container *ngIf="!isLoading && !error && jobs">
+            <h4 *ngIf="!isLoading && !error && jobs && pageInfos">
+                {{ pageInfos.total_elements }} offre(s) trouvée(s),
+                {{ pageInfos.total_pages }} page(s).
+            </h4>
             <div class="job-card" *ngFor="let job of jobs">
                 <!-- En-tête (inchangé) -->
                 <div class="row0">
@@ -427,63 +430,49 @@
                     </button>
                 </div>
             </div>
-
-            <div
-                *ngIf="
-                !isLoading && !error && jobs && pageInfos && pageInfos.total_pages > 1
-                "
-                class="pager"
-                >
-                <button
-                    (click)="goToPage(0)"
-                    [disabled]="currentPage === 0"
-                    class="cta-button primary"
-                    >
-                    |<<
-                </button>
-                <button
-                    (click)="goToPage(currentPage - 1)"
-                    [disabled]="currentPage === 0"
-                    class="cta-button primary"
-                    >
-                    <
-                </button>
-
-                <ng-container *ngFor="let page of pages">
-                    <button
-                        *ngIf="page !== '...'; else ellipsis"
-                        (click)="goToPage(page)"
-                        [class.validate]="page === currentPage"
-                        [class.primary]="page !== currentPage"
-                        [disabled]="page === currentPage"
-                        class="cta-button"
-                        >
-                        {{ page + 1 }}
-                    </button>
-                    <ng-template #ellipsis>
-                        <span class="ellipsis cta-button primary">...</span>
-                    </ng-template>
-                </ng-container>
-
-                <button
-                    (click)="goToPage(currentPage + 1)"
-                    [disabled]="currentPage === pageInfos.total_pages - 1"
-                    class="cta-button primary"
-                    >
-                    >
-                </button>
-                <button
-                    (click)="goToPage(pageInfos.total_pages - 1)"
-                    [disabled]="currentPage === pageInfos.total_pages - 1"
-                    class="cta-button primary"
-                    >
-                    >>|
-                </button>
-            </div>
         </ng-container>
+    </section>
+    <section class="paginator-content-wrapper">
+        <div
+            *ngIf="
+            !isLoading && !error && jobs && pageInfos && pageInfos.total_pages > 1
+            "
+            class="pager"
+            >
+            <button (click)="goToPage(0)" [disabled]="currentPage === 0" class="cta-button primary">
+                |<<
+            </button>
+            <button (click)="goToPage(currentPage - 1)" [disabled]="currentPage === 0" class="cta-button primary">
+                <
+            </button>
 
-        <div *ngIf="!isLoading && !error && !jobs" class="no-jobs">
-            Aucune offre à afficher
+            <ng-container *ngFor="let page of pages">
+                <button *ngIf="page !== '...'; else ellipsis"
+                    (click)="goToPage(page)"
+                    [class.validate]="page === currentPage"
+                    [class.primary]="page !== currentPage"
+                    [disabled]="page === currentPage"
+                    class="cta-button"
+                >
+                    {{ page + 1 }}
+                </button>
+                <ng-template #ellipsis>
+                    <span class="ellipsis cta-button primary">...</span>
+                </ng-template>
+            </ng-container>
+
+            <button (click)="goToPage(currentPage + 1)"
+                [disabled]="currentPage === pageInfos.total_pages - 1"
+                class="cta-button primary"
+            >
+                >
+            </button>
+            <button (click)="goToPage(pageInfos.total_pages - 1)"
+                [disabled]="currentPage === pageInfos.total_pages - 1"
+                class="cta-button primary"
+            >
+                >>|
+            </button>
         </div>
     </section>
 </main>

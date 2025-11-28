@@ -1,35 +1,61 @@
 <div
-  class="mobile-menu-overlay"
-  [class.active]="isMenuOpen"
-  (click)="closeMenu()"
->
-  <div class="mobile-menu" (click)="$event.stopPropagation()">
-    <div class="menu-header">
-      <button
-        class="close-button"
-        (click)="closeMenu()"
-        aria-label="Fermer"
-      ></button>
+    class="mobile-menu-overlay"
+    [class.active]="isMenuOpen"
+    (click)="closeMenu()"
+    >
+    <div class="mobile-menu" (click)="$event.stopPropagation()">
+        <div class="menu-header">
+            <button
+                class="close-button"
+                (click)="closeMenu()"
+                aria-label="Fermer"
+                ></button>
+        </div>
+        <div class="user-nav-section" *ngIf="isAuthenticated">
+            <a
+                href="{{ item.link }}"
+                class="nav-link user-nav-link"
+                *ngFor="let item of sideMenuData.items"
+                >
+                <span [innerHTML]="getIcon(item.icon)"></span>&nbsp;{{ item.label }}
+            </a>
+            <hr class="nav-separator" />
+        </div>
+        <div class="user-nav-section" *ngIf="isAuthenticated">
+            <span class="username">
+                <svg class="user-icon" viewBox="0 -5 24 24" fill="currentColor">
+                    <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" />
+                    <circle cx="12" cy="7" r="4" />
+                </svg>
+                <!-- Nom utilisateur -->
+                <span class="sub">
+                    {{ userMenuData.title }}
+                </span>
+            </span>
+            <a href="{{ item.link }}" class="nav-link user-nav-link"
+                *ngFor="let item of userMenuData.items"
+            >
+                <span [innerHTML]="getIcon(item.icon)"></span>&nbsp;{{ item.label }}
+            </a>
+            <a href="#" class="nav-link user-nav-link" (click)="logout()">
+                <span>
+                    <svg viewBox="0 -2 24 24" fill="currentColor">
+                        <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4" />
+                        <polyline points="16,17 21,12 16,7" />
+                        <line x1="21" y1="12" x2="9" y2="12" />
+                    </svg>
+                </span>
+                Déconnexion
+            </a>
+            <hr class="nav-separator" />
+        </div>
+        <nav class="menu-nav">
+            <h3 class="menu-title">{{ menuData.title }}</h3>
+            <a href="{{ item.link }}" class="menu-link"
+                *ngFor="let item of menuData.items"
+            >
+                {{ item.label }}
+            </a>
+        </nav>
     </div>
-    <div class="user-nav-section" *ngIf="isAuthenticated">
-      <a
-        href="{{ item.link }}"
-        class="nav-link user-nav-link"
-        *ngFor="let item of sideMenuData.items"
-      >
-        <span [innerHTML]="getIcon(item.icon)"></span>&nbsp;{{ item.label }}
-      </a>
-      <hr class="nav-separator" />
-    </div>
-    <nav class="menu-nav">
-      <h3 class="menu-title">{{ menuData.title }}</h3>
-      <a
-        href="{{ item.link }}"
-        class="menu-link"
-        *ngFor="let item of menuData.items"
-      >
-        {{ item.label }}
-      </a>
-    </nav>
-  </div>
 </div>

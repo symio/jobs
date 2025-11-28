@@ -13,6 +13,8 @@ export class ApiurlService {
       return environment.apiUrl.fallback;
     }
 
+//    const apiPort = environment.apiUrl.getPort(protocol);
+//    return `${protocol}//${hostname}:${8080}/jobs`;
     return `${protocol}//${hostname}/api`;
   }
 }

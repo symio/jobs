@@ -22,7 +22,7 @@
 
 .left-content-wrapper {
     grid-area: sidebar;
-    background: #f5f7fa;
+    background: variables.$gray-100;
     padding: 1rem;
     display: none;
 

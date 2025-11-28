@@ -8,27 +8,6 @@
 @use "app/theme/icons";
 @use "app/theme/links";
 
-.header-container {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 15px 20px;
-  background: variables.$white;
-  border-bottom: 1px solid variables.$gray-light;
-  position: relative;
-
-  @media (min-width: variables.$medium) {
-    padding: 20px 40px;
-  }
-
-  @media (min-width: variables.$large) {
-    @extend %large-container-rules-large;
-    padding-top: 20px;
-    padding-bottom: 20px;
-    padding-left: 0;
-    padding-right: 0;
-  }
-}
 
 .page-title {
   display: none;
@@ -43,5 +22,34 @@
     color: variables.$blue6;
     margin: 0;
     white-space: nowrap;
+  }
+}
+
+.header-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 20px;
+  background: variables.$white;
+  border-bottom: 1px solid variables.$gray-light;
+  position: relative;
+
+  .user-badge {
+      display: none;
+  }
+  
+  @media (min-width: variables.$medium) {
+    padding: 20px 40px;
+  }
+
+  @media (min-width: variables.$large) {
+    .user-badge {
+      display: block;
+    }
+    @extend %large-container-rules-large;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    padding-left: 0;
+    padding-right: 0;
   }
 }
