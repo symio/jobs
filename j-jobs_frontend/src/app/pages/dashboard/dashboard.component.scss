@@ -275,19 +275,19 @@
     .pager {
         display: grid;
         grid-auto-flow: column;
-        grid-auto-columns: minmax(56px, 1fr);
-        gap: 4px;
+        grid-auto-columns: minmax(45px, 1fr);
+        gap: 0;
         width: 100%;
         align-items: center;
-        padding: 8px 0;
+        padding: 5px 0;
         box-sizing: border-box;
         overflow-x: auto;
         -webkit-overflow-scrolling: touch;
     }
 
     .pager button {
-        width: 85%;
-        padding: 8px 8px;
+        width: 75%;
+        padding: 5px;
         cursor: pointer;
         white-space: nowrap;
         box-sizing: border-box;
@@ -297,8 +297,8 @@
         display: flex;
         align-items: center;
         justify-content: center;
-        width: 100%;
-        padding: 8px 12px;
+        width: 75%;
+        padding: 5px 0;
         box-sizing: border-box;
     }
 }
